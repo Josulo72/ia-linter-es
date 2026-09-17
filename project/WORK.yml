@@ -1,0 +1,81 @@
+schema_version: 1
+blocks:
+  - id: B1
+    title: Base
+    objective: Repositorio, contratos, modelo documental, Markdown, configuración, build y CI.
+    depends_on: []
+    deliverables:
+      - packages/linter/src/contracts
+      - packages/linter/src/document
+      - packages/linter/src/markdown
+      - packages/linter/src/config
+      - .github/workflows/ci.yml
+      - AGENTS.md, quality-policy.yml, project/*
+    tests:
+      - test/document.test.ts (BOM, CRLF, emojis, combinantes, offsets round-trip, Markdown AST)
+      - test/config.test.ts (validación, búsqueda, precedencia)
+    acceptance: typecheck y tests en verde; STATE.md actualizado.
+    status: done
+
+  - id: B2
+    title: Motor
+    objective: Detectores, compilador con seguridad de regex, runtime, scoring, supresiones, baseline.
+    depends_on: [B1]
+    deliverables:
+      - src/rules/detectors, src/rules/compiler, src/rules/runtime
+      - src/scoring, src/suppressions, src/baseline
+      - schemas/rule.schema.json
+    tests:
+      - unitarios por detector; compilador rechaza patrones peligrosos; timing en 1 MB adversarial
+      - scoring determinista y omisión con pocas palabras; supresiones Markdown; baseline por huellas
+    acceptance: gates de regex y sin red en verde.
+    status: in_progress
+
+  - id: B3
+    title: Producto local
+    objective: CLI, API, reporters, 24–30 reglas stable con fixtures y evidencia.
+    depends_on: [B2]
+    deliverables:
+      - src/cli, src/api, src/reporters, src/runner
+      - rules/definitions/*.yml (24–30 stable), rules/lexicons, rules/profiles, rules/evidence
+      - docs/configuration.md, docs/rule-authoring.md
+    tests:
+      - integración runner (gitignore, caché, overrides); E2E CLI por comando; reporters JSON/SARIF estructurales
+    acceptance: `ia-linter-es lint` sobre examples/ produce salida determinista; rulepack compilado en build.
+    status: pending
+
+  - id: B4
+    title: Evidencia
+    objective: Corpus propio, veto automatizado, benchmark reproducible, calibración y límites.
+    depends_on: [B3]
+    deliverables:
+      - corpus/policy/veto.yml, corpus/manifests/*.yml, corpus/{development,holdout,challenge}
+      - benchmark/scripts, benchmark/annotations, benchmark/reports/v1.0.md
+      - docs/benchmark.md
+    tests:
+      - scripts/corpus-check.mjs (licencias, hashes, veto); benchmark run reproducible
+    acceptance: informe publicado con métricas por regla y agregadas; holdout congelado antes de fijar pesos.
+    status: pending
+
+  - id: B5
+    title: Integraciones
+    objective: Pre-commit, GitHub Action, Claude Code y paridad E2E.
+    depends_on: [B3]
+    deliverables:
+      - integrations/pre-commit, integrations/github-action, integrations/claude-code
+    tests:
+      - E2E de cada adaptador con entorno simulado; test de paridad JSON entre CLI, Action y bundle
+    acceptance: mismos hallazgos byte a byte en las tres superficies.
+    status: pending
+
+  - id: B6
+    title: Cierre
+    objective: Seguridad, rendimiento, multiplataforma, empaquetado, release reproducible.
+    depends_on: [B4, B5]
+    deliverables:
+      - CHANGELOG.md, SECURITY.md, CONTRIBUTING.md, LICENSE, README.md
+      - project/EVIDENCE/release-v1.0.md
+    tests:
+      - pnpm pack + instalación en temporal + ejecución; gate de rendimiento
+    acceptance: criterios §17 con evidencia; pendientes solo acciones externas del propietario.
+    status: pending

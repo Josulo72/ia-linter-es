@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tgz
+.ia-linter-cache/
+coverage/
+packages/linter/rulepack/
+project/EVIDENCE/tmp/

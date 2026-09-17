@@ -1,0 +1,42 @@
+# Política de calidad v1.0. Los umbrales se aplican en `scripts/gates.mjs` y en el compilador de reglas.
+# Rebajar cualquier valor exige una entrada en docs/decisions.md.
+schema_version: 1
+
+rules:
+  stable_min: 24
+  stable_max: 30
+  # Una regla stable necesita ejemplos positivos y negativos, evidencia, falsos positivos conocidos y revisión.
+  min_positive_examples: 2
+  min_negative_examples: 2
+  min_reviewers: 1
+  # Falsos positivos por mil palabras humanas en holdout para mantener status stable.
+  max_fp_per_1000_human_words: 1.5
+  # Precisión adjudicada mínima (hallazgos correctos / hallazgos totales) en development.
+  min_adjudicated_precision: 0.70
+
+regex_safety:
+  # Tiempo máximo (ms) de una regla sobre el texto adversarial de 1 MB.
+  max_ms_per_rule_on_1mb: 250
+  forbid_backreferences: true
+  forbid_nested_quantifiers: true
+  forbid_empty_match: true
+  max_pattern_length: 400
+
+performance:
+  # Documento de 10 000 palabras, todas las reglas, sin caché (ms).
+  max_ms_per_10k_words: 1500
+
+scoring:
+  min_words_for_index: 150
+
+index:
+  # Separación mínima entre mediana del índice IA y mediana humana en holdout.
+  min_median_gap: 10
+
+coverage:
+  e2e_surfaces: [cli, api, pre-commit, github-action, claude-code]
+  platforms_required: [windows, linux, macos]
+
+corpus:
+  allowed_licenses: [public-domain, CC0-1.0, CC-BY-4.0]
+  veto_file: corpus/policy/veto.yml

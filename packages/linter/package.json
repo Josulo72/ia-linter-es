@@ -1,0 +1,40 @@
+{
+  "name": "ia-linter-es",
+  "version": "1.0.0",
+  "description": "Linter determinista de patrones de escritura de IA en español (texto y Markdown).",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/api/index.js",
+  "types": "./dist/api/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/api/index.d.ts", "import": "./dist/api/index.js" },
+    "./package.json": "./package.json"
+  },
+  "bin": { "ia-linter-es": "./dist/cli/main.js" },
+  "files": ["dist", "rulepack", "rules/profiles", "schemas", "README.md", "LICENSE"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "pnpm run build:ts && pnpm run build:rules && pnpm run build:bundle",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "build:rules": "node dist/rules/compiler/build.js",
+    "build:bundle": "node scripts/bundle.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "ajv": "^8.17.0",
+    "commander": "^13.0.0",
+    "fast-glob": "^3.3.0",
+    "ignore": "^7.0.0",
+    "mdast-util-from-markdown": "^2.0.0",
+    "mdast-util-frontmatter": "^2.0.0",
+    "mdast-util-gfm": "^3.0.0",
+    "micromark-extension-frontmatter": "^2.0.0",
+    "micromark-extension-gfm": "^3.0.0",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/mdast": "^4.0.0"
+  }
+}
