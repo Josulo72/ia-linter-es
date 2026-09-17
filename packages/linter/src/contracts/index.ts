@@ -8,7 +8,7 @@ export type RuleStatus = "draft" | "candidate" | "stable" | "deprecated";
 export type RuleCategory = "lexico" | "estructura" | "repeticion" | "densidad" | "retorica" | "formato";
 export type DetectorKind = "regex" | "lexicon" | "sequence" | "density" | "repetition" | "structure" | "cooccurrence";
 export type RuleScope = "sentence" | "paragraph" | "document" | "block";
-export type ProfileName = "general" | "tecnico" | "academico" | "marketing";
+export type ProfileName = "general" | "tecnico" | "academico" | "marketing" | "chat" | "correo" | "readme" | "redes";
 export type Register =
   | "general"
   | "tecnico"

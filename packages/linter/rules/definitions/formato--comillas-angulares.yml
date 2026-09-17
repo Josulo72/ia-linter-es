@@ -1,0 +1,33 @@
+schema_version: 1
+id: formato/comillas-angulares
+revision: 1
+status: candidate
+title: Comillas angulares en escritura cotidiana
+summary: Comillas « » en un texto de registro cotidiano, donde lo normal son las comillas del teclado.
+category: formato
+scope: sentence
+detector: regex
+conditions:
+  patterns:
+    - "«"
+  kinds: [paragraph, plain, list_item]
+default_level: "off"
+profiles: { chat: info, correo: info, readme: info, redes: info }
+score: { weight: 1, cap: 2 }
+message: "Comillas angulares."
+explanation: >-
+  Son las correctas en prosa editada, pero no están en el teclado y casi nadie las escribe en un mensaje o en un README.
+  Su presencia sistemática delata un texto pasado por un corrector o por una máquina.
+rewrite_guidance: Usa comillas normales.
+examples:
+  positive:
+    - { text: "Te pone «no legible» si no puede leerla.", expect: 1 }
+    - { text: "Me dijo «luego te llamo» y hasta hoy.", expect: 1 }
+  negative:
+    - { text: "Te pone \"no legible\" si no puede leerla.", expect: 0 }
+    - { text: "Me dijo que luego me llamaba y hasta hoy.", expect: 0 }
+provenance:
+  evidence: Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+  known_false_positives:
+    - Quien escribe con un teclado o un editor que las inserta solo.
+  reviewed_by: [jrollon]

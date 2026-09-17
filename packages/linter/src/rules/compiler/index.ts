@@ -35,7 +35,7 @@ export interface CompileResult {
   timings: Record<string, number>;
 }
 
-const PROFILE_NAMES: ProfileName[] = ["general", "tecnico", "academico", "marketing"];
+const PROFILE_NAMES: ProfileName[] = ["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"];
 
 export function loadLexicons(dir: string): Map<string, string[]> {
   const out = new Map<string, string[]>();
@@ -306,7 +306,9 @@ export function runFixtures(rule: CompiledRule, def: Pick<RuleDefinition, "examp
   const errors: string[] = [];
   const check = (kind: "positive" | "negative", ex: { text: string; expect: number; format?: "text" | "markdown"; note?: string }, i: number) => {
     const doc = buildDocument(ex.text, { format: ex.format ?? "text" });
-    const found = runRules(doc, [rule]).length;
+    // Las fixtures prueban el detector: una regla desactivada por defecto (solo activa en algún perfil) se evalúa igual.
+    const levels = rule.default_level === "off" ? { [rule.id]: "info" as const } : undefined;
+    const found = runRules(doc, [rule], levels ? { levels } : undefined).length;
     if (kind === "positive" && ex.expect === 0) errors.push(`examples.positive[${i}] debe esperar >= 1`);
     if (kind === "negative" && ex.expect !== 0) errors.push(`examples.negative[${i}] debe esperar 0`);
     if (found !== ex.expect) errors.push(`examples.${kind}[${i}]: esperados ${ex.expect}, encontrados ${found}${ex.note ? ` (${ex.note})` : ""}`);

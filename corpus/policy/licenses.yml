@@ -1,0 +1,29 @@
+# Licencias admitidas en el corpus (arquitectura §11.2). Debe coincidir con quality-policy.yml > corpus.allowed_licenses.
+schema_version: 1
+allowed: [public-domain, CC0-1.0, CC-BY-4.0]
+rejected:
+  - desconocida
+  - cualquier variante NC, ND o SA
+  - términos no revisados
+# Evidencia de licencia por fuente. `verified_per_record` indica qué comprueba fetch-human.mjs en cada descarga.
+sources:
+  boe:
+    license: public-domain
+    basis: "Art. 13 del TRLPI (RDL 1/1996): las disposiciones legales y reglamentarias no son objeto de propiedad intelectual."
+    evidence_url: "https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930"
+    verified_per_record: "rango normativo y fecha_publicacion del XML oficial"
+  sinc:
+    license: CC-BY-4.0
+    basis: "Licencia Creative Commons 4.0 de la agencia SINC (FECYT)."
+    evidence_url: "https://www.agenciasinc.es/Sobre-SINC/Licencia-CC"
+    verified_per_record: "«Fuente: SINC» y «Derechos: Creative Commons» en la página; datePublished del JSON-LD"
+  redc:
+    license: CC-BY-4.0
+    basis: "Revista Española de Documentación Científica (CSIC), acceso abierto."
+    evidence_url: "https://redc.revistas.csic.es/index.php/redc/about"
+    verified_per_record: "enlace creativecommons.org/licenses/by/4.0 en la página del artículo; citation_date; citation_language=es"
+  gutenberg:
+    license: public-domain
+    basis: "Autor fallecido antes de 1946 (80 años post mortem, DT 4.ª TRLPI); obra original en español, sin traductor."
+    evidence_url: "https://www.gutenberg.org/policy/license.html"
+    verified_per_record: "idioma es y año de fallecimiento del autor en el RDF de la obra; se elimina la cabecera y el pie de Project Gutenberg"

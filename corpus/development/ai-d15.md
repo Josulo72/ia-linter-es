@@ -1,0 +1,9 @@
+Después de casi dos semanas cuidando la masa madre como si fuera una mascota, por fin me he atrevido a hornear el primer pan de verdad y quería contaros cómo me ha salido, con sus cosas buenas y sus fallos incluidos, por si a alguien más que empieza le sirve de referencia.
+
+La masa madre la empecé desde cero con harina integral de centeno y agua, siguiendo uno de esos calendarios de alimentación diaria que circulan por aquí. Costó arrancar, los primeros días parecía que no pasaba nada y luego de repente empezó a burbujear con ganas. El día del amasado usé una mezcla de harina de fuerza y algo de integral, con una hidratación bastante alta para lo que estoy acostumbrado, creo que se me fue un poco de las manos en ese aspecto porque la masa quedó muy pegajosa y me costó horrores manejarla sin que se me quedara pegada a todo.
+
+El fermentado en bloque lo dejé unas cuatro horas a temperatura ambiente con un par de pliegues, y luego formado y a la nevera toda la noche para el fermentado en frío, que según he leído ayuda con el sabor y con la miga. A la hora de hornear metí una fuente con agua para generar vapor, algo que había visto recomendar mucho, y precalenté bien la olla de hierro que uso a modo de horno holandés.
+
+El resultado fue mitad victoria mitad lección aprendida. La corteza salió crujiente y con un color bonito, con esas grietas típicas que tanto me gustan visualmente, pero la miga quedó algo más densa y apretada de lo que esperaba, seguramente por falta de fuerza en el amasado o porque el fermentado en bloque se quedó corto para esa hidratación tan alta. El sabor, eso sí, sorprendentemente bueno, con ese puntito ácido suave que tanto se busca en este tipo de pan.
+
+Para el próximo intento pienso bajar un poco la hidratación y trabajar más el amasado con pliegues durante la fermentación. Si alguien tiene trucos para conseguir una miga más aireada sin perder ese sabor, se agradece cualquier consejo.

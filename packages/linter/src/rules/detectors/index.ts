@@ -289,7 +289,7 @@ function dedupeOverlaps(ms: RawMatch[]): RawMatch[] {
 
 /* ------------------------------------------------------------------ */
 /* structure: comprobaciones estructurales con nombre.                  */
-/* params: { kind: "triad"|"heading_colon"|"heading_title_case"|"sentence_length_cv"|"list_bold_lead"|"list_uniform_start", ... } */
+/* params: { kind: "triad"|"heading_colon"|"heading_title_case"|"sentence_length_cv"|"list_bold_lead"|"list_uniform_start"|"paragraph_bold_lead", ... } */
 /* ------------------------------------------------------------------ */
 const structure: Detector = (rule, doc) => {
   const p = rule.params as Record<string, unknown> & { kind: string };
@@ -369,6 +369,19 @@ const structure: Detector = (rule, doc) => {
         else flush();
       });
       flush();
+      return out;
+    }
+    case "paragraph_bold_lead": {
+      // Párrafos que abren con negrita a modo de titular. Un hallazgo por documento, en el primero.
+      const min = (p.min_count as number | undefined) ?? 2;
+      const hits: number[] = [];
+      doc.blocks.forEach((b, bi) => {
+        if (b.kind === "paragraph" && b.startsWithStrong) hits.push(bi);
+      });
+      if (hits.length >= min) {
+        const bi = hits[0]!;
+        out.push({ blockIndex: bi, start: 0, end: (doc.blocks[bi] as TextBlock).text.length, data: { count: hits.length } });
+      }
       return out;
     }
     case "list_uniform_start": {

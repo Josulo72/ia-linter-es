@@ -1,0 +1,30 @@
+schema_version: 1
+id: lexico/honestidad-anunciada
+revision: 1
+status: candidate
+title: Honestidad anunciada
+summary: Fórmulas que anuncian la propia franqueza («para ser honesto», «prefiero decirlo yo») en vez de limitarse a decir las cosas.
+category: lexico
+scope: sentence
+detector: lexicon
+conditions:
+  lexicon: honestidad-anunciada
+default_level: info
+score: { weight: 1.5, cap: 2 }
+message: "Honestidad anunciada: «{term}»."
+explanation: >-
+  Avisar de que se va a ser sincero es un gesto de cara a la galería. El texto generado lo hace mucho cuando
+  le piden sonar humano.
+rewrite_guidance: Borra el aviso y deja el dato.
+examples:
+  positive:
+    - { text: "Para ser honesto, el OCR todavía falla.", expect: 1 }
+    - { text: "Lo pongo por delante porque prefiero decirlo yo.", expect: 2 }
+  negative:
+    - { text: "El OCR todavía falla.", expect: 0 }
+    - { text: "Es un vendedor honesto y sincero.", expect: 0 }
+provenance:
+  evidence: Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+  known_false_positives:
+    - Conversación informal, donde «la verdad es que» es normal (no está en el léxico).
+  reviewed_by: [jrollon]

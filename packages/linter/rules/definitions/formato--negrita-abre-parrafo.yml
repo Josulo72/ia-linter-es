@@ -1,0 +1,31 @@
+schema_version: 1
+id: formato/negrita-abre-parrafo
+revision: 1
+status: candidate
+title: Párrafos que abren con negrita
+summary: Dos o más párrafos del documento empiezan con una frase en negrita a modo de titular.
+category: formato
+scope: block
+detector: structure
+conditions:
+  kind: paragraph_bold_lead
+  min_count: 2
+default_level: info
+score: { weight: 1.5, cap: 2 }
+message: "{count} párrafos abren con negrita."
+explanation: >-
+  El titular en negrita al principio de cada párrafo es maquetación de texto generado. Quien escribe a mano pone un
+  encabezado si hace falta, o nada.
+rewrite_guidance: Quita la negrita; si el párrafo necesita título, ponle un encabezado.
+examples:
+  positive:
+    - { text: "**Una cuota cero es un dato.** Las exentas llevan IVA cero.\n\n**Y si no es una factura, lo dice.** Un albarán se rechaza.", expect: 1, format: markdown }
+    - { text: "**Rápido.** Tarda un segundo.\n\n**Privado.** No sale de tu equipo.\n\n**Gratis.** Sin cuotas.", expect: 1, format: markdown }
+  negative:
+    - { text: "**Aviso.** Esto borra los datos.\n\nEl resto del documento no usa negritas al empezar.", expect: 0, format: markdown }
+    - { text: "Una cuota cero es un dato.\n\nY si no es una factura, lo dice.", expect: 0, format: markdown }
+provenance:
+  evidence: Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+  known_false_positives:
+    - Glosarios y preguntas frecuentes maquetados a propósito con el término en negrita.
+  reviewed_by: [jrollon]

@@ -96,7 +96,7 @@ if (only.includes("perf") && pack) {
 /* ---------------- Gate: índice (benchmark publicado) ---------------- */
 if (only.includes("index")) {
   console.log("Gate benchmark");
-  const rep = path.join(root, "benchmark", "reports", "holdout-v1.0.json");
+  const rep = path.join(root, "benchmark", "reports", "holdout-v1.1.json");
   if (!fs.existsSync(rep)) fail("falta benchmark/reports/holdout-v1.0.json");
   else {
     const r = JSON.parse(fs.readFileSync(rep, "utf8"));

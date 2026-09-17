@@ -1,0 +1,20 @@
+# Veto (arquitectura §11.5). Prohibido en reglas, calibración, ejemplos y benchmark.
+# scripts/corpus-check.mjs busca estos patrones (sin distinguir mayúsculas) en las rutas de `scan`.
+# Pueden citarse como trabajo relacionado solo en las rutas de `citation_allowed`.
+schema_version: 1
+vetoed:
+  - name: AuTexTification
+    patterns: ["autextification", "autextificacion", "symanto/autext"]
+  - name: IberAuTexTification
+    patterns: ["iberautextification", "iberautext"]
+includes: [forks, conversiones, derivados, copias sin trazabilidad]
+scan:
+  - corpus
+  - benchmark
+  - packages/linter/rules
+  - examples
+citation_allowed:
+  - corpus/policy/veto.yml
+  - packages/linter/rules/evidence/README.md
+# Toda muestra debe tener fuente trazable: una muestra humana sin `source_url` o una IA sin `prompt_id` se rechaza.
+require_traceability: true

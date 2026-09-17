@@ -1,0 +1,33 @@
+schema_version: 1
+id: formato/sentencia-dos-puntos
+revision: 1
+status: candidate
+title: Frase-sentencia con dos puntos
+summary: "Frase corta que se parte con dos puntos para rematar con efecto («un NIF no se adivina: se calcula»)."
+category: formato
+scope: sentence
+detector: regex
+conditions:
+  patterns:
+    - "(?:^|[.!?] )[^.!?:\\n]{10,70}: \\p{Ll}[^.!?:,\\n]{2,28}\\."
+  flags: "gu"
+  kinds: [paragraph, plain]
+default_level: info
+score: { weight: 1.5, cap: 3 }
+message: "Frase-sentencia con dos puntos: «{term}»."
+explanation: >-
+  Los dos puntos usados como redoble antes de un remate corto son un recurso de titular. Uno suelto no dice nada;
+  repetido cada pocos párrafos es una firma del texto generado.
+rewrite_guidance: Une las dos mitades en una frase normal o quita el remate.
+examples:
+  positive:
+    - { text: "Un NIF no se adivina: se calcula.", expect: 1 }
+    - { text: "Todo lo demás cuadra. La base es falsa y nadie la mira: ahí está el truco.", expect: 1 }
+  negative:
+    - { text: "Una cosa a tener en cuenta: el programa lo he ido arreglando con estas mismas facturas delante.", expect: 0 }
+    - { text: "Necesitas tres cosas: harina, agua y sal.", expect: 0 }
+provenance:
+  evidence: Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+  known_false_positives:
+    - "Definiciones breves de glosario («CIF: código de identificación fiscal.»)."
+  reviewed_by: [jrollon]

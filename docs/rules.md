@@ -1,6 +1,6 @@
 # Reglas oficiales
 
-Rule Pack `ia-linter-es/oficial` v1.0.0. 30 reglas compiladas.
+Rule Pack `ia-linter-es/oficial` v1.0.0. 37 reglas compiladas.
 
 | Regla | Estado | Categoría | Detector | Nivel | Peso |
 |---|---|---|---|---|---|
@@ -17,19 +17,26 @@ Rule Pack `ia-linter-es/oficial` v1.0.0. 30 reglas compiladas.
 | `estructura/enumeracion-ordinal` | stable | estructura | cooccurrence | info | 1.5 (cap 2) |
 | `estructura/lista-inicio-uniforme` | candidate | estructura | structure | info | 0.5 (cap 1) |
 | `estructura/longitud-uniforme` | stable | estructura | structure | info | 2 (cap 2) |
+| `estructura/ritmo-plano` | candidate | estructura | structure | off | 2 (cap 2) |
+| `formato/comillas-angulares` | candidate | formato | regex | off | 1 (cap 2) |
 | `formato/encabezado-title-case` | stable | formato | structure | info | 1.5 (cap 3) |
 | `formato/lista-negrita-inicial` | stable | formato | structure | info | 1.5 (cap 2) |
+| `formato/negrita-abre-parrafo` | candidate | formato | structure | info | 1.5 (cap 2) |
+| `formato/raya` | candidate | formato | regex | off | 1.5 (cap 3) |
 | `formato/raya-espaciada` | stable | formato | density | warning | 2 (cap 3) |
+| `formato/sentencia-dos-puntos` | candidate | formato | regex | info | 1.5 (cap 3) |
 | `lexico/actualidad-generica` | stable | lexico | lexicon | warning | 1.5 (cap 3) |
 | `lexico/desde-hasta-pasando` | stable | lexico | regex | info | 1.5 (cap 2) |
 | `lexico/es-importante-destacar` | stable | lexico | regex | warning | 2 (cap 3) |
+| `lexico/honestidad-anunciada` | candidate | lexico | lexicon | info | 1.5 (cap 2) |
 | `lexico/metaforas-comodin` | stable | lexico | lexicon | warning | 2 (cap 4) |
 | `lexico/muletillas-ia` | stable | lexico | lexicon | warning | 2 (cap 4) |
 | `lexico/ya-sea-enumeracion` | stable | lexico | sequence | info | 1 (cap 2) |
 | `repeticion/anafora` | stable | repeticion | repetition | warning | 2 (cap 3) |
 | `repeticion/inicio-parrafo` | stable | repeticion | repetition | info | 1.5 (cap 2) |
-| `repeticion/ngramas` | stable | repeticion | repetition | info | 1 (cap 3) |
+| `repeticion/ngramas` | candidate | repeticion | repetition | info | 1 (cap 3) |
 | `retorica/arenga-final` | stable | retorica | lexicon | warning | 1.5 (cap 3) |
+| `retorica/no-es-x-es-y` | candidate | retorica | regex | warning | 2 (cap 3) |
 | `retorica/no-se-trata-de` | stable | retorica | sequence | warning | 2 (cap 3) |
 | `retorica/no-solo-sino` | stable | retorica | sequence | warning | 1.5 (cap 3) |
 | `retorica/pregunta-retorica-apertura` | stable | retorica | regex | info | 1 (cap 3) |
@@ -276,6 +283,41 @@ La prosa humana alterna frases largas y cortas; la generada tiende a una longitu
 
 > Esta frase tiene una longitud media bastante normal. La siguiente frase mantiene una longitud parecida también. Otra frase más con el mismo número de palabras. Y seguimos con otra frase de longitud muy similar. Cada frase se parece mucho a la frase anterior. Nada cambia el ritmo de este párrafo tan regular. Las frases siguen y siguen con la misma medida. Ninguna es corta y ninguna es realmente larga. El lector nota una cadencia mecánica en el texto. Todo suena igual y nada llama la atención aquí. Así continúa el documento hasta su última frase. Y termina con otra frase de longitud media.
 
+## estructura/ritmo-plano
+
+**Ritmo plano en escritura cotidiana** — Todas las frases miden casi lo mismo. En un mensaje o un correo, quien escribe alterna frases largas y sueltas de tres palabras.
+
+Es la diferencia más clara entre un mensaje escrito por una persona y uno generado. En 18 mensajes de foro el coeficiente de variación mediano es 0,61; en 24 textos generados con el mismo encargo, 0,48. Con el umbral en 0,50 se marcan 14 de 24 textos generados y 3 de 18 humanos. El límite de `estructura/longitud-uniforme` (0,32) sirve para prosa editada larga y casi nunca salta en un texto corto.
+
+**Cómo reescribir:** Parte una frase larga en dos y deja alguna de tres o cuatro palabras. El ritmo se nota más que las palabras.
+
+**Evidencia:** 18 mensajes de foro y 24 textos generados del corpus v1.1 (development); ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Mensajes que enumeran datos o pasos, donde la uniformidad es funcional.
+- Textos de menos de ocho frases: la regla no se aplica.
+
+**Ejemplo:**
+
+> Ayer estuve mirando el tema del router en varias tiendas. Los precios varían bastante según el modelo. Me interesa sobre todo la cobertura en toda la casa. El piso tiene tres habitaciones y un pasillo largo. La señal se pierde justo al final del pasillo. He probado a cambiarlo de sitio sin mucho éxito. También he mirado los repetidores de la marca. Algunos comentarios dicen que funcionan regular. Otros dicen que van perfectos sin problemas. No sé muy bien a quién hacer caso.
+
+## formato/comillas-angulares
+
+**Comillas angulares en escritura cotidiana** — Comillas « » en un texto de registro cotidiano, donde lo normal son las comillas del teclado.
+
+Son las correctas en prosa editada, pero no están en el teclado y casi nadie las escribe en un mensaje o en un README. Su presencia sistemática delata un texto pasado por un corrector o por una máquina.
+
+**Cómo reescribir:** Usa comillas normales.
+
+**Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Quien escribe con un teclado o un editor que las inserta solo.
+
+**Ejemplo:**
+
+> Te pone «no legible» si no puede leerla.
+
 ## formato/encabezado-title-case
 
 **Encabezado con mayúsculas al estilo inglés** — Encabezado con todas las palabras plenas en mayúscula inicial («Cómo Elegir Tu Mejor Estrategia»).
@@ -315,6 +357,42 @@ El patrón «- **Concepto:** explicación» repetido en cada viñeta es el forma
 > - **Soporte:** responde.
 > 
 
+## formato/negrita-abre-parrafo
+
+**Párrafos que abren con negrita** — Dos o más párrafos del documento empiezan con una frase en negrita a modo de titular.
+
+El titular en negrita al principio de cada párrafo es maquetación de texto generado. Quien escribe a mano pone un encabezado si hace falta, o nada.
+
+**Cómo reescribir:** Quita la negrita; si el párrafo necesita título, ponle un encabezado.
+
+**Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Glosarios y preguntas frecuentes maquetados a propósito con el término en negrita.
+
+**Ejemplo:**
+
+> **Una cuota cero es un dato.** Las exentas llevan IVA cero.
+> 
+> **Y si no es una factura, lo dice.** Un albarán se rechaza.
+
+## formato/raya
+
+**Raya de inciso en escritura cotidiana** — Cualquier raya (—) en un texto de registro cotidiano.
+
+En un correo, un mensaje o un README casi nadie escribe rayas, porque no están en el teclado. La gente usa comas, paréntesis o parte la frase. En prosa editada la raya pegada es correcta, por eso la regla solo se activa en los perfiles cotidianos.
+
+**Cómo reescribir:** Cambia el inciso por comas o paréntesis, o parte la frase en dos.
+
+**Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Diálogo literario con raya.
+
+**Ejemplo:**
+
+> El programa —que es gratis— funciona sin conexión.
+
 ## formato/raya-espaciada
 
 **Raya con espacios a ambos lados** — Uso de « — » (raya con espacio a ambos lados, al modo inglés) dos o más veces en el documento.
@@ -331,6 +409,23 @@ En español la raya de inciso va pegada al inciso («la casa —la de antes— e
 **Ejemplo:**
 
 > El plan tiene tres fases — todas cortas — y un presupuesto — pequeño. Nada de lo anterior es nuevo, pero conviene repasarlo antes de la reunión de mañana con el equipo de ventas y con los responsables de las tres oficinas regionales del norte.
+
+## formato/sentencia-dos-puntos
+
+**Frase-sentencia con dos puntos** — Frase corta que se parte con dos puntos para rematar con efecto («un NIF no se adivina: se calcula»).
+
+Los dos puntos usados como redoble antes de un remate corto son un recurso de titular. Uno suelto no dice nada; repetido cada pocos párrafos es una firma del texto generado.
+
+**Cómo reescribir:** Une las dos mitades en una frase normal o quita el remate.
+
+**Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Definiciones breves de glosario («CIF: código de identificación fiscal.»).
+
+**Ejemplo:**
+
+> Un NIF no se adivina: se calcula.
 
 ## lexico/actualidad-generica
 
@@ -382,6 +477,23 @@ La fórmula presenta como importante lo que sigue sin justificar por qué. En pr
 **Ejemplo:**
 
 > Es importante destacar que el plazo termina en marzo.
+
+## lexico/honestidad-anunciada
+
+**Honestidad anunciada** — Fórmulas que anuncian la propia franqueza («para ser honesto», «prefiero decirlo yo») en vez de limitarse a decir las cosas.
+
+Avisar de que se va a ser sincero es un gesto de cara a la galería. El texto generado lo hace mucho cuando le piden sonar humano.
+
+**Cómo reescribir:** Borra el aviso y deja el dato.
+
+**Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Conversación informal, donde «la verdad es que» es normal (no está en el léxico).
+
+**Ejemplo:**
+
+> Para ser honesto, el OCR todavía falla.
 
 ## lexico/metaforas-comodin
 
@@ -509,6 +621,23 @@ El texto generado para marketing y autoayuda termina casi siempre con una llamad
 **Ejemplo:**
 
 > No esperes más: da el primer paso hoy.
+
+## retorica/no-es-x-es-y
+
+**Negación-redefinición «no es X, es Y»** — Niega algo que nadie había dicho para presentar lo propio como revelación («no es un gasto, es una inversión»).
+
+Es la fórmula más repetida del texto generado actual. Una persona la usa para corregir un dato concreto («Endesa no es distribuidora, es comercializadora»); la máquina, para dar solemnidad a cualquier frase.
+
+**Cómo reescribir:** Di directamente la segunda parte. «No es un gasto, es una inversión» → «Se amortiza en dos años».
+
+**Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Corrección real de un dato («no es distribuidora, es comercializadora»).
+
+**Ejemplo:**
+
+> Caminar no es un lujo, es una necesidad.
 
 ## retorica/no-se-trata-de
 

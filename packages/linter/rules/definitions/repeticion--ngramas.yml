@@ -1,7 +1,7 @@
 schema_version: 1
 id: repeticion/ngramas
 revision: 1
-status: stable
+status: candidate
 title: Secuencia de cuatro palabras repetida
 summary: Una misma secuencia de cuatro palabras aparece tres o más veces en el documento.
 category: repeticion

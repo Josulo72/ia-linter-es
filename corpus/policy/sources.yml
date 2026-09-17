@@ -1,0 +1,60 @@
+# Allowlist de la clase humana, por registro. Solo se descarga lo que aparece aquí.
+# Todas las fechas deben ser anteriores a `cutoff_date` (previo a la difusión de los LLM conversacionales).
+# Niveles (§11.3): H1 verificada (autor identificado), H2 alta confianza institucional. Los textos históricos van a challenge.
+schema_version: 1
+cutoff_date: "2022-11-30"
+words: { min: 350, max: 600 }
+records:
+  # ---------- BOE: preámbulos y exposiciones de motivos (institucional, H2) ----------
+  - { id: h-boe-01, source: boe, ref: BOE-A-2015-10565, register: institucional, level: H2, partition: development }
+  - { id: h-boe-02, source: boe, ref: BOE-A-2015-10566, register: institucional, level: H2, partition: development }
+  - { id: h-boe-03, source: boe, ref: BOE-A-2018-16673, register: institucional, level: H2, partition: development }
+  - { id: h-boe-04, source: boe, ref: BOE-A-2013-12887, register: institucional, level: H2, partition: development }
+  - { id: h-boe-05, source: boe, ref: BOE-A-2021-8447, register: institucional, level: H2, partition: development }
+  - { id: h-boe-06, source: boe, ref: BOE-A-2020-17264, register: institucional, level: H2, partition: development }
+  - { id: h-boe-07, source: boe, ref: BOE-A-2007-6115, register: institucional, level: H2, partition: development }
+  - { id: h-boe-08, source: boe, ref: BOE-A-2017-12902, register: institucional, level: H2, partition: holdout }
+  - { id: h-boe-09, source: boe, ref: BOE-A-2021-4628, register: institucional, level: H2, partition: holdout }
+  - { id: h-boe-10, source: boe, ref: BOE-A-2014-12328, register: institucional, level: H2, partition: holdout }
+  - { id: h-boe-11, source: boe, ref: BOE-A-2006-7899, register: institucional, level: H2, partition: holdout }
+  - { id: h-boe-12, source: boe, ref: BOE-A-2011-15623, register: institucional, level: H2, partition: holdout }
+  # ---------- SINC: noticias de redacción propia (periodistico, H2) ----------
+  - { id: h-sinc-01, source: sinc, ref: /Noticias/A-mas-aridez-menos-disponibilidad-de-micronutrientes-esenciales-para-la-vida, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-02, source: sinc, ref: /Noticias/Nacen-crecen-y-con-CRISPR-desaparecen-cucarachas-esteriles-para-acabar-con-las-plagas, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-03, source: sinc, ref: /Noticias/Las-tropas-de-asalto-de-Star-Wars-inspiran-el-nombre-de-nuevas-aranas, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-04, source: sinc, ref: /Noticias/Un-murcielago-cosmico-revolotea-en-la-constelacion-de-Orion, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-05, source: sinc, ref: /Noticias/Las-ceramicas-prehistoricas-reflejan-la-evolucion-del-cerebro, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-06, source: sinc, ref: /Noticias/Que-riesgo-de-recaida-tienen-los-pacientes-de-cancer-de-mama, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-07, source: sinc, ref: /Noticias/Un-posible-final-para-la-picadura-de-mosquito, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-08, source: sinc, ref: /Noticias/Jennifer-Doudna-presenta-una-nueva-herramienta-CRISPR-de-edicion-genetica, register: periodistico, level: H2, partition: development }
+  - { id: h-sinc-09, source: sinc, ref: /Noticias/El-demonio-de-Tasmania-podria-tener-la-clave-de-la-regresion-de-tumores, register: periodistico, level: H2, partition: holdout }
+  - { id: h-sinc-10, source: sinc, ref: /Noticias/Los-primeros-humanos-que-conquistaron-el-techo-del-mundo, register: periodistico, level: H2, partition: holdout }
+  - { id: h-sinc-11, source: sinc, ref: /Noticias/La-temperatura-en-los-Pirineos-ha-aumentado-un-30-mas-que-la-media-mundial, register: periodistico, level: H2, partition: holdout }
+  - { id: h-sinc-12, source: sinc, ref: /Noticias/El-queso-mas-antiguo-del-mundo-aparece-en-una-tumba-egipcia, register: periodistico, level: H2, partition: holdout }
+  - { id: h-sinc-13, source: sinc, ref: /Noticias/Un-gen-zombi-protege-a-los-elefantes-contra-el-cancer, register: periodistico, level: H2, partition: holdout }
+  - { id: h-sinc-14, source: sinc, ref: /Noticias/La-primera-fotografia-de-un-planeta-recien-nacido, register: periodistico, level: H2, partition: holdout }
+  # ---------- REDC (CSIC), vol. 42 (2019): introducciones de artículos (academico, H1) ----------
+  - { id: h-redc-01, source: redc, ref: "1029", register: academico, level: H1, partition: development }
+  - { id: h-redc-02, source: redc, ref: "1030", register: academico, level: H1, partition: development }
+  - { id: h-redc-03, source: redc, ref: "1031", register: academico, level: H1, partition: development }
+  - { id: h-redc-04, source: redc, ref: "1032", register: academico, level: H1, partition: development }
+  - { id: h-redc-05, source: redc, ref: "1033", register: academico, level: H1, partition: development }
+  - { id: h-redc-06, source: redc, ref: "1034", register: academico, level: H1, partition: development }
+  - { id: h-redc-07, source: redc, ref: "1036", register: academico, level: H1, partition: holdout }
+  - { id: h-redc-08, source: redc, ref: "1037", register: academico, level: H1, partition: holdout }
+  - { id: h-redc-09, source: redc, ref: "1038", register: academico, level: H1, partition: holdout }
+  - { id: h-redc-10, source: redc, ref: "1039", register: academico, level: H1, partition: holdout }
+  - { id: h-redc-11, source: redc, ref: "1040", register: academico, level: H1, partition: development }
+  - { id: h-redc-12, source: redc, ref: "1041", register: academico, level: H1, partition: holdout }
+  - { id: h-redc-13, source: redc, ref: "1042", register: academico, level: H1, partition: holdout }
+  - { id: h-redc-14, source: redc, ref: "1043", register: academico, level: H1, partition: holdout }
+  # ---------- Project Gutenberg: prosa histórica original en español (solo challenge, H1) ----------
+  - { id: h-gut-01, source: gutenberg, ref: "52597", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-02, source: gutenberg, ref: "78052", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-03, source: gutenberg, ref: "49836", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-04, source: gutenberg, ref: "15725", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-05, source: gutenberg, ref: "17013", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-06, source: gutenberg, ref: "13507", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-07, source: gutenberg, ref: "64974", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-08, source: gutenberg, ref: "25640", register: literario, level: H1, partition: challenge }
+  - { id: h-gut-09, source: gutenberg, ref: "17340", register: literario, level: H1, partition: challenge }

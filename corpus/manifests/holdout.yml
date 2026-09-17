@@ -1,0 +1,719 @@
+# Generado por benchmark/scripts/build-manifests.mjs. No editar a mano.
+schema_version: 1
+corpus_version: "1.1"
+partition: holdout
+samples:
+  - id: h-foro-me02
+    class: human
+    file: holdout/h-foro-me02.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/recomendacion-tele-barra-sonido-bf-664524#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-11-27
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 267
+    sha256: 8e42173722edf13c2f84114e2b7538c182d0138d1d273364c06548b938172b62
+    retrieved: 2026-09-17
+  - id: h-foro-me04
+    class: human
+    file: holdout/h-foro-me04.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/servicio-postal-publico-649314#18
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-04-14
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 163
+    sha256: b505ed4330f054ce26a352f89165765fc4b92682d8cc22262232c24eff19d0ea
+    retrieved: 2026-09-17
+  - id: h-foro-me06
+    class: human
+    file: holdout/h-foro-me06.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/menores-expuestos-red-caso-coquetes-636042#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-19
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 305
+    sha256: 1c8322e5c2685307a821967219d7bd34ecb8208c58fec488dea8b7a54b708d9b
+    retrieved: 2026-09-17
+  - id: h-foro-me08
+    class: human
+    file: holdout/h-foro-me08.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/mi-suegra-no-deja-mi-novia-duerma-conmigo-635912#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-17
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 180
+    sha256: 60d41a677ceb9a8dce933f2120a3fc9bae5c13b44c95c696c90df5a56dad0ba2
+    retrieved: 2026-09-17
+  - id: h-foro-me10
+    class: human
+    file: holdout/h-foro-me10.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/pillado-aeropuerto-bcn-medio-kilo-cocaina-635866#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-16
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 209
+    sha256: 1c7b7f158632dafce65b72058e7a331774c07fbc37749d75b0dea546170902a5
+    retrieved: 2026-09-17
+  - id: h-foro-me12
+    class: human
+    file: holdout/h-foro-me12.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/ataque-a-la-libertad-de-prensa-622536#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2018-12-14
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 269
+    sha256: 064020d63dc9b9da0715ddb44f519efa89d0aa4b387c2da08c6b2d85c82e61d1
+    retrieved: 2026-09-17
+  - id: h-foro-el02
+    class: human
+    file: holdout/h-foro-el02.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/juegos_y_consolas/solucion_cuando_te_banean-t279049.0.html#msg1373839
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2009-12-27
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 165
+    sha256: a76d0348abb7a80f0b470addc212e9de65b3035f1eaa39eb425ab1ecf24f1f9c
+    retrieved: 2026-09-17
+  - id: h-foro-el04
+    class: human
+    file: holdout/h-foro-el04.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/gnulinux/solucionado_pantalla_en_negro_tanto_con_ubuntu_1010_como_kubuntu_1004-t318144.0.html#msg1574504
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-01-30
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 170
+    sha256: a11b9d83d34c53b934c597abe49c26547fdcbe7ac3308d779bf693767be0279a
+    retrieved: 2026-09-17
+  - id: h-foro-el06
+    class: human
+    file: holdout/h-foro-el06.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/redes/problema_servidor_ftp_firezilla-t337133.0.html#msg1655619
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-08-24
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 251
+    sha256: 88b6a307535537c0db6b7f1081e083197d2a59b6f54528ce8adc12ace3651c7e
+    retrieved: 2026-09-17
+  - id: h-foro-el08
+    class: human
+    file: holdout/h-foro-el08.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/dudas_generales/extraer_editar_y_reemplazar_archivos_de_un_exe-t342718.0.html#msg1678308
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-10-26
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 224
+    sha256: 8ab65ab00e74159b2686473a13241e82e925b56839fca56fa765da0e6f773f3d
+    retrieved: 2026-09-17
+  - id: h-foro-el10
+    class: human
+    file: holdout/h-foro-el10.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/ingenieria_inversa/ayuda_con_programa_en_prueba-t355005.0.html#msg1723925
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2012-03-02
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 218
+    sha256: b4aee15b49c57948fe4d0507034efaa7e1155ef93eb8396c54c52209e868967d
+    retrieved: 2026-09-17
+  - id: h-foro-el12
+    class: human
+    file: holdout/h-foro-el12.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/desarrollo_web/migrar_una_web_trasladando_el_dominio_a_otro_servidor-t358356.0.html#msg1734280
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2012-04-08
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 203
+    sha256: 8fdfd3ef3176c85ab24eb4241278a6b4db55e3173a284cbf604a0e68acbd75d7
+    retrieved: 2026-09-17
+  - id: h-foro-in02
+    class: human
+    file: holdout/h-foro-in02.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/prever-heladas.112813/#post-1719413
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2020-04-03
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 201
+    sha256: 168f3e6cf4e4ce0fc3c2178e4b019cd36f6e08d25d5aca6f20dfb1599818a2e1
+    retrieved: 2026-09-17
+  - id: h-foro-in04
+    class: human
+    file: holdout/h-foro-in04.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/sembrar-muerdago-viscum-album.12584/#post-227815
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-12-01
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 183
+    sha256: 46c0ecac7621bbc950f4252c865926a68b1c82ce752630a119d6a60334e83d43
+    retrieved: 2026-09-17
+  - id: h-foro-in06
+    class: human
+    file: holdout/h-foro-in06.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/rellenar-jardinera.54239/#post-915266
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2016-05-29
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 265
+    sha256: 425d5ac956319405c2fdaaf842a9fa54bd194cdf7cb6b8800df3e544a923813e
+    retrieved: 2026-09-17
+  - id: h-foro-in08
+    class: human
+    file: holdout/h-foro-in08.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/sistema-de-riego-con-botellas-plasticas.31559/#post-643830
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2015-09-26
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 151
+    sha256: af9a8235cc11c12031999983c1e416093098d0758860a54d612c08446d634eca
+    retrieved: 2026-09-17
+  - id: h-foro-in10
+    class: human
+    file: holdout/h-foro-in10.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/riego-para-un-camellon.103860/#post-1600942
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2019-06-25
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 217
+    sha256: dc94bf95cdb5829ebf5f8de545b856f1dce2255e65c60945d5ad295503c703c9
+    retrieved: 2026-09-17
+  - id: h-foro-in12
+    class: human
+    file: holdout/h-foro-in12.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/que-sistema-usariais-de-riego-aqui.8314/#post-147553
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-10-22
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 203
+    sha256: c78341181ac6e266356df38a96e11d4fac352f1cfab1a409b418db834a73ec48
+    retrieved: 2026-09-17
+  - id: ai-h01
+    class: ai
+    file: holdout/ai-h01.md
+    register: cotidiano
+    theme: general
+    prompt_id: h01
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 222
+    sha256: 3530c4c67feb5707dcb339b1c62c77cb3cd9a70e5eb56c573aedc0b269997cf0
+  - id: ai-h02
+    class: ai
+    file: holdout/ai-h02.md
+    register: cotidiano
+    theme: general
+    prompt_id: h02
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 250
+    sha256: 8f132bc695ce3435ec7c032269d3bcff85fb60d786edcf9f0022019900ad1949
+  - id: ai-h03
+    class: ai
+    file: holdout/ai-h03.md
+    register: cotidiano
+    theme: general
+    prompt_id: h03
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 246
+    sha256: bb6cd717b6005393ea9876267214646c6038ad8a26e64897d58bd946752a85f0
+  - id: ai-h04
+    class: ai
+    file: holdout/ai-h04.md
+    register: cotidiano
+    theme: general
+    prompt_id: h04
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 270
+    sha256: f197defdf99060c0bbe819fe3f25e1d527e179920e953152076d6529cddc346e
+  - id: ai-h05
+    class: ai
+    file: holdout/ai-h05.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h05
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 259
+    sha256: 1ad20be1e68d8ab2acc9a4f2a4b81611a2892cdfb0d1d2b7842661a94f1333d8
+  - id: ai-h06
+    class: ai
+    file: holdout/ai-h06.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h06
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 263
+    sha256: 9f3a0e5788a64de4d38fadf25b59e813ad107885382853814a51b6a592964bd4
+  - id: ai-h07
+    class: ai
+    file: holdout/ai-h07.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h07
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 239
+    sha256: 62df62d9d7063d2024f34e34f69ab5a756a6714eb0617b809e610aa8f7659878
+  - id: ai-h08
+    class: ai
+    file: holdout/ai-h08.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h08
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 290
+    sha256: e5c494fa6c67cd66b0e75062d60fc451faf88c7dd18f57395d779bf8add3a9ff
+  - id: ai-h09
+    class: ai
+    file: holdout/ai-h09.md
+    register: cotidiano
+    theme: general
+    prompt_id: h09
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 278
+    sha256: 1b4c57a36fcbdb77c4419c310551b4f92b62a1b9e3e7a258f9acbc0f24204c36
+  - id: ai-h10
+    class: ai
+    file: holdout/ai-h10.md
+    register: cotidiano
+    theme: general
+    prompt_id: h10
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 301
+    sha256: 9f5506274a07bcae4703fbf2fa913fb491395614fed66deb6f8c6c3e13710a6e
+  - id: ai-h11
+    class: ai
+    file: holdout/ai-h11.md
+    register: cotidiano
+    theme: general
+    prompt_id: h11
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 286
+    sha256: e9fbc01e7613c331b48d20b87c41fc8a7de3b6ebc337607a9d336192c605ba6a
+  - id: ai-h12
+    class: ai
+    file: holdout/ai-h12.md
+    register: cotidiano
+    theme: general
+    prompt_id: h12
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 297
+    sha256: fc8cb0e0360a0f6e3751fc66e9223b988a0e5b9b63fe1a58dbd1950fa725a4df
+  - id: ai-h13
+    class: ai
+    file: holdout/ai-h13.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h13
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 276
+    sha256: a3d6bb24575cdda8ac6887a489a9a293e962bbc70a1ddc3b64457984a415eec7
+  - id: ai-h14
+    class: ai
+    file: holdout/ai-h14.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h14
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 316
+    sha256: 6b29d669ad831b90aab61ba0be46582f4ab21242323b5e444b9f5712a5cff225
+  - id: ai-h15
+    class: ai
+    file: holdout/ai-h15.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h15
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 315
+    sha256: edf8b0f3112eb25f0cafd6f11778064d5db1ce4578b344c9a275f6d2676aff0c
+  - id: ai-h16
+    class: ai
+    file: holdout/ai-h16.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h16
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 277
+    sha256: d47d82cd2cdc2363597b3aca7a40fe29a0753a0ba80afd928b6d1dfb53de2efa
+  - id: ai-h17
+    class: ai
+    file: holdout/ai-h17.md
+    register: cotidiano
+    theme: general
+    prompt_id: h17
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 310
+    sha256: 05f30f3fa13fb230d87a0bcbe17fbb82a1c59c9004a2801bf8f8252638c663ae
+  - id: ai-h18
+    class: ai
+    file: holdout/ai-h18.md
+    register: cotidiano
+    theme: general
+    prompt_id: h18
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 304
+    sha256: 2249d8a56d399edace06e00c8bd86177793b6408c949b343324dfa58aeb59cc1
+  - id: ai-h19
+    class: ai
+    file: holdout/ai-h19.md
+    register: cotidiano
+    theme: general
+    prompt_id: h19
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 274
+    sha256: 45ab3d99d46e29f1f4cedae6f5168839e926ff908f0d3dbd420b739c2eb08e76
+  - id: ai-h20
+    class: ai
+    file: holdout/ai-h20.md
+    register: cotidiano
+    theme: general
+    prompt_id: h20
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 316
+    sha256: 1d7abbeabba5cccd563d4de3261a72f826dc416a9697f3b92885c5efe8732cb2
+  - id: ai-h21
+    class: ai
+    file: holdout/ai-h21.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h21
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 299
+    sha256: 6972da579ac123405dddf47d7da374ece01569cee37e1db3249d988ba988137f
+  - id: ai-h22
+    class: ai
+    file: holdout/ai-h22.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h22
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 280
+    sha256: 32deb787583c4d96a06842f2cc0e02d65155f753ac4049932bf01d735ec65243
+  - id: ai-h23
+    class: ai
+    file: holdout/ai-h23.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h23
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 296
+    sha256: 2aa414d986f1315202fe5a963340fe9539a043cf6d573ddd437e85a732c5cb20
+  - id: ai-h24
+    class: ai
+    file: holdout/ai-h24.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h24
+    condition: base
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 312
+    sha256: c0fd8ba5563db251c60e4afeff8fc865ba4f76efe6a00b63c322685aa10501b1

@@ -1,0 +1,5 @@
+# Umbral del índice usado solo para evaluar separación en el benchmark (no es un veredicto de autoría).
+# v1.1 (corpus cotidiano): barrido en development con el perfil chat. La exactitud equilibrada es 0,604 con umbral 5
+# y 0,597 con umbral 12; se elige 12 porque a igualdad práctica marca la mitad de textos humanos (FPR 0,389 frente a 0,500).
+# Fijado el 2026-09-17, antes de ejecutar holdout. El informe v1.0 usaba 20 sobre prosa formal.
+index_threshold: 12

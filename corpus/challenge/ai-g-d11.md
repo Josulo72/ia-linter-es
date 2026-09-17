@@ -1,0 +1,7 @@
+A ver si me podéis echar una mano porque ya no sé qué hacer. Tengo un vecino arriba que hace ruido casi todas las noches, sobre todo entre las doce y la una, justo cuando ya estoy medio dormido. No es música ni fiestas, es más bien como arrastrar sillas, pasos fuertes y algo que suena a que deja caer cosas al suelo. Un par de veces he oído hasta que movía muebles a esas horas, no tengo ni idea de qué necesidad hay de hacer eso de madrugada.
+
+Ya he hablado con él dos veces, la primera muy educado y la segunda un poco más serio, y las dos veces me dijo que lo sentía y que lo tendría en cuenta, pero a los pocos días vuelve a las andadas. No sé si de verdad no se da cuenta del ruido que hace o si simplemente pasa del tema.
+
+He pensado en subir el aviso un peldaño, no sé si hablar con la comunidad, mandar un burofax o directamente llamar a la policía cuando pase, aunque esto último me da un poco de reparo porque tampoco quiero montar un pollo por algo que igual se soluciona hablando bien. También he leído que se puede pedir una mediación a través del ayuntamiento en algunos sitios, pero no sé si eso funciona de verdad o es perder el tiempo.
+
+Lo que tengo claro es que llevo así casi dos meses y empiezo a acumular sueño de verdad, y encima al día siguiente tengo que rendir en el trabajo. ¿Alguien ha pasado por algo parecido? Me interesa sobre todo si alguna vía os ha funcionado y cuál os ha resultado una pérdida de tiempo.

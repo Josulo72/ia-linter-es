@@ -1,0 +1,4 @@
+# Perfil chat: conversacion con confianza. Los tacos no se marcan ni se sugieren.
+# Frases cortas seguidas son normales aqui.
+rules:
+  estructura/longitud-uniforme: "off"

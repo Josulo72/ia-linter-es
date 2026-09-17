@@ -1,0 +1,7 @@
+Tengo una persiana en el dormitorio que se ha quedado atascada a medio bajar y no consigo moverla ni para arriba ni para abajo, así que os pido ayuda porque no tengo ni idea de por dónde tirar antes de llamar a alguien y que me cobren por algo que igual es una tontería.
+
+Es de las de cinta, no eléctrica, un enrollable normal de toda la vida con el cajetín de plástico arriba. Empezó a costar más de lo habitual hace un par de semanas, notaba resistencia al subirla, y esta mañana directamente se ha quedado clavada. La cinta sigue teniendo tensión, no está rota ni se ha salido del recogedor, así que descarto que sea eso, aunque igual me equivoco.
+
+He pensado que puede ser que se haya salido alguna lama de su sitio dentro del cajón de la persiana y esté haciendo tope, o que el eje donde se enrolla la cinta esté atascado por suciedad acumulada, porque la casa tiene ya sus años y no recuerdo que se haya revisado nunca esa persiana en concreto. También me pregunto si puede ser cosa del propio recogedor de la cinta, que a veces he notado que patina un poco al enrollar.
+
+¿Alguien ha tenido un problema parecido y sabe qué revisar primero sin tener que desmontar todo el cajetín a lo loco? Me gustaría intentar algo yo mismo antes de gastarme dinero en un técnico, aunque si al final no queda otra lo asumo. Cualquier pista sobre por dónde empezar a mirar, herramientas que pueda necesitar o señales que indiquen si el problema es la cinta, el eje o las lamas, se agradece un montón.

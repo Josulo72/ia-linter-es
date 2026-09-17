@@ -1,0 +1,615 @@
+# Generado por benchmark/scripts/fetch-foros.mjs. Los textos están solo en local; aquí quedan URL, fecha y hash.
+schema_version: 1
+samples:
+  - id: h-foro-me01
+    class: human
+    file: development/h-foro-me01.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/millon-berlineses-votan-expropiar-viviendas-grandes-inmobil-678065#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2021-09-29
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 223
+    sha256: 24e5f37eb892fb8bf43d48e0eeeddf7750ef0773595906cae794ee3a1b92115b
+    retrieved: 2026-09-17
+  - id: h-foro-me02
+    class: human
+    file: holdout/h-foro-me02.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/recomendacion-tele-barra-sonido-bf-664524#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-11-27
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 267
+    sha256: 8e42173722edf13c2f84114e2b7538c182d0138d1d273364c06548b938172b62
+    retrieved: 2026-09-17
+  - id: h-foro-me03
+    class: human
+    file: development/h-foro-me03.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/certificado-profesionalidad-crees-664312#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-11-25
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 211
+    sha256: 59fcd0a9a74a233e15333978f88618e6d42a61fef1ef7e86b0d3268cb1a33cfe
+    retrieved: 2026-09-17
+  - id: h-foro-me04
+    class: human
+    file: holdout/h-foro-me04.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/servicio-postal-publico-649314#18
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-04-14
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 163
+    sha256: b505ed4330f054ce26a352f89165765fc4b92682d8cc22262232c24eff19d0ea
+    retrieved: 2026-09-17
+  - id: h-foro-me05
+    class: human
+    file: development/h-foro-me05.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/ayuda-650940#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-04-13
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 234
+    sha256: 32065fbe041097dd54d3e7299c5252f60d906f92714cada017d762cf678248f2
+    retrieved: 2026-09-17
+  - id: h-foro-me06
+    class: human
+    file: holdout/h-foro-me06.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/menores-expuestos-red-caso-coquetes-636042#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-19
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 305
+    sha256: 1c8322e5c2685307a821967219d7bd34ecb8208c58fec488dea8b7a54b708d9b
+    retrieved: 2026-09-17
+  - id: h-foro-me07
+    class: human
+    file: development/h-foro-me07.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/depravada-agrede-sexualmente-futbolista-gignac-meto-masculi-635984#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-18
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 239
+    sha256: 5f89f4dff7efbacfa1c2debc60e2cd264c211b49f769c362a69e38c6a12d3702
+    retrieved: 2026-09-17
+  - id: h-foro-me08
+    class: human
+    file: holdout/h-foro-me08.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/mi-suegra-no-deja-mi-novia-duerma-conmigo-635912#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-17
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 180
+    sha256: 60d41a677ceb9a8dce933f2120a3fc9bae5c13b44c95c696c90df5a56dad0ba2
+    retrieved: 2026-09-17
+  - id: h-foro-me09
+    class: human
+    file: development/h-foro-me09.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/tengo-envidia-mi-hija-no-dejo-empotre-novio-635913#8
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-17
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 167
+    sha256: 3c08b092f503297254a80fd47e2bc9770b9336a7e8c123e7d54a07527b196cca
+    retrieved: 2026-09-17
+  - id: h-foro-me10
+    class: human
+    file: holdout/h-foro-me10.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/pillado-aeropuerto-bcn-medio-kilo-cocaina-635866#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-16
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 209
+    sha256: 1c7b7f158632dafce65b72058e7a331774c07fbc37749d75b0dea546170902a5
+    retrieved: 2026-09-17
+  - id: h-foro-me11
+    class: human
+    file: development/h-foro-me11.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/gamer-twitch-viola-novia-vivo-18-635826#18
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-16
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 207
+    sha256: 6bdb5bbc6f4424171f58e4aa519921b109b9972a3857826c887bc017375ea54b
+    retrieved: 2026-09-17
+  - id: h-foro-me12
+    class: human
+    file: holdout/h-foro-me12.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/ataque-a-la-libertad-de-prensa-622536#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2018-12-14
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 269
+    sha256: 064020d63dc9b9da0715ddb44f519efa89d0aa4b387c2da08c6b2d85c82e61d1
+    retrieved: 2026-09-17
+  - id: h-foro-el01
+    class: human
+    file: development/h-foro-el01.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/sugerencias_y_dudas_sobre_el_foro/porq_no_existe_un_subforo_de_delphi-t253358.0.html#msg1225766
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2009-04-30
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 198
+    sha256: 01cb83516d268148ff3a5a8886560887b15b4e43a2729ff5248049c8b0b7ab4a
+    retrieved: 2026-09-17
+  - id: h-foro-el02
+    class: human
+    file: holdout/h-foro-el02.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/juegos_y_consolas/solucion_cuando_te_banean-t279049.0.html#msg1373839
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2009-12-27
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 165
+    sha256: a76d0348abb7a80f0b470addc212e9de65b3035f1eaa39eb425ab1ecf24f1f9c
+    retrieved: 2026-09-17
+  - id: h-foro-el03
+    class: human
+    file: development/h-foro-el03.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/hardware/vga_cooler_calienta_la_fuentesolucionlamina_de_carton_enmedioiquestque_opinais-t293570.0.html#msg1453577
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2010-05-15
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 213
+    sha256: d74a931dc9144e76bffbc9d3c022ea90e6d010d5f862301b496c8452f87f430e
+    retrieved: 2026-09-17
+  - id: h-foro-el04
+    class: human
+    file: holdout/h-foro-el04.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/gnulinux/solucionado_pantalla_en_negro_tanto_con_ubuntu_1010_como_kubuntu_1004-t318144.0.html#msg1574504
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-01-30
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 170
+    sha256: a11b9d83d34c53b934c597abe49c26547fdcbe7ac3308d779bf693767be0279a
+    retrieved: 2026-09-17
+  - id: h-foro-el05
+    class: human
+    file: development/h-foro-el05.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/dudas_generales/iquestcomo_puedo_romper_una_memoria_usb-t324846.0.html#msg1603631
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-04-16
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 174
+    sha256: 5fc38f5c633507430667460091f0d3a11cf024129385912c72af37b5f0acc6a3
+    retrieved: 2026-09-17
+  - id: h-foro-el06
+    class: human
+    file: holdout/h-foro-el06.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/redes/problema_servidor_ftp_firezilla-t337133.0.html#msg1655619
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-08-24
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 251
+    sha256: 88b6a307535537c0db6b7f1081e083197d2a59b6f54528ce8adc12ace3651c7e
+    retrieved: 2026-09-17
+  - id: h-foro-el07
+    class: human
+    file: development/h-foro-el07.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/seguridad/antivirus_me_da_los_mismos_riesgos_para_el_pc-t341601.0.html#msg1673074
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-10-13
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 152
+    sha256: 4b44e7e6b7ee8678d1e71542d2395f99241bf255c40077a9f2d037ee1538017b
+    retrieved: 2026-09-17
+  - id: h-foro-el08
+    class: human
+    file: holdout/h-foro-el08.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/dudas_generales/extraer_editar_y_reemplazar_archivos_de_un_exe-t342718.0.html#msg1678308
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-10-26
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 224
+    sha256: 8ab65ab00e74159b2686473a13241e82e925b56839fca56fa765da0e6f773f3d
+    retrieved: 2026-09-17
+  - id: h-foro-el09
+    class: human
+    file: development/h-foro-el09.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/dudas_generales/me_consume_los_gb_al_mirar_online-t344952.0.html#msg1686125
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-11-21
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 154
+    sha256: 89656902663944e921e5b4374bb6b3076f3200e6a259463dd68cb6f9df15e0fc
+    retrieved: 2026-09-17
+  - id: h-foro-el10
+    class: human
+    file: holdout/h-foro-el10.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/ingenieria_inversa/ayuda_con_programa_en_prueba-t355005.0.html#msg1723925
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2012-03-02
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 218
+    sha256: b4aee15b49c57948fe4d0507034efaa7e1155ef93eb8396c54c52209e868967d
+    retrieved: 2026-09-17
+  - id: h-foro-el11
+    class: human
+    file: development/h-foro-el11.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/scripting/programa_para_crear_un_fichero_nuevo_al_q_s_le_anada_el_texto_contenido_en_otros-t357239.0.html#msg1730569
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2012-03-22
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 307
+    sha256: 3ce5ae6ee35af84f9a0171467b573686bd66e7a818b9e9ea50df381b8545b67c
+    retrieved: 2026-09-17
+  - id: h-foro-el12
+    class: human
+    file: holdout/h-foro-el12.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/desarrollo_web/migrar_una_web_trasladando_el_dominio_a_otro_servidor-t358356.0.html#msg1734280
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2012-04-08
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 203
+    sha256: 8fdfd3ef3176c85ab24eb4241278a6b4db55e3173a284cbf604a0e68acbd75d7
+    retrieved: 2026-09-17
+  - id: h-foro-in01
+    class: human
+    file: development/h-foro-in01.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/hojas-de-bambu-como-acolchado.113765/#post-1731266
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2020-04-23
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 168
+    sha256: f04a726c51b68e2ef5eb4aaf461826bf2f53cea779c19c807c81373e3b703f43
+    retrieved: 2026-09-17
+  - id: h-foro-in02
+    class: human
+    file: holdout/h-foro-in02.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/prever-heladas.112813/#post-1719413
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2020-04-03
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 201
+    sha256: 168f3e6cf4e4ce0fc3c2178e4b019cd36f6e08d25d5aca6f20dfb1599818a2e1
+    retrieved: 2026-09-17
+  - id: h-foro-in03
+    class: human
+    file: development/h-foro-in03.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/no-crece-nada-debajo-de-callistemon.112932/#post-1718548
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2020-04-05
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 220
+    sha256: 0a38f8823cd0c1ffaeeb1466362e5405f2bbeb7458b247b5d8cc012f1f43f5e3
+    retrieved: 2026-09-17
+  - id: h-foro-in04
+    class: human
+    file: holdout/h-foro-in04.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/sembrar-muerdago-viscum-album.12584/#post-227815
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-12-01
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 183
+    sha256: 46c0ecac7621bbc950f4252c865926a68b1c82ce752630a119d6a60334e83d43
+    retrieved: 2026-09-17
+  - id: h-foro-in05
+    class: human
+    file: development/h-foro-in05.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/compatibilidad-entre-especies.12352/#post-223155
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-11-28
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 234
+    sha256: 6e4ac7fc9683836f2066fa948cd99ed7b2417c05f8489831fd998c1e6da58b0c
+    retrieved: 2026-09-17
+  - id: h-foro-in06
+    class: human
+    file: holdout/h-foro-in06.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/rellenar-jardinera.54239/#post-915266
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2016-05-29
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 265
+    sha256: 425d5ac956319405c2fdaaf842a9fa54bd194cdf7cb6b8800df3e544a923813e
+    retrieved: 2026-09-17
+  - id: h-foro-in07
+    class: human
+    file: development/h-foro-in07.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/dos-plantas-en-una-misma-maceta.50249/#post-861230
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2016-04-07
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 185
+    sha256: 9d2af895905f6816210fc39e6a83169890cd0d2e082669ce92b7f308c8d0b8b1
+    retrieved: 2026-09-17
+  - id: h-foro-in08
+    class: human
+    file: holdout/h-foro-in08.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/sistema-de-riego-con-botellas-plasticas.31559/#post-643830
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2015-09-26
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 151
+    sha256: af9a8235cc11c12031999983c1e416093098d0758860a54d612c08446d634eca
+    retrieved: 2026-09-17
+  - id: h-foro-in09
+    class: human
+    file: development/h-foro-in09.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/como-sanar-tierra.101202/#post-1568553
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2019-04-21
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 155
+    sha256: 0ad24353c59edb1b5d9719d0a9c5137da38c2082e3e18684bb3d698410ac8a38
+    retrieved: 2026-09-17
+  - id: h-foro-in10
+    class: human
+    file: holdout/h-foro-in10.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/riego-para-un-camellon.103860/#post-1600942
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2019-06-25
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 217
+    sha256: dc94bf95cdb5829ebf5f8de545b856f1dce2255e65c60945d5ad295503c703c9
+    retrieved: 2026-09-17
+  - id: h-foro-in11
+    class: human
+    file: development/h-foro-in11.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/ayuda-primer-sistema-de-riego-automatico.9643/#post-172052
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-11-10
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 178
+    sha256: 39d7f98d99f036687090ecc918f076329fc93856bf184d300ab9d7df6cdf9cd2
+    retrieved: 2026-09-17
+  - id: h-foro-in12
+    class: human
+    file: holdout/h-foro-in12.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/que-sistema-usariais-de-riego-aqui.8314/#post-147553
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-10-22
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 203
+    sha256: c78341181ac6e266356df38a96e11d4fac352f1cfab1a409b418db834a73ec48
+    retrieved: 2026-09-17

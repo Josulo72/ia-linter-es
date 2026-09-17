@@ -1,0 +1,64 @@
+# Adjudicación de hallazgos en development. Revisor único (la IA ejecutora), 2026-09-17.
+# Criterio: «correct» = el patrón que describe la regla está realmente presente y es el caso editorial que la regla quiere señalar,
+# con independencia de quién escribió el texto. «incorrect» = coincidencia formal que no es ese caso (término jurídico o técnico fijo,
+# cita normativa, nombre común de una especie, enumeración de ejemplos concretos).
+# Las reglas estadísticas (longitud-uniforme, densidades) se adjudican como correctas por construcción.
+schema_version: 1
+reviewers: 1
+adjudications:
+  "h-boe-01|repeticion/ngramas|da82817e6b196f7f48e3a17e": incorrect  # de las Administraciones Públicas
+  "h-boe-01|repeticion/ngramas|137e69c68fa7f4ee0e5246c6": incorrect  # las relaciones «ad extra
+  "h-boe-02|repeticion/ngramas|a1658d38a30fbe5d92ced955": incorrect  # de las Administraciones Públicas
+  "h-boe-02|repeticion/ngramas|7c74972a83d98974787a2478": incorrect  # Ley 30/1992, de 26 de noviembre
+  "h-boe-02|retorica/triada|86128e3c92b80478d4c33cb9": correct  # sistemático, coherente y ordenado
+  "h-boe-03|repeticion/ngramas|665da0295c1722baf625feb2": incorrect  # protección de las personas
+  "h-boe-03|repeticion/ngramas|161bb75bab7c2f15e8288951": incorrect  # tratamiento de datos personales
+  "h-boe-03|densidad/adjetivos-grandilocuentes|8c77fb131b69723e4e8c1ccb": incorrect  # fundamental
+  "h-boe-03|repeticion/ngramas|16d158492c860fed89ccf99a": incorrect  # derecho fundamental a la
+  "h-boe-04|lexico/actualidad-generica|390b94389ff5efa7db8c021e": correct  # en la actualidad
+  "h-boe-05|repeticion/ngramas|adcfd2babb76686d6e1f0e45": incorrect  # de emisiones de gases
+  "h-boe-05|retorica/no-solo-sino|02fe6e0aee536534b552358e": correct  # no solamente los Gobiernos, sino
+  "h-boe-06|repeticion/ngramas|055356ba5e706b66a198899a": incorrect  # Ley Orgánica 2/2006, de 3 de
+  "h-boe-06|lexico/actualidad-generica|aa8e7ec27ecfb00339a3ad8d": correct  # en la actualidad
+  "h-boe-07|repeticion/ngramas|64899ba098da07a3f5854bdd": incorrect  # entre mujeres y hombres
+  "h-boe-07|repeticion/ngramas|45dd650fb9425593906fc4af": incorrect  # de igualdad de trato
+  "h-boe-07|retorica/triada|7522a216dc8aefb2015fcb88": correct  # social, cultural y económica
+  "h-sinc-03|repeticion/ngramas|3ebc6d2c2a140203c1aabb46": incorrect  # arañas de patas calvas
+  "h-sinc-03|retorica/no-solo-sino|00acd387dd4136d8cfb152fe": correct  # No solo confirmaron su presencia en Colombia, sino
+  "h-sinc-04|estructura/longitud-uniforme|d7fd03cf0e477c013914f071": correct  # En uno de los rincones más oscuros de la constelación de Ori
+  "h-sinc-05|retorica/pregunta-retorica-apertura|99780b5bf9c30cb53bc15d86": correct  # ¿Cómo percibían el mundo nuestros antepasados hace 6.000 año
+  "h-sinc-07|lexico/muletillas-ia|88516e09cb68cfa8498bce98": correct  # un antes y un después
+  "h-redc-01|retorica/triada|02727b6566d28c41a0590333": correct  # producción, visibilidad y proyección
+  "h-redc-03|retorica/triada|35f15e2359a5ce61fd00ab34": correct  # ajustar, generar e implementar
+  "h-redc-03|repeticion/ngramas|01d401ca57828baa88056fc6": incorrect  # de la colaboración internacional
+  "h-redc-04|lexico/muletillas-ia|0daee51cf622cbc7c844058a": correct  # juega un papel esencial
+  "h-redc-04|retorica/triada|850ba3e2bedaad34e285be93": correct  # sociales, económicos y culturales
+  "h-redc-04|lexico/actualidad-generica|4d5cad25200bed0d66f57762": correct  # hoy en día
+  "h-redc-04|repeticion/ngramas|43fc707b3d4ed8eda8aadf51": incorrect  # la divulgación de información
+  "h-redc-11|estructura/longitud-uniforme|da2d8057845e8ee9490aa9f6": correct  # Una de las mayores amenazas para las empresas es el constant
+  "h-redc-11|lexico/actualidad-generica|cdbcceabd0f0f5b7b1f4c98d": correct  # En la actualidad
+  "h-redc-11|lexico/muletillas-ia|4ae1cd7b56dbba2400f31d0c": correct  # un amplio abanico de
+  "h-redc-11|retorica/triada|5408b6f3c7473a08e0aa1e3d": correct  # recopilar, procesar y analizar
+  "h-redc-11|retorica/triada|51799bc3518d1850e2f109ab": correct  # interpretar, predecir y responder
+  "ai-d01|densidad/adverbios-mente|a2436e262b33251efd16dc82": correct  # Finalmente
+  "ai-d02|lexico/muletillas-ia|bb968884155b01450e7b3055": correct  # a lo largo de la historia
+  "ai-d04|retorica/triada|94c553ba963e4e844fd520c1": incorrect  # lechuga, espinaca o menta
+  "ai-d04|retorica/arenga-final|34a8cfccc03b6e71b08db304": correct  # El éxito está
+  "ai-d05|formato/lista-negrita-inicial|ac1ce21c723e4feacc435125": correct  # Validación por tipos**: enteros, decimales, cadenas, fechas 
+  "ai-d06|estructura/encabezado-dos-puntos|7d9d551c4743e68ce1dd55a4": correct  # Antes de elegir la frecuencia: RPO y RTO
+  "ai-d06|formato/lista-negrita-inicial|7863fed4f50ae035d3b83cbb": correct  # Completa semanal**, en fin de semana o de madrugada del vier
+  "ai-d08|estructura/encabezado-dos-puntos|d15b5ab3911e1a824089fdf8": correct  # Contenedores frente a máquinas virtuales: ventajas e inconve
+  "ai-d08|formato/lista-negrita-inicial|c4654b527aee7c35a833e810": correct  # Ligereza**: al no incluir un sistema operativo completo, una
+  "ai-d08|formato/lista-negrita-inicial|e5f346fb67b617bb36daf697": correct  # Aislamiento fuerte**: al tener su propio kernel, una VM ofre
+  "ai-d09|retorica/triada|deba85d4aaebbcb63e50d411": correct  # residencial, comercial y simbólica
+  "ai-d10|retorica/triada|252000ea300cb0803eaff013": correct  # afectivas, cognitivas y contextuales
+  "ai-d11|retorica/no-se-trata-de|c074e1833b3d0bc3492176bc": correct  # No se trata únicamente de un problema demográfico o de servi
+  "ai-d11|densidad/adverbios-mente|caea46014588114fd9d67f1e": correct  # probablemente
+  "ai-d11|retorica/triada|55eba1a37ad725e76d1bf9a1": correct  # económicas, territoriales y sociales
+  "ai-d12|formato/raya-espaciada|b1a2fdd0d12326e34450749f": correct  # —
+  "ai-d13|retorica/pregunta-retorica-apertura|58b673a824724a3020acbc5f": correct  # ¿Has pensado alguna vez en mejorar tus habilidades de fotogr
+  "ai-d18|estructura/encabezado-dos-puntos|008d19419e300b4fe04b8ef7": correct  # El móvil en clase: prohibirlo no es retroceder
+  "ai-d20|estructura/longitud-uniforme|8743744e89ff975846abb693": correct  # NOTA INFORMATIVA
+  "ai-d20|repeticion/inicio-parrafo|97a7a438d3c748faeea3c4b9": correct  # El Ayuntamiento pone en marcha una nueva campaña para impuls
+  "ai-d21|retorica/triada|912708adb7ea27df58648bed": correct  # ambiental, económica y organizativa
+  "ai-d21|retorica/triada|f9712f58851c20322df109e5": correct  # sociales, económicos e institucionales

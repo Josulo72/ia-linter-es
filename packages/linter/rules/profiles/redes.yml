@@ -1,0 +1,6 @@
+# Perfil redes: publicaciones personales. Frases muy cortas y varias seguidas son lo normal; tolera emojis y exclamaciones.
+rules:
+  estructura/longitud-uniforme: "off"
+  densidad/exclamaciones: "off"
+  densidad/emojis: "off"
+  retorica/arenga-final: error

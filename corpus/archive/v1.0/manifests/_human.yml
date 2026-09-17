@@ -1,0 +1,731 @@
+# Generado por benchmark/scripts/fetch-human.mjs. No editar a mano.
+schema_version: 1
+samples:
+  - id: h-boe-01
+    class: human
+    file: development/h-boe-01.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2015-10565
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2015-10-02
+    title: Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 492
+    sha256: 24c319d7ffc3d8422ac7ebb0fe9963e9289b861ef8400591d4fd9a4b7989cf68
+    retrieved: 2026-09-17
+  - id: h-boe-02
+    class: human
+    file: development/h-boe-02.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2015-10566
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2015-10-02
+    title: Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 546
+    sha256: 5196b2a13294e4412570a80ef2371470401b8050aaf56a385d75a4d66a7508d3
+    retrieved: 2026-09-17
+  - id: h-boe-03
+    class: human
+    file: development/h-boe-03.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2018-16673
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2018-12-06
+    title: Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 451
+    sha256: 7a8dce8fc42ac23aabac7cb2a8fe8666e31fdc8efde0e7722b8cb51d33d81a35
+    retrieved: 2026-09-17
+  - id: h-boe-04
+    class: human
+    file: development/h-boe-04.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2013-12887
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2013-12-10
+    title: Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 488
+    sha256: 7cdebe203ae226d64d63c2b499ca8e6853e31d9a3b3bd2b87910bbc7c7830f8b
+    retrieved: 2026-09-17
+  - id: h-boe-05
+    class: human
+    file: development/h-boe-05.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2021-8447
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2021-05-21
+    title: Ley 7/2021, de 20 de mayo, de cambio climático y transición energética.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 513
+    sha256: 66ff3419b7310ee5f0baae1902bc3348d2b8b5c7ecb42efcdacb03b4db62545c
+    retrieved: 2026-09-17
+  - id: h-boe-06
+    class: human
+    file: development/h-boe-06.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2020-17264
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2020-12-30
+    title: Ley Orgánica 3/2020, de 29 de diciembre, por la que se modifica la Ley Orgánica 2/2006, de 3 de mayo, de Educación.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 504
+    sha256: 09c17b8e250972d2a48569487dd9c64c751d6b44cdce9355c532e3e904ca5a40
+    retrieved: 2026-09-17
+  - id: h-boe-07
+    class: human
+    file: development/h-boe-07.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2007-6115
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2007-03-23
+    title: Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 523
+    sha256: 1e7270e043b0fd564957d2c22e181a3801c562bf24598777b6f6637c52e76c14
+    retrieved: 2026-09-17
+  - id: h-boe-08
+    class: human
+    file: holdout/h-boe-08.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2017-12902
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2017-11-09
+    title: Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 500
+    sha256: 0c910bf21cd7c198b4d6ef456cc26b5493da2a9a54bf2191233d27f27721b450
+    retrieved: 2026-09-17
+  - id: h-boe-09
+    class: human
+    file: holdout/h-boe-09.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2021-4628
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2021-03-25
+    title: Ley Orgánica 3/2021, de 24 de marzo, de regulación de la eutanasia.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 589
+    sha256: ec40b366a7c5b0f8e1a1451d8b272d8ceea2344cfc8b0f7a9bc91f63022765a6
+    retrieved: 2026-09-17
+  - id: h-boe-10
+    class: human
+    file: holdout/h-boe-10.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2014-12328
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2014-11-28
+    title: Ley 27/2014, de 27 de noviembre, del Impuesto sobre Sociedades.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 473
+    sha256: e448e8affd7195f936e17b3ad1f9a1d1a008739a84161c9085a45944cef3ecbc
+    retrieved: 2026-09-17
+  - id: h-boe-11
+    class: human
+    file: holdout/h-boe-11.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2006-7899
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2006-05-04
+    title: Ley Orgánica 2/2006, de 3 de mayo, de Educación.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 491
+    sha256: bd1ca6132bb71bd6e74eedc31009c780ca4b866601ca120279e128634975aa1a
+    retrieved: 2026-09-17
+  - id: h-boe-12
+    class: human
+    file: holdout/h-boe-12.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2011-15623
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2011-10-05
+    title: Ley 33/2011, de 4 de octubre, General de Salud Pública.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 488
+    sha256: e0c470315cf49a2257069c3d617554fcdf52593fa0e564002598c1a4b17ffe06
+    retrieved: 2026-09-17
+  - id: h-sinc-01
+    class: human
+    file: development/h-sinc-01.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/A-mas-aridez-menos-disponibilidad-de-micronutrientes-esenciales-para-la-vida
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-04-02
+    title: A más aridez, menos disponibilidad de micronutrientes esenciales para la vida
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 451
+    sha256: 0ed06964de05265f21ac9710c752b32de3a2931a3af209bda01eadf36a205b5c
+    retrieved: 2026-09-17
+  - id: h-sinc-02
+    class: human
+    file: development/h-sinc-02.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Nacen-crecen-y-con-CRISPR-desaparecen-cucarachas-esteriles-para-acabar-con-las-plagas
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-17
+    title: "Nacen, crecen y con CRISPR desaparecen: cucarachas estériles para acabar con las plagas"
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 455
+    sha256: 47e91c42be0dcbdba12a1d5da26063d97795ba5c0b911e4b7970bb3f7fec5c04
+    retrieved: 2026-09-17
+  - id: h-sinc-03
+    class: human
+    file: development/h-sinc-03.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Las-tropas-de-asalto-de-Star-Wars-inspiran-el-nombre-de-nuevas-aranas
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-14
+    title: Las tropas de asalto de ‘Star Wars’ inspiran el nombre de nuevas arañas
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 456
+    sha256: aba39d371f456fb0eed2894932a90f181aabd4c591894f38fe154e8c75813e16
+    retrieved: 2026-09-17
+  - id: h-sinc-04
+    class: human
+    file: development/h-sinc-04.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Un-murcielago-cosmico-revolotea-en-la-constelacion-de-Orion
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-14
+    title: Un murciélago cósmico ‘revolotea’ en la constelación de Orión
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 462
+    sha256: 5e809467d56c520ab39db2aa3340ec41b4981f504edd2d3c2e414175f7371384
+    retrieved: 2026-09-17
+  - id: h-sinc-05
+    class: human
+    file: development/h-sinc-05.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Las-ceramicas-prehistoricas-reflejan-la-evolucion-del-cerebro
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-14
+    title: Las cerámicas prehistóricas reflejan la evolución del cerebro
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 502
+    sha256: ee49d7baaac54bb5706d0f2f7ee28d5560bf3b4db5de8986b8140909a1b11662
+    retrieved: 2026-09-17
+  - id: h-sinc-06
+    class: human
+    file: development/h-sinc-06.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Que-riesgo-de-recaida-tienen-los-pacientes-de-cancer-de-mama
+    license: CC-BY-4.0
+    author: Lucía Torres (SINC, FECYT)
+    date: 2019-03-13
+    title: ¿Qué riesgo de recaída tienen los pacientes de cáncer de mama?
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 463
+    sha256: f82110f896395bdd27551adad33d40c2881c5aa2316b1b35568798b708c55985
+    retrieved: 2026-09-17
+  - id: h-sinc-07
+    class: human
+    file: development/h-sinc-07.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Un-posible-final-para-la-picadura-de-mosquito
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-02-07
+    title: Un posible final para la picadura de mosquito
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 462
+    sha256: e0f454c1da41dc60c21f9bd6524b28115e6bdb31963691a20d9d9b955bbc1d86
+    retrieved: 2026-09-17
+  - id: h-sinc-08
+    class: human
+    file: development/h-sinc-08.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Jennifer-Doudna-presenta-una-nueva-herramienta-CRISPR-de-edicion-genetica
+    license: CC-BY-4.0
+    author: Ana Hernando (SINC, FECYT)
+    date: 2019-02-07
+    title: Jennifer Doudna presenta una nueva herramienta CRISPR de edición genética
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 457
+    sha256: 276c2a98872261128e9ed72b2138bfd46860417121dccd2e6be3d0bc45157160
+    retrieved: 2026-09-17
+  - id: h-sinc-09
+    class: human
+    file: holdout/h-sinc-09.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/El-demonio-de-Tasmania-podria-tener-la-clave-de-la-regresion-de-tumores
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-12-02
+    title: El demonio de Tasmania podría tener la clave de la regresión de tumores
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 476
+    sha256: 2d329b26e97d7204b86d8d172960768aac3647231898061360631b4d1699f1ea
+    retrieved: 2026-09-17
+  - id: h-sinc-10
+    class: human
+    file: holdout/h-sinc-10.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Los-primeros-humanos-que-conquistaron-el-techo-del-mundo
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-11-29
+    title: Los primeros humanos que conquistaron el techo del mundo
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 467
+    sha256: d493c3f249c0bae45bf718386d7761ce5285efdc44bf06eb4e03431d44e7a4f2
+    retrieved: 2026-09-17
+  - id: h-sinc-11
+    class: human
+    file: holdout/h-sinc-11.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/La-temperatura-en-los-Pirineos-ha-aumentado-un-30-mas-que-la-media-mundial
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-11-12
+    title: La temperatura en los Pirineos ha aumentado un 30% más que la media mundial
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 484
+    sha256: 05d94e43b5abc3233539cf765a446e08cdf9ffde7684f33f1bddbc5199f71b41
+    retrieved: 2026-09-17
+  - id: h-sinc-12
+    class: human
+    file: holdout/h-sinc-12.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/El-queso-mas-antiguo-del-mundo-aparece-en-una-tumba-egipcia
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-08-17
+    title: El queso más antiguo del mundo aparece en una tumba egipcia
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 467
+    sha256: 108ac54312ccd1144f6c0e59856c2d91e9a9ef8dcbaa641607282c6e9e27bb43
+    retrieved: 2026-09-17
+  - id: h-sinc-13
+    class: human
+    file: holdout/h-sinc-13.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Un-gen-zombi-protege-a-los-elefantes-contra-el-cancer
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-08-14
+    title: Un gen ‘zombi’ protege a los elefantes contra el cáncer
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 474
+    sha256: d439417ca27431f63d25c56800e1063872e3da1fbbce2fc451399a1938fc1443
+    retrieved: 2026-09-17
+  - id: h-sinc-14
+    class: human
+    file: holdout/h-sinc-14.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/La-primera-fotografia-de-un-planeta-recien-nacido
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-07-02
+    title: La primera fotografía de un planeta recién nacido
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 462
+    sha256: 7f4f85d09dc179fd6218473fb4a65c6e7b86e8ffc24e1013c10050db13d60b84
+    retrieved: 2026-09-17
+  - id: h-redc-01
+    class: human
+    file: development/h-redc-01.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1029
+    license: CC-BY-4.0
+    author: Andrés Pandiella-Dominique; Carlos García-Zorita; Elías Sanz-Casado
+    date: 2019-03-30
+    title: "Análisis de la internacionalización de la Revista Española de Documentación Científica: 2010-2015"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 509
+    sha256: 20b0c36faeff232b48a3ccf525871e3913180e94e1fdeb6a20fbfcf0c02550e1
+    retrieved: 2026-09-17
+  - id: h-redc-02
+    class: human
+    file: development/h-redc-02.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1030
+    license: CC-BY-4.0
+    author: Sofía Crespo-Gascón; Francisco S. Tortosa; José Guerrero-Casado
+    date: 2019-03-30
+    title: "Producción de revistas científicas en América Latina y El Caribe en Scopus, Journal Citation Reports y Latindex en el área de los recursos naturales: su relación con variables económicas, ambientales y de inversión en investigación"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 554
+    sha256: 01d0b85eddd710962c2343ac087f0421469b50719974ed9d830a8a07209c2d6f
+    retrieved: 2026-09-17
+  - id: h-redc-03
+    class: human
+    file: development/h-redc-03.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1031
+    license: CC-BY-4.0
+    author: José Antonio Castillo; Michael A. Powell
+    date: 2019-03-30
+    title: Análisis de la producción científica del Ecuador e impacto de la colaboración internacional en el periodo 2006-2015
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 474
+    sha256: 17bd613c3532ad2087a04bf135a46671d03f6b13a761ab4ec3d92b4ca30a17f8
+    retrieved: 2026-09-17
+  - id: h-redc-04
+    class: human
+    file: development/h-redc-04.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1032
+    license: CC-BY-4.0
+    author: Luisa Cagica Carvalho; Esteban Pérez Calderón; María Pache Durán
+    date: 2019-03-30
+    title: "Implicación de los gobiernos locales en la promoción del emprendimiento: evidencia para España"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 583
+    sha256: 10e05fade3805b2718b46f3e9164be060e70950f879e7fd098b50316116425fc
+    retrieved: 2026-09-17
+  - id: h-redc-05
+    class: human
+    file: development/h-redc-05.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1033
+    license: CC-BY-4.0
+    author: Luisa Cervantes; Marisol Navas; Isabel Cuadrado
+    date: 2019-03-30
+    title: "Contacto intergrupal y actitudes en bibliotecas públicas: un estudio con usuarios marroquíes y españoles en Barcelona y Almería"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 459
+    sha256: 0d679a8851592123a608f39a8ce800a86051ab830bf7bca5f0afd6f78e14f8d6
+    retrieved: 2026-09-17
+  - id: h-redc-09
+    class: human
+    file: holdout/h-redc-09.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1038
+    license: CC-BY-4.0
+    author: Celia Díaz-Catalán; Irene López-Navarro; Jesús Rey Rocha; Pablo Cabrera Álvarez
+    date: 2019-06-30
+    title: Influencia de variables individuales y grupales en la actitud de los investigadores españoles hacia la transferencia de conocimiento y la cooperación con empresas y administraciones públicas
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 497
+    sha256: f43e7c76230d230c63762d7963a94906397b3bf29aaada646100098fe8c11328
+    retrieved: 2026-09-17
+  - id: h-redc-10
+    class: human
+    file: holdout/h-redc-10.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1039
+    license: CC-BY-4.0
+    author: Alba Ruth Pinto-Santos; Carlos Villanueva-Valadez; Omar Cortés-Peña
+    date: 2019-06-30
+    title: Percepciones del docente universitario sobre la comunicación científica de libre acceso
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 462
+    sha256: d29e7db935b0d24fe1a9158cfe0449b3dc27bd50b707b30c2552179a97cfafd4
+    retrieved: 2026-09-17
+  - id: h-redc-11
+    class: human
+    file: development/h-redc-11.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1040
+    license: CC-BY-4.0
+    author: Israel Griol-Barres; Sergio Milla; José Millet
+    date: 2019-06-30
+    title: Implementación de un sistema de detección de señales débiles de futuro mediante técnicas de minería de textos
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 489
+    sha256: 64f31e52611fe02e097abf5aaf710c4c2cead74caa3d6705ba818a21a1e9ca93
+    retrieved: 2026-09-17
+  - id: h-redc-12
+    class: human
+    file: holdout/h-redc-12.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1041
+    license: CC-BY-4.0
+    author: Daniela De Filippo; Paulo Silva; María Manuel Borges
+    date: 2019-06-30
+    title: Caracterización de las publicaciones de España y Portugal sobre Open Science y análisis de su presencia en las redes sociales
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 439
+    sha256: d843e1fc1f909e8fa6f20bb09862cec06b810d82ec051799af67f95b5d8ef4d1
+    retrieved: 2026-09-17
+  - id: h-redc-13
+    class: human
+    file: holdout/h-redc-13.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1042
+    license: CC-BY-4.0
+    author: Héctor Mauricio Serna-Gómez; María Fernanda Quintero-Agudelo; Edisson Stiven Castro-Escobar; Gregorio Calderón-Hernández
+    date: 2019-06-30
+    title: Las redes de colaboración en el área de administración. El caso de las universidades colombianas
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 351
+    sha256: 010e59ea7483b013c2d3fe90fb12160d5224732f0f7fc62e3e21c916f6bf54b4
+    retrieved: 2026-09-17
+  - id: h-redc-14
+    class: human
+    file: holdout/h-redc-14.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1043
+    license: CC-BY-4.0
+    author: Equipo Editorial
+    date: 2019-06-30
+    title: ¿Cómo deben gestionar los científicos sus datos de investigación? Aportaciones desde Maredata
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 507
+    sha256: 623c8bc75db0253930245357fa55a64aad3ba44ea205c9f00d5ebbd5de4695f2
+    retrieved: 2026-09-17
+  - id: h-gut-01
+    class: human
+    file: challenge/h-gut-01.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/52597/pg52597.txt
+    license: public-domain
+    author: Pardo Bazán, Emilia, condesa de
+    date: "1921"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Insolación y Morriña (Dos historias amorosas)
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 471
+    sha256: cd4b1f795ee7c71edd21e80f1f81419ca0c11103d30c78d058e066b97d8bc7db
+    retrieved: 2026-09-17
+  - id: h-gut-02
+    class: human
+    file: challenge/h-gut-02.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/78052/pg78052.txt
+    license: public-domain
+    author: Unamuno, Miguel de
+    date: "1936"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Andanzas y visiones españolas
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 462
+    sha256: 7b721bafb0873492e11a4859ef55ea40aa6fcf08f4e9859750cf765fe1bb4b74
+    retrieved: 2026-09-17
+  - id: h-gut-03
+    class: human
+    file: challenge/h-gut-03.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/49836/pg49836.txt
+    license: public-domain
+    author: Unamuno, Miguel de
+    date: "1936"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Niebla (Nivola)
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 476
+    sha256: 468d1edc123f52ea41ce6af9d49f9f130684dd7c1f4c321e6946241469d1dc96
+    retrieved: 2026-09-17
+  - id: h-gut-05
+    class: human
+    file: challenge/h-gut-05.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/17013/pg17013.txt
+    license: public-domain
+    author: Pérez Galdós, Benito
+    date: "1920"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: "Fortunata y Jacinta: dos historias de casadas"
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 549
+    sha256: 8ba1dba643ef9efbdf0fadbefe23fde620987383e8d1b9ed3a40b2914c3aa3ec
+    retrieved: 2026-09-17
+  - id: h-gut-06
+    class: human
+    file: challenge/h-gut-06.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/13507/pg13507.txt
+    license: public-domain
+    author: Quiroga, Horacio
+    date: "1937"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Cuentos de Amor de Locura y de Muerte
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 461
+    sha256: 2b5582b6ce94dd391d62d5fe276b78320a0da94a3de99cac3b6521be4ad9b15a
+    retrieved: 2026-09-17
+  - id: h-gut-07
+    class: human
+    file: challenge/h-gut-07.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/64974/pg64974.txt
+    license: public-domain
+    author: Ingenieros, José
+    date: "1925"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: "El Hombre Mediocre: Ensayo de psicologia y moral"
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 492
+    sha256: d3e0b8840c6d4aed48cded06693038ddb3e4875251781d2c05fbf112ffc0f39c
+    retrieved: 2026-09-17
+  - id: h-gut-08
+    class: human
+    file: challenge/h-gut-08.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/25640/pg25640.txt
+    license: public-domain
+    author: Blasco Ibáñez, Vicente
+    date: "1928"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Los argonautas
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 458
+    sha256: a32fb2ac0b60dfdb9ca92ca79fa11af6a73eeca44901431cb325abedf0f5d170
+    retrieved: 2026-09-17
+  - id: h-gut-09
+    class: human
+    file: challenge/h-gut-09.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/17340/pg17340.txt
+    license: public-domain
+    author: Pérez Galdós, Benito
+    date: "1920"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Marianela
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 566
+    sha256: ac0f9dda44d70024cce9f10e360be2c4fb8e6faa728fc4e17da9972aae590104
+    retrieved: 2026-09-17

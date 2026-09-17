@@ -1,0 +1,7 @@
+Vengo del súper y no puedo con mi alma, así que perdonad el desahogo. He hecho la compra de siempre, la de todas las semanas, nada especial, y me he dejado 96 euros en cosas que hace tres años me costaban bastante menos de 70. No hablo de caprichos, hablo de aceite, leche, huevos, fruta y poco más. El aceite de oliva ya me da vergüenza mirarlo en la estantería, y no digo nada del pescado, que directamente lo he ido dejando de comprar salvo alguna oferta puntual.
+
+Lo que más rabia me da no es que suba, que entiendo que las cosas suben, es que suben y luego cuando bajan otras materias primas por lo visto a nosotros no nos baja nada en el lineal. Y encima ves que las marcas blancas, que antes eran la salvación del bolsillo, también han pegado un estirón que ya casi ni compensa frente a la marca conocida cuando hay promoción.
+
+Yo antes hacía la compra grande una vez al mes y ahora voy comprando poco a poco porque me da la sensación de que así controlo mejor el gasto, aunque no sé si es verdad o me lo hago mirar yo solo. También he notado que he cambiado hábitos sin darme mucha cuenta, como comprar menos carne y tirar más de legumbre, que curiosamente sigue siendo de lo poco que se mantiene en un precio razonable.
+
+¿A vosotros os está pasando lo mismo o soy yo que vivo en una zona cara? Me interesa saber si en otras ciudades o pueblos la diferencia es tan bestia como la que noto yo, y si habéis encontrado algún truco de verdad útil más allá de lo típico de comparar precios por kilo, que ya lo hago y aun así la cuenta sale disparada cada semana.

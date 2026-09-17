@@ -1,0 +1,719 @@
+# Generado por benchmark/scripts/build-manifests.mjs. No editar a mano.
+schema_version: 1
+corpus_version: "1.1"
+partition: development
+samples:
+  - id: h-foro-me01
+    class: human
+    file: development/h-foro-me01.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/millon-berlineses-votan-expropiar-viviendas-grandes-inmobil-678065#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2021-09-29
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 223
+    sha256: 24e5f37eb892fb8bf43d48e0eeeddf7750ef0773595906cae794ee3a1b92115b
+    retrieved: 2026-09-17
+  - id: h-foro-me03
+    class: human
+    file: development/h-foro-me03.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/certificado-profesionalidad-crees-664312#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-11-25
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 211
+    sha256: 59fcd0a9a74a233e15333978f88618e6d42a61fef1ef7e86b0d3268cb1a33cfe
+    retrieved: 2026-09-17
+  - id: h-foro-me05
+    class: human
+    file: development/h-foro-me05.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/ayuda-650940#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2020-04-13
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 234
+    sha256: 32065fbe041097dd54d3e7299c5252f60d906f92714cada017d762cf678248f2
+    retrieved: 2026-09-17
+  - id: h-foro-me07
+    class: human
+    file: development/h-foro-me07.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/depravada-agrede-sexualmente-futbolista-gignac-meto-masculi-635984#1
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-18
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 239
+    sha256: 5f89f4dff7efbacfa1c2debc60e2cd264c211b49f769c362a69e38c6a12d3702
+    retrieved: 2026-09-17
+  - id: h-foro-me09
+    class: human
+    file: development/h-foro-me09.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/tengo-envidia-mi-hija-no-dejo-empotre-novio-635913#8
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-17
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 167
+    sha256: 3c08b092f503297254a80fd47e2bc9770b9336a7e8c123e7d54a07527b196cca
+    retrieved: 2026-09-17
+  - id: h-foro-me11
+    class: human
+    file: development/h-foro-me11.md
+    register: cotidiano
+    level: H2
+    source: foro:mediavida
+    source_url: https://www.mediavida.com/foro/off-topic/gamer-twitch-viola-novia-vivo-18-635826#18
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Mediavida (seudónimo no registrado)
+    date: 2019-07-16
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: general
+    words: 207
+    sha256: 6bdb5bbc6f4424171f58e4aa519921b109b9972a3857826c887bc017375ea54b
+    retrieved: 2026-09-17
+  - id: h-foro-el01
+    class: human
+    file: development/h-foro-el01.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/sugerencias_y_dudas_sobre_el_foro/porq_no_existe_un_subforo_de_delphi-t253358.0.html#msg1225766
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2009-04-30
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 198
+    sha256: 01cb83516d268148ff3a5a8886560887b15b4e43a2729ff5248049c8b0b7ab4a
+    retrieved: 2026-09-17
+  - id: h-foro-el03
+    class: human
+    file: development/h-foro-el03.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/hardware/vga_cooler_calienta_la_fuentesolucionlamina_de_carton_enmedioiquestque_opinais-t293570.0.html#msg1453577
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2010-05-15
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 213
+    sha256: d74a931dc9144e76bffbc9d3c022ea90e6d010d5f862301b496c8452f87f430e
+    retrieved: 2026-09-17
+  - id: h-foro-el05
+    class: human
+    file: development/h-foro-el05.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/dudas_generales/iquestcomo_puedo_romper_una_memoria_usb-t324846.0.html#msg1603631
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-04-16
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 174
+    sha256: 5fc38f5c633507430667460091f0d3a11cf024129385912c72af37b5f0acc6a3
+    retrieved: 2026-09-17
+  - id: h-foro-el07
+    class: human
+    file: development/h-foro-el07.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/seguridad/antivirus_me_da_los_mismos_riesgos_para_el_pc-t341601.0.html#msg1673074
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-10-13
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 152
+    sha256: 4b44e7e6b7ee8678d1e71542d2395f99241bf255c40077a9f2d037ee1538017b
+    retrieved: 2026-09-17
+  - id: h-foro-el09
+    class: human
+    file: development/h-foro-el09.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/dudas_generales/me_consume_los_gb_al_mirar_online-t344952.0.html#msg1686125
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2011-11-21
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 154
+    sha256: 89656902663944e921e5b4374bb6b3076f3200e6a259463dd68cb6f9df15e0fc
+    retrieved: 2026-09-17
+  - id: h-foro-el11
+    class: human
+    file: development/h-foro-el11.md
+    register: cotidiano
+    level: H2
+    source: foro:elhacker
+    source_url: https://foro.elhacker.net/scripting/programa_para_crear_un_fichero_nuevo_al_q_s_le_anada_el_texto_contenido_en_otros-t357239.0.html#msg1730569
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de elhacker.net (seudónimo no registrado)
+    date: 2012-03-22
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: informatica
+    words: 307
+    sha256: 3ce5ae6ee35af84f9a0171467b573686bd66e7a818b9e9ea50df381b8545b67c
+    retrieved: 2026-09-17
+  - id: h-foro-in01
+    class: human
+    file: development/h-foro-in01.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/hojas-de-bambu-como-acolchado.113765/#post-1731266
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2020-04-23
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 168
+    sha256: f04a726c51b68e2ef5eb4aaf461826bf2f53cea779c19c807c81373e3b703f43
+    retrieved: 2026-09-17
+  - id: h-foro-in03
+    class: human
+    file: development/h-foro-in03.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/no-crece-nada-debajo-de-callistemon.112932/#post-1718548
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2020-04-05
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 220
+    sha256: 0a38f8823cd0c1ffaeeb1466362e5405f2bbeb7458b247b5d8cc012f1f43f5e3
+    retrieved: 2026-09-17
+  - id: h-foro-in05
+    class: human
+    file: development/h-foro-in05.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/compatibilidad-entre-especies.12352/#post-223155
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-11-28
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 234
+    sha256: 6e4ac7fc9683836f2066fa948cd99ed7b2417c05f8489831fd998c1e6da58b0c
+    retrieved: 2026-09-17
+  - id: h-foro-in07
+    class: human
+    file: development/h-foro-in07.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/dos-plantas-en-una-misma-maceta.50249/#post-861230
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2016-04-07
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 185
+    sha256: 9d2af895905f6816210fc39e6a83169890cd0d2e082669ce92b7f308c8d0b8b1
+    retrieved: 2026-09-17
+  - id: h-foro-in09
+    class: human
+    file: development/h-foro-in09.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/como-sanar-tierra.101202/#post-1568553
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2019-04-21
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 155
+    sha256: 0ad24353c59edb1b5d9719d0a9c5137da38c2082e3e18684bb3d698410ac8a38
+    retrieved: 2026-09-17
+  - id: h-foro-in11
+    class: human
+    file: development/h-foro-in11.md
+    register: cotidiano
+    level: H2
+    source: foro:infojardin
+    source_url: https://foro.infojardin.com/threads/ayuda-primer-sistema-de-riego-automatico.9643/#post-172052
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de Foro de Infojardín (seudónimo no registrado)
+    date: 2014-11-10
+    human_evidence: Mensaje de foro público anterior a la fecha de corte.
+    extraction: mensaje completo, sin citas; ortografía original
+    theme: aficiones
+    words: 178
+    sha256: 39d7f98d99f036687090ecc918f076329fc93856bf184d300ab9d7df6cdf9cd2
+    retrieved: 2026-09-17
+  - id: ai-d01
+    class: ai
+    file: development/ai-d01.md
+    register: cotidiano
+    theme: general
+    prompt_id: d01
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 170
+    sha256: 7b02ec9d9b58f100705725213280b5b0281b4809cdb157b53925d2b6527492cc
+  - id: ai-d02
+    class: ai
+    file: development/ai-d02.md
+    register: cotidiano
+    theme: general
+    prompt_id: d02
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 263
+    sha256: 0d3d52089303b57f7fc85faba36f9b23947a49f69cc1c20a69e931b74410daa5
+  - id: ai-d03
+    class: ai
+    file: development/ai-d03.md
+    register: cotidiano
+    theme: general
+    prompt_id: d03
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 235
+    sha256: 3c88f159d2ee9f5c5b7f8d634c4a066d40b6cff48055ce2bd3594c2657a5540e
+  - id: ai-d04
+    class: ai
+    file: development/ai-d04.md
+    register: cotidiano
+    theme: general
+    prompt_id: d04
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 277
+    sha256: 6cab28f290bc46f50089039273a90896134ad953ed43e73e2f4d55d418b4ac59
+  - id: ai-d05
+    class: ai
+    file: development/ai-d05.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d05
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 245
+    sha256: 2a3dd4171b0e64b6dd3e3d73236353d97b473f89fc6d3f7925fb334119f1e510
+  - id: ai-d06
+    class: ai
+    file: development/ai-d06.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d06
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 277
+    sha256: df752866e8178dd1dab4ca15dd2d8508e3e0f55ffbf1bb218226b741327c703c
+  - id: ai-d07
+    class: ai
+    file: development/ai-d07.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d07
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 261
+    sha256: b2083fe609bedb3c548900f1711cae19edd056f2b2adb764b918dd628f37f21d
+  - id: ai-d08
+    class: ai
+    file: development/ai-d08.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d08
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 294
+    sha256: d78256cc4a09205ec6a15ebecf5d95cf974178f334403c238774d821c5840c1a
+  - id: ai-d09
+    class: ai
+    file: development/ai-d09.md
+    register: cotidiano
+    theme: general
+    prompt_id: d09
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 297
+    sha256: 1d999281384a7613888dd47e66e4ef7a6693b7fbff77f0f9ef01c1440d5413e9
+  - id: ai-d10
+    class: ai
+    file: development/ai-d10.md
+    register: cotidiano
+    theme: general
+    prompt_id: d10
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 328
+    sha256: d3f9e9ef66d5f776dc5e87eedde33b9df911d74750b7aba11e41228d626e8e77
+  - id: ai-d11
+    class: ai
+    file: development/ai-d11.md
+    register: cotidiano
+    theme: general
+    prompt_id: d11
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 343
+    sha256: b50891c96c9e6d5972ea03048b9ae4e2368ec30413d0ed5e8eb0c5a46222e77e
+  - id: ai-d12
+    class: ai
+    file: development/ai-d12.md
+    register: cotidiano
+    theme: general
+    prompt_id: d12
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 325
+    sha256: dd15e4d4b3fc0315eb5a11ed9bd11f24b4719ed711ab65558f4397c5487391ad
+  - id: ai-d13
+    class: ai
+    file: development/ai-d13.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d13
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 344
+    sha256: 8a3eac38e1730ff0901113be44456953890e8c7ebcd3c480a444b883c95373da
+  - id: ai-d14
+    class: ai
+    file: development/ai-d14.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d14
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 325
+    sha256: d3d49ad376e6d49871e585a75ae25f7d0944df92563d162a4d9967a63092b8f9
+  - id: ai-d15
+    class: ai
+    file: development/ai-d15.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d15
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 350
+    sha256: 0bf614143f76f8723a0792119b1fb823f984e2e9792e4b8141146e9129b8f06f
+  - id: ai-d16
+    class: ai
+    file: development/ai-d16.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d16
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 354
+    sha256: 8454172bf36fa7c24bb960a8c36a899113bbb2a1b434fb63cddbe560e5ef1d90
+  - id: ai-d17
+    class: ai
+    file: development/ai-d17.md
+    register: cotidiano
+    theme: general
+    prompt_id: d17
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 344
+    sha256: cfe59207540efdd9cdd8a20776ddc888b70429995f9227f00fbd77f85999a4ee
+  - id: ai-d18
+    class: ai
+    file: development/ai-d18.md
+    register: cotidiano
+    theme: general
+    prompt_id: d18
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 339
+    sha256: d668196bc390ff37064da029f6adc26b8cc81c1b74b23c3b2fe08b4f6b7e5bf5
+  - id: ai-d19
+    class: ai
+    file: development/ai-d19.md
+    register: cotidiano
+    theme: general
+    prompt_id: d19
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 309
+    sha256: 8ad2079dcef9b437deb2dbbd57b1d89d3515ec50efbedda9f09f0487f2af0ea6
+  - id: ai-d20
+    class: ai
+    file: development/ai-d20.md
+    register: cotidiano
+    theme: general
+    prompt_id: d20
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 327
+    sha256: 4f7028344505d8204b1fe03a9173e4e94b2ed41c3be9dbe9c964301d8ee8ee93
+  - id: ai-d21
+    class: ai
+    file: development/ai-d21.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d21
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 356
+    sha256: 8773d2bfaced0ffc653cf79968b87579c2ad51a79d07ae0996627e1df866eaa7
+  - id: ai-d22
+    class: ai
+    file: development/ai-d22.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d22
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 360
+    sha256: 7c7efd7975fa6918a4fed01eaedaf3f3a03a9e2ae56113a1f00783a44db1142c
+  - id: ai-d23
+    class: ai
+    file: development/ai-d23.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d23
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 333
+    sha256: fde781bcb08e78e6643d273ee48e20fbdb705e25e2d84db5e28e6fb4d5d9ca3c
+  - id: ai-d24
+    class: ai
+    file: development/ai-d24.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d24
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 331
+    sha256: 583d9cdca76fc64d0c302d97c2af2a240e6c895aaa87dcca233abb73d15322af

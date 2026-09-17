@@ -1,0 +1,698 @@
+{
+  "schema_version": 1,
+  "partition": "development",
+  "tool": {
+    "version": "1.0.0",
+    "rulepack": "1.0.0"
+  },
+  "config": {
+    "threshold": 20,
+    "min_words_for_index": 150,
+    "profile": "general"
+  },
+  "corpus": {
+    "samples": 42,
+    "human": 21,
+    "ai": 21,
+    "human_words": 10083,
+    "ai_words": 9761,
+    "manifest_sha256": "559193805f53c2da23b6fd582ac9f413a37ef95636ebaa0a9efa0f176aa72f7f"
+  },
+  "per_rule": {
+    "densidad/adjetivos-grandilocuentes": {
+      "status": "stable",
+      "findings_human": 1,
+      "findings_ai": 0,
+      "docs_human": 1,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0.099,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 1,
+        "precision": 0
+      },
+      "by_register": {
+        "institucional": {
+          "human": 1,
+          "ai": 0
+        }
+      },
+      "ms": 10.3
+    },
+    "densidad/adverbios-mente": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 2,
+      "docs_human": 0,
+      "docs_ai": 2,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.205,
+      "adjudicated": {
+        "correct": 2,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "general": {
+          "human": 0,
+          "ai": 1
+        },
+        "academico": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 12.7
+    },
+    "densidad/conectores": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 13.7
+    },
+    "densidad/emojis": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 3.2
+    },
+    "densidad/exclamaciones": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.2
+    },
+    "densidad/intensificadores": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 7
+    },
+    "densidad/verbos-comodin": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 7.9
+    },
+    "estructura/cierre-formulario": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.6
+    },
+    "estructura/conector-inicio-parrafo": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 8
+    },
+    "estructura/encabezado-dos-puntos": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 3,
+      "docs_human": 0,
+      "docs_ai": 3,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.307,
+      "adjudicated": {
+        "correct": 3,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "tecnico": {
+          "human": 0,
+          "ai": 2
+        },
+        "periodistico": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 0.9
+    },
+    "estructura/enumeracion-ordinal": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.9
+    },
+    "estructura/lista-inicio-uniforme": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.4
+    },
+    "estructura/longitud-uniforme": {
+      "status": "stable",
+      "findings_human": 2,
+      "findings_ai": 1,
+      "docs_human": 2,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0.198,
+      "per_1000_ai_words": 0.102,
+      "adjudicated": {
+        "correct": 3,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "periodistico": {
+          "human": 1,
+          "ai": 0
+        },
+        "academico": {
+          "human": 1,
+          "ai": 0
+        },
+        "institucional": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 6
+    },
+    "formato/encabezado-title-case": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.5
+    },
+    "formato/lista-negrita-inicial": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 4,
+      "docs_human": 0,
+      "docs_ai": 3,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.41,
+      "adjudicated": {
+        "correct": 4,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "tecnico": {
+          "human": 0,
+          "ai": 4
+        }
+      },
+      "ms": 0.8
+    },
+    "formato/raya-espaciada": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 1,
+      "docs_human": 0,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.102,
+      "adjudicated": {
+        "correct": 1,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "marketing": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 3.9
+    },
+    "lexico/actualidad-generica": {
+      "status": "stable",
+      "findings_human": 4,
+      "findings_ai": 0,
+      "docs_human": 4,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0.397,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 4,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "institucional": {
+          "human": 2,
+          "ai": 0
+        },
+        "academico": {
+          "human": 2,
+          "ai": 0
+        }
+      },
+      "ms": 5.2
+    },
+    "lexico/desde-hasta-pasando": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 1
+    },
+    "lexico/es-importante-destacar": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 4.2
+    },
+    "lexico/metaforas-comodin": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 10.2
+    },
+    "lexico/muletillas-ia": {
+      "status": "stable",
+      "findings_human": 3,
+      "findings_ai": 1,
+      "docs_human": 3,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0.298,
+      "per_1000_ai_words": 0.102,
+      "adjudicated": {
+        "correct": 4,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "periodistico": {
+          "human": 1,
+          "ai": 0
+        },
+        "academico": {
+          "human": 2,
+          "ai": 0
+        },
+        "general": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 14.8
+    },
+    "lexico/ya-sea-enumeracion": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.4
+    },
+    "repeticion/anafora": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 7.3
+    },
+    "repeticion/inicio-parrafo": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 1,
+      "docs_human": 0,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.102,
+      "adjudicated": {
+        "correct": 1,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "institucional": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 7
+    },
+    "repeticion/ngramas": {
+      "status": "candidate",
+      "findings_human": 14,
+      "findings_ai": 0,
+      "docs_human": 9,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 1.388,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 14,
+        "precision": 0
+      },
+      "by_register": {
+        "institucional": {
+          "human": 11,
+          "ai": 0
+        },
+        "periodistico": {
+          "human": 1,
+          "ai": 0
+        },
+        "academico": {
+          "human": 2,
+          "ai": 0
+        }
+      },
+      "ms": 29.5
+    },
+    "retorica/arenga-final": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 1,
+      "docs_human": 0,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.102,
+      "adjudicated": {
+        "correct": 1,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "general": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 9.2
+    },
+    "retorica/no-se-trata-de": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 1,
+      "docs_human": 0,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.102,
+      "adjudicated": {
+        "correct": 1,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "academico": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 5.7
+    },
+    "retorica/no-solo-sino": {
+      "status": "stable",
+      "findings_human": 2,
+      "findings_ai": 0,
+      "docs_human": 2,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0.198,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 2,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "institucional": {
+          "human": 1,
+          "ai": 0
+        },
+        "periodistico": {
+          "human": 1,
+          "ai": 0
+        }
+      },
+      "ms": 3.8
+    },
+    "retorica/pregunta-retorica-apertura": {
+      "status": "stable",
+      "findings_human": 1,
+      "findings_ai": 1,
+      "docs_human": 1,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0.099,
+      "per_1000_ai_words": 0.102,
+      "adjudicated": {
+        "correct": 2,
+        "incorrect": 0,
+        "precision": 1
+      },
+      "by_register": {
+        "periodistico": {
+          "human": 1,
+          "ai": 0
+        },
+        "marketing": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 1
+    },
+    "retorica/triada": {
+      "status": "stable",
+      "findings_human": 7,
+      "findings_ai": 6,
+      "docs_human": 6,
+      "docs_ai": 5,
+      "fp_per_1000_human_words": 0.694,
+      "per_1000_ai_words": 0.615,
+      "adjudicated": {
+        "correct": 12,
+        "incorrect": 1,
+        "precision": 0.923
+      },
+      "by_register": {
+        "institucional": {
+          "human": 2,
+          "ai": 2
+        },
+        "academico": {
+          "human": 5,
+          "ai": 3
+        },
+        "general": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 11.9
+    }
+  },
+  "aggregate": {
+    "threshold": 20,
+    "confusion": {
+      "tp": 0,
+      "fp": 2,
+      "tn": 19,
+      "fn": 21,
+      "skipped_short": 0
+    },
+    "tpr": 0,
+    "fpr": 0.095,
+    "precision": 0,
+    "balanced_accuracy": 0.453,
+    "ci95": {
+      "tpr": [
+        0,
+        0.155
+      ],
+      "fpr": [
+        0.027,
+        0.289
+      ]
+    },
+    "index_median_human": 10,
+    "index_median_ai": 7,
+    "by_register": {
+      "academico": {
+        "n_human": 6,
+        "n_ai": 3,
+        "median_human": 7.5,
+        "median_ai": 5
+      },
+      "general": {
+        "n_human": 0,
+        "n_ai": 4,
+        "median_human": null,
+        "median_ai": 8.5
+      },
+      "institucional": {
+        "n_human": 7,
+        "n_ai": 3,
+        "median_human": 11,
+        "median_ai": 7
+      },
+      "marketing": {
+        "n_human": 0,
+        "n_ai": 4,
+        "median_human": null,
+        "median_ai": 4
+      },
+      "periodistico": {
+        "n_human": 8,
+        "n_ai": 3,
+        "median_human": 2.5,
+        "median_ai": 0
+      },
+      "tecnico": {
+        "n_human": 0,
+        "n_ai": 4,
+        "median_human": null,
+        "median_ai": 9.5
+      }
+    }
+  },
+  "notes": [
+    "No se publica recall por regla: el corpus no está anotado exhaustivamente.",
+    "El índice mide densidad de patrones editoriales; el umbral solo se usa para evaluar separación, no como veredicto de autoría."
+  ]
+}

@@ -10,7 +10,8 @@
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "typecheck": "pnpm -r typecheck",
-    "gates": "node scripts/gates.mjs",
+    "gates": "node scripts/corpus-check.mjs && node scripts/gates.mjs",
+    "corpus:check": "node scripts/corpus-check.mjs",
     "lint:self": "node packages/linter/dist/cli/main.js lint README.md docs"
   },
   "devDependencies": {

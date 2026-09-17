@@ -1,0 +1,224 @@
+# Generado por benchmark/scripts/build-manifests.mjs. No editar a mano.
+schema_version: 1
+partition: challenge
+samples:
+  - id: h-gut-01
+    class: human
+    file: challenge/h-gut-01.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/52597/pg52597.txt
+    license: public-domain
+    author: Pardo Bazán, Emilia, condesa de
+    date: "1921"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Insolación y Morriña (Dos historias amorosas)
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 471
+    sha256: cd4b1f795ee7c71edd21e80f1f81419ca0c11103d30c78d058e066b97d8bc7db
+    retrieved: 2026-09-17
+  - id: h-gut-02
+    class: human
+    file: challenge/h-gut-02.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/78052/pg78052.txt
+    license: public-domain
+    author: Unamuno, Miguel de
+    date: "1936"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Andanzas y visiones españolas
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 462
+    sha256: 7b721bafb0873492e11a4859ef55ea40aa6fcf08f4e9859750cf765fe1bb4b74
+    retrieved: 2026-09-17
+  - id: h-gut-03
+    class: human
+    file: challenge/h-gut-03.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/49836/pg49836.txt
+    license: public-domain
+    author: Unamuno, Miguel de
+    date: "1936"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Niebla (Nivola)
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 476
+    sha256: 468d1edc123f52ea41ce6af9d49f9f130684dd7c1f4c321e6946241469d1dc96
+    retrieved: 2026-09-17
+  - id: h-gut-05
+    class: human
+    file: challenge/h-gut-05.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/17013/pg17013.txt
+    license: public-domain
+    author: Pérez Galdós, Benito
+    date: "1920"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: "Fortunata y Jacinta: dos historias de casadas"
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 549
+    sha256: 8ba1dba643ef9efbdf0fadbefe23fde620987383e8d1b9ed3a40b2914c3aa3ec
+    retrieved: 2026-09-17
+  - id: h-gut-06
+    class: human
+    file: challenge/h-gut-06.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/13507/pg13507.txt
+    license: public-domain
+    author: Quiroga, Horacio
+    date: "1937"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Cuentos de Amor de Locura y de Muerte
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 461
+    sha256: 2b5582b6ce94dd391d62d5fe276b78320a0da94a3de99cac3b6521be4ad9b15a
+    retrieved: 2026-09-17
+  - id: h-gut-07
+    class: human
+    file: challenge/h-gut-07.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/64974/pg64974.txt
+    license: public-domain
+    author: Ingenieros, José
+    date: "1925"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: "El Hombre Mediocre: Ensayo de psicologia y moral"
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 492
+    sha256: d3e0b8840c6d4aed48cded06693038ddb3e4875251781d2c05fbf112ffc0f39c
+    retrieved: 2026-09-17
+  - id: h-gut-08
+    class: human
+    file: challenge/h-gut-08.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/25640/pg25640.txt
+    license: public-domain
+    author: Blasco Ibáñez, Vicente
+    date: "1928"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Los argonautas
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 458
+    sha256: a32fb2ac0b60dfdb9ca92ca79fa11af6a73eeca44901431cb325abedf0f5d170
+    retrieved: 2026-09-17
+  - id: h-gut-09
+    class: human
+    file: challenge/h-gut-09.md
+    register: literario
+    level: H1
+    source: gutenberg
+    source_url: https://www.gutenberg.org/cache/epub/17340/pg17340.txt
+    license: public-domain
+    author: Pérez Galdós, Benito
+    date: "1920"
+    date_kind: año de fallecimiento del autor (cota superior)
+    title: Marianela
+    human_evidence: Autor fallecido antes de 1946; texto anterior a cualquier sistema generativo.
+    extraction: párrafos consecutivos desde el 30 % de la obra; sin cabecera ni pie de Project Gutenberg; «--» restituido a raya y marcas de cursiva «_» eliminadas
+    words: 566
+    sha256: ac0f9dda44d70024cce9f10e360be2c4fb8e6faa728fc4e17da9972aae590104
+    retrieved: 2026-09-17
+  - id: ai-c01
+    class: ai
+    file: challenge/ai-c01.md
+    register: general
+    prompt_id: ai-c01
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 549
+    sha256: 8665ce4612aa8bcd6a3fc5ae69575f46b871c32fa848e2c08b0768faab206597
+  - id: ai-c02
+    class: ai
+    file: challenge/ai-c02.md
+    register: periodistico
+    prompt_id: ai-c02
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 468
+    sha256: 20885505519cc515bcf69065d21f76b0f44f109523f0580ab42907958ecf4e99
+  - id: ai-c03
+    class: ai
+    file: challenge/ai-c03.md
+    register: tecnico
+    prompt_id: ai-c03
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 302
+    sha256: 02a9a432906225373e41fd2681976222d85d532c38ed6dbedb781a6c487284fd
+  - id: ai-c04
+    class: ai
+    file: challenge/ai-c04.md
+    register: academico
+    prompt_id: ai-c04
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 551
+    sha256: 5237b4a9c33542e4d4865beb1bb1fd23b4648c73c5a5b1d82db495f1cbb02a89
+  - id: ai-c05
+    class: ai
+    file: challenge/ai-c05.md
+    register: marketing
+    prompt_id: ai-c05
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: regenerado una vez con el mismo prompt por no cumplir la longitud
+    words: 448
+    sha256: ca7a807be617fe984227a7bf070e769c83c0f1c8f4582015a993ccd6a79bb80d
+  - id: ai-c06
+    class: ai
+    file: challenge/ai-c06.md
+    register: institucional
+    prompt_id: ai-c06
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 256
+    sha256: b3cb1873fcb4a48741aa20f82914d0a0a9ec196df956d6a233752d418f46feb2

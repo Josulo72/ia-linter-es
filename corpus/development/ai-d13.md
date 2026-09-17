@@ -1,0 +1,9 @@
+Buenas, llevo un par de semanas mirando componentes porque quiero montarme un PC nuevo para jugar y me gustaría que le echarais un ojo antes de comprar nada, no vaya a ser que meta la pata en algo que luego no tenga solución fácil. El presupuesto ronda los 1000 euros, con algo de margen si se justifica claramente, pero preferiría no pasarme mucho de ahí.
+
+El uso principal va a ser gaming en 1440p, sobre todo juegos actuales tipo shooters competitivos y algún AAA de mundo abierto, nada de simulación profesional ni edición de vídeo pesada, aunque de vez en cuando sí toco algo de edición ligera para un canal que llevo con amigos. Quiero que el equipo aguante bien un par de años sin tener que tocar nada y luego ya iría actualizando gráfica en el futuro.
+
+De momento tengo pensado algo así: procesador de gama media actual, una placa base que no sea la más barata pero tampoco de las que están pensadas para overclock extremo que no voy a usar, 16 gigas de RAM aunque estoy dudando si merece la pena subir directamente a 32, un SSD NVMe de al menos 1 terabyte porque los juegos actuales pesan una barbaridad, y una fuente de alimentación de una marca conocida con certificación decente, que en eso no quiero ahorrar.
+
+La gráfica es donde más dudas tengo, porque hay varias opciones en un rango de precio parecido y no sé cuál rinde mejor por euro invertido ahora mismo, entre una opción más nueva pero algo más justa de memoria y otra generación anterior con más memoria pero rendimiento bruto algo inferior. También me falta decidir la torre, aunque ahí creo que voy a mirar más por temperaturas y espacio que por estética, aunque tampoco me disgustaría que se viera decente.
+
+Si alguien se ha montado algo parecido últimamente o tiene los componentes exactos y puede darme su opinión sincera, se lo agradezco un montón. Prefiero pillar algo bien pensado ahora que arrepentirme dentro de unos meses por haber ahorrado en la pieza equivocada.

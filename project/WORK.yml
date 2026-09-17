@@ -41,28 +41,37 @@ blocks:
       - docs/configuration.md, docs/rule-authoring.md
     tests:
       - integración runner (gitignore, caché, overrides); E2E CLI por comando; reporters JSON/SARIF estructurales
-    acceptance: `ia-linter-es lint` sobre examples/ produce salida determinista; rulepack compilado en build.
+    acceptance: "`ia-linter-es lint` sobre examples/ produce salida determinista; rulepack compilado en build."
     status: done
 
   - id: B4
-    title: Evidencia
-    objective: Corpus propio, veto automatizado, benchmark reproducible, calibración y límites.
+    title: Evidencia y voz humana
+    objective: Corpus propio de registro cotidiano, guía de estilo por situación, reglas de los tics actuales, veto automatizado y benchmark reproducible.
     depends_on: [B3]
     deliverables:
-      - corpus/policy/veto.yml, corpus/manifests/*.yml, corpus/{development,holdout,challenge}
-      - benchmark/scripts, benchmark/annotations, benchmark/reports/v1.0.md
-      - docs/benchmark.md
+      - corpus/policy/{sources,licenses,veto,prompts,prompts-v1.1}.yml, corpus/manifests/*.yml
+      - benchmark/scripts/{fetch-human,fetch-foros,build-manifests,dump-findings}.mjs, scripts/corpus-check.mjs
+      - integrations/claude-code/output-styles/humano.md (guía de estilo: la pieza principal)
+      - perfiles chat, correo, readme y redes; reglas candidate de los tics actuales
+      - benchmark/reports/{v1.0,v1.1}.md, docs/benchmark.md
     tests:
-      - scripts/corpus-check.mjs (licencias, hashes, veto); benchmark run reproducible
-    acceptance: informe publicado con métricas por regla y agregadas; holdout congelado antes de fijar pesos.
-    status: in_progress
-
+      - scripts/corpus-check.mjs sobre el corpus v1.1 y el archivado v1.0
+      - benchmark run reproducible; comparación de la clase IA con guía y sin guía
+    acceptance: >-
+      informe publicado con métricas por regla y agregadas; holdout congelado antes de fijar pesos;
+      la guía reduce de forma medible los tics en la clase IA.
+    status: done
+    notes: >-
+      v1.0 (prosa formal) cerrada con resultado negativo y archivada en corpus/archive/v1.0.
+      v1.1 (registro cotidiano) supera el gate: separación 14,5 en holdout. La guía actual
+      está sin medir; los textos de challenge se generaron con la versión anterior.
   - id: B5
     title: Integraciones
     objective: Pre-commit, GitHub Action, Claude Code y paridad E2E.
     depends_on: [B3]
     deliverables:
       - integrations/pre-commit, integrations/github-action, integrations/claude-code
+      - instalación del estilo de salida y del hook que revisa las respuestas (fuera del repo, requiere permiso del propietario)
     tests:
       - E2E de cada adaptador con entorno simulado; test de paridad JSON entre CLI, Action y bundle
     acceptance: mismos hallazgos byte a byte en las tres superficies.

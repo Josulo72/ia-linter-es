@@ -1,0 +1,36 @@
+schema_version: 1
+id: estructura/ritmo-plano
+revision: 1
+status: candidate
+title: Ritmo plano en escritura cotidiana
+summary: Todas las frases miden casi lo mismo. En un mensaje o un correo, quien escribe alterna frases largas y sueltas de tres palabras.
+category: estructura
+scope: document
+detector: structure
+conditions:
+  kind: sentence_length_cv
+  min_sentences: 8
+  max_cv: 0.5
+default_level: "off"
+profiles: { chat: warning, correo: warning, readme: warning, redes: warning }
+score: { weight: 2, cap: 2 }
+message: "Ritmo plano: todas las frases miden casi lo mismo (CV {cv} en {count} frases)."
+explanation: >-
+  Es la diferencia más clara entre un mensaje escrito por una persona y uno generado. En 18 mensajes de foro
+  el coeficiente de variación mediano es 0,61; en 24 textos generados con el mismo encargo, 0,48. Con el umbral
+  en 0,50 se marcan 14 de 24 textos generados y 3 de 18 humanos. El límite de `estructura/longitud-uniforme`
+  (0,32) sirve para prosa editada larga y casi nunca salta en un texto corto.
+rewrite_guidance: Parte una frase larga en dos y deja alguna de tres o cuatro palabras. El ritmo se nota más que las palabras.
+examples:
+  positive:
+    - { text: "Ayer estuve mirando el tema del router en varias tiendas. Los precios varían bastante según el modelo. Me interesa sobre todo la cobertura en toda la casa. El piso tiene tres habitaciones y un pasillo largo. La señal se pierde justo al final del pasillo. He probado a cambiarlo de sitio sin mucho éxito. También he mirado los repetidores de la marca. Algunos comentarios dicen que funcionan regular. Otros dicen que van perfectos sin problemas. No sé muy bien a quién hacer caso.", expect: 1 }
+    - { text: "El curso empieza la semana que viene por la tarde. Las clases duran unas dos horas cada día. El temario cubre lo básico de contabilidad general. También hay ejercicios prácticos con casos reales. El profesor tiene bastante experiencia en el sector. Los materiales se entregan el primer día de clase. El precio incluye todo el material necesario. Hay plazas limitadas según me comentaron ayer. La matrícula se cierra el viernes por la mañana.", expect: 1 }
+  negative:
+    - { text: "Pues mira, yo lo probé el año pasado y la verdad es que al principio me costó bastante cogerle el punto, sobre todo con el tema de los tiempos y de cuánta agua echarle a la masa. No salió. Lo tiré. Al segundo intento ya fue otra cosa, aunque la miga seguía quedando un poco densa para mi gusto, y eso que seguí la receta al pie de la letra. Ahora sale bien. Cuestión de práctica supongo.", expect: 0 }
+    - { text: "Buenas. Tengo un problema con el coche y no sé por dónde tirar, a ver si alguien me puede echar un cable con esto porque llevo ya dos semanas dándole vueltas sin llegar a ninguna parte. Hace un ruido raro al arrancar en frío, como un chirrido corto que dura un par de segundos y luego desaparece del todo. En caliente no lo hace nunca. El mecánico dice que es la correa.", expect: 0 }
+provenance:
+  evidence: 18 mensajes de foro y 24 textos generados del corpus v1.1 (development); ver benchmark/reports/v1.1.md.
+  known_false_positives:
+    - Mensajes que enumeran datos o pasos, donde la uniformidad es funcional.
+    - "Textos de menos de ocho frases: la regla no se aplica."
+  reviewed_by: [jrollon]

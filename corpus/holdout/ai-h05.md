@@ -1,0 +1,7 @@
+Buenas, tengo un problemilla con el móvil que me está sacando de quicio. Llevo unos meses notando que la batería no carga bien. Cuando lo enchufo, a veces tarda media hora en reaccionar y empezar a cargar, otras veces no carga del todo. El porcentaje se queda en el ochenta o noventa por ciento, como si tuviera un tope. He probado de todo lo que se me ocurre y nada funciona.
+
+Primero limpié el puerto de carga con un palillo suavemente, por si había polvo. Nada. Luego intenté cambiar de cable, pensando que el cable estaba roto. Tampoco. Incluso probé a dejar el móvil completamente descargado y meterlo a cargar durante toda la noche. Funcionó una vez, pero al día siguiente el problema volvió.
+
+El móvil tiene ya unos tres años, así que entiendo que la batería se está degradando, pero me parece raro que de repente empiece a no cargar así. Mi tío me dijo que probara a resetear el móvil de fábrica, que a veces es un problema de software, no del hardware. Pero vaya, eso significa perder todos los datos, así que es un poco drástico si no estoy seguro de que sirva.
+
+¿Alguien aquí ha tenido un problema parecido? ¿Es la batería que falla, es el puerto, o es software? ¿Merece la pena llevarlo a un técnico, o me compro un móvil nuevo de una vez? Me daría rabia gastar ciento cincuenta euros en repararlo si al final no se soluciona, pero tampoco quiero comprar uno nuevo si la solución es simple. Agradezco cualquier sugerencia.

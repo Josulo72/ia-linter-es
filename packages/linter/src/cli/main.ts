@@ -64,7 +64,7 @@ program
   .option("--stdin-filename <nombre>", "nombre lógico para --stdin (decide formato y overrides)")
   .option("--fail-on <nivel>", "never | info | warning | error")
   .option("--max-index <n>", "falla si el índice de algún archivo supera n")
-  .option("--profile <perfil>", "general | tecnico | academico | marketing")
+  .option("--profile <perfil>", "general | tecnico | academico | marketing | chat | correo | readme | redes")
   .option("--baseline <archivo>", "baseline a aplicar")
   .option("--no-baseline", "ignora la baseline configurada")
   .option("--no-cache", "no usa la caché")
@@ -82,7 +82,7 @@ program
       ctx.config.max_index = n;
     }
     if (o.profile) {
-      if (!["general", "tecnico", "academico", "marketing"].includes(o.profile)) die("--profile inválido");
+      if (!["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"].includes(o.profile)) die("--profile inválido");
       ctx.config.profile = o.profile;
     }
     const reporter = (o.format ?? ctx.config.reporter) as ReporterName;
@@ -252,9 +252,12 @@ program
   .command("run")
   .requiredOption("--corpus <dir>", "directorio raíz del corpus")
   .requiredOption("--partition <nombre>", "development | holdout | challenge")
+  .option("--profile <perfil>", "perfil con el que evaluar el corpus (queda registrado en el informe)")
   .option("-o, --output <archivo>", "informe JSON")
   .action(async (o) => {
-    const ctx = context(program.opts<GlobalOpts>());
+    if (o.profile && !["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"].includes(o.profile)) die("--profile inválido");
+    const base = context(program.opts<GlobalOpts>());
+    const ctx = o.profile ? { ...base, config: { ...base.config, profile: o.profile as typeof base.config.profile } } : base;
     const { runBenchmark } = await import("./benchmark.js");
     const report = runBenchmark(ctx, path.resolve(o.corpus), o.partition);
     const json = JSON.stringify(report, null, 2) + "\n";

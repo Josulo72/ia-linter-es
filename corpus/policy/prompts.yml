@@ -52,3 +52,9 @@ prompts:
   - { id: ai-c04, partition: challenge, register: academico, model: claude-opus-5, prompt: "Redacta la introducción de un artículo académico sobre la toponimia de origen árabe en Aragón. Prosa académica sobria, sin fórmulas de relleno." }
   - { id: ai-c05, partition: challenge, register: marketing, model: claude-sonnet-5, prompt: "Escribe el texto de una página de producto de un cuchillo de cocina. Concreto, con datos, sin superlativos ni llamadas a la acción genéricas." }
   - { id: ai-c06, partition: challenge, register: institucional, model: claude-haiku-4-5, prompt: "Redacta una nota informativa municipal sobre el corte de una calle por obras. Solo hechos, fechas y alternativas, sin fórmulas de cortesía." }
+# Ediciones sobre el texto bruto (§11.6). Ningún texto se ha corregido a mano.
+edits:
+  ai-d14: "regenerado una vez con el mismo prompt por no cumplir la longitud"
+  ai-h11: "regenerado una vez con el mismo prompt por no cumplir la longitud"
+  ai-c05: "regenerado una vez con el mismo prompt por no cumplir la longitud"
+  ai-h04: "supera las 600 palabras; se conserva sin recortar"

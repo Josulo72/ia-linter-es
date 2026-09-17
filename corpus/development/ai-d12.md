@@ -1,0 +1,9 @@
+Hoy se cumple justo un mes desde que me apunté al gimnasio y quería compartir cómo me ha ido, porque hace unas semanas leí varios hilos parecidos aquí y me ayudaron bastante a saber qué esperar, así que intento devolver el favor con mi experiencia.
+
+Empecé sin ninguna base previa, la verdad, llevaba años sin hacer ejercicio de forma regular más allá de caminar de vez en cuando. Las dos primeras semanas fueron mental y físicamente duras: agujetas que no había sentido en la vida, cansancio general y varias tentaciones de dejarlo. Lo que me ayudó a no rendirme fue apuntarme con un objetivo pequeño, ir tres días a la semana sin falta, nada de metas exageradas al principio, y contratar un par de sesiones con un entrenador solo para aprender la técnica básica de las máquinas y evitar lesionarme el primer día.
+
+A partir de la tercera semana empecé a notar cambios que no esperaba tan pronto, sobre todo en el ánimo. Duermo mejor, tengo más energía durante el día y curiosamente como con más cabeza, sin proponérmelo demasiado, como si el cuerpo pidiera menos porquería después de haberse movido. Físicamente todavía no hay cambios muy visibles, algo de tono en brazos y piernas, pero nada dramático, y creo que es justo lo esperable en tan poco tiempo.
+
+Lo que peor llevo sigue siendo la constancia los días que llueve o que tengo mucho trabajo, ahí caigo en la tentación de saltarme el día. También me cuesta la parte de la alimentación, porque una cosa es entrenar y otra bien distinta cambiar hábitos de años en un mes.
+
+Mi plan es seguir con la misma rutina otro mes más antes de plantearme subir la intensidad o cambiar la rutina. Si alguien lleva más tiempo y quiere compartir cómo evolucionó a partir del segundo o tercer mes, me vendría genial para saber qué esperar y no desanimarme si en algún momento se estanca el progreso.

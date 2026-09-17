@@ -1,0 +1,27 @@
+# Registros de la allowlist rechazados (HX). Generado por fetch-human.mjs; no se conserva el texto.
+schema_version: 1
+rejected:
+  - id: h-redc-06
+    source: redc
+    ref: "1034"
+    level: HX
+    reason: no se localiza la introducción
+    checked: 2026-09-17
+  - id: h-redc-07
+    source: redc
+    ref: "1036"
+    level: HX
+    reason: no se localiza la introducción
+    checked: 2026-09-17
+  - id: h-redc-08
+    source: redc
+    ref: "1037"
+    level: HX
+    reason: no se localiza la introducción
+    checked: 2026-09-17
+  - id: h-gut-04
+    source: gutenberg
+    ref: "15725"
+    level: HX
+    reason: "idioma: en"
+    checked: 2026-09-17

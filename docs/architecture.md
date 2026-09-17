@@ -32,7 +32,7 @@ No se construirá un MVP ni una demostración. Se construirá una **v1.0 acotada
 - CLI.
 - API programática desde el mismo paquete.
 - Configuración por proyecto.
-- Perfiles general, técnico, académico y marketing.
+- Perfiles general, técnico, académico y marketing (prosa editada) y chat, correo, readme y redes (escritura cotidiana por situación).
 - Supresiones en Markdown.
 - Baseline.
 - Reporters de terminal, JSON y SARIF.

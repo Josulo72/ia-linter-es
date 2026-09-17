@@ -1,0 +1,33 @@
+schema_version: 1
+id: formato/raya
+revision: 1
+status: candidate
+title: Raya de inciso en escritura cotidiana
+summary: Cualquier raya (—) en un texto de registro cotidiano.
+category: formato
+scope: sentence
+detector: regex
+conditions:
+  patterns:
+    - "—"
+  kinds: [paragraph, plain, list_item]
+default_level: "off"
+profiles: { chat: warning, correo: warning, readme: warning, redes: warning }
+score: { weight: 1.5, cap: 3 }
+message: "Raya de inciso."
+explanation: >-
+  En un correo, un mensaje o un README casi nadie escribe rayas, porque no están en el teclado. La gente usa comas,
+  paréntesis o parte la frase. En prosa editada la raya pegada es correcta, por eso la regla solo se activa en los perfiles cotidianos.
+rewrite_guidance: Cambia el inciso por comas o paréntesis, o parte la frase en dos.
+examples:
+  positive:
+    - { text: "El programa —que es gratis— funciona sin conexión.", expect: 2 }
+    - { text: "Lo probé ayer — y funciona.", expect: 1 }
+  negative:
+    - { text: "El programa (que es gratis) funciona sin conexión.", expect: 0 }
+    - { text: "Lo probé ayer y funciona, tarda un segundo.", expect: 0 }
+provenance:
+  evidence: Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
+  known_false_positives:
+    - Diálogo literario con raya.
+  reviewed_by: [jrollon]

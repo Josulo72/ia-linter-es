@@ -1,0 +1,821 @@
+# Generado por benchmark/scripts/build-manifests.mjs. No editar a mano.
+schema_version: 1
+corpus_version: "1.1"
+partition: challenge
+samples:
+  - id: ai-g-d01
+    class: ai
+    file: challenge/ai-g-d01.md
+    register: cotidiano
+    theme: general
+    prompt_id: d01
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 184
+    sha256: 67c9d98eb292dc2721038c3609d15c2226ed84fd134043210702a2cdca8d7437
+  - id: ai-g-d02
+    class: ai
+    file: challenge/ai-g-d02.md
+    register: cotidiano
+    theme: general
+    prompt_id: d02
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 249
+    sha256: 46d49abb71a77b90874abb583641b69ea1cd0af6a427d9222a5b25646eddeed3
+  - id: ai-g-d03
+    class: ai
+    file: challenge/ai-g-d03.md
+    register: cotidiano
+    theme: general
+    prompt_id: d03
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: ff4286635831c0bcbf0cec05074e67090af9263c06093ad58403d1e4ed4c7c1a
+  - id: ai-g-d04
+    class: ai
+    file: challenge/ai-g-d04.md
+    register: cotidiano
+    theme: general
+    prompt_id: d04
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 274
+    sha256: a8c7bb0ad09a7953d3e55f8a6b4907902a545529eb9324b3967a0336464676dd
+  - id: ai-g-d05
+    class: ai
+    file: challenge/ai-g-d05.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d05
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 258
+    sha256: d07bdae63931b27797ed604e19376ceee52224ec632333796569f6ef116048d7
+  - id: ai-g-d06
+    class: ai
+    file: challenge/ai-g-d06.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d06
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 286
+    sha256: 25e2f24cc585e106c71b3f30180c28c6ad7c6e7b5288ae0deaa1ea750feba65d
+  - id: ai-g-d07
+    class: ai
+    file: challenge/ai-g-d07.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d07
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 237
+    sha256: e87f416ca7895c36cab53279032082ba788c7b5b3cc11ba2cce0624df7471088
+  - id: ai-g-d08
+    class: ai
+    file: challenge/ai-g-d08.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d08
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 281
+    sha256: 3ccbb5a8b49b5b7faaf06b05ea0af6b6e5f5cabe6100a222b3ec411dfb356685
+  - id: ai-g-d09
+    class: ai
+    file: challenge/ai-g-d09.md
+    register: cotidiano
+    theme: general
+    prompt_id: d09
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 271
+    sha256: 3d91945b605eef7f1f7c0246d6a39fc5c2d128fbda294053e8d18d73bea4a9d6
+  - id: ai-g-d10
+    class: ai
+    file: challenge/ai-g-d10.md
+    register: cotidiano
+    theme: general
+    prompt_id: d10
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 266
+    sha256: 0b66a405b7caf5ab613fbaf31daf66d5a2f4f65a31f3df876e4c27d6be7e4511
+  - id: ai-g-d11
+    class: ai
+    file: challenge/ai-g-d11.md
+    register: cotidiano
+    theme: general
+    prompt_id: d11
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 282
+    sha256: b6ee6e4e63160df18f2acd8b213fd2c49bbaab383207e7452b630c279388532b
+  - id: ai-g-d12
+    class: ai
+    file: challenge/ai-g-d12.md
+    register: cotidiano
+    theme: general
+    prompt_id: d12
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 269
+    sha256: 3ae53938afb7e0cd320dd3864dd1cbbe6ea21fb1a805b8577c4acf9a09b761b0
+  - id: ai-g-d13
+    class: ai
+    file: challenge/ai-g-d13.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d13
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 247
+    sha256: f912fd63eb46178144526da813a67b2f8478db3012e688bdee51726fd2525964
+  - id: ai-g-d14
+    class: ai
+    file: challenge/ai-g-d14.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d14
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 273
+    sha256: 6f7d545d167688847a9a203a49e3fe1f4c57406715fa483486ca4c20bd4385bb
+  - id: ai-g-d15
+    class: ai
+    file: challenge/ai-g-d15.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d15
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 283
+    sha256: 88931ccc0b995b28a1ca10c6e1e278c4b35fdba0e824be6f3b774cb3bc838b13
+  - id: ai-g-d16
+    class: ai
+    file: challenge/ai-g-d16.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d16
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 259
+    sha256: d32139621fa12149128d4ed1e41cb866fad7ea5cb5fa0db2ff5c143c670bdeb1
+  - id: ai-g-d17
+    class: ai
+    file: challenge/ai-g-d17.md
+    register: cotidiano
+    theme: general
+    prompt_id: d17
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 305
+    sha256: 919f83214080fed57d579cac06d844b96f84db96d7e257cc85146bb5b73536e4
+  - id: ai-g-d18
+    class: ai
+    file: challenge/ai-g-d18.md
+    register: cotidiano
+    theme: general
+    prompt_id: d18
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 319
+    sha256: c6115fad1a2fbd26ef6368d6d124f387e796fd9b3dca7ced7759862c4dfa857a
+  - id: ai-g-d19
+    class: ai
+    file: challenge/ai-g-d19.md
+    register: cotidiano
+    theme: general
+    prompt_id: d19
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 275
+    sha256: 0dcf8c52303a24bb28ecf6b9a4f6a92026748033ed7e510981157c220fbc9079
+  - id: ai-g-d20
+    class: ai
+    file: challenge/ai-g-d20.md
+    register: cotidiano
+    theme: general
+    prompt_id: d20
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 331
+    sha256: 567a8385f8e803d3a7a7711aab320bab68a591c4d19cc7d4aed38f28d8a8039b
+  - id: ai-g-d21
+    class: ai
+    file: challenge/ai-g-d21.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d21
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 348
+    sha256: 295bd582acf8298836fa32dfdca49f3bee658edf57ed255b3272067e2229fcc2
+  - id: ai-g-d22
+    class: ai
+    file: challenge/ai-g-d22.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: d22
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 348
+    sha256: 20ab7bfe9e3e753c5a9faaf0f3035cbf06f2ff7efe45b9cefe5400b93b7b8809
+  - id: ai-g-d23
+    class: ai
+    file: challenge/ai-g-d23.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d23
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 317
+    sha256: d49e7bc0aeb95c8a82c0058da6249fca26d1b431ea165dcc458ff9fddd507ccf
+  - id: ai-g-d24
+    class: ai
+    file: challenge/ai-g-d24.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: d24
+    condition: guiada
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 356
+    sha256: dd26897ba6a1833e9e85d1d3d0d0292eb634b20ef67e6f7c6411208377d2f858
+  - id: ai-g-h01
+    class: ai
+    file: challenge/ai-g-h01.md
+    register: cotidiano
+    theme: general
+    prompt_id: h01
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 214
+    sha256: c2751fd811a58a17d279e72817937abda68dc302ee7efb559c5416bfc8b2b57c
+  - id: ai-g-h02
+    class: ai
+    file: challenge/ai-g-h02.md
+    register: cotidiano
+    theme: general
+    prompt_id: h02
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 269
+    sha256: 44ad2911b76b2ebfbd3241c9af3504ab1bf458bd689906464cd55771ad070a29
+  - id: ai-g-h03
+    class: ai
+    file: challenge/ai-g-h03.md
+    register: cotidiano
+    theme: general
+    prompt_id: h03
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 230
+    sha256: 1114bae7a5671478a0695c55f20148cd05140fbf4555f61b4aea4e1e9049a912
+  - id: ai-g-h04
+    class: ai
+    file: challenge/ai-g-h04.md
+    register: cotidiano
+    theme: general
+    prompt_id: h04
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 296
+    sha256: 61a74eeb91093fe842c05b4735c3cd59dce232447731cc441c537cb35c171f3a
+  - id: ai-g-h05
+    class: ai
+    file: challenge/ai-g-h05.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h05
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 264
+    sha256: c5bc340626debf6186ef0c80e88045b54137c6a850540cc2fa941f57d6c4ad80
+  - id: ai-g-h06
+    class: ai
+    file: challenge/ai-g-h06.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h06
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 291
+    sha256: 59d8951b04ce80889ecb5eaade8fd345485cbedb09b7dbb182614be13bee6e73
+  - id: ai-g-h07
+    class: ai
+    file: challenge/ai-g-h07.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h07
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 238
+    sha256: c5ff6919cc3cd752c77ed1237eda414c71fbbbc9fc4edc874c56c9f703dce4d3
+  - id: ai-g-h08
+    class: ai
+    file: challenge/ai-g-h08.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h08
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 297
+    sha256: d8032d5605bfe8ce505dc2ea3ccfc7fe3b5df2fae34fd5c748ace5851660c4b8
+  - id: ai-g-h09
+    class: ai
+    file: challenge/ai-g-h09.md
+    register: cotidiano
+    theme: general
+    prompt_id: h09
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 258
+    sha256: 85ecb7750dbe50f91531e5c50068d60d35953ca206c41eb0289eec367c437aaf
+  - id: ai-g-h10
+    class: ai
+    file: challenge/ai-g-h10.md
+    register: cotidiano
+    theme: general
+    prompt_id: h10
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 253
+    sha256: d7bb4bc8edfcbcd33856e932469e7ae7050cf23ef3b67eca042cd1afc836bb5a
+  - id: ai-g-h11
+    class: ai
+    file: challenge/ai-g-h11.md
+    register: cotidiano
+    theme: general
+    prompt_id: h11
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 248
+    sha256: 615340e08b1dc60e30f9fbdd1ec5cda2e9ca532d49ce85bcc64625db26a209eb
+  - id: ai-g-h12
+    class: ai
+    file: challenge/ai-g-h12.md
+    register: cotidiano
+    theme: general
+    prompt_id: h12
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 241
+    sha256: aef05f3e025b5fa885922d8768c2a6c550777388bfca9e5df81d17d0725f0b1a
+  - id: ai-g-h13
+    class: ai
+    file: challenge/ai-g-h13.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h13
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 243
+    sha256: cba7cc7962fa380f08bc0b971bc941b86e6da81fe65b75221c1f6561fa94e262
+  - id: ai-g-h14
+    class: ai
+    file: challenge/ai-g-h14.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h14
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 253
+    sha256: e2a2b0a6738f20bb94e75fbd147d6afbe5d1279bc1de5630bf5757ff2bee1419
+  - id: ai-g-h15
+    class: ai
+    file: challenge/ai-g-h15.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h15
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 267
+    sha256: a6db796f6f193836f9bc463d1abd1ea122b06ba16cfee960229d577bc0e98bdc
+  - id: ai-g-h16
+    class: ai
+    file: challenge/ai-g-h16.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h16
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 253
+    sha256: f16379f304f4cf2943c86783cf2f974867605f1c81460433af181a2a97a04842
+  - id: ai-g-h17
+    class: ai
+    file: challenge/ai-g-h17.md
+    register: cotidiano
+    theme: general
+    prompt_id: h17
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 302
+    sha256: c936cc9a17555febef0b2d3e3f4c950b866bed80f3cf2399cdceffaf8310cd14
+  - id: ai-g-h18
+    class: ai
+    file: challenge/ai-g-h18.md
+    register: cotidiano
+    theme: general
+    prompt_id: h18
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 340
+    sha256: 5341521e2219c70411bc6ac73bddc315755dab4eb18f71bdaac8285d87ceb129
+  - id: ai-g-h19
+    class: ai
+    file: challenge/ai-g-h19.md
+    register: cotidiano
+    theme: general
+    prompt_id: h19
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 271
+    sha256: d86d248b71232da566c4ebbf3a150e04a1aa6254fe57c30a870173d6eb3057df
+  - id: ai-g-h20
+    class: ai
+    file: challenge/ai-g-h20.md
+    register: cotidiano
+    theme: general
+    prompt_id: h20
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 333
+    sha256: c9c2d22583ccf716e82abff94d1f8f9c95b1d1b8af4bbac67ed50e38561e3baf
+  - id: ai-g-h21
+    class: ai
+    file: challenge/ai-g-h21.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h21
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 349
+    sha256: a42ccae68fb6b6ef14a36a7f4e51ef5e18b6cf10afa5659fb83b12110f5af3b0
+  - id: ai-g-h22
+    class: ai
+    file: challenge/ai-g-h22.md
+    register: cotidiano
+    theme: informatica
+    prompt_id: h22
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 323
+    sha256: bae8486d0982ce8cfec95274df1caf1936fc436a7a941e7573e0be1b81de40c0
+  - id: ai-g-h23
+    class: ai
+    file: challenge/ai-g-h23.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h23
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 323
+    sha256: 3d637836df52df7d08de1944fc715b1136af02febc22c7c620b466586cd61e1d
+  - id: ai-g-h24
+    class: ai
+    file: challenge/ai-g-h24.md
+    register: cotidiano
+    theme: aficiones
+    prompt_id: h24
+    condition: guiada
+    origin_partition: holdout
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool), lotes de 8
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 322
+    sha256: 68782a7418838446f3d85d436e91063ce959375595539bf1dbfbf3c74dab7dac

@@ -1,0 +1,5 @@
+schema_version: 1
+manifest: corpus/manifests/holdout.yml
+manifest_sha256: 61416aa2b89e97a1b7175916398cd92f8a4eb5fac25b383ef4468fb83d2e1c18
+frozen: 2026-09-17
+samples: 42

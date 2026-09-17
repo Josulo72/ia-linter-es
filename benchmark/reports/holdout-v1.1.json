@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "partition": "holdout",
+  "tool": {
+    "version": "1.0.0",
+    "rulepack": "1.0.0"
+  },
+  "config": {
+    "threshold": 12,
+    "min_words_for_index": 150,
+    "profile": "chat"
+  },
+  "corpus": {
+    "samples": 42,
+    "human": 18,
+    "ai": 24,
+    "human_words": 3781,
+    "ai_words": 6752,
+    "manifest_sha256": "61416aa2b89e97a1b7175916398cd92f8a4eb5fac25b383ef4468fb83d2e1c18"
+  },
+  "per_rule": {
+    "densidad/adjetivos-grandilocuentes": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 5.5
+    },
+    "densidad/adverbios-mente": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 3.4
+    },
+    "densidad/conectores": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 7
+    },
+    "densidad/emojis": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 1.5
+    },
+    "densidad/exclamaciones": {
+      "status": "stable",
+      "findings_human": 2,
+      "findings_ai": 0,
+      "docs_human": 2,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0.529,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {
+        "cotidiano": {
+          "human": 2,
+          "ai": 0
+        }
+      },
+      "ms": 4.9
+    },
+    "densidad/intensificadores": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 3.7
+    },
+    "densidad/verbos-comodin": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 3.7
+    },
+    "estructura/cierre-formulario": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.8
+    },
+    "estructura/conector-inicio-parrafo": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 5.2
+    },
+    "estructura/encabezado-dos-puntos": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.3
+    },
+    "estructura/enumeracion-ordinal": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.6
+    },
+    "estructura/lista-inicio-uniforme": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.4
+    },
+    "estructura/longitud-uniforme": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.3
+    },
+    "estructura/ritmo-plano": {
+      "status": "candidate",
+      "findings_human": 2,
+      "findings_ai": 16,
+      "docs_human": 2,
+      "docs_ai": 16,
+      "fp_per_1000_human_words": 0.529,
+      "per_1000_ai_words": 2.37,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {
+        "cotidiano": {
+          "human": 2,
+          "ai": 16
+        }
+      },
+      "ms": 0.1
+    },
+    "formato/comillas-angulares": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.1
+    },
+    "formato/encabezado-title-case": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.2
+    },
+    "formato/lista-negrita-inicial": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.3
+    },
+    "formato/negrita-abre-parrafo": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.2
+    },
+    "formato/raya": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.1
+    },
+    "formato/raya-espaciada": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 3.3
+    },
+    "formato/sentencia-dos-puntos": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 1.1
+    },
+    "lexico/actualidad-generica": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 1,
+      "docs_human": 0,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.148,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {
+        "cotidiano": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 3.9
+    },
+    "lexico/desde-hasta-pasando": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 0.8
+    },
+    "lexico/es-importante-destacar": {
+      "status": "stable",
+      "findings_human": 1,
+      "findings_ai": 0,
+      "docs_human": 1,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0.264,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {
+        "cotidiano": {
+          "human": 1,
+          "ai": 0
+        }
+      },
+      "ms": 2.9
+    },
+    "lexico/honestidad-anunciada": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 1,
+      "docs_human": 0,
+      "docs_ai": 1,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.148,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {
+        "cotidiano": {
+          "human": 0,
+          "ai": 1
+        }
+      },
+      "ms": 3.2
+    },
+    "lexico/metaforas-comodin": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 6.2
+    },
+    "lexico/muletillas-ia": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 8.8
+    },
+    "lexico/ya-sea-enumeracion": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 1.6
+    },
+    "repeticion/anafora": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.7
+    },
+    "repeticion/inicio-parrafo": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.5
+    },
+    "repeticion/ngramas": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 13
+    },
+    "retorica/arenga-final": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 6
+    },
+    "retorica/no-es-x-es-y": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 3,
+      "docs_human": 0,
+      "docs_ai": 3,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.444,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {
+        "cotidiano": {
+          "human": 0,
+          "ai": 3
+        }
+      },
+      "ms": 1.3
+    },
+    "retorica/no-se-trata-de": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.6
+    },
+    "retorica/no-solo-sino": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 1.4
+    },
+    "retorica/pregunta-retorica-apertura": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 4,
+      "docs_human": 0,
+      "docs_ai": 4,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0.592,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {
+        "cotidiano": {
+          "human": 0,
+          "ai": 4
+        }
+      },
+      "ms": 1
+    },
+    "retorica/triada": {
+      "status": "stable",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
+      },
+      "by_register": {},
+      "ms": 2.5
+    }
+  },
+  "aggregate": {
+    "threshold": 12,
+    "confusion": {
+      "tp": 16,
+      "fp": 3,
+      "tn": 15,
+      "fn": 8,
+      "skipped_short": 0
+    },
+    "tpr": 0.667,
+    "fpr": 0.167,
+    "precision": 0.842,
+    "balanced_accuracy": 0.75,
+    "ci95": {
+      "tpr": [
+        0.467,
+        0.82
+      ],
+      "fpr": [
+        0.058,
+        0.392
+      ]
+    },
+    "index_median_human": 0,
+    "index_median_ai": 14.5,
+    "by_register": {
+      "cotidiano": {
+        "n_human": 18,
+        "n_ai": 24,
+        "median_human": 0,
+        "median_ai": 14.5
+      }
+    }
+  },
+  "notes": [
+    "Sin adjudicaciones para esta partición: la precisión adjudicada por regla es null.",
+    "No se publica recall por regla: el corpus no está anotado exhaustivamente.",
+    "El índice mide densidad de patrones editoriales; el umbral solo se usa para evaluar separación, no como veredicto de autoría."
+  ]
+}

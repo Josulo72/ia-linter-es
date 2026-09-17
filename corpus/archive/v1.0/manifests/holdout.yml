@@ -1,0 +1,470 @@
+# Generado por benchmark/scripts/build-manifests.mjs. No editar a mano.
+schema_version: 1
+partition: holdout
+samples:
+  - id: h-boe-08
+    class: human
+    file: holdout/h-boe-08.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2017-12902
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2017-11-09
+    title: Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 500
+    sha256: 0c910bf21cd7c198b4d6ef456cc26b5493da2a9a54bf2191233d27f27721b450
+    retrieved: 2026-09-17
+  - id: h-boe-09
+    class: human
+    file: holdout/h-boe-09.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2021-4628
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2021-03-25
+    title: Ley Orgánica 3/2021, de 24 de marzo, de regulación de la eutanasia.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 589
+    sha256: ec40b366a7c5b0f8e1a1451d8b272d8ceea2344cfc8b0f7a9bc91f63022765a6
+    retrieved: 2026-09-17
+  - id: h-boe-10
+    class: human
+    file: holdout/h-boe-10.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2014-12328
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2014-11-28
+    title: Ley 27/2014, de 27 de noviembre, del Impuesto sobre Sociedades.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 473
+    sha256: e448e8affd7195f936e17b3ad1f9a1d1a008739a84161c9085a45944cef3ecbc
+    retrieved: 2026-09-17
+  - id: h-boe-11
+    class: human
+    file: holdout/h-boe-11.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2006-7899
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2006-05-04
+    title: Ley Orgánica 2/2006, de 3 de mayo, de Educación.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 491
+    sha256: bd1ca6132bb71bd6e74eedc31009c780ca4b866601ca120279e128634975aa1a
+    retrieved: 2026-09-17
+  - id: h-boe-12
+    class: human
+    file: holdout/h-boe-12.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2011-15623
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2011-10-05
+    title: Ley 33/2011, de 4 de octubre, General de Salud Pública.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 488
+    sha256: e0c470315cf49a2257069c3d617554fcdf52593fa0e564002598c1a4b17ffe06
+    retrieved: 2026-09-17
+  - id: h-sinc-09
+    class: human
+    file: holdout/h-sinc-09.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/El-demonio-de-Tasmania-podria-tener-la-clave-de-la-regresion-de-tumores
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-12-02
+    title: El demonio de Tasmania podría tener la clave de la regresión de tumores
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 476
+    sha256: 2d329b26e97d7204b86d8d172960768aac3647231898061360631b4d1699f1ea
+    retrieved: 2026-09-17
+  - id: h-sinc-10
+    class: human
+    file: holdout/h-sinc-10.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Los-primeros-humanos-que-conquistaron-el-techo-del-mundo
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-11-29
+    title: Los primeros humanos que conquistaron el techo del mundo
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 467
+    sha256: d493c3f249c0bae45bf718386d7761ce5285efdc44bf06eb4e03431d44e7a4f2
+    retrieved: 2026-09-17
+  - id: h-sinc-11
+    class: human
+    file: holdout/h-sinc-11.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/La-temperatura-en-los-Pirineos-ha-aumentado-un-30-mas-que-la-media-mundial
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-11-12
+    title: La temperatura en los Pirineos ha aumentado un 30% más que la media mundial
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 484
+    sha256: 05d94e43b5abc3233539cf765a446e08cdf9ffde7684f33f1bddbc5199f71b41
+    retrieved: 2026-09-17
+  - id: h-sinc-12
+    class: human
+    file: holdout/h-sinc-12.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/El-queso-mas-antiguo-del-mundo-aparece-en-una-tumba-egipcia
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-08-17
+    title: El queso más antiguo del mundo aparece en una tumba egipcia
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 467
+    sha256: 108ac54312ccd1144f6c0e59856c2d91e9a9ef8dcbaa641607282c6e9e27bb43
+    retrieved: 2026-09-17
+  - id: h-sinc-13
+    class: human
+    file: holdout/h-sinc-13.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Un-gen-zombi-protege-a-los-elefantes-contra-el-cancer
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-08-14
+    title: Un gen ‘zombi’ protege a los elefantes contra el cáncer
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 474
+    sha256: d439417ca27431f63d25c56800e1063872e3da1fbbce2fc451399a1938fc1443
+    retrieved: 2026-09-17
+  - id: h-sinc-14
+    class: human
+    file: holdout/h-sinc-14.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/La-primera-fotografia-de-un-planeta-recien-nacido
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2018-07-02
+    title: La primera fotografía de un planeta recién nacido
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 462
+    sha256: 7f4f85d09dc179fd6218473fb4a65c6e7b86e8ffc24e1013c10050db13d60b84
+    retrieved: 2026-09-17
+  - id: h-redc-09
+    class: human
+    file: holdout/h-redc-09.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1038
+    license: CC-BY-4.0
+    author: Celia Díaz-Catalán; Irene López-Navarro; Jesús Rey Rocha; Pablo Cabrera Álvarez
+    date: 2019-06-30
+    title: Influencia de variables individuales y grupales en la actitud de los investigadores españoles hacia la transferencia de conocimiento y la cooperación con empresas y administraciones públicas
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 497
+    sha256: f43e7c76230d230c63762d7963a94906397b3bf29aaada646100098fe8c11328
+    retrieved: 2026-09-17
+  - id: h-redc-10
+    class: human
+    file: holdout/h-redc-10.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1039
+    license: CC-BY-4.0
+    author: Alba Ruth Pinto-Santos; Carlos Villanueva-Valadez; Omar Cortés-Peña
+    date: 2019-06-30
+    title: Percepciones del docente universitario sobre la comunicación científica de libre acceso
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 462
+    sha256: d29e7db935b0d24fe1a9158cfe0449b3dc27bd50b707b30c2552179a97cfafd4
+    retrieved: 2026-09-17
+  - id: h-redc-12
+    class: human
+    file: holdout/h-redc-12.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1041
+    license: CC-BY-4.0
+    author: Daniela De Filippo; Paulo Silva; María Manuel Borges
+    date: 2019-06-30
+    title: Caracterización de las publicaciones de España y Portugal sobre Open Science y análisis de su presencia en las redes sociales
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 439
+    sha256: d843e1fc1f909e8fa6f20bb09862cec06b810d82ec051799af67f95b5d8ef4d1
+    retrieved: 2026-09-17
+  - id: h-redc-13
+    class: human
+    file: holdout/h-redc-13.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1042
+    license: CC-BY-4.0
+    author: Héctor Mauricio Serna-Gómez; María Fernanda Quintero-Agudelo; Edisson Stiven Castro-Escobar; Gregorio Calderón-Hernández
+    date: 2019-06-30
+    title: Las redes de colaboración en el área de administración. El caso de las universidades colombianas
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 351
+    sha256: 010e59ea7483b013c2d3fe90fb12160d5224732f0f7fc62e3e21c916f6bf54b4
+    retrieved: 2026-09-17
+  - id: h-redc-14
+    class: human
+    file: holdout/h-redc-14.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1043
+    license: CC-BY-4.0
+    author: Equipo Editorial
+    date: 2019-06-30
+    title: ¿Cómo deben gestionar los científicos sus datos de investigación? Aportaciones desde Maredata
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 507
+    sha256: 623c8bc75db0253930245357fa55a64aad3ba44ea205c9f00d5ebbd5de4695f2
+    retrieved: 2026-09-17
+  - id: ai-h01
+    class: ai
+    file: holdout/ai-h01.md
+    register: general
+    prompt_id: ai-h01
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 544
+    sha256: 08168be026bfa928e96f55aea47b23c750a718ae91e0e382bb89d356af9b65e9
+  - id: ai-h02
+    class: ai
+    file: holdout/ai-h02.md
+    register: general
+    prompt_id: ai-h02
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 553
+    sha256: 7e538d53179abc73019c37e0c7d447a51f7d3583370b22f2cc88e0d6fd742e8e
+  - id: ai-h03
+    class: ai
+    file: holdout/ai-h03.md
+    register: general
+    prompt_id: ai-h03
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 411
+    sha256: 7a242a3b1b547f3d001622e132232aa596caf1a3f518b0facf247c8e49591dc7
+  - id: ai-h04
+    class: ai
+    file: holdout/ai-h04.md
+    register: tecnico
+    prompt_id: ai-h04
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: supera las 600 palabras; se conserva sin recortar
+    words: 625
+    sha256: 65697db2e5f69bb283809e627042e3508b242ef894d0f55ccceef4747bf799eb
+  - id: ai-h05
+    class: ai
+    file: holdout/ai-h05.md
+    register: tecnico
+    prompt_id: ai-h05
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 420
+    sha256: 465259f22ef702c99d41689b2792a50a34a8d459a372b4dfcb73fab47bfd36fa
+  - id: ai-h06
+    class: ai
+    file: holdout/ai-h06.md
+    register: tecnico
+    prompt_id: ai-h06
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 544
+    sha256: 8abf63e4304cc43e76972977216ba79442fff4a8f3a174179c06d7c112e5093c
+  - id: ai-h07
+    class: ai
+    file: holdout/ai-h07.md
+    register: academico
+    prompt_id: ai-h07
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 499
+    sha256: edc456cb73c15b15900b152a7f0362323d5609da1137cf6bb7917c270ee59ee5
+  - id: ai-h08
+    class: ai
+    file: holdout/ai-h08.md
+    register: academico
+    prompt_id: ai-h08
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 538
+    sha256: 16499ec18d77025ea559d4eaf98a9d6e6769984b54488af37ccae70f38a252d8
+  - id: ai-h09
+    class: ai
+    file: holdout/ai-h09.md
+    register: marketing
+    prompt_id: ai-h09
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 558
+    sha256: 217c48c5d8091ece71d8f8c57e5891b5947b6cff8f5f92eb198f1c77caca2f43
+  - id: ai-h10
+    class: ai
+    file: holdout/ai-h10.md
+    register: marketing
+    prompt_id: ai-h10
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 317
+    sha256: 35152634fd915818ad47d6c77f4d972ba62952127cc936172265513303c872c6
+  - id: ai-h11
+    class: ai
+    file: holdout/ai-h11.md
+    register: marketing
+    prompt_id: ai-h11
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: regenerado una vez con el mismo prompt por no cumplir la longitud
+    words: 422
+    sha256: 29d005191b6f098b65c024b0faee82c38177ec691bf8d985e3712f73eccc961c
+  - id: ai-h12
+    class: ai
+    file: holdout/ai-h12.md
+    register: periodistico
+    prompt_id: ai-h12
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 556
+    sha256: 41846c1c9570397a90f1355b33f5ca68d1eadebff2027ba0109dcb5abdba6375
+  - id: ai-h13
+    class: ai
+    file: holdout/ai-h13.md
+    register: periodistico
+    prompt_id: ai-h13
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 413
+    sha256: 17a9e39285ccb2a6573cac4d8db87384dc799c8cb993b277781ffdcc4d27c782
+  - id: ai-h14
+    class: ai
+    file: holdout/ai-h14.md
+    register: institucional
+    prompt_id: ai-h14
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 532
+    sha256: 00df73af6b6dab7e659e9728a245ca4e5b5aa9e6a68af6356fb6c104ebfc4b9d
+  - id: ai-h15
+    class: ai
+    file: holdout/ai-h15.md
+    register: institucional
+    prompt_id: ai-h15
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 562
+    sha256: 34083736083141f1d433cb281f8c71e3858d5115057cd9002faeec98c5c48762

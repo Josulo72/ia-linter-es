@@ -1,0 +1,9 @@
+Vaya faena lo que te ha pasado, siento mucho leer esto pero por suerte tiene solución en la mayoría de los casos si actúas rápido, así que vamos a ver qué puedes hacer paso a paso.
+
+Lo primero, entra en la app o en la web de Instagram desde el navegador y busca la opción de cuenta pirateada, normalmente aparece en la pantalla de inicio de sesión cuando pones tu usuario o correo y le das a olvidé la contraseña. Ahí Instagram suele ofrecer la opción específica de decir que crees que te han hackeado la cuenta, y eso activa un proceso distinto al de recuperación normal, más enfocado en verificar que eres tú de verdad el dueño original.
+
+Si el que la ha robado ya cambió el correo o el número asociado, no te preocupes, sigue existiendo un formulario dentro de la ayuda de Instagram pensado justo para estos casos, donde te piden datos como el nombre de usuario anterior, el correo con el que creaste la cuenta originalmente y a veces hasta una foto tuya sujetando un papel con un código que te envían, para demostrar que eres tú y no otra persona intentando quedarse con la cuenta.
+
+Mientras tanto, es buena idea revisar si tienes esa misma contraseña usada en otras cuentas tuyas, correo, redes, banca, y cambiarla ahí también cuanto antes, porque si te la han robado en Instagram es posible que la hayan sacado de una filtración que afecte a más sitios. Activa la verificación en dos pasos en cuanto recuperes el acceso, eso reduce muchísimo el riesgo de que vuelva a pasar.
+
+Ten paciencia con el proceso, a veces Instagram tarda varios días o incluso semanas en devolver cuentas, sobre todo si tiene muchos seguidores o parece una cuenta de cierto valor, porque revisan con más cuidado para evitar fraudes. Guarda capturas de todo el proceso por si necesitas insistir o reabrir el caso. Ánimo, seguro que se soluciona.

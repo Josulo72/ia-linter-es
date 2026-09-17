@@ -1,0 +1,15 @@
+El informe del Observatorio Pirenaico de Cambio Climático presentado hoy advierte de que la temperatura media en los Pirineos ha aumentado un 1,2 ºC, es decir un 30% más que la media mundial (0,85 ºC). Además, la mitad de los glaciares de los Pirineos ha desaparecido en los últimos 35 años y el espesor de la nieve en el Pirineo central podría reducirse hasta un 50% en los próximos 30 años.
+
+Después de dos años de trabajo, más de 100 expertos españoles, franceses y andorranos han presentado hoy el informe El Cambio Climático en los Pirineos: impactos, vulnerabilidades y adaptación, un documento que supone un amplio consenso científico para el territorio pirenaico.
+
+El trabajo, coordinado por el Observatorio Pirenaico de Cambio Climático (OPCC), actualiza las bases del conocimiento científico en materia de impactos y vulnerabilidad de los Pirineos, consensúa los principales desafíos a los que se enfrentan y propone recomendaciones sectoriales para la adaptación al cambio climático en un contexto de cambio global.
+
+“El cambio climático es ya una evidencia indiscutible. Sucede en estos momentos y en estas latitudes. Tenemos un reto urgente: seguir investigando en cambio climático y adaptarnos a sus consecuencias”, señala Juan Terrádez, coordinador del informe.
+
+Entre los impactos, el informe destaca que la temperatura media en los Pirineos ha aumentado un 30% más (1,2ºC) que la media mundial (0,85ºC) en los últimos 50 años. En los últimos 35 años han desaparecido la mitad de los glaciares de los Pirineos, algunas aves migratorias han adelantado su fecha de llegada hasta diez días desde los años 60 y el espesor medio de la nieve en el Pirineo central podría reducirse hasta un 50% para el año 2050, según las estimaciones más optimistas.
+
+Según el informe, la temperatura media podría subir para finales del siglo entre 2 y 7,1 ºC, dependiendo de los diferentes escenarios utilizados por el Panel Intergubernamental para el Cambio Climático (IPCC, por sus siglas en inglés). Por otra parte, el indicador climático para la precipitación muestra una tendencia a la baja de las precipitaciones del 2,5% por década.
+
+Los científicos también indican que el límite superior del área de distribución de las especies de fauna de montaña en Europa ha ascendido un promedio de 11 metros por decenio. Además, la disponibilidad de recursos hídricos es cada vez más variable y se esperan episodios de sequía y lluvias torrenciales cada vez más intensos. Se podría incrementar también los riesgos naturales como los deslizamientos de terreno, los aludes o las inundaciones.
+
+Aunque el Pirineo no genera grandes cantidades de emisiones de carbono, se trata de una región especialmente sensible y vulnerable a los efectos del cambio climático. “A través de este informe pretendemos proporcionar un documento de referencia para la comunidad científica y para los responsables de decisiones técnicas y políticas, así como el sector empresarial y toda la sociedad”, subraya la coordinadora del Observatorio Pirenaico de Cambio Climático, Idoia Arauzo.

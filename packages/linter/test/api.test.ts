@@ -36,6 +36,20 @@ describe("API programática", () => {
     expect(api.loadConfig({ cwd: dir }).config.profile).toBe("marketing");
   });
 
+  it("perfiles por situación: se aceptan y cambian los niveles", () => {
+    for (const p of ["chat", "correo", "readme", "redes"]) {
+      const dir = tmpProject({ "ia-linter.yml": `profile: ${p}\n` });
+      expect(api.loadConfig({ cwd: dir }).config.profile).toBe(p);
+    }
+    expect(api.validateConfigObject({ profile: "coloquial" }).length).toBe(1);
+    // La raya de inciso solo se marca en los perfiles cotidianos.
+    const texto = "El programa —que es gratis— funciona sin conexión y no manda datos a ningún sitio.";
+    const enChat = api.lintText(texto, { config: { profile: "chat" } }).findings.filter((f) => f.rule === "formato/raya");
+    const enGeneral = api.lintText(texto, { config: { profile: "general" } }).findings.filter((f) => f.rule === "formato/raya");
+    expect(enChat.length).toBe(2);
+    expect(enGeneral.length).toBe(0);
+  });
+
   it("documentos cortos: hallazgos sí, índice no", () => {
     const r = api.lintText("Hoy en día, cabe destacar que es importante señalar esto.", { config: {} });
     expect(r.findings.length).toBeGreaterThan(0);

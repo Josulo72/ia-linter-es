@@ -1,0 +1,5 @@
+# Perfil readme: texto de proyecto para quien lo va a leer dos minutos.
+rules:
+  formato/negrita-abre-parrafo: warning
+  formato/sentencia-dos-puntos: warning
+  lexico/honestidad-anunciada: warning

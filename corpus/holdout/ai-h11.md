@@ -1,0 +1,7 @@
+Os cuento la situación a ver si alguien me da una perspectiva que yo ya no tengo porque estoy metido dentro y no veo con claridad. Un amigo de toda la vida, de esos de más de quince años de amistad, me pidió hace ocho meses 900 euros porque tuvo un imprevisto con el coche y se quedó sin ahorros. Se los di sin pensarlo, sin papel de por medio, como se hacen estas cosas entre amigos cuando confías ciegamente en alguien.
+
+El problema es que desde entonces la cosa ha ido a peor. Al principio me decía que a final de mes, luego que en dos meses seguro, luego directamente dejó de sacar el tema y si lo saco yo cambia de conversación o se pone a la defensiva, como si yo fuera el que está haciendo algo mal por recordárselo. Mientras tanto le he visto irse de viaje un fin de semana y cambiar de móvil, cosas que en su situación económica actual no entiendo mucho, la verdad.
+
+No es una cantidad que me vaya a arruinar, pero tampoco es una miseria, y lo que más me pesa es la sensación de que la amistad se ha convertido en algo raro, tenso, donde ya no hablamos con la misma naturalidad de antes. He pensado en escribirle algo claro por mensaje para que quede constancia, pero no sé si eso va a romper definitivamente lo que queda de relación o si es lo único sensato que puedo hacer ya.
+
+¿Cómo lo habéis afrontado vosotros en casos parecidos? ¿Merece la pena insistir con calma o hay que cortar por lo sano y dar el dinero por perdido, aunque sea asumiendo que la amistad probablemente tampoco sobreviva?

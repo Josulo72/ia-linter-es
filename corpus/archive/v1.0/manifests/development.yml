@@ -1,0 +1,634 @@
+# Generado por benchmark/scripts/build-manifests.mjs. No editar a mano.
+schema_version: 1
+partition: development
+samples:
+  - id: h-boe-01
+    class: human
+    file: development/h-boe-01.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2015-10565
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2015-10-02
+    title: Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 492
+    sha256: 24c319d7ffc3d8422ac7ebb0fe9963e9289b861ef8400591d4fd9a4b7989cf68
+    retrieved: 2026-09-17
+  - id: h-boe-02
+    class: human
+    file: development/h-boe-02.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2015-10566
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2015-10-02
+    title: Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 546
+    sha256: 5196b2a13294e4412570a80ef2371470401b8050aaf56a385d75a4d66a7508d3
+    retrieved: 2026-09-17
+  - id: h-boe-03
+    class: human
+    file: development/h-boe-03.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2018-16673
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2018-12-06
+    title: Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 451
+    sha256: 7a8dce8fc42ac23aabac7cb2a8fe8666e31fdc8efde0e7722b8cb51d33d81a35
+    retrieved: 2026-09-17
+  - id: h-boe-04
+    class: human
+    file: development/h-boe-04.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2013-12887
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2013-12-10
+    title: Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 488
+    sha256: 7cdebe203ae226d64d63c2b499ca8e6853e31d9a3b3bd2b87910bbc7c7830f8b
+    retrieved: 2026-09-17
+  - id: h-boe-05
+    class: human
+    file: development/h-boe-05.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2021-8447
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2021-05-21
+    title: Ley 7/2021, de 20 de mayo, de cambio climático y transición energética.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 513
+    sha256: 66ff3419b7310ee5f0baae1902bc3348d2b8b5c7ecb42efcdacb03b4db62545c
+    retrieved: 2026-09-17
+  - id: h-boe-06
+    class: human
+    file: development/h-boe-06.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2020-17264
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2020-12-30
+    title: Ley Orgánica 3/2020, de 29 de diciembre, por la que se modifica la Ley Orgánica 2/2006, de 3 de mayo, de Educación.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 504
+    sha256: 09c17b8e250972d2a48569487dd9c64c751d6b44cdce9355c532e3e904ca5a40
+    retrieved: 2026-09-17
+  - id: h-boe-07
+    class: human
+    file: development/h-boe-07.md
+    register: institucional
+    level: H2
+    source: boe
+    source_url: https://www.boe.es/diario_boe/xml.php?id=BOE-A-2007-6115
+    license: public-domain
+    author: Jefatura del Estado
+    date: 2007-03-23
+    title: Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.
+    human_evidence: Disposición oficial publicada en el BOE antes de la fecha de corte; autoría institucional.
+    extraction: primeros párrafos del preámbulo; sin encabezados
+    words: 523
+    sha256: 1e7270e043b0fd564957d2c22e181a3801c562bf24598777b6f6637c52e76c14
+    retrieved: 2026-09-17
+  - id: h-sinc-01
+    class: human
+    file: development/h-sinc-01.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/A-mas-aridez-menos-disponibilidad-de-micronutrientes-esenciales-para-la-vida
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-04-02
+    title: A más aridez, menos disponibilidad de micronutrientes esenciales para la vida
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 451
+    sha256: 0ed06964de05265f21ac9710c752b32de3a2931a3af209bda01eadf36a205b5c
+    retrieved: 2026-09-17
+  - id: h-sinc-02
+    class: human
+    file: development/h-sinc-02.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Nacen-crecen-y-con-CRISPR-desaparecen-cucarachas-esteriles-para-acabar-con-las-plagas
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-17
+    title: "Nacen, crecen y con CRISPR desaparecen: cucarachas estériles para acabar con las plagas"
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 455
+    sha256: 47e91c42be0dcbdba12a1d5da26063d97795ba5c0b911e4b7970bb3f7fec5c04
+    retrieved: 2026-09-17
+  - id: h-sinc-03
+    class: human
+    file: development/h-sinc-03.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Las-tropas-de-asalto-de-Star-Wars-inspiran-el-nombre-de-nuevas-aranas
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-14
+    title: Las tropas de asalto de ‘Star Wars’ inspiran el nombre de nuevas arañas
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 456
+    sha256: aba39d371f456fb0eed2894932a90f181aabd4c591894f38fe154e8c75813e16
+    retrieved: 2026-09-17
+  - id: h-sinc-04
+    class: human
+    file: development/h-sinc-04.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Un-murcielago-cosmico-revolotea-en-la-constelacion-de-Orion
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-14
+    title: Un murciélago cósmico ‘revolotea’ en la constelación de Orión
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 462
+    sha256: 5e809467d56c520ab39db2aa3340ec41b4981f504edd2d3c2e414175f7371384
+    retrieved: 2026-09-17
+  - id: h-sinc-05
+    class: human
+    file: development/h-sinc-05.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Las-ceramicas-prehistoricas-reflejan-la-evolucion-del-cerebro
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-03-14
+    title: Las cerámicas prehistóricas reflejan la evolución del cerebro
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 502
+    sha256: ee49d7baaac54bb5706d0f2f7ee28d5560bf3b4db5de8986b8140909a1b11662
+    retrieved: 2026-09-17
+  - id: h-sinc-06
+    class: human
+    file: development/h-sinc-06.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Que-riesgo-de-recaida-tienen-los-pacientes-de-cancer-de-mama
+    license: CC-BY-4.0
+    author: Lucía Torres (SINC, FECYT)
+    date: 2019-03-13
+    title: ¿Qué riesgo de recaída tienen los pacientes de cáncer de mama?
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 463
+    sha256: f82110f896395bdd27551adad33d40c2881c5aa2316b1b35568798b708c55985
+    retrieved: 2026-09-17
+  - id: h-sinc-07
+    class: human
+    file: development/h-sinc-07.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Un-posible-final-para-la-picadura-de-mosquito
+    license: CC-BY-4.0
+    author: Redacción SINC (FECYT)
+    date: 2019-02-07
+    title: Un posible final para la picadura de mosquito
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 462
+    sha256: e0f454c1da41dc60c21f9bd6524b28115e6bdb31963691a20d9d9b955bbc1d86
+    retrieved: 2026-09-17
+  - id: h-sinc-08
+    class: human
+    file: development/h-sinc-08.md
+    register: periodistico
+    level: H2
+    source: sinc
+    source_url: https://www.agenciasinc.es/Noticias/Jennifer-Doudna-presenta-una-nueva-herramienta-CRISPR-de-edicion-genetica
+    license: CC-BY-4.0
+    author: Ana Hernando (SINC, FECYT)
+    date: 2019-02-07
+    title: Jennifer Doudna presenta una nueva herramienta CRISPR de edición genética
+    human_evidence: Noticia de redacción propia de la agencia SINC anterior a la fecha de corte.
+    extraction: entradilla y primeros párrafos; sin destacados ni pies de foto
+    words: 457
+    sha256: 276c2a98872261128e9ed72b2138bfd46860417121dccd2e6be3d0bc45157160
+    retrieved: 2026-09-17
+  - id: h-redc-01
+    class: human
+    file: development/h-redc-01.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1029
+    license: CC-BY-4.0
+    author: Andrés Pandiella-Dominique; Carlos García-Zorita; Elías Sanz-Casado
+    date: 2019-03-30
+    title: "Análisis de la internacionalización de la Revista Española de Documentación Científica: 2010-2015"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 509
+    sha256: 20b0c36faeff232b48a3ccf525871e3913180e94e1fdeb6a20fbfcf0c02550e1
+    retrieved: 2026-09-17
+  - id: h-redc-02
+    class: human
+    file: development/h-redc-02.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1030
+    license: CC-BY-4.0
+    author: Sofía Crespo-Gascón; Francisco S. Tortosa; José Guerrero-Casado
+    date: 2019-03-30
+    title: "Producción de revistas científicas en América Latina y El Caribe en Scopus, Journal Citation Reports y Latindex en el área de los recursos naturales: su relación con variables económicas, ambientales y de inversión en investigación"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 554
+    sha256: 01d0b85eddd710962c2343ac087f0421469b50719974ed9d830a8a07209c2d6f
+    retrieved: 2026-09-17
+  - id: h-redc-03
+    class: human
+    file: development/h-redc-03.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1031
+    license: CC-BY-4.0
+    author: José Antonio Castillo; Michael A. Powell
+    date: 2019-03-30
+    title: Análisis de la producción científica del Ecuador e impacto de la colaboración internacional en el periodo 2006-2015
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 474
+    sha256: 17bd613c3532ad2087a04bf135a46671d03f6b13a761ab4ec3d92b4ca30a17f8
+    retrieved: 2026-09-17
+  - id: h-redc-04
+    class: human
+    file: development/h-redc-04.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1032
+    license: CC-BY-4.0
+    author: Luisa Cagica Carvalho; Esteban Pérez Calderón; María Pache Durán
+    date: 2019-03-30
+    title: "Implicación de los gobiernos locales en la promoción del emprendimiento: evidencia para España"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 583
+    sha256: 10e05fade3805b2718b46f3e9164be060e70950f879e7fd098b50316116425fc
+    retrieved: 2026-09-17
+  - id: h-redc-05
+    class: human
+    file: development/h-redc-05.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1033
+    license: CC-BY-4.0
+    author: Luisa Cervantes; Marisol Navas; Isabel Cuadrado
+    date: 2019-03-30
+    title: "Contacto intergrupal y actitudes en bibliotecas públicas: un estudio con usuarios marroquíes y españoles en Barcelona y Almería"
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 459
+    sha256: 0d679a8851592123a608f39a8ce800a86051ab830bf7bca5f0afd6f78e14f8d6
+    retrieved: 2026-09-17
+  - id: h-redc-11
+    class: human
+    file: development/h-redc-11.md
+    register: academico
+    level: H1
+    source: redc
+    source_url: https://redc.revistas.csic.es/index.php/redc/article/view/1040
+    license: CC-BY-4.0
+    author: Israel Griol-Barres; Sergio Milla; José Millet
+    date: 2019-06-30
+    title: Implementación de un sistema de detección de señales débiles de futuro mediante técnicas de minería de textos
+    human_evidence: Artículo con autores identificados, revisado por pares y publicado en 2019.
+    extraction: primeros párrafos de la introducción; sin encabezados, tablas ni figuras
+    words: 489
+    sha256: 64f31e52611fe02e097abf5aaf710c4c2cead74caa3d6705ba818a21a1e9ca93
+    retrieved: 2026-09-17
+  - id: ai-d01
+    class: ai
+    file: development/ai-d01.md
+    register: general
+    prompt_id: ai-d01
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 438
+    sha256: 96732c853a1b5c363c34a264f1882eef005fb48f7f9175bba5e81a37bf8420e9
+  - id: ai-d02
+    class: ai
+    file: development/ai-d02.md
+    register: general
+    prompt_id: ai-d02
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 512
+    sha256: 79406305b9b273768c3916d48a90e8949479c270e75df8f5b5935499a5ee2b51
+  - id: ai-d03
+    class: ai
+    file: development/ai-d03.md
+    register: general
+    prompt_id: ai-d03
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 516
+    sha256: 7b244762664f240a8af9b4b5959ed0e238f20d68bac8ce6a3ef924284e64d88c
+  - id: ai-d04
+    class: ai
+    file: development/ai-d04.md
+    register: general
+    prompt_id: ai-d04
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 434
+    sha256: 1c0b1cdfd16b8bf2e995bde844fc04fc633e051a13f9e3650c6101688b46efe1
+  - id: ai-d05
+    class: ai
+    file: development/ai-d05.md
+    register: tecnico
+    prompt_id: ai-d05
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 460
+    sha256: 3d27374fdd6198f56f03fe6d03689175a15fa228c1549cb08ace91ea70b432cc
+  - id: ai-d06
+    class: ai
+    file: development/ai-d06.md
+    register: tecnico
+    prompt_id: ai-d06
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 567
+    sha256: d2b0f66fd8ae352825dd3544ba260dcd82369ad712f7497831ba9f73a362be52
+  - id: ai-d07
+    class: ai
+    file: development/ai-d07.md
+    register: tecnico
+    prompt_id: ai-d07
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 286
+    sha256: 3b04855673584820f79577bfdd4611412630f50ef563920033e4892ec9fbe6eb
+  - id: ai-d08
+    class: ai
+    file: development/ai-d08.md
+    register: tecnico
+    prompt_id: ai-d08
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 584
+    sha256: 514ecbcb1ceaff9a1d32bbf1fc25253b465938e89ed2a645a3b85c8d67f2cf4a
+  - id: ai-d09
+    class: ai
+    file: development/ai-d09.md
+    register: academico
+    prompt_id: ai-d09
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 575
+    sha256: 91c20fce27237ed41ff0a9a1dd07d6b492a4735e40bad855931df66c02117639
+  - id: ai-d10
+    class: ai
+    file: development/ai-d10.md
+    register: academico
+    prompt_id: ai-d10
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 453
+    sha256: 2418bbb87be62b6aad688e117927e0592daedc0071ace52a778faee4414de647
+  - id: ai-d11
+    class: ai
+    file: development/ai-d11.md
+    register: academico
+    prompt_id: ai-d11
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 537
+    sha256: 4e2095e9de414d7f50d53a4a1b86d48a15ac87a372bcfdd0ef8258f451c516ba
+  - id: ai-d12
+    class: ai
+    file: development/ai-d12.md
+    register: marketing
+    prompt_id: ai-d12
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 528
+    sha256: 1e639590d5014717a3733c2da5fd39c4f441adc7c50c74d67bfd1ffb165e68f4
+  - id: ai-d13
+    class: ai
+    file: development/ai-d13.md
+    register: marketing
+    prompt_id: ai-d13
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 300
+    sha256: 6415c0bb23dbe107c0668df75cc2acf682dec8ad085dfa449ff2747f00e45ad4
+  - id: ai-d14
+    class: ai
+    file: development/ai-d14.md
+    register: marketing
+    prompt_id: ai-d14
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: regenerado una vez con el mismo prompt por no cumplir la longitud
+    words: 437
+    sha256: 5e9ff1c6327347ecf6fd92f4525e805a45b48b5e6588ca7383247888e878055e
+  - id: ai-d15
+    class: ai
+    file: development/ai-d15.md
+    register: marketing
+    prompt_id: ai-d15
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 509
+    sha256: 5137f3b17672d8bafa47f060e371dab46f4b5238697abd9054388832be74fa23
+  - id: ai-d16
+    class: ai
+    file: development/ai-d16.md
+    register: periodistico
+    prompt_id: ai-d16
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 337
+    sha256: 1d7f01a00b882966d850309dfac38a4ac6864724516dc4495aac19e53fb20f66
+  - id: ai-d17
+    class: ai
+    file: development/ai-d17.md
+    register: periodistico
+    prompt_id: ai-d17
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 546
+    sha256: c775787b4ebb4bfc557575947f31c7e6ea613d669668ffd5fc0439b050ccaf95
+  - id: ai-d18
+    class: ai
+    file: development/ai-d18.md
+    register: periodistico
+    prompt_id: ai-d18
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 555
+    sha256: 087e4cf4ecf1e66f6e1c91ad4d8a02f7f83583f37806722926067381eba2f72f
+  - id: ai-d19
+    class: ai
+    file: development/ai-d19.md
+    register: institucional
+    prompt_id: ai-d19
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 407
+    sha256: 2829704d8cc0654350748c1d86dfad7f1a4b694188dea088229b8b496f486c04
+  - id: ai-d20
+    class: ai
+    file: development/ai-d20.md
+    register: institucional
+    prompt_id: ai-d20
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 514
+    sha256: 9035345295667a0e56c86127dfff5e34660352c5b4e75a3348412f98be344721
+  - id: ai-d21
+    class: ai
+    file: development/ai-d21.md
+    register: institucional
+    prompt_id: ai-d21
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-17
+    harness: Claude Code subagent (Agent tool)
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna
+    words: 568
+    sha256: b984dff03498b393bcb6d8265e910dbf6b7ee070bde458c493d3fed3f1ea5efb

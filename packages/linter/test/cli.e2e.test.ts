@@ -101,6 +101,7 @@ describe("CLI E2E: lint", () => {
     const dir2 = tmpProject({ "a.md": "hola" });
     expect(cli(["lint", "--fail-on", "x"], { cwd: dir2 }).status).toBe(2);
     expect(cli(["lint", "noexiste.md"], { cwd: dir2 }).status).toBe(2);
+    expect(cli(["benchmark", "run", "--corpus", ".", "--partition", "development", "--profile", "inventado"], { cwd: dir2 }).status).toBe(2);
   });
 });
 

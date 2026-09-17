@@ -1,0 +1,62 @@
+# Prompts de la clase IA v1.1 (registro cotidiano). Cada tema se genera dos veces:
+#   - base:   solo el encargo, como lo pediría cualquiera. Clase IA de development y holdout.
+#   - guiada: el mismo encargo precedido de la guía integrations/claude-code/output-styles/humano.md. Va a challenge.
+# Generación: subagentes de Claude Code (Agent tool), un subagente por lote de 8 textos del mismo modelo y condición;
+# el prompt de sistema y los parámetros son los del arnés y no son visibles. Límite: los textos de un lote comparten contexto.
+schema_version: 1
+generated: "2026-09-17"
+provider: Anthropic
+harness: Claude Code subagent (Agent tool), lotes de 8
+template: "Escribe un mensaje para publicar en un foro de internet en español. {tema} Entre 150 y 400 palabras. Solo el texto del mensaje."
+guide: integrations/claude-code/output-styles/humano.md
+prompts:
+  # ---------- development (24) ----------
+  - { id: d01, partition: development, theme: general, model: claude-haiku-4-5, tema: "Cuentas que tu casero no te devuelve la fianza y preguntas qué puedes hacer." }
+  - { id: d02, partition: development, theme: general, model: claude-haiku-4-5, tema: "Opinas sobre si merece la pena comprarse un coche eléctrico hoy." }
+  - { id: d03, partition: development, theme: general, model: claude-haiku-4-5, tema: "Pides recomendación de televisor para un salón pequeño, con un presupuesto de 600 euros." }
+  - { id: d04, partition: development, theme: general, model: claude-haiku-4-5, tema: "Cuentas tu experiencia al cambiar de compañía de la luz." }
+  - { id: d05, partition: development, theme: informatica, model: claude-haiku-4-5, tema: "Tu portátil se calienta mucho y se apaga solo; explicas lo que has probado y pides ayuda." }
+  - { id: d06, partition: development, theme: informatica, model: claude-haiku-4-5, tema: "Respondes a alguien que pregunta si le conviene pasarse de Windows a Linux." }
+  - { id: d07, partition: development, theme: aficiones, model: claude-haiku-4-5, tema: "Tus tomateras tienen las hojas amarillas; describes el problema y preguntas qué puede ser." }
+  - { id: d08, partition: development, theme: aficiones, model: claude-haiku-4-5, tema: "Respondes a alguien que quiere instalar riego por goteo en un huerto pequeño, contando cómo lo hiciste tú." }
+  - { id: d09, partition: development, theme: general, model: claude-sonnet-5, tema: "Cuentas que te han ofrecido un trabajo en otra ciudad y no sabes si aceptarlo." }
+  - { id: d10, partition: development, theme: general, model: claude-sonnet-5, tema: "Opinas sobre la subida de los alquileres en tu ciudad." }
+  - { id: d11, partition: development, theme: general, model: claude-sonnet-5, tema: "Pides consejo porque tu vecino de arriba hace ruido por las noches." }
+  - { id: d12, partition: development, theme: general, model: claude-sonnet-5, tema: "Cuentas cómo te fue el primer mes yendo al gimnasio." }
+  - { id: d13, partition: development, theme: informatica, model: claude-sonnet-5, tema: "Quieres montarte un ordenador para jugar por unos 1000 euros y pides opinión sobre las piezas." }
+  - { id: d14, partition: development, theme: informatica, model: claude-sonnet-5, tema: "Respondes a alguien al que le han robado la cuenta de Instagram, explicándole qué hacer." }
+  - { id: d15, partition: development, theme: aficiones, model: claude-sonnet-5, tema: "Cuentas cómo te salió tu primer pan de masa madre." }
+  - { id: d16, partition: development, theme: aficiones, model: claude-sonnet-5, tema: "Preguntas cómo quitar el moho del interior de un armario empotrado." }
+  - { id: d17, partition: development, theme: general, model: claude-opus-5, tema: "Opinas sobre si los niños deberían tener móvil antes de los 12 años." }
+  - { id: d18, partition: development, theme: general, model: claude-opus-5, tema: "Cuentas un problema que has tenido con una devolución en una tienda en línea." }
+  - { id: d19, partition: development, theme: general, model: claude-opus-5, tema: "Pides recomendaciones para un viaje de cuatro días a Lisboa." }
+  - { id: d20, partition: development, theme: general, model: claude-opus-5, tema: "Respondes a alguien que duda entre estudiar una FP o una carrera." }
+  - { id: d21, partition: development, theme: informatica, model: claude-opus-5, tema: "Explicas a otro usuario cómo hacer copias de seguridad de sus fotos sin pagar." }
+  - { id: d22, partition: development, theme: informatica, model: claude-opus-5, tema: "Tu wifi va muy lento en una habitación; cuentas lo que has probado y preguntas qué más hacer." }
+  - { id: d23, partition: development, theme: aficiones, model: claude-opus-5, tema: "Tu limonero en maceta pierde las hojas; describes la situación y pides ayuda." }
+  - { id: d24, partition: development, theme: aficiones, model: claude-opus-5, tema: "Respondes a alguien que quiere empezar a correr con 40 años, contando tu experiencia." }
+  # ---------- holdout (24) ----------
+  - { id: h01, partition: holdout, theme: general, model: claude-haiku-4-5, tema: "Cuentas que te ha llegado una multa de tráfico que crees injusta y preguntas si merece la pena recurrirla." }
+  - { id: h02, partition: holdout, theme: general, model: claude-haiku-4-5, tema: "Opinas sobre el teletrabajo después de unos años haciéndolo." }
+  - { id: h03, partition: holdout, theme: general, model: claude-haiku-4-5, tema: "Pides recomendación de colchón porque te levantas con dolor de espalda." }
+  - { id: h04, partition: holdout, theme: general, model: claude-haiku-4-5, tema: "Cuentas tu experiencia vendiendo cosas de segunda mano por internet." }
+  - { id: h05, partition: holdout, theme: informatica, model: claude-haiku-4-5, tema: "Tu móvil ha dejado de cargar bien; explicas lo que has probado y pides ayuda." }
+  - { id: h06, partition: holdout, theme: informatica, model: claude-haiku-4-5, tema: "Respondes a alguien que pregunta qué lenguaje de programación aprender primero." }
+  - { id: h07, partition: holdout, theme: aficiones, model: claude-haiku-4-5, tema: "Tu rosal tiene pulgón; describes el problema y preguntas cómo tratarlo sin productos fuertes." }
+  - { id: h08, partition: holdout, theme: aficiones, model: claude-haiku-4-5, tema: "Respondes a alguien que quiere hacer compost en casa, contando cómo lo haces tú." }
+  - { id: h09, partition: holdout, theme: general, model: claude-sonnet-5, tema: "Cuentas que estás pensando en dejar tu trabajo para hacerte autónomo y pides opiniones." }
+  - { id: h10, partition: holdout, theme: general, model: claude-sonnet-5, tema: "Opinas sobre el precio de la cesta de la compra." }
+  - { id: h11, partition: holdout, theme: general, model: claude-sonnet-5, tema: "Pides consejo porque un amigo te debe dinero y no te lo devuelve." }
+  - { id: h12, partition: holdout, theme: general, model: claude-sonnet-5, tema: "Cuentas cómo te ha ido dejando de fumar." }
+  - { id: h13, partition: holdout, theme: informatica, model: claude-sonnet-5, tema: "Quieres comprarte un portátil para estudiar por unos 700 euros y pides opinión." }
+  - { id: h14, partition: holdout, theme: informatica, model: claude-sonnet-5, tema: "Respondes a alguien que ha recibido un SMS sospechoso de su banco, explicándole qué hacer." }
+  - { id: h15, partition: holdout, theme: aficiones, model: claude-sonnet-5, tema: "Cuentas cómo te salió tu primera paella para mucha gente." }
+  - { id: h16, partition: holdout, theme: aficiones, model: claude-sonnet-5, tema: "Preguntas cómo arreglar una persiana que se ha quedado atascada." }
+  - { id: h17, partition: holdout, theme: general, model: claude-opus-5, tema: "Opinas sobre si merece la pena comprar piso o seguir de alquiler." }
+  - { id: h18, partition: holdout, theme: general, model: claude-opus-5, tema: "Cuentas un problema que has tenido con tu compañía de teléfono." }
+  - { id: h19, partition: holdout, theme: general, model: claude-opus-5, tema: "Pides recomendaciones para una escapada de fin de semana por el norte de España." }
+  - { id: h20, partition: holdout, theme: general, model: claude-opus-5, tema: "Respondes a alguien que no sabe si aceptar un trabajo peor pagado pero con mejor horario." }
+  - { id: h21, partition: holdout, theme: informatica, model: claude-opus-5, tema: "Explicas a otro usuario cómo acelerar un ordenador viejo sin gastar dinero." }
+  - { id: h22, partition: holdout, theme: informatica, model: claude-opus-5, tema: "Tu impresora no imprime desde el portátil; cuentas lo que has probado y preguntas qué más hacer." }
+  - { id: h23, partition: holdout, theme: aficiones, model: claude-opus-5, tema: "Tu olivo en maceta tiene manchas en las hojas; describes la situación y pides ayuda." }
+  - { id: h24, partition: holdout, theme: aficiones, model: claude-opus-5, tema: "Respondes a alguien que quiere empezar a ir en bici al trabajo, contando tu experiencia." }

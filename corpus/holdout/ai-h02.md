@@ -1,0 +1,7 @@
+Hace ya casi cinco años que trabajo desde casa y la verdad es que ha sido un cambio enorme en mi vida. Al principio pensé que sería temporal, cosa del confinamiento, pero al final se ha quedado como algo más permanente. Así que bueno, después de este tiempo, me gustaría contar cómo lo veo ahora.
+
+Lo positivo: no pierdo dos horas diarias en el coche yendo y viniendo de la oficina. Eso es tiempo que recupero para dormir, hacer ejercicio o simplemente no estar hecho polvo llegando a casa. El dinero que ahorro en gasolina y en comer fuera tampoco es moco de pavo. Además, puedo empezar a trabajar en pijama sin que nadie me juzgue, y eso mentalmente me relaja.
+
+Pero no es todo maravilloso. La línea entre trabajo y vida personal desaparece. Me encuentro respondiendo Slack a las diez de la noche porque bueno, estoy aquí, en casa. Y el aislamiento es real. Echo de menos el contacto con los compañeros, las conversaciones casuales, los almuerzos. Mi empresa intenta que vengamos una vez a la semana a la oficina, pero la mayor parte del tiempo sigo aquí solo.
+
+Lo que me ha funcionado es poner límites claros: tengo mis horas de trabajo, y después apago el ordenador. También intento tomar un café fuera de casa a mitad del día, cambiar de ambiente. Y hablando con otros que teletrabajan, parece que todos tenemos los mismos problemas y beneficios. Así que bueno, al final es una moneda de dos caras.

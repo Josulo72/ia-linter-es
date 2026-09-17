@@ -1,0 +1,69 @@
+# Benchmark
+
+Hay dos corpus y dos informes, porque el producto cambió de objetivo a mitad del trabajo.
+
+| Versión | Qué mide | Resultado | Informe |
+|---|---|---|---|
+| v1.1 (actual) | Escritura cotidiana: mensajes de foro frente a mensajes generados | Separa. Holdout: medianas 0 y 14,5; exactitud equilibrada 0,75 | [`benchmark/reports/v1.1.md`](../benchmark/reports/v1.1.md) |
+| v1.0 (archivada) | Prosa formal: BOE, prensa científica y artículos académicos frente a textos generados | No separa. Holdout: medianas 7,5 y 10; exactitud equilibrada 0,535 | [`benchmark/reports/v1.0.md`](../benchmark/reports/v1.0.md) |
+
+El índice mide densidad de patrones editoriales. No es una probabilidad de autoría y no debe usarse como detector.
+
+## Qué cambió
+
+Las reglas de v1.0 buscaban los tics de 2023: «es importante destacar», metáforas comodín, arengas finales. Los modelos de 2026 ya no los escriben, así que el índice no distinguía nada. Un README generado marcaba 2 sobre 100 y olía a IA a la legua.
+
+Lo que sí distingue en registro cotidiano es el ritmo. Una persona alterna una frase de treinta palabras con otra de cuatro; la máquina las escribe todas parecidas. Eso lo mide `estructura/ritmo-plano`, y de ahí sale casi toda la separación de v1.1.
+
+La pieza principal del producto no es el linter sino la guía de estilo (`integrations/claude-code/output-styles/humano.md`), que se le da al modelo antes de escribir. El linter es el revisor que comprueba el resultado.
+
+## Corpus v1.1
+
+Clase humana: 36 mensajes de Mediavida, elhacker.net e Infojardín, de 2009 a 2021, entre 150 y 400 palabras. **No se redistribuyen.** En el repositorio queda `corpus/manifests/_human_cotidiano.yml` con URL, fecha, foro, palabras y sha256; los textos se descargan en local y están en `.gitignore`. Para rehacerlos: `node --use-system-ca benchmark/scripts/fetch-foros.mjs --from-manifest`. Son anteriores al 30-11-2022 para que no se cuele texto generado.
+
+Clase IA: 96 textos generados el 17-09-2026 con subagentes de Claude Code (haiku-4.5, sonnet-5 y opus-5) a partir de los encargos de `corpus/policy/prompts-v1.1.yml`. Cada encargo se generó dos veces: tal cual (development y holdout) y con la guía de estilo delante (challenge). Así se puede medir si la guía sirve.
+
+Particiones: development 18 + 24, holdout 18 + 24, challenge 0 + 48.
+
+## Corpus v1.0 (archivado)
+
+En `corpus/archive/v1.0`, con sus manifiestos y su lock. 45 textos humanos de BOE, SINC, REDC y Project Gutenberg, todos de licencia abierta y verificados registro a registro, y 42 textos generados. Las políticas siguen en `corpus/policy/{sources,licenses,prompts}.yml` y `corpus-check` lo sigue comprobando.
+
+| Fuente | Registro | Licencia | Verificación por registro | n |
+|---|---|---|---|---|
+| BOE, preámbulos de leyes | institucional | dominio público (art. 13 TRLPI) | rango normativo y fecha de publicación | 12 |
+| SINC (FECYT) | periodístico | CC-BY-4.0 | «Fuente: SINC», «Derechos: Creative Commons», `datePublished` | 14 |
+| REDC (CSIC), vol. 42 (2019) | académico | CC-BY-4.0 | enlace de licencia, fecha e idioma en la página del artículo | 11 |
+| Project Gutenberg | literario (challenge) | dominio público | idioma, sin traductor y autor fallecido antes de 1946 | 8 |
+
+## Scripts
+
+| Script | Función | Red |
+|---|---|---|
+| `benchmark/scripts/fetch-foros.mjs` | Descarga la clase humana cotidiana (solo local). Con `--from-manifest` rehace exactamente los textos del manifiesto y comprueba su hash | sí |
+| `benchmark/scripts/fetch-human.mjs` | Descarga la clase humana formal de v1.0 | sí |
+| `benchmark/scripts/build-manifests.mjs` | Genera manifiestos, deduplica y congela el holdout | no |
+| `benchmark/scripts/dump-findings.mjs` | Lista hallazgos con la clave de adjudicación | no |
+| `scripts/corpus-check.mjs` | Licencias, trazabilidad, hashes, congelación y veto de ambos corpus; forma parte de `pnpm gates` | no |
+| `ia-linter-es benchmark run --profile <perfil>` | Métricas por regla y agregadas (§12) | no |
+
+En equipos donde Node no confía en la cadena de certificados de `revistas.csic.es`, los scripts de descarga se ejecutan con `node --use-system-ca`.
+
+## Método
+
+1. Reglas y umbrales se trabajan solo en development.
+2. `benchmark/configs/holdout-v1.1.lock` guarda el sha256 del manifiesto; `build-manifests` y `corpus-check` fallan si cambia.
+3. Se congela la configuración (`threshold.yml` y Rule Pack) y se ejecuta holdout una vez.
+4. Se publica todo, también lo negativo. Un holdout ya ejecutado no sirve como evaluación independiente de una versión corregida.
+
+Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil palabras humanas, precisión adjudicada, desglose por registro y tiempo; agregadas, matriz de confusión, TPR, FPR, precisión, exactitud equilibrada, medianas e intervalos de Wilson al 95 %. No se publica recall por regla.
+
+## Límites
+
+- 84 textos en v1.1. Los intervalos son anchos y se solapan entre particiones.
+- Toda la separación depende de una regla. Si un modelo aprende a variar la longitud de frase, el índice vuelve a cero.
+- Un solo revisor, que además escribió las reglas.
+- La clase IA es de un solo proveedor y de la misma familia de modelos que diseñó las reglas.
+- Los mensajes humanos conservan sus erratas y los generados no tienen ninguna. Parte de la diferencia puede venir de ahí.
+- Los textos de challenge miden la guía anterior a la corrección del ritmo; la guía actual está sin medir.
+- v1.1 no tiene clase humana en challenge, y v1.0 no tenía clase humana en los registros general, técnico y marketing.

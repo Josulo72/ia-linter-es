@@ -1,0 +1,9 @@
+Llevo tiempo leyendo hilos sobre esto y creo que el debate está mal planteado. No es tanto "móvil sí o móvil no" antes de los 12, sino qué móvil y con qué condiciones.
+
+Mi postura es que un smartphone completo, con acceso libre a internet y a redes sociales, a los diez años es una barbaridad. No por el aparato, sino porque le estás dando a un niño una puerta abierta a contenidos que ni un adulto gestiona bien. El problema del scroll infinito es que está diseñado por gente muy lista para que no puedas parar, y un crío de esa edad no tiene la cabeza hecha para plantarle cara a eso. Tampoco tiene herramientas para lidiar con un grupo de clase donde se hace vacío a alguien a las once de la noche.
+
+Dicho esto, entiendo perfectamente a los padres que quieren localizar al niño cuando va solo al colegio o se queda en actividades extraescolares. Para eso existen los móviles básicos, los relojes con SIM y los teléfonos con las funciones capadas. Eso me parece razonable y no tiene nada que ver con darle un terminal de última generación con TikTok instalado.
+
+Lo que sí me chirría son dos argumentos que salen siempre. El primero, "es que si no lo tiene, se queda fuera del grupo". Es real, no lo niego, pero la solución no es que cada familia claudique por separado, sino que los padres de una clase se pongan de acuerdo. Hay colegios donde lo han hecho y funciona. El segundo, "hay que educarlos en el uso, no prohibir". De acuerdo, pero educar exige tiempo, supervisión y conversaciones incómodas, y muchas veces el móvil se da precisamente para no tener que dedicar ese tiempo.
+
+Al final creo que la edad concreta importa menos que la madurez del niño y que lo que estés dispuesto a supervisar tú. Si vas a revisar, poner límites de uso y hablar de lo que ve, la cosa cambia. Si el móvil va a ser una niñera, doce años, catorce o dieciséis dará igual.
