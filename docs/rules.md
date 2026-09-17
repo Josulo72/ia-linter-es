@@ -579,6 +579,7 @@ La anáfora es una figura retórica legítima, pero el texto generado la produce
 
 **Falsos positivos conocidos:**
 - Poesía, discurso político y publicidad humana que usan la anáfora a propósito.
+- Tablas con celdas cortas del mismo formato («0 de 48», «3 de 24»), que se leen como frases seguidas.
 
 **Ejemplo:**
 

@@ -105,7 +105,15 @@ if (only.includes("index")) {
     else ok(`separación de medianas del índice: ${gap} (mínimo ${policy.index.min_median_gap})`);
     const badRules = Object.entries(r.per_rule).filter(([, v]) => v.status === "stable" && v.fp_per_1000_human_words > policy.rules.max_fp_per_1000_human_words);
     if (badRules.length) fail(`reglas stable con FP/1000 > ${policy.rules.max_fp_per_1000_human_words}: ${badRules.map(([k]) => k).join(", ")}`);
-    else ok(`todas las reglas stable con FP/1000 <= ${policy.rules.max_fp_per_1000_human_words}`);
+    else {
+      // Una regla que no ha marcado nada tiene FP 0 por vacío, no por buena: se cuenta aparte.
+      const stables = Object.entries(r.per_rule).filter(([, v]) => v.status === "stable");
+      const conEvidencia = stables.filter(([, v]) => v.docs_human + v.docs_ai > 0).length;
+      ok(`${conEvidencia} de ${stables.length} reglas stable disparan en este corpus, todas con FP/1000 <= ${policy.rules.max_fp_per_1000_human_words}`);
+      if (conEvidencia < stables.length) {
+        console.log(`  · ${stables.length - conEvidencia} reglas stable no marcan nada aquí: su FP es 0 por vacío (ver benchmark/reports/auditoria-banco-v1.1.md)`);
+      }
+    }
   }
 }
 

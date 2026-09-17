@@ -30,4 +30,5 @@ provenance:
   evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
   known_false_positives:
     - Poesía, discurso político y publicidad humana que usan la anáfora a propósito.
+    - Tablas con celdas cortas del mismo formato («0 de 48», «3 de 24»), que se leen como frases seguidas.
   reviewed_by: [jrollon]

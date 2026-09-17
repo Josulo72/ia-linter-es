@@ -13,7 +13,7 @@ El índice mide densidad de patrones editoriales. No es una probabilidad de auto
 
 Las reglas de v1.0 buscaban los tics de 2023: «es importante destacar», metáforas comodín, arengas finales. Los modelos de 2026 ya no los escriben, así que el índice no distinguía nada. Un README generado marcaba 2 sobre 100 y olía a IA a la legua.
 
-Lo que sí distingue en registro cotidiano es el ritmo. Una persona alterna una frase de treinta palabras con otra de cuatro; la máquina las escribe todas parecidas. Eso lo mide `estructura/ritmo-plano`, y de ahí sale casi toda la separación de v1.1.
+Lo que sí distingue en registro cotidiano es el ritmo. Una persona alterna una frase de treinta palabras con otra de cuatro; la máquina las escribe todas parecidas. Eso lo mide `estructura/ritmo-plano`, y de ahí sale toda la separación de v1.1: quitando esa regla y su contraria, la mediana de la clase IA baja a cero.
 
 La pieza principal del producto no es el linter sino la guía de estilo (`integrations/claude-code/output-styles/humano.md`), que se le da al modelo antes de escribir. El linter es el revisor que comprueba el resultado.
 
@@ -56,12 +56,17 @@ En equipos donde Node no confía en la cadena de certificados de `revistas.csic.
 3. Se congela la configuración (`threshold.yml` y Rule Pack) y se ejecuta holdout una vez.
 4. Se publica todo, también lo negativo. Un holdout ya ejecutado no sirve como evaluación independiente de una versión corregida.
 
+Auditoría del propio banco: `benchmark/reports/auditoria-banco-v1.1.md`, reproducible con `benchmark/scripts/auditoria-banco.mjs`.
+
 Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil palabras humanas, precisión adjudicada, desglose por registro y tiempo; agregadas, matriz de confusión, TPR, FPR, precisión, exactitud equilibrada, medianas e intervalos de Wilson al 95 %. No se publica recall por regla.
 
 ## Límites
 
 - 84 textos en v1.1. Los intervalos son anchos y se solapan entre particiones.
-- Toda la separación depende de una regla. Si un modelo aprende a variar la longitud de frase, el índice vuelve a cero.
+- Toda la separación depende de una regla, y es `candidate`. Sin las dos reglas de ritmo, o contando solo las 28 `stable`, la separación en holdout es 0.
+- 20 de las 28 reglas `stable` no disparan en el corpus v1.1, y seis no tienen evidencia de corpus en ninguna versión. El gate de falsos positivos las aprueba por vacío.
+- El banco tiene un solo tipo de texto, el mensaje de foro. Los perfiles `correo`, `readme` y `redes` están sin medir.
+- Para v1.1 no hay adjudicaciones: la precisión por regla es `null` en las 38. Está medido cuántas veces salta cada regla, no cuántas acierta.
 - Un solo revisor, que además escribió las reglas.
 - La clase IA es de un solo proveedor y de la misma familia de modelos que diseñó las reglas.
 - Los mensajes humanos conservan sus erratas y los generados no tienen ninguna. Parte de la diferencia puede venir de ahí.
