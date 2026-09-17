@@ -46,9 +46,10 @@ for (const part of ["development", "holdout", "challenge"]) {
     listed.add(s.file);
     const abs = path.join(corpus, s.file ?? "");
     if (!fs.existsSync(abs)) {
-      if (s.storage === "local") missingLocal++; // texto no redistribuido: solo se comprueba si está descargado
+      // Texto no redistribuido: solo se comprueba si está descargado en este equipo. El resto sí es un fallo.
+      if (s.storage === "local") missingLocal++;
       else fail(`${where}: falta ${s.file}`);
-      if (s.storage !== "local") continue;
+      continue;
     }
     const text = fs.readFileSync(abs, "utf8");
     if (createHash("sha256").update(text).digest("hex") !== s.sha256) fail(`${where}: hash distinto`);
@@ -78,7 +79,11 @@ for (const part of ["development", "holdout", "challenge"]) {
     } else fail(`${where}: clase ${s.class}`);
   }
   for (const f of fs.readdirSync(path.join(corpus, part))) if (!listed.has(`${part}/${f}`)) fail(`${part}/${f}: archivo sin entrada en el manifiesto`);
-  if (failures.length === before) ok(`${part}: ${m.samples.length} muestras con licencia, trazabilidad y hash correctos`);
+  const sinDescargar = m.samples.filter((s) => s.storage === "local" && !fs.existsSync(path.join(corpus, s.file ?? ""))).length;
+  if (failures.length === before) {
+    const comprobadas = m.samples.length - sinDescargar;
+    ok(`${part}: ${comprobadas} de ${m.samples.length} muestras con licencia, trazabilidad y hash correctos` + (sinDescargar ? ` (${sinDescargar} no redistribuibles, sin descargar aquí)` : ""));
+  }
 }
 
 console.log(`Corpus ${C.label}: congelación del holdout`);
