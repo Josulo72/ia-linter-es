@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { AI_TEXT, BUNDLE, CLI, HUMAN_TEXT, REPO_ROOT, cli, run, tmpProject } from "./helpers.js";
 
@@ -111,7 +112,7 @@ describe("Hook de Claude Code", () => {
   });
 
   it("encendido, devuelve la respuesta con el motivo en stderr", () => {
-    const estado = fs.mkdtempSync(path.join(REPO_ROOT, ".hook-tmp-"));
+    const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
     try {
       const r = run(HOOK, [], { input: entrada(PLANO), env: { IA_LINTER_REVISAR: "1", CLAUDE_SESSION_ID: "t1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
       expect(r.status).toBe(2);
@@ -123,7 +124,7 @@ describe("Hook de Claude Code", () => {
   });
 
   it("deja pasar un texto que no marca nada", () => {
-    const estado = fs.mkdtempSync(path.join(REPO_ROOT, ".hook-tmp-"));
+    const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
     try {
       const r = run(HOOK, [], { input: entrada(HUMAN_TEXT), env: { IA_LINTER_REVISAR: "1", CLAUDE_SESSION_ID: "t2", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
       expect(r.status).toBe(0);
@@ -133,7 +134,7 @@ describe("Hook de Claude Code", () => {
   });
 
   it("no insiste más de lo que dice el tope", () => {
-    const estado = fs.mkdtempSync(path.join(REPO_ROOT, ".hook-tmp-"));
+    const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
     try {
       const env = { IA_LINTER_REVISAR: "1", IA_LINTER_REVISAR_INTENTOS: "2", CLAUDE_SESSION_ID: "t3", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI };
       expect(run(HOOK, [], { input: entrada(PLANO), env }).status).toBe(2);

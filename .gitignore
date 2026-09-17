@@ -10,3 +10,6 @@ integrations/claude-code/bundle/
 
 # Clase humana cotidiana: textos solo en local, no se redistribuyen (ver docs/decisions.md).
 corpus/*/h-foro-*.md
+
+# Temporales de los tests del hook, por si alguno queda en Windows
+.hook-tmp-*/
