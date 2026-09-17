@@ -100,7 +100,7 @@ describe("GitHub Action", () => {
 
 describe("Hook de Claude Code", () => {
   const entrada = (texto: string, extra: Record<string, unknown> = {}) =>
-    JSON.stringify({ session_id: "s", prompt_id: "p", cwd: REPO_ROOT, hook_event_name: "Stop", last_assistant_message: texto, ...extra });
+    JSON.stringify({ session_id: `s${Math.random()}`, prompt_id: "p", cwd: REPO_ROOT, hook_event_name: "Stop", last_assistant_message: texto, ...extra });
 
   const PLANO =
     "Este es un texto de prueba con una frase normal. Esta es otra frase de longitud parecida aqui. Y otra mas con el mismo numero de palabras. Seguimos con otra frase de longitud similar. Cada frase se parece mucho a la anterior. Nada cambia el ritmo de este parrafo. Las frases siguen con la misma medida siempre. Ninguna es corta y ninguna es larga aqui. Esto ocupa mas de cuarenta palabras ya seguro.";
@@ -114,7 +114,7 @@ describe("Hook de Claude Code", () => {
   it("encendido, devuelve la respuesta con el motivo en stderr", () => {
     const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
     try {
-      const r = run(HOOK, [], { input: entrada(PLANO), env: { IA_LINTER_REVISAR: "1", CLAUDE_SESSION_ID: "t1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
+      const r = run(HOOK, [], { input: entrada(PLANO), env: { IA_LINTER_REVISAR: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
       expect(r.status).toBe(2);
       expect(r.stderr).toContain("estructura/ritmo-plano");
       expect(r.stderr).toContain("Reescríbela");
@@ -124,9 +124,12 @@ describe("Hook de Claude Code", () => {
   });
 
   it("deja pasar un texto que no marca nada", () => {
+    const NATURAL =
+      "Pues yo lo probé el año pasado y me costó bastante cogerle el punto al principio, sobre todo con los tiempos de fermentación de la masa. No salió. Lo tiré entero y volví a empezar de cero con otra receta distinta que encontré en un foro parecido a este. Al segundo intento ya fue otra cosa bastante mejor, aunque tampoco para tirar cohetes. La miga seguía quedando algo densa para mi gusto. El sabor en cambio estaba conseguido y la corteza quedó como tenía que quedar, crujiente y oscura. Ahora sale bien casi siempre. Cuestión de práctica, supongo. Yo tardé un mes largo en cogerle el aire a la masa y todavía me sale mejor unos días que otros.";
     const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
     try {
-      const r = run(HOOK, [], { input: entrada(HUMAN_TEXT), env: { IA_LINTER_REVISAR: "1", CLAUDE_SESSION_ID: "t2", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
+      const r = run(HOOK, [], { input: entrada(NATURAL), env: { IA_LINTER_REVISAR: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
+      expect(r.stderr).toBe("");
       expect(r.status).toBe(0);
     } finally {
       fs.rmSync(estado, { recursive: true, force: true });
@@ -136,10 +139,39 @@ describe("Hook de Claude Code", () => {
   it("no insiste más de lo que dice el tope", () => {
     const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
     try {
-      const env = { IA_LINTER_REVISAR: "1", IA_LINTER_REVISAR_INTENTOS: "2", CLAUDE_SESSION_ID: "t3", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI };
-      expect(run(HOOK, [], { input: entrada(PLANO), env }).status).toBe(2);
-      expect(run(HOOK, [], { input: entrada(PLANO), env }).status).toBe(2);
-      expect(run(HOOK, [], { input: entrada(PLANO), env }).status).toBe(0);
+      const env = { IA_LINTER_REVISAR: "1", IA_LINTER_REVISAR_INTENTOS: "2", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI };
+      // Misma sesión y mismo turno: es lo que cuenta el tope.
+      const misma = { session_id: "sesion-fija", prompt_id: "turno-fijo" };
+      expect(run(HOOK, [], { input: entrada(PLANO, misma), env }).status).toBe(2);
+      expect(run(HOOK, [], { input: entrada(PLANO, misma), env }).status).toBe(2);
+      expect(run(HOOK, [], { input: entrada(PLANO, misma), env }).status).toBe(0);
+      // Otro turno de la misma sesión empieza de cero.
+      expect(run(HOOK, [], { input: entrada(PLANO, { ...misma, prompt_id: "turno-nuevo" }), env }).status).toBe(2);
+    } finally {
+      fs.rmSync(estado, { recursive: true, force: true });
+    }
+  });
+
+  it("la respuesta se lee como Markdown: el código no cuenta como prosa", () => {
+    const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
+    try {
+      const env = { IA_LINTER_REVISAR: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI };
+      const conCodigo = [
+        "Lo he cambiado en el runner y ahora la caché se invalida sola cuando cambia el Rule Pack, que era justo lo que fallaba el otro día.",
+        "",
+        "```bash",
+        "ia-linter-es lint docs --profile readme --fail-on warning --no-cache",
+        "ia-linter-es lint docs --profile readme --fail-on error --no-cache",
+        "ia-linter-es lint docs --profile chat --fail-on warning --no-cache",
+        "ia-linter-es lint docs --profile chat --fail-on error --no-cache",
+        "```",
+        "",
+        "Lo he probado con los dos perfiles y va. Queda pendiente mirar qué pasa cuando el baseline es de otra versión, que ahí no me fío nada y no lo he tocado.",
+      ].join("\n");
+      const r = run(HOOK, [], { input: entrada(conCodigo), env });
+      expect(r.stderr).not.toContain("formato/raya");
+      expect(r.stderr).not.toContain("estructura/ritmo");
+      expect(r.status).toBe(0);
     } finally {
       fs.rmSync(estado, { recursive: true, force: true });
     }
@@ -163,6 +195,14 @@ describe("Pre-commit", () => {
     expect(hooks).toContain("id: ia-linter-es");
     expect(hooks).toContain("entry: ia-linter-es lint");
     expect(hooks).toContain("pass_filenames: true");
+  });
+
+  it("el hook de npm pide la versión publicada, que es la de este paquete", () => {
+    const hooks = fs.readFileSync(path.join(REPO_ROOT, ".pre-commit-hooks.yaml"), "utf8");
+    const pkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "packages", "linter", "package.json"), "utf8"));
+    // La raíz del repositorio es un workspace privado sin `bin`: el binario sale de npm.
+    expect(hooks).toContain(`additional_dependencies: ["ia-linter-es@${pkg.version}"]`);
+    expect(JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "package.json"), "utf8")).private).toBe(true);
   });
 
   it("analizar los archivos uno a uno da lo mismo que analizarlos juntos", () => {

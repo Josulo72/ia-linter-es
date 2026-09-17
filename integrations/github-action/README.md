@@ -23,7 +23,7 @@ jobs:
           profile: readme
 ```
 
-La Action usa el `ia-linter-es` que tenga el proyecto. Si no lo tiene, usa la copia que viene con la propia Action, que es la misma CLI. Lo primero es mejor, porque así la versión del linter la fija tu `package.json`.
+El paso `npm i -D ia-linter-es` no sobra: la Action usa el `ia-linter-es` que tenga el proyecto, y así la versión del linter la fija tu `package.json`. La copia que lleva la Action dentro (`bundle/`) es un artefacto del build, no está en el repositorio, y solo existe si usas una release empaquetada. Si no hay ninguna de las dos, la Action falla diciéndotelo.
 
 ## Entradas
 

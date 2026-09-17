@@ -14,7 +14,9 @@ repos:
       - id: ia-linter-es
 ```
 
-Eso instala el paquete en el entorno de pre-commit y analiza los archivos del commit. Si prefieres que use la que ya tiene el proyecto en `node_modules`, y así no instalar nada aparte ni que se te descuadren las versiones entre lo que corre en tu máquina y lo que corre en el hook:
+Eso instala en el entorno de pre-commit la versión de `ia-linter-es` que declara `.pre-commit-hooks.yaml` en `additional_dependencies`, y analiza los archivos del commit. Hace falta que esa versión esté publicada en npm: la raíz de este repositorio es un workspace privado y no trae el binario.
+
+Si prefieres que use la que ya tiene el proyecto en `node_modules`, y así no instalar nada aparte ni que se te descuadren las versiones entre lo que corre en tu máquina y lo que corre en el hook:
 
 ```yaml
 repos:

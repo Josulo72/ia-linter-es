@@ -6,7 +6,7 @@ Ejecutado en Windows 10, Node 24.12, pnpm 10.33. macOS y Linux quedan cubiertos 
 
 ```
 pnpm typecheck                     sin errores
-pnpm test                          7 archivos, 75 tests
+pnpm test                          7 archivos, 77 tests
 node scripts/corpus-check.mjs      Corpus en verde (459 archivos sin referencias vetadas)
 node scripts/gates.mjs             Todos los gates en verde
   ✔ ningún módulo usa red; fs solo en runner/cli/config/baseline/compiler/api
@@ -20,7 +20,7 @@ node scripts/gates.mjs             Todos los gates en verde
 
 ## Integraciones
 
-`packages/linter/test/integraciones.e2e.test.ts`, 14 tests en verde:
+`packages/linter/test/integraciones.e2e.test.ts`, 16 tests en verde:
 
 ```
 Paridad entre superficies
@@ -36,10 +36,12 @@ Hook de Claude Code
   ✓ encendido, devuelve la respuesta con el motivo en stderr
   ✓ deja pasar un texto que no marca nada
   ✓ no insiste más de lo que dice el tope
+  ✓ la respuesta se lee como Markdown: el código no cuenta como prosa
   ✓ un mensaje corto o vacío no se revisa
   ✓ entrada ilegible no bloquea nada
 Pre-commit
   ✓ la definición está en la raíz y llama a la CLI sin lógica propia
+  ✓ el hook de npm pide la versión publicada, que es la de este paquete
   ✓ analizar los archivos uno a uno da lo mismo que analizarlos juntos
 ```
 
@@ -55,7 +57,7 @@ node scripts/pack-check.mjs
   ✔ ia-linter-es 1.0.0
   ✔ 38 reglas, las mismas que en el repositorio
   ✔ mismo JSON byte a byte que en el repositorio
-  ✔ mismo resultado con la red cortada
+  ✔ mismo resultado con un proxy inválido
 Empaquetado en verde
 ```
 
@@ -75,7 +77,7 @@ Los info que quedan son citas de patrones dentro de la documentación y un nombr
 
 | Criterio | Dónde |
 |---|---|
-| Motor offline y determinista | gate de imports, `pack-check` con la red cortada |
+| Motor offline y determinista | gate de imports (la garantía real) y `pack-check` con un proxy inválido |
 | Texto y Markdown | `document.test.ts`, `engine.test.ts` |
 | Entre 24 y 30 reglas estables | 28 stable de 38 |
 | Rule Pack compilado | `pnpm build`, no se commitea |
@@ -91,7 +93,7 @@ Los info que quedan son citas de patrones dentro de la documentación y un nombr
 | Corpus propio y trazable | `corpus-check`, manifiestos con hash |
 | Veto automatizado | `corpus-check`, 459 archivos |
 | Benchmark publicado | `benchmark/reports/v1.0.md` y `v1.1.md` |
-| E2E de todas las superficies | 75 tests |
+| E2E de todas las superficies | 77 tests |
 | Paridad de resultados | byte a byte entre CLI, bundle y Action |
 | Windows, macOS y Linux | Windows en local; los otros dos, en CI |
 | Seguridad de patrones | compilador y gate de regex |
@@ -99,10 +101,21 @@ Los info que quedan son citas de patrones dentro de la documentación y un nombr
 | Documentación | README, docs/, CHANGELOG, CONTRIBUTING, SECURITY |
 | Paquete npm instalable | `pack-check` |
 | Release reproducible | `pnpm build` regenera el Rule Pack y el bundle desde los YAML |
-| Sin telemetría ni red | gate de imports y ejecución sin red |
+| Sin telemetría ni red | gate de imports; ningún módulo importa http, https, net, dgram ni fetch |
 
 ## Lo que falta y no puedo hacer yo
 
 - `git push` y la primera ejecución del CI en los tres sistemas.
 - `npm publish`.
 - Instalar el plugin en `~/.claude`, que está fuera del repositorio.
+
+## Revisión final: lo que estaba mal y se arregló
+
+- El hook pasaba la respuesta como texto plano. Las respuestas de Claude Code llevan bloques de código, y eso metía las líneas de comando en el recuento de frases y podía tomar un `--flag` por una raya de inciso. Ahora va con `--stdin-filename respuesta.md` y el AST de Markdown deja el código fuera. Hay un test con un mensaje que lleva un bloque `bash`.
+- El hook de pre-commit con `language: node` no podía funcionar: pre-commit instala la raíz del repositorio, que es un workspace privado y sin `bin`. Lleva `additional_dependencies: ["ia-linter-es@1.0.0"]`, así que depende de que esa versión esté publicada. Mientras no lo esté, el que funciona es `ia-linter-es-local`.
+- El tope de reintentos se guardaba con una clave sacada de `CLAUDE_SESSION_ID`, que no está documentada como variable del hook. Ahora usa `session_id`, que llega en el propio evento, así que dos sesiones a la vez no se pisan.
+- El README de la Action decía que si no hay paquete instalado usa su bundle. El bundle es un artefacto del build y no está en el repositorio, así que eso solo vale en una release empaquetada. Ahora lo dice.
+- «Con la red cortada» era falso: lo que hace `pack-check` es poner un proxy inválido, que Node ni siquiera respeta por defecto. La garantía real es el gate de imports, y así está escrito ahora en `SECURITY.md` y aquí.
+- El README del paquete decía `scanProject`, que no existe. La función es `lintProject`.
+- El README del plugin decía `/plugin install ./integrations/claude-code`, que es para marketplaces. Un plugin local se carga con `claude --plugin-dir`.
+- `${CLAUDE_PLUGIN_ROOT}` está documentado para hooks, y ahí se queda. En el cuerpo de la skill y del comando, que los lee el modelo, se sustituyó por una referencia al directorio del plugin.

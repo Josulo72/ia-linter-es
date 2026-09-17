@@ -39,7 +39,9 @@ if (estado.intentos >= MAX_INTENTOS) process.exit(0);
 const cli = resolverCli(payload.cwd);
 if (!cli) process.exit(0); // sin CLI no se revisa nada, pero tampoco se estorba
 
-const run = spawnSync(process.execPath, [cli, "lint", "--stdin", "--profile", PERFIL, "--format", "json", "--no-color", "--fail-on", "never"], {
+// El nombre lógico hace que se analice como Markdown: así los bloques de código quedan fuera
+// del recuento de frases y los guiones de las opciones no se toman por rayas de inciso.
+const run = spawnSync(process.execPath, [cli, "lint", "--stdin", "--stdin-filename", "respuesta.md", "--profile", PERFIL, "--format", "json", "--no-color", "--fail-on", "never"], {
   input: texto,
   encoding: "utf8",
   cwd: payload.cwd && fs.existsSync(payload.cwd) ? payload.cwd : undefined,
@@ -82,27 +84,29 @@ process.exit(2);
 
 /* --------------------------------------------------------------- */
 
-function ficheroEstado() {
+/** Un fichero por sesión, con el id que viene en el propio evento: dos sesiones a la vez no se pisan. */
+function ficheroEstado(payload) {
   const dir = path.join(os.tmpdir(), "ia-linter-es");
   fs.mkdirSync(dir, { recursive: true });
-  const clave = createHash("sha256").update(String(process.env.CLAUDE_SESSION_ID ?? "")).digest("hex").slice(0, 16);
+  const clave = createHash("sha256").update(String(payload.session_id ?? "")).digest("hex").slice(0, 16);
   return path.join(dir, `revisar-${clave}.json`);
 }
 
 function estadoDe(payload) {
   const promptId = String(payload.prompt_id ?? payload.session_id ?? "");
   try {
-    const s = JSON.parse(fs.readFileSync(ficheroEstado(), "utf8"));
-    if (s.promptId === promptId) return { promptId, intentos: Number(s.intentos) || 0 };
+    const s = JSON.parse(fs.readFileSync(ficheroEstado(payload), "utf8"));
+    if (s.promptId === promptId) return { payload, promptId, intentos: Number(s.intentos) || 0 };
   } catch {
     /* sin estado previo */
   }
-  return { promptId, intentos: 0 };
+  return { payload, promptId, intentos: 0 };
 }
 
 function guardar(estado) {
   try {
-    fs.writeFileSync(ficheroEstado(), JSON.stringify(estado), "utf8");
+    const { payload, ...resto } = estado;
+    fs.writeFileSync(ficheroEstado(payload), JSON.stringify(resto), "utf8");
   } catch {
     /* si no se puede guardar, el peor caso es revisar de más */
   }

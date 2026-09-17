@@ -57,7 +57,7 @@ Supresiones en el propio texto:
 ## API
 
 ```js
-import { lintText, lintFile, scanProject, loadConfig, loadRulePack } from "ia-linter-es";
+import { lintText, lintFile, lintProject, loadConfig, loadRulePack } from "ia-linter-es";
 
 const r = lintText(texto, { profile: "chat", format: "text" });
 console.log(r.score.index, r.findings.map((f) => f.rule));

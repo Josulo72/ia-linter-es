@@ -10,8 +10,7 @@ Cómo hacerlo:
 
 1. Si hay un archivo en los argumentos, analízalo:
    `ia-linter-es lint <archivo> --verbose`
-   Si el proyecto no tiene el paquete instalado, usa el bundle del plugin:
-   `node "${CLAUDE_PLUGIN_ROOT}/bundle/dist/cli.mjs" lint <archivo> --verbose`
+   Si el proyecto no tiene el paquete instalado, el plugin trae su copia de la CLI en `bundle/dist/cli.mjs`, dentro del directorio del plugin. Llámala con `node` y la ruta completa de ese archivo.
 
 2. Si no hay archivo, coge el texto que el usuario acaba de pegar o lo último que hayas escrito tú y pásalo por la entrada estándar con el perfil que toque:
    `ia-linter-es lint --stdin --profile chat --verbose`

@@ -10,7 +10,7 @@ Dos cosas distintas: escribir bien a la primera y arreglar lo que ya está escri
 ## Si vas a escribir tú
 
 <!-- ia-linter-disable-next-line formato/comillas-angulares, lexico/honestidad-anunciada -->
-Lee `${CLAUDE_PLUGIN_ROOT}/output-styles/humano.md` y escribe con eso. Es la misma guía que el estilo de salida del plugin, y lo que hace bien es quitar: rayas de inciso, comillas angulares, negritas para abrir párrafo, «no es X, es Y», «para ser honesto», tríadas por costumbre. Eso se corrige solo con leerlo.
+Lee `output-styles/humano.md`, que está en el directorio de este plugin, junto a esta skill, y escribe con eso. Es la misma guía que el estilo de salida, y lo que hace bien es quitar: rayas de inciso, comillas angulares, negritas para abrir párrafo, «no es X, es Y», «para ser honesto», tríadas por costumbre. Eso se corrige solo con leerlo.
 
 Lo que la guía no arregla es el ritmo, y está medido: las frases salen todas del mismo largo por más que se pida lo contrario. Eso lo pilla el linter, así que pásaselo al terminar.
 
@@ -20,11 +20,7 @@ Lo que la guía no arregla es el ritmo, y está medido: las frases salen todas d
 ia-linter-es lint --stdin --profile chat --verbose
 ```
 
-o, si el proyecto no tiene el paquete instalado:
-
-```
-node "${CLAUDE_PLUGIN_ROOT}/bundle/dist/cli.mjs" lint --stdin --profile chat --verbose
-```
+Si el proyecto no tiene el paquete instalado, el plugin trae su copia en `bundle/dist/cli.mjs`, dentro del directorio donde está esta skill. Llámala con `node` y la ruta completa de ese archivo, y el resto de opciones son las mismas.
 
 El perfil manda, porque no es lo mismo un mensaje que un contrato:
 

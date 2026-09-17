@@ -2,7 +2,7 @@
 
 ## Qué hace el programa con tus textos
 
-Leerlos en tu ordenador y ya. No hay red, no hay telemetría y no hay ningún servicio detrás, y eso no es una promesa sino algo que se comprueba en cada build: `scripts/gates.mjs` falla si algún módulo importa `node:http`, `node:https`, `node:net`, `node:dgram` o `fetch`, y `scripts/pack-check.mjs` ejecuta el análisis con la red cortada para ver que el resultado sale idéntico. Los snippets del texto analizado solo aparecen en el informe si pides `--verbose` o el formato SARIF, así que en un CI compartido, si te preocupa que el texto acabe en un log, no los uses.
+Leerlos en tu ordenador y ya. No hay red, no hay telemetría y no hay ningún servicio detrás, y eso no es una promesa sino algo que se comprueba en cada build: `scripts/gates.mjs` falla si algún módulo importa `node:http`, `node:https`, `node:net`, `node:dgram` o `fetch`. Esa es la garantía de verdad, la de los imports; `scripts/pack-check.mjs` añade una comprobación más floja, que es ejecutar el análisis con un proxy apuntando a un puerto muerto y ver que el resultado sale idéntico. Los snippets del texto analizado solo aparecen en el informe si pides `--verbose` o el formato SARIF, así que en un CI compartido, si te preocupa que el texto acabe en un log, no los uses.
 
 ## Reglas y expresiones regulares
 

@@ -10,15 +10,16 @@ El hook revisa cada respuesta antes de que la veas y, si huele a IA, se la devue
 
 ## Instalar
 
-El plugin está en este directorio. Si lo tienes clonado:
+El plugin está en este directorio. Con el repositorio clonado, se carga apuntando ahí al arrancar:
 
 ```
-/plugin install ./integrations/claude-code
+pnpm build
+claude --plugin-dir ./integrations/claude-code
 ```
 
-Hace falta `pnpm build` antes, porque el plugin lleva una copia de la CLI en `bundle/` que se genera en el build. Si el proyecto donde trabajas ya tiene `ia-linter-es` instalado, se usa esa y el bundle no hace falta.
+El `pnpm build` importa: genera `bundle/`, que es la copia de la CLI que usa el plugin cuando el proyecto donde trabajas no tiene `ia-linter-es` en su `node_modules`. Si lo tiene, se usa esa y el bundle no hace falta.
 
-Después, el estilo de salida se elige con `/output-style humano`.
+Para tenerlo siempre sin pasar la opción cada vez, copia el directorio a `~/.claude/skills/ia-linter-es/`, que es donde Claude Code carga los plugins solo. Y el estilo de salida se elige con `/output-style humano`.
 
 ## El hook
 

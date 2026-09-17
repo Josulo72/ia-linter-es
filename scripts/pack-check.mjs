@@ -79,14 +79,15 @@ try {
   else if (desdeInstalacion.stdout !== desdeRepo.stdout) fail("la instalación y el repositorio no dan el mismo JSON");
   else ok("mismo JSON byte a byte que en el repositorio");
 
-  // El análisis no sale a la red: se ejecuta sin acceso y tiene que dar lo mismo.
+  // Comprobación floja de que no hay red: con un proxy apuntando a un puerto muerto, el resultado no cambia.
+  // La garantía de verdad es el gate de imports de scripts/gates.mjs.
   const sinRed = sh(process.execPath, [bin, "lint", "muestra.md", "-f", "json", "--no-cache", "--fail-on", "never"], {
     cwd: proyecto,
     shell: false,
     env: { ...process.env, HTTP_PROXY: "http://127.0.0.1:9", HTTPS_PROXY: "http://127.0.0.1:9", NO_PROXY: "" },
   });
-  if (sinRed.stdout !== desdeRepo.stdout) fail("el resultado cambia con la red cortada");
-  else ok("mismo resultado con la red cortada");
+  if (sinRed.stdout !== desdeRepo.stdout) fail("el resultado cambia con un proxy inválido");
+  else ok("mismo resultado con un proxy inválido");
 } finally {
   try {
     fs.rmSync(tmp, { recursive: true, force: true });

@@ -23,7 +23,7 @@ Primera versión.
 ### Producto
 
 - CLI: `lint`, `rules list`, `rules explain`, `config validate`, `config explain`, `baseline create`, `baseline update`, `benchmark run`.
-- API: `lintText`, `lintFile`, `scanProject`, `loadConfig`, `loadRulePack`.
+- API: `lintText`, `lintFile`, `lintProject`, `loadConfig`, `loadRulePack`.
 - Reporters de terminal, JSON y SARIF 2.1.0.
 
 ### Evidencia
