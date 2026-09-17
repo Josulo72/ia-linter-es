@@ -12,7 +12,8 @@
     "typecheck": "pnpm -r typecheck",
     "gates": "node scripts/corpus-check.mjs && node scripts/gates.mjs",
     "corpus:check": "node scripts/corpus-check.mjs",
-    "lint:self": "node packages/linter/dist/cli/main.js lint README.md docs"
+    "lint:self": "node packages/linter/dist/cli/main.js lint README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md docs integrations",
+    "pack:check": "node scripts/pack-check.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

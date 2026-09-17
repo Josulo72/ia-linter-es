@@ -2,11 +2,11 @@
 
 Tres piezas, y se pueden usar por separado.
 
-**El estilo de salida** (`output-styles/humano.md`) es lo que hace que Claude escriba en español como una persona en vez de como un folleto. Es la pieza principal.
+El estilo de salida (`output-styles/humano.md`) es lo que hace que Claude escriba en español como una persona en vez de como un folleto, y es la pieza principal de todo esto.
 
-**El comando `/revisar`** pasa el linter a un archivo o a un texto pegado y lo arregla.
+El comando `/revisar` pasa el linter a un archivo o a un texto pegado y lo arregla.
 
-**El hook** revisa cada respuesta antes de que la veas y, si huele a IA, se la devuelve a Claude para que la reescriba. Viene desactivado.
+El hook revisa cada respuesta antes de que la veas y, si huele a IA, se la devuelve a Claude para que la reescriba. Viene desactivado.
 
 ## Instalar
 

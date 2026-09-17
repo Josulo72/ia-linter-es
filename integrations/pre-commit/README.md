@@ -1,6 +1,6 @@
 # Pre-commit
 
-El hook no tiene lógica: llama a la misma CLI. La definición vive en `.pre-commit-hooks.yaml`, en la raíz del repositorio, que es donde la busca el framework.
+El hook no tiene lógica propia, llama a la misma CLI. La definición vive en `.pre-commit-hooks.yaml`, en la raíz del repositorio, que es donde la busca el framework.
 
 ## Cómo se usa
 
@@ -14,7 +14,7 @@ repos:
       - id: ia-linter-es
 ```
 
-Eso instala el paquete en el entorno de pre-commit y analiza los archivos del commit. Si prefieres que use la copia que ya tiene el proyecto, sin instalar nada:
+Eso instala el paquete en el entorno de pre-commit y analiza los archivos del commit. Si prefieres que use la que ya tiene el proyecto en `node_modules`, y así no instalar nada aparte ni que se te descuadren las versiones entre lo que corre en tu máquina y lo que corre en el hook:
 
 ```yaml
 repos:
@@ -40,7 +40,7 @@ Los umbrales y las reglas salen de `ia-linter.yml`. El hook no los cambia.
 
 ## Qué archivos analiza
 
-Por defecto, los Markdown y los de texto que entren en el commit. Para acotarlo, `files` o `exclude` en el `.pre-commit-config.yaml`; la configuración del linter también tiene `exclude`, y se aplican las dos.
+Por defecto, los Markdown y los de texto que entren en el commit. Para acotarlo tienes `files` y `exclude` en el `.pre-commit-config.yaml`, y la configuración del linter también tiene su propio `exclude`, así que se aplican las dos cosas.
 
 ## Si falla y quieres commitear igual
 
@@ -48,7 +48,7 @@ Por defecto, los Markdown y los de texto que entren en el commit. Para acotarlo,
 SKIP=ia-linter-es git commit -m "..."
 ```
 
-O crea una baseline con lo que ya está escrito y deja el hook para lo nuevo:
+O, si el proyecto ya tiene mucho texto escrito y no vas a repasarlo entero ahora, crea una baseline con lo que hay y deja el hook vigilando solo lo que escribas a partir de ahora:
 
 ```
 ia-linter-es baseline create --reason "texto anterior a la revisión"

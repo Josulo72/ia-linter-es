@@ -66,4 +66,4 @@ La Action usa el `ia-linter-es` que tenga el proyecto. Si no lo tiene, usa la co
 
 ## Lo que no hace
 
-No redefine reglas ni umbrales: todo sale de `ia-linter.yml`. Si una regla está desactivada en el proyecto, aquí también. Y no sale a la red.
+No redefine reglas ni umbrales. Todo sale de `ia-linter.yml`, así que si una regla está desactivada en el proyecto, aquí también lo está. Y no sale a la red.

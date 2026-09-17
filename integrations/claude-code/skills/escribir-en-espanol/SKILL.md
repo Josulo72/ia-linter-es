@@ -9,6 +9,7 @@ Dos cosas distintas: escribir bien a la primera y arreglar lo que ya está escri
 
 ## Si vas a escribir tú
 
+<!-- ia-linter-disable-next-line formato/comillas-angulares, lexico/honestidad-anunciada -->
 Lee `${CLAUDE_PLUGIN_ROOT}/output-styles/humano.md` y escribe con eso. Es la misma guía que el estilo de salida del plugin, y lo que hace bien es quitar: rayas de inciso, comillas angulares, negritas para abrir párrafo, «no es X, es Y», «para ser honesto», tríadas por costumbre. Eso se corrige solo con leerlo.
 
 Lo que la guía no arregla es el ritmo, y está medido: las frases salen todas del mismo largo por más que se pida lo contrario. Eso lo pilla el linter, así que pásaselo al terminar.

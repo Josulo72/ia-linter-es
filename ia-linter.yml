@@ -1,0 +1,28 @@
+# El proyecto se pasa su propio linter: `pnpm lint:self`.
+profile: readme
+fail_on: warning
+
+exclude:
+  - "corpus/**"          # textos del benchmark, humanos y generados
+  - "examples/muestra-ia.md"  # muestra a propósito llena de patrones
+  - "benchmark/reports/**"    # informes que citan lo que marcan las reglas
+
+overrides:
+  # Catálogo de reglas: cada entrada cita el patrón que describe, así que marcarlos es el resultado correcto.
+  - files: ["docs/rules.md", "docs/rule-authoring.md"]
+    rules:
+      "lexico/*": "off"
+      "retorica/*": "off"
+      "repeticion/*": "off"
+      "densidad/*": "off"
+      "formato/*": "off"
+      "estructura/*": "off"
+  # La arquitectura y las decisiones citan fórmulas como ejemplo de lo que se quiere evitar,
+  # y los títulos de decisions.md llevan raya por formato («## fecha — título»).
+  - files: ["docs/architecture.md", "docs/decisions.md", "docs/benchmark.md"]
+    rules:
+      "lexico/*": info
+      "retorica/*": info
+      "repeticion/*": info
+      "densidad/*": info
+      formato/raya-espaciada: info

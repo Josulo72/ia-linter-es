@@ -71,21 +71,31 @@ blocks:
     objective: Pre-commit, GitHub Action, Claude Code y paridad E2E.
     depends_on: [B3]
     deliverables:
-      - integrations/pre-commit, integrations/github-action, integrations/claude-code
-      - instalación del estilo de salida y del hook que revisa las respuestas (fuera del repo, requiere permiso del propietario)
+      - .pre-commit-hooks.yaml (raíz) e integrations/pre-commit/README.md
+      - integrations/github-action (action.yml, main.mjs, README)
+      - integrations/claude-code como plugin: plugin.json, commands/revisar.md, skills/, hooks/hooks.json, scripts/revisar-respuesta.mjs
+      - instalación del plugin en ~/.claude (fuera del repo, requiere permiso del propietario)
     tests:
       - E2E de cada adaptador con entorno simulado; test de paridad JSON entre CLI, Action y bundle
     acceptance: mismos hallazgos byte a byte en las tres superficies.
-    status: pending
+    status: done
+    notes: >-
+      14 tests E2E en packages/linter/test/integraciones.e2e.test.ts. El hook Stop viene apagado
+      (IA_LINTER_REVISAR) y tiene tope de reintentos por prompt_id para no dejar la sesión en bucle.
 
   - id: B6
     title: Cierre
     objective: Seguridad, rendimiento, multiplataforma, empaquetado, release reproducible.
     depends_on: [B4, B5]
     deliverables:
-      - CHANGELOG.md, SECURITY.md, CONTRIBUTING.md, LICENSE, README.md
-      - project/EVIDENCE/release-v1.0.md
+      - CHANGELOG.md, SECURITY.md, CONTRIBUTING.md, LICENSE, README.md, ia-linter.yml
+      - scripts/pack-check.mjs y el paso correspondiente en CI
+      - project/EVIDENCE/B5-B6-cierre.md
     tests:
-      - pnpm pack + instalación en temporal + ejecución; gate de rendimiento
+      - pnpm pack + instalación en temporal + ejecución; gate de rendimiento; pnpm lint:self
     acceptance: criterios §17 con evidencia; pendientes solo acciones externas del propietario.
-    status: pending
+    status: done
+    notes: >-
+      Todos los gates en verde en Windows. macOS y Linux quedan cubiertos por el workflow de CI,
+      cuya evidencia depende del primer push. Pendientes del propietario: push, npm publish e
+      instalación del plugin en ~/.claude.
