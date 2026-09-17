@@ -1,0 +1,28 @@
+name: verbos-comodin
+description: Verbos de acción vaga que la redacción generada usa como relleno (optimizar, potenciar, garantizar...).
+terms:
+  - re:optimiza(?:r|n|ndo|do|da|dos|das)?
+  - re:potencia(?:r|n|ndo|do|da|dos|das)?
+  - re:maximiza(?:r|n|ndo|do|da|dos|das)?
+  - re:fomenta(?:r|n|ndo|do|da|dos|das)?
+  - re:impulsa(?:r|n|ndo|do|da|dos|das)?
+  - re:garantiza(?:r|n|ndo|do|da|dos|das)?
+  - re:brinda(?:r|n|ndo|do|da|dos|das)?
+  - re:facilita(?:r|n|ndo|do|da|dos|das)?
+  - re:fortalece(?:r|n)?
+  - re:fortaleciendo
+  - re:aprovecha(?:r|n|ndo|do|da|dos|das)?
+  - re:transforma(?:r|n|ndo|do|da|dos|das)?
+  - re:revoluciona(?:r|n|ndo|do|da|dos|das)?
+  - re:mejora(?:r|n|ndo|do|da|dos|das)?
+  - re:asegura(?:r|n|ndo|do|da|dos|das)?
+  - re:permite(?:n)?
+  - re:permitiendo
+  - re:promueve(?:n)?
+  - re:promoviendo
+  - re:contribuye(?:n)?
+  - re:contribuyendo
+  - re:destaca(?:r|n|ndo|do|da|dos|das)?
+  - re:abord(?:ar|a|an|ando|ado|ada|ados|adas)
+  - re:explor(?:ar|a|an|ando|ado|ada|ados|adas|aremos)
+  - re:profundiz(?:ar|a|an|ando|ado|ada|aremos)

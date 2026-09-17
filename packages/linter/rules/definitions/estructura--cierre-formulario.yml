@@ -1,0 +1,35 @@
+schema_version: 1
+id: estructura/cierre-formulario
+revision: 1
+status: stable
+title: Cierre formulario
+summary: El último párrafo empieza por «En resumen», «En conclusión», «En definitiva» o fórmula equivalente.
+category: estructura
+scope: document
+detector: regex
+conditions:
+  patterns:
+    - "^(?:en resumen|en conclusión|en definitiva|para concluir|en síntesis|como conclusión|a modo de (?:conclusión|resumen)|en pocas palabras|para finalizar|para terminar|en suma|resumiendo|concluyendo)\\b"
+  anchor: last_block
+  kinds: [paragraph, plain]
+default_level: warning
+score: { weight: 2, cap: 2 }
+message: "Cierre formulario: «{term}» al inicio del último párrafo."
+explanation: >-
+  El párrafo final que anuncia «en conclusión» y repite lo dicho es el cierre por defecto del texto generado.
+  Un texto editado termina con la última idea, no con el resumen de las anteriores.
+rewrite_guidance: Borra el párrafo de resumen o conviértelo en la conclusión real (qué cambia, qué hay que hacer).
+examples:
+  positive:
+    - { text: "El plan tiene tres fases.\n\nLa primera dura un mes.\n\nEn resumen, es un plan corto.", expect: 1 }
+    - { text: "Todo lo anterior importa.\n\nEn definitiva, hay que decidir pronto.", expect: 1 }
+  negative:
+    - { text: "En resumen, el plan es corto.\n\nLa primera fase dura un mes.\n\nLa segunda, dos.", expect: 0, note: "no está en el último párrafo" }
+    - { text: "El plan tiene tres fases.\n\nHay que decidir pronto.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Resúmenes ejecutivos y abstracts, donde el género exige la fórmula.
+  reviewed_by: [jrollon]
+profiles:
+  academico: info

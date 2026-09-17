@@ -1,0 +1,33 @@
+schema_version: 1
+id: repeticion/inicio-parrafo
+revision: 1
+status: stable
+title: Párrafos que empiezan igual
+summary: Tres o más párrafos del documento empiezan por las mismas dos palabras (no funcionales).
+category: repeticion
+scope: document
+detector: repetition
+conditions:
+  unit: block_start
+  n: 2
+  min_repeats: 3
+  consecutive: false
+default_level: info
+score: { weight: 1.5, cap: 2 }
+message: "{count} párrafos empiezan por «{term}»."
+explanation: >-
+  El texto generado sobre un tema repite el sujeto al inicio de cada párrafo («La inteligencia artificial…»
+  ×3). La prosa editada varía el arranque o usa pronombres y elipsis.
+rewrite_guidance: Empieza el párrafo por la información nueva o usa un pronombre.
+examples:
+  positive:
+    - { text: "La inteligencia artificial cambia todo.\n\nOtra cosa.\n\nLa inteligencia artificial cuesta.\n\nLa inteligencia artificial llega.", expect: 1 }
+    - { text: "Nuestro producto es rápido.\n\nNuestro producto es barato.\n\nNuestro producto es fiable.", expect: 1 }
+  negative:
+    - { text: "La inteligencia artificial cambia todo.\n\nCuesta dinero.\n\nLlega pronto.", expect: 0 }
+    - { text: "En el principio.\n\nEn el medio.\n\nEn el final.", expect: 0, note: "solo palabras funcionales" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Fichas y glosarios donde cada entrada repite el término por diseño.
+  reviewed_by: [jrollon]

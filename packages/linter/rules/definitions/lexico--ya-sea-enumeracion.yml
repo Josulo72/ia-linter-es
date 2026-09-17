@@ -1,0 +1,33 @@
+schema_version: 1
+id: lexico/ya-sea-enumeracion
+revision: 1
+status: stable
+title: Enumeración «ya sea… o…»
+summary: «Ya sea X, Y o Z» como muletilla de amplitud, muy frecuente en texto generado.
+category: lexico
+scope: sentence
+detector: sequence
+conditions:
+  steps:
+    - { terms: ["ya sea", "ya sean"] }
+    - { terms: ["o", "u", "o bien"] }
+  max_gap: 10
+default_level: info
+score: { weight: 1, cap: 2 }
+message: "Enumeración «ya sea… o…»: «{term}»."
+explanation: >-
+  Construcción legítima en español, pero la redacción generada la usa en casi cualquier enumeración
+  para simular cobertura total. Se notifica como información y pesa poco en el índice.
+rewrite_guidance: Si la lista es cerrada, enuméralla sin «ya sea». Si es abierta, di «por ejemplo».
+examples:
+  positive:
+    - { text: "Ya sea en casa, en la oficina o en el tren, la app funciona.", expect: 1 }
+    - { text: "Sirve a cualquier equipo, ya sea grande o pequeño.", expect: 1 }
+  negative:
+    - { text: "Ya sea lo que sea, no cambiaremos el plan.", expect: 0, note: "sin 'o' en los diez tokens siguientes" }
+    - { text: "En casa o en la oficina, la app funciona.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Enumeraciones disyuntivas reales en textos normativos.
+  reviewed_by: [jrollon]

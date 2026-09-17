@@ -1,0 +1,36 @@
+schema_version: 1
+id: densidad/emojis
+revision: 1
+status: stable
+title: Emojis como marcadores de estructura
+summary: Tres o más emojis en un texto expositivo, usados como viñetas o adornos de encabezado.
+category: densidad
+scope: document
+detector: density
+conditions:
+  terms: ["raw:\\p{Extended_Pictographic}(?:\\uFE0F)?"]
+  window: document
+  min_count: 3
+  per_1000: 4
+  min_words: 30
+default_level: info
+score: { weight: 1, cap: 2 }
+message: "{count} emojis en el documento; se usan como marcadores de estructura."
+explanation: >-
+  El contenido generado para redes y newsletters suele decorar cada punto con un emoji (🚀, ✅, 💡).
+  Es un rasgo de formato, no de lengua, y por eso pesa poco; se notifica como información.
+rewrite_guidance: Sustituye los emojis por encabezados o viñetas normales, salvo que el canal lo pida.
+examples:
+  positive:
+    - { text: "🚀 Lanzamos la nueva versión. ✅ Más rápida. 💡 Más simple. 🔥 Pruébala hoy mismo y cuéntanos qué te parece en los comentarios, porque tu opinión nos ayuda a mejorar cada semana con nuevas funciones pensadas para ti y para tu equipo.", expect: 1 }
+    - { text: "Consejos para el verano ☀️: hidratación 💧, protección 🧴 y descanso 😴. Recuerda que las horas centrales del día son las más peligrosas y que los niños y las personas mayores necesitan más cuidados que el resto durante las olas de calor.", expect: 1 }
+  negative:
+    - { text: "Lanzamos la nueva versión. Es más rápida y más simple. Pruébala hoy mismo y cuéntanos qué te parece en los comentarios, porque tu opinión nos ayuda a mejorar cada semana con nuevas funciones pensadas para ti y para tu equipo de trabajo.", expect: 0 }
+    - { text: "Me alegro 🙂. Nos vemos mañana en la reunión de las diez, que será corta porque solo hay que aprobar el acta y repasar el calendario del trimestre con el equipo de ventas y el de soporte técnico.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Mensajería informal y redes sociales escritas por humanos.
+  reviewed_by: [jrollon]
+profiles:
+  marketing: off

@@ -1,0 +1,37 @@
+schema_version: 1
+id: densidad/exclamaciones
+revision: 1
+status: stable
+title: Exceso de frases exclamativas
+summary: Una de cada cuatro frases o más termina en exclamación en un texto expositivo.
+category: densidad
+scope: document
+detector: density
+conditions:
+  terms: ["raw:!"]
+  window: document
+  unit: sentence
+  min_count: 3
+  ratio: 0.25
+  min_words: 40
+default_level: info
+score: { weight: 1, cap: 2 }
+message: "{count} frases exclamativas ({ratio} % de las frases)."
+explanation: >-
+  El entusiasmo por exclamación es un rasgo del contenido generado para marketing y redes. En prosa
+  expositiva editada la exclamación es excepcional.
+rewrite_guidance: Deja la exclamación solo donde haya una emoción real que transmitir; el resto, con punto.
+examples:
+  positive:
+    - { text: "¡Es fácil! ¡Es rápido! ¡Y es gratis! Descárgala hoy y empieza a organizar tus proyectos con un panel claro, avisos útiles y una aplicación móvil que funciona incluso sin conexión durante los viajes en tren o en avión, sincronizando después.", expect: 1 }
+    - { text: "¡Hola a todos! Hoy os traigo algo especial. ¡No os lo perdáis! ¡Empezamos! Vamos a repasar las novedades de la semana, los cambios en el calendario y las respuestas a las preguntas que nos habéis enviado por correo durante los últimos días de trabajo.", expect: 1 }
+  negative:
+    - { text: "Es fácil y rápido. Descárgala hoy y empieza a organizar tus proyectos con un panel claro, avisos útiles y una aplicación móvil que funciona incluso sin conexión durante los viajes en tren o en avión. ¡Gracias por leer hasta aquí!", expect: 0 }
+    - { text: "¡Cuidado! ¡Peligro!", expect: 0, note: "menos de 40 palabras" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Diálogo literario y textos infantiles.
+  reviewed_by: [jrollon]
+profiles:
+  marketing: off

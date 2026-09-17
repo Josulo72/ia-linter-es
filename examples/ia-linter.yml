@@ -1,0 +1,28 @@
+# Ejemplo de configuración. Copia este archivo a la raíz de tu proyecto como ia-linter.yml.
+schema_version: 1
+profile: general
+register: general
+include: ["**/*.md", "**/*.txt"]
+exclude: ["**/node_modules/**", "CHANGELOG.md"]
+respect_gitignore: true
+fail_on: warning
+max_index: 35
+rules:
+  retorica/triada: off
+  "formato/*": info
+overrides:
+  - files: ["docs/api/**"]
+    profile: tecnico
+  - files: ["blog/**"]
+    rules:
+      densidad/emojis: off
+baseline:
+  path: ia-linter-baseline.json
+  require_reason: false
+privacy:
+  snippets: true
+reporter: terminal
+cache:
+  enabled: true
+  dir: .ia-linter-cache
+min_words_for_index: 150

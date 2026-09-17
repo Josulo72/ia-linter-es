@@ -1,0 +1,34 @@
+schema_version: 1
+id: estructura/longitud-uniforme
+revision: 1
+status: stable
+title: Frases de longitud uniforme
+summary: Las frases del documento tienen casi la misma longitud (coeficiente de variación bajo).
+category: estructura
+scope: document
+detector: structure
+conditions:
+  kind: sentence_length_cv
+  min_sentences: 12
+  max_cv: 0.32
+default_level: info
+score: { weight: 2, cap: 2 }
+message: "Frases de longitud muy uniforme (CV {cv} en {count} frases)."
+explanation: >-
+  La prosa humana alterna frases largas y cortas; la generada tiende a una longitud media estable.
+  Se calcula el coeficiente de variación de palabras por frase, sin contar encabezados ni frases de menos de tres palabras.
+rewrite_guidance: Rompe alguna frase larga en dos y une dos cortas. Una frase de cuatro palabras después de una de treinta cambia el ritmo.
+examples:
+  positive:
+    - { text: "Esta frase tiene una longitud media bastante normal. La siguiente frase mantiene una longitud parecida también. Otra frase más con el mismo número de palabras. Y seguimos con otra frase de longitud muy similar. Cada frase se parece mucho a la frase anterior. Nada cambia el ritmo de este párrafo tan regular. Las frases siguen y siguen con la misma medida. Ninguna es corta y ninguna es realmente larga. El lector nota una cadencia mecánica en el texto. Todo suena igual y nada llama la atención aquí. Así continúa el documento hasta su última frase. Y termina con otra frase de longitud media.", expect: 1 }
+    - { text: "Primera frase de prueba con siete palabras. Segunda frase de prueba con siete palabras. Tercera frase de prueba con siete palabras. Cuarta frase de prueba con siete palabras. Quinta frase de prueba con siete palabras. Sexta frase de prueba con siete palabras. Séptima frase de prueba con siete palabras. Octava frase de prueba con siete palabras. Novena frase de prueba con siete palabras. Décima frase de prueba con siete palabras. Undécima frase de prueba con siete palabras. Duodécima frase de prueba con siete palabras.", expect: 1 }
+  negative:
+    - { text: "Llovía. La ciudad entera parecía haberse rendido al agua, y los coches avanzaban despacio por una avenida que ya no distinguía la acera de la calzada. Nadie hablaba. En el portal, una mujer esperaba con un paraguas roto y miraba el reloj cada pocos segundos como si eso fuera a cambiar algo. Llegó el autobús. Subimos todos, mojados, callados, y el conductor arrancó sin esperar a que nos sentáramos. Yo pensaba en la carta. Era corta, apenas tres líneas, pero llevaba dos días sin atreverme a abrirla porque sabía perfectamente lo que decía y no quería leerlo escrito con su letra. Bajé en la tercera parada. Caminé. Y al llegar a casa la abrí de pie, sin quitarme el abrigo, y era exactamente lo que esperaba, palabra por palabra.", expect: 0 }
+    - { text: "Corto. Muy corto también. Y ya.", expect: 0, note: "menos de doce frases" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Listas de instrucciones y fichas técnicas humanas con frases deliberadamente homogéneas.
+  reviewed_by: [jrollon]
+profiles:
+  tecnico: off

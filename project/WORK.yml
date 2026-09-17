@@ -29,7 +29,7 @@ blocks:
       - unitarios por detector; compilador rechaza patrones peligrosos; timing en 1 MB adversarial
       - scoring determinista y omisión con pocas palabras; supresiones Markdown; baseline por huellas
     acceptance: gates de regex y sin red en verde.
-    status: in_progress
+    status: done
 
   - id: B3
     title: Producto local
@@ -42,7 +42,7 @@ blocks:
     tests:
       - integración runner (gitignore, caché, overrides); E2E CLI por comando; reporters JSON/SARIF estructurales
     acceptance: `ia-linter-es lint` sobre examples/ produce salida determinista; rulepack compilado en build.
-    status: pending
+    status: done
 
   - id: B4
     title: Evidencia
@@ -55,7 +55,7 @@ blocks:
     tests:
       - scripts/corpus-check.mjs (licencias, hashes, veto); benchmark run reproducible
     acceptance: informe publicado con métricas por regla y agregadas; holdout congelado antes de fijar pesos.
-    status: pending
+    status: in_progress
 
   - id: B5
     title: Integraciones

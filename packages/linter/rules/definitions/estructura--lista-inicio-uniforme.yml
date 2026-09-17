@@ -1,0 +1,31 @@
+schema_version: 1
+id: estructura/lista-inicio-uniforme
+revision: 1
+status: candidate
+title: Lista con elementos que empiezan igual
+summary: Cuatro o más elementos consecutivos de una lista empiezan por la misma palabra.
+category: estructura
+scope: block
+detector: structure
+conditions:
+  kind: list_uniform_start
+  min_consecutive: 4
+default_level: info
+score: { weight: 0.5, cap: 1 }
+message: "{count} elementos de lista seguidos empiezan por «{term}»."
+explanation: >-
+  Las listas generadas repiten el arranque de cada elemento («Permite…», «Permite…», «Permite…»).
+  La evidencia es todavía débil frente a listas humanas homogéneas; la regla está en estado candidate.
+rewrite_guidance: Varía el arranque o convierte la lista en una frase con enumeración.
+examples:
+  positive:
+    - { text: "- Permite exportar\n- Permite importar\n- Permite compartir\n- Permite borrar\n", expect: 1, format: markdown }
+    - { text: "* Mejora la velocidad\n* Mejora el consumo\n* Mejora la señal\n* Mejora la batería\n", expect: 1, format: markdown }
+  negative:
+    - { text: "- Exportar\n- Importar\n- Permite compartir\n- Permite borrar\n", expect: 0, format: markdown }
+    - { text: "- El primero\n- El segundo\n- El tercero\n- El cuarto\n", expect: 0, format: markdown, note: "palabra funcional" }
+provenance:
+  evidence: Pendiente de benchmark en holdout; ver benchmark/reports.
+  known_false_positives:
+    - Listas de requisitos o comandos humanas con arranque fijo por diseño.
+  reviewed_by: [jrollon]

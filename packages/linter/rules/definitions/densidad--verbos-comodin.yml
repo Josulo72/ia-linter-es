@@ -1,0 +1,36 @@
+schema_version: 1
+id: densidad/verbos-comodin
+revision: 1
+status: stable
+title: Exceso de verbos comodín
+summary: Acumulación de «optimizar», «potenciar», «garantizar», «brindar», «fomentar», «impulsar» y similares.
+category: densidad
+scope: document
+detector: density
+conditions:
+  lexicon: verbos-comodin
+  window: document
+  min_count: 5
+  per_1000: 16
+  min_words: 80
+default_level: warning
+score: { weight: 1.5, cap: 3 }
+message: "{count} verbos comodín en el documento ({per_1000} por mil palabras)."
+explanation: >-
+  Son verbos que prometen efectos («optimiza», «potencia», «garantiza») sin describir una acción concreta.
+  Su densidad es uno de los rasgos léxicos más estables del texto generado en español.
+rewrite_guidance: Di qué hace exactamente el sujeto. «Optimiza el proceso» → «reduce el proceso de cinco pasos a dos».
+examples:
+  positive:
+    - { text: "Optimiza tus procesos, potencia tu equipo y garantiza resultados. Nuestra plataforma brinda soporte, fomenta la colaboración e impulsa el crecimiento. Además, facilita la integración con las herramientas que ya usas y mejora la visibilidad de cada proyecto para toda la organización, desde dirección hasta los equipos de campo, con informes claros y alertas configurables que evitan sorpresas al cierre de cada mes y permiten anticipar desviaciones en el presupuesto antes de que afecten al calendario de entregas comprometido con los clientes.", expect: 1 }
+    - { text: "Este enfoque permite transformar la empresa, asegurar la calidad, fortalecer la marca, aprovechar las oportunidades y promover la innovación en todos los niveles. Se trata de un programa de doce semanas con sesiones presenciales y materiales en línea, pensado para mandos intermedios que necesitan herramientas prácticas para gestionar equipos distribuidos, resolver conflictos y planificar con criterios claros. Cada módulo termina con un caso real y una evaluación breve que sirve para ajustar el ritmo del grupo y detectar dudas antes de avanzar al siguiente bloque de contenidos del itinerario formativo.", expect: 1 }
+  negative:
+    - { text: "El equipo instaló el servidor el lunes, configuró las copias de seguridad el martes y probó la restauración el miércoles. El jueves se documentó el procedimiento y se entregó al cliente junto con las contraseñas en un sobre cerrado. El viernes no hubo incidencias. Durante la semana siguiente se revisaron los registros del sistema y se ajustó el horario de las copias para evitar solapamientos con el cierre contable, que consume mucha memoria entre las diez y las once de la noche según el administrador de la base de datos del cliente.", expect: 0 }
+    - { text: "Optimiza y potencia.", expect: 0, note: "menos de 100 palabras" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Textos de marketing humanos, que comparten este repertorio de verbos.
+  reviewed_by: [jrollon]
+profiles:
+  marketing: info

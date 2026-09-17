@@ -1,0 +1,34 @@
+schema_version: 1
+id: densidad/intensificadores
+revision: 1
+status: stable
+title: Exceso de intensificadores
+summary: Acumulación en el documento de «sumamente», «realmente», «absolutamente», «sin duda» y similares.
+category: densidad
+scope: document
+detector: density
+conditions:
+  lexicon: intensificadores
+  window: document
+  min_count: 3
+  per_1000: 8
+  min_words: 60
+default_level: warning
+score: { weight: 1.5, cap: 3 }
+message: "{count} intensificadores en el documento ({per_1000} por mil palabras)."
+explanation: >-
+  El intensificador afirma sin demostrar. La prosa generada los reparte por todo el texto para sonar
+  convincente; la prosa editada los usa de forma aislada o los sustituye por datos.
+rewrite_guidance: Quita el intensificador o cámbialo por la medida que lo justifica.
+examples:
+  positive:
+    - { text: "Es sumamente útil y realmente fácil de usar. Sin duda, es absolutamente recomendable para cualquier equipo que necesite una herramienta sencilla, estable y bien documentada. Además, resulta especialmente cómoda en dispositivos móviles, donde otras soluciones fallan con frecuencia y obligan a reiniciar. Por último, el soporte responde rápido y con criterio, cosa que no es habitual en este segmento del mercado ni en herramientas de precio similar, según los usuarios consultados durante el último año de pruebas.", expect: 1 }
+    - { text: "Realmente increíble. Verdaderamente magnífico. Definitivamente lo mejor. Y con esto cerramos la reseña de un producto que nos ha acompañado durante tres meses de uso continuado en la oficina, en casa y en varios viajes de trabajo, con resultados constantes y sin sorpresas desagradables en ningún momento del proceso de evaluación que hemos seguido con rigor y paciencia durante todo este tiempo de análisis y comparación con otras opciones disponibles hoy.", expect: 1 }
+  negative:
+    - { text: "El informe, especialmente el capítulo tres, describe el método con detalle y sin adjetivos. Las tablas recogen los datos de veinte años de mediciones en tres estaciones, con sus incertidumbres, y el anexo explica las correcciones aplicadas. El texto no valora los resultados; se limita a exponerlos y a remitir a la bibliografía para su interpretación. En la parte final se resumen las limitaciones del muestreo y se proponen mejoras concretas para la campaña siguiente, con presupuesto y calendario estimados.", expect: 0 }
+    - { text: "Sumamente breve.", expect: 0, note: "menos de 80 palabras" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Reseñas y crítica de opinión escritas por humanos con tono entusiasta.
+  reviewed_by: [jrollon]

@@ -1,0 +1,32 @@
+schema_version: 1
+id: lexico/actualidad-generica
+revision: 1
+status: stable
+title: Marco temporal vacío
+summary: Apertura con un marco temporal genérico («hoy en día», «en la era digital», «en un mundo cada vez más») que no sitúa nada.
+category: lexico
+scope: sentence
+detector: lexicon
+conditions:
+  lexicon: actualidad-generica
+default_level: warning
+score: { weight: 1.5, cap: 3 }
+message: "Marco temporal vacío: «{term}»."
+explanation: >-
+  «Hoy en día» y sus variantes sirven para empezar a hablar de cualquier cosa sin decir cuándo ni dónde.
+  La redacción generada abre con ellas de forma sistemática.
+rewrite_guidance: Sustituye por una fecha, un periodo o un hecho concreto, o empieza directamente por el sujeto.
+examples:
+  positive:
+    - { text: "Hoy en día, la ciberseguridad es una prioridad en un mundo hiperconectado.", expect: 2 }
+    - { text: "En la sociedad actual, todo cambia deprisa.", expect: 1 }
+    - { text: "En un mercado cada vez más competitivo, diferenciarse es clave.", expect: 1 }
+  negative:
+    - { text: "Desde 2020 el teletrabajo se ha triplicado en la administración.", expect: 0 }
+    - { text: "El mundo actual de la novela, según el crítico, es más pequeño.", expect: 0 }
+    - { text: "Hoy hace frío en Burgos.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - "«en la actualidad» es frecuente en prosa expositiva humana; por eso el peso es menor."
+  reviewed_by: [jrollon]

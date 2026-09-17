@@ -110,7 +110,10 @@ export function resolveConditions(
   const c = def.conditions as Cond;
   const patterns: string[] = [];
   const auditTerms = (terms: string[]) => {
-    for (const t of terms) if (t.startsWith("re:")) patterns.push(t.slice(3));
+    for (const t of terms) {
+      if (t.startsWith("re:")) patterns.push(t.slice(3));
+      else if (t.startsWith("raw:")) patterns.push(t.slice(4));
+    }
   };
   switch (def.detector) {
     case "regex": {
@@ -275,6 +278,14 @@ export function compileRules(opts: CompileOptions): CompileResult {
     const budget = opts.maxMsPerRule ?? 250;
     if (ms > budget) err(`demasiado lenta en texto adversarial: ${Math.round(ms)} ms > ${budget} ms`);
     if (!issues.some((i) => i.rule === id && i.severity === "error")) compiled.push(rule);
+  }
+  // Los perfiles solo pueden nombrar reglas o categorías existentes.
+  const allIds = new Set(defs.map((d) => d?.id));
+  const allCats = new Set(defs.map((d) => `${d?.category}/*`));
+  for (const [pname, map] of profiles) {
+    for (const k of Object.keys(map)) {
+      if (!allIds.has(k) && !allCats.has(k)) issues.push({ rule: `profiles/${pname}`, severity: "error", message: `regla o categoría desconocida "${k}"` });
+    }
   }
   compiled.sort((a, b) => a.id.localeCompare(b.id));
   const pack: RulePack = {

@@ -1,0 +1,4 @@
+# Perfil técnico: documentación y manuales. Tolera listas y encabezados estructurados.
+rules:
+  formato/encabezado-title-case: info
+  estructura/encabezado-dos-puntos: off

@@ -1,0 +1,33 @@
+schema_version: 1
+id: retorica/no-solo-sino
+revision: 1
+status: stable
+title: Contraste «no solo… sino (también)»
+summary: Estructura de contraste amplificador «no solo X, sino también Y», muy frecuente en texto generado.
+category: retorica
+scope: sentence
+detector: sequence
+conditions:
+  steps:
+    - { terms: ["no solo", "no sólo", "no solamente", "no únicamente"] }
+    - { terms: ["sino"] }
+  max_gap: 12
+default_level: warning
+score: { weight: 1.5, cap: 3 }
+message: "Contraste amplificador «no solo… sino»: «{term}»."
+explanation: >-
+  Es una construcción correcta que el texto generado usa con una frecuencia muy superior a la humana,
+  a menudo para presentar como contraste dos ideas que no se oponen.
+rewrite_guidance: Si las dos partes no se contraponen, únelas con «y». «No solo es rápido, sino también barato» → «Es rápido y barato».
+examples:
+  positive:
+    - { text: "No solo es rápido, sino también barato.", expect: 1 }
+    - { text: "No solamente mejora la salud, sino que además reduce el estrés.", expect: 1 }
+  negative:
+    - { text: "No solo llegó tarde. Sino que, además, no avisó.", expect: 0, note: "en frases distintas" }
+    - { text: "Es rápido y barato.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Contrastes reales en prosa argumentativa humana.
+  reviewed_by: [jrollon]

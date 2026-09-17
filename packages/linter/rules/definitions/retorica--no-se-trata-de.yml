@@ -1,0 +1,33 @@
+schema_version: 1
+id: retorica/no-se-trata-de
+revision: 1
+status: stable
+title: Negación-redefinición «no se trata de… sino de»
+summary: «No se trata de X, sino de Y» y variantes («no es cuestión de… sino de»), típicas del cierre generado.
+category: retorica
+scope: sentence
+detector: sequence
+conditions:
+  steps:
+    - { terms: ["no se trata de", "no se trata solo de", "no se trata solamente de", "no se trata únicamente de", "no es cuestión de", "no es solo cuestión de", "no es una cuestión de", "no va de"] }
+    - { terms: ["sino de", "sino"] }
+  max_gap: 12
+default_level: warning
+score: { weight: 2, cap: 3 }
+message: "Negación-redefinición: «{term}»."
+explanation: >-
+  La fórmula niega una idea que nadie había planteado para presentar la propia como revelación.
+  Es uno de los cierres más característicos del texto generado en español.
+rewrite_guidance: Afirma directamente la segunda parte. «No se trata de correr, sino de llegar» → «Lo importante es llegar».
+examples:
+  positive:
+    - { text: "No se trata de correr, sino de llegar.", expect: 1 }
+    - { text: "No es cuestión de suerte, sino de método.", expect: 1 }
+  negative:
+    - { text: "No se trata de un error grave.", expect: 0 }
+    - { text: "Se trata de llegar, no de correr.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Ensayo humano que usa la fórmula con intención.
+  reviewed_by: [jrollon]

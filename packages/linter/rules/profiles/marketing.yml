@@ -1,0 +1,4 @@
+# Perfil marketing: tolera arenga, emojis y exclamaciones; endurece muletillas.
+rules:
+  lexico/muletillas-ia: error
+  lexico/metaforas-comodin: error

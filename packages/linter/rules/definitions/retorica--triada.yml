@@ -1,0 +1,30 @@
+schema_version: 1
+id: retorica/triada
+revision: 1
+status: stable
+title: Tríada de adjetivos o nombres
+summary: Enumeración de tres palabras de la misma clase («claro, conciso y directo»; «innovadora, escalable y sostenible»).
+category: retorica
+scope: sentence
+detector: structure
+conditions:
+  kind: triad
+default_level: info
+score: { weight: 1, cap: 3 }
+message: "Tríada retórica: «{term}»."
+explanation: >-
+  La regla de tres es un recurso clásico que el texto generado aplica de forma compulsiva: casi toda
+  enumeración tiene exactamente tres miembros de la misma categoría gramatical.
+rewrite_guidance: Deja los dos adjetivos que aportan algo o sustituye la tríada por un dato.
+examples:
+  positive:
+    - { text: "Una solución innovadora, escalable y sostenible.", expect: 1 }
+    - { text: "Un mensaje claro, conciso y directo.", expect: 1 }
+  negative:
+    - { text: "Vinieron Juan, Pedro y María.", expect: 0 }
+    - { text: "Compramos pan, queso y vino.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Enumeraciones humanas legítimas de tres adjetivos; por eso el nivel es info y el peso bajo.
+  reviewed_by: [jrollon]

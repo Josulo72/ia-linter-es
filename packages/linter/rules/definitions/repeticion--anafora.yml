@@ -1,0 +1,33 @@
+schema_version: 1
+id: repeticion/anafora
+revision: 1
+status: stable
+title: Anáfora mecánica
+summary: Tres o más frases consecutivas empiezan con las mismas dos palabras.
+category: repeticion
+scope: paragraph
+detector: repetition
+conditions:
+  unit: sentence_start
+  n: 2
+  min_repeats: 3
+  consecutive: true
+default_level: warning
+score: { weight: 2, cap: 3 }
+message: "{count} frases seguidas empiezan por «{term}»."
+explanation: >-
+  La anáfora es una figura retórica legítima, pero el texto generado la produce por inercia («Es hora de…
+  Es hora de… Es hora de…») sin intención de énfasis, sobre todo en cierres y en contenido motivacional.
+rewrite_guidance: Deja una sola de las frases o funde las tres en una con enumeración.
+examples:
+  positive:
+    - { text: "Es hora de actuar. Es hora de cambiar. Es hora de crecer.", expect: 1 }
+    - { text: "No es magia. No es suerte. No es casualidad. Es trabajo.", expect: 1 }
+  negative:
+    - { text: "Es hora de actuar. Ahora toca cambiar. Es hora de crecer.", expect: 0 }
+    - { text: "Es hora de actuar. Es hora de cambiar.", expect: 0, note: "solo dos" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Poesía, discurso político y publicidad humana que usan la anáfora a propósito.
+  reviewed_by: [jrollon]

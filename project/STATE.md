@@ -1,8 +1,8 @@
 # STATE
 
-- **Último commit:** (pendiente del primer commit)
-- **Terminado:** B1 Base — contratos, modelo documental (BOM, CRLF, emojis, combinantes, offsets), Markdown por AST, configuración con precedencia de 7 niveles y `explainConfig`, CI, control de proyecto.
-- **En curso:** B2 Motor.
+- **Último commit:** ver `git log -1` (B3 Producto local).
+- **Terminado:** B1 Base, B2 Motor, B3 Producto local (CLI, API, reporters terminal/JSON/SARIF, runner con gitignore/caché/overrides/baseline, 30 reglas compiladas, 29 stable, 60 tests).
+- **En curso:** B4 Evidencia.
 - **Bloqueos:** ninguno. Pendientes del propietario al final: `npm publish`, `git push`, instalar el plugin de Claude Code.
-- **Próxima acción exacta:** crear `packages/linter/schemas/rule.schema.json`, `src/rules/compiler/` (validación, seguridad regex, fixtures, generación de rulepack) y `src/rules/detectors/` (7 detectores) con tests.
-- **Gates:** typecheck ✅, tests ✅ (16), build ⏳ (sin reglas todavía), gates ⏳.
+- **Próxima acción exacta:** crear `corpus/policy/` (licencias, veto), descargar textos humanos de dominio público verificables, generar la clase IA con registro de prompt, escribir manifiestos con hash, `scripts/corpus-check.mjs`, congelar holdout, ejecutar `benchmark run` en development, calibrar, ejecutar holdout una vez y publicar `benchmark/reports/` y `docs/benchmark.md`.
+- **Gates:** typecheck ✅, tests ✅ (60), build ✅, gates imports/reglas/rendimiento ✅, gate benchmark ⏳.

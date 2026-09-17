@@ -1,0 +1,33 @@
+schema_version: 1
+id: retorica/pregunta-retorica-apertura
+revision: 1
+status: stable
+title: Pregunta retórica de apertura
+summary: Un párrafo empieza con una pregunta y la responde a continuación («¿Te has preguntado…? La respuesta es…»).
+category: retorica
+scope: paragraph
+detector: regex
+conditions:
+  patterns:
+    - "^¿[^?]{5,140}\\?\\s+(?=\\p{L})"
+  anchor: block_start
+  kinds: [paragraph, plain]
+default_level: info
+score: { weight: 1, cap: 3 }
+message: "Párrafo que abre con pregunta retórica y la responde."
+explanation: >-
+  La pregunta retórica seguida de su respuesta es el gancho estándar del contenido generado
+  («¿Qué es X? X es…»). En prosa editada la pregunta abre un párrafo solo cuando hay intención de diálogo.
+rewrite_guidance: Empieza por la respuesta. «¿Qué es la inflación? La inflación es…» → «La inflación es…».
+examples:
+  positive:
+    - { text: "¿Te has preguntado alguna vez cómo funciona? La respuesta es sencilla.", expect: 1 }
+    - { text: "¿Qué es la inflación? La inflación es la subida general de precios.", expect: 1 }
+  negative:
+    - { text: "¿Vienes mañana?", expect: 0, note: "pregunta sin respuesta en el párrafo" }
+    - { text: "Me pregunté si vendría. ¿Y si no? No importaba.", expect: 0, note: "no está al inicio del párrafo" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Entrevistas y FAQ, donde el formato pregunta-respuesta es el género.
+  reviewed_by: [jrollon]

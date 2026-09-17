@@ -1,0 +1,37 @@
+name: adjetivos-grandilocuentes
+description: Adjetivos de énfasis genérico que la redacción generada acumula sin aportar información.
+terms:
+  - re:vertiginos[oa]s?
+  - re:revolucionari[oa]s?
+  - re:innovador(?:a|es|as)?
+  - re:crucial(?:es)?
+  - re:fundamental(?:es)?
+  - re:imprescindible(?:s)?
+  - re:esencial(?:es)?
+  - re:transformador(?:a|es|as)?
+  - re:fascinante(?:s)?
+  - re:apasionante(?:s)?
+  - re:sorprendente(?:s)?
+  - re:increíble(?:s)?
+  - re:extraordinari[oa]s?
+  - re:poderos[oa]s?
+  - re:robust[oa]s?
+  - re:integral(?:es)?
+  - re:holístic[oa]s?
+  - re:sinérgic[oa]s?
+  - re:disruptiv[oa]s?
+  - re:vanguardista(?:s)?
+  - re:inigualable(?:s)?
+  - re:incomparable(?:s)?
+  - re:invaluable(?:s)?
+  - re:inestimable(?:s)?
+  - re:impresionante(?:s)?
+  - re:asombros[oa]s?
+  - re:excepcional(?:es)?
+  - re:óptim[oa]s?
+  - re:trascendental(?:es)?
+  - re:emocionante(?:s)?
+  - re:dinámic[oa]s?
+  - re:vibrante(?:s)?
+  - re:sólid[oa]s?
+  - re:enriquecedor(?:a|es|as)?

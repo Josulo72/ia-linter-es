@@ -1,0 +1,37 @@
+schema_version: 1
+id: lexico/es-importante-destacar
+revision: 1
+status: stable
+title: Fórmula de énfasis vacía
+summary: "«Es importante destacar que», «cabe señalar que», «vale la pena mencionar»: anuncia importancia en lugar de mostrarla."
+category: lexico
+scope: sentence
+detector: regex
+conditions:
+  patterns:
+    - "(?:es|resulta|parece|se hace)\\s+(?:importante|fundamental|crucial|esencial|necesario|vital|clave|interesante|relevante)\\s+(?:destacar|señalar|mencionar|recordar|subrayar|resaltar|recalcar|tener en cuenta|considerar|comprender|entender)"
+    - "cabe\\s+(?:destacar|señalar|mencionar|resaltar|recalcar|subrayar|recordar)"
+    - "vale la pena\\s+(?:destacar|mencionar|señalar|recordar|subrayar)"
+    - "no (?:podemos|debemos|hay que) olvidar(?:nos)?\\s+(?:que|de)"
+    - "es (?:digno|menester) de (?:mención|destacar)"
+default_level: warning
+score: { weight: 2, cap: 3 }
+message: "Fórmula de énfasis vacía: «{term}»."
+explanation: >-
+  La fórmula presenta como importante lo que sigue sin justificar por qué. En prosa editada el énfasis
+  se consigue con el orden de la información, no con un anuncio.
+rewrite_guidance: Borra la fórmula y deja la afirmación. Si hace falta subrayar, empieza el párrafo con ella.
+examples:
+  positive:
+    - { text: "Es importante destacar que el plazo termina en marzo.", expect: 1 }
+    - { text: "Cabe señalar que no hubo víctimas. Vale la pena mencionar el coste.", expect: 2 }
+    - { text: "Resulta fundamental tener en cuenta la humedad.", expect: 1 }
+  negative:
+    - { text: "El plazo termina en marzo.", expect: 0 }
+    - { text: "Destacar el dato principal en negrita ayuda a la lectura.", expect: 0 }
+    - { text: "No cabe en la caja.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - "«cabe señalar» aparece en textos académicos humanos, aunque con menor densidad."
+  reviewed_by: [jrollon]

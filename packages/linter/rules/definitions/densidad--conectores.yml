@@ -1,0 +1,36 @@
+schema_version: 1
+id: densidad/conectores
+revision: 1
+status: stable
+title: Exceso de conectores discursivos
+summary: Densidad alta de «además», «asimismo», «por otro lado», «en este sentido», «cabe destacar» y similares.
+category: densidad
+scope: document
+detector: density
+conditions:
+  lexicon: conectores-discursivos
+  window: document
+  min_count: 5
+  per_1000: 22
+  min_words: 80
+default_level: warning
+score: { weight: 2, cap: 3 }
+message: "{count} conectores discursivos en el documento ({per_1000} por mil palabras)."
+explanation: >-
+  Los conectores explicitan una relación que la prosa bien construida deja ver por el orden de las ideas.
+  La redacción generada los usa como andamio en casi todas las frases.
+rewrite_guidance: Elimina el conector y comprueba si la relación sigue clara. Si no, reordena las frases en lugar de añadir «además».
+examples:
+  positive:
+    - { text: "Además, el sistema es rápido. Asimismo, es barato. Por otro lado, requiere formación. En este sentido, cabe destacar el soporte. Sin embargo, no obstante, por lo tanto, el balance es positivo. De este modo, en definitiva, lo recomendamos a los equipos pequeños y medianos que busquen una herramienta sencilla de mantener, con documentación clara y una comunidad activa que responda a las dudas en pocos días, sin depender de consultoras externas ni de licencias adicionales por usuario, cosa que en otros productos del mercado encarece el despliegue de forma considerable con el paso del tiempo.", expect: 1 }
+    - { text: "En primer lugar, hay que medir. En segundo lugar, hay que comparar. Por último, hay que decidir. Además, todo ello debe documentarse. Asimismo, conviene revisar los resultados con el equipo. Por consiguiente, el proceso es iterativo. De hecho, muchas organizaciones lo repiten cada trimestre para ajustar prioridades y presupuestos, con reuniones cortas y actas breves que se archivan en un repositorio compartido al que tienen acceso todas las áreas implicadas en la toma de decisiones estratégicas de la compañía y de sus filiales en el extranjero.", expect: 1 }
+  negative:
+    - { text: "Medimos la temperatura cada hora durante tres días. Los valores oscilaron entre 12 y 19 grados. La humedad se mantuvo por encima del 70 % salvo la tarde del segundo día. El viento sopló del oeste con rachas de 40 kilómetros por hora. No hubo precipitaciones. Las fotografías del anexo muestran el estado del cultivo antes y después del ensayo. El cuaderno de campo recoge las incidencias, entre ellas un fallo del sensor de humedad que se sustituyó a las nueve de la mañana del tercer día sin pérdida de datos relevantes.", expect: 0 }
+    - { text: "Además, breve.", expect: 0, note: "menos de 100 palabras" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Texto académico humano de tipo argumentativo, donde los conectores son parte del género.
+  reviewed_by: [jrollon]
+profiles:
+  academico: info

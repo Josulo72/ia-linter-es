@@ -1,0 +1,34 @@
+schema_version: 1
+id: densidad/adjetivos-grandilocuentes
+revision: 1
+status: stable
+title: Exceso de adjetivos grandilocuentes
+summary: Acumulación de «crucial», «fundamental», «innovador», «revolucionario», «imprescindible» y similares.
+category: densidad
+scope: document
+detector: density
+conditions:
+  lexicon: adjetivos-grandilocuentes
+  window: document
+  min_count: 4
+  per_1000: 10
+  min_words: 80
+default_level: warning
+score: { weight: 2, cap: 3 }
+message: "{count} adjetivos grandilocuentes en el documento ({per_1000} por mil palabras)."
+explanation: >-
+  Estos adjetivos califican sin describir. Un texto que llama «crucial», «fundamental» e «innovador» a todo
+  no distingue nada; la redacción generada los usa como relleno de valoración.
+rewrite_guidance: Sustituye el adjetivo por el rasgo que lo justifica («innovador» → «el primero que usa X»).
+examples:
+  positive:
+    - { text: "Una solución innovadora y revolucionaria. Es fundamental entender que su papel es crucial y sus ventajas, imprescindibles. Este enfoque, además, ofrece una base sólida para cualquier organización que quiera modernizar sus procesos sin asumir riesgos innecesarios ni costes ocultos. Los equipos que la adoptan informan de mejoras en la coordinación, en la trazabilidad de las tareas y en la satisfacción de los clientes, tres indicadores que la dirección revisa cada trimestre para decidir inversiones y prioridades del año siguiente en el plan general.", expect: 1 }
+    - { text: "Este fascinante y poderoso sistema es esencial, integral y transformador para cualquier empresa moderna que aspire a competir. La plataforma incluye paneles de control, alertas y un módulo de informes que se puede personalizar sin conocimientos técnicos. También permite conectar fuentes externas de datos mediante conectores estándar, con registro de accesos y control de permisos por usuario y por proyecto, algo que las auditorías internas suelen exigir en sectores regulados como banca, seguros o sanidad, donde la trazabilidad no es opcional.", expect: 1 }
+  negative:
+    - { text: "El puente tiene 340 metros y se abrió en 1998. La obra costó 21 millones de euros y la ejecutó una unión temporal de tres empresas. Durante los trabajos se desvió el tráfico por la carretera vieja y se habilitó un paso provisional para peatones. En 2015 se reforzaron los apoyos tras una inspección rutinaria, y desde entonces se revisa cada dos años. El ayuntamiento publica los informes en su web, junto con las fotografías del estado de los pilares y las mediciones de vibración registradas.", expect: 0 }
+    - { text: "Innovador pero corto.", expect: 0, note: "menos de 80 palabras" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Publicidad escrita por humanos, donde la densidad es igualmente alta por diseño.
+  reviewed_by: [jrollon]

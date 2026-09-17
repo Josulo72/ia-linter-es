@@ -1,0 +1,32 @@
+schema_version: 1
+id: formato/encabezado-title-case
+revision: 1
+status: stable
+title: Encabezado con mayúsculas al estilo inglés
+summary: Encabezado con todas las palabras plenas en mayúscula inicial («Cómo Elegir Tu Mejor Estrategia»).
+category: formato
+scope: block
+detector: structure
+conditions:
+  kind: heading_title_case
+  min_words: 3
+default_level: info
+score: { weight: 1.5, cap: 3 }
+message: "Encabezado en Title Case (calco del inglés): «{term}»."
+explanation: >-
+  En español solo la primera palabra del título y los nombres propios llevan mayúscula. El «Title Case»
+  con cada palabra en mayúscula es un calco del inglés muy habitual en encabezados generados.
+rewrite_guidance: Deja en mayúscula solo la primera palabra y los nombres propios.
+examples:
+  positive:
+    - { text: "# Cómo Elegir Tu Mejor Estrategia Digital\n\nTexto.", expect: 1, format: markdown }
+    - { text: "## Guía Completa Para Principiantes\n\nTexto.", expect: 1, format: markdown }
+  negative:
+    - { text: "# Cómo elegir tu mejor estrategia digital\n\nTexto.", expect: 0, format: markdown }
+    - { text: "# Banco de España\n\nTexto.", expect: 0, format: markdown, note: "dos palabras plenas: no alcanza el mínimo" }
+    - { text: "# API REST\n\nTexto.", expect: 0, format: markdown, note: "siglas" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Nombres propios largos de instituciones u obras en encabezados.
+  reviewed_by: [jrollon]

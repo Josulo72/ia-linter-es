@@ -196,18 +196,31 @@ const repetition: Detector = (rule, doc) => {
   const tb = tokensByBlock(doc);
   if (p.unit === "ngram") {
     const seen = new Map<string, { blockIndex: number; start: number; end: number }[]>();
+    // Recorrido lineal: frases y tokens están ordenados por bloque y posición.
+    let si = 0;
     doc.blocks.forEach((_b, bi) => {
-      const idx = (tb[bi] as number[]).filter((i) => (doc.tokens[i] as { isWord: boolean }).isWord);
-      for (let i = 0; i + p.n <= idx.length; i++) {
-        const toks = idx.slice(i, i + p.n).map((k) => doc.tokens[k]!);
-        if (STOPWORDS.has(toks[0]!.lower) || STOPWORDS.has(toks[toks.length - 1]!.lower)) continue;
-        // El n-grama no debe cruzar una frase.
-        const s1 = doc.sentences.find((s) => s.blockIndex === bi && s.start <= toks[0]!.start && s.end >= toks[0]!.end);
-        if (!s1 || toks[toks.length - 1]!.end > s1.end) continue;
-        const key = toks.map((t) => t.lower).join(" ");
-        const arr = seen.get(key) ?? [];
-        arr.push({ blockIndex: bi, start: toks[0]!.start, end: toks[toks.length - 1]!.end });
-        seen.set(key, arr);
+      const words = (tb[bi] as number[]).map((i) => doc.tokens[i]!).filter((t) => t.isWord);
+      let wi = 0;
+      while (si < doc.sentences.length && doc.sentences[si]!.blockIndex < bi) si++;
+      for (; si < doc.sentences.length && doc.sentences[si]!.blockIndex === bi; si++) {
+        const s = doc.sentences[si]!;
+        while (wi < words.length && words[wi]!.start < s.start) wi++;
+        const from = wi;
+        while (wi < words.length && words[wi]!.end <= s.end) wi++;
+        for (let i = from; i + p.n <= wi; i++) {
+          let stops = 0;
+          let key = "";
+          for (let k = 0; k < p.n; k++) {
+            const t = words[i + k]!;
+            if (STOPWORDS.has(t.lower)) stops++;
+            key += (k ? " " : "") + t.lower;
+          }
+          if (stops >= p.n - 1) continue; // al menos dos palabras plenas
+          if (STOPWORDS.has(words[i]!.lower) && STOPWORDS.has(words[i + p.n - 1]!.lower)) continue;
+          let arr = seen.get(key);
+          if (!arr) seen.set(key, (arr = []));
+          arr.push({ blockIndex: bi, start: words[i]!.start, end: words[i + p.n - 1]!.end });
+        }
       }
     });
     for (const [key, arr] of seen) {

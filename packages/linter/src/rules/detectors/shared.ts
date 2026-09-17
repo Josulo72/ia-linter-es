@@ -38,14 +38,19 @@ const RB = "(?![\\p{L}\\p{M}\\p{N}])";
  */
 export function buildTermRegExp(terms: string[], flags = "giu"): RegExp | null {
   const alts: string[] = [];
+  const raw: string[] = [];
   for (const t of terms) {
-    if (t.startsWith("re:")) alts.push(`(?:${t.slice(3)})`);
+    if (t.startsWith("raw:")) raw.push(`(?:${t.slice(4)})`);
+    else if (t.startsWith("re:")) alts.push(`(?:${t.slice(3)})`);
     else if (t.trim()) alts.push(escapeRe(t.trim()).replace(/\s+/g, "\\s+"));
   }
-  if (alts.length === 0) return null;
+  if (alts.length === 0 && raw.length === 0) return null;
   // Términos más largos primero para evitar coincidencias parciales.
   alts.sort((a, b) => b.length - a.length);
-  return new RegExp(`${LB}(?:${alts.join("|")})${RB}`, flags);
+  const parts: string[] = [];
+  if (alts.length) parts.push(`${LB}(?:${alts.join("|")})${RB}`);
+  parts.push(...raw); // `raw:` = expresión sin límites de palabra (símbolos, puntuación).
+  return new RegExp(parts.length === 1 ? (parts[0] as string) : `(?:${parts.join("|")})`, flags);
 }
 
 export function wordsIn(block: TextBlock, doc: Document, blockIndex: number): number {

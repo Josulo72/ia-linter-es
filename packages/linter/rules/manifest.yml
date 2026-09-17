@@ -1,0 +1,7 @@
+name: ia-linter-es/oficial
+description: Rule Pack oficial. Se compila en build; no se edita a mano.
+definitions: definitions
+lexicons: lexicons
+profiles: profiles
+fixtures: fixtures
+evidence: evidence

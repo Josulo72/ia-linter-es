@@ -1,0 +1,37 @@
+schema_version: 1
+id: estructura/conector-inicio-parrafo
+revision: 1
+status: stable
+title: Párrafos que empiezan por conector
+summary: Al menos tres párrafos, y el 40 % o más, empiezan por «Además», «Asimismo», «Por otro lado», «En este sentido»…
+category: estructura
+scope: document
+detector: density
+conditions:
+  lexicon: conectores-inicio-parrafo
+  window: document
+  unit: block_start
+  min_count: 3
+  ratio: 0.4
+  kinds: [paragraph, plain]
+default_level: warning
+score: { weight: 2, cap: 3 }
+message: "{count} párrafos ({ratio} %) empiezan por un conector discursivo."
+explanation: >-
+  El texto generado encadena párrafos con un conector inicial que simula progresión («Además…», «Por otro lado…»,
+  «En definitiva…»). En prosa editada los párrafos empiezan por su sujeto o por la idea nueva.
+rewrite_guidance: Empieza el párrafo por la información nueva. El conector, si hace falta, va después.
+examples:
+  positive:
+    - { text: "Además, el coste baja.\n\nAsimismo, el plazo se acorta.\n\nPor otro lado, el riesgo sube.\n\nEl equipo lo aprobó.", expect: 1 }
+    - { text: "En primer lugar, medimos.\n\nEn segundo lugar, comparamos.\n\nPor último, decidimos.", expect: 1 }
+  negative:
+    - { text: "El coste baja.\n\nAdemás, el plazo se acorta.\n\nEl riesgo sube.\n\nEl equipo lo aprobó.\n\nHubo dudas.", expect: 0 }
+    - { text: "Además, uno.\n\nAsimismo, dos.", expect: 0, note: "menos de tres párrafos" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Texto argumentativo académico humano con estructura explícita.
+  reviewed_by: [jrollon]
+profiles:
+  academico: info

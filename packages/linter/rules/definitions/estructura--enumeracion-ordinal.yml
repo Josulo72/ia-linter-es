@@ -1,0 +1,37 @@
+schema_version: 1
+id: estructura/enumeracion-ordinal
+revision: 1
+status: stable
+title: Andamio «En primer lugar… En segundo lugar… Por último»
+summary: Párrafos encadenados con ordinales explícitos al inicio.
+category: estructura
+scope: document
+detector: cooccurrence
+conditions:
+  groups:
+    - { terms: ["en primer lugar", "primeramente", "primero"] }
+    - { terms: ["en segundo lugar", "en tercer lugar", "por último", "finalmente", "en último lugar", "segundo", "tercero"] }
+  window: document
+  ordered: true
+  anchor: block_start
+default_level: info
+score: { weight: 1.5, cap: 2 }
+message: "Andamio de ordinales al inicio de párrafo («en primer lugar… en segundo lugar…»)."
+explanation: >-
+  Los ordinales explícitos al inicio de párrafo son el esqueleto visible del texto generado.
+  Un texto editado marca el orden con la propia información o con una lista.
+rewrite_guidance: Convierte los párrafos en una lista numerada o elimina los ordinales y deja que el orden hable.
+examples:
+  positive:
+    - { text: "En primer lugar, el precio.\n\nEn segundo lugar, el plazo.\n\nPor último, la calidad.", expect: 1 }
+    - { text: "Primero, calienta el horno.\n\nSegundo, mezcla la masa.", expect: 1 }
+  negative:
+    - { text: "El precio, en primer lugar, importa.\n\nEl plazo va en segundo lugar.", expect: 0, note: "no están al inicio del párrafo" }
+    - { text: "En segundo lugar quedó el equipo local.\n\nEn primer lugar, el visitante.", expect: 0, note: "orden inverso" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Instrucciones paso a paso escritas por humanos sin lista numerada.
+  reviewed_by: [jrollon]
+profiles:
+  tecnico: off

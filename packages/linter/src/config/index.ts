@@ -22,7 +22,7 @@ export function defaultConfig(): Config {
     rules: {},
     overrides: [],
     baseline: { path: null, require_reason: false },
-    fail_on: "error",
+    fail_on: "warning",
     max_index: null,
     privacy: { snippets: true },
     reporter: "terminal",
@@ -200,9 +200,9 @@ export interface EffectiveRule {
  * Se mantiene deliberadamente pequeño: solo lo que la evidencia del benchmark justifica.
  */
 export const REGISTER_ADJUSTMENTS: Partial<Record<Register, Record<string, Level>>> = {
-  literario: { "repeticion/anafora": "off", "retorica/pregunta-retorica": "off", "estructura/triada": "info" },
+  literario: { "repeticion/anafora": "off", "retorica/pregunta-retorica-apertura": "off", "retorica/triada": "off", "densidad/exclamaciones": "off" },
   periodistico: { "estructura/encabezado-dos-puntos": "off" },
-  institucional: { "densidad/conectores": "info", "lexico/formulas-institucionales": "off" },
+  institucional: { "densidad/conectores": "info", "estructura/enumeracion-ordinal": "off" },
   tecnico: {},
   academico: {},
   marketing: {},

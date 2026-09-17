@@ -1,0 +1,32 @@
+schema_version: 1
+id: estructura/encabezado-dos-puntos
+revision: 1
+status: stable
+title: Encabezado con dos puntos
+summary: "Encabezado del tipo «Tema: explicación» («Guía completa: todo lo que necesitas saber»)."
+category: estructura
+scope: block
+detector: structure
+conditions:
+  kind: heading_colon
+default_level: info
+score: { weight: 1, cap: 3 }
+message: "Encabezado con estructura «tema: explicación»."
+explanation: >-
+  El encabezado de dos partes separadas por dos puntos es el formato por defecto de los títulos generados.
+  En documentación y prensa en español el encabezado suele ser una frase nominal sin subtítulo pegado.
+rewrite_guidance: Quédate con una de las dos partes o convierte la segunda en la primera frase del párrafo.
+examples:
+  positive:
+    - { text: "# Guía completa: todo lo que necesitas saber\n\nTexto.", expect: 1, format: markdown }
+    - { text: "## Productividad: cinco trucos que funcionan\n\nTexto.", expect: 1, format: markdown }
+  negative:
+    - { text: "# Guía de instalación\n\nTexto.", expect: 0, format: markdown }
+    - { text: "# Ver https://example.com: docs\n\nTexto.", expect: 0, format: markdown }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - "Títulos académicos con subtítulo («Título: subtítulo») escritos por humanos."
+  reviewed_by: [jrollon]
+profiles:
+  academico: off

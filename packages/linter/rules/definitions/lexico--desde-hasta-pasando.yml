@@ -1,0 +1,31 @@
+schema_version: 1
+id: lexico/desde-hasta-pasando
+revision: 1
+status: stable
+title: Enumeración «desde… hasta…, pasando por»
+summary: Estructura de abanico «desde X hasta Y, pasando por Z» usada para sugerir amplitud sin concretar.
+category: lexico
+scope: sentence
+detector: regex
+conditions:
+  patterns:
+    - "desde\\s+[^.;:]{2,60}?\\s+hasta\\s+[^.;:]{2,60}?,?\\s+pasando\\s+por"
+default_level: info
+score: { weight: 1.5, cap: 2 }
+message: "Abanico retórico «desde… hasta…, pasando por»."
+explanation: >-
+  La fórmula finge exhaustividad enumerando extremos y un punto medio. En texto generado aparece con
+  frecuencia muy superior a la de la prosa humana, donde se reserva para enumeraciones reales.
+rewrite_guidance: Enumera los elementos que importan o indica el criterio de inclusión.
+examples:
+  positive:
+    - { text: "Cubre todo, desde la contabilidad hasta el marketing, pasando por la logística.", expect: 1 }
+    - { text: "Desde los Pirineos hasta Cádiz pasando por Madrid, la ruta lo tiene todo.", expect: 1 }
+  negative:
+    - { text: "Desde 1990 hasta 2010 la población creció.", expect: 0 }
+    - { text: "Fuimos desde Madrid hasta Toledo. Pasando por el puente, gira a la izquierda.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Descripciones de rutas o itinerarios reales.
+  reviewed_by: [jrollon]

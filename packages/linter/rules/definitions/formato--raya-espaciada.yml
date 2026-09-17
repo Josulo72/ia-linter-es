@@ -1,0 +1,34 @@
+schema_version: 1
+id: formato/raya-espaciada
+revision: 1
+status: stable
+title: Raya con espacios a ambos lados
+summary: Uso de « — » (raya con espacio a ambos lados, al modo inglés) dos o más veces en el documento.
+category: formato
+scope: document
+detector: density
+conditions:
+  terms: ["raw:(?<=\\S) — (?=\\S)"]
+  window: document
+  min_count: 2
+  per_1000: 1
+  min_words: 40
+default_level: warning
+score: { weight: 2, cap: 3 }
+message: "{count} rayas con espacios a ambos lados (uso inglés del em dash)."
+explanation: >-
+  En español la raya de inciso va pegada al inciso («la casa —la de antes— era grande») y no se usa como
+  separador de frase. El «palabra — palabra» con espacios es un calco del inglés muy característico del texto generado.
+rewrite_guidance: Sustituye por coma, dos puntos o punto y seguido; si es un inciso, usa rayas pegadas o paréntesis.
+examples:
+  positive:
+    - { text: "El plan tiene tres fases — todas cortas — y un presupuesto — pequeño. Nada de lo anterior es nuevo, pero conviene repasarlo antes de la reunión de mañana con el equipo de ventas y con los responsables de las tres oficinas regionales del norte.", expect: 1 }
+    - { text: "Es rápido — y barato — pero exige formación. La formación dura dos semanas y se imparte en línea, con ejercicios corregidos por el equipo de soporte, que responde en menos de un día laborable en los casos normales y en unas horas en los urgentes.", expect: 1 }
+  negative:
+    - { text: "El plan —todas las fases son cortas— tiene un presupuesto pequeño. Nada de lo anterior es nuevo, pero conviene repasarlo antes de la reunión de mañana con el equipo de ventas y con los responsables de las tres oficinas regionales del norte.", expect: 0 }
+    - { text: "Una sola raya — aquí. Nada de lo anterior es nuevo, pero conviene repasarlo antes de la reunión de mañana con el equipo de ventas y con los responsables de las tres oficinas regionales del norte y del sur.", expect: 0, note: "solo una" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Traducciones del inglés y textos periodísticos que adoptan el espaciado inglés.
+  reviewed_by: [jrollon]

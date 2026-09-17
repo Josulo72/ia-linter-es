@@ -1,0 +1,32 @@
+schema_version: 1
+id: retorica/arenga-final
+revision: 1
+status: stable
+title: Arenga motivacional
+summary: Frases de arenga («no esperes más», «da el primer paso», «el futuro está en tus manos») típicas del cierre generado.
+category: retorica
+scope: sentence
+detector: lexicon
+conditions:
+  lexicon: motivadoras-cierre
+default_level: warning
+score: { weight: 1.5, cap: 3 }
+message: "Arenga motivacional: «{term}»."
+explanation: >-
+  El texto generado para marketing y autoayuda termina casi siempre con una llamada a la acción
+  formularia. En prosa editada la llamada a la acción es concreta (qué hacer, dónde, cuándo).
+rewrite_guidance: Sustituye la arenga por la acción concreta y el dato que la hace posible («Inscríbete antes del 30 en este enlace»).
+examples:
+  positive:
+    - { text: "No esperes más: da el primer paso hoy.", expect: 2 }
+    - { text: "El futuro está en tus manos. ¿A qué esperas?", expect: 2 }
+  negative:
+    - { text: "Inscríbete antes del 30 de junio en la secretaría.", expect: 0 }
+    - { text: "Esperó más de lo previsto y dio un paso atrás.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Publicidad humana, donde la fórmula es intencionada.
+  reviewed_by: [jrollon]
+profiles:
+  marketing: info

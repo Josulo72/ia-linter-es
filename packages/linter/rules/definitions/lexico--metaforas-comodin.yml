@@ -1,0 +1,33 @@
+schema_version: 1
+id: lexico/metaforas-comodin
+revision: 1
+status: stable
+title: Metáfora comodín
+summary: Metáfora gastada, a menudo calcada del inglés («sumérgete en», «desbloquear el potencial», «un tapiz de»).
+category: lexico
+scope: sentence
+detector: lexicon
+conditions:
+  lexicon: metaforas-comodin
+default_level: warning
+score: { weight: 2, cap: 4 }
+message: "Metáfora comodín: «{term}»."
+explanation: >-
+  La redacción generada recurre a un repertorio pequeño de imágenes (viaje, tapiz, faro, desbloquear, navegar)
+  que en español editado resultan ajenas o publicitarias.
+rewrite_guidance: Di literalmente lo que ocurre. «Desbloquear el potencial de X» suele significar «usar X para Y»; escribe Y.
+examples:
+  positive:
+    - { text: "Sumérgete en el fascinante mundo de la cerámica y desbloquea tu potencial oculto.", expect: 2 }
+    - { text: "Este libro es un testimonio de resiliencia y un faro de esperanza.", expect: 2 }
+    - { text: "Embárcate en un viaje hacia la productividad.", expect: 2 }
+  negative:
+    - { text: "El faro de Chipiona mide 62 metros.", expect: 0 }
+    - { text: "Navegamos por el estrecho con viento de levante.", expect: 0 }
+    - { text: "El tapiz flamenco se restauró en 2019.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Textos literarios que usan estas imágenes de forma deliberada.
+    - "«en el corazón de» en descripciones geográficas («en el corazón de la ciudad»)."
+  reviewed_by: [jrollon]

@@ -1,0 +1,34 @@
+schema_version: 1
+id: densidad/adverbios-mente
+revision: 1
+status: stable
+title: Acumulación de adverbios en -mente
+summary: Tres o más adverbios en -mente en un mismo párrafo con densidad alta.
+category: densidad
+scope: paragraph
+detector: density
+conditions:
+  terms: ["re:[\\p{L}]{3,20}mente"]
+  window: block
+  min_count: 3
+  per_1000: 35
+  min_words: 15
+default_level: warning
+score: { weight: 1.5, cap: 3 }
+message: "Párrafo con {count} adverbios en -mente ({per_1000} por mil palabras)."
+explanation: >-
+  Los adverbios en -mente alargan la frase y suelen sustituir a un verbo o a un dato. La prosa generada
+  los encadena («realmente», «significativamente», «adecuadamente») con una densidad que la prosa editada evita.
+rewrite_guidance: Cambia el adverbio por un verbo más preciso o por la cantidad concreta. «Mejora significativamente» → «mejora un 12 %».
+examples:
+  positive:
+    - { text: "Este enfoque mejora significativamente los resultados y, adicionalmente, reduce notablemente los costes, permitiendo finalmente escalar el negocio de manera sostenible durante años.", expect: 1 }
+    - { text: "Realmente funciona, verdaderamente ayuda y definitivamente lo recomiendo a cualquier persona que quiera empezar sin complicaciones ni gastos innecesarios.", expect: 1 }
+  negative:
+    - { text: "Finalmente llegamos a Cuenca y comimos en una taberna cerca de la catedral, donde el dueño nos habló del río y de las casas colgadas durante un buen rato.", expect: 0 }
+    - { text: "Simplemente no.", expect: 0, note: "párrafo con menos de 20 palabras" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Textos jurídicos con fórmulas adverbiales fijas («expresamente», «subsidiariamente»).
+  reviewed_by: [jrollon]

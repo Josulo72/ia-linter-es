@@ -1,0 +1,34 @@
+schema_version: 1
+id: repeticion/ngramas
+revision: 1
+status: stable
+title: Secuencia de cuatro palabras repetida
+summary: Una misma secuencia de cuatro palabras aparece tres o más veces en el documento.
+category: repeticion
+scope: document
+detector: repetition
+conditions:
+  unit: ngram
+  n: 4
+  min_repeats: 3
+default_level: info
+score: { weight: 1, cap: 3 }
+message: "«{term}» se repite {count} veces."
+explanation: >-
+  El texto generado reutiliza bloques de cuatro o más palabras («la calidad de vida de», «a la hora de tomar»)
+  con una frecuencia que un redactor evitaría por oído. Se excluyen secuencias que empiezan o terminan por palabra funcional.
+rewrite_guidance: Sustituye una de las repeticiones por un pronombre, un sinónimo o una elipsis.
+examples:
+  positive:
+    - { text: "La gestión del cambio organizativo importa. La gestión del cambio organizativo cuesta. Sin la gestión del cambio organizativo nada avanza.", expect: 1 }
+    - { text: "Mejorar la calidad de vida es el objetivo. Queremos mejorar la calidad de vida. Todo para mejorar la calidad de vida.", expect: 1 }
+  negative:
+    - { text: "La gestión del cambio importa. El cambio cuesta. Sin gestión nada avanza.", expect: 0 }
+    - { text: "Mejorar la calidad de vida es el objetivo. Queremos mejorar la calidad de vida.", expect: 0, note: "solo dos" }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
+  known_false_positives:
+    - Textos legales y técnicos con denominaciones fijas largas («la Ley Orgánica de Protección de Datos»).
+  reviewed_by: [jrollon]
+profiles:
+  tecnico: off

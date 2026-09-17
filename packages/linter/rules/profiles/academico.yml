@@ -1,0 +1,4 @@
+# Perfil académico: tolera conectores y fórmulas del género.
+rules:
+  lexico/es-importante-destacar: info
+  retorica/no-solo-sino: info

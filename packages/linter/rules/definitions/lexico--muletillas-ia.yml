@@ -1,0 +1,33 @@
+schema_version: 1
+id: lexico/muletillas-ia
+revision: 1
+status: stable
+title: Muletilla de redacción generada
+summary: Fórmula fija («en el vertiginoso mundo», «juega un papel crucial») muy frecuente en texto generado y rara en prosa editada.
+category: lexico
+scope: sentence
+detector: lexicon
+conditions:
+  lexicon: muletillas-ia
+default_level: warning
+score: { weight: 2, cap: 4 }
+message: "Muletilla de redacción generada: «{term}»."
+explanation: >-
+  Estas expresiones aparecen como relleno de apertura o de transición y no aportan información al lector.
+  Su acumulación es uno de los rasgos más reconocibles de la prosa generada en español.
+rewrite_guidance: Elimina la fórmula o sustitúyela por un dato concreto (quién, qué, cuándo). Si la frase sigue teniendo sentido sin ella, sobraba.
+examples:
+  positive:
+    - { text: "En el vertiginoso mundo de la tecnología, la formación juega un papel crucial.", expect: 2 }
+    - { text: "A lo largo de este artículo exploraremos una amplia gama de opciones.", expect: 2 }
+    - { text: "Sin lugar a dudas, la logística es un pilar fundamental del comercio.", expect: 2 }
+  negative:
+    - { text: "El mundo del transporte cambió con el contenedor en 1956.", expect: 0 }
+    - { text: "La formación del personal cuesta 40 horas por empleado.", expect: 0 }
+    - { text: "Ese papel es crucial en la trama, dijo el director.", expect: 0 }
+provenance:
+  evidence: Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json, fila de la regla.
+  known_false_positives:
+    - Textos de opinión que citan o parodian el estilo publicitario.
+    - "«en el ámbito de» en textos jurídicos e institucionales, donde es fórmula habitual."
+  reviewed_by: [jrollon]
