@@ -288,14 +288,15 @@ La prosa humana alterna frases largas y cortas; la generada tiende a una longitu
 
 **Ritmo de metrónomo** — Las frases alternan largo y corto con demasiada regularidad, como si siguieran una plantilla.
 
-Es el defecto contrario a `estructura/ritmo-plano` y aparece cuando se le pide al modelo que varíe el ritmo con una regla numérica. Sale una cadencia de larga-corta-larga-corta que no comete una persona. En 29 mensajes de foro la alternancia mediana es 0,67 y solo 3 pasan de 0,85; en 8 textos generados con esa instrucción, la mediana es 0,92 y 6 de 8 pasan de 0,85.
+Es el defecto contrario a `estructura/ritmo-plano` y aparece cuando se le pide al modelo que varíe el ritmo con una regla numérica. Sale una cadencia de larga-corta-larga-corta que no comete una persona. Se exigen las dos cosas a la vez, alternancia de 0,85 y variación de longitud de 0,50, porque un texto plano oscila una palabra arriba y abajo y alternaría al 100 % sin ser un metrónomo. En 36 mensajes de foro no marca ninguno; en los 96 textos de la clase IA sin esa instrucción, tampoco; en los 8 generados con ella, 6.
 
 **Cómo reescribir:** Pon dos frases seguidas de longitud parecida en algún punto. La irregularidad es lo natural, no el vaivén.
 
-**Evidencia:** 29 mensajes de foro y 8 textos generados con instrucción numérica de ritmo; ver benchmark/reports/v1.1.md.
+**Evidencia:** 36 mensajes de foro, 96 textos de la clase IA y 8 generados con instrucción numérica de ritmo; ver benchmark/reports/v1.1.md.
 
 **Falsos positivos conocidos:**
 - Textos muy cortos, donde pocas frases bastan para alcanzar la proporción.
+- Diálogos o listas de preguntas y respuestas, donde el vaivén de longitud viene de la forma del texto.
 
 **Ejemplo:**
 

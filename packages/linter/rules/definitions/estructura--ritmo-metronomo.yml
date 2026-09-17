@@ -11,15 +11,17 @@ conditions:
   kind: sentence_length_alternation
   min_sentences: 8
   min_alternation: 0.85
+  min_cv: 0.50
 default_level: "off"
 profiles: { chat: warning, correo: warning, readme: warning, redes: warning }
 score: { weight: 2, cap: 2 }
 message: "Ritmo de metrónomo: la longitud sube y baja alternando en el {rate} % de las frases."
 explanation: >-
   Es el defecto contrario a `estructura/ritmo-plano` y aparece cuando se le pide al modelo que varíe el ritmo con
-  una regla numérica. Sale una cadencia de larga-corta-larga-corta que no comete una persona. En 29 mensajes de foro
-  la alternancia mediana es 0,67 y solo 3 pasan de 0,85; en 8 textos generados con esa instrucción, la mediana es
-  0,92 y 6 de 8 pasan de 0,85.
+  una regla numérica. Sale una cadencia de larga-corta-larga-corta que no comete una persona. Se exigen las dos
+  cosas a la vez, alternancia de 0,85 y variación de longitud de 0,50, porque un texto plano oscila una palabra
+  arriba y abajo y alternaría al 100 % sin ser un metrónomo. En 36 mensajes de foro no marca ninguno; en los 96
+  textos de la clase IA sin esa instrucción, tampoco; en los 8 generados con ella, 6.
 rewrite_guidance: Pon dos frases seguidas de longitud parecida en algún punto. La irregularidad es lo natural, no el vaivén.
 examples:
   positive:
@@ -29,7 +31,8 @@ examples:
     - { text: "Pues yo lo probé el año pasado y me costó bastante cogerle el punto al principio, sobre todo con los tiempos de fermentación de la masa. No salió. Lo tiré entero y volví a empezar de cero con otra receta distinta que encontré en un foro parecido a este. Al segundo intento ya fue otra cosa bastante mejor, aunque tampoco para tirar cohetes. La miga seguía quedando algo densa para mi gusto. El sabor en cambio estaba conseguido y la corteza quedó como tenía que quedar, crujiente y oscura. Ahora sale bien casi siempre. Cuestión de práctica, supongo. Yo tardé un mes largo en cogerle el aire a la masa y todavía me sale mejor unos días que otros.", expect: 0 }
     - { text: "Tengo un problema con el coche y la verdad es que no sé muy bien por dónde tirar, a ver si alguien me puede echar un cable con esto. Hace un ruido raro al arrancar en frío. Es como un chirrido corto que dura un par de segundos y después desaparece del todo sin dejar rastro. En caliente no lo hace nunca, ni subiendo cuestas ni con el aire puesto. El mecánico del barrio dice que es la correa. Dice también que no corre ninguna prisa cambiarla todavía y que aguanta perfectamente hasta la próxima revisión. No me fío demasiado de esa respuesta. Llevo ya dos semanas igual. El coche tiene doce años y cien mil kilómetros encima.", expect: 0 }
 provenance:
-  evidence: 29 mensajes de foro y 8 textos generados con instrucción numérica de ritmo; ver benchmark/reports/v1.1.md.
+  evidence: 36 mensajes de foro, 96 textos de la clase IA y 8 generados con instrucción numérica de ritmo; ver benchmark/reports/v1.1.md.
   known_false_positives:
     - Textos muy cortos, donde pocas frases bastan para alcanzar la proporción.
+    - Diálogos o listas de preguntas y respuestas, donde el vaivén de longitud viene de la forma del texto.
   reviewed_by: [jrollon]

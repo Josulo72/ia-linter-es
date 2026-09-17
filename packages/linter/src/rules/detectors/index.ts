@@ -376,11 +376,19 @@ const structure: Detector = (rule, doc) => {
       // Cerca de 1 = larga, corta, larga, corta: cadencia de plantilla, no de persona.
       const minSentences = (p.min_sentences as number | undefined) ?? 8;
       const minRate = (p.min_alternation as number | undefined) ?? 0.85;
+      const minCv = (p.min_cv as number | undefined) ?? 0;
       const lens = doc.sentences
         .filter((s) => (doc.blocks[s.blockIndex] as TextBlock).kind !== "heading")
         .map((s) => (s.text.match(/[\p{L}\p{M}\p{N}]+/gu) ?? []).length)
         .filter((n) => n >= 3);
       if (lens.length < minSentences) return out;
+      // Un texto plano oscila ±1 palabra y alternaría al 100 % sin ser un metrónomo:
+      // se exige que además las frases varíen de verdad (mismo coeficiente que ritmo-plano).
+      if (minCv > 0) {
+        const mean = lens.reduce((a, b) => a + b, 0) / lens.length;
+        const cv = mean === 0 ? 0 : Math.sqrt(lens.reduce((a, b) => a + (b - mean) ** 2, 0) / lens.length) / mean;
+        if (cv < minCv) return out;
+      }
       let changes = 0;
       let pairs = 0;
       for (let i = 1; i < lens.length - 1; i++) {
