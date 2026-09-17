@@ -1,6 +1,6 @@
 # B5 Integraciones y B6 Cierre — evidencia (2026-09-17)
 
-Ejecutado en Windows 10, Node 24.12, pnpm 10.33. macOS y Linux quedan cubiertos por el workflow de CI y su evidencia depende de la primera ejecución en GitHub, que es una acción del propietario.
+Ejecutado en Windows 10, Node 24.12, pnpm 10.33, y en CI sobre Ubuntu, Windows y macOS con Node 20 y 22. La primera ejecución verde es la 35278335496 del 2026-09-17, con los seis jobs en success.
 
 ## Gates
 
@@ -95,7 +95,7 @@ Los info que quedan son citas de patrones dentro de la documentación y un nombr
 | Benchmark publicado | `benchmark/reports/v1.0.md` y `v1.1.md` |
 | E2E de todas las superficies | 77 tests |
 | Paridad de resultados | byte a byte entre CLI, bundle y Action |
-| Windows, macOS y Linux | Windows en local; los otros dos, en CI |
+| Windows, macOS y Linux | los seis jobs de CI en verde (run 35278335496) |
 | Seguridad de patrones | compilador y gate de regex |
 | Rendimiento aceptable | 10k palabras en 312 ms |
 | Documentación | README, docs/, CHANGELOG, CONTRIBUTING, SECURITY |
@@ -105,9 +105,15 @@ Los info que quedan son citas de patrones dentro de la documentación y un nombr
 
 ## Lo que falta y no puedo hacer yo
 
-- `git push` y la primera ejecución del CI en los tres sistemas.
-- `npm publish`.
-- Instalar el plugin en `~/.claude`, que está fuera del repositorio.
+- `npm publish`. De eso depende el hook de pre-commit `ia-linter-es`, que pide la versión publicada; el `-local` funciona sin ello.
+- Cargar el plugin, que vive fuera del repositorio: `pnpm build` y `claude --plugin-dir ./integrations/claude-code`.
+
+## Lo que costó dejar el CI en verde
+
+La primera ejecución tras el push falló en los seis jobs por dos cosas, las dos arregladas:
+
+- `pnpm/action-setup@v4` con `version: 10` y `packageManager: pnpm@10.33.2` en el `package.json` a la vez: `ERR_PNPM_BAD_PM_VERSION`. La versión sale ahora solo del `package.json`.
+- `corpus-check` tenía la condición invertida para los textos de foro que no se redistribuyen: los contaba como ausentes y aun así intentaba leerlos. En local nunca se vio porque los textos están descargados; en CI no están, y ahí saltaba el `ENOENT`. Cada partición dice ahora cuántas muestras ha comprobado de verdad.
 
 ## Revisión final: lo que estaba mal y se arregló
 
