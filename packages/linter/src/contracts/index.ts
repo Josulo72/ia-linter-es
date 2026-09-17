@@ -99,6 +99,8 @@ export interface TextBlock {
   /** Mapa: índice en `text` -> offset en el texto original. Longitud = text.length + 1. */
   map: Int32Array;
   depth: number;
+  /** El bloque empieza con texto en negrita (patrón «- **Título:** texto»). */
+  startsWithStrong?: boolean;
 }
 
 export interface Sentence {

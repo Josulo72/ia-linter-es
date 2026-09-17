@@ -81,7 +81,9 @@ export function markdownBlocks(text: string): TextBlock[] {
     const m = new Int32Array(body.length + 1);
     for (let i = 0; i < body.length; i++) m[i] = map[s + i] as number;
     m[body.length] = (map[e - 1] as number) + 1;
-    blocks.push({ kind, text: body, map: m, depth });
+    const first = node.children[0];
+    const startsWithStrong = first?.type === "strong";
+    blocks.push({ kind, text: body, map: m, depth, startsWithStrong });
   }
 
   function collect(node: Nodes, parts: Part[]): void {

@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ia-linter-es/schemas/rule.schema.json",
+  "title": "Definición de regla del linter",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "id", "revision", "status", "title", "summary", "category", "scope", "detector",
+    "conditions", "default_level", "score", "message", "explanation", "rewrite_guidance", "examples", "provenance"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "id": { "type": "string", "pattern": "^(lexico|estructura|repeticion|densidad|retorica|formato)/[a-z0-9]+(-[a-z0-9]+)*$" },
+    "revision": { "type": "integer", "minimum": 1 },
+    "status": { "enum": ["draft", "candidate", "stable", "deprecated"] },
+    "title": { "type": "string", "minLength": 4, "maxLength": 80 },
+    "summary": { "type": "string", "minLength": 10, "maxLength": 300 },
+    "category": { "enum": ["lexico", "estructura", "repeticion", "densidad", "retorica", "formato"] },
+    "scope": { "enum": ["sentence", "paragraph", "document", "block"] },
+    "detector": { "enum": ["regex", "lexicon", "sequence", "density", "repetition", "structure", "cooccurrence"] },
+    "conditions": { "type": "object" },
+    "exceptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "patterns": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "lexicon": { "type": "string" }
+      }
+    },
+    "default_level": { "enum": ["off", "info", "warning", "error"] },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weight", "cap"],
+      "properties": {
+        "weight": { "type": "number", "minimum": 0, "maximum": 10 },
+        "cap": { "type": "number", "minimum": 1, "maximum": 10 }
+      }
+    },
+    "message": { "type": "string", "minLength": 10, "maxLength": 200 },
+    "explanation": { "type": "string", "minLength": 20 },
+    "rewrite_guidance": { "type": "string", "minLength": 10 },
+    "examples": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["positive", "negative"],
+      "properties": {
+        "positive": { "type": "array", "items": { "$ref": "#/definitions/example" } },
+        "negative": { "type": "array", "items": { "$ref": "#/definitions/example" } }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence", "known_false_positives", "reviewed_by"],
+      "properties": {
+        "evidence": { "type": "string", "minLength": 1 },
+        "known_false_positives": { "type": "array", "items": { "type": "string" } },
+        "reviewed_by": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "profiles": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "general": { "enum": ["off", "info", "warning", "error"] },
+        "tecnico": { "enum": ["off", "info", "warning", "error"] },
+        "academico": { "enum": ["off", "info", "warning", "error"] },
+        "marketing": { "enum": ["off", "info", "warning", "error"] }
+      }
+    }
+  },
+  "definitions": {
+    "example": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "expect"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "expect": { "type": "integer", "minimum": 0 },
+        "format": { "enum": ["text", "markdown"] },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}
