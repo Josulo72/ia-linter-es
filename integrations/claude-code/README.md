@@ -6,7 +6,7 @@ El estilo de salida (`output-styles/humano.md`) es lo que hace que Claude escrib
 
 El comando `/revisar` pasa el linter a un archivo o a un texto pegado y lo arregla.
 
-El hook revisa cada respuesta antes de que la veas y, si huele a IA, se la devuelve a Claude para que la reescriba. Viene desactivado.
+El hook revisa cada respuesta al terminarla y, si huele a IA, hace que Claude la reescriba ahí mismo. La primera versión ya está en pantalla cuando eso pasa. Viene desactivado.
 
 ## Instalar
 
@@ -33,7 +33,7 @@ Está apagado. Para encenderlo, en `.claude/settings.json` del proyecto o en `~/
 }
 ```
 
-Lo que hace: coge la última respuesta, la pasa por el linter con el perfil `chat` y, si encuentra algo de nivel warning o error, corta la salida y le dice a Claude qué reescribir. El texto del linter es lo que Claude lee.
+Lo que hace: coge la última respuesta, la pasa por el linter con el perfil `chat` y, si encuentra algo de nivel warning o error, impide que el turno termine y le dice a Claude qué reescribir. El texto del linter es lo que Claude lee. Ojo, que esto no oculta nada: la respuesta original ya la has visto, y debajo aparece la corregida.
 
 Se puede ajustar con más variables:
 

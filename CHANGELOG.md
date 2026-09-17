@@ -42,5 +42,5 @@ Primera versión.
 
 - Hook de pre-commit.
 - GitHub Action con anotaciones, salidas, resumen de paso y SARIF.
-- Plugin de Claude Code: estilo de salida, comando `/revisar`, skill y un hook opcional, apagado por defecto, que pasa el linter a las respuestas antes de enseñarlas.
+- Plugin de Claude Code: estilo de salida, comando `/revisar`, skill y un hook opcional, apagado por defecto, que pasa el linter a cada respuesta al terminarla y hace que Claude la reescriba si huele a IA.
 - Mismos hallazgos byte a byte en las tres superficies, comprobado en los tests.

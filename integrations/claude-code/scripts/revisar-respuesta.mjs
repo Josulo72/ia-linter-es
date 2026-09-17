@@ -71,7 +71,7 @@ const indice = result.files?.[0]?.score?.index;
 
 process.stderr.write(
   [
-    "Antes de enseñar esta respuesta: el linter le encuentra cosas que suenan a IA.",
+    "La respuesta que acabas de dar tiene cosas que suenan a IA:",
     "",
     ...lineas,
     "",

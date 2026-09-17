@@ -76,7 +76,7 @@ Rápido, sencillo y eficaz, que aquí es una cita literal.
 
 - Pre-commit, en `integrations/pre-commit/README.md`
 - GitHub Action, con anotaciones en el pull request y SARIF, en `integrations/github-action/README.md`
-- Claude Code, con el estilo de salida, el comando `/revisar` y un hook opcional que revisa las respuestas antes de enseñártelas, en `integrations/claude-code/README.md`
+- Claude Code, con el estilo de salida, el comando `/revisar` y un hook opcional que revisa cada respuesta al terminarla y hace que Claude la reescriba, en `integrations/claude-code/README.md`
 
 Las tres llaman a la misma CLI y dan exactamente los mismos hallazgos.
 
