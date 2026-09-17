@@ -1,0 +1,54 @@
+# Prompts de la clase IA. Cada texto se genera con un único prompt de usuario, sin instrucciones de estilo
+# salvo en la partición challenge, donde se pide expresamente evitar clichés (caso difícil).
+# Parámetros de muestreo y prompt de sistema: los del arnés de subagentes de Claude Code; no controlables ni visibles.
+schema_version: 1
+generated: "2026-09-17"
+provider: Anthropic
+harness: Claude Code subagent (Agent tool)
+length_instruction: "Entre 350 y 600 palabras. Responde solo con el texto."
+prompts:
+  # ---------- development (21) ----------
+  - { id: ai-d01, partition: development, register: general, model: claude-haiku-4-5, prompt: "Escribe una entrada de blog sobre cómo organizar mejor el tiempo cuando se trabaja desde casa." }
+  - { id: ai-d02, partition: development, register: general, model: claude-sonnet-5, prompt: "Escribe un artículo de blog sobre los beneficios de caminar a diario." }
+  - { id: ai-d03, partition: development, register: general, model: claude-opus-5, prompt: "Escribe un artículo sobre cómo elegir un primer instrumento musical para un adulto." }
+  - { id: ai-d04, partition: development, register: general, model: claude-haiku-4-5, prompt: "Escribe una guía para quien quiere empezar a cultivar un huerto en el balcón." }
+  - { id: ai-d05, partition: development, register: tecnico, model: claude-sonnet-5, prompt: "Escribe la introducción de la documentación de una biblioteca de Python para validar archivos CSV. Usa Markdown." }
+  - { id: ai-d06, partition: development, register: tecnico, model: claude-opus-5, prompt: "Explica en un documento Markdown qué es una copia de seguridad incremental y cómo planificarla en una pequeña empresa." }
+  - { id: ai-d07, partition: development, register: tecnico, model: claude-haiku-4-5, prompt: "Escribe un README en Markdown para una herramienta de línea de comandos que renombra fotos según su fecha." }
+  - { id: ai-d08, partition: development, register: tecnico, model: claude-sonnet-5, prompt: "Escribe un artículo técnico en Markdown sobre las ventajas y los inconvenientes de los contenedores frente a las máquinas virtuales." }
+  - { id: ai-d09, partition: development, register: academico, model: claude-opus-5, prompt: "Redacta la introducción de un trabajo académico sobre el impacto del turismo en los cascos históricos de las ciudades españolas." }
+  - { id: ai-d10, partition: development, register: academico, model: claude-haiku-4-5, prompt: "Redacta el marco teórico de un trabajo de fin de grado sobre la motivación en el aprendizaje de segundas lenguas." }
+  - { id: ai-d11, partition: development, register: academico, model: claude-sonnet-5, prompt: "Escribe un ensayo académico breve sobre la despoblación rural en España." }
+  - { id: ai-d12, partition: development, register: marketing, model: claude-opus-5, prompt: "Escribe el texto de una página de aterrizaje para una aplicación de gestión de gastos personales." }
+  - { id: ai-d13, partition: development, register: marketing, model: claude-haiku-4-5, prompt: "Escribe un correo de newsletter que presente un nuevo curso en línea de fotografía." }
+  - { id: ai-d14, partition: development, register: marketing, model: claude-sonnet-5, prompt: "Escribe una publicación de LinkedIn para anunciar que una consultora abre oficina en Valencia." }
+  - { id: ai-d15, partition: development, register: marketing, model: claude-opus-5, prompt: "Escribe la descripción de producto de una mochila de senderismo para una tienda en línea." }
+  - { id: ai-d16, partition: development, register: periodistico, model: claude-haiku-4-5, prompt: "Escribe una noticia sobre la inauguración de una nueva línea de tranvía en una ciudad mediana española." }
+  - { id: ai-d17, partition: development, register: periodistico, model: claude-sonnet-5, prompt: "Escribe un reportaje de divulgación científica sobre por qué las abejas son importantes para la agricultura." }
+  - { id: ai-d18, partition: development, register: periodistico, model: claude-opus-5, prompt: "Escribe un artículo de opinión sobre el uso del móvil en las aulas." }
+  - { id: ai-d19, partition: development, register: institucional, model: claude-haiku-4-5, prompt: "Redacta la exposición de motivos de una ordenanza municipal sobre terrazas de hostelería." }
+  - { id: ai-d20, partition: development, register: institucional, model: claude-sonnet-5, prompt: "Redacta una nota informativa de un ayuntamiento sobre la nueva campaña de recogida de residuos orgánicos." }
+  - { id: ai-d21, partition: development, register: institucional, model: claude-opus-5, prompt: "Redacta el preámbulo de un plan estratégico de una universidad pública para los próximos cuatro años." }
+  # ---------- holdout (15) ----------
+  - { id: ai-h01, partition: holdout, register: general, model: claude-sonnet-5, prompt: "Escribe una entrada de blog con consejos para dormir mejor." }
+  - { id: ai-h02, partition: holdout, register: general, model: claude-opus-5, prompt: "Escribe un artículo sobre cómo preparar un viaje largo en tren por Europa." }
+  - { id: ai-h03, partition: holdout, register: general, model: claude-haiku-4-5, prompt: "Escribe una guía para adoptar un perro adulto de una protectora." }
+  - { id: ai-h04, partition: holdout, register: tecnico, model: claude-opus-5, prompt: "Escribe en Markdown una guía para configurar la autenticación en dos pasos en una organización pequeña." }
+  - { id: ai-h05, partition: holdout, register: tecnico, model: claude-haiku-4-5, prompt: "Explica en un documento Markdown qué es una API REST y cuáles son sus principios." }
+  - { id: ai-h06, partition: holdout, register: tecnico, model: claude-sonnet-5, prompt: "Escribe en Markdown las notas de la versión 2.0 de una aplicación de notas, con novedades y cambios incompatibles." }
+  - { id: ai-h07, partition: holdout, register: academico, model: claude-haiku-4-5, prompt: "Redacta la introducción de un artículo académico sobre el envejecimiento de la población y el sistema de pensiones." }
+  - { id: ai-h08, partition: holdout, register: academico, model: claude-sonnet-5, prompt: "Redacta la discusión de resultados de un estudio sobre hábitos de lectura en adolescentes." }
+  - { id: ai-h09, partition: holdout, register: marketing, model: claude-opus-5, prompt: "Escribe el texto de la página «Sobre nosotros» de una pequeña empresa de reformas." }
+  - { id: ai-h10, partition: holdout, register: marketing, model: claude-haiku-4-5, prompt: "Escribe un texto promocional para un gimnasio de barrio que abre en septiembre." }
+  - { id: ai-h11, partition: holdout, register: marketing, model: claude-sonnet-5, prompt: "Escribe una publicación para redes sociales que anuncie el menú de otoño de un restaurante." }
+  - { id: ai-h12, partition: holdout, register: periodistico, model: claude-opus-5, prompt: "Escribe una noticia sobre los resultados de un estudio que relaciona el ejercicio con la memoria en personas mayores." }
+  - { id: ai-h13, partition: holdout, register: periodistico, model: claude-haiku-4-5, prompt: "Escribe una crónica sobre la feria del libro de una capital de provincia." }
+  - { id: ai-h14, partition: holdout, register: institucional, model: claude-sonnet-5, prompt: "Redacta la exposición de motivos de una ley autonómica de apoyo al comercio de proximidad." }
+  - { id: ai-h15, partition: holdout, register: institucional, model: claude-opus-5, prompt: "Redacta un comunicado de un hospital público sobre la ampliación del servicio de urgencias." }
+  # ---------- challenge (6): se pide evitar clichés ----------
+  - { id: ai-c01, partition: challenge, register: general, model: claude-opus-5, prompt: "Escribe una entrada de blog sobre aprender a cocinar a los cuarenta. Escribe como un buen redactor humano: sin frases hechas, sin listas, sin conclusión de resumen." }
+  - { id: ai-c02, partition: challenge, register: periodistico, model: claude-sonnet-5, prompt: "Escribe una noticia sobre el cierre de una librería histórica. Estilo de periódico serio, sobrio, sin adjetivos de relleno ni frases hechas." }
+  - { id: ai-c03, partition: challenge, register: tecnico, model: claude-haiku-4-5, prompt: "Escribe en Markdown la documentación de instalación de un servidor de correo. Estilo seco de manual, sin introducciones ni entusiasmo." }
+  - { id: ai-c04, partition: challenge, register: academico, model: claude-opus-5, prompt: "Redacta la introducción de un artículo académico sobre la toponimia de origen árabe en Aragón. Prosa académica sobria, sin fórmulas de relleno." }
+  - { id: ai-c05, partition: challenge, register: marketing, model: claude-sonnet-5, prompt: "Escribe el texto de una página de producto de un cuchillo de cocina. Concreto, con datos, sin superlativos ni llamadas a la acción genéricas." }
+  - { id: ai-c06, partition: challenge, register: institucional, model: claude-haiku-4-5, prompt: "Redacta una nota informativa municipal sobre el corte de una calle por obras. Solo hechos, fechas y alternativas, sin fórmulas de cortesía." }
