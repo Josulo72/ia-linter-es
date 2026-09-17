@@ -21,7 +21,7 @@ La pieza principal del producto no es el linter sino la guía de estilo (`integr
 
 Clase humana: 36 mensajes de Mediavida, elhacker.net e Infojardín, de 2009 a 2021, entre 150 y 400 palabras. **No se redistribuyen.** En el repositorio queda `corpus/manifests/_human_cotidiano.yml` con URL, fecha, foro, palabras y sha256; los textos se descargan en local y están en `.gitignore`. Para rehacerlos: `node --use-system-ca benchmark/scripts/fetch-foros.mjs --from-manifest`. Son anteriores al 30-11-2022 para que no se cuele texto generado.
 
-Clase IA: 96 textos generados el 17-09-2026 con subagentes de Claude Code (haiku-4.5, sonnet-5 y opus-5) a partir de los encargos de `corpus/policy/prompts-v1.1.yml`. Cada encargo se generó dos veces: tal cual (development y holdout) y con la guía de estilo delante (challenge). Así se puede medir si la guía sirve.
+Clase IA: 96 textos generados el 17-09-2026 con subagentes de Claude Code (haiku-4.5, sonnet-5 y opus-5) a partir de los encargos de `corpus/policy/prompts-v1.1.yml`. Cada encargo se generó tres veces: tal cual (development y holdout), con la guía v1 () y con la guía v2 (). Así se puede medir si la guía sirve.
 
 Particiones: development 18 + 24, holdout 18 + 24, challenge 0 + 48.
 
@@ -65,5 +65,5 @@ Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil pala
 - Un solo revisor, que además escribió las reglas.
 - La clase IA es de un solo proveedor y de la misma familia de modelos que diseñó las reglas.
 - Los mensajes humanos conservan sus erratas y los generados no tienen ninguna. Parte de la diferencia puede venir de ahí.
-- Los textos de challenge miden la guía anterior a la corrección del ritmo; la guía actual está sin medir.
+- La guía no arregla el ritmo: medida con las dos versiones, la variación de longitud de frase se queda en 0,45 frente a 0,61 de los mensajes humanos. Sí elimina del todo rayas, comillas angulares, negritas y fórmulas hechas.
 - v1.1 no tiene clase humana en challenge, y v1.0 no tenía clase humana en los registros general, técnico y marketing.

@@ -20,7 +20,7 @@ explanation: >-
   el coeficiente de variación mediano es 0,61; en 24 textos generados con el mismo encargo, 0,48. Con el umbral
   en 0,50 se marcan 14 de 24 textos generados y 3 de 18 humanos. El límite de `estructura/longitud-uniforme`
   (0,32) sirve para prosa editada larga y casi nunca salta en un texto corto.
-rewrite_guidance: Parte una frase larga en dos y deja alguna de tres o cuatro palabras. El ritmo se nota más que las palabras.
+rewrite_guidance: Deja alguna frase en tres o cuatro palabras y que otra siga hasta donde tenga que llegar. Sin alternar largo y corto, que eso cae en el defecto contrario.
 examples:
   positive:
     - { text: "Ayer estuve mirando el tema del router en varias tiendas. Los precios varían bastante según el modelo. Me interesa sobre todo la cobertura en toda la casa. El piso tiene tres habitaciones y un pasillo largo. La señal se pierde justo al final del pasillo. He probado a cambiarlo de sitio sin mucho éxito. También he mirado los repetidores de la marca. Algunos comentarios dicen que funcionan regular. Otros dicen que van perfectos sin problemas. No sé muy bien a quién hacer caso.", expect: 1 }

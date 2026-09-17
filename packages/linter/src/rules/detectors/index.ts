@@ -289,7 +289,7 @@ function dedupeOverlaps(ms: RawMatch[]): RawMatch[] {
 
 /* ------------------------------------------------------------------ */
 /* structure: comprobaciones estructurales con nombre.                  */
-/* params: { kind: "triad"|"heading_colon"|"heading_title_case"|"sentence_length_cv"|"list_bold_lead"|"list_uniform_start"|"paragraph_bold_lead", ... } */
+/* params: { kind: "triad"|"heading_colon"|"heading_title_case"|"sentence_length_cv"|"list_bold_lead"|"list_uniform_start"|"paragraph_bold_lead"|"sentence_length_alternation", ... } */
 /* ------------------------------------------------------------------ */
 const structure: Detector = (rule, doc) => {
   const p = rule.params as Record<string, unknown> & { kind: string };
@@ -369,6 +369,33 @@ const structure: Detector = (rule, doc) => {
         else flush();
       });
       flush();
+      return out;
+    }
+    case "sentence_length_alternation": {
+      // Proporción de frases en las que la longitud cambia de signo respecto a la anterior.
+      // Cerca de 1 = larga, corta, larga, corta: cadencia de plantilla, no de persona.
+      const minSentences = (p.min_sentences as number | undefined) ?? 8;
+      const minRate = (p.min_alternation as number | undefined) ?? 0.85;
+      const lens = doc.sentences
+        .filter((s) => (doc.blocks[s.blockIndex] as TextBlock).kind !== "heading")
+        .map((s) => (s.text.match(/[\p{L}\p{M}\p{N}]+/gu) ?? []).length)
+        .filter((n) => n >= 3);
+      if (lens.length < minSentences) return out;
+      let changes = 0;
+      let pairs = 0;
+      for (let i = 1; i < lens.length - 1; i++) {
+        const a = Math.sign((lens[i] as number) - (lens[i - 1] as number));
+        const b = Math.sign((lens[i + 1] as number) - (lens[i] as number));
+        if (a === 0 || b === 0) continue;
+        pairs++;
+        if (a !== b) changes++;
+      }
+      if (pairs === 0) return out;
+      const rate = changes / pairs;
+      if (rate >= minRate) {
+        const s = doc.sentences[0]!;
+        out.push({ blockIndex: s.blockIndex, start: s.start, end: s.end, data: { rate: Math.round(rate * 100), count: lens.length } });
+      }
       return out;
     }
     case "paragraph_bold_lead": {

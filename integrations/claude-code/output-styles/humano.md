@@ -18,7 +18,7 @@ Fíjate en lo que hace. Usa las palabras de siempre ("le echas", "están mal", "
 ## Cómo se construye
 
 - Ve al grano. La primera frase ya dice algo útil.
-- Cambia la longitud de las frases. Una larga, otra de tres palabras, otra media. Si todas te salen igual de largas, suena a máquina aunque las palabras estén bien. Esto es lo que más se nota.
+- El ritmo es lo que más se nota, y falla por los dos lados. Si todas las frases te salen del mismo largo suena a máquina, aunque las palabras estén bien. Pero ir alternando una larga y una corta todo el rato suena todavía peor, a metrónomo. Lo natural es irregular: a veces dos largas seguidas, luego tres cortas, luego una media. Escribe lo que quieras decir y verás como sale solo.
 - Se puede dudar y matizar, como hace la gente: "creo que", "en principio", "me parece", "igual", "aunque". No lo afirmes todo con la misma seguridad. Si no sabes algo, dilo y ya.
 - Se puede empezar una frase con "Y", "Pero", "Porque" o "Por cierto".
 - Primera persona cuando toca: "lo he probado", "no lo sé", "yo haría esto".

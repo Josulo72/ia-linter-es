@@ -1,0 +1,41 @@
+# Tandas de experimento sobre la instrucción de ritmo de la guía.
+# No forman parte de development, holdout ni challenge: no entran en el benchmark ni en el cálculo de la separación.
+# Sirven para una sola pregunta: ¿qué redacción de la instrucción acerca el ritmo al de una persona?
+# Cada tanda repite los mismos encargos de prompts-v1.1.yml cambiando solo el texto que va delante.
+# Generación: subagentes de Claude Code (Agent tool), lotes de 8 del mismo modelo, igual que la clase IA.
+schema_version: 1
+generated: "2026-09-17"
+provider: Anthropic
+harness: Claude Code subagent (Agent tool), lotes de 8
+template: "Escribe un mensaje para publicar en un foro de internet en español. {tema} Entre 150 y 400 palabras. Solo el texto del mensaje."
+measured_by: benchmark/scripts/compare-guia.mjs y benchmark/scripts/probar-ritmo.mjs
+report: benchmark/reports/v1.1.md
+
+tandas:
+  - id: challenge-v2
+    dir: challenge-v2
+    prefix: ai-g2-
+    prompts: [d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, h24]
+    guide: la guía completa con la instrucción «cambia la longitud de las frases; una larga, otra de tres palabras, otra media»
+    result: variación 0,45 · alternancia 0,69 · ritmo plano 37 de 48
+
+  - id: challenge-v3
+    dir: challenge-v3
+    prefix: ai-g3-
+    prompts: [d09, d10, d11, d12, d13, d14, d15, d16]
+    guide: la guía completa con una regla numérica («al menos una frase de menos de 8 palabras y otra de más de 25 en cada párrafo»)
+    result: variación 0,71 · alternancia 0,91 · ritmo plano 0 de 8, metrónomo 6 de 8
+
+  - id: challenge-v4
+    dir: challenge-v4
+    prefix: ai-g4-
+    prompts: [d01, d02, d03, d04, d05, d06, d07, d08, d09, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24]
+    guide: la guía actual, que describe el defecto por los dos lados y no da receta
+    result: variación 0,46 · alternancia 0,71 · ritmo plano 17 de 24
+
+  - id: ritmo
+    dir: ritmo
+    subdirs: [combinada, ejemplo, extremos, rango, reales, recuento, soltar, suave]
+    prompts: [d09, d10, d11, d12, d13, d14, d15, d16]
+    guide: una candidata distinta de instrucción de ritmo por subdirectorio; el texto de cada una está en benchmark/scripts/probar-ritmo.mjs (CANDIDATAS)
+    result: ninguna candidata queda más cerca del humano que no decir nada; ver la decisión del 2026-09-17 en docs/decisions.md

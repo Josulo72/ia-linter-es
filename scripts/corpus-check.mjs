@@ -93,6 +93,48 @@ else {
 }
 if (missingLocal) console.log(`  · ${missingLocal} textos de foro no descargados en este equipo (no se redistribuyen): ejecuta benchmark/scripts/fetch-foros.mjs`);
 
+// Tandas de experimento (v1.1): fuera del benchmark, pero registradas igual que la clase IA.
+console.log("Corpus v1.1: experimentos");
+{
+  const before = failures.length;
+  const exp = yml("corpus", "policy", "experimentos.yml");
+  const prompts = yml("corpus", "policy", "prompts-v1.1.yml");
+  const promptIds = new Map(prompts.prompts.map((p) => [p.id, p]));
+  const m = yml("corpus", "manifests", "experimentos.yml");
+  const tandas = new Map(exp.tandas.map((t) => [t.id, t]));
+  const listed = new Set();
+  const ids = new Set();
+  for (const s of m.samples) {
+    const where = `experimentos/${s.id}`;
+    if (ids.has(s.id)) fail(`${where}: id repetido`);
+    ids.add(s.id);
+    const t = tandas.get(s.tanda);
+    if (!t) fail(`${where}: tanda sin registrar en experimentos.yml`);
+    else if (!String(s.file).startsWith(`${t.dir}/`)) fail(`${where}: archivo fuera de su tanda (${s.file})`);
+    listed.add(s.file);
+    const abs = path.join(root, "corpus", s.file ?? "");
+    if (!fs.existsSync(abs)) { fail(`${where}: falta ${s.file}`); continue; }
+    const text = fs.readFileSync(abs, "utf8");
+    if (createHash("sha256").update(text).digest("hex") !== s.sha256) fail(`${where}: hash distinto`);
+    if (text.includes("\r")) fail(`${where}: finales de línea CRLF`);
+    const p = promptIds.get(s.prompt_id);
+    if (!p) fail(`${where}: prompt_id sin registrar`);
+    else if (p.model !== s.model) fail(`${where}: modelo distinto del de prompts-v1.1.yml`);
+    for (const k of ["provider", "model", "generated", "harness", "edits", "register"]) if (!s[k]) fail(`${where}: falta ${k}`);
+  }
+  for (const t of exp.tandas) {
+    for (const rel of t.subdirs ? t.subdirs.map((s) => `${t.dir}/${s}`) : [t.dir]) {
+      const dir = path.join(root, "corpus", rel);
+      if (!fs.existsSync(dir)) { fail(`${rel}: el directorio de la tanda ${t.id} no existe`); continue; }
+      for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+        if (e.isDirectory()) continue;
+        if (!listed.has(`${rel}/${e.name}`)) fail(`${rel}/${e.name}: archivo sin entrada en el manifiesto`);
+      }
+    }
+  }
+  if (failures.length === before) ok(`${m.samples.length} textos de experimento en ${exp.tandas.length} tandas con trazabilidad y hash correctos`);
+}
+
 console.log("Corpus: veto");
 const patterns = veto.vetoed.flatMap((v) => v.patterns.map((p) => [v.name, p.toLowerCase()]));
 const exempt = new Set(veto.citation_allowed.map((p) => p.replace(/\\/g, "/")));

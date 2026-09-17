@@ -1,0 +1,7 @@
+Vaya palada, macho. Sé lo que es, a un colega mío le pasó hace un año y se pasó dos semanas hecho polvo hasta que consiguió recuperarla. Lo primero que tienes que hacer es entrar desde el móvil o el ordenador a instagram.com/hacked y seguir el proceso que te van pidiendo ahí, porque ese formulario es distinto del que usas cuando simplemente se te olvida la contraseña.
+
+Si el que te ha entrado cambió el correo o el teléfono asociado, no vas a poder recuperarla con el típico "olvidé mi contraseña", así que directamente ve a esa opción de cuenta hackeada. Suena raro, lo sé. Te van a pedir el nombre de usuario, el correo o teléfono que usaste al crearla y, en algunos casos, una foto tuya sujetando un papel con un código, para comprobar que eres tú y no otro que dice serlo.
+
+Revisa también el correo, incluido spam, porque Instagram suele mandar un aviso cuando detecta un cambio de contraseña o de email, y desde ahí a veces hay un enlace para revertirlo directamente. Si no hay enlace, ten paciencia. Esto puede tardar más de lo que te gustaría, así que no desesperes todavía.
+
+Ojo con una cosa. Hay cuentas y páginas que prometen recuperarte el Instagram pagando, y en el noventa y nueve por ciento de los casos es una estafa que solo te va a quitar dinero además de la cuenta. No les des ni un euro. Y avisa a tu gente por otro lado, un WhatsApp o una historia en otra red, para que no caigan si el que tiene tu cuenta empieza a pedir dinero prestado o a mandar enlaces raros.

@@ -1,6 +1,6 @@
 # Reglas oficiales
 
-Rule Pack `ia-linter-es/oficial` v1.0.0. 37 reglas compiladas.
+Rule Pack `ia-linter-es/oficial` v1.0.0. 38 reglas compiladas.
 
 | Regla | Estado | Categoría | Detector | Nivel | Peso |
 |---|---|---|---|---|---|
@@ -17,6 +17,7 @@ Rule Pack `ia-linter-es/oficial` v1.0.0. 37 reglas compiladas.
 | `estructura/enumeracion-ordinal` | stable | estructura | cooccurrence | info | 1.5 (cap 2) |
 | `estructura/lista-inicio-uniforme` | candidate | estructura | structure | info | 0.5 (cap 1) |
 | `estructura/longitud-uniforme` | stable | estructura | structure | info | 2 (cap 2) |
+| `estructura/ritmo-metronomo` | candidate | estructura | structure | off | 2 (cap 2) |
 | `estructura/ritmo-plano` | candidate | estructura | structure | off | 2 (cap 2) |
 | `formato/comillas-angulares` | candidate | formato | regex | off | 1 (cap 2) |
 | `formato/encabezado-title-case` | stable | formato | structure | info | 1.5 (cap 3) |
@@ -283,13 +284,30 @@ La prosa humana alterna frases largas y cortas; la generada tiende a una longitu
 
 > Esta frase tiene una longitud media bastante normal. La siguiente frase mantiene una longitud parecida también. Otra frase más con el mismo número de palabras. Y seguimos con otra frase de longitud muy similar. Cada frase se parece mucho a la frase anterior. Nada cambia el ritmo de este párrafo tan regular. Las frases siguen y siguen con la misma medida. Ninguna es corta y ninguna es realmente larga. El lector nota una cadencia mecánica en el texto. Todo suena igual y nada llama la atención aquí. Así continúa el documento hasta su última frase. Y termina con otra frase de longitud media.
 
+## estructura/ritmo-metronomo
+
+**Ritmo de metrónomo** — Las frases alternan largo y corto con demasiada regularidad, como si siguieran una plantilla.
+
+Es el defecto contrario a `estructura/ritmo-plano` y aparece cuando se le pide al modelo que varíe el ritmo con una regla numérica. Sale una cadencia de larga-corta-larga-corta que no comete una persona. En 29 mensajes de foro la alternancia mediana es 0,67 y solo 3 pasan de 0,85; en 8 textos generados con esa instrucción, la mediana es 0,92 y 6 de 8 pasan de 0,85.
+
+**Cómo reescribir:** Pon dos frases seguidas de longitud parecida en algún punto. La irregularidad es lo natural, no el vaivén.
+
+**Evidencia:** 29 mensajes de foro y 8 textos generados con instrucción numérica de ritmo; ver benchmark/reports/v1.1.md.
+
+**Falsos positivos conocidos:**
+- Textos muy cortos, donde pocas frases bastan para alcanzar la proporción.
+
+**Ejemplo:**
+
+> Me han ofrecido un trabajo en otra ciudad con bastante mejor sueldo y más responsabilidad de la que tengo ahora mismo. En principio suena bien. Significa dejar el piso, a los amigos de siempre y a mi pareja, que no se puede mover de aquí por su trabajo. No lo tengo nada claro. El sueldo sube unos cuatrocientos euros al mes, que tampoco es una barbaridad para todo lo que supone el cambio. Ahí está mi duda. Llevo desde el jueves dándole vueltas al asunto sin llegar a ninguna parte concreta ni ver la cosa clara. Nunca me había pasado esto. Si alguien ha vivido algo parecido y quiere contarlo por aquí se lo agradezco mucho de antemano. Gracias por leerme.
+
 ## estructura/ritmo-plano
 
 **Ritmo plano en escritura cotidiana** — Todas las frases miden casi lo mismo. En un mensaje o un correo, quien escribe alterna frases largas y sueltas de tres palabras.
 
 Es la diferencia más clara entre un mensaje escrito por una persona y uno generado. En 18 mensajes de foro el coeficiente de variación mediano es 0,61; en 24 textos generados con el mismo encargo, 0,48. Con el umbral en 0,50 se marcan 14 de 24 textos generados y 3 de 18 humanos. El límite de `estructura/longitud-uniforme` (0,32) sirve para prosa editada larga y casi nunca salta en un texto corto.
 
-**Cómo reescribir:** Parte una frase larga en dos y deja alguna de tres o cuatro palabras. El ritmo se nota más que las palabras.
+**Cómo reescribir:** Deja alguna frase en tres o cuatro palabras y que otra siga hasta donde tenga que llegar. Sin alternar largo y corto, que eso cae en el defecto contrario.
 
 **Evidencia:** 18 mensajes de foro y 24 textos generados del corpus v1.1 (development); ver benchmark/reports/v1.1.md.
 

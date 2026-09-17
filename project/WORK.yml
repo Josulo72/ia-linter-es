@@ -63,8 +63,9 @@ blocks:
     status: done
     notes: >-
       v1.0 (prosa formal) cerrada con resultado negativo y archivada en corpus/archive/v1.0.
-      v1.1 (registro cotidiano) supera el gate: separación 14,5 en holdout. La guía actual
-      está sin medir; los textos de challenge se generaron con la versión anterior.
+      v1.1 (registro cotidiano) supera el gate: separación 14,5 en holdout. La guía quita bien
+      los tics de formato y no arregla el ritmo: cuatro versiones de la guía y nueve redacciones
+      de la instrucción, ninguna mejor que no decir nada. El ritmo pasa al revisor (docs/decisions.md).
   - id: B5
     title: Integraciones
     objective: Pre-commit, GitHub Action, Claude Code y paridad E2E.

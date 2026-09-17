@@ -1,0 +1,7 @@
+Llevo desde el jueves dándole vueltas al mismo dilema y todavía no consigo decidirme, así que lo cuento aquí a ver si alguien ha pasado por algo parecido. Me han ofrecido un trabajo fuera. Es en otra ciudad, a casi cuatrocientos kilómetros de aquí, con mejor sueldo y más responsabilidad de la que tengo ahora. En principio suena bien. Pero significa dejar el piso, la cuadrilla de toda la vida y a mi pareja, que no puede moverse por su trabajo, para empezar de cero en un sitio donde no conozco a nadie.
+
+El trabajo actual no está mal. Es estable, previsible, y últimamente me aburre bastante. Ahí no voy a crecer más. La oferta nueva me subiría el sueldo unos cuatrocientos euros al mes y me pondría a cargo de un equipo pequeño, algo que llevo tiempo pidiendo sin conseguirlo. Me han dado dos semanas para responder.
+
+He hecho la lista de pros y contras unas quince veces y sigo empatado. Igual el problema soy yo. Quiero que alguien me diga que sí sin que eso me cueste nada, sin arriesgar nada de verdad, y claro está que eso no existe en la vida real, por mucho que lo busque. Mis padres dicen que lo intente. Dicen que de joven se puede volver si sale mal, que para eso está el tiempo. Mi pareja opina distinto. Dice que lo piense con calma y no se moja mucho más, cosa que entiendo pero que tampoco ayuda nada.
+
+¿Alguien ha dado el salto? Me refiero a cambiar de ciudad dejando atrás pareja, amigos y una vida ya montada, y me gustaría saber cómo os fue, lo bueno y lo malo, sin adornarlo. Aquí ya no sé qué pensar.
