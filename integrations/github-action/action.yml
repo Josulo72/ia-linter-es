@@ -1,0 +1,64 @@
+name: ia-linter-es
+description: Analiza el español del repositorio y anota los hallazgos en el pull request. Mide patrones editoriales, no autoría.
+author: jrollon
+branding:
+  icon: edit-3
+  color: gray
+
+inputs:
+  paths:
+    description: Archivos, directorios o globs separados por espacios. Por defecto, el proyecto entero.
+    required: false
+    default: ""
+  config:
+    description: Archivo de configuración. Por defecto se busca ia-linter.yml hacia arriba.
+    required: false
+    default: ""
+  profile:
+    description: general | tecnico | academico | marketing | chat | correo | readme | redes. Por defecto, el de la configuración.
+    required: false
+    default: ""
+  fail-on:
+    description: never | info | warning | error. Por defecto, el de la configuración.
+    required: false
+    default: ""
+  max-index:
+    description: Falla si el índice de algún archivo supera este número.
+    required: false
+    default: ""
+  baseline:
+    description: Baseline a aplicar. Por defecto, la de la configuración.
+    required: false
+    default: ""
+  annotations:
+    description: Publica los hallazgos como anotaciones del check. true o false.
+    required: false
+    default: "true"
+  sarif:
+    description: Ruta donde escribir el informe SARIF. Vacío, no se escribe.
+    required: false
+    default: ""
+  json:
+    description: Ruta donde escribir el informe JSON. Vacío, no se escribe.
+    required: false
+    default: ""
+  working-directory:
+    description: Directorio desde el que se ejecuta.
+    required: false
+    default: "."
+
+outputs:
+  findings:
+    description: Número de hallazgos activos.
+  errors:
+    description: Hallazgos de nivel error.
+  warnings:
+    description: Hallazgos de nivel warning.
+  max-index:
+    description: El índice más alto de todos los archivos analizados.
+  passed:
+    description: true si la política se cumple.
+
+runs:
+  using: node20
+  main: main.mjs

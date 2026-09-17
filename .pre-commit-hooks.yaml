@@ -1,0 +1,15 @@
+- id: ia-linter-es
+  name: ia-linter-es
+  description: Analiza el español de los archivos que se van a commitear. Mide patrones editoriales, no autoría.
+  entry: ia-linter-es lint
+  language: node
+  types_or: [markdown, plain-text]
+  pass_filenames: true
+
+- id: ia-linter-es-local
+  name: ia-linter-es (instalado en el proyecto)
+  description: Lo mismo, pero con la copia que ya tiene el proyecto en node_modules. No instala nada.
+  entry: node_modules/.bin/ia-linter-es lint
+  language: system
+  types_or: [markdown, plain-text]
+  pass_filenames: true

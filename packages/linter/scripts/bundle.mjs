@@ -23,3 +23,23 @@ fs.copyFileSync(path.join(root, "rulepack", "rulepack.json"), path.join(outdir, 
 const pkg = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
 fs.writeFileSync(path.join(outdir, "package.json"), JSON.stringify({ name: pkg.name, version: pkg.version, type: "module", private: true }, null, 2) + "\n");
 console.log(`Bundle: ${path.relative(process.cwd(), path.join(outdir, "dist", "cli.mjs"))}`);
+
+// Las integraciones que se distribuyen sueltas (Action, plugin de Claude Code) llevan su copia del bundle.
+// Es un artefacto generado: no se commitea, se incluye al publicar.
+const repo = path.resolve(root, "..", "..");
+// Copia recursiva a mano: fs.cpSync aborta el proceso sin error en este Windows.
+const copiar = (from, to) => {
+  fs.mkdirSync(to, { recursive: true });
+  for (const e of fs.readdirSync(from, { withFileTypes: true })) {
+    const a = path.join(from, e.name);
+    const b = path.join(to, e.name);
+    if (e.isDirectory()) copiar(a, b);
+    else fs.copyFileSync(a, b);
+  }
+};
+for (const dest of [path.join(repo, "integrations", "github-action", "bundle"), path.join(repo, "integrations", "claude-code", "bundle")]) {
+  if (!fs.existsSync(path.dirname(dest))) continue;
+  fs.rmSync(dest, { recursive: true, force: true });
+  copiar(outdir, dest);
+  console.log(`Bundle copiado: ${path.relative(repo, dest)}`);
+}

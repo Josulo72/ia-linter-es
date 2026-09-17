@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/revisar-respuesta.mjs\"",
+            "timeout": 30,
+            "statusMessage": "Revisando la respuesta"
+          }
+        ]
+      }
+    ]
+  }
+}
