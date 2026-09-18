@@ -44,9 +44,11 @@ La humanización pasa a ser una capa común que funciona con cualquier skill y c
 
 ### Cambiado
 
-- La licencia pasa de MIT a Business Source License 1.1, con fecha de cambio el 2030-09-17 y vuelta a MIT
-  automática. El texto de la MIT se conserva en `LICENSE-MIT`. Afecta a quien integrara el proyecto bajo
-  la licencia anterior, y no estaba registrado en ninguna versión de este archivo.
+- La licencia del proyecto pasa de MIT a Business Source License 1.1. Afecta a quien lo integrara bajo la
+  licencia anterior, y no constaba en ninguna versión de este archivo hasta ahora.
+- La licencia de cambio de esa Business Source License pasa de MIT a AGPL-3.0, con la misma fecha, el 17 de
+  septiembre de 2030. El texto está en `LICENSE-AGPL-3.0` y sustituye al de `LICENSE-MIT`, que se retira. La
+  1.0.0 conserva la vuelta a MIT con la que se publicó.
 - La guía está ahora en `integrations/claude-code/guia/humano.md` y ya no es un estilo de salida.
 - `rules explain` y `docs/rules.md` llaman «Orientación» a la guía de reescritura de cada regla.
 - `estructura/ritmo-plano` y `formato/comillas-angulares` dejan de estar activas en el perfil `correo`, donde marcaban igual a humanos y a generados.

@@ -141,4 +141,6 @@ Business Source License 1.1, con el texto completo en `LICENSE`.
 
 En corto: puedes usarlo, copiarlo y cambiarlo a tu gusto, también en tu empresa y en el trabajo que hagas para tus clientes. Lo único que no puedes es venderlo, ni montar un servicio de pago cuyo valor sea básicamente esto. Para eso escríbeme a jrollon@gmail.com y lo hablamos.
 
-El 17 de septiembre de 2030 pasa a MIT sola, sin que nadie tenga que hacer nada. El texto de esa MIT está en `LICENSE-MIT`.
+El 17 de septiembre de 2030 pasa sola a AGPL-3.0, sin que nadie tenga que hacer nada. Desde entonces seguirá siendo libre, pero quien lo modifique o lo ofrezca como servicio tendrá que publicar su código. El texto está en `LICENSE-AGPL-3.0`.
+
+La versión 1.0.0 se publicó con la vuelta a MIT, y esa versión la mantiene. Desde la 1.1.0 la vuelta es a AGPL-3.0.
