@@ -25,11 +25,11 @@ En `corpus-v1.3/`. Cambia una sola cosa respecto de v1.2, y a propósito: la cla
 un modelo que no es de la familia que escribe las reglas, para que la comparación deje de ser circular
 (D3 en `docs/decisions.md`). Son 180 textos generados, con las mismas particiones y los mismos registros.
 
-**La clase humana no es nueva: es la de v1.2 reutilizada tal cual.** Los manifiestos lo dicen en cada
-muestra, con `reused_from` y una nota. Eso tiene dos consecuencias. La primera ya estaba anotada: la parte
-humana del holdout v1.3 no es independiente, porque esos textos ya se leyeron en el holdout v1.2. La
-segunda es la del primer punto de los límites: esa clase humana está contaminada, así que v1.3 hereda el
-problema entero.
+Los textos humanos vienen enteros de v1.2, reutilizados tal cual. Cada muestra del manifiesto lo declara
+con `reused_from` y una nota. De ahí salen dos consecuencias. Una ya estaba anotada, y es que la parte
+humana del holdout v1.3 no puede considerarse independiente, porque esos mismos textos se leyeron en el
+holdout v1.2. Otra aparece en el primer punto de los límites, más abajo: esa clase humana está contaminada,
+así que v1.3 arrastra el problema entero.
 
 El holdout v1.3 está congelado en `benchmark/configs/holdout-v1.3.lock` y **todavía no se ha ejecutado**.
 Mientras siga sin leerse se puede limpiar la clase humana y v1.3 sigue sirviendo. Si se lee antes, se gasta
