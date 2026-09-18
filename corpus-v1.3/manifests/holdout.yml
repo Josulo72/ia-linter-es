@@ -1,0 +1,1670 @@
+# Generado por benchmark/scripts/build-manifests-v1.3.mjs. No editar a mano.
+schema_version: 1
+corpus_version: "1.3"
+partition: holdout
+samples:
+  - id: h-co02
+    class: human
+    file: holdout/h-co02.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/11/msg00012.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-11-11
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-11-11, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 173
+    sha256: 51eb26cac2daa94e665b5c83061f365d56c507d370c956089cc8312d0c4a0550
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co02.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co04
+    class: human
+    file: holdout/h-co04.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/10/msg00001.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-10-06
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-10-06, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 249
+    sha256: f5067b2fb7a9d063cb339b41b71fc4adc775a9b6e14fd8d600a72de9da21beb8
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co04.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co06
+    class: human
+    file: holdout/h-co06.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/08/msg00059.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-08-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-08-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 368
+    sha256: 10f192beff432d10ac33b841300751aca0881f1df1818b4fd5cc2d0d790e06a3
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co06.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co08
+    class: human
+    file: holdout/h-co08.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00012.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-06
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-06, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 414
+    sha256: 618c789e794bb30aa1954250cbd515959294f635836faa5a823b8cd0619d6785
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co08.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co10
+    class: human
+    file: holdout/h-co10.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00092.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-29
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-29, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 371
+    sha256: 5a1e87df51cedfd73a7454b1b40c7dd44fb787d702b27732f503593c6f9c6337
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co10.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co12
+    class: human
+    file: holdout/h-co12.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00004.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-10
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-10, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 238
+    sha256: 2aa2ce983b692831bf9895357ae199c79dc8e075f9455325a19e08300081d401
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co12.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co14
+    class: human
+    file: holdout/h-co14.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/05/msg00083.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-05-24
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-05-24, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 152
+    sha256: 671c7b2395bcd05280e8d49266c6f9a8c219939986f07202550168c10d7e9f17
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co14.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co16
+    class: human
+    file: holdout/h-co16.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00057.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-23
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-23, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 226
+    sha256: 97eeff926753d076db119d68b397d510f434bdc0c1f963fd378df1527e990038
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co16.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co18
+    class: human
+    file: holdout/h-co18.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00083.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-26
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-26, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 303
+    sha256: 9498338021eafb1edaeaf05428ad3335c7b26420cf339fda6d0891cc0ff91968
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co18.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co20
+    class: human
+    file: holdout/h-co20.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00099.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-28
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-28, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 535
+    sha256: 905074a49fe6803df811a6cdfabe453eb2559fa8396692671cb431d254b8022e
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co20.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co22
+    class: human
+    file: holdout/h-co22.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00024.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-08
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-08, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 406
+    sha256: 6d684f579e29872c2ac21fb1c1bf582f0f37ca7f71ad4fbff457b28a77235b9a
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co22.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co24
+    class: human
+    file: holdout/h-co24.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00046.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-11
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-11, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 255
+    sha256: 8db2c03b51d6cd1e04ee38aa692d186ff3d72bcfa578047b1a06ec706307a742
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co24.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co26
+    class: human
+    file: holdout/h-co26.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/12/msg00029.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-12-10
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-12-10, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 230
+    sha256: acdaed64966236fa8f00a88de642b7f963a1598a7bb3958cadd00c06358e4bfc
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co26.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co28
+    class: human
+    file: holdout/h-co28.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/07/msg00042.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-07-17
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-07-17, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 223
+    sha256: 9c9979584a7607f94e5e497fd5703e935d1d28d6a24ea53cfb2d698a029b347c
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co28.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-co30
+    class: human
+    file: holdout/h-co30.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/07/msg00076.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-07-24
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-07-24, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 200
+    sha256: 373db49171a994a08cb251a33463e663162659974d38400f64acf9f69cceb6af
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-co30.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd02
+    class: human
+    file: holdout/h-rd02.md
+    register: readme
+    level: H2
+    source: github:LuchoBazz/AlgorithmNotebook
+    source_url: https://github.com/LuchoBazz/AlgorithmNotebook/blob/0d51af70d19db54b9511a833b36369a9824915b8/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: LuchoBazz (repositorio LuchoBazz/AlgorithmNotebook)
+    date: 2020-07-22
+    human_evidence: Último commit del README el 2020-07-22, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-11-25.
+    extraction: README completo del commit 0d51af70d19d; sin editar
+    theme: software
+    words: 913
+    sha256: 609bcd53ff96f4509de05cf7673589ce262724d16ad9bab6119f5d11fc09c7b6
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd02.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd04
+    class: human
+    file: holdout/h-rd04.md
+    register: readme
+    level: H2
+    source: github:Faiiya/Uned
+    source_url: https://github.com/Faiiya/Uned/blob/4a1068d5a5f8f7013ea82276b4916ce87e197622/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: Faiiya (repositorio Faiiya/Uned)
+    date: 2019-10-07
+    human_evidence: Último commit del README el 2019-10-07, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-11-22.
+    extraction: README completo del commit 4a1068d5a5f8; sin editar
+    theme: software
+    words: 514
+    sha256: 3cf2ba7581464e4653a57c9182037a1c467a00520455fd32334927f0c158a91f
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd04.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd06
+    class: human
+    file: holdout/h-rd06.md
+    register: readme
+    level: H2
+    source: github:juanalonso/processing-opencv
+    source_url: https://github.com/juanalonso/processing-opencv/blob/b66087ba10aa3d8be2cb0525857b2a85bfa09828/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: juanalonso (repositorio juanalonso/processing-opencv)
+    date: 2017-02-13
+    human_evidence: Último commit del README el 2017-02-13, anterior a 2022-01-01; el repositorio no recibe cambios desde 2017-11-26.
+    extraction: README completo del commit b66087ba10aa; sin editar
+    theme: software
+    words: 182
+    sha256: db045ee3b5963012164887577cc56ae54b63d69588223fcf49f35937dd61d0f6
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd06.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd08
+    class: human
+    file: holdout/h-rd08.md
+    register: readme
+    level: H2
+    source: github:Prometheus-ETSIIT/locaviewer
+    source_url: https://github.com/Prometheus-ETSIIT/locaviewer/blob/251cf54ee786730bc00738e6343dbec376418933/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: Prometheus-ETSIIT (repositorio Prometheus-ETSIIT/locaviewer)
+    date: 2014-11-14
+    human_evidence: Último commit del README el 2014-11-14, anterior a 2022-01-01; el repositorio no recibe cambios desde 2014-12-16.
+    extraction: README completo del commit 251cf54ee786; sin editar
+    theme: software
+    words: 503
+    sha256: 5f7bc918a87de2439bd5c6fc829409054cfe48ad5099d241e9853c80bd3a2135
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd08.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd10
+    class: human
+    file: holdout/h-rd10.md
+    register: readme
+    level: H2
+    source: github:leireomadina/blackjack-game
+    source_url: https://github.com/leireomadina/blackjack-game/blob/a80b50bcd703a47a4d0a2f419928f786881d1e38/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: leireomadina (repositorio leireomadina/blackjack-game)
+    date: 2021-02-17
+    human_evidence: Último commit del README el 2021-02-17, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-02-17.
+    extraction: README completo del commit a80b50bcd703; sin editar
+    theme: software
+    words: 337
+    sha256: cd72f0ccddaaeb597d36eac4f0e5f049f3e940863f245692fa1fec49a49342dc
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd10.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd12
+    class: human
+    file: holdout/h-rd12.md
+    register: readme
+    level: H2
+    source: github:SantiMA10/CampusVirtualPlus
+    source_url: https://github.com/SantiMA10/CampusVirtualPlus/blob/606848ea76c657ce27eeb9d215944d68f5aa5a5a/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: SantiMA10 (repositorio SantiMA10/CampusVirtualPlus)
+    date: 2016-11-02
+    human_evidence: Último commit del README el 2016-11-02, anterior a 2022-01-01; el repositorio no recibe cambios desde 2016-11-09.
+    extraction: README completo del commit 606848ea76c6; sin editar
+    theme: software
+    words: 304
+    sha256: 784902892d9abda916595785b5be0f95ae9afbfa11097278921b9852a5ee338b
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd12.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd14
+    class: human
+    file: holdout/h-rd14.md
+    register: readme
+    level: H2
+    source: github:cebem2018/ejercicioScrum
+    source_url: https://github.com/cebem2018/ejercicioScrum/blob/4957c70140f5e6a428eea6bae51e31bce6e67005/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: cebem2018 (repositorio cebem2018/ejercicioScrum)
+    date: 2018-11-19
+    human_evidence: Último commit del README el 2018-11-19, anterior a 2022-01-01; el repositorio no recibe cambios desde 2018-11-21.
+    extraction: README completo del commit 4957c70140f5; sin editar
+    theme: software
+    words: 553
+    sha256: fc5eac75e18e1504cfea37a67761546b4e48969f14363929feed53166fe8c4ab
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd14.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd16
+    class: human
+    file: holdout/h-rd16.md
+    register: readme
+    level: H2
+    source: github:burgos2021/programa
+    source_url: https://github.com/burgos2021/programa/blob/bcc391c133c2e6d3a59a63a75ee22ca31908a228/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: burgos2021 (repositorio burgos2021/programa)
+    date: 2021-09-07
+    human_evidence: Último commit del README el 2021-09-07, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-09-11.
+    extraction: README completo del commit bcc391c133c2; sin editar
+    theme: software
+    words: 406
+    sha256: b02f22988a76d5de439500de7251e53614c1c4363984f812a1de4a991c5148e7
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd16.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd18
+    class: human
+    file: holdout/h-rd18.md
+    register: readme
+    level: H2
+    source: github:jamydx/geant4-and-root
+    source_url: https://github.com/jamydx/geant4-and-root/blob/7103aeca7959d40f424a138471e046a71cb27cf5/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: jamydx (repositorio jamydx/geant4-and-root)
+    date: 2019-08-27
+    human_evidence: Último commit del README el 2019-08-27, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-08-27.
+    extraction: README completo del commit 7103aeca7959; sin editar
+    theme: software
+    words: 732
+    sha256: 3dca1ecc3b0e54be686e0c332f4a8eee57c6b75772ae33df8f94ffa45150012d
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd18.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd20
+    class: human
+    file: holdout/h-rd20.md
+    register: readme
+    level: H2
+    source: github:DanielRivera03/login-personalizado-cronometrado
+    source_url: https://github.com/DanielRivera03/login-personalizado-cronometrado/blob/7dc8b2a1d1b2f086d7c29f72bd5fa5c04fdbbe36/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: DanielRivera03 (repositorio DanielRivera03/login-personalizado-cronometrado)
+    date: 2020-05-29
+    human_evidence: Último commit del README el 2020-05-29, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-05-29.
+    extraction: README completo del commit 7dc8b2a1d1b2; sin editar
+    theme: software
+    words: 539
+    sha256: 751cf1fb18def0399ec7ece08d0e50439d170a23933cb8011682d8c31bcda6e5
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd20.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd22
+    class: human
+    file: holdout/h-rd22.md
+    register: readme
+    level: H2
+    source: github:aramirez-es/symfony-barcelona
+    source_url: https://github.com/aramirez-es/symfony-barcelona/blob/b6659141de7f035762af7aab6a209b08778248d6/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: aramirez-es (repositorio aramirez-es/symfony-barcelona)
+    date: 2011-12-26
+    human_evidence: Último commit del README el 2011-12-26, anterior a 2022-01-01; el repositorio no recibe cambios desde 2012-02-05.
+    extraction: README completo del commit b6659141de7f; sin editar
+    theme: software
+    words: 350
+    sha256: ac95aad4e18041c474c81f7d2155262d4b82ae92277914d26adde5a7fbcbfb03
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd22.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd24
+    class: human
+    file: holdout/h-rd24.md
+    register: readme
+    level: H2
+    source: github:adrigrillo/cine
+    source_url: https://github.com/adrigrillo/cine/blob/5ebfa420ba3e0615b8c13890ed318b0f57080084/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: adrigrillo (repositorio adrigrillo/cine)
+    date: 2016-05-11
+    human_evidence: Último commit del README el 2016-05-11, anterior a 2022-01-01; el repositorio no recibe cambios desde 2016-05-12.
+    extraction: README completo del commit 5ebfa420ba3e; sin editar
+    theme: software
+    words: 272
+    sha256: 50f23d9cf5e7eb50ab5d6568590003ae1993e6527b0260adf7447743d88f187b
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd24.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd26
+    class: human
+    file: holdout/h-rd26.md
+    register: readme
+    level: H2
+    source: github:jsegu/greennessr
+    source_url: https://github.com/jsegu/greennessr/blob/cad5bb7cfa8f9bc1db0e4b98738fbd70568db3fb/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: jsegu (repositorio jsegu/greennessr)
+    date: 2021-03-04
+    human_evidence: Último commit del README el 2021-03-04, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-03-04.
+    extraction: README completo del commit cad5bb7cfa8f; sin editar
+    theme: software
+    words: 393
+    sha256: 537d959fae6ddf4d49ae815c83496fb1c40bae5ef6d92e839bf32b985e16fab2
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd26.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd28
+    class: human
+    file: holdout/h-rd28.md
+    register: readme
+    level: H2
+    source: github:jersonmartinez/Split-Files
+    source_url: https://github.com/jersonmartinez/Split-Files/blob/6d582bc49f1bcca2e4c92f929f282e24bc9d770e/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: jersonmartinez (repositorio jersonmartinez/Split-Files)
+    date: 2018-03-26
+    human_evidence: Último commit del README el 2018-03-26, anterior a 2022-01-01; el repositorio no recibe cambios desde 2018-03-26.
+    extraction: README completo del commit 6d582bc49f1b; sin editar
+    theme: software
+    words: 702
+    sha256: f5c841a79a12609dd773f55edc749a3c6f422332bd554e327a65e44d858740a1
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd28.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-rd30
+    class: human
+    file: holdout/h-rd30.md
+    register: readme
+    level: H2
+    source: github:AdriPalos/Hackathon
+    source_url: https://github.com/AdriPalos/Hackathon/blob/3b97e1c9afd5d965ca2055f1d7753ad96d324322/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: AdriPalos (repositorio AdriPalos/Hackathon)
+    date: 2021-10-23
+    human_evidence: Último commit del README el 2021-10-23, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-10-23.
+    extraction: README completo del commit 3b97e1c9afd5; sin editar
+    theme: software
+    words: 385
+    sha256: 5fb42edb576a2bb13ec629868e271fb7123fd05eb8591e85885de25128376f20
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/holdout/h-rd30.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re02
+    class: human
+    file: holdout/h-re02.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@soloojos/106746344316944269
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@soloojos@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-08-13
+    human_evidence: Publicación pública de Mastodon del 2021-08-13, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 190
+    sha256: 56e647d01070e6bf94f5e26c012a10a019e4782edb512afc678972d0e03d3a00
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re02.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re04
+    class: human
+    file: holdout/h-re04.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@soloojos/105482275726924533
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@soloojos@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-01-01
+    human_evidence: Publicación pública de Mastodon del 2021-01-01, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 186
+    sha256: 6c1804e4c8bf7a7e0025e21c7ee57d15f0fd750509b722d29b9bd3c9e30786c7
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re04.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re06
+    class: human
+    file: holdout/h-re06.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@contraobediencia/106693654370447286
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@contraobediencia@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-08-03
+    human_evidence: Publicación pública de Mastodon del 2021-08-03, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 171
+    sha256: c67d71b1409bf2bd9ee6b65dd74d05ac4053dc487929b682cbe3468117b19461
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re06.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re08
+    class: human
+    file: holdout/h-re08.md
+    register: redes
+    level: H2
+    source: mastodon:mastodon.la
+    source_url: https://mastodon.la/@NYYANKEES/107226106364435981
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@NYYANKEES@mastodon.la (cuenta pública de Mastodon)"
+    date: 2021-11-05
+    human_evidence: Publicación pública de Mastodon del 2021-11-05, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 169
+    sha256: c286c131007ab8d0ead8bfb2561d398bf2b6b965ea886094e6078b53a735351b
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re08.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re10
+    class: human
+    file: holdout/h-re10.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@soloojos/106669917114821238
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@soloojos@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-07-30
+    human_evidence: Publicación pública de Mastodon del 2021-07-30, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 155
+    sha256: cdad471debb2bea7240777d608ae6e13ca0ed22b4ddf0a681135cbb0c98f43a1
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re10.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re12
+    class: human
+    file: holdout/h-re12.md
+    register: redes
+    level: H2
+    source: mastodon:hispagatos.space
+    source_url: https://hispagatos.space/@Amirov15_01/107177120426809726
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@Amirov15_01 (cuenta pública de Mastodon)"
+    date: 2021-10-28
+    human_evidence: Publicación pública de Mastodon del 2021-10-28, anterior a 2022-01-01.
+    extraction: hilo de 3 publicaciones consecutivas del mismo autor, unidas por una línea en blanco
+    theme: general
+    words: 194
+    sha256: 980761eea2bbababd654bd14b0ec2f1289570c56e5297473b3e5127feea3b52b
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re12.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re14
+    class: human
+    file: holdout/h-re14.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/rc52sr/hice_un_sistema_para_poder_tener_listados_de/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Nebulafactory (cuenta pública de Reddit)
+    date: 2021-12-09
+    human_evidence: Publicación pública de Reddit en r/es del 2021-12-09, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 200
+    sha256: 108519e244544d55363b5c7e030b0d765e0e2301ef6575ec0e8e516bc9d5b8f6
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re14.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re16
+    class: human
+    file: holdout/h-re16.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/pttojq/saturado_de_tanta_publicidad/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Toba_JB (cuenta pública de Reddit)
+    date: 2021-09-23
+    human_evidence: Publicación pública de Reddit en r/es del 2021-09-23, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 353
+    sha256: 31d45a791787dcc02d38e0f1e8caf0159241dd547f4bc7d1d2159b82d7e5dd55
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re16.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re18
+    class: human
+    file: holdout/h-re18.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/pfpw28/cómo_puedo_denunciar_a_mi_empresa_anónimamente/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/mrs-latte (cuenta pública de Reddit)
+    date: 2021-09-01
+    human_evidence: Publicación pública de Reddit en r/es del 2021-09-01, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 198
+    sha256: dff00c8929199569dd6672c7e845ff4e22fcef1d537ace7234669115a85e3128
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re18.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re20
+    class: human
+    file: holdout/h-re20.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/o45t1z/duda_de_una_estudiante_que_no_sabe_que_escoger/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/East_Departure_3288 (cuenta pública de Reddit)
+    date: 2021-06-20
+    human_evidence: Publicación pública de Reddit en r/es del 2021-06-20, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 154
+    sha256: 6246fe60c0ad5ab320a3df7eb7b728939c8d5a211a08b41084ea6690194cfc3c
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re20.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re22
+    class: human
+    file: holdout/h-re22.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/nmbng3/los_bancos_cobran_a_las_cuentas_de_los/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Subidon20 (cuenta pública de Reddit)
+    date: 2021-05-27
+    human_evidence: Publicación pública de Reddit en r/es del 2021-05-27, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 254
+    sha256: 7e341944f94134c5f9c1ef01d96c64fc499e997663a462a4e84a0d7960822b21
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re22.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re24
+    class: human
+    file: holdout/h-re24.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/ndmzwu/la_relacion_entre_lengua_materna_y_memoria/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/sahnti (cuenta pública de Reddit)
+    date: 2021-05-16
+    human_evidence: Publicación pública de Reddit en r/es del 2021-05-16, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 180
+    sha256: 970a342e17777b98e00a404fcbc86f738527f8020c67ef275994f3827ebb78e7
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re24.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re26
+    class: human
+    file: holdout/h-re26.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n0832j/impuestos_y_renta_de_una_segunda_propiedad_donde/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/kram08980 (cuenta pública de Reddit)
+    date: 2021-04-28
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-28, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 178
+    sha256: 962fe68da826e9ab343c4bbe3ec54fd03468eed88df99726e84a60f4b7df76ee
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re26.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re28
+    class: human
+    file: holdout/h-re28.md
+    register: redes
+    level: H2
+    source: reddit:r/askspain
+    source_url: https://www.reddit.com/r/askspain/comments/rowawc/renfe_y_la_tarjeta_joven/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/isc30 (cuenta pública de Reddit)
+    date: 2021-12-26
+    human_evidence: Publicación pública de Reddit en r/askspain del 2021-12-26, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 168
+    sha256: 527a7d41d2e4a0f1d15bd9cab8306807ad5a0ac98a045ea8eadda67631c891a1
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re28.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: h-re30
+    class: human
+    file: holdout/h-re30.md
+    register: redes
+    level: H2
+    source: reddit:r/askspain
+    source_url: https://www.reddit.com/r/askspain/comments/rmaz4f/no_sé_qué_hacer_con_mi_vida/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Takemakuka (cuenta pública de Reddit)
+    date: 2021-12-22
+    human_evidence: Publicación pública de Reddit en r/askspain del 2021-12-22, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 226
+    sha256: c0b79ed129b659c5c3dec4f2badf4894f888adcc818bc0d03f867dc23b6fc1e3
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/holdout/h-re30.md
+    reuse_note: "Reutilizado de holdout v1.2, que ya se ejecutó: la parte humana de holdout v1.3 no es independiente; solo la clase IA es nueva."
+  - id: ai-c16
+    class: ai
+    file: holdout/ai-c16.md
+    register: correo
+    theme: trabajo
+    prompt_id: c16
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L04
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 169
+    sha256: bd01dff3e756863090dfe0dc293d51e810b042b8e2b81ab49903b7f14b25662c
+  - id: ai-c17
+    class: ai
+    file: holdout/ai-c17.md
+    register: correo
+    theme: trabajo
+    prompt_id: c17
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L04
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 180
+    sha256: daed75321b7d15bd3ac0ccc9de1d66a5f4ccbb584a091170737ceaec69461885
+  - id: ai-c18
+    class: ai
+    file: holdout/ai-c18.md
+    register: correo
+    theme: tramites
+    prompt_id: c18
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L04
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 184
+    sha256: d593759bb084053ca1f00df3db302485c52cd5d2aa74f8caf42d3cfa80857435
+  - id: ai-c19
+    class: ai
+    file: holdout/ai-c19.md
+    register: correo
+    theme: tramites
+    prompt_id: c19
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L04
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 193
+    sha256: bb00aa9e1bc8ca393aa2768a40460616e21c3c12e4666841668aaa70ab6b8c32
+  - id: ai-c20
+    class: ai
+    file: holdout/ai-c20.md
+    register: correo
+    theme: personal
+    prompt_id: c20
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L04
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 196
+    sha256: e4283a036859de7107e1fe270ea3cfdea1d7976596ac133ee6ecd2d008f7ce36
+  - id: ai-c21
+    class: ai
+    file: holdout/ai-c21.md
+    register: correo
+    theme: trabajo
+    prompt_id: c21
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L05
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 216
+    sha256: 56d2d10f6a2c305935d4167ff32720f689c17329377a0ff1ae87ddb08f8d53dc
+  - id: ai-c22
+    class: ai
+    file: holdout/ai-c22.md
+    register: correo
+    theme: trabajo
+    prompt_id: c22
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L05
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: 87b8838570250c03a13e81132341146f00b0d0bf9c58374c6387a011b112c427
+  - id: ai-c23
+    class: ai
+    file: holdout/ai-c23.md
+    register: correo
+    theme: tramites
+    prompt_id: c23
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L05
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: ebfabf882f041e2a996ce043e1b68b7cb442adb8a8ede222b962422b2bf70c0a
+  - id: ai-c24
+    class: ai
+    file: holdout/ai-c24.md
+    register: correo
+    theme: tramites
+    prompt_id: c24
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L05
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 194
+    sha256: 11772d1a89bcb1fce3f0488ec5cf9f0ab814d06c38ef114c1edb24733ff72153
+  - id: ai-c25
+    class: ai
+    file: holdout/ai-c25.md
+    register: correo
+    theme: personal
+    prompt_id: c25
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L05
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: d19f17c2d278630e693a93839a0c883b48273875cce1d6088d158c79a8b7cdb3
+  - id: ai-c26
+    class: ai
+    file: holdout/ai-c26.md
+    register: correo
+    theme: trabajo
+    prompt_id: c26
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L06
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 190
+    sha256: 1d85c85c77deeeb4996847e952d085aacbfde4e67130afb99be4fd9855576aad
+  - id: ai-c27
+    class: ai
+    file: holdout/ai-c27.md
+    register: correo
+    theme: trabajo
+    prompt_id: c27
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L06
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 191
+    sha256: a39e91c73a16b7aaab7f8eca921ba41040829eab07bc00063ac399810d32e1db
+  - id: ai-c28
+    class: ai
+    file: holdout/ai-c28.md
+    register: correo
+    theme: tramites
+    prompt_id: c28
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L06
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 202
+    sha256: 5e8c1723b25c537d227b6145e5718167699192bd31c269d7e5aea4738e24e4e6
+  - id: ai-c29
+    class: ai
+    file: holdout/ai-c29.md
+    register: correo
+    theme: tramites
+    prompt_id: c29
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L06
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 206
+    sha256: ae83f5294c76e70f72aeca9a2f117ab90039e31d0e9bc4f4f9d0ccb3c3deb80c
+  - id: ai-c30
+    class: ai
+    file: holdout/ai-c30.md
+    register: correo
+    theme: personal
+    prompt_id: c30
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L06
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 185
+    sha256: d50b479830d28344863054f00aa81a863a67e002e216fdda6420256248e9d11f
+  - id: ai-r16
+    class: ai
+    file: holdout/ai-r16.md
+    register: readme
+    theme: herramienta
+    prompt_id: r16
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L10
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 281
+    sha256: 178c2d6e378381a1d2e7a65e7cad65f0754ddd34a3a12635a47d2c74772914a9
+  - id: ai-r17
+    class: ai
+    file: holdout/ai-r17.md
+    register: readme
+    theme: herramienta
+    prompt_id: r17
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L10
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 283
+    sha256: d5efc93df1ef5624f07bb215cbdd67f977ac749c5c4958a14bd0fe7c34cb330b
+  - id: ai-r18
+    class: ai
+    file: holdout/ai-r18.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r18
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L10
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 279
+    sha256: 723efe23d70c73c44ce9ac0e08fa29f9fc12c3164085858c31accb4800c73d73
+  - id: ai-r19
+    class: ai
+    file: holdout/ai-r19.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r19
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L10
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 293
+    sha256: 06e61af7dafd60ec817feb91597f8bfa4c775807654eb8b125b6a22da9c38e66
+  - id: ai-r20
+    class: ai
+    file: holdout/ai-r20.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r20
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L10
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 319
+    sha256: 524389c3d634611d4fa09017831db196a959664ff15d6b7d82133c9f395d66c9
+  - id: ai-r21
+    class: ai
+    file: holdout/ai-r21.md
+    register: readme
+    theme: herramienta
+    prompt_id: r21
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L11
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 278
+    sha256: d381114a56d9dcedaaddd5746a2a54ac219f909d978c25843de5726ba2d7f025
+  - id: ai-r22
+    class: ai
+    file: holdout/ai-r22.md
+    register: readme
+    theme: herramienta
+    prompt_id: r22
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L11
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 258
+    sha256: fa11628dfe47fb0c54a2f29f71e7e5356ed6697b557e68591496a5d881f20ffd
+  - id: ai-r23
+    class: ai
+    file: holdout/ai-r23.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r23
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L11
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 285
+    sha256: b6d628e63ffe5315242680f4a006e7960ed1d08d8548cc3a2a7da02abc78aadc
+  - id: ai-r24
+    class: ai
+    file: holdout/ai-r24.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r24
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L11
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 247
+    sha256: 4161d57c159846d6500fc4ed06b4542137f2e67c66712a92e55760ad5453764d
+  - id: ai-r25
+    class: ai
+    file: holdout/ai-r25.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r25
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L11
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 306
+    sha256: 079754d938646804cd9faf91200a7f8ac0f4a7b45074fd3961988c17640a3fca
+  - id: ai-r26
+    class: ai
+    file: holdout/ai-r26.md
+    register: readme
+    theme: herramienta
+    prompt_id: r26
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L12
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 269
+    sha256: 6247423a8ec16fecc0c58778fc9cc99afdaf4bb166c453bee6a8b075de6cbdde
+  - id: ai-r27
+    class: ai
+    file: holdout/ai-r27.md
+    register: readme
+    theme: herramienta
+    prompt_id: r27
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L12
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 277
+    sha256: 3f3786bf8d0039001bd00853088bd2e6edb444549bd14dd21581d8ef2a921e17
+  - id: ai-r28
+    class: ai
+    file: holdout/ai-r28.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r28
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L12
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 256
+    sha256: 9761bbf1b761ea63fab1c0a1d678b3b0dfe7f6828cd5f7f8a46798156a80fe9b
+  - id: ai-r29
+    class: ai
+    file: holdout/ai-r29.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r29
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L12
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 271
+    sha256: 5acd28e1b6eb677b18cbfbc3fc7711108a86f2368903808a454ae4e3adc8becb
+  - id: ai-r30
+    class: ai
+    file: holdout/ai-r30.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r30
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L12
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 293
+    sha256: e2271c03a65f2d0577563ebf45757956338bdb7bb8620ba1fe1be6f3e3801934
+  - id: ai-s16
+    class: ai
+    file: holdout/ai-s16.md
+    register: redes
+    theme: general
+    prompt_id: s16
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L16
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 197
+    sha256: 1500ab123d2d576b59a4df84b811c0a100788129c21e90796f0fbd347d61d6d7
+  - id: ai-s17
+    class: ai
+    file: holdout/ai-s17.md
+    register: redes
+    theme: general
+    prompt_id: s17
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L16
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: fbaceeb52a6e906a394a414eb1690a9c071779476b9fdf2819dff60b7658a2fb
+  - id: ai-s18
+    class: ai
+    file: holdout/ai-s18.md
+    register: redes
+    theme: cultura
+    prompt_id: s18
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L16
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 196
+    sha256: 56a968f899ad44bdb11c712eaf83c0e8b2adcb2688c7558837385fcd63ee8494
+  - id: ai-s19
+    class: ai
+    file: holdout/ai-s19.md
+    register: redes
+    theme: cultura
+    prompt_id: s19
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L16
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 207
+    sha256: a84d99b489df4b36b4873834d847197e8a410444978558b66a9c066d01a0c1fc
+  - id: ai-s20
+    class: ai
+    file: holdout/ai-s20.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s20
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L16
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 204
+    sha256: 4700b9debf1e90e72aba71e327a4072a5a04342e28421026882b1ce6205ad92e
+  - id: ai-s21
+    class: ai
+    file: holdout/ai-s21.md
+    register: redes
+    theme: general
+    prompt_id: s21
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L17
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 204
+    sha256: 9a4ab4c680b12e0dc4c9c2d4634b9ada429b7a272e3c36dac077f7ee6979fcea
+  - id: ai-s22
+    class: ai
+    file: holdout/ai-s22.md
+    register: redes
+    theme: general
+    prompt_id: s22
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L17
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 212
+    sha256: eabb1475c9c3ab455bd9e24c1274c7a0f054e8583bb91d0a4c2e111214d60f36
+  - id: ai-s23
+    class: ai
+    file: holdout/ai-s23.md
+    register: redes
+    theme: cultura
+    prompt_id: s23
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L17
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 211
+    sha256: 5360b7bf2be6b20f2e402a1a56862581337f0758ccd34a3f41959c9684b0a000
+  - id: ai-s24
+    class: ai
+    file: holdout/ai-s24.md
+    register: redes
+    theme: cultura
+    prompt_id: s24
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L17
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: a2316aacd8846e0f9be81925e0bbed01d29b7881f8d32dde32656c1ebf26d118
+  - id: ai-s25
+    class: ai
+    file: holdout/ai-s25.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s25
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L17
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: cd70a3fe3928c0f69b90acf966d3e43e797191ac4188b221fa2844892820cb26
+  - id: ai-s26
+    class: ai
+    file: holdout/ai-s26.md
+    register: redes
+    theme: general
+    prompt_id: s26
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L18
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 224
+    sha256: 0fd50b02ef55a4f8a176942ed8f076118cafc0ec59e73709f08cb0adfc1843b1
+  - id: ai-s27
+    class: ai
+    file: holdout/ai-s27.md
+    register: redes
+    theme: general
+    prompt_id: s27
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L18
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 206
+    sha256: d25add27f88cee123fed07106cc37adfaf636c184e2fb29223256789251472f8
+  - id: ai-s28
+    class: ai
+    file: holdout/ai-s28.md
+    register: redes
+    theme: cultura
+    prompt_id: s28
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L18
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 215
+    sha256: b5c010981313f0e87a8c5a29111020a80d369a2710c0102df1dee04ca70cdcb9
+  - id: ai-s29
+    class: ai
+    file: holdout/ai-s29.md
+    register: redes
+    theme: cultura
+    prompt_id: s29
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L18
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 209
+    sha256: 8cf8983d03ef2de86335ba8709215703ef27095d6834c3eacae3d662cbb41cf7
+  - id: ai-s30
+    class: ai
+    file: holdout/ai-s30.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s30
+    condition: base
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L18
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 229
+    sha256: 59df66e9f64e17cad81b251728eacb6daf4562543a22b9512e2a71455950d08e

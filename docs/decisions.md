@@ -116,3 +116,9 @@ salida final
 Motivo: el propietario quiere poder usar cualquier skill funcional y cualquier estilo de salida sin perder la humanización. Una capacidad que hay que elegir frente a otra está en la capa equivocada.
 Descartado: mantener la skill con una descripción más estrecha (seguiría compitiendo por las mismas tareas) y mantener el estilo de salida como vía principal.
 Consecuencia: B11 se rehace con esta arquitectura (ver `project/PLAN.md`). Se mantiene una sola IA operativa: el linter y los hooks no reescriben, solo le pasan hallazgos y orientación al asistente.
+
+## 2026-09-18 — D3: la clase IA del corpus v1.3 la genera GPT-5.6 Sol
+Decisión: los 180 textos IA del corpus v1.3 los genera el propietario a mano en ChatGPT con GPT-5.6 Sol (OpenAI): los mismos 90 temas, plantillas y particiones que v1.2, en condición base y guiada, en 36 lotes de 5, cada lote en una conversación temporal nueva. Se registran proveedor, modelo, interfaz, lote, fecha, ediciones y hash; no se guarda ninguna clave. La clase humana es la de v1.2, reutilizada.
+Motivo: quitar la circularidad de que la clase IA la genere la misma familia de modelos que escribe las reglas.
+Alcance: solo el corpus de evaluación. GPT-5.6 Sol no forma parte del producto ni es requisito para ejecutarlo.
+Consecuencia: el holdout v1.3 es independiente en la clase IA pero no en la humana, porque holdout v1.2 ya se ejecutó. Su composición se preregistra en `benchmark/configs/holdout-v1.3.lock` antes de generar y se congela al completarse. No se ejecuta hasta que haya una versión de reglas cerrada.

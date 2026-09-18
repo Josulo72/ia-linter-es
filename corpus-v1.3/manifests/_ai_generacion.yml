@@ -1,0 +1,903 @@
+# Generado por benchmark/scripts/generacion-v1.3.mjs importar. No editar a mano.
+schema_version: 1
+samples:
+  ai-c01:
+    lote: L01
+    generated: 2026-09-18
+    words: 175
+    edits: ninguna (solo finales de línea)
+  ai-c02:
+    lote: L01
+    generated: 2026-09-18
+    words: 194
+    edits: ninguna (solo finales de línea)
+  ai-c03:
+    lote: L01
+    generated: 2026-09-18
+    words: 190
+    edits: ninguna (solo finales de línea)
+  ai-c04:
+    lote: L01
+    generated: 2026-09-18
+    words: 205
+    edits: ninguna (solo finales de línea)
+  ai-c05:
+    lote: L01
+    generated: 2026-09-18
+    words: 200
+    edits: ninguna (solo finales de línea)
+  ai-c06:
+    lote: L02
+    generated: 2026-09-18
+    words: 176
+    edits: ninguna (solo finales de línea)
+  ai-c07:
+    lote: L02
+    generated: 2026-09-18
+    words: 194
+    edits: ninguna (solo finales de línea)
+  ai-c08:
+    lote: L02
+    generated: 2026-09-18
+    words: 191
+    edits: ninguna (solo finales de línea)
+  ai-c09:
+    lote: L02
+    generated: 2026-09-18
+    words: 183
+    edits: ninguna (solo finales de línea)
+  ai-c10:
+    lote: L02
+    generated: 2026-09-18
+    words: 195
+    edits: ninguna (solo finales de línea)
+  ai-c11:
+    lote: L03
+    generated: 2026-09-18
+    words: 180
+    edits: ninguna (solo finales de línea)
+  ai-c12:
+    lote: L03
+    generated: 2026-09-18
+    words: 166
+    edits: ninguna (solo finales de línea)
+  ai-c13:
+    lote: L03
+    generated: 2026-09-18
+    words: 182
+    edits: ninguna (solo finales de línea)
+  ai-c14:
+    lote: L03
+    generated: 2026-09-18
+    words: 175
+    edits: ninguna (solo finales de línea)
+  ai-c15:
+    lote: L03
+    generated: 2026-09-18
+    words: 181
+    edits: ninguna (solo finales de línea)
+  ai-c16:
+    lote: L04
+    generated: 2026-09-18
+    words: 169
+    edits: ninguna (solo finales de línea)
+  ai-c17:
+    lote: L04
+    generated: 2026-09-18
+    words: 180
+    edits: ninguna (solo finales de línea)
+  ai-c18:
+    lote: L04
+    generated: 2026-09-18
+    words: 184
+    edits: ninguna (solo finales de línea)
+  ai-c19:
+    lote: L04
+    generated: 2026-09-18
+    words: 193
+    edits: ninguna (solo finales de línea)
+  ai-c20:
+    lote: L04
+    generated: 2026-09-18
+    words: 196
+    edits: ninguna (solo finales de línea)
+  ai-c21:
+    lote: L05
+    generated: 2026-09-18
+    words: 216
+    edits: ninguna (solo finales de línea)
+  ai-c22:
+    lote: L05
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-c23:
+    lote: L05
+    generated: 2026-09-18
+    words: 205
+    edits: ninguna (solo finales de línea)
+  ai-c24:
+    lote: L05
+    generated: 2026-09-18
+    words: 194
+    edits: ninguna (solo finales de línea)
+  ai-c25:
+    lote: L05
+    generated: 2026-09-18
+    words: 205
+    edits: ninguna (solo finales de línea)
+  ai-c26:
+    lote: L06
+    generated: 2026-09-18
+    words: 190
+    edits: ninguna (solo finales de línea)
+  ai-c27:
+    lote: L06
+    generated: 2026-09-18
+    words: 191
+    edits: ninguna (solo finales de línea)
+  ai-c28:
+    lote: L06
+    generated: 2026-09-18
+    words: 202
+    edits: ninguna (solo finales de línea)
+  ai-c29:
+    lote: L06
+    generated: 2026-09-18
+    words: 206
+    edits: ninguna (solo finales de línea)
+  ai-c30:
+    lote: L06
+    generated: 2026-09-18
+    words: 185
+    edits: ninguna (solo finales de línea)
+  ai-g-c01:
+    lote: L19
+    generated: 2026-09-18
+    words: 139
+    edits: ninguna (solo finales de línea)
+  ai-g-c02:
+    lote: L19
+    generated: 2026-09-18
+    words: 159
+    edits: ninguna (solo finales de línea)
+  ai-g-c03:
+    lote: L19
+    generated: 2026-09-18
+    words: 157
+    edits: ninguna (solo finales de línea)
+  ai-g-c04:
+    lote: L19
+    generated: 2026-09-18
+    words: 174
+    edits: ninguna (solo finales de línea)
+  ai-g-c05:
+    lote: L19
+    generated: 2026-09-18
+    words: 167
+    edits: ninguna (solo finales de línea)
+  ai-g-c06:
+    lote: L20
+    generated: 2026-09-18
+    words: 169
+    edits: ninguna (solo finales de línea)
+  ai-g-c07:
+    lote: L20
+    generated: 2026-09-18
+    words: 195
+    edits: ninguna (solo finales de línea)
+  ai-g-c08:
+    lote: L20
+    generated: 2026-09-18
+    words: 199
+    edits: ninguna (solo finales de línea)
+  ai-g-c09:
+    lote: L20
+    generated: 2026-09-18
+    words: 184
+    edits: ninguna (solo finales de línea)
+  ai-g-c10:
+    lote: L20
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-g-c11:
+    lote: L21
+    generated: 2026-09-18
+    words: 193
+    edits: ninguna (solo finales de línea)
+  ai-g-c12:
+    lote: L21
+    generated: 2026-09-18
+    words: 189
+    edits: ninguna (solo finales de línea)
+  ai-g-c13:
+    lote: L21
+    generated: 2026-09-18
+    words: 202
+    edits: ninguna (solo finales de línea)
+  ai-g-c14:
+    lote: L21
+    generated: 2026-09-18
+    words: 189
+    edits: ninguna (solo finales de línea)
+  ai-g-c15:
+    lote: L21
+    generated: 2026-09-18
+    words: 208
+    edits: ninguna (solo finales de línea)
+  ai-g-c16:
+    lote: L22
+    generated: 2026-09-18
+    words: 154
+    edits: ninguna (solo finales de línea)
+  ai-g-c17:
+    lote: L22
+    generated: 2026-09-18
+    words: 186
+    edits: ninguna (solo finales de línea)
+  ai-g-c18:
+    lote: L22
+    generated: 2026-09-18
+    words: 178
+    edits: ninguna (solo finales de línea)
+  ai-g-c19:
+    lote: L22
+    generated: 2026-09-18
+    words: 173
+    edits: ninguna (solo finales de línea)
+  ai-g-c20:
+    lote: L22
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-g-c21:
+    lote: L23
+    generated: 2026-09-18
+    words: 197
+    edits: ninguna (solo finales de línea)
+  ai-g-c22:
+    lote: L23
+    generated: 2026-09-18
+    words: 188
+    edits: ninguna (solo finales de línea)
+  ai-g-c23:
+    lote: L23
+    generated: 2026-09-18
+    words: 188
+    edits: ninguna (solo finales de línea)
+  ai-g-c24:
+    lote: L23
+    generated: 2026-09-18
+    words: 172
+    edits: ninguna (solo finales de línea)
+  ai-g-c25:
+    lote: L23
+    generated: 2026-09-18
+    words: 190
+    edits: ninguna (solo finales de línea)
+  ai-g-c26:
+    lote: L24
+    generated: 2026-09-18
+    words: 169
+    edits: ninguna (solo finales de línea)
+  ai-g-c27:
+    lote: L24
+    generated: 2026-09-18
+    words: 177
+    edits: ninguna (solo finales de línea)
+  ai-g-c28:
+    lote: L24
+    generated: 2026-09-18
+    words: 164
+    edits: ninguna (solo finales de línea)
+  ai-g-c29:
+    lote: L24
+    generated: 2026-09-18
+    words: 159
+    edits: ninguna (solo finales de línea)
+  ai-g-c30:
+    lote: L24
+    generated: 2026-09-18
+    words: 150
+    edits: ninguna (solo finales de línea)
+  ai-g-r01:
+    lote: L25
+    generated: 2026-09-18
+    words: 294
+    edits: ninguna (solo finales de línea)
+  ai-g-r02:
+    lote: L25
+    generated: 2026-09-18
+    words: 265
+    edits: ninguna (solo finales de línea)
+  ai-g-r03:
+    lote: L25
+    generated: 2026-09-18
+    words: 317
+    edits: ninguna (solo finales de línea)
+  ai-g-r04:
+    lote: L25
+    generated: 2026-09-18
+    words: 272
+    edits: ninguna (solo finales de línea)
+  ai-g-r05:
+    lote: L25
+    generated: 2026-09-18
+    words: 338
+    edits: ninguna (solo finales de línea)
+  ai-g-r06:
+    lote: L26
+    generated: 2026-09-18
+    words: 268
+    edits: ninguna (solo finales de línea)
+  ai-g-r07:
+    lote: L26
+    generated: 2026-09-18
+    words: 263
+    edits: ninguna (solo finales de línea)
+  ai-g-r08:
+    lote: L26
+    generated: 2026-09-18
+    words: 240
+    edits: ninguna (solo finales de línea)
+  ai-g-r09:
+    lote: L26
+    generated: 2026-09-18
+    words: 265
+    edits: ninguna (solo finales de línea)
+  ai-g-r10:
+    lote: L26
+    generated: 2026-09-18
+    words: 304
+    edits: ninguna (solo finales de línea)
+  ai-g-r11:
+    lote: L27
+    generated: 2026-09-18
+    words: 256
+    edits: ninguna (solo finales de línea)
+  ai-g-r12:
+    lote: L27
+    generated: 2026-09-18
+    words: 239
+    edits: ninguna (solo finales de línea)
+  ai-g-r13:
+    lote: L27
+    generated: 2026-09-18
+    words: 263
+    edits: ninguna (solo finales de línea)
+  ai-g-r14:
+    lote: L27
+    generated: 2026-09-18
+    words: 261
+    edits: ninguna (solo finales de línea)
+  ai-g-r15:
+    lote: L27
+    generated: 2026-09-18
+    words: 279
+    edits: ninguna (solo finales de línea)
+  ai-g-r16:
+    lote: L28
+    generated: 2026-09-18
+    words: 253
+    edits: ninguna (solo finales de línea)
+  ai-g-r17:
+    lote: L28
+    generated: 2026-09-18
+    words: 251
+    edits: ninguna (solo finales de línea)
+  ai-g-r18:
+    lote: L28
+    generated: 2026-09-18
+    words: 250
+    edits: ninguna (solo finales de línea)
+  ai-g-r19:
+    lote: L28
+    generated: 2026-09-18
+    words: 260
+    edits: ninguna (solo finales de línea)
+  ai-g-r20:
+    lote: L28
+    generated: 2026-09-18
+    words: 286
+    edits: ninguna (solo finales de línea)
+  ai-g-r21:
+    lote: L29
+    generated: 2026-09-18
+    words: 283
+    edits: ninguna (solo finales de línea)
+  ai-g-r22:
+    lote: L29
+    generated: 2026-09-18
+    words: 276
+    edits: ninguna (solo finales de línea)
+  ai-g-r23:
+    lote: L29
+    generated: 2026-09-18
+    words: 285
+    edits: ninguna (solo finales de línea)
+  ai-g-r24:
+    lote: L29
+    generated: 2026-09-18
+    words: 242
+    edits: ninguna (solo finales de línea)
+  ai-g-r25:
+    lote: L29
+    generated: 2026-09-18
+    words: 321
+    edits: ninguna (solo finales de línea)
+  ai-g-r26:
+    lote: L30
+    generated: 2026-09-18
+    words: 275
+    edits: ninguna (solo finales de línea)
+  ai-g-r27:
+    lote: L30
+    generated: 2026-09-18
+    words: 293
+    edits: ninguna (solo finales de línea)
+  ai-g-r28:
+    lote: L30
+    generated: 2026-09-18
+    words: 263
+    edits: ninguna (solo finales de línea)
+  ai-g-r29:
+    lote: L30
+    generated: 2026-09-18
+    words: 272
+    edits: ninguna (solo finales de línea)
+  ai-g-r30:
+    lote: L30
+    generated: 2026-09-18
+    words: 314
+    edits: ninguna (solo finales de línea)
+  ai-g-s01:
+    lote: L31
+    generated: 2026-09-18
+    words: 211
+    edits: ninguna (solo finales de línea)
+  ai-g-s02:
+    lote: L31
+    generated: 2026-09-18
+    words: 205
+    edits: ninguna (solo finales de línea)
+  ai-g-s03:
+    lote: L31
+    generated: 2026-09-18
+    words: 204
+    edits: ninguna (solo finales de línea)
+  ai-g-s04:
+    lote: L31
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-g-s05:
+    lote: L31
+    generated: 2026-09-18
+    words: 218
+    edits: ninguna (solo finales de línea)
+  ai-g-s06:
+    lote: L32
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-g-s07:
+    lote: L32
+    generated: 2026-09-18
+    words: 201
+    edits: ninguna (solo finales de línea)
+  ai-g-s08:
+    lote: L32
+    generated: 2026-09-18
+    words: 184
+    edits: ninguna (solo finales de línea)
+  ai-g-s09:
+    lote: L32
+    generated: 2026-09-18
+    words: 193
+    edits: ninguna (solo finales de línea)
+  ai-g-s10:
+    lote: L32
+    generated: 2026-09-18
+    words: 201
+    edits: ninguna (solo finales de línea)
+  ai-g-s11:
+    lote: L33
+    generated: 2026-09-18
+    words: 200
+    edits: ninguna (solo finales de línea)
+  ai-g-s12:
+    lote: L33
+    generated: 2026-09-18
+    words: 202
+    edits: ninguna (solo finales de línea)
+  ai-g-s13:
+    lote: L33
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-g-s14:
+    lote: L33
+    generated: 2026-09-18
+    words: 213
+    edits: ninguna (solo finales de línea)
+  ai-g-s15:
+    lote: L33
+    generated: 2026-09-18
+    words: 220
+    edits: ninguna (solo finales de línea)
+  ai-g-s16:
+    lote: L34
+    generated: 2026-09-18
+    words: 187
+    edits: ninguna (solo finales de línea)
+  ai-g-s17:
+    lote: L34
+    generated: 2026-09-18
+    words: 191
+    edits: ninguna (solo finales de línea)
+  ai-g-s18:
+    lote: L34
+    generated: 2026-09-18
+    words: 173
+    edits: ninguna (solo finales de línea)
+  ai-g-s19:
+    lote: L34
+    generated: 2026-09-18
+    words: 194
+    edits: ninguna (solo finales de línea)
+  ai-g-s20:
+    lote: L34
+    generated: 2026-09-18
+    words: 201
+    edits: ninguna (solo finales de línea)
+  ai-g-s21:
+    lote: L35
+    generated: 2026-09-18
+    words: 188
+    edits: ninguna (solo finales de línea)
+  ai-g-s22:
+    lote: L35
+    generated: 2026-09-18
+    words: 189
+    edits: ninguna (solo finales de línea)
+  ai-g-s23:
+    lote: L35
+    generated: 2026-09-18
+    words: 177
+    edits: ninguna (solo finales de línea)
+  ai-g-s24:
+    lote: L35
+    generated: 2026-09-18
+    words: 184
+    edits: ninguna (solo finales de línea)
+  ai-g-s25:
+    lote: L35
+    generated: 2026-09-18
+    words: 193
+    edits: ninguna (solo finales de línea)
+  ai-g-s26:
+    lote: L36
+    generated: 2026-09-18
+    words: 220
+    edits: ninguna (solo finales de línea)
+  ai-g-s27:
+    lote: L36
+    generated: 2026-09-18
+    words: 212
+    edits: ninguna (solo finales de línea)
+  ai-g-s28:
+    lote: L36
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-g-s29:
+    lote: L36
+    generated: 2026-09-18
+    words: 227
+    edits: ninguna (solo finales de línea)
+  ai-g-s30:
+    lote: L36
+    generated: 2026-09-18
+    words: 231
+    edits: ninguna (solo finales de línea)
+  ai-r01:
+    lote: L07
+    generated: 2026-09-18
+    words: 294
+    edits: ninguna (solo finales de línea)
+  ai-r02:
+    lote: L07
+    generated: 2026-09-18
+    words: 271
+    edits: ninguna (solo finales de línea)
+  ai-r03:
+    lote: L07
+    generated: 2026-09-18
+    words: 271
+    edits: ninguna (solo finales de línea)
+  ai-r04:
+    lote: L07
+    generated: 2026-09-18
+    words: 286
+    edits: ninguna (solo finales de línea)
+  ai-r05:
+    lote: L07
+    generated: 2026-09-18
+    words: 337
+    edits: ninguna (solo finales de línea)
+  ai-r06:
+    lote: L08
+    generated: 2026-09-18
+    words: 288
+    edits: ninguna (solo finales de línea)
+  ai-r07:
+    lote: L08
+    generated: 2026-09-18
+    words: 275
+    edits: ninguna (solo finales de línea)
+  ai-r08:
+    lote: L08
+    generated: 2026-09-18
+    words: 254
+    edits: ninguna (solo finales de línea)
+  ai-r09:
+    lote: L08
+    generated: 2026-09-18
+    words: 274
+    edits: ninguna (solo finales de línea)
+  ai-r10:
+    lote: L08
+    generated: 2026-09-18
+    words: 309
+    edits: ninguna (solo finales de línea)
+  ai-r11:
+    lote: L09
+    generated: 2026-09-18
+    words: 283
+    edits: ninguna (solo finales de línea)
+  ai-r12:
+    lote: L09
+    generated: 2026-09-18
+    words: 297
+    edits: ninguna (solo finales de línea)
+  ai-r13:
+    lote: L09
+    generated: 2026-09-18
+    words: 266
+    edits: ninguna (solo finales de línea)
+  ai-r14:
+    lote: L09
+    generated: 2026-09-18
+    words: 268
+    edits: ninguna (solo finales de línea)
+  ai-r15:
+    lote: L09
+    generated: 2026-09-18
+    words: 297
+    edits: ninguna (solo finales de línea)
+  ai-r16:
+    lote: L10
+    generated: 2026-09-18
+    words: 281
+    edits: ninguna (solo finales de línea)
+  ai-r17:
+    lote: L10
+    generated: 2026-09-18
+    words: 283
+    edits: ninguna (solo finales de línea)
+  ai-r18:
+    lote: L10
+    generated: 2026-09-18
+    words: 279
+    edits: ninguna (solo finales de línea)
+  ai-r19:
+    lote: L10
+    generated: 2026-09-18
+    words: 293
+    edits: ninguna (solo finales de línea)
+  ai-r20:
+    lote: L10
+    generated: 2026-09-18
+    words: 319
+    edits: ninguna (solo finales de línea)
+  ai-r21:
+    lote: L11
+    generated: 2026-09-18
+    words: 278
+    edits: ninguna (solo finales de línea)
+  ai-r22:
+    lote: L11
+    generated: 2026-09-18
+    words: 258
+    edits: ninguna (solo finales de línea)
+  ai-r23:
+    lote: L11
+    generated: 2026-09-18
+    words: 285
+    edits: ninguna (solo finales de línea)
+  ai-r24:
+    lote: L11
+    generated: 2026-09-18
+    words: 247
+    edits: ninguna (solo finales de línea)
+  ai-r25:
+    lote: L11
+    generated: 2026-09-18
+    words: 306
+    edits: ninguna (solo finales de línea)
+  ai-r26:
+    lote: L12
+    generated: 2026-09-18
+    words: 269
+    edits: ninguna (solo finales de línea)
+  ai-r27:
+    lote: L12
+    generated: 2026-09-18
+    words: 277
+    edits: ninguna (solo finales de línea)
+  ai-r28:
+    lote: L12
+    generated: 2026-09-18
+    words: 256
+    edits: ninguna (solo finales de línea)
+  ai-r29:
+    lote: L12
+    generated: 2026-09-18
+    words: 271
+    edits: ninguna (solo finales de línea)
+  ai-r30:
+    lote: L12
+    generated: 2026-09-18
+    words: 293
+    edits: ninguna (solo finales de línea)
+  ai-s01:
+    lote: L13
+    generated: 2026-09-18
+    words: 211
+    edits: ninguna (solo finales de línea)
+  ai-s02:
+    lote: L13
+    generated: 2026-09-18
+    words: 204
+    edits: ninguna (solo finales de línea)
+  ai-s03:
+    lote: L13
+    generated: 2026-09-18
+    words: 222
+    edits: ninguna (solo finales de línea)
+  ai-s04:
+    lote: L13
+    generated: 2026-09-18
+    words: 217
+    edits: ninguna (solo finales de línea)
+  ai-s05:
+    lote: L13
+    generated: 2026-09-18
+    words: 219
+    edits: ninguna (solo finales de línea)
+  ai-s06:
+    lote: L14
+    generated: 2026-09-18
+    words: 184
+    edits: ninguna (solo finales de línea)
+  ai-s07:
+    lote: L14
+    generated: 2026-09-18
+    words: 207
+    edits: ninguna (solo finales de línea)
+  ai-s08:
+    lote: L14
+    generated: 2026-09-18
+    words: 193
+    edits: ninguna (solo finales de línea)
+  ai-s09:
+    lote: L14
+    generated: 2026-09-18
+    words: 204
+    edits: ninguna (solo finales de línea)
+  ai-s10:
+    lote: L14
+    generated: 2026-09-18
+    words: 204
+    edits: ninguna (solo finales de línea)
+  ai-s11:
+    lote: L15
+    generated: 2026-09-18
+    words: 202
+    edits: ninguna (solo finales de línea)
+  ai-s12:
+    lote: L15
+    generated: 2026-09-18
+    words: 205
+    edits: ninguna (solo finales de línea)
+  ai-s13:
+    lote: L15
+    generated: 2026-09-18
+    words: 203
+    edits: ninguna (solo finales de línea)
+  ai-s14:
+    lote: L15
+    generated: 2026-09-18
+    words: 214
+    edits: ninguna (solo finales de línea)
+  ai-s15:
+    lote: L15
+    generated: 2026-09-18
+    words: 206
+    edits: ninguna (solo finales de línea)
+  ai-s16:
+    lote: L16
+    generated: 2026-09-18
+    words: 197
+    edits: ninguna (solo finales de línea)
+  ai-s17:
+    lote: L16
+    generated: 2026-09-18
+    words: 198
+    edits: ninguna (solo finales de línea)
+  ai-s18:
+    lote: L16
+    generated: 2026-09-18
+    words: 196
+    edits: ninguna (solo finales de línea)
+  ai-s19:
+    lote: L16
+    generated: 2026-09-18
+    words: 207
+    edits: ninguna (solo finales de línea)
+  ai-s20:
+    lote: L16
+    generated: 2026-09-18
+    words: 204
+    edits: ninguna (solo finales de línea)
+  ai-s21:
+    lote: L17
+    generated: 2026-09-18
+    words: 204
+    edits: ninguna (solo finales de línea)
+  ai-s22:
+    lote: L17
+    generated: 2026-09-18
+    words: 212
+    edits: ninguna (solo finales de línea)
+  ai-s23:
+    lote: L17
+    generated: 2026-09-18
+    words: 211
+    edits: ninguna (solo finales de línea)
+  ai-s24:
+    lote: L17
+    generated: 2026-09-18
+    words: 205
+    edits: ninguna (solo finales de línea)
+  ai-s25:
+    lote: L17
+    generated: 2026-09-18
+    words: 205
+    edits: ninguna (solo finales de línea)
+  ai-s26:
+    lote: L18
+    generated: 2026-09-18
+    words: 224
+    edits: ninguna (solo finales de línea)
+  ai-s27:
+    lote: L18
+    generated: 2026-09-18
+    words: 206
+    edits: ninguna (solo finales de línea)
+  ai-s28:
+    lote: L18
+    generated: 2026-09-18
+    words: 215
+    edits: ninguna (solo finales de línea)
+  ai-s29:
+    lote: L18
+    generated: 2026-09-18
+    words: 209
+    edits: ninguna (solo finales de línea)
+  ai-s30:
+    lote: L18
+    generated: 2026-09-18
+    words: 229
+    edits: ninguna (solo finales de línea)

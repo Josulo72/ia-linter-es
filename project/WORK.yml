@@ -215,7 +215,12 @@ blocks:
     tests:
       - corpus-check con v1.3; solo se ejecuta development
     acceptance: la generación la hace el propietario; ninguna clave en el repositorio.
-    status: pending
+    status: done
+    notes: >-
+      D3: GPT-5.6 Sol (OpenAI) en ChatGPT. 180 textos: L01 a L05 a mano por el propietario, L06 a L11 por Claude Code
+      en su Chrome con su permiso, L12 a L36 por Claude en Chrome; el zip plantilla anterior se rechazó. Holdout
+      congelado con la composición del preregistro y sin ejecutar. Development v1.3: correo 0/0 (0,533), readme
+      7,5/0 (0,455), redes 8/20 (0,70). ai-g-c01 (challenge) con 139 palabras, conservado. Todos los gates en verde.
 
   - id: B13
     title: Cierre de la fase 2

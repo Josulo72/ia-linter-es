@@ -6,11 +6,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse as parseYaml } from "yaml";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CORPORA = [
+  // v1.3: clase IA de otro proveedor (D3) que se genera a mano. Mientras falten textos, quedan en `pendientes` del manifiesto
+  // y el holdout está preregistrado (composición fijada), no congelado. Se comprueba igual todo lo que ya hay.
+  { label: "v1.3", dir: path.join(root, "corpus-v1.3"), lock: "holdout-v1.3.lock", prompts: "prompts-v1.3.yml", cutoff: "2022-01-01", fetcher: "benchmark/scripts/fetch-registros.mjs (v1.2) y build-manifests-v1.3.mjs", preregistro: true },
   { label: "v1.2", dir: path.join(root, "corpus-v1.2"), lock: "holdout-v1.2.lock", prompts: "prompts-v1.2.yml", cutoff: "2022-01-01", fetcher: "benchmark/scripts/fetch-registros.mjs" },
   { label: "v1.1", dir: path.join(root, "corpus"), lock: "holdout-v1.1.lock", prompts: "prompts-v1.1.yml", fetcher: "benchmark/scripts/fetch-foros.mjs" },
   { label: "v1.0 (archivo)", dir: path.join(root, "corpus", "archive", "v1.0"), lock: "holdout-v1.0.lock", prompts: "prompts.yml", fetcher: "benchmark/scripts/fetch-human.mjs" },
@@ -75,16 +78,28 @@ for (const part of ["development", "holdout", "challenge"]) {
     } else if (s.class === "ai") {
       const p = promptIds.get(s.prompt_id);
       if (!p) fail(`${where}: prompt_id sin registrar`);
-      else if (p.model !== s.model || p.partition !== (s.origin_partition ?? part)) fail(`${where}: no coincide con ${C.prompts}`);
+      else if ((p.model ?? prompts.model) !== s.model || p.partition !== (s.origin_partition ?? part)) fail(`${where}: no coincide con ${C.prompts}`);
       if (s.condition === "guiada" && part !== "challenge") fail(`${where}: la condición guiada solo va en challenge`);
       for (const k of ["provider", "model", "generated", "edits", "register"]) if (!s[k]) fail(`${where}: falta ${k}`);
     } else fail(`${where}: clase ${s.class}`);
   }
-  for (const f of fs.readdirSync(path.join(corpus, part))) if (!listed.has(`${part}/${f}`)) fail(`${part}/${f}: archivo sin entrada en el manifiesto`);
+  // Textos IA aún sin generar: tienen que tener su encargo registrado y no puede haber un archivo suyo sin entrada.
+  const pendientes = m.pendientes ?? [];
+  if (pendientes.length && !C.preregistro) fail(`${part}.yml tiene textos pendientes, y en ${C.label} no se admiten`);
+  for (const s of pendientes) {
+    const where = `${part}/${s.id} (pendiente)`;
+    if (seen.has(s.id)) fail(`${where}: id repetido en ${seen.get(s.id)}`);
+    seen.set(s.id, part);
+    if (s.class !== "ai" || !promptIds.has(s.prompt_id)) fail(`${where}: sin encargo registrado en ${C.prompts}`);
+    if (fs.existsSync(path.join(corpus, s.file ?? ""))) fail(`${where}: ya existe ${s.file}; hay que importarlo y reconstruir los manifiestos`);
+  }
+  // Una partición vacía no existe en git (en CI, sin los textos locales): no hay nada que listar.
+  const dirPart = path.join(corpus, part);
+  if (fs.existsSync(dirPart)) for (const f of fs.readdirSync(dirPart)) if (!listed.has(`${part}/${f}`)) fail(`${part}/${f}: archivo sin entrada en el manifiesto`);
   const sinDescargar = m.samples.filter((s) => s.storage === "local" && !fs.existsSync(path.join(corpus, s.file ?? ""))).length;
   if (failures.length === before) {
     const comprobadas = m.samples.length - sinDescargar;
-    ok(`${part}: ${comprobadas} de ${m.samples.length} muestras con licencia, trazabilidad y hash correctos` + (sinDescargar ? ` (${sinDescargar} no redistribuibles, sin descargar aquí)` : ""));
+    ok(`${part}: ${comprobadas} de ${m.samples.length} muestras con licencia, trazabilidad y hash correctos` + (sinDescargar ? ` (${sinDescargar} no redistribuibles, sin descargar aquí)` : "") + (pendientes.length ? `; ${pendientes.length} textos IA pendientes de generar` : ""));
   }
 }
 
@@ -93,8 +108,22 @@ const lockFile = path.join(root, "benchmark", "configs", C.lock);
 if (!fs.existsSync(lockFile)) fail(`falta benchmark/configs/${C.lock}`);
 else {
   const lock = parseYaml(fs.readFileSync(lockFile, "utf8"));
-  const h = createHash("sha256").update(fs.readFileSync(path.join(corpus, "manifests", "holdout.yml"), "utf8")).digest("hex");
-  if (h !== lock.manifest_sha256) fail(`holdout.yml no coincide con ${C.lock}`);
+  const raw = fs.readFileSync(path.join(corpus, "manifests", "holdout.yml"), "utf8");
+  const h = createHash("sha256").update(raw).digest("hex");
+  if (C.preregistro) {
+    // Primero la composición (qué muestras y qué encargos), que no puede cambiar desde el preregistro; luego, si ya está
+    // congelado, el manifiesto entero.
+    const { composicionHoldout } = await import(pathToFileURL(path.join(root, "benchmark", "scripts", "corpus-v1.3-comun.mjs")).href);
+    const manifest = parseYaml(raw);
+    const pendientes = (manifest.pendientes ?? []).length;
+    if (composicionHoldout(manifest, prompts) !== lock.composicion_sha256) fail(`la composición del holdout no coincide con el preregistro de ${C.lock}`);
+    else if (lock.estado === "congelado") {
+      if (pendientes) fail(`${C.lock} está congelado pero holdout.yml tiene ${pendientes} textos pendientes`);
+      else if (h !== lock.manifest_sha256) fail(`holdout.yml no coincide con ${C.lock}`);
+      else ok(`holdout congelado el ${lock.congelado} (preregistrado el ${lock.preregistrado}); sin ejecutar`);
+    } else if (lock.estado === "preregistro") ok(`holdout preregistrado el ${lock.preregistrado}: composición fijada, ${pendientes} textos IA pendientes de generar`);
+    else fail(`${C.lock}: estado desconocido ${lock.estado}`);
+  } else if (h !== lock.manifest_sha256) fail(`holdout.yml no coincide con ${C.lock}`);
   else ok(`holdout congelado el ${lock.frozen}`);
 }
 }
