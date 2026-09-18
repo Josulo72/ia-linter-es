@@ -43,3 +43,8 @@ Consecuencia: nace `estructura/ritmo-metronomo` y las dos reglas de ritmo se act
 ## 2026-09-17 — Cuatro perfiles nuevos por situación
 Decisión: se añaden los perfiles `chat`, `correo`, `readme` y `redes` a los cuatro existentes. Las reglas de tipografía (`formato/raya`, `formato/comillas-angulares`) están desactivadas por defecto y solo se activan en estos perfiles.
 Motivo: la raya pegada es correcta en prosa editada y anómala en un mensaje o un README. El perfil es el lugar donde vive «cada cosa en su momento».
+
+## 2026-09-18 — Tres reglas stable bajan a candidate por no disparar nunca
+Decisión: `densidad/conectores`, `lexico/desde-hasta-pasando` y `lexico/metaforas-comodin` pasan de `stable` a `candidate`. No cambia su nivel por defecto ni su perfil: sigue viéndose lo mismo al ejecutar el linter, pero dejan de contar como producto estable y salen del gate de falsos positivos.
+Motivo: no disparan en ningún texto del corpus v1.0, ni del v1.1, ni del v1.2 (90 textos por partición en correo, readme y redes). El gate de FP/1000 las aprobaba por vacío. Auditoría: `benchmark/scripts/auditoria-banco-v1.2.mjs`.
+Consecuencia: quedan 25 reglas `stable`, por encima del mínimo de 24 de `quality-policy.yml`. Las otras tres que la auditoría de v1.1 señalaba sí aparecen ya en v1.2: `densidad/intensificadores` (1 texto IA en correo y 1 en redes), `lexico/ya-sea-enumeracion` (1 texto IA en readme) y `densidad/verbos-comodin`, que solo dispara en un README humano; se queda `stable` por el criterio, no porque la evidencia convenza.

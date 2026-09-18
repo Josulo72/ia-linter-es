@@ -1,7 +1,7 @@
 schema_version: 1
 id: lexico/desde-hasta-pasando
 revision: 1
-status: stable
+status: candidate
 title: Enumeración «desde… hasta…, pasando por»
 summary: Estructura de abanico «desde X hasta Y, pasando por Z» usada para sugerir amplitud sin concretar.
 category: lexico

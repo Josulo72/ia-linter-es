@@ -39,7 +39,7 @@ for (const [parte, samples] of Object.entries(partes)) {
     const p = path.join(corpus, s.file);
     if (!fs.existsSync(p)) { faltan++; continue; }
     textos++;
-    const r = api.lintText(fs.readFileSync(p, "utf8"), { profile: "chat", format: "markdown" });
+    const r = api.lintText(fs.readFileSync(p, "utf8"), { config: { profile: "chat" }, format: "markdown" });
     for (const f of r.findings) if (!f.suppressed) disparadas.add(f.rule);
     if (parte !== "holdout") continue;
     if (r.score.index === null) { cortos++; continue; }

@@ -1,7 +1,7 @@
 schema_version: 1
 id: densidad/conectores
 revision: 1
-status: stable
+status: candidate
 title: Exceso de conectores discursivos
 summary: Densidad alta de «además», «asimismo», «por otro lado», «en este sentido», «cabe destacar» y similares.
 category: densidad

@@ -6,7 +6,7 @@ Rule Pack `ia-linter-es/oficial` v1.0.0. 38 reglas compiladas.
 |---|---|---|---|---|---|
 | `densidad/adjetivos-grandilocuentes` | stable | densidad | density | warning | 2 (cap 3) |
 | `densidad/adverbios-mente` | stable | densidad | density | warning | 1.5 (cap 3) |
-| `densidad/conectores` | stable | densidad | density | warning | 2 (cap 3) |
+| `densidad/conectores` | candidate | densidad | density | warning | 2 (cap 3) |
 | `densidad/emojis` | stable | densidad | density | info | 1 (cap 2) |
 | `densidad/exclamaciones` | stable | densidad | density | info | 1 (cap 2) |
 | `densidad/intensificadores` | stable | densidad | density | warning | 1.5 (cap 3) |
@@ -27,10 +27,10 @@ Rule Pack `ia-linter-es/oficial` v1.0.0. 38 reglas compiladas.
 | `formato/raya-espaciada` | stable | formato | density | warning | 2 (cap 3) |
 | `formato/sentencia-dos-puntos` | candidate | formato | regex | info | 1.5 (cap 3) |
 | `lexico/actualidad-generica` | stable | lexico | lexicon | warning | 1.5 (cap 3) |
-| `lexico/desde-hasta-pasando` | stable | lexico | regex | info | 1.5 (cap 2) |
+| `lexico/desde-hasta-pasando` | candidate | lexico | regex | info | 1.5 (cap 2) |
 | `lexico/es-importante-destacar` | stable | lexico | regex | warning | 2 (cap 3) |
 | `lexico/honestidad-anunciada` | candidate | lexico | lexicon | info | 1.5 (cap 2) |
-| `lexico/metaforas-comodin` | stable | lexico | lexicon | warning | 2 (cap 4) |
+| `lexico/metaforas-comodin` | candidate | lexico | lexicon | warning | 2 (cap 4) |
 | `lexico/muletillas-ia` | stable | lexico | lexicon | warning | 2 (cap 4) |
 | `lexico/ya-sea-enumeracion` | stable | lexico | sequence | info | 1 (cap 2) |
 | `repeticion/anafora` | stable | repeticion | repetition | warning | 2 (cap 3) |
