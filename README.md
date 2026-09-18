@@ -58,7 +58,7 @@ Lo que consigue está medido: quita del todo las rayas de inciso, las comillas a
 
 ## El linter
 
-38 reglas, 28 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `ia-linter-es rules explain <id>` te lo cuenta.
+38 reglas, 25 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `ia-linter-es rules explain <id>` te lo cuenta.
 
 Hay ocho perfiles, porque no se escribe igual un mensaje que un contrato:
 
@@ -115,16 +115,20 @@ Las tres llaman a la misma CLI y dan exactamente los mismos hallazgos.
 
 ## De dónde sale esto
 
-De un README que escribí con IA y que olía a IA aunque estuviera bien escrito. Las reglas no salen de una lista de manías: salen de comparar 36 mensajes de foros españoles reales con 96 textos generados sobre los mismos temas. La separación de medianas en el conjunto congelado es de 14,5 puntos.
+De un README que escribí con IA y que olía a IA aunque estuviera bien escrito. Las reglas no salen de una lista de manías: salen de comparar textos humanos reales con textos generados sobre los mismos temas.
 
-El informe entero, con lo que funciona y lo que no, está en `benchmark/reports/v1.1.md`. El primer intento salió mal y también está publicado, en `v1.0.md`.
+Hay dos bancos de pruebas. El primero, v1.1, son 36 mensajes de foros españoles contra 96 textos generados, y ahí la separación de medianas en el conjunto congelado es de 14,5 puntos. El segundo, v1.2, mide los otros tres registros que tiene la guía con 90 textos humanos y 180 generados, y el resultado es mucho peor: bien en redes, y al revés de lo esperado en correo y en README. Tienes las cifras justo debajo.
+
+Los informes enteros están en `benchmark/reports/v1.1.md` y `v1.2.md`, cada uno con su auditoría al lado. El primer intento de todos salió mal y también está publicado, en `v1.0.md`.
 
 ## Límites
 
 - La clase IA la generó el mismo modelo que ayudó a escribir las reglas. Es circular y no lo escondo: no vale como evaluación independiente.
 - Toda la separación viene de una sola regla, la del ritmo, y esa regla es `candidate`. Quitándola, la mediana de los textos generados baja a cero, igual que la de los humanos. Si un modelo aprende a variar la longitud de sus frases, el índice deja de separar.
-- El banco son 132 mensajes de foro y nada más. Los perfiles `correo`, `readme` y `redes` no tienen ni un caso medido, y 20 de las 28 reglas estables no disparan nunca ahí: seis no tienen evidencia de corpus en ninguna versión. Está todo en `benchmark/reports/auditoria-banco-v1.1.md`.
-- Los mensajes de foro que forman la clase humana no se redistribuyen. En el repositorio está el manifiesto con la URL y el hash; los textos se bajan en local.
+- En correo y en README el índice puntúa más alto a los textos humanos que a los generados. Medido en el banco v1.2: la separación es de −9 en correo y −2 en README, con exactitud equilibrada de 0,367 y 0,412, o sea peor que tirar una moneda. Solo en redes sale bien, +18. La causa está localizada: los correos de una lista técnica y los README escriben frases de longitud parecida porque el género lo pide, y la regla del ritmo los marca por eso. Con esos dos perfiles, hoy, el índice no te sirve para separar nada. Las cifras y el porqué, en `benchmark/reports/v1.2.md`.
+- Nueve de las 25 reglas estables no disparan en el corpus v1.2 y el gate de falsos positivos las aprueba por vacío. Otras tres bajaron a `candidate` por no disparar nunca en ninguna versión. Y `repeticion/inicio-parrafo`, que sigue estable, marca 4 README humanos y ningún generado: su tasa de falsos positivos ahí es de 2,019 por mil palabras, por encima del máximo de 1,5 que pide `quality-policy.yml`. Está sin resolver.
+- Ninguna regla tiene adjudicación de hallazgos en ninguna partición. Está medido cuántas veces salta cada regla, no cuántas acierta, así que la precisión por regla es `null` en las 38.
+- Los textos humanos no se redistribuyen. En el repositorio está el manifiesto con la URL, la fecha y el hash; los textos se bajan en local con el script de descarga.
 - Es español de España. En otras variedades marcará cosas que allí son normales.
 
 ## Documentación

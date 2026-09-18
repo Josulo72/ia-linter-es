@@ -67,6 +67,17 @@ Nueve, frente a las veinte que señalaba la auditoría de v1.1:
 
 Para estas, el gate de falsos positivos sigue aprobando por vacío.
 
+## Reglas `stable` que incumplen el umbral de falsos positivos
+
+Una: `repeticion/inicio-parrafo`, en el holdout de README, con 2,019 por mil palabras humanas frente
+al máximo de 1,5. Marca 4 textos humanos y ninguno generado, así que ahí no discrimina en absoluto.
+Ninguna otra `stable` supera el umbral en los seis informes.
+
+Esta pregunta no estaba en la lista heredada de la auditoría de v1.1, que era qué dispara, qué queda
+sin las reglas de ritmo y qué queda solo con las `stable`. El dato estaba calculado y publicado en el
+JSON desde la primera lectura; la consulta se añade aquí el 2026-09-18 y conviene repetirla en cada
+cierre de banco aunque la respuesta sea que ninguna.
+
 ## Lo que sigue sin resolverse
 
 La separación del índice sigue dependiendo entera de `estructura/ritmo-plano`, que es `candidate`.

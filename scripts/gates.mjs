@@ -97,17 +97,22 @@ if (only.includes("perf") && pack) {
 if (only.includes("index")) {
   console.log("Gate benchmark");
   const rep = path.join(root, "benchmark", "reports", "holdout-v1.1.json");
-  if (!fs.existsSync(rep)) fail("falta benchmark/reports/holdout-v1.0.json");
+  if (!fs.existsSync(rep)) fail(`falta ${path.relative(root, rep).replace(/\\/g, "/")}`);
   else {
     const r = JSON.parse(fs.readFileSync(rep, "utf8"));
     const gap = r.aggregate.index_median_ai - r.aggregate.index_median_human;
     if (gap < policy.index.min_median_gap) fail(`separación de medianas del índice: ${gap} < ${policy.index.min_median_gap}`);
     else ok(`separación de medianas del índice: ${gap} (mínimo ${policy.index.min_median_gap})`);
-    const badRules = Object.entries(r.per_rule).filter(([, v]) => v.status === "stable" && v.fp_per_1000_human_words > policy.rules.max_fp_per_1000_human_words);
+    // El informe está congelado a propósito: sus métricas no se tocan. El estado de cada regla, en
+    // cambio, es el de hoy, así que sale del rulepack compilado y no de la foto que guardó el informe.
+    // Si se mezclan, una regla degradada después sigue contando como stable en el gate.
+    const statusHoy = pack ? new Map(pack.rules.map((x) => [x.id, x.status])) : null;
+    const esStable = ([k, v]) => (statusHoy?.get(k) ?? v.status) === "stable";
+    const badRules = Object.entries(r.per_rule).filter((e) => esStable(e) && e[1].fp_per_1000_human_words > policy.rules.max_fp_per_1000_human_words);
     if (badRules.length) fail(`reglas stable con FP/1000 > ${policy.rules.max_fp_per_1000_human_words}: ${badRules.map(([k]) => k).join(", ")}`);
     else {
       // Una regla que no ha marcado nada tiene FP 0 por vacío, no por buena: se cuenta aparte.
-      const stables = Object.entries(r.per_rule).filter(([, v]) => v.status === "stable");
+      const stables = Object.entries(r.per_rule).filter(esStable);
       const conEvidencia = stables.filter(([, v]) => v.docs_human + v.docs_ai > 0).length;
       ok(`${conEvidencia} de ${stables.length} reglas stable disparan en este corpus, todas con FP/1000 <= ${policy.rules.max_fp_per_1000_human_words}`);
       if (conEvidencia < stables.length) {

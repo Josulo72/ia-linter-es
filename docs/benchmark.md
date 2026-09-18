@@ -1,10 +1,11 @@
 # Benchmark
 
-Hay dos corpus y dos informes, porque el producto cambió de objetivo a mitad del trabajo.
+Hay tres corpus y tres informes. El producto cambió de objetivo a mitad del trabajo y luego hubo que medir los registros que faltaban.
 
 | Versión | Qué mide | Resultado | Informe |
 |---|---|---|---|
-| v1.1 (actual) | Escritura cotidiana: mensajes de foro frente a mensajes generados | Separa. Holdout: medianas 0 y 14,5; exactitud equilibrada 0,75 | [`benchmark/reports/v1.1.md`](../benchmark/reports/v1.1.md) |
+| v1.2 (actual) | Correo, README y redes frente a textos generados de los mismos registros | Separa en redes (+18) y va al revés en correo (−9) y en README (−2) | [`benchmark/reports/v1.2.md`](../benchmark/reports/v1.2.md) |
+| v1.1 | Escritura cotidiana: mensajes de foro frente a mensajes generados | Separa. Holdout: medianas 0 y 14,5; exactitud equilibrada 0,75 | [`benchmark/reports/v1.1.md`](../benchmark/reports/v1.1.md) |
 | v1.0 (archivada) | Prosa formal: BOE, prensa científica y artículos académicos frente a textos generados | No separa. Holdout: medianas 7,5 y 10; exactitud equilibrada 0,535 | [`benchmark/reports/v1.0.md`](../benchmark/reports/v1.0.md) |
 
 El índice mide densidad de patrones editoriales. No es una probabilidad de autoría y no debe usarse como detector.
@@ -16,6 +17,28 @@ Las reglas de v1.0 buscaban los tics de 2023: «es importante destacar», metáf
 Lo que sí distingue en registro cotidiano es el ritmo. Una persona alterna una frase de treinta palabras con otra de cuatro; la máquina las escribe todas parecidas. Eso lo mide `estructura/ritmo-plano`, y de ahí sale toda la separación de v1.1: quitando esa regla y su contraria, la mediana de la clase IA baja a cero.
 
 La pieza principal del producto no es el linter sino la guía de estilo (`integrations/claude-code/output-styles/humano.md`), que se le da al modelo antes de escribir. El linter es el revisor que comprueba el resultado.
+
+## Corpus v1.2
+
+En `corpus-v1.2/`. Mide los tres registros que v1.1 dejaba sin tocar, uno por perfil.
+
+| Registro | Humanos | De dónde | Fechas | IA base | IA con la guía |
+|---|---|---|---|---|---|
+| correo | 30 | lista pública debian-user-spanish | 2020-07 a 2021-12 | 30 | 30 |
+| readme | 30 | READMEs de GitHub con licencia permisiva | 2011-12 a 2021-10 | 30 | 30 |
+| redes | 30 | fediverso (12) y Reddit (18) | 2020-08 a 2021-12 | 30 | 30 |
+
+Todo lo humano es anterior al 31/12/2021, que es el corte para que no se cuele texto generado, y la
+fecha sale del dato de origen. Nada de eso se redistribuye: en el repositorio van los manifiestos de
+`corpus-v1.2/manifests/` con URL, autor, fecha, licencia y hash, y los textos se bajan en local con
+`benchmark/scripts/fetch-registros.mjs`. Las particiones son development y holdout, mitad y mitad,
+más 90 textos de challenge escritos con la guía delante. Holdout congelado en
+`benchmark/configs/holdout-v1.2.lock`.
+
+El resultado en holdout, leído una sola vez con las reglas ya cerradas, es el de la tabla de arriba:
+el umbral está en 12 y solo redes cumple el mínimo de separación que pide la política. En correo y en
+README el signo está invertido. Está explicado en `benchmark/reports/v1.2.md` y auditado en
+`auditoria-banco-v1.2.md`.
 
 ## Corpus v1.1
 
@@ -40,6 +63,9 @@ En `corpus/archive/v1.0`, con sus manifiestos y su lock. 45 textos humanos de BO
 
 | Script | Función | Red |
 |---|---|---|
+| `benchmark/scripts/fetch-registros.mjs` | Descarga la clase humana de correo, README y redes (solo local). Con `--from-manifest` rehace los textos ya registrados y comprueba su hash | sí |
+| `benchmark/scripts/build-manifests-v1.2.mjs` | Genera los manifiestos de v1.2 y congela su holdout | no |
+| `benchmark/scripts/auditoria-banco-v1.2.mjs` | Auditoría del banco v1.2: qué dispara, qué queda sin las reglas de ritmo y qué queda solo con las `stable` | no |
 | `benchmark/scripts/fetch-foros.mjs` | Descarga la clase humana cotidiana (solo local). Con `--from-manifest` rehace exactamente los textos del manifiesto y comprueba su hash | sí |
 | `benchmark/scripts/fetch-human.mjs` | Descarga la clase humana formal de v1.0 | sí |
 | `benchmark/scripts/build-manifests.mjs` | Genera manifiestos, deduplica y congela el holdout | no |
@@ -52,23 +78,25 @@ En equipos donde Node no confía en la cadena de certificados de `revistas.csic.
 ## Método
 
 1. Reglas y umbrales se trabajan solo en development.
-2. `benchmark/configs/holdout-v1.1.lock` guarda el sha256 del manifiesto; `build-manifests` y `corpus-check` fallan si cambia.
+2. Cada versión guarda el sha256 de su manifiesto en su lock (`holdout-v1.1.lock`, `holdout-v1.2.lock`); `build-manifests` y `corpus-check` fallan si cambia.
 3. Se congela la configuración (`threshold.yml` y Rule Pack) y se ejecuta holdout una vez.
 4. Se publica todo, también lo negativo. Un holdout ya ejecutado no sirve como evaluación independiente de una versión corregida.
 
-Auditoría del propio banco: `benchmark/reports/auditoria-banco-v1.1.md`, reproducible con `benchmark/scripts/auditoria-banco.mjs`.
+Auditoría del propio banco: `benchmark/reports/auditoria-banco-v1.1.md` y `auditoria-banco-v1.2.md`, reproducibles con `benchmark/scripts/auditoria-banco.mjs` y `auditoria-banco-v1.2.mjs`.
 
 Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil palabras humanas, precisión adjudicada, desglose por registro y tiempo; agregadas, matriz de confusión, TPR, FPR, precisión, exactitud equilibrada, medianas e intervalos de Wilson al 95 %. No se publica recall por regla.
 
 ## Límites
 
-- 84 textos en v1.1. Los intervalos son anchos y se solapan entre particiones.
-- Toda la separación depende de una regla, y es `candidate`. Sin las dos reglas de ritmo, o contando solo las 28 `stable`, la separación en holdout es 0.
-- 20 de las 28 reglas `stable` no disparan en el corpus v1.1, y seis no tienen evidencia de corpus en ninguna versión. El gate de falsos positivos las aprueba por vacío.
-- El banco tiene un solo tipo de texto, el mensaje de foro. Los perfiles `correo`, `readme` y `redes` están sin medir.
-- Para v1.1 no hay adjudicaciones: la precisión por regla es `null` en las 38. Está medido cuántas veces salta cada regla, no cuántas acierta.
+- 84 textos en v1.1 y 270 en v1.2. Los intervalos siguen siendo anchos y se solapan entre particiones.
+- Toda la separación depende de una regla, y es `candidate`. Sin las dos reglas de ritmo, o contando solo las `stable`, la separación en holdout es 0 en v1.1, y en v1.2 es 0 en correo, 0 en redes y −6 en README.
+- En correo y en README el índice puntúa más alto a los humanos que a los generados. La exactitud equilibrada ahí es 0,367 y 0,412, por debajo del azar. Con esos dos perfiles el índice no discrimina.
+- Nueve de las 25 reglas `stable` no disparan en el corpus v1.2. El gate de falsos positivos las aprueba por vacío.
+- `repeticion/inicio-parrafo` es `stable` y en el holdout de README marca 4 textos humanos y ninguno generado: 2,019 falsos positivos por mil palabras, por encima del máximo de 1,5 de `quality-policy.yml`. El gate no lo ve porque mide sobre el holdout v1.1, donde esa regla no dispara. Sin decidir.
+- No hay adjudicaciones en ninguna versión: la precisión por regla es `null` en las 38. Está medido cuántas veces salta cada regla, no cuántas acierta. Sin eso ninguna regla puede promoverse ni retirarse con la política en la mano.
+- La clase humana de redes mezcla 12 publicaciones del fediverso con 18 de Reddit, más largas, mientras que la clase IA son 30 hilos cortos. Parte de la separación de redes puede venir del formato y no de la voz.
 - Un solo revisor, que además escribió las reglas.
 - La clase IA es de un solo proveedor y de la misma familia de modelos que diseñó las reglas.
 - Los mensajes humanos conservan sus erratas y los generados no tienen ninguna. Parte de la diferencia puede venir de ahí.
 - La guía no arregla el ritmo: medida con las dos versiones, la variación de longitud de frase se queda en 0,45 frente a 0,61 de los mensajes humanos. Sí elimina del todo rayas, comillas angulares, negritas y fórmulas hechas.
-- v1.1 no tiene clase humana en challenge, y v1.0 no tenía clase humana en los registros general, técnico y marketing.
+- Ni v1.1 ni v1.2 tienen clase humana en challenge, y v1.0 no tenía clase humana en los registros general, técnico y marketing.
