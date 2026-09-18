@@ -64,14 +64,28 @@ export function createContext(opts: ContextOptions = {}): RunnerContext {
   return { config: loaded.config, root: loaded.root, pack: loadRulePack(opts.rulepack), toolVersion: toolVersion() };
 }
 
+/**
+ * Una opción desconocida se ignoraría sin avisar y el análisis saldría con la configuración del proyecto:
+ * `lintText(t, { profile: "chat" })` no aplica el perfil. Mejor fallar diciendo dónde va.
+ */
+function checkOptions(opts: object, allowed: string[]): void {
+  for (const k of Object.keys(opts)) {
+    if (allowed.includes(k)) continue;
+    const hint = k in defaultConfig() ? `; va dentro de config: { ${k}: … }` : "";
+    throw new Error(`Opción desconocida «${k}»${hint}`);
+  }
+}
+
 /** Analiza un texto en memoria. */
 export function lintText(text: string, opts: ContextOptions & { format?: "text" | "markdown"; path?: string } = {}): FileResult {
+  checkOptions(opts, ["config", "cwd", "rulepack", "format", "path"]);
   const ctx = createContext(opts);
   return lintDocumentText(text, ctx, { relPath: opts.path, format: opts.format ?? (opts.path ? undefined : "text") });
 }
 
 /** Analiza un archivo del disco (respeta overrides por ruta). */
 export function lintFile(file: string, opts: ContextOptions = {}): FileResult {
+  checkOptions(opts, ["config", "cwd", "rulepack"]);
   const ctx = createContext(opts);
   const abs = path.resolve(ctx.root, file);
   const rel = path.relative(ctx.root, abs).replace(/\\/g, "/");
@@ -80,6 +94,7 @@ export function lintFile(file: string, opts: ContextOptions = {}): FileResult {
 
 /** Analiza un proyecto completo (descubrimiento, gitignore, caché, baseline y política). */
 export function lintProject(opts: ContextOptions & ScanOptions = {}): ScanResult {
+  checkOptions(opts, ["config", "cwd", "rulepack", "targets", "noCache", "baseline"]);
   const ctx = createContext(opts);
   return scanProject(ctx, { targets: opts.targets, noCache: opts.noCache, baseline: opts.baseline });
 }

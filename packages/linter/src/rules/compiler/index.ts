@@ -287,7 +287,7 @@ export function compileRules(opts: CompileOptions): CompileResult {
       if (!allIds.has(k) && !allCats.has(k)) issues.push({ rule: `profiles/${pname}`, severity: "error", message: `regla o categoría desconocida "${k}"` });
     }
   }
-  compiled.sort((a, b) => a.id.localeCompare(b.id));
+  compiled.sort((a, b) => a.id.localeCompare(b.id, "en"));
   const pack: RulePack = {
     schema_version: SCHEMA_VERSION,
     name: "ia-linter-es/oficial",

@@ -31,13 +31,26 @@ if (only.includes("imports")) {
   console.log("Gate imports");
   const src = path.join(root, "packages", "linter", "src");
   const forbidden = ["http", "https", "net", "dns", "tls", "dgram", "http2", "child_process", "worker_threads"];
-  const fsAllowed = ["runner", "cli", "config", "baseline", "rules/compiler", "paths.ts", "api"];
+  // AGENTS.md §2 y docs/decisions.md (2026-09-18): la API también lee disco (lintFile, Rule Pack, versión).
+  const fsAllowed = ["runner", "cli", "config", "baseline", "rules/compiler", "api"];
+  // Todas las formas de cargar un módulo: import con y sin `from`, export … from, import() literal, require y getBuiltinModule.
+  const specifiers = [
+    /\bimport\s+(?:[^'";]*?\s+from\s+)?["']([^"']+)["']/g,
+    /\bexport\s+[^'";]*?\s+from\s+["']([^"']+)["']/g,
+    /\bimport\s*\(\s*["']([^"']+)["']\s*\)/g,
+    /\brequire\s*\(\s*["']([^"']+)["']\s*\)/g,
+    /\bgetBuiltinModule\s*\(\s*["']([^"']+)["']\s*\)/g,
+  ];
   let bad = 0;
   for (const f of walk(src)) {
     const rel = path.relative(src, f).replace(/\\/g, "/");
     const code = fs.readFileSync(f, "utf8");
-    for (const m of code.matchAll(/^\s*import\s[^;]*?from\s+["']([^"']+)["']|require\(\s*["']([^"']+)["']\s*\)/gm)) {
-      const mod = (m[1] ?? m[2]).replace(/^node:/, "");
+    if (/\bimport\s*\(\s*[^"'\s)]/.test(code) || /\b(require|getBuiltinModule)\s*\(\s*[^"'\s)]/.test(code)) {
+      fail(`${rel} carga un módulo con una expresión no literal: el gate no puede comprobarlo`);
+      bad++;
+    }
+    for (const m of specifiers.flatMap((re) => [...code.matchAll(re)])) {
+      const mod = m[1].replace(/^node:/, "").replace(/\/promises$/, "");
       if (forbidden.includes(mod)) {
         fail(`${rel} importa ${mod}`);
         bad++;
@@ -56,7 +69,7 @@ if (only.includes("imports")) {
       bad++;
     }
   }
-  if (!bad) ok("ningún módulo usa red; fs solo en runner/cli/config/baseline/compiler/api");
+  if (!bad) ok("ningún módulo usa red (import, import(), export from, require, getBuiltinModule); fs solo en runner/cli/config/baseline/compiler/api");
 }
 
 /* ---------------- Gate: reglas (rulepack) ---------------- */
@@ -97,22 +110,49 @@ if (only.includes("perf") && pack) {
 if (only.includes("index")) {
   console.log("Gate benchmark");
   const rep = path.join(root, "benchmark", "reports", "holdout-v1.1.json");
-  if (!fs.existsSync(rep)) fail("falta benchmark/reports/holdout-v1.0.json");
+  if (!fs.existsSync(rep)) fail("falta benchmark/reports/holdout-v1.1.json");
   else {
-    const r = JSON.parse(fs.readFileSync(rep, "utf8"));
+    let r = JSON.parse(fs.readFileSync(rep, "utf8"));
+    // Si la clase humana está descargada en este equipo, el holdout se recalcula con el Rule Pack actual y se compara
+    // con el informe publicado. Si no (en CI no está: no se redistribuye), se usa el informe y se dice.
+    const corpusDir = path.join(root, "corpus");
+    const manifest = parseYaml(fs.readFileSync(path.join(corpusDir, "manifests", "holdout.yml"), "utf8"));
+    const completo = manifest.samples.every((s) => fs.existsSync(path.join(corpusDir, s.file)));
+    if (completo && pack) {
+      const toUrl = (p) => p.replace(/\\/g, "/").replace(/^([A-Za-z]):/, "file:///$1:");
+      const api = await import(toUrl(path.join(root, "packages", "linter", "dist", "api", "index.js")));
+      const { runBenchmark } = await import(toUrl(path.join(root, "packages", "linter", "dist", "cli", "benchmark.js")));
+      const ctx = api.createContext({ cwd: root, config: { profile: r.config.profile } });
+      const hoy = runBenchmark(ctx, corpusDir, "holdout");
+      const a = (x) => JSON.stringify([x.aggregate.index_median_human, x.aggregate.index_median_ai, x.aggregate.confusion]);
+      if (a(hoy) !== a(r)) fail(`holdout v1.1 recalculado con el Rule Pack actual no coincide con el informe publicado: ${a(hoy)} frente a ${a(r)}`);
+      else ok("holdout v1.1 recalculado con el Rule Pack actual: coincide con benchmark/reports/holdout-v1.1.json");
+      r = hoy;
+    } else {
+      console.log("  · holdout v1.1 no recalculado: la clase humana no está descargada aquí; se lee benchmark/reports/holdout-v1.1.json");
+    }
     const gap = r.aggregate.index_median_ai - r.aggregate.index_median_human;
     if (gap < policy.index.min_median_gap) fail(`separación de medianas del índice: ${gap} < ${policy.index.min_median_gap}`);
     else ok(`separación de medianas del índice: ${gap} (mínimo ${policy.index.min_median_gap})`);
-    const badRules = Object.entries(r.per_rule).filter(([, v]) => v.status === "stable" && v.fp_per_1000_human_words > policy.rules.max_fp_per_1000_human_words);
+    // El estado de cada regla sale del Rule Pack actual, no del que había cuando se generó el informe.
+    const estado = new Map((pack?.rules ?? []).map((x) => [x.id, x.status]));
+    const stables = Object.entries(r.per_rule).filter(([k]) => estado.get(k) === "stable");
+    const sinMedir = [...estado].filter(([k, s]) => s === "stable" && !(k in r.per_rule)).map(([k]) => k);
+    if (sinMedir.length) fail(`reglas stable que el informe no mide: ${sinMedir.join(", ")}`);
+    const badRules = stables.filter(([, v]) => v.fp_per_1000_human_words > policy.rules.max_fp_per_1000_human_words);
     if (badRules.length) fail(`reglas stable con FP/1000 > ${policy.rules.max_fp_per_1000_human_words}: ${badRules.map(([k]) => k).join(", ")}`);
     else {
       // Una regla que no ha marcado nada tiene FP 0 por vacío, no por buena: se cuenta aparte.
-      const stables = Object.entries(r.per_rule).filter(([, v]) => v.status === "stable");
       const conEvidencia = stables.filter(([, v]) => v.docs_human + v.docs_ai > 0).length;
       ok(`${conEvidencia} de ${stables.length} reglas stable disparan en este corpus, todas con FP/1000 <= ${policy.rules.max_fp_per_1000_human_words}`);
       if (conEvidencia < stables.length) {
         console.log(`  · ${stables.length - conEvidencia} reglas stable no marcan nada aquí: su FP es 0 por vacío (ver benchmark/reports/auditoria-banco-v1.1.md)`);
       }
+    }
+    // quality-policy.yml pide precisión adjudicada mínima para las stable. Sin adjudicaciones no se puede comprobar: se dice.
+    const conPrecision = stables.filter(([, v]) => v.adjudicated?.precision !== null && v.adjudicated?.precision !== undefined).length;
+    if (conPrecision < stables.length) {
+      console.log(`  · precisión adjudicada: ${stables.length - conPrecision} de ${stables.length} reglas stable sin adjudicar; min_adjudicated_precision (${policy.rules.min_adjudicated_precision}) no se puede comprobar`);
     }
   }
 }

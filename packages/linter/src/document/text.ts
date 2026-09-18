@@ -54,7 +54,9 @@ export function normalizeText(original: string): NormalizedText {
 export function computeLineStarts(text: string): number[] {
   const starts = [0];
   for (let i = 0; i < text.length; i++) {
-    if (text.charCodeAt(i) === 10) starts.push(i + 1);
+    const c = text.charCodeAt(i);
+    // LF, y también CR solitario (finales de línea de Mac clásico), igual que hace normalizeText.
+    if (c === 10 || (c === 13 && text.charCodeAt(i + 1) !== 10)) starts.push(i + 1);
   }
   return starts;
 }
@@ -78,6 +80,7 @@ export function offsetToLineColumn(
     const c = text.charCodeAt(i);
     if (c >= 0xdc00 && c <= 0xdfff) continue; // unidad baja de par subrogado
     if (c === 13) continue; // CR de un CRLF no cuenta como columna
+    if (c === 0xfeff && i === 0) continue; // el BOM no es una columna visible
     column++;
   }
   return { line: lo + 1, column };

@@ -48,3 +48,8 @@ Motivo: la raya pegada es correcta en prosa editada y anómala en un mensaje o u
 Decisión: `densidad/conectores`, `lexico/desde-hasta-pasando` y `lexico/metaforas-comodin` pasan de `stable` a `candidate`. No cambia su nivel por defecto ni su perfil: sigue viéndose lo mismo al ejecutar el linter, pero dejan de contar como producto estable y salen del gate de falsos positivos.
 Motivo: no disparan en ningún texto del corpus v1.0, ni del v1.1, ni del v1.2 (90 textos por partición en correo, readme y redes). El gate de FP/1000 las aprobaba por vacío. Auditoría: `benchmark/scripts/auditoria-banco-v1.2.mjs`.
 Consecuencia: quedan 25 reglas `stable`, por encima del mínimo de 24 de `quality-policy.yml`. Las otras tres que la auditoría de v1.1 señalaba sí aparecen ya en v1.2: `densidad/intensificadores` (1 texto IA en correo y 1 en redes), `lexico/ya-sea-enumeracion` (1 texto IA en readme) y `densidad/verbos-comodin`, que solo dispara en un README humano; se queda `stable` por el criterio, no porque la evidencia convenza.
+
+## 2026-09-18 — La API también lee disco
+Decisión: `src/api` puede importar `fs`. Lee el `package.json` para la versión, el Rule Pack compilado y, en `lintFile`, el archivo que se analiza. `paths.ts` sale de la lista de módulos con `fs` porque solo usa `path` y `url`.
+Motivo: la API de arquitectura §10.2 analiza archivos y proyectos, y sin disco no puede. El gate de imports ya lo permitía; faltaba registrarlo.
+Consecuencia: la lista de AGENTS.md §2 se queda corta y hay que añadirle `api`.

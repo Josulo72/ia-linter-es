@@ -35,10 +35,15 @@ export function buildDocument(
 ): Document {
   const format = opts.format ?? detectFormat(opts.path);
   const norm = normalizeText(original);
-  const blocks = format === "markdown" ? markdownBlocks(norm.text) : plainTextBlocks(norm.text);
+  const codeRanges: [number, number][] = [];
+  const blocks = format === "markdown" ? markdownBlocks(norm.text, codeRanges) : plainTextBlocks(norm.text);
   if (norm.hadBom || norm.hadCr) {
     for (const b of blocks) {
       for (let i = 0; i < b.map.length; i++) b.map[i] = norm.toOriginal(b.map[i] as number);
+    }
+    for (const r of codeRanges) {
+      r[0] = norm.toOriginal(r[0]);
+      r[1] = norm.toOriginal(r[1]);
     }
   }
   const sentences = [];
@@ -60,5 +65,6 @@ export function buildDocument(
     sentences,
     tokens,
     eligibleWords,
+    ...(codeRanges.length ? { codeRanges } : {}),
   };
 }

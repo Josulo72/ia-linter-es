@@ -16,7 +16,7 @@ interface Part {
  * Excluidos: código (bloque e inline), front matter, URLs y destinos de enlaces, comentarios y HTML, definiciones.
  * Analizados: párrafos, encabezados, elementos de lista, citas, celdas de tabla y texto visible de enlaces.
  */
-export function markdownBlocks(text: string): TextBlock[] {
+export function markdownBlocks(text: string, codeRanges?: [number, number][]): TextBlock[] {
   const tree: Root = fromMarkdown(text, {
     extensions: [frontmatter(["yaml", "toml"]), gfm()],
     mdastExtensions: [frontmatterFromMarkdown(["yaml", "toml"]), gfmFromMarkdown()],
@@ -25,7 +25,14 @@ export function markdownBlocks(text: string): TextBlock[] {
   walk(tree, 0);
   return blocks;
 
+  function codeRange(node: Nodes): void {
+    const s = node.position?.start.offset;
+    const e = node.position?.end.offset;
+    if (codeRanges && s !== undefined && e !== undefined) codeRanges.push([s, e]);
+  }
+
   function walk(node: Nodes, depth: number): void {
+    if (node.type === "code") codeRange(node);
     switch (node.type) {
       case "root":
         for (const c of node.children) walk(c, depth);
@@ -101,6 +108,9 @@ export function markdownBlocks(text: string): TextBlock[] {
         return;
       }
       case "inlineCode":
+        codeRange(node);
+        parts.push({ text: " ", offsets: [node.position?.start.offset ?? 0] });
+        return;
       case "html":
       case "image":
       case "imageReference":

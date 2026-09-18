@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 import fs from "node:fs";
 import path from "node:path";
-import { Command } from "commander";
+import { Command, CommanderError } from "commander";
+import fg from "fast-glob";
 import type { Level, ScanResult } from "../contracts/index.js";
 import { explainConfig, loadConfig } from "../config/index.js";
 import { createBaseline, readBaseline, updateBaseline, writeBaseline } from "../baseline/index.js";
@@ -25,7 +26,7 @@ interface GlobalOpts {
   rulepack?: string;
 }
 
-function context(g: GlobalOpts): RunnerContext & { configFile: string | null } {
+function context(g: GlobalOpts): RunnerContext & { configFile: string | null; cwd: string } {
   const cwd = path.resolve(g.cwd ?? process.cwd());
   const loaded = loadConfig({ cwd, file: g.config });
   if (g.config && !fs.existsSync(path.resolve(cwd, g.config))) die(`no existe el archivo de configuración ${g.config}`);
@@ -38,7 +39,24 @@ function context(g: GlobalOpts): RunnerContext & { configFile: string | null } {
   } catch (e) {
     die((e as Error).message);
   }
-  return { config: loaded.config, root: loaded.root, pack, toolVersion: toolVersion(), configFile: loaded.file };
+  // Un id mal escrito en `rules` u `overrides` no hace nada: se avisa en vez de callarlo (config validate lo trata como error).
+  const known = new Set(pack.rules.flatMap((r) => [r.id, `${r.category}/*`]));
+  const unknown = [
+    ...Object.keys(loaded.config.rules).filter((k) => !known.has(k)).map((k) => `rules.${k}`),
+    ...loaded.config.overrides.flatMap((o, i) => Object.keys(o.rules ?? {}).filter((k) => !known.has(k)).map((k) => `overrides[${i}].rules.${k}`)),
+  ];
+  for (const u of unknown) process.stderr.write(`ia-linter-es: aviso: ${u} no es ninguna regla ni categoría; se ignora\n`);
+  return { config: loaded.config, root: loaded.root, pack, toolVersion: toolVersion(), configFile: loaded.file, cwd };
+}
+
+/**
+ * Las rutas de la línea de órdenes son relativas al directorio de trabajo, no a la raíz del proyecto
+ * (la carpeta del ia-linter.yml). Las que existen se pasan absolutas; los globs se anclan al directorio de trabajo.
+ */
+function rutasDesde(cwd: string, root: string, rutas: string[]): string[] {
+  if (path.resolve(cwd) === path.resolve(root)) return rutas;
+  const prefijo = fg.convertPathToPattern(path.relative(root, cwd).replace(/\\/g, "/"));
+  return rutas.map((r) => (fs.existsSync(path.resolve(cwd, r)) ? path.resolve(cwd, r) : `${prefijo}/${r.replace(/\\/g, "/")}`));
 }
 
 function readStdin(): string {
@@ -46,6 +64,9 @@ function readStdin(): string {
 }
 
 const program = new Command();
+// Los errores de uso que detecta commander (opción o comando desconocido, falta un argumento) salen con 2, no con su 1
+// por defecto, que se confundiría con «la política falla». Va antes de declarar subcomandos para que lo hereden.
+program.exitOverride();
 program
   .name("ia-linter-es")
   .description("Linter determinista de patrones de escritura de IA en español. Mide patrones editoriales, no autoría.")
@@ -89,6 +110,7 @@ program
     if (!["terminal", "json", "sarif"].includes(reporter)) die("--format debe ser terminal, json o sarif");
     let result: ScanResult;
     if (o.stdin) {
+      if (rutas.length) process.stderr.write(`ia-linter-es: aviso: con --stdin se analiza la entrada estándar y se ignoran las rutas (${rutas.join(", ")})\n`);
       const file = lintDocumentText(readStdin(), ctx, { relPath: o.stdinFilename, format: o.stdinFilename ? undefined : "text" });
       result = {
         schema_version: SCHEMA_VERSION,
@@ -99,8 +121,12 @@ program
       };
     } else {
       const baseline = o.baseline === false ? null : typeof o.baseline === "string" ? o.baseline : undefined;
-      result = scanProject(ctx, { targets: rutas, noCache: o.cache === false, baseline });
-      if (rutas.length && result.files.length === 0) die(`ninguna ruta coincide: ${rutas.join(", ")}`);
+      result = scanProject(ctx, { targets: rutasDesde(ctx.cwd, ctx.root, rutas), noCache: o.cache === false, baseline });
+      // Si las rutas existen pero `exclude` o .gitignore las dejan fuera (pre-commit con un CHANGELOG), no hay nada que analizar
+      // y no es un error. Solo es un error de uso que ninguna ruta exista ni coincida con nada.
+      if (rutas.length && result.files.length === 0 && !rutas.some((r) => fs.existsSync(path.resolve(ctx.cwd, r)))) {
+        die(`ninguna ruta coincide: ${rutas.join(", ")}`);
+      }
     }
     const color = o.color !== false && reporter === "terminal" && !o.output && process.stdout.isTTY === true && !process.env.NO_COLOR;
     const out = render(reporter, result, ctx.pack.rules, { color, verbose: o.verbose, uriBase: pathToFileUri(ctx.root) });
@@ -156,8 +182,14 @@ rules
   });
 
 const config = program.command("config").description("valida y explica la configuración");
+/** `-c` apunta a un archivo que no existe: se dice así, no como «YAML inválido: ENOENT». */
+function exigirConfig(g: GlobalOpts): void {
+  if (g.config && !fs.existsSync(path.resolve(g.cwd ?? process.cwd(), g.config))) die(`no existe el archivo de configuración ${g.config}`);
+}
+
 config.command("validate").action(() => {
   const g = program.opts<GlobalOpts>();
+  exigirConfig(g);
   const loaded = loadConfig({ cwd: path.resolve(g.cwd ?? process.cwd()), file: g.config });
   if (!loaded.file) {
     process.stdout.write("Sin archivo de configuración: se usan los valores internos.\n");
@@ -186,6 +218,7 @@ config
   .option("--json", "salida JSON")
   .action((archivo: string | undefined, o) => {
     const g = program.opts<GlobalOpts>();
+    exigirConfig(g);
     const cwd = path.resolve(g.cwd ?? process.cwd());
     const loaded = loadConfig({ cwd, file: g.config });
     if (loaded.issues.length) die("configuración inválida; ejecuta `config validate`");
@@ -222,7 +255,7 @@ baseline
     const ctx = context(program.opts<GlobalOpts>());
     const out = o.output ?? ctx.config.baseline.path ?? "ia-linter-baseline.json";
     if (ctx.config.baseline.require_reason && !o.reason) die("la configuración exige --reason para crear la baseline");
-    const result = scanProject(ctx, { targets: rutas, baseline: null, noCache: true });
+    const result = scanProject(ctx, { targets: rutasDesde(ctx.cwd, ctx.root, rutas), baseline: null, noCache: true });
     const b = createBaseline(result.files, o.reason);
     writeBaseline(path.resolve(ctx.root, out), b);
     process.stdout.write(`Baseline creada: ${out} (${b.entries.length} entradas)\n`);
@@ -240,7 +273,7 @@ baseline
     if (!fs.existsSync(abs)) die(`no existe la baseline ${out}; usa \`baseline create\``);
     if (o.addNew && ctx.config.baseline.require_reason && !o.reason) die("la configuración exige --reason para añadir entradas");
     const existing = readBaseline(abs);
-    const result = scanProject(ctx, { targets: rutas, baseline: null, noCache: true });
+    const result = scanProject(ctx, { targets: rutasDesde(ctx.cwd, ctx.root, rutas), baseline: null, noCache: true });
     const b = updateBaseline(existing, result.files, { addNew: Boolean(o.addNew), reason: o.reason });
     writeBaseline(abs, b);
     process.stdout.write(`Baseline actualizada: ${out} (${existing.entries.length} → ${b.entries.length} entradas)\n`);
@@ -274,4 +307,8 @@ function pathToFileUri(p: string): string {
   return (s.startsWith("/") ? `file://${encodeURI(s)}` : `file:///${encodeURI(s)}`) + "/";
 }
 
-program.parseAsync(process.argv).catch((e) => die((e as Error).message));
+program.parseAsync(process.argv).catch((e) => {
+  // commander ya ha escrito su mensaje; --help y --version salen con 0.
+  if (e instanceof CommanderError) process.exit(e.exitCode === 0 ? 0 : EXIT_USAGE);
+  die((e as Error).message);
+});

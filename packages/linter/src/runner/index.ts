@@ -45,7 +45,7 @@ export function lintDocumentText(
   const levels: Record<string, Level> = {};
   for (const e of effective) levels[e.rule] = e.level;
   const findings = runRules(doc, ctx.pack.rules, { levels, relPath, snippets: ctx.config.privacy.snippets });
-  applySuppressions(findings, parseSuppressions(doc.original, doc.lineStarts));
+  applySuppressions(findings, parseSuppressions(doc.original, doc.lineStarts, doc.codeRanges));
   const ruleMap = new Map(ctx.pack.rules.map((r) => [r.id, r] as [string, CompiledRule]));
   const score = computeScore(findings, ruleMap, doc.eligibleWords, ctx.config.min_words_for_index);
   return { path: relPath, format, findings, score, durationMs: Math.round((performance.now() - t0) * 100) / 100 };
@@ -68,7 +68,8 @@ export function discoverFiles(ctx: RunnerContext, targets: string[]): string[] {
     if (fs.existsSync(abs) && fs.statSync(abs).isFile()) explicit.push(abs);
     else if (fs.existsSync(abs) && fs.statSync(abs).isDirectory()) {
       const rel = path.relative(root, abs).replace(/\\/g, "/");
-      for (const inc of ctx.config.include) patterns.push(rel ? `${rel}/${inc}` : inc);
+      // El nombre del directorio va escapado: «docs (v1)» o «notas [2021]» son rutas, no patrones.
+      for (const inc of ctx.config.include) patterns.push(rel ? `${fg.convertPathToPattern(rel)}/${inc}` : inc);
     } else patterns.push(t.replace(/\\/g, "/"));
   }
   for (const f of explicit) files.add(f);
@@ -83,11 +84,12 @@ export function discoverFiles(ctx: RunnerContext, targets: string[]): string[] {
       out.push(abs);
       continue;
     }
-    if (!explicit.includes(abs) && matchesAny(rel, ctx.config.exclude)) continue;
+    // `exclude` vale también para los archivos nombrados uno a uno (así los pasa pre-commit), igual que .gitignore.
+    if (matchesAny(rel, ctx.config.exclude)) continue;
     if (ctx.config.respect_gitignore && ig.ignores(rel)) continue;
     out.push(abs);
   }
-  return out.sort((a, b) => a.localeCompare(b));
+  return out.sort((a, b) => a.localeCompare(b, "en"));
 }
 
 /* ---------------- Caché ---------------- */
@@ -166,7 +168,7 @@ export function scanProject(ctx: RunnerContext, opts: ScanOptions = {}): ScanRes
     }
     results.push(result);
   }
-  results.sort((a, b) => a.path.localeCompare(b.path));
+  results.sort((a, b) => a.path.localeCompare(b.path, "en"));
   let baselineInfo: ScanResult["baseline"];
   const baselinePath = opts.baseline === undefined ? ctx.config.baseline.path : opts.baseline;
   if (baselinePath) {

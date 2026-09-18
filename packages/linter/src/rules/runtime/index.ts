@@ -17,6 +17,13 @@ export function formatMessage(template: string, data: Record<string, string | nu
   return template.replace(/\{(\w+)\}/g, (_m, k: string) => (data && data[k] !== undefined ? String(data[k]) : `{${k}}`));
 }
 
+function redactText(data: Record<string, string | number> | undefined): Record<string, string | number> | undefined {
+  if (!data) return data;
+  const out: Record<string, string | number> = {};
+  for (const [k, v] of Object.entries(data)) out[k] = typeof v === "string" ? "…" : v;
+  return out;
+}
+
 function normalizeSnippet(s: string): string {
   return s.toLowerCase().replace(/\s+/g, " ").trim();
 }
@@ -51,7 +58,8 @@ export function runRules(doc: Document, rules: CompiledRule[], opts: RuntimeOpti
         revision: rule.revision,
         level,
         category: rule.category,
-        message: formatMessage(rule.message, m.data),
+        // Sin snippets, el mensaje tampoco cita el texto: los datos de texto ({term}) se sustituyen; los números se quedan.
+        message: formatMessage(rule.message, withSnippets ? m.data : redactText(m.data)),
         range: {
           start: { offset: startOff, ...offsetToLineColumn(doc.original, doc.lineStarts, startOff) },
           end: { offset: endOff, ...offsetToLineColumn(doc.original, doc.lineStarts, endOff) },
@@ -64,7 +72,7 @@ export function runRules(doc: Document, rules: CompiledRule[], opts: RuntimeOpti
     }
   }
   findings.sort(
-    (a, b) => a.range.start.offset - b.range.start.offset || a.range.end.offset - b.range.end.offset || a.rule.localeCompare(b.rule),
+    (a, b) => a.range.start.offset - b.range.start.offset || a.range.end.offset - b.range.end.offset || a.rule.localeCompare(b.rule, "en"),
   );
   // Ordinal por (regla, snippet) para distinguir repeticiones idénticas.
   const counters = new Map<string, number>();
