@@ -5,7 +5,7 @@ Dos cosas. Una guía de estilo para que la IA escriba en español como una perso
 Todo pasa en tu ordenador. No usa IA, no sale a la red y no manda nada a ninguna parte.
 
 ```
-npm i -D ia-linter-es
+npm i -D ia-linter-es-1.0.0.tgz
 npx ia-linter-es lint docs README.md
 ```
 
@@ -15,6 +15,39 @@ README.md  índice 34/100
   18:40    warning 4 rayas con espacios a ambos lados (uso inglés del em dash).  formato/raya-espaciada
   24:1     warning Cierre formulario: «En definitiva» al inicio del último párrafo.  estructura/cierre-formulario
 ```
+
+## Instalación
+
+Todavía no está en npm, así que se instala desde el paquete de la última release o desde el código.
+
+Con el paquete, que es un `.tgz` normal de npm. Lo bajas de la pestaña Releases del repositorio y lo instalas en tu proyecto:
+
+```
+npm i -D ia-linter-es-1.0.0.tgz
+npx ia-linter-es lint README.md --profile readme
+```
+
+Vale igual con `pnpm add -D ./ia-linter-es-1.0.0.tgz` o `yarn add -D ./ia-linter-es-1.0.0.tgz`. Hace falta Node 20 o más.
+
+Desde el código, si quieres tocarlo:
+
+```
+git clone https://github.com/Josulo72/ia-linter-es.git
+cd ia-linter-es
+pnpm install
+pnpm build
+node packages/linter/dist/cli/main.js lint README.md --profile readme
+```
+
+La guía de estilo para Claude Code va en otro paquete de la misma release, `ia-linter-es-claude-code-1.0.0.zip`. Lo descomprimes donde quieras y lo cargas así:
+
+```
+claude --plugin-dir ./ia-linter-es-claude-code
+```
+
+Si solo quieres el estilo de escritura y no el resto del plugin, copia `output-styles/humano.md` a `~/.claude/output-styles/` y elígelo con `/output-style humano`.
+
+Las otras dos formas de engancharlo, pre-commit y GitHub Action, están explicadas en `integrations/pre-commit/README.md` y `integrations/github-action/README.md`. El hook de pre-commit pide la versión publicada en npm, así que hasta que se publique hay que apuntarlo al `.tgz`.
 
 ## La guía
 
@@ -89,7 +122,8 @@ El informe entero, con lo que funciona y lo que no, está en `benchmark/reports/
 ## Límites
 
 - La clase IA la generó el mismo modelo que ayudó a escribir las reglas. Es circular y no lo escondo: no vale como evaluación independiente.
-- Casi toda la separación viene de una sola regla, la del ritmo. Si un modelo aprende a variar la longitud de sus frases, el índice se desinfla.
+- Toda la separación viene de una sola regla, la del ritmo, y esa regla es `candidate`. Quitándola, la mediana de los textos generados baja a cero, igual que la de los humanos. Si un modelo aprende a variar la longitud de sus frases, el índice deja de separar.
+- El banco son 132 mensajes de foro y nada más. Los perfiles `correo`, `readme` y `redes` no tienen ni un caso medido, y 20 de las 28 reglas estables no disparan nunca ahí: seis no tienen evidencia de corpus en ninguna versión. Está todo en `benchmark/reports/auditoria-banco-v1.1.md`.
 - Los mensajes de foro que forman la clase humana no se redistribuyen. En el repositorio está el manifiesto con la URL y el hash; los textos se bajan en local.
 - Es español de España. En otras variedades marcará cosas que allí son normales.
 
@@ -99,4 +133,8 @@ El informe entero, con lo que funciona y lo que no, está en `benchmark/reports/
 
 ## Licencia
 
-MIT.
+Business Source License 1.1, con el texto completo en `LICENSE`.
+
+En corto: puedes usarlo, copiarlo y cambiarlo a tu gusto, también en tu empresa y en el trabajo que hagas para tus clientes. Lo único que no puedes es venderlo, ni montar un servicio de pago cuyo valor sea básicamente esto. Para eso escríbeme a jrollon@gmail.com y lo hablamos.
+
+El 17 de septiembre de 2030 pasa a MIT sola, sin que nadie tenga que hacer nada. El texto de esa MIT está en `LICENSE-MIT`.
