@@ -66,6 +66,7 @@ En `corpus/archive/v1.0`, con sus manifiestos y su lock. 45 textos humanos de BO
 | `benchmark/scripts/fetch-registros.mjs` | Descarga la clase humana de correo, README y redes (solo local). Con `--from-manifest` rehace los textos ya registrados y comprueba su hash | sí |
 | `benchmark/scripts/build-manifests-v1.2.mjs` | Genera los manifiestos de v1.2 y congela su holdout | no |
 | `benchmark/scripts/auditoria-banco-v1.2.mjs` | Auditoría del banco v1.2: qué dispara, qué queda sin las reglas de ritmo y qué queda solo con las `stable` | no |
+| `benchmark/scripts/auditar-corpus-humano.mjs` | Revisa la clase humana ya descargada con los filtros vigentes y dice qué textos no deberían estar. Solo lee | no |
 | `benchmark/scripts/fetch-foros.mjs` | Descarga la clase humana cotidiana (solo local). Con `--from-manifest` rehace exactamente los textos del manifiesto y comprueba su hash | sí |
 | `benchmark/scripts/fetch-human.mjs` | Descarga la clase humana formal de v1.0 | sí |
 | `benchmark/scripts/build-manifests.mjs` | Genera manifiestos, deduplica y congela el holdout | no |
@@ -88,6 +89,7 @@ Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil pala
 
 ## Límites
 
+- **La clase humana de v1.2 está contaminada.** El filtro de español de España aceptaba con una sola marca peninsular; en `readme` esa marca coincidía con la palabra buscada por la consulta de GitHub (`ordenador`, `fichero`, `instalación`), así que no descartaba nada. El filtro estricto solo se aplicaba a Reddit, no a README, correo ni fediverso, y no había ningún filtro de prosa, así que podía entrar letra de canción o verso. Corregido en `registros-comun.mjs` y `fetch-registros.mjs`; `benchmark/scripts/auditar-corpus-humano.mjs` lista los textos que ya no pasan. Mientras el corpus no se rehaga con `--append` y no se vuelva a medir, las cifras de v1.2 no son utilizables.
 - 84 textos en v1.1 y 270 en v1.2. Los intervalos siguen siendo anchos y se solapan entre particiones.
 - Toda la separación depende de una regla, y es `candidate`. Sin las dos reglas de ritmo, o contando solo las `stable`, la separación en holdout es 0 en v1.1, y en v1.2 es 0 en correo, 0 en redes y −6 en README.
 - En correo y en README el índice puntúa más alto a los humanos que a los generados. La exactitud equilibrada ahí es 0,367 y 0,412, por debajo del azar. Con esos dos perfiles el índice no discrimina.

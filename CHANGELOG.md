@@ -29,7 +29,25 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y l
   la configuración del registro. Corregido a `config: { profile }`. La cifra de v1.1 no cambia; la
   mediana humana de redes en v1.2 pasa de 12 a 0.
 
+### Arreglado (corpus)
+
+- El filtro de español de España del corpus v1.2 no filtraba. Aceptaba un texto con una sola marca
+  peninsular; en el registro `readme` esa marca coincidía con la palabra que la consulta de GitHub ya
+  garantizaba (`ordenador`, `fichero`, `instalación`), así que aprobaba por construcción todo lo que
+  encontraba. El filtro estricto de habla peninsular solo se aplicaba a Reddit, no a README, correo ni
+  fediverso. No había ningún filtro de prosa, así que podía entrar letra de canción o verso. Y `vale`
+  contaba como marca peninsular, siendo el verbo valer.
+- Corregido: filtro estricto en los tres registros, lista de americanismos ampliada con mexicanismos
+  que faltaban y depurada de términos que en España significan otra cosa, detección de texto que no es
+  prosa, veto de instancias no peninsulares y de Pixelfed, y revalidación de lo ya registrado en cada
+  `--append`, que antes solo cubría Reddit.
+- Nuevo `benchmark/scripts/auditar-corpus-humano.mjs`, que revisa la clase humana descargada con los
+  filtros vigentes y dice qué textos no deberían estar. Solo lee.
+
 ### Sin resolver
+
+- Las cifras del banco v1.2 no valen mientras el corpus no se rehaga con el filtro corregido y se
+  vuelva a medir. El holdout de v1.2 ya está gastado, así que hace falta partición nueva.
 
 - La separación del índice sigue saliendo entera de `estructura/ritmo-plano`, que es `candidate`.
   Contando solo las reglas estables no separa en ningún registro.

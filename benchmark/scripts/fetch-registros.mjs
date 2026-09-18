@@ -10,7 +10,13 @@
 //             autorrespuestas encadenadas) y archivo público de Reddit vía Arctic Shift (publicaciones de texto
 //             de subreddits peninsulares, título y cuerpo). Mastodon solo dio 12 textos en la banda de palabras.
 //
-// Filtros comunes: español de España (una marca peninsular y ninguna americana), prosa de persona, banda de palabras.
+// Filtros comunes, aplicados igual a los tres registros: español de España en modo estricto (una marca
+// peninsular fuerte, o una técnica con dos flojas, o tres flojas, y ninguna americana), prosa de una
+// persona para otra (se descarta la letra de canción y el verso) y banda de palabras.
+//
+// El modo estricto existe porque el primero no filtraba nada en README: las consultas de GitHub buscan
+// «ordenador», «fichero», «instalación»... y esas mismas palabras contaban como marca peninsular, así
+// que todo lo que devolvía la consulta se aprobaba solo. Ver registros-comun.mjs.
 // Uso: node benchmark/scripts/fetch-registros.mjs --source readme|correo|redes [--target 30] [--log fichero]
 //      node benchmark/scripts/fetch-registros.mjs --source <registro> --from-manifest   (rehace los textos ya registrados)
 //      node benchmark/scripts/fetch-registros.mjs --source redes --append               (conserva lo registrado y completa lo que falte)
@@ -19,7 +25,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { parse, stringify } from "yaml";
-import { get, htmlToText, words, normalize, esSpanish, deEspana, CUTOFF } from "./registros-comun.mjs";
+import { get, htmlToText, words, normalize, esSpanish, deEspana, pareceLetra, INSTANCIA_VETADA, CUTOFF } from "./registros-comun.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const corpus = path.join(root, "corpus-v1.2");
@@ -109,7 +115,8 @@ async function readmes() {
         if (w < 150 || w > 900) continue;
         if (!esSpanish(prosa)) continue;
         if (PLANTILLA.some((p) => p.test(md))) continue;
-        if (!deEspana(prosa)) continue;
+        if (pareceLetra(prosa)) continue;
+        if (!deEspana(prosa, { estricto: true })) continue;
         // La fecha se comprueba en el dato de origen: último commit que tocó el README.
         const c = await get(`https://api.github.com/repos/${it.full_name}/commits?path=${nombre}&per_page=1`, {
           json: true,
@@ -204,7 +211,8 @@ async function correos() {
         const w = words(cuerpo);
         if (w < 150 || w > 600) continue;
         if ((cuerpo.match(/^\s*[#$]/gm) || []).length > 6) continue;
-        if (!esSpanish(cuerpo) || !deEspana(cuerpo)) continue;
+        if (pareceLetra(cuerpo)) continue;
+        if (!esSpanish(cuerpo) || !deEspana(cuerpo, { estricto: true })) continue;
         if (casiDuplicado(cuerpo, vistosCorreo)) continue; // mensajes de plantilla o citas sin marcar
         vistosCorreo.push(ngramas(cuerpo));
         // La fecha sale de la cabecera del propio mensaje: X-Date (MHonArc, Debian) o la línea de fecha de pipermail.
@@ -305,7 +313,8 @@ async function mastodon(out, { vistas, vistosRedes, porCuenta }) {
     let cadena = [raiz];
     let w = words(htmlToText(raiz.content));
     // Si la raíz es muy corta o ya suena a español de América, no se gasta una petición de contexto en ella.
-    if (w < 150 && (w < 40 || deEspana(htmlToText(raiz.content)) === null)) continue;
+    if (INSTANCIA_VETADA(dom)) continue; // instancia no peninsular, o que no es de texto (Pixelfed)
+    if (w < 150 && (w < 40 || deEspana(htmlToText(raiz.content), { estricto: true }) === null)) continue;
     if (w < 150) {
       // Hilo: el mensaje y sus autorrespuestas encadenadas, que es como se escribe largo en esta red.
       const id = String(raiz.url).split("/").filter(Boolean).pop();
@@ -324,7 +333,8 @@ async function mastodon(out, { vistas, vistosRedes, porCuenta }) {
     if (w < 150 || w > 600) continue;
     if (cadena.some((x) => x.language !== "es" || x.sensitive || x.reblog)) continue;
     const texto = normalize(cadena.map((x) => htmlToText(x.content)).join(NL2));
-    if (!esSpanish(texto) || !deEspana(texto)) continue;
+    if (pareceLetra(texto)) continue;
+    if (!esSpanish(texto) || !deEspana(texto, { estricto: true })) continue;
     if (vistas.has(sha256(texto))) continue;
     if (casiDuplicado(texto, vistosRedes)) continue;
     vistosRedes.push(ngramas(texto));
@@ -402,7 +412,8 @@ async function reddit(out, { vistas, vistosRedes, porCuenta }, faltan) {
         const texto = normalize(`${String(post.title ?? "").trim()}${NL2}${prosaDe(cuerpo)}`);
         const w = words(texto);
         if (w < 150 || w > 600) continue;
-        if (!esSpanish(texto) || !deEspana(texto) || !habladeEspana(texto)) continue;
+        if (pareceLetra(texto)) continue;
+        if (!esSpanish(texto) || !deEspana(texto, { estricto: true }) || !habladeEspana(texto)) continue;
         const h = sha256(texto);
         if (vistas.has(h) || casiDuplicado(texto, vistosRedes)) continue;
         vistas.add(h);
@@ -520,10 +531,21 @@ if (APPEND) {
       console.error(`--append: ${s.id} no coincide con su hash; recupéralo con --from-manifest antes de ampliar`);
       process.exit(2);
     }
-    // Los textos de Reddit ya registrados se revalidan con el filtro de habla vigente: si el filtro se endurece,
-    // los que dejan de pasarlo salen del corpus en la misma ejecución, sin criba a mano.
-    if (String(s.source).startsWith("reddit:") && !habladeEspana(texto)) {
-      log(`- ${s.id}: sale del corpus, ya no pasa el filtro de español de España`);
+    // Los textos ya registrados se revalidan con los filtros vigentes, los tres registros por igual:
+    // si el filtro se endurece, los que dejan de pasarlo salen del corpus en la misma ejecución, sin
+    // criba a mano. Antes esto solo se hacía con Reddit, así que README y correo conservaban textos
+    // aceptados por un filtro que después se demostró que no filtraba.
+    const motivo = pareceLetra(texto)
+      ? "no es prosa (letra o verso)"
+      : deEspana(texto, { estricto: true }) === null
+        ? "no pasa el filtro estricto de español de España"
+        : String(s.source).startsWith("reddit:") && !habladeEspana(texto)
+          ? "no pasa el filtro de habla peninsular de Reddit"
+          : INSTANCIA_VETADA(String(s.source).replace(/^mastodon:/, ""))
+            ? "instancia no peninsular o que no es de texto"
+            : null;
+    if (motivo) {
+      log(`- ${s.id}: sale del corpus, ${motivo}`);
       continue;
     }
     yaRegistrados.push({ ...s, texto });
