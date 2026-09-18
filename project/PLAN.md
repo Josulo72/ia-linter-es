@@ -48,7 +48,7 @@ Cada una se toma antes de empezar el bloque que la necesita. Si no está tomada,
 | Id | Decisión | Recomendación | La necesita |
 |---|---|---|---|
 | D1 | Apagar `estructura/ritmo-plano` en los perfiles `correo` y `readme` | Tomada el 2026-09-18: solo en correo. En readme no quitaba falsas alarmas humanas (ver `docs/decisions.md`) | B8 |
-| D2 | Quién adjudica los hallazgos de development v1.2 | El propietario, o un modelo distinto del que escribe las reglas. Si lo hace solo la IA ejecutora se repite la circularidad de v1.0 | B9 |
+| D2 | Quién adjudica los hallazgos de development v1.2 | Tomada el 2026-09-18: GPT-5.6 Sol, a ciegas, y el propietario revisa los dudosos (ver `docs/decisions.md`) | B9 |
 | D3 | Proveedor y modelo de la clase IA externa para el corpus v1.3 | Cualquiera que no sea Claude. Hace falta cuenta y clave, así que genera el propietario | B12 |
 
 ## Orden

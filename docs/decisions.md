@@ -59,3 +59,14 @@ Decisión: la regla queda activa en `chat`, `readme` y `redes`, y deja de estarl
 Motivo: en correo marca a los humanos igual que a la IA y supera el límite de falsos positivos de la política (FP/1000 = 2,107, máximo 1,5). Development v1.2 de correo, textos por encima del umbral del índice: antes 9 de 15 humanos y 9 de 15 IA (exactitud equilibrada 0,50); sin la regla, 4 de 15 humanos y 1 de 15 IA (0,40). Se van la mitad de las falsas alarmas sobre correos humanos. En correo el índice no separaba ni separa.
 Descartado: apagarla también en readme. Allí cumple la política (FP/1000 = 0,889) y quitarla no reduce ninguna falsa alarma humana: siguen marcados 5 de 14 README humanos y la IA marcada baja de 7 de 15 a 4 de 15 (exactitud equilibrada de 0,555 a 0,455). El −2 del holdout v1.2 en README es una diferencia pequeña con 15 textos por lado.
 Consecuencia: `benchmark/reports/development-v1.2-correo.json` se regenera con la regla apagada. Los informes de holdout v1.2 no se regeneran, porque ese holdout ya se usó con las reglas cerradas. El cambio se cuenta en el anexo de `benchmark/reports/v1.2.md`. El holdout v1.1 se evaluó con el perfil `chat` y no cambia.
+
+## 2026-09-18 — D2: adjudicación ciega de development v1.2 por un modelo de otro proveedor
+Decisión: los hallazgos de development v1.2 (correo, readme y redes) los adjudica GPT-5.6 Sol, un modelo que no es de la familia que escribe las reglas. Lo hace a ciegas: sin id de muestra, sin saber si el texto es humano o generado, sin el estado de la regla y sin resultados esperados. El propietario revisa los casos que queden como `dudoso`. Paquetes con `benchmark/scripts/dump-findings.mjs --ciego`; método en `docs/benchmark.md`.
+Motivo: en v1.0 adjudicó la misma IA que había escrito las reglas, y eso es circular.
+Descartado: que adjudique la IA ejecutora y el propietario revise después.
+
+## 2026-09-18 — Las reglas de longitud de frase no se adjudican
+Decisión: `estructura/longitud-uniforme`, `estructura/ritmo-plano` y `estructura/ritmo-metronomo` quedan fuera de la adjudicación y su precisión adjudicada es `null`. Se evalúan por FP/1000 en la clase humana y por las pruebas globales (separación de medianas y exactitud equilibrada por registro).
+Motivo: miden la variación de longitud de frase del texto entero. En un fragmento no hay nada que leer para saber si aciertan.
+Descartado: darlas por correctas por construcción, como se hizo en v1.0. Eso infla la precisión con hallazgos que nadie ha revisado.
+Consecuencia: `longitud-uniforme` es `stable` y no puede cumplir `min_adjudicated_precision` de `quality-policy.yml`. No se rebaja el umbral ni se cambia su estado por esto. Se decide en B9 con el resto de propuestas, a la vista de su FP/1000.

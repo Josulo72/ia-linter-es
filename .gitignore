@@ -20,3 +20,6 @@ corpus-v1.2/*/h-*.md
 
 # Paquetes de release generados con npm pack y Compress-Archive
 dist-release/
+
+# Paquetes para adjudicar: llevan párrafos de la clase humana, que no se redistribuye.
+benchmark/annotations/*/paquetes/

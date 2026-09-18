@@ -43,7 +43,7 @@ En `corpus/archive/v1.0`, con sus manifiestos y su lock. 45 textos humanos de BO
 | `benchmark/scripts/fetch-foros.mjs` | Descarga la clase humana cotidiana (solo local). Con `--from-manifest` rehace exactamente los textos del manifiesto y comprueba su hash | sí |
 | `benchmark/scripts/fetch-human.mjs` | Descarga la clase humana formal de v1.0 | sí |
 | `benchmark/scripts/build-manifests.mjs` | Genera manifiestos, deduplica y congela el holdout | no |
-| `benchmark/scripts/dump-findings.mjs` | Lista hallazgos con la clave de adjudicación | no |
+| `benchmark/scripts/dump-findings.mjs` | Lista hallazgos con la clave de adjudicación, con el mismo contexto que `benchmark run`. Con `--ciego` escribe el paquete para adjudicar | no |
 | `scripts/corpus-check.mjs` | Licencias, trazabilidad, hashes, congelación y veto de ambos corpus; forma parte de `pnpm gates` | no |
 | `ia-linter-es benchmark run --profile <perfil>` | Métricas por regla y agregadas (§12) | no |
 
@@ -59,6 +59,28 @@ En equipos donde Node no confía en la cadena de certificados de `revistas.csic.
 Auditoría del propio banco: `benchmark/reports/auditoria-banco-v1.1.md`, reproducible con `benchmark/scripts/auditoria-banco.mjs`.
 
 Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil palabras humanas, precisión adjudicada, desglose por registro y tiempo; agregadas, matriz de confusión, TPR, FPR, precisión, exactitud equilibrada, medianas e intervalos de Wilson al 95 %. No se publica recall por regla.
+
+## Adjudicación
+
+La precisión de una regla sale de revisar sus hallazgos uno a uno y marcar cada uno como `correct` (el patrón está y es el caso que la regla quiere señalar, lo haya escrito quien lo haya escrito) o `incorrect` (coincide en la forma pero no es ese caso).
+
+En v1.2 se adjudica development por registro, y a ciegas. Se hace así:
+
+```
+node benchmark/scripts/dump-findings.mjs development --corpus corpus-v1.2 --register correo --profile correo --ciego benchmark/annotations/v1.2/paquetes
+```
+
+Eso escribe dos archivos. `paquete-correo.md` es lo que se le da a quien adjudica: el criterio, y por cada hallazgo la regla, qué busca, el fragmento y el párrafo donde está. No lleva el id de la muestra, ni si el texto es humano o generado, ni el estado de la regla, y los hallazgos van mezclados con ids opacos (`c-001`…). `mapa-correo.json` traduce cada id opaco a la clave del benchmark y no se le da a quien adjudica. La carpeta `paquetes/` no se sube al repositorio porque lleva párrafos de la clase humana.
+
+Las respuestas, una vez traducidas con el mapa, van a `benchmark/annotations/v1.2/<registro>.yml`, y se evalúan con:
+
+```
+node packages/linter/dist/cli/main.js benchmark run --corpus corpus-v1.2 --partition development --register correo --profile correo --annotations benchmark/annotations/v1.2/correo.yml
+```
+
+Hay que pasar `--annotations`. Sin la opción, el benchmark lee `benchmark/annotations/<partición>.yml`, un nombre sin versión que comparten todos los corpus con partición `development`.
+
+Las tres reglas de longitud de frase (`estructura/longitud-uniforme`, `estructura/ritmo-plano` y `estructura/ritmo-metronomo`) no entran en el paquete y su precisión adjudicada es `null`. Miden la variación de longitud de las frases del texto entero, así que en un fragmento no hay nada que leer para decir si aciertan, y darlas por correctas porque el número cumple el umbral sería inflar la cifra. Se evalúan por FP/1000 en la clase humana y por su efecto en las pruebas globales: separación de medianas y exactitud equilibrada por registro. `longitud-uniforme` es `stable` y por eso no puede cumplir `min_adjudicated_precision`. Está registrado en `docs/decisions.md`.
 
 ## Límites
 
