@@ -11,6 +11,7 @@ includes: [forks, conversiones, derivados, copias sin trazabilidad]
 scan:
   - corpus
   - corpus-v1.2
+  - corpus-v1.3
   - benchmark
   - packages/linter/rules
   - examples

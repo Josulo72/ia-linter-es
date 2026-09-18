@@ -1,0 +1,11 @@
+schema_version: 1
+manifest: corpus-v1.3/manifests/holdout.yml
+estado: congelado
+composicion_sha256: 301e4b0833b257ae05f9ba4751b41ad35082fd8238d5ae9d73dc1895311370b7
+preregistrado: 2026-09-18
+samples: 90
+nota: Composición fijada antes de generar la clase IA. Se completa con
+  manifest_sha256 cuando no quede ningún texto pendiente. El holdout no se
+  ejecuta hasta que haya una versión de reglas cerrada.
+manifest_sha256: 5a9837b2f35643e1dae67758a1821f9c74fabe7149ba8393a138b73d79d33590
+congelado: 2026-09-18

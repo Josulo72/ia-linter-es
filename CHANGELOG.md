@@ -4,32 +4,6 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y l
 
 ## No publicado
 
-### Cambiado
-
-- La licencia pasa de MIT a Business Source License 1.1, con fecha de cambio el 2030-09-17 y vuelta a MIT
-  automática. El texto de la MIT se conserva en `LICENSE-MIT`. Afecta a quien integrara el proyecto
-  bajo la licencia anterior.
-- Tres reglas bajan de `stable` a `candidate` por no disparar en ninguna versión del corpus:
-  `densidad/conectores`, `lexico/desde-hasta-pasando` y `lexico/metaforas-comodin`. Dejaron 25 reglas
-  estables, que el cierre de B9 bajó después a 23. No cambia su nivel por defecto ni su perfil, así que
-  el linter marca lo mismo que antes.
-- El gate del índice lee el estado de cada regla del rulepack compilado y no de la foto que guardó el
-  informe congelado. Las métricas del informe se siguen leyendo del informe, que para eso está congelado.
-
-### Añadido
-
-- Banco de pruebas v1.2 en `corpus-v1.2/`: 90 textos humanos de correo, README y redes, 30 por
-  registro, más 180 generados. Descarga reejecutable con `benchmark/scripts/fetch-registros.mjs`,
-  manifiestos con URL, fecha, licencia y hash, y holdout congelado. Los textos humanos no se
-  redistribuyen. Informe en `benchmark/reports/v1.2.md`.
-
-### Arreglado
-
-- Las dos auditorías del banco pasaban `profile` suelto a `api.lintText`, que no tiene ese parámetro
-  y lo ignoraba sin avisar: el análisis acababa cargando el `ia-linter.yml` del repositorio en vez de
-  la configuración del registro. Corregido a `config: { profile }`. La cifra de v1.1 no cambia; la
-  mediana humana de redes en v1.2 pasa de 12 a 0.
-
 ### Arreglado (corpus)
 
 - El filtro de español de España del corpus v1.2 no filtraba. Aceptaba un texto con una sola marca
@@ -38,26 +12,52 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y l
   encontraba. El filtro estricto de habla peninsular solo se aplicaba a Reddit, no a README, correo ni
   fediverso. No había ningún filtro de prosa, así que podía entrar letra de canción o verso. Y `vale`
   contaba como marca peninsular, siendo el verbo valer.
-- Corregido: filtro estricto en los tres registros, lista de americanismos ampliada con mexicanismos
-  que faltaban y depurada de términos que en España significan otra cosa, detección de texto que no es
-  prosa, veto de instancias no peninsulares y de Pixelfed, y revalidación de lo ya registrado en cada
-  `--append`, que antes solo cubría Reddit.
+- Corregido: filtro estricto en los tres registros, lista de americanismos ampliada con mexicanismos y
+  depurada de términos que en España significan otra cosa, detección de texto que no es prosa, veto de
+  instancias no peninsulares y de Pixelfed, y revalidación de lo ya registrado en cada `--append`.
 - Nuevo `benchmark/scripts/auditar-corpus-humano.mjs`, que revisa la clase humana descargada con los
   filtros vigentes y dice qué textos no deberían estar. Solo lee.
 
 ### Sin resolver
 
-- Las cifras del banco v1.2 no valen mientras el corpus no se rehaga con el filtro corregido y se
-  vuelva a medir. El holdout de v1.2 ya está gastado, así que hace falta partición nueva.
-
-- La separación del índice sigue saliendo entera de `estructura/ritmo-plano`, que es `candidate`.
-  Contando solo las reglas estables no separa en ningún registro.
-- En correo y en README el índice puntúa más alto a los textos humanos que a los generados.
+- Las cifras del banco v1.2 se midieron sobre ese corpus y no valen mientras no se rehaga y se vuelva a
+  medir. Afecta también al anexo D1 y a la adjudicación de B9.
+- El corpus v1.3 reutiliza la clase humana de v1.2 tal cual (`reused_from` en sus manifiestos), así que
+  hereda el mismo problema. Su holdout está congelado y todavía sin ejecutar, así que se puede limpiar
+  antes de gastarlo.
 - `repeticion/inicio-parrafo` es `stable` y supera el máximo de falsos positivos de la política en el
-  holdout de README (2,019 por mil palabras frente a 1,5). Pendiente de decidir si baja a `candidate`
-  o se apaga en ese perfil.
+  holdout de README (2,019 por mil palabras frente a 1,5). Con `stable_min` en 23 y 23 reglas estables,
+  degradarla deja el pack por debajo del mínimo; apagarla en el perfil `readme` es la salida razonable.
 
-## [1.0.0] — 2026-09-17
+## [1.1.0] - 2026-09-19
+
+La humanización pasa a ser una capa común que funciona con cualquier skill y cualquier estilo de salida, y el linter devuelve orientación para reescribir en vez de solo avisos. El linter sigue sin llevar IA dentro: la única IA es el asistente que reescribe.
+
+### Añadido
+
+- `--format revision`: por cada regla, qué busca, una orientación para reescribir y dónde está cada caso. Cada hallazgo se puede aceptar, ignorar o reinterpretar según el contexto.
+- `--profile auto`: el perfil sale de la ruta según `rules/situaciones.yml` (un `README.md` va con `readme`, lo de `correos/` con `correo`). Lo que no encaja en ninguna situación no se analiza. Los overrides de `ia-linter.yml` siguen mandando.
+- Plugin de Claude Code: la guía se carga al empezar la sesión con un hook `SessionStart`, y hay un hook `PostToolUse` para los archivos de texto que se escriben con `Write` o `Edit`. Viene apagado, igual que el de respuestas.
+- `integrations/agents-md/`: la guía y la instrucción de revisar después de escribir, para pegarla en el `AGENTS.md` de Codex u otros asistentes.
+- `benchmark run --annotations` para adjudicar un corpus concreto, y los scripts para adjudicar a ciegas (`dump-findings.mjs --ciego` y `aplicar-adjudicacion.mjs`).
+- Corpus v1.3, con la clase IA generada por GPT-5.6 Sol y el holdout congelado sin ejecutar. Solo es para medir y no forma parte del producto.
+
+### Cambiado
+
+- La licencia pasa de MIT a Business Source License 1.1, con fecha de cambio el 2030-09-17 y vuelta a MIT
+  automática. El texto de la MIT se conserva en `LICENSE-MIT`. Afecta a quien integrara el proyecto bajo
+  la licencia anterior, y no estaba registrado en ninguna versión de este archivo.
+- La guía está ahora en `integrations/claude-code/guia/humano.md` y ya no es un estilo de salida.
+- `rules explain` y `docs/rules.md` llaman «Orientación» a la guía de reescritura de cada regla.
+- `estructura/ritmo-plano` y `formato/comillas-angulares` dejan de estar activas en el perfil `correo`, donde marcaban igual a humanos y a generados.
+- `retorica/pregunta-retorica-apertura` y `formato/encabezado-title-case` pasan a `candidate` después de adjudicar sus hallazgos: aciertan 4 de 12 y 2 de 7. Quedan 23 reglas estables y el mínimo de la política baja de 24 a 23.
+- La API rechaza las opciones que no conoce, las rutas de la línea de órdenes se toman desde el directorio de trabajo y los errores de uso salen con código 2.
+
+### Quitado
+
+- La skill `escribir-en-espanol`, que competía con las skills de cada tarea.
+
+## [1.0.0] - 2026-09-17
 
 Primera versión.
 

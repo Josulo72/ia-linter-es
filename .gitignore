@@ -23,3 +23,6 @@ dist-release/
 
 # Paquetes para adjudicar: llevan párrafos de la clase humana, que no se redistribuye.
 benchmark/annotations/*/paquetes/
+
+# Clase humana del corpus v1.3 (reutilizada de v1.2): textos solo en local, no se redistribuyen.
+corpus-v1.3/*/h-*.md

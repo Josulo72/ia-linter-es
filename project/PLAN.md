@@ -49,7 +49,7 @@ Cada una se toma antes de empezar el bloque que la necesita. Si no está tomada,
 |---|---|---|---|
 | D1 | Apagar `estructura/ritmo-plano` en los perfiles `correo` y `readme` | Tomada el 2026-09-18: solo en correo. En readme no quitaba falsas alarmas humanas (ver `docs/decisions.md`) | B8 |
 | D2 | Quién adjudica los hallazgos de development v1.2 | Tomada el 2026-09-18: GPT-5.6 Sol, a ciegas, y el propietario revisa los dudosos (ver `docs/decisions.md`) | B9 |
-| D3 | Proveedor y modelo de la clase IA externa para el corpus v1.3 | Cualquiera que no sea Claude. Hace falta cuenta y clave, así que genera el propietario | B12 |
+| D3 | Proveedor y modelo de la clase IA externa para el corpus v1.3 | Tomada el 2026-09-18: OpenAI, GPT-5.6 Sol, generado a mano por el propietario en ChatGPT; solo para el corpus de evaluación (ver `docs/decisions.md`) | B12 |
 
 ## Orden
 
@@ -208,6 +208,25 @@ Depende de D3, y una parte la ejecuta el propietario. Sirve para quitar la circu
 6. En este bloque solo se ejecuta development. El holdout v1.3 espera a que haya una versión de reglas cerrada.
 
 Hecho cuando `corpus-check` pasa con v1.3 y el lock está en el repositorio.
+
+Estado a 2026-09-18: preparado hasta el punto de generación.
+
+- Hecho: los puntos 1, 2, 4 y el preregistro del 5. `prompts-v1.3.yml` tiene los mismos 90 temas, plantillas y particiones que v1.2, en condición base y guiada: 180 textos en 36 lotes de 5. Los textos exactos de cada lote están en `corpus-v1.3/ENCARGOS.md`, que genera `benchmark/scripts/generacion-v1.3.mjs encargos`. La clase humana es la de v1.2, reutilizada y marcada en cada muestra con `reused_from`. La parte humana del holdout v1.3 no es independiente, porque holdout v1.2 ya se ejecutó; solo lo es la clase IA. `holdout-v1.3.lock` está en preregistro: fija qué muestras humanas y qué encargos forman el holdout antes de generar nada.
+- Falta: el punto 3, que hace el propietario (180 textos de GPT-5.6 Sol en ChatGPT). Después, `generacion-v1.3.mjs importar`, `build-manifests-v1.3.mjs`, que congela el holdout al no quedar pendientes, el punto 6 (solo development) y los gates.
+- El camino completo (importar, construir, congelar, `corpus-check` y detectar un texto tocado tras congelar) se probó en una copia desechable del repositorio con relleno, que se borró.
+- Generación, a 2026-09-18, 55 de 180 textos importados:
+  - L01 a L05: generados a mano por el propietario en ChatGPT, un lote por conversación temporal.
+  - Un zip posterior con L01 a L36 se rechazó: de L06 en adelante los textos eran una misma plantilla con el tema pegado (86 a 96 % de 8-gramas compartidos y el punto doble al insertar el tema). Se deshizo su importación con permiso del propietario.
+  - L06 a L11: generados por Claude Code manejando el Chrome del propietario, con su permiso expreso porque él no podía escribir. Cada lote en un chat temporal nuevo, «Sin personalizar», GPT-5.6 Sol con esfuerzo de razonamiento «Alta», el prompt pegado comprobado por hash contra `ENCARGOS.md` y la respuesta copiada con el botón «Copiar respuesta» de ChatGPT, sin tocarla.
+  - L12 a L36: el sistema de permisos de Claude Code bloqueó seguir usando la cuenta del propietario de forma automática y no se forzó. Los generó Claude en Chrome, a petición del propietario, con las mismas instrucciones: un lote por chat temporal nuevo, «Sin personalizar», GPT-5.6 Sol en «Alta», el encargo de `ENCARGOS.md` tal cual y la respuesta guardada con «Copiar respuesta». Llegaron en un zip con L06 a L36, todos del 2026-09-18 entre las 22:30 y las 23:45. L06 a L11 coincidían byte a byte con lo ya importado.
+
+Cerrado el 2026-09-18:
+
+- 180 de 180 textos IA importados, con lote, fecha, palabras, ediciones (ninguna) y hash. Ningún par de textos pasa del 20 % de 8-gramas compartidos; el máximo por lote es un 7 %.
+- Un texto fuera de la banda de palabras del encargo: ai-g-c01, un correo guiado de challenge, con 139 palabras frente a las 150 mínimas. Se conserva tal cual. Está en challenge, no afecta a development ni a holdout, y regenerarlo exigiría volver a usar la cuenta del propietario.
+- `holdout-v1.3.lock` congelado, con la misma composición que el preregistro. No se ha ejecutado.
+- Development v1.3 ejecutado por registro con su perfil (`benchmark/reports/development-v1.3-{correo,readme,redes}.json`). Medianas humano/IA y exactitud equilibrada: correo 0/0 y 0,533; readme 7,5/0 y 0,455; redes 8/20 y 0,70. Con v1.2, cuya clase IA era de Claude: correo 0/0 y 0,50; readme 7,5/10 y 0,555; redes 8/18 y 0,767. Con una clase IA de otro proveedor el índice sigue separando en redes y no en correo, y en README marca más a los humanos que a los generados.
+- Gates: typecheck, 93 tests, build, gates, `lint:self`, `pack:check` y `corpus-check`, todos en verde.
 
 ## B13. Cierre de la fase 2
 

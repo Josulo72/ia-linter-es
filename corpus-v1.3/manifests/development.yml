@@ -1,0 +1,1670 @@
+# Generado por benchmark/scripts/build-manifests-v1.3.mjs. No editar a mano.
+schema_version: 1
+corpus_version: "1.3"
+partition: development
+samples:
+  - id: h-co01
+    class: human
+    file: development/h-co01.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/12/msg00007.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-12-14
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-12-14, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 157
+    sha256: 24c020ac504a24314bbd87103c09ca08b3f549c193445f1900ce6d130ab2030a
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co01.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co03
+    class: human
+    file: development/h-co03.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/11/msg00026.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-11-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-11-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 302
+    sha256: 6c97a8fad1312091dbab8475a36860ec2b1ca6c6ffd5440022aeba4e9ba19afa
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co03.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co05
+    class: human
+    file: development/h-co05.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/09/msg00014.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-09-09
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-09-09, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 396
+    sha256: 56fdd7469036679657cdc3bc1180a2fcac01d911c37dba8391de3e45907a3f7f
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co05.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co07
+    class: human
+    file: development/h-co07.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00008.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-06
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-06, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 196
+    sha256: 7693dc6f435f26980c5313377bf6b2d16b22df798235b39f6f9f0fac859a5401
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co07.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co09
+    class: human
+    file: development/h-co09.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00075.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-22
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-22, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 191
+    sha256: 616f36a42f2afec0db5a6be2ca03ce289224aae6710c13db0ac47e0ead56143f
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co09.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co11
+    class: human
+    file: development/h-co11.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00002.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-09
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-09, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 413
+    sha256: d5eabf0c241f87c40093da689465cabe1e201a758c2e2698a3a79a6c457732e4
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co11.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co13
+    class: human
+    file: development/h-co13.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00033.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 242
+    sha256: a8c50a9e28978f2b06646943dcd497e9f99acab6da309dba6ca5b3072774b1d2
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co13.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co15
+    class: human
+    file: development/h-co15.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/05/msg00090.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-05-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-05-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 158
+    sha256: 16dd5bd62e1db02d055fb8416c5db8d7c464d07a4fe0ae4cf4c9d4f6885afc0d
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co15.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co17
+    class: human
+    file: development/h-co17.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00096.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-28
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-28, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 162
+    sha256: ee4611ae5a311a53b64e3a44dc244462e5a2666dbed9731e2f30367461cee439
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co17.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co19
+    class: human
+    file: development/h-co19.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00088.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 316
+    sha256: 5831a86454c8f76ed6a82fbcdcba02be8e8c75bf89a7bc2379006cf985713209
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co19.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co21
+    class: human
+    file: development/h-co21.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00019.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-08
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-08, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 264
+    sha256: dc0fa8190be5dc29b7cb3b01abbaaca2710307ace4d9d422bb308531bf45e692
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co21.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co23
+    class: human
+    file: development/h-co23.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00039.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-10
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-10, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 346
+    sha256: dec61dc3e784168ffc6ad96b73dd9063d100a9c92609646d7c57e61eb532bf28
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co23.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co25
+    class: human
+    file: development/h-co25.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00062.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-17
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-17, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 164
+    sha256: 2e77a1e16afb1f32367cdec0bbe58f28075f2e90c4a0d3be1d4217eaea02f998
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co25.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co27
+    class: human
+    file: development/h-co27.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/09/msg00046.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-09-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-09-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 204
+    sha256: 3acaf4bd89e3632a8bdfc690e4c28b27465730c9cf683a743dd3b35a3f10d697
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co27.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-co29
+    class: human
+    file: development/h-co29.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/07/msg00072.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-07-24
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-07-24, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 240
+    sha256: 60b5cf439c8a5f6fc5083ffd97dd25f889be6a06775db0a923b8f057828d8894
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-co29.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd01
+    class: human
+    file: development/h-rd01.md
+    register: readme
+    level: H2
+    source: github:Protoncoind/ProtonCoin
+    source_url: https://github.com/Protoncoind/ProtonCoin/blob/af27976c103edf80435b523a4d14901e6566d1a9/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: Protoncoind (repositorio Protoncoind/ProtonCoin)
+    date: 2021-01-22
+    human_evidence: Último commit del README el 2021-01-22, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-01-22.
+    extraction: README completo del commit af27976c103e; sin editar
+    theme: software
+    words: 311
+    sha256: 33522a9e8382952a4fca4850d2f9611914245cccce0c0f15ca165d1bcf0e667e
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd01.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd03
+    class: human
+    file: development/h-rd03.md
+    register: readme
+    level: H2
+    source: github:cristinafsanz/melies-origen
+    source_url: https://github.com/cristinafsanz/melies-origen/blob/17eda06ee19f61bb050af47df0d7c666a72655a6/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: cristinafsanz (repositorio cristinafsanz/melies-origen)
+    date: 2017-09-04
+    human_evidence: Último commit del README el 2017-09-04, anterior a 2022-01-01; el repositorio no recibe cambios desde 2017-09-04.
+    extraction: README completo del commit 17eda06ee19f; sin editar
+    theme: software
+    words: 530
+    sha256: 8146276159ba1015576c0ccce73b20a4cce076d9674ccabc7d4f8afa4f764f30
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd03.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd05
+    class: human
+    file: development/h-rd05.md
+    register: readme
+    level: H2
+    source: github:JhonMendoza26/Sistema-de-Ventas-Restaurante
+    source_url: https://github.com/JhonMendoza26/Sistema-de-Ventas-Restaurante/blob/4bf40b0104f26bc1daf3e83577c84c190dffe120/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: JhonMendoza26 (repositorio JhonMendoza26/Sistema-de-Ventas-Restaurante)
+    date: 2021-06-30
+    human_evidence: Último commit del README el 2021-06-30, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-06-30.
+    extraction: README completo del commit 4bf40b0104f2; sin editar
+    theme: software
+    words: 478
+    sha256: 25e94de7367f343e9bc720dcdd07cf371a40204297de50a3cbaded34bf4fe5b0
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd05.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd07
+    class: human
+    file: development/h-rd07.md
+    register: readme
+    level: H2
+    source: github:node-girls/express-workshop-spanish
+    source_url: https://github.com/node-girls/express-workshop-spanish/blob/0c45358ef256cf46d7add9236be203ccfd7e8e92/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: node-girls (repositorio node-girls/express-workshop-spanish)
+    date: 2019-02-16
+    human_evidence: Último commit del README el 2019-02-16, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-05-30.
+    extraction: README completo del commit 0c45358ef256; sin editar
+    theme: software
+    words: 250
+    sha256: 1b2420a6f629b3e400f9a6eec2c2620939716cddf0aab1d3eb76d81a9baa569f
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd07.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd09
+    class: human
+    file: development/h-rd09.md
+    register: readme
+    level: H2
+    source: github:sofiadparamo/Convolution
+    source_url: https://github.com/sofiadparamo/Convolution/blob/8f0f0b81bc410ee3d14f54d2fc771cac0d41c5b0/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: sofiadparamo (repositorio sofiadparamo/Convolution)
+    date: 2020-09-18
+    human_evidence: Último commit del README el 2020-09-18, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-09-18.
+    extraction: README completo del commit 8f0f0b81bc41; sin editar
+    theme: software
+    words: 320
+    sha256: 1571dc57ecbe0abd3a114723ff7015774040ad04e27440ce33926b3f3aa0aff0
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd09.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd11
+    class: human
+    file: development/h-rd11.md
+    register: readme
+    level: H2
+    source: github:ElenaMLopez/taller_git_online
+    source_url: https://github.com/ElenaMLopez/taller_git_online/blob/43eaaf0c8100ae7464c4480a35f11ea175883b16/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: ElenaMLopez (repositorio ElenaMLopez/taller_git_online)
+    date: 2020-07-12
+    human_evidence: Último commit del README el 2020-07-12, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-07-12.
+    extraction: README completo del commit 43eaaf0c8100; sin editar
+    theme: software
+    words: 382
+    sha256: a83374f9d256400e643aa9a95ee967fafc2e6301cfa6ab50e3e7560fe7757c90
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd11.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd13
+    class: human
+    file: development/h-rd13.md
+    register: readme
+    level: H2
+    source: github:SebSalazar/cansat-monitoring-app
+    source_url: https://github.com/SebSalazar/cansat-monitoring-app/blob/b1c0fc31daee44c271a0bad4db32f97f044292f1/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: SebSalazar (repositorio SebSalazar/cansat-monitoring-app)
+    date: 2021-06-20
+    human_evidence: Último commit del README el 2021-06-20, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-06-20.
+    extraction: README completo del commit b1c0fc31daee; sin editar
+    theme: software
+    words: 480
+    sha256: 99e37fac9780cbea52c0f7bdf89c941cfe5dbcbb258cc25ad07ba67fdc40ee74
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd13.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd15
+    class: human
+    file: development/h-rd15.md
+    register: readme
+    level: H2
+    source: github:vgaltes/TheServerlessCourseSourceCode
+    source_url: https://github.com/vgaltes/TheServerlessCourseSourceCode/blob/bcf29091d4502bbb4e2910d66b36913f08a32114/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: vgaltes (repositorio vgaltes/TheServerlessCourseSourceCode)
+    date: 2019-06-20
+    human_evidence: Último commit del README el 2019-06-20, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-10-25.
+    extraction: README completo del commit bcf29091d450; sin editar
+    theme: software
+    words: 675
+    sha256: 69755ac9562731295e7c154be000f64c132342ae21e7aa2a8fef550476bf242a
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd15.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd17
+    class: human
+    file: development/h-rd17.md
+    register: readme
+    level: H2
+    source: github:ganchito55/criptografia
+    source_url: https://github.com/ganchito55/criptografia/blob/9cb1d7564b3a0222d7f1275300bdaebe1863584d/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: ganchito55 (repositorio ganchito55/criptografia)
+    date: 2015-07-26
+    human_evidence: Último commit del README el 2015-07-26, anterior a 2022-01-01; el repositorio no recibe cambios desde 2015-07-26.
+    extraction: README completo del commit 9cb1d7564b3a; sin editar
+    theme: software
+    words: 164
+    sha256: 97a639d3a5cee6c3a8dc75b396ac86417aa06df7f2a9959073ed89560908ef7b
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd17.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd19
+    class: human
+    file: development/h-rd19.md
+    register: readme
+    level: H2
+    source: github:josegury/ESII_REDES2
+    source_url: https://github.com/josegury/ESII_REDES2/blob/a77c17e748303475c9922aeb648d9712203adb6d/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: josegury (repositorio josegury/ESII_REDES2)
+    date: 2015-01-27
+    human_evidence: Último commit del README el 2015-01-27, anterior a 2022-01-01; el repositorio no recibe cambios desde 2015-01-27.
+    extraction: README completo del commit a77c17e74830; sin editar
+    theme: software
+    words: 169
+    sha256: ba8c3cca968ed12c2a7c7673663bcae406d6464018d498732ae78eb3ce8db048
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd19.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd21
+    class: human
+    file: development/h-rd21.md
+    register: readme
+    level: H2
+    source: github:megabass00/react-users-crud
+    source_url: https://github.com/megabass00/react-users-crud/blob/b53eddcf61686ca0a25ae8d7500c7affb77abee8/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: megabass00 (repositorio megabass00/react-users-crud)
+    date: 2021-04-15
+    human_evidence: Último commit del README el 2021-04-15, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-04-15.
+    extraction: README completo del commit b53eddcf6168; sin editar
+    theme: software
+    words: 818
+    sha256: f154a2e4018844dc591ac6866335e9098b6f16817eb1a2bb75c08966483da19d
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd21.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd23
+    class: human
+    file: development/h-rd23.md
+    register: readme
+    level: H2
+    source: github:davidMarCal/Hotjar-IPO-Usal
+    source_url: https://github.com/davidMarCal/Hotjar-IPO-Usal/blob/57446b82b1e28ad7e67cc65bab168b99dd1feda3/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: davidMarCal (repositorio davidMarCal/Hotjar-IPO-Usal)
+    date: 2021-08-31
+    human_evidence: Último commit del README el 2021-08-31, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-08-31.
+    extraction: README completo del commit 57446b82b1e2; sin editar
+    theme: software
+    words: 223
+    sha256: 46007e2fe59e0cc168d5fb530c2a68c643932ceb3ac69e5e29af8b18b14d7f5d
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd23.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd25
+    class: human
+    file: development/h-rd25.md
+    register: readme
+    level: H2
+    source: github:perlamellao/PiBug
+    source_url: https://github.com/perlamellao/PiBug/blob/74c11551edf8369af6a01aa79496e32f8d1f37ec/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: perlamellao (repositorio perlamellao/PiBug)
+    date: 2021-10-19
+    human_evidence: Último commit del README el 2021-10-19, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-10-20.
+    extraction: README completo del commit 74c11551edf8; sin editar
+    theme: software
+    words: 371
+    sha256: d6f6510bbd6d3eba86c4e4001f70affd82ebcc147fc4f66b4e3722d91b0cdc61
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd25.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd27
+    class: human
+    file: development/h-rd27.md
+    register: readme
+    level: H2
+    source: github:alexbertis/QuijoteNet
+    source_url: https://github.com/alexbertis/QuijoteNet/blob/4d8f46aead05cf7e2aa36b6af8d9f30af6f41a95/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: alexbertis (repositorio alexbertis/QuijoteNet)
+    date: 2018-05-31
+    human_evidence: Último commit del README el 2018-05-31, anterior a 2022-01-01; el repositorio no recibe cambios desde 2018-05-31.
+    extraction: README completo del commit 4d8f46aead05; sin editar
+    theme: software
+    words: 468
+    sha256: cecbf27bcd1edcfae15ddca1581cd3f0b00b17df1beb4c43d9dc97b4de313223
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd27.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-rd29
+    class: human
+    file: development/h-rd29.md
+    register: readme
+    level: H2
+    source: github:ricardocancar/TFM
+    source_url: https://github.com/ricardocancar/TFM/blob/2845de3e5ea9eacf220a14094f403110a77ca78e/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: ricardocancar (repositorio ricardocancar/TFM)
+    date: 2018-12-24
+    human_evidence: Último commit del README el 2018-12-24, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-03-11.
+    extraction: README completo del commit 2845de3e5ea9; sin editar
+    theme: software
+    words: 582
+    sha256: 7bf9619649be395078db43a58ffb6be3c0862bbec1710140874f5245200b0933
+    retrieved: 2026-09-17
+    reused_from: corpus-v1.2/development/h-rd29.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re01
+    class: human
+    file: development/h-re01.md
+    register: redes
+    level: H2
+    source: mastodon:quey.org
+    source_url: https://quey.org/@dsteve/104760713714016526
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@dsteve@quey.org (cuenta pública de Mastodon)"
+    date: 2020-08-27
+    human_evidence: Publicación pública de Mastodon del 2020-08-27, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 232
+    sha256: e0a5ad621d85358d7b4a5a05f5a84c74430857658a4293f3b4e68efa8470a24b
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re01.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re03
+    class: human
+    file: development/h-re03.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/335950596773384192
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-08-25
+    human_evidence: Publicación pública de Mastodon del 2021-08-25, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 190
+    sha256: dffe166513f2c883ab67e522a3900aa1f03442e7866db0d4788a8a3e72671329
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re03.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re05
+    class: human
+    file: development/h-re05.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/338734496012701696
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-09-01
+    human_evidence: Publicación pública de Mastodon del 2021-09-01, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 183
+    sha256: d69e5dcf5f733b19358929d6b8a6c6e255f8f83aca52e7a80be876549b2f2f7f
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re05.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re07
+    class: human
+    file: development/h-re07.md
+    register: redes
+    level: H2
+    source: mastodon:barcelona.social
+    source_url: https://barcelona.social/objects/1da69896-40ef-491c-8a77-2537a68eb314
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@rosadefoc@barcelona.social (cuenta pública de Mastodon)"
+    date: 2021-08-07
+    human_evidence: Publicación pública de Mastodon del 2021-08-07, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 171
+    sha256: 4c9cb5342b175c3361e5af0dfca0dac6aa76d6cd0dae22c3003e628f98cc87cd
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re07.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re09
+    class: human
+    file: development/h-re09.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/331792484608905216
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-08-13
+    human_evidence: Publicación pública de Mastodon del 2021-08-13, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 163
+    sha256: d34786496cc27afe22586e4edfad6e7e06b78aa2f421e94db45a18e4c29c2a3e
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re09.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re11
+    class: human
+    file: development/h-re11.md
+    register: redes
+    level: H2
+    source: mastodon:hispagatos.space
+    source_url: https://hispagatos.space/@tax/107334476265193583
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@tax (cuenta pública de Mastodon)"
+    date: 2021-11-24
+    human_evidence: Publicación pública de Mastodon del 2021-11-24, anterior a 2022-01-01.
+    extraction: hilo de 3 publicaciones consecutivas del mismo autor, unidas por una línea en blanco
+    theme: general
+    words: 246
+    sha256: a00a263406af25d8a145019290226b1eb029cd503ec4b39b899009aee6cf3065
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re11.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re13
+    class: human
+    file: development/h-re13.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/repasa/ayuda_ingeniería_informática_online_en_españa/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/petrolito (cuenta pública de Reddit)
+    date: 2021-12-12
+    human_evidence: Publicación pública de Reddit en r/es del 2021-12-12, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 417
+    sha256: 27a3f4e39dcafa938936a6ecd674c7787132a45f7d266275b732b9afadd7bdd3
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re13.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re15
+    class: human
+    file: development/h-re15.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/q6sxp7/pregunta_para_otros_españoles_habéis_celebrado_de/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Robot_4_jarvis (cuenta pública de Reddit)
+    date: 2021-10-12
+    human_evidence: Publicación pública de Reddit en r/es del 2021-10-12, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 154
+    sha256: c6bb355c920d0a56c6c4fd91c03cc090668fec43cdaadd6c62554423174bf65d
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re15.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re17
+    class: human
+    file: development/h-re17.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/ph5fbc/alguien_ha_ido_alguna_vez_al_oculista_por_la/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Probablylikewaifu (cuenta pública de Reddit)
+    date: 2021-09-03
+    human_evidence: Publicación pública de Reddit en r/es del 2021-09-03, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 387
+    sha256: cfe6ab9ecb236d4c1d25d2b0114fbd3ecd16fd38f4515dc3c7ca233adaf4d678
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re17.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re19
+    class: human
+    file: development/h-re19.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/okojb2/examen_practico_coche_falta_deficiente_o_es_una/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/worldmusic123 (cuenta pública de Reddit)
+    date: 2021-07-15
+    human_evidence: Publicación pública de Reddit en r/es del 2021-07-15, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 186
+    sha256: 219574d7242697cfa332f2df72572f84fa2988de558300ce1263ab870552413f
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re19.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re21
+    class: human
+    file: development/h-re21.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/npifoa/he_hecho_el_exámen_de_la_asignatura_que_no_era/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Frucoarht (cuenta pública de Reddit)
+    date: 2021-06-01
+    human_evidence: Publicación pública de Reddit en r/es del 2021-06-01, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 184
+    sha256: bf9bc11e7cdf9ecb9c49e9e0fc554faeb6faaf1f2cd671e8ed9661a04ac7addf
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re21.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re23
+    class: human
+    file: development/h-re23.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/nhqnl7/facturar_al_extranjero_hay_que_hacerse_autónomo/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Powerful-Employer-20 (cuenta pública de Reddit)
+    date: 2021-05-21
+    human_evidence: Publicación pública de Reddit en r/es del 2021-05-21, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 211
+    sha256: 17c8db4f14df5d7caf12add9f52d5cdf6bb31c3db97bd4b5d46263c2353eb952
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re23.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re25
+    class: human
+    file: development/h-re25.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n1ocvq/hay_alguna_marca_de_sillas_de_oficina_recomendable/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/OMG_Abaddon (cuenta pública de Reddit)
+    date: 2021-04-30
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-30, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 290
+    sha256: 5a6b4703e59d22468b6f73b2ed341be45d303fd55b49ab96db10b19e34fef2ed
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re25.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re27
+    class: human
+    file: development/h-re27.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n07kaf/subreddit_sobre_asesoria_legalimpuestosautónomos/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/kram08980 (cuenta pública de Reddit)
+    date: 2021-04-28
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-28, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 221
+    sha256: 8fcb0978226e6addd9ced6974000eeac3929c6f2d6b8600cd968ae4968230a3a
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re27.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: h-re29
+    class: human
+    file: development/h-re29.md
+    register: redes
+    level: H2
+    source: reddit:r/askspain
+    source_url: https://www.reddit.com/r/askspain/comments/rmrx7w/qué_entendéis_vosotros_por_faranduleo_o_artisteo/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/carlosmstraductor (cuenta pública de Reddit)
+    date: 2021-12-23
+    human_evidence: Publicación pública de Reddit en r/askspain del 2021-12-23, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 266
+    sha256: ca604c79c523c8486085944fca99b098d5b6353ffd9fbc4548ef7e5e94b888d3
+    retrieved: 2026-09-18
+    reused_from: corpus-v1.2/development/h-re29.md
+    reuse_note: Reutilizado de development v1.2, que se usó para ajustar reglas (D1, B9).
+  - id: ai-c01
+    class: ai
+    file: development/ai-c01.md
+    register: correo
+    theme: trabajo
+    prompt_id: c01
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L01
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 175
+    sha256: 95731cde8e05ebb5ea9317d9ee98742da0a15be061d0e6fd5025adaf2ab963ec
+  - id: ai-c02
+    class: ai
+    file: development/ai-c02.md
+    register: correo
+    theme: trabajo
+    prompt_id: c02
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L01
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 194
+    sha256: 42c4a80f518cf556c9d9a05bf770723c2269debb3d08f72ab310864898b8e235
+  - id: ai-c03
+    class: ai
+    file: development/ai-c03.md
+    register: correo
+    theme: tramites
+    prompt_id: c03
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L01
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 190
+    sha256: 1d8fb7a2a3e580dd3c9dd662fb9e8f55fe1a37b46c326acd1d8b3ba5d500e70d
+  - id: ai-c04
+    class: ai
+    file: development/ai-c04.md
+    register: correo
+    theme: tramites
+    prompt_id: c04
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L01
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: f2117e6e0dd7e79cbdb38b784928c32a48957fcc6ff68de3d6b0b05878d3b4d5
+  - id: ai-c05
+    class: ai
+    file: development/ai-c05.md
+    register: correo
+    theme: personal
+    prompt_id: c05
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L01
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 200
+    sha256: 4105cc0eb940aa6ace52de764a584c59ba59f0bc647d1359f10b02968b392d58
+  - id: ai-c06
+    class: ai
+    file: development/ai-c06.md
+    register: correo
+    theme: trabajo
+    prompt_id: c06
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L02
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 176
+    sha256: 8cd88c1ea3f1729e23a256118659e278cc297c6c0d5fecacdc0f618940a06a5b
+  - id: ai-c07
+    class: ai
+    file: development/ai-c07.md
+    register: correo
+    theme: trabajo
+    prompt_id: c07
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L02
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 194
+    sha256: bf516f3bb5db20499a6d83013f1fe349542e5cada29f90cdc6099f5dcce350f4
+  - id: ai-c08
+    class: ai
+    file: development/ai-c08.md
+    register: correo
+    theme: tramites
+    prompt_id: c08
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L02
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 191
+    sha256: 03654b7a96300ceae7f432cf30607674a3abd035a9331f1a8d8d7aab42587ee2
+  - id: ai-c09
+    class: ai
+    file: development/ai-c09.md
+    register: correo
+    theme: tramites
+    prompt_id: c09
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L02
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 183
+    sha256: 8fdb8e943ba282575f40bfd719575a25362c8ddd0656ff0332182c46c5f5886b
+  - id: ai-c10
+    class: ai
+    file: development/ai-c10.md
+    register: correo
+    theme: personal
+    prompt_id: c10
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L02
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 195
+    sha256: 0f76c756f986986856e53456ee8e98ce3e2dfd99f0779fec7a9bbd70ad5545b0
+  - id: ai-c11
+    class: ai
+    file: development/ai-c11.md
+    register: correo
+    theme: trabajo
+    prompt_id: c11
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L03
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 180
+    sha256: 02b2a42cf2601ddfdc85d5ff222d989d5a482f0428c2ec8a53f051a8446dfec3
+  - id: ai-c12
+    class: ai
+    file: development/ai-c12.md
+    register: correo
+    theme: trabajo
+    prompt_id: c12
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L03
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 166
+    sha256: 255a9478158131cf419ce162f0ded0e7bd685267b671c37b05fdb585b852d11e
+  - id: ai-c13
+    class: ai
+    file: development/ai-c13.md
+    register: correo
+    theme: tramites
+    prompt_id: c13
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L03
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 182
+    sha256: 7b9a75bb86e618c2f416b372e34425e64e86fc3d52375c686db81994b5322673
+  - id: ai-c14
+    class: ai
+    file: development/ai-c14.md
+    register: correo
+    theme: tramites
+    prompt_id: c14
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L03
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 175
+    sha256: 1dcef574715243675b8be38b09621f7820577b3de6709f867efcc3e45745cefc
+  - id: ai-c15
+    class: ai
+    file: development/ai-c15.md
+    register: correo
+    theme: personal
+    prompt_id: c15
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L03
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 181
+    sha256: cba9fd1d632e475e2ea7ec7840402a0a9e9fcb36f122ebbf05761b872e69cd0b
+  - id: ai-r01
+    class: ai
+    file: development/ai-r01.md
+    register: readme
+    theme: herramienta
+    prompt_id: r01
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L07
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 294
+    sha256: 32eeaf9b5b3ce847d41790b7dd5e22b809f5b27e87cdd8053a088f2448442a0f
+  - id: ai-r02
+    class: ai
+    file: development/ai-r02.md
+    register: readme
+    theme: herramienta
+    prompt_id: r02
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L07
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 271
+    sha256: a5e6f20666bbed6c4e66cdf29e5083927f17daa9b6d843305dac1c5bf0093278
+  - id: ai-r03
+    class: ai
+    file: development/ai-r03.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r03
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L07
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 271
+    sha256: 0090075d7f46de62f4567ba17f1ed21fbec8f9962983b447445dc72e65ff8e95
+  - id: ai-r04
+    class: ai
+    file: development/ai-r04.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r04
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L07
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 286
+    sha256: f76cc5eb1351f5f520f3df1ed48612ff0cc2a3e27cea961d45837130faf2adf7
+  - id: ai-r05
+    class: ai
+    file: development/ai-r05.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r05
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L07
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 337
+    sha256: d8464f224315b55746b0c601fc777996c449c445133e88fbdf43f29e8bbb004d
+  - id: ai-r06
+    class: ai
+    file: development/ai-r06.md
+    register: readme
+    theme: herramienta
+    prompt_id: r06
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L08
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 288
+    sha256: bc0b874eb8c217f145d04e2fd9f1993ec307979296be65c10f52b51e83e45754
+  - id: ai-r07
+    class: ai
+    file: development/ai-r07.md
+    register: readme
+    theme: herramienta
+    prompt_id: r07
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L08
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 275
+    sha256: b5e5124ec5ae9ca2b5e5bb2a632ab4ae64afb186938eacfc88aedbec9d97056d
+  - id: ai-r08
+    class: ai
+    file: development/ai-r08.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r08
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L08
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 254
+    sha256: 4fea7595d12076b8024a3458f15a3a56fa52a8ea25e24ca814f15505c8052ffd
+  - id: ai-r09
+    class: ai
+    file: development/ai-r09.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r09
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L08
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 274
+    sha256: 0c542064c2aaf583da257b04282d3ac2a54232a84957ce3f81b9ed49c65cad24
+  - id: ai-r10
+    class: ai
+    file: development/ai-r10.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r10
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L08
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 309
+    sha256: 9edbe07efbfc1b2296cb335f5a97e06fd028d0c2b002c95f0d0d6060f94a8536
+  - id: ai-r11
+    class: ai
+    file: development/ai-r11.md
+    register: readme
+    theme: herramienta
+    prompt_id: r11
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L09
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 283
+    sha256: a442b550303334609ca42de96d7e7f63ccd1c63b671da49abe60aa1244423260
+  - id: ai-r12
+    class: ai
+    file: development/ai-r12.md
+    register: readme
+    theme: herramienta
+    prompt_id: r12
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L09
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 297
+    sha256: 6bfc9ac528834169ca5375c89052a7b47cdf1f70bb8b4ad5ec123fdedb1ebf4e
+  - id: ai-r13
+    class: ai
+    file: development/ai-r13.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r13
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L09
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 266
+    sha256: 229ce11e7ac043af53ebe85f58636441c5ef01a9d6cf77377b2e78282e5d7ea7
+  - id: ai-r14
+    class: ai
+    file: development/ai-r14.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r14
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L09
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 268
+    sha256: ee678f306cd23042844d702bfb8f28dae6276a477b0f43e5817c3d5b18899672
+  - id: ai-r15
+    class: ai
+    file: development/ai-r15.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r15
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L09
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 297
+    sha256: 2d67fd3a4991d2e063601b76344601f9480ea05f21a54b8dd1404c30a6dbc7bc
+  - id: ai-s01
+    class: ai
+    file: development/ai-s01.md
+    register: redes
+    theme: general
+    prompt_id: s01
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L13
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 211
+    sha256: 0edcb5aa972b7ac150834bd9560ac7e31c1e95d5858674aac2547b882b5507f6
+  - id: ai-s02
+    class: ai
+    file: development/ai-s02.md
+    register: redes
+    theme: general
+    prompt_id: s02
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L13
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 204
+    sha256: b01519143fe3bf829499512f8ac20bb58dd38618821c690af263622e625c36b6
+  - id: ai-s03
+    class: ai
+    file: development/ai-s03.md
+    register: redes
+    theme: cultura
+    prompt_id: s03
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L13
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 222
+    sha256: 625b116e7215f591ce88a15820557e6d87ca7e94b834af868fc4c04f0955eb7f
+  - id: ai-s04
+    class: ai
+    file: development/ai-s04.md
+    register: redes
+    theme: cultura
+    prompt_id: s04
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L13
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 217
+    sha256: b157dd4a5fa526c48e26f87b3b964294c60ef848d74818cb582b356555fdab72
+  - id: ai-s05
+    class: ai
+    file: development/ai-s05.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s05
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L13
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 219
+    sha256: f40599736e030785eb5af95e4ebff19b892d370630023478a0bf7e6e62258b31
+  - id: ai-s06
+    class: ai
+    file: development/ai-s06.md
+    register: redes
+    theme: general
+    prompt_id: s06
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L14
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 184
+    sha256: 4f717b259b8c58d3cfc9dfb470644fdba099bb3b9caccf2bc6653d00f0b3cd17
+  - id: ai-s07
+    class: ai
+    file: development/ai-s07.md
+    register: redes
+    theme: general
+    prompt_id: s07
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L14
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 207
+    sha256: 1df79289fbd3f946e63582e91ae018db94909d22838b57562522a691f6cc4430
+  - id: ai-s08
+    class: ai
+    file: development/ai-s08.md
+    register: redes
+    theme: cultura
+    prompt_id: s08
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L14
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 193
+    sha256: 872850cda447c6793f9ac85cf5b984569aac71c9bc7d8cbce1c0e977347989c0
+  - id: ai-s09
+    class: ai
+    file: development/ai-s09.md
+    register: redes
+    theme: cultura
+    prompt_id: s09
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L14
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 204
+    sha256: 0a6bb83c1e93efef556d10e5037ba5c38f81a457f19ff152f961c7078ee0fc28
+  - id: ai-s10
+    class: ai
+    file: development/ai-s10.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s10
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L14
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 204
+    sha256: 83fbea7e7b48eb5bc4e090a2f746153b9a0ae4fbe7a3b015b858d3eacb645bdc
+  - id: ai-s11
+    class: ai
+    file: development/ai-s11.md
+    register: redes
+    theme: general
+    prompt_id: s11
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L15
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 202
+    sha256: 6b741a489a5170879d7cd320d0a7ec621390e1fc0398ea6f941f5c5ba63f600b
+  - id: ai-s12
+    class: ai
+    file: development/ai-s12.md
+    register: redes
+    theme: general
+    prompt_id: s12
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L15
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: 8ff27a84af488b567fb3ace512a14437e1dca2f6e45ef0b7fc7f5c5cbf3e70c9
+  - id: ai-s13
+    class: ai
+    file: development/ai-s13.md
+    register: redes
+    theme: cultura
+    prompt_id: s13
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L15
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 203
+    sha256: 893ac1e93928f61cce3041cff6e7b82ca6a503e338c8a46ab755b786360f53c1
+  - id: ai-s14
+    class: ai
+    file: development/ai-s14.md
+    register: redes
+    theme: cultura
+    prompt_id: s14
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L15
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 214
+    sha256: da644b1d6dba2fcedc213dc72759da4fde04daf8fd136b7a2154d14c04b42b98
+  - id: ai-s15
+    class: ai
+    file: development/ai-s15.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s15
+    condition: base
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L15
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    edits: ninguna (solo finales de línea)
+    words: 206
+    sha256: a7e732db636b743f2b32634f54ae2147680f42cfd47242a8a207587ac78612b3

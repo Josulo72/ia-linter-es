@@ -6,7 +6,7 @@
   description: Analiza el español de los archivos que se van a commitear. Mide patrones editoriales, no autoría.
   entry: ia-linter-es lint
   language: node
-  additional_dependencies: ["ia-linter-es@1.0.0"]
+  additional_dependencies: ["ia-linter-es@1.1.0"]
   types_or: [markdown, plain-text]
   pass_filenames: true
 

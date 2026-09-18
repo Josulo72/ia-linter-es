@@ -1,0 +1,1715 @@
+# Generado por benchmark/scripts/build-manifests-v1.3.mjs. No editar a mano.
+schema_version: 1
+corpus_version: "1.3"
+partition: challenge
+samples:
+  - id: ai-g-c01
+    class: ai
+    file: challenge/ai-g-c01.md
+    register: correo
+    theme: trabajo
+    prompt_id: c01
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L19
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 139
+    sha256: 2ea59202c181d85ba99dfe1a23199dd1f083d6ec5d905c07fd44a7dc9bdb4ca4
+  - id: ai-g-c02
+    class: ai
+    file: challenge/ai-g-c02.md
+    register: correo
+    theme: trabajo
+    prompt_id: c02
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L19
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 159
+    sha256: 2ecc9ad0be40bfb37c35f2f379d491dbb533de35b1586a78ce23f5c8849759d5
+  - id: ai-g-c03
+    class: ai
+    file: challenge/ai-g-c03.md
+    register: correo
+    theme: tramites
+    prompt_id: c03
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L19
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 157
+    sha256: 28277868537f03590a5340277f97bf30860b7af542130a02a5082d6c62c45599
+  - id: ai-g-c04
+    class: ai
+    file: challenge/ai-g-c04.md
+    register: correo
+    theme: tramites
+    prompt_id: c04
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L19
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 174
+    sha256: 861112f2ac6c0e0daccc0f5da5a1b39628705fd6098044ba441854289bf2946d
+  - id: ai-g-c05
+    class: ai
+    file: challenge/ai-g-c05.md
+    register: correo
+    theme: personal
+    prompt_id: c05
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L19
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 167
+    sha256: 632d32fd22aef36a08e9616c69656720e31e973faac3ca376a3008619eec1fcc
+  - id: ai-g-c06
+    class: ai
+    file: challenge/ai-g-c06.md
+    register: correo
+    theme: trabajo
+    prompt_id: c06
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L20
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 169
+    sha256: 908b8afa51eb8a3774601619713abd75ee3b80e0a33b537cc6175bcaf1607d8e
+  - id: ai-g-c07
+    class: ai
+    file: challenge/ai-g-c07.md
+    register: correo
+    theme: trabajo
+    prompt_id: c07
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L20
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 195
+    sha256: 084724ab284d2f2db04b34d66b5a74010f3dce9a1c23c497af96ae6e268434f8
+  - id: ai-g-c08
+    class: ai
+    file: challenge/ai-g-c08.md
+    register: correo
+    theme: tramites
+    prompt_id: c08
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L20
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 199
+    sha256: 66d0c6987432c7b035255f7e724b316cd1159db6a55d88fc45d3d7b53fb5312d
+  - id: ai-g-c09
+    class: ai
+    file: challenge/ai-g-c09.md
+    register: correo
+    theme: tramites
+    prompt_id: c09
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L20
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 184
+    sha256: 7455b9dc4671f369862235fc51fe0c1711dd05603a2e21deb9b4c7c46667922a
+  - id: ai-g-c10
+    class: ai
+    file: challenge/ai-g-c10.md
+    register: correo
+    theme: personal
+    prompt_id: c10
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L20
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: 96f9d701f795f94bd7936b5301b347317b8e69c4683ee03907653e65e1681f61
+  - id: ai-g-c11
+    class: ai
+    file: challenge/ai-g-c11.md
+    register: correo
+    theme: trabajo
+    prompt_id: c11
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L21
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 193
+    sha256: fe5fd099df894095dc6972a07b0f1d39da6a4dd2c18f5cdc00274450f2a67167
+  - id: ai-g-c12
+    class: ai
+    file: challenge/ai-g-c12.md
+    register: correo
+    theme: trabajo
+    prompt_id: c12
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L21
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 189
+    sha256: cdffa3477e235e6cfa91ee8ffb5c8e0e813cd3a95615e9a31ae826e58f017726
+  - id: ai-g-c13
+    class: ai
+    file: challenge/ai-g-c13.md
+    register: correo
+    theme: tramites
+    prompt_id: c13
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L21
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 202
+    sha256: 40047591e0c4f2bacf3f806bcf3592695c145da17f0bfc8638e7c4916dd3acea
+  - id: ai-g-c14
+    class: ai
+    file: challenge/ai-g-c14.md
+    register: correo
+    theme: tramites
+    prompt_id: c14
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L21
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 189
+    sha256: adac7b6b360518a0b1e6af02bf9507d5423250d5f63ca7a512b1afa5425cbad1
+  - id: ai-g-c15
+    class: ai
+    file: challenge/ai-g-c15.md
+    register: correo
+    theme: personal
+    prompt_id: c15
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L21
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 208
+    sha256: 6c360b81373f5e60f5cd6a7cab58cee8439f7a39ddaa053e6c1a70b9c8ae53ce
+  - id: ai-g-c16
+    class: ai
+    file: challenge/ai-g-c16.md
+    register: correo
+    theme: trabajo
+    prompt_id: c16
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L22
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 154
+    sha256: cce3c26b6397eb186d28928c291ab8c0be53e146e4ea0b285d406d1304d55b57
+  - id: ai-g-c17
+    class: ai
+    file: challenge/ai-g-c17.md
+    register: correo
+    theme: trabajo
+    prompt_id: c17
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L22
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 186
+    sha256: 12d5053508ef07b721dda1e5b54d6701b9a9ec4d0894ae4c57298191649eac9f
+  - id: ai-g-c18
+    class: ai
+    file: challenge/ai-g-c18.md
+    register: correo
+    theme: tramites
+    prompt_id: c18
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L22
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 178
+    sha256: 20808d16b53378c23a1829b93a51423a1265eee6142b3ed195053eadedc87fbc
+  - id: ai-g-c19
+    class: ai
+    file: challenge/ai-g-c19.md
+    register: correo
+    theme: tramites
+    prompt_id: c19
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L22
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 173
+    sha256: 2cb8dd85735d3922405c7e81a2e58585a76298ae7c0812bc1ce9c2eeaa690450
+  - id: ai-g-c20
+    class: ai
+    file: challenge/ai-g-c20.md
+    register: correo
+    theme: personal
+    prompt_id: c20
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L22
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: f78c025a4791de0b4e37a0cf4a321faf47f3277da0e962fee2bfecbb005b4eaa
+  - id: ai-g-c21
+    class: ai
+    file: challenge/ai-g-c21.md
+    register: correo
+    theme: trabajo
+    prompt_id: c21
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L23
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 197
+    sha256: 37ea58467d8b9b092faa2ef6c41f28fb02dd61a9d5f5357b228bf5da32a71109
+  - id: ai-g-c22
+    class: ai
+    file: challenge/ai-g-c22.md
+    register: correo
+    theme: trabajo
+    prompt_id: c22
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L23
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 188
+    sha256: d464141ad1779e47fbe898b36bee7fc656f25605a934c04cebc2ee98cc3e3ae7
+  - id: ai-g-c23
+    class: ai
+    file: challenge/ai-g-c23.md
+    register: correo
+    theme: tramites
+    prompt_id: c23
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L23
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 188
+    sha256: 8bca5a59ce7b97b16d591bfd703735c37452ea0770d5077e94c0e697152b3ce7
+  - id: ai-g-c24
+    class: ai
+    file: challenge/ai-g-c24.md
+    register: correo
+    theme: tramites
+    prompt_id: c24
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L23
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 172
+    sha256: 0ac04e65ae08fc6f800bfe7d35d12cfc754863022a24943876efaf5ddc7bb43b
+  - id: ai-g-c25
+    class: ai
+    file: challenge/ai-g-c25.md
+    register: correo
+    theme: personal
+    prompt_id: c25
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L23
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 190
+    sha256: cca47b7903b3e9963266c17a9ea1d40bbcf509866ba99e067e5888a159bb0114
+  - id: ai-g-c26
+    class: ai
+    file: challenge/ai-g-c26.md
+    register: correo
+    theme: trabajo
+    prompt_id: c26
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L24
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 169
+    sha256: f4158cfa77147f0f9ea213e22d540e754a4def09dc315c071db6a3e9da995add
+  - id: ai-g-c27
+    class: ai
+    file: challenge/ai-g-c27.md
+    register: correo
+    theme: trabajo
+    prompt_id: c27
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L24
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 177
+    sha256: 3f8841b333bef029cc83e1f83fc6d524185eabbd83bc76c6e63a2b6d13ba10cb
+  - id: ai-g-c28
+    class: ai
+    file: challenge/ai-g-c28.md
+    register: correo
+    theme: tramites
+    prompt_id: c28
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L24
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 164
+    sha256: 6ce4fcd1b8a63b6c5a776934c68f62704dcc704d6b7e2914fe2dc58687bf2f10
+  - id: ai-g-c29
+    class: ai
+    file: challenge/ai-g-c29.md
+    register: correo
+    theme: tramites
+    prompt_id: c29
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L24
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 159
+    sha256: ca5001b4fce76d6e65172e2d1a62196f84370c3f0baab1434233d6571d1246c5
+  - id: ai-g-c30
+    class: ai
+    file: challenge/ai-g-c30.md
+    register: correo
+    theme: personal
+    prompt_id: c30
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L24
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 150
+    sha256: f9787810830a6c5c7172d83ddd8e0c859f886de1c237b55b4ec3e645adb891ba
+  - id: ai-g-r01
+    class: ai
+    file: challenge/ai-g-r01.md
+    register: readme
+    theme: herramienta
+    prompt_id: r01
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L25
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 294
+    sha256: 57b2178939ecfe688814cb565dc5df1bf5036854877db33074490d7ed74d3d6a
+  - id: ai-g-r02
+    class: ai
+    file: challenge/ai-g-r02.md
+    register: readme
+    theme: herramienta
+    prompt_id: r02
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L25
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 265
+    sha256: 7dc9f8c55556e941540273ce22c338e5dc2f158aa1e83f5189f718c7bfc3ada6
+  - id: ai-g-r03
+    class: ai
+    file: challenge/ai-g-r03.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r03
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L25
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 317
+    sha256: cd20df42ae118826886a6976e12c16acab22f2121f2284a90c1cff8f4af8aa5c
+  - id: ai-g-r04
+    class: ai
+    file: challenge/ai-g-r04.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r04
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L25
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 272
+    sha256: fba417bfafd5dce9805ebe2305d374d9b85f64d074b7f1658e387d2f4a5d5fc9
+  - id: ai-g-r05
+    class: ai
+    file: challenge/ai-g-r05.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r05
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L25
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 338
+    sha256: f86bda1d5eab2d96a3e594074f74b968bddcb36981b992ad7ed5628369dccbce
+  - id: ai-g-r06
+    class: ai
+    file: challenge/ai-g-r06.md
+    register: readme
+    theme: herramienta
+    prompt_id: r06
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L26
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 268
+    sha256: 4911b133f48e4b5e1bc701e235cceb49bced168623a35573e991dd2e60f20e74
+  - id: ai-g-r07
+    class: ai
+    file: challenge/ai-g-r07.md
+    register: readme
+    theme: herramienta
+    prompt_id: r07
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L26
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 263
+    sha256: a6741da8bc84f2e2bb26072b85f9fa2cf5e71c3f598a1fba93a8c02ba2497282
+  - id: ai-g-r08
+    class: ai
+    file: challenge/ai-g-r08.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r08
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L26
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 240
+    sha256: 46c1e5742ad29847078e1741b824c031b65e3f6f9e81bfc6a3e70872bdabc4ca
+  - id: ai-g-r09
+    class: ai
+    file: challenge/ai-g-r09.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r09
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L26
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 265
+    sha256: f3db88ddb74e737da569adc72f8195e4042d941007b24a3d279c97749634b94d
+  - id: ai-g-r10
+    class: ai
+    file: challenge/ai-g-r10.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r10
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L26
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 304
+    sha256: 51b78b60b595757253a9234a34d2501deef00bcc3d9efd7be90a97778262f487
+  - id: ai-g-r11
+    class: ai
+    file: challenge/ai-g-r11.md
+    register: readme
+    theme: herramienta
+    prompt_id: r11
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L27
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 256
+    sha256: 3c9dbd42620852bea82d0642ead0c3d2a210a9429025cc0f01e6f08aa45ee08d
+  - id: ai-g-r12
+    class: ai
+    file: challenge/ai-g-r12.md
+    register: readme
+    theme: herramienta
+    prompt_id: r12
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L27
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 239
+    sha256: 85abbfde13a05838ca8802ca34340b2e88ba45651b053378377a9c33cdafb12e
+  - id: ai-g-r13
+    class: ai
+    file: challenge/ai-g-r13.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r13
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L27
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 263
+    sha256: 32f826321fefd26f1d2f8abaceebcb5573908c983099fe4ed16272e1206cdfbe
+  - id: ai-g-r14
+    class: ai
+    file: challenge/ai-g-r14.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r14
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L27
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 261
+    sha256: f8affc20ab690388b4d1e823e9ebf17d8cc899df015fe2a1a6e721a872b2b80c
+  - id: ai-g-r15
+    class: ai
+    file: challenge/ai-g-r15.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r15
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L27
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 279
+    sha256: bf8187ec98b6920593a9475021e8865c82ff53e2df05f7c1f352d21616a858f0
+  - id: ai-g-r16
+    class: ai
+    file: challenge/ai-g-r16.md
+    register: readme
+    theme: herramienta
+    prompt_id: r16
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L28
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 253
+    sha256: e909c220f0bcf50a22d391a896f26de0008e9143e2c265388ad4c22cfef80812
+  - id: ai-g-r17
+    class: ai
+    file: challenge/ai-g-r17.md
+    register: readme
+    theme: herramienta
+    prompt_id: r17
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L28
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 251
+    sha256: 332964e809fe7c21365b323e292dafb176447b3e6c487b329b5c65c14a4f776b
+  - id: ai-g-r18
+    class: ai
+    file: challenge/ai-g-r18.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r18
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L28
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 250
+    sha256: 8fcd0c3d54326a6f77692f7ef177d4dd6198d9b672d35b4ff0a2e6efb1324b94
+  - id: ai-g-r19
+    class: ai
+    file: challenge/ai-g-r19.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r19
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L28
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 260
+    sha256: a0f0ba65a21019cdf645bf08e2a0e948241f333e8b6dea4e791f5744cbd3594d
+  - id: ai-g-r20
+    class: ai
+    file: challenge/ai-g-r20.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r20
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L28
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 286
+    sha256: 631e24f90faf556b6f87e2ac93005a19d66853e9eb731055e3607a939918199a
+  - id: ai-g-r21
+    class: ai
+    file: challenge/ai-g-r21.md
+    register: readme
+    theme: herramienta
+    prompt_id: r21
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L29
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 283
+    sha256: 07b1f9f914cc946cb69f390144600ca08f93c903f788dbc5975ee545d7d1f82f
+  - id: ai-g-r22
+    class: ai
+    file: challenge/ai-g-r22.md
+    register: readme
+    theme: herramienta
+    prompt_id: r22
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L29
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 276
+    sha256: 0342af2d98a1a0ad5ee541511e1e016e3637a0a540c0326c26ecc4f88953002b
+  - id: ai-g-r23
+    class: ai
+    file: challenge/ai-g-r23.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r23
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L29
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 285
+    sha256: f0b72cd5ed62c9555dca2d35763f94632773b9426357e665ebf64da1d37a849f
+  - id: ai-g-r24
+    class: ai
+    file: challenge/ai-g-r24.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r24
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L29
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 242
+    sha256: 4444dd2355ad1f8fabb96178390b6543200fb79796a88f174d25ccf7e880b75b
+  - id: ai-g-r25
+    class: ai
+    file: challenge/ai-g-r25.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r25
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L29
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 321
+    sha256: 692c890b387c45852cee23b5a995948437bfdf45d7631530b856a2f9fc8a482f
+  - id: ai-g-r26
+    class: ai
+    file: challenge/ai-g-r26.md
+    register: readme
+    theme: herramienta
+    prompt_id: r26
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L30
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 275
+    sha256: 62a6e8e2c676bd5474524b989139ef4babd1eeaa0f29aa8030aa082af4db1889
+  - id: ai-g-r27
+    class: ai
+    file: challenge/ai-g-r27.md
+    register: readme
+    theme: herramienta
+    prompt_id: r27
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L30
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 293
+    sha256: dd474e74c2a73ce0210ec690531e6035c4ee738835473517948144698d1034f8
+  - id: ai-g-r28
+    class: ai
+    file: challenge/ai-g-r28.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r28
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L30
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 263
+    sha256: b7a52afdb938d1b87998742b0614a4a08f0c3c26634aead9d37936c1eb721f66
+  - id: ai-g-r29
+    class: ai
+    file: challenge/ai-g-r29.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r29
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L30
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 272
+    sha256: a7d67786e317e6aa18fa3d3ed4a6f6f5494f77271ebe0ade3cc4cd7a0a191f7d
+  - id: ai-g-r30
+    class: ai
+    file: challenge/ai-g-r30.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r30
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L30
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 314
+    sha256: b466fdf6e864647272c79bdfa869fba02fdb9b32e46a03c900e1c12fa7c40520
+  - id: ai-g-s01
+    class: ai
+    file: challenge/ai-g-s01.md
+    register: redes
+    theme: general
+    prompt_id: s01
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L31
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 211
+    sha256: 442c5a8872bdf2c7b3c5fda5913830ca89171aa84f948520242359e57c13496d
+  - id: ai-g-s02
+    class: ai
+    file: challenge/ai-g-s02.md
+    register: redes
+    theme: general
+    prompt_id: s02
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L31
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 205
+    sha256: 83e18034ee91dc659d130cce78fe8f7b175179be92d7bb843f5910381310b183
+  - id: ai-g-s03
+    class: ai
+    file: challenge/ai-g-s03.md
+    register: redes
+    theme: cultura
+    prompt_id: s03
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L31
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 204
+    sha256: 68aba0b97f31c8db75517c19d6c7e6e8fcb48894732f9432afad3bb8970e26f2
+  - id: ai-g-s04
+    class: ai
+    file: challenge/ai-g-s04.md
+    register: redes
+    theme: cultura
+    prompt_id: s04
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L31
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: fa841573216984ec27dd910ba80e84ef76b766120972734d583b31ad04a8cd4e
+  - id: ai-g-s05
+    class: ai
+    file: challenge/ai-g-s05.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s05
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L31
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 218
+    sha256: f8a73ed21334a15d9388dd0bfe8a12dfc57565b0e39f1567611fb99604f5c362
+  - id: ai-g-s06
+    class: ai
+    file: challenge/ai-g-s06.md
+    register: redes
+    theme: general
+    prompt_id: s06
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L32
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: be5c6c911850d0fabdab3fe903a1efe56b4643d1d6f208cee83decbb85bd752a
+  - id: ai-g-s07
+    class: ai
+    file: challenge/ai-g-s07.md
+    register: redes
+    theme: general
+    prompt_id: s07
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L32
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 201
+    sha256: 64189cc4d7fa6d755bad141631968c138a0dd947590ac1dfd9bfcf43f95c3b9b
+  - id: ai-g-s08
+    class: ai
+    file: challenge/ai-g-s08.md
+    register: redes
+    theme: cultura
+    prompt_id: s08
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L32
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 184
+    sha256: 22c4d51e8d85c1317705f798628a95f327ad1fd7c7e9e43843ed94ed64e55f64
+  - id: ai-g-s09
+    class: ai
+    file: challenge/ai-g-s09.md
+    register: redes
+    theme: cultura
+    prompt_id: s09
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L32
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 193
+    sha256: 0c8b8155abbfc4f35f0751d31cebfb87e6715d6bfd953bea3598bce5f5443d15
+  - id: ai-g-s10
+    class: ai
+    file: challenge/ai-g-s10.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s10
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L32
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 201
+    sha256: 98749b21cb9d6a594c5a78a09da63af8129dfe248609d29a3a11090b56315daa
+  - id: ai-g-s11
+    class: ai
+    file: challenge/ai-g-s11.md
+    register: redes
+    theme: general
+    prompt_id: s11
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L33
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 200
+    sha256: 92b14086b067b992a7f1cc0f3db9fc1f4799b5d35281cd91e33553134d1cef56
+  - id: ai-g-s12
+    class: ai
+    file: challenge/ai-g-s12.md
+    register: redes
+    theme: general
+    prompt_id: s12
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L33
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 202
+    sha256: 66932d0b84f97f2c077ac0fdb5d7913bd662cf37a5c3d944a64d212485496613
+  - id: ai-g-s13
+    class: ai
+    file: challenge/ai-g-s13.md
+    register: redes
+    theme: cultura
+    prompt_id: s13
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L33
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: 5ac95912cf3f2dfafcadacaf4358e51eb39ef751830141b18b4f2594b377ce0b
+  - id: ai-g-s14
+    class: ai
+    file: challenge/ai-g-s14.md
+    register: redes
+    theme: cultura
+    prompt_id: s14
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L33
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 213
+    sha256: c1fff0d41495ef09bdd82cf210e6274e01497600247dcb2b743d711b7ff22b64
+  - id: ai-g-s15
+    class: ai
+    file: challenge/ai-g-s15.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s15
+    condition: guiada
+    origin_partition: development
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L33
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 220
+    sha256: 8dae74ee3e22e571a8e61a8e98576800dce813971c983669935a4306b29863cb
+  - id: ai-g-s16
+    class: ai
+    file: challenge/ai-g-s16.md
+    register: redes
+    theme: general
+    prompt_id: s16
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L34
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 187
+    sha256: 4ef1a1f9c1437a63d5d5d6c67f7d15374417cd36045ac1a5139a36ed21a506ca
+  - id: ai-g-s17
+    class: ai
+    file: challenge/ai-g-s17.md
+    register: redes
+    theme: general
+    prompt_id: s17
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L34
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 191
+    sha256: ee25c1a8acb036f9fbd308f182200813b78de796cf9704954caaa33dadcdf5e0
+  - id: ai-g-s18
+    class: ai
+    file: challenge/ai-g-s18.md
+    register: redes
+    theme: cultura
+    prompt_id: s18
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L34
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 173
+    sha256: 6075d72780b7d000f051fddd2d8d4ccc8fe6e82d3fe0df8d2fceb79657c75907
+  - id: ai-g-s19
+    class: ai
+    file: challenge/ai-g-s19.md
+    register: redes
+    theme: cultura
+    prompt_id: s19
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L34
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 194
+    sha256: 43ccc627ea07854633579f21ad84de5219985d936bd8737e743b5b20ff650d88
+  - id: ai-g-s20
+    class: ai
+    file: challenge/ai-g-s20.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s20
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L34
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 201
+    sha256: 54cab3cf8e6aae1677266a488218d06d48cec13bf8c1bcc55dfd71a283b0ad01
+  - id: ai-g-s21
+    class: ai
+    file: challenge/ai-g-s21.md
+    register: redes
+    theme: general
+    prompt_id: s21
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L35
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 188
+    sha256: f0416692f168b6e85a925b250f831afd4dc3d714cf3860ae3180303ef861c205
+  - id: ai-g-s22
+    class: ai
+    file: challenge/ai-g-s22.md
+    register: redes
+    theme: general
+    prompt_id: s22
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L35
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 189
+    sha256: 2f0d2588c8b47252861ce7d2e063ab259020ac90db702b5f09d84bad78200549
+  - id: ai-g-s23
+    class: ai
+    file: challenge/ai-g-s23.md
+    register: redes
+    theme: cultura
+    prompt_id: s23
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L35
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 177
+    sha256: 8c1e8828da4bea51cfe24a54fe7b11cc3895894550695552272fa97c14221a50
+  - id: ai-g-s24
+    class: ai
+    file: challenge/ai-g-s24.md
+    register: redes
+    theme: cultura
+    prompt_id: s24
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L35
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 184
+    sha256: c65a790e13727b5f4fcc276463ba267d922d7d70bd7473750ac2f9d33ffd1eb4
+  - id: ai-g-s25
+    class: ai
+    file: challenge/ai-g-s25.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s25
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L35
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 193
+    sha256: 1a67cd10390cad93deab7047d6499c228c9122f6632a8a2638332622c53d2c32
+  - id: ai-g-s26
+    class: ai
+    file: challenge/ai-g-s26.md
+    register: redes
+    theme: general
+    prompt_id: s26
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L36
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 220
+    sha256: 782cd8440194fd1ba95f0bd7b806534cb73774d773d8a4800f1d98d5a1e9a663
+  - id: ai-g-s27
+    class: ai
+    file: challenge/ai-g-s27.md
+    register: redes
+    theme: general
+    prompt_id: s27
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L36
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 212
+    sha256: 68e4a410b19428796e49326dab3d969e3dd799404bea0a641aed673d82483b48
+  - id: ai-g-s28
+    class: ai
+    file: challenge/ai-g-s28.md
+    register: redes
+    theme: cultura
+    prompt_id: s28
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L36
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 198
+    sha256: a90acf42cef93a4f695edef0d4480ad653152149d0e7024a1f1d67b546fadd45
+  - id: ai-g-s29
+    class: ai
+    file: challenge/ai-g-s29.md
+    register: redes
+    theme: cultura
+    prompt_id: s29
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L36
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 227
+    sha256: 23ccb8dc6f16c3800f0ec4b11d47c664afe4da878b6dd0ffcc669012860cef42
+  - id: ai-g-s30
+    class: ai
+    file: challenge/ai-g-s30.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s30
+    condition: guiada
+    origin_partition: holdout
+    provider: OpenAI
+    model: GPT-5.6 Sol
+    interface: ChatGPT (web), conversación temporal nueva por lote
+    lote: L36
+    generated: 2026-09-18
+    system_prompt: el de ChatGPT; no visible
+    parameters: los de la interfaz; no visibles ni controlables
+    guide_sha256: 0c8ebaafd6ded1760495fcf51aa09ad186ee4bfe8e079be86f0e62b1c8ed715b
+    edits: ninguna (solo finales de línea)
+    words: 231
+    sha256: 7f1249d6ae15162e56f1eccc03f76ad250ec131163f7e36d782002f175a587b3

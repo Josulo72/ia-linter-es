@@ -5,7 +5,7 @@ Dos cosas. Una guía de estilo para que la IA escriba en español como una perso
 Todo pasa en tu ordenador. No usa IA, no sale a la red y no manda nada a ninguna parte.
 
 ```
-npm i -D ia-linter-es-1.0.0.tgz
+npm i -D ia-linter-es-1.1.0.tgz
 npx ia-linter-es lint docs README.md
 ```
 
@@ -23,11 +23,11 @@ Todavía no está en npm, así que se instala desde el paquete de la última rel
 Con el paquete, que es un `.tgz` normal de npm. Lo bajas de la pestaña Releases del repositorio y lo instalas en tu proyecto:
 
 ```
-npm i -D ia-linter-es-1.0.0.tgz
+npm i -D ia-linter-es-1.1.0.tgz
 npx ia-linter-es lint README.md --profile readme
 ```
 
-Vale igual con `pnpm add -D ./ia-linter-es-1.0.0.tgz` o `yarn add -D ./ia-linter-es-1.0.0.tgz`. Hace falta Node 20 o más.
+Vale igual con `pnpm add -D ./ia-linter-es-1.1.0.tgz` o `yarn add -D ./ia-linter-es-1.1.0.tgz`. Hace falta Node 20 o más.
 
 Desde el código, si quieres tocarlo:
 
@@ -39,7 +39,7 @@ pnpm build
 node packages/linter/dist/cli/main.js lint README.md --profile readme
 ```
 
-El plugin de Claude Code, con la guía, va en otro paquete de la misma release, `ia-linter-es-claude-code-1.0.0.zip`. Lo descomprimes donde quieras y lo cargas así:
+El plugin de Claude Code, con la guía, va en otro paquete de la misma release, `ia-linter-es-claude-code-1.1.0.zip`. Lo descomprimes donde quieras y lo cargas así:
 
 ```
 claude --plugin-dir ./ia-linter-es-claude-code
@@ -123,13 +123,12 @@ Los informes enteros están en `benchmark/reports/v1.1.md` y `v1.2.md`, cada uno
 
 ## Límites
 
-- La clase IA la generó el mismo modelo que ayudó a escribir las reglas. Es circular y no lo escondo: no vale como evaluación independiente.
+- En los corpus v1.1 y v1.2 la clase IA la generó el mismo modelo que ayudó a escribir las reglas, y eso es circular. El v1.3 la tiene de otro proveedor (GPT-5.6 Sol) y da casi lo mismo, así que el problema está en las reglas y no en quién generó los textos.
 - Toda la separación viene de una sola regla, la del ritmo, y esa regla es `candidate`. Quitándola, la mediana de los textos generados baja a cero, igual que la de los humanos. Si un modelo aprende a variar la longitud de sus frases, el índice deja de separar.
-- La clase humana del banco v1.2 está contaminada y sus cifras no valen. El filtro que debía dejar solo español de España aceptaba un texto con una sola marca peninsular, y en el registro `readme` esa marca era justo la palabra que la consulta de GitHub ya garantizaba, así que aprobaba por construcción todo lo que encontraba. El filtro estricto que aplica el proyecto a Reddit no se aplicaba ni a README, ni a correo, ni a los textos del fediverso. Tampoco había nada que descartara texto que no es prosa. Resultado: hay textos no peninsulares y textos que no son prosa dentro de la clase humana. El filtro está corregido y hay un script que dice cuáles se caen (`benchmark/scripts/auditar-corpus-humano.mjs`), pero hasta que el corpus se rehaga y se vuelva a medir, todo lo que dice el punto siguiente está en el aire.
-- En correo y en README el índice puntúa más alto a los textos humanos que a los generados. Medido en el banco v1.2: la separación es de −9 en correo y −2 en README, con exactitud equilibrada de 0,367 y 0,412, o sea peor que tirar una moneda. Solo en redes sale bien, +18. La causa está localizada: los correos de una lista técnica y los README escriben frases de longitud parecida porque el género lo pide, y la regla del ritmo los marca por eso. Con esos dos perfiles, hoy, el índice no te sirve para separar nada. Las cifras y el porqué, en `benchmark/reports/v1.2.md`.
+- La clase humana del banco v1.2 está contaminada y sus cifras no valen. El filtro que debía dejar solo español de España aceptaba un texto con una sola marca peninsular, y en el registro `readme` esa marca era justo la palabra que la consulta de GitHub ya garantizaba, así que aprobaba por construcción todo lo que encontraba. El filtro estricto que el proyecto aplica a Reddit no se aplicaba ni a README, ni a correo, ni a los textos del fediverso, y no había nada que descartara texto que no fuera prosa. Está corregido, y `benchmark/scripts/auditar-corpus-humano.mjs` dice qué textos se caen, pero hasta rehacer el corpus y volver a medir, lo que dice el punto siguiente está en el aire. El corpus v1.3 reutiliza esa misma clase humana, así que hereda el problema.
+- Por registro, el índice separa en mensajes de foro y en redes, no separa en correos y en README marca más a los humanos que a los generados. Está medido en `benchmark/reports/v1.2.md` y en development v1.3. La precisión por regla sale de adjudicar 50 hallazgos con un solo adjudicador, así que es orientativa.
+- Los mensajes de foro que forman la clase humana no se redistribuyen. En el repositorio está el manifiesto con la URL y el hash; los textos se bajan en local.
 - Nueve de las 23 reglas estables no disparan en el corpus v1.2 y el gate de falsos positivos las aprueba por vacío. Y `repeticion/inicio-parrafo`, que sigue estable, marca 4 README humanos y ningún generado: su tasa de falsos positivos ahí es de 2,019 por mil palabras, por encima del máximo de 1,5 que pide `quality-policy.yml`. Está sin resolver.
-- Solo está adjudicado development de v1.2, con un adjudicador y sobre el corpus contaminado del punto anterior. En el conjunto congelado sigue sin adjudicar: ahí está medido cuántas veces salta cada regla, no cuántas acierta.
-- Los textos humanos no se redistribuyen. En el repositorio está el manifiesto con la URL, la fecha y el hash; los textos se bajan en local con el script de descarga.
 - Es español de España. En otras variedades marcará cosas que allí son normales.
 
 ## Documentación

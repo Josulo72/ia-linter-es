@@ -1,10 +1,11 @@
 # Benchmark
 
-Hay tres corpus y tres informes. El producto cambió de objetivo a mitad del trabajo y luego hubo que medir los registros que faltaban.
+Hay cuatro corpus. El producto cambió de objetivo a mitad del trabajo y luego hubo que medir los registros que faltaban.
 
 | Versión | Qué mide | Resultado | Informe |
 |---|---|---|---|
-| v1.2 (actual) | Correo, README y redes frente a textos generados de los mismos registros | Separa en redes (+18) y va al revés en correo (−9) y en README (−2) | [`benchmark/reports/v1.2.md`](../benchmark/reports/v1.2.md) |
+| v1.3 (el más nuevo) | Los mismos tres registros, con la clase IA generada por un modelo de otro proveedor | Sin informe: el holdout está congelado y todavía no se ha ejecutado | |
+| v1.2 | Correo, README y redes frente a textos generados de los mismos registros | Separa en redes (+18) y va al revés en correo (−9) y en README (−2) | [`benchmark/reports/v1.2.md`](../benchmark/reports/v1.2.md) |
 | v1.1 | Escritura cotidiana: mensajes de foro frente a mensajes generados | Separa. Holdout: medianas 0 y 14,5; exactitud equilibrada 0,75 | [`benchmark/reports/v1.1.md`](../benchmark/reports/v1.1.md) |
 | v1.0 (archivada) | Prosa formal: BOE, prensa científica y artículos académicos frente a textos generados | No separa. Holdout: medianas 7,5 y 10; exactitud equilibrada 0,535 | [`benchmark/reports/v1.0.md`](../benchmark/reports/v1.0.md) |
 
@@ -17,6 +18,22 @@ Las reglas de v1.0 buscaban los tics de 2023: «es importante destacar», metáf
 Lo que sí distingue en registro cotidiano es el ritmo. Una persona alterna una frase de treinta palabras con otra de cuatro; la máquina las escribe todas parecidas. Eso lo mide `estructura/ritmo-plano`, y de ahí sale toda la separación de v1.1: quitando esa regla y su contraria, la mediana de la clase IA baja a cero.
 
 La pieza principal del producto no es el linter sino la guía de estilo (`integrations/claude-code/guia/humano.md`), que se le da al modelo antes de escribir. El linter es el revisor que comprueba el resultado.
+
+## Corpus v1.3
+
+En `corpus-v1.3/`. Cambia una sola cosa respecto de v1.2, y a propósito: la clase IA la genera GPT-5.6 Sol,
+un modelo que no es de la familia que escribe las reglas, para que la comparación deje de ser circular
+(D3 en `docs/decisions.md`). Son 180 textos generados, con las mismas particiones y los mismos registros.
+
+**La clase humana no es nueva: es la de v1.2 reutilizada tal cual.** Los manifiestos lo dicen en cada
+muestra, con `reused_from` y una nota. Eso tiene dos consecuencias. La primera ya estaba anotada: la parte
+humana del holdout v1.3 no es independiente, porque esos textos ya se leyeron en el holdout v1.2. La
+segunda es la del primer punto de los límites: esa clase humana está contaminada, así que v1.3 hereda el
+problema entero.
+
+El holdout v1.3 está congelado en `benchmark/configs/holdout-v1.3.lock` y **todavía no se ha ejecutado**.
+Mientras siga sin leerse se puede limpiar la clase humana y v1.3 sigue sirviendo. Si se lee antes, se gasta
+una partición nueva sobre datos que ya se sabe que están mal.
 
 ## Corpus v1.2
 
@@ -118,7 +135,7 @@ Las tres reglas de longitud de frase (`estructura/longitud-uniforme`, `estructur
 
 ## Límites
 
-- **La clase humana de v1.2 está contaminada.** El filtro de español de España aceptaba con una sola marca peninsular; en `readme` esa marca coincidía con la palabra buscada por la consulta de GitHub (`ordenador`, `fichero`, `instalación`), así que no descartaba nada. El filtro estricto solo se aplicaba a Reddit, no a README, correo ni fediverso, y no había ningún filtro de prosa, así que podía entrar letra de canción o verso. Corregido en `registros-comun.mjs` y `fetch-registros.mjs`; `benchmark/scripts/auditar-corpus-humano.mjs` lista los textos que ya no pasan. Mientras el corpus no se rehaga con `--append` y no se vuelva a medir, las cifras de v1.2 no son utilizables.
+- **La clase humana de v1.2 está contaminada, y v1.3 la reutiliza.** El filtro de español de España aceptaba con una sola marca peninsular; en `readme` esa marca coincidía con la palabra buscada por la consulta de GitHub (`ordenador`, `fichero`, `instalación`), así que no descartaba nada. El filtro estricto solo se aplicaba a Reddit, no a README, correo ni fediverso, y no había ningún filtro de prosa, así que podía entrar letra de canción o verso. Corregido en `registros-comun.mjs` y `fetch-registros.mjs`; `benchmark/scripts/auditar-corpus-humano.mjs` lista los textos que ya no pasan. Mientras el corpus no se rehaga con `--append` y no se vuelva a medir, las cifras de v1.2 no son utilizables.
 - 84 textos en v1.1 y 270 en v1.2. Los intervalos siguen siendo anchos y se solapan entre particiones.
 - Toda la separación depende de una regla, y es `candidate`. Sin las dos reglas de ritmo, o contando solo las `stable`, la separación en holdout es 0 en v1.1, y en v1.2 es 0 en correo, 0 en redes y −6 en README.
 - En correo y en README el índice puntúa más alto a los humanos que a los generados. La exactitud equilibrada ahí es 0,367 y 0,412, por debajo del azar. Con esos dos perfiles el índice no discrimina.
