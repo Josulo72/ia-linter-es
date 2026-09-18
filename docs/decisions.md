@@ -87,3 +87,32 @@ Consecuencia: `benchmark/reports/development-v1.2-correo.json` se regenera sin `
 Decisión: el linter sigue siendo determinista y no lleva ninguna IA dentro. Detecta patrones, aplica perfiles y genera instrucciones de reescritura. La única IA del producto es el asistente que recibe esas instrucciones y reescribe el texto. Cualquier propuesta que meta una segunda IA trabajando de forma permanente dentro del producto (un modelo que revise, adjudique, puntúe o reescriba junto al asistente) se descarta, salvo aprobación expresa del propietario.
 Motivo: el análisis tiene que dar el mismo resultado con el mismo texto, sin red y sin coste por uso. Una segunda IA en el circuito lo haría no determinista y dependiente de un proveedor.
 Alcance: no afecta al trabajo de medición. Adjudicar un benchmark (D2) o generar la clase IA de un corpus (B12) son validaciones externas y puntuales, no forman parte del producto y no son requisito para ejecutarlo.
+
+## 2026-09-18 — La humanización es una capa transversal, no una skill ni un estilo de salida
+Decisión: la humanización deja de vivir en espacios que compiten con otras capacidades. La arquitectura queda así:
+
+```text
+SessionStart: guía y contexto compartido
+  ↓
+tarea + la skill funcional que corresponda
+  ↓
+resultado (respuesta o archivo)
+  ↓
+linter determinista + perfil de contexto (situaciones.yml)
+  ↓
+hooks de revisión (Stop para la respuesta, PostToolUse para Write y Edit)
+  ↓
+la misma IA decide qué corregir, qué mantener y cómo adaptarlo
+  ↓
+salida final
+```
+
+- Se elimina la skill `escribir-en-espanol`. Se activaba con las mismas tareas que las skills funcionales (redactar un correo, un README…), así que o se usaba ella o la skill de la tarea. Lo útil que tenía pasa a la capa común de revisión.
+- La guía (`humano.md`) se carga con un hook `SessionStart` como contexto compartido y deja de ser un estilo de salida. Un estilo de salida ocupa un hueco único: elegir el nuestro impedía usar cualquier otro.
+- Los archivos que escribe cualquier skill también se revisan: hook `PostToolUse` sobre `Write` y `Edit`, solo para los tipos de archivo de texto declarados en `situaciones.yml`. El perfil sale del contexto y del patrón de la ruta. No reescribe nada por su cuenta: devuelve orientación a la misma IA, tiene tope de intentos y viene apagado, como el hook `Stop`.
+- `rewrite_guidance` es orientación y no una orden. La salida `revision` lo presenta como «Orientación» y dice que cada hallazgo se puede aceptar, ignorar o reinterpretar según el contexto. El campo de las reglas no cambia.
+- Los niveles de humanización, si llegan, se resuelven en esta misma capa y con la misma IA. Queda previsto `IA_LINTER_NIVEL`, con solo `normal` implementado.
+- Para Codex y otros asistentes, lo mismo en forma de instrucción transversal en su AGENTS.md, no como skill.
+Motivo: el propietario quiere poder usar cualquier skill funcional y cualquier estilo de salida sin perder la humanización. Una capacidad que hay que elegir frente a otra está en la capa equivocada.
+Descartado: mantener la skill con una descripción más estrecha (seguiría compitiendo por las mismas tareas) y mantener el estilo de salida como vía principal.
+Consecuencia: B11 se rehace con esta arquitectura (ver `project/PLAN.md`). Se mantiene una sola IA operativa: el linter y los hooks no reescriben, solo le pasan hallazgos y orientación al asistente.

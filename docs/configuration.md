@@ -19,7 +19,7 @@ Un único archivo YAML por proyecto: `ia-linter.yml` (también `ia-linter.yaml`,
 | `fail_on` | `warning` | Nivel mínimo que hace fallar: `never`, `info`, `warning`, `error`. |
 | `max_index` | `null` | Falla si el índice de un archivo lo supera (0–100). |
 | `privacy.snippets` | `true` | Si es `false`, los informes no contienen texto del documento. |
-| `reporter` | `terminal` | `terminal`, `json`, `sarif`. |
+| `reporter` | `terminal` | `terminal`, `json`, `sarif` o `revision`. `revision` es orientación para quien reescribe: por cada regla, qué busca, la orientación (`rewrite_guidance`) y dónde está cada caso. Cada hallazgo se puede aceptar, ignorar o reinterpretar según el contexto. Lleva los hallazgos error y warning, y con `--verbose` también los info. Es lo que usan el hook y `/revisar` de Claude Code. |
 | `cache.enabled` / `cache.dir` | `true` / `.ia-linter-cache` | Caché por contenido, configuración y Rule Pack. |
 | `min_words_for_index` | `150` | Por debajo se muestran hallazgos pero no índice. |
 

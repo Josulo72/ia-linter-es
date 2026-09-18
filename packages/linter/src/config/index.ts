@@ -116,8 +116,8 @@ export function validateConfigObject(raw: unknown): ConfigIssue[] {
     if (typeof p !== "object" || p === null || (p.snippets !== undefined && typeof p.snippets !== "boolean"))
       issues.push({ path: "privacy.snippets", message: "debe ser booleano" });
   }
-  if (o.reporter !== undefined && !["terminal", "json", "sarif"].includes(o.reporter as string))
-    issues.push({ path: "reporter", message: "debe ser terminal, json o sarif" });
+  if (o.reporter !== undefined && !["terminal", "json", "sarif", "revision"].includes(o.reporter as string))
+    issues.push({ path: "reporter", message: "debe ser terminal, json, sarif o revision" });
   if (o.cache !== undefined) {
     const c = o.cache as Record<string, unknown>;
     if (typeof c !== "object" || c === null) issues.push({ path: "cache", message: "debe ser un objeto" });

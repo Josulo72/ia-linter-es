@@ -221,7 +221,7 @@ export interface Config {
   fail_on: Level | "never";
   max_index: number | null;
   privacy: { snippets: boolean };
-  reporter: "terminal" | "json" | "sarif";
+  reporter: "terminal" | "json" | "sarif" | "revision";
   cache: { enabled: boolean; dir: string };
   min_words_for_index: number;
 }

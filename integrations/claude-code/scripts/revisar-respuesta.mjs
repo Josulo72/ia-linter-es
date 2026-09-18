@@ -64,19 +64,32 @@ if (hallazgos.length === 0) {
 
 guardar({ ...estado, intentos: estado.intentos + 1 });
 
-const porRegla = new Map();
-for (const f of hallazgos) if (!porRegla.has(f.rule)) porRegla.set(f.rule, f);
-const lineas = [...porRegla.values()].map((f) => `- ${f.message} (${f.rule})`);
-const indice = result.files?.[0]?.score?.index;
+// Lo que se le pasa al modelo es la orientación de la CLI (--format revision): regla, qué busca,
+// orientación y dónde está cada caso. Ese formato lleva error y warning; con info en los niveles se pide --verbose.
+// Si la CLI instalada es anterior y no lo conoce, se cae a la lista de mensajes de siempre.
+const revision = spawnSync(
+  process.execPath,
+  [cli, "lint", "--stdin", "--stdin-filename", "respuesta.md", "--profile", PERFIL, "--format", "revision", "--no-color", "--fail-on", "never", ...(NIVELES.has("info") ? ["--verbose"] : [])],
+  { input: texto, encoding: "utf8", cwd: payload.cwd && fs.existsSync(payload.cwd) ? payload.cwd : undefined, maxBuffer: 32 * 1024 * 1024 },
+);
+let cuerpo;
+if (!revision.error && revision.status === 0 && revision.stdout.trim()) {
+  cuerpo = [revision.stdout.trimEnd()];
+} else {
+  const porRegla = new Map();
+  for (const f of hallazgos) if (!porRegla.has(f.rule)) porRegla.set(f.rule, f);
+  const indice = result.files?.[0]?.score?.index;
+  cuerpo = [...[...porRegla.values()].map((f) => `- ${f.message} (${f.rule})`), "", indice === null || indice === undefined ? "" : `Índice: ${indice}/100.`];
+}
 
 process.stderr.write(
   [
-    "La respuesta que acabas de dar tiene cosas que suenan a IA:",
+    `El linter ha visto señales de texto generado en la respuesta que acabas de dar (perfil ${PERFIL}):`,
     "",
-    ...lineas,
+    ...cuerpo,
     "",
-    indice === null || indice === undefined ? "" : `Índice: ${indice}/100 (perfil ${PERFIL}).`,
-    "Reescríbela con eso arreglado y responde otra vez. Dilo con tus palabras, no la parafrasees por encima.",
+    "Decide tú qué corriges, qué mantienes y cómo lo adaptas al contexto. Si un hallazgo no aplica aquí, déjalo.",
+    "Si reescribes, cambia la frase entera en vez de darle la vuelta a las palabras, y no alternes frases largas y cortas por sistema, que es el defecto contrario.",
     `Si crees que está bien como está, dilo y sigue: esta revisión no insiste más de ${MAX_INTENTOS} veces.`,
   ].filter(Boolean).join("\n") + "\n",
 );

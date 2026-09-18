@@ -79,7 +79,7 @@ program
   .command("lint")
   .description("analiza archivos, directorios o globs")
   .argument("[rutas...]", "archivos, directorios o globs (por defecto, el proyecto)")
-  .option("-f, --format <reporter>", "terminal | json | sarif")
+  .option("-f, --format <reporter>", "terminal | json | sarif | revision")
   .option("-o, --output <archivo>", "escribe el informe en un archivo")
   .option("--stdin", "lee el texto de la entrada estándar")
   .option("--stdin-filename <nombre>", "nombre lógico para --stdin (decide formato y overrides)")
@@ -107,7 +107,7 @@ program
       ctx.config.profile = o.profile;
     }
     const reporter = (o.format ?? ctx.config.reporter) as ReporterName;
-    if (!["terminal", "json", "sarif"].includes(reporter)) die("--format debe ser terminal, json o sarif");
+    if (!["terminal", "json", "sarif", "revision"].includes(reporter)) die("--format debe ser terminal, json, sarif o revision");
     let result: ScanResult;
     if (o.stdin) {
       if (rutas.length) process.stderr.write(`ia-linter-es: aviso: con --stdin se analiza la entrada estándar y se ignoran las rutas (${rutas.join(", ")})\n`);
@@ -172,7 +172,7 @@ rules
         "",
         r.explanation,
         "",
-        `Cómo reescribir: ${r.rewrite_guidance}`,
+        `Orientación: ${r.rewrite_guidance}`,
         "",
         `Categoría: ${r.category} · Detector: ${r.detector} · Nivel: ${r.default_level} · Peso: ${r.score.weight} (cap ${r.score.cap})`,
         Object.keys(r.profiles).length ? `Perfiles: ${Object.entries(r.profiles).map(([k, v]) => `${k}=${v}`).join(", ")}` : "",

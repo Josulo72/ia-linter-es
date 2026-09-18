@@ -161,19 +161,38 @@ blocks:
     tests:
       - unitario del reporter; E2E de la CLI con --format revision; E2E del hook revisados a mano; paridad JSON sin cambios
     acceptance: el JSON de lint sale igual byte a byte; SCHEMA_VERSION sigue en 1.
-    status: pending
+    status: done
+    notes: >-
+      Reporter revision agrupado por regla (qué busca, cómo reescribir y cada caso con su fragmento) en vez
+      de repetir la guía en cada hallazgo; las reglas de longitud de frase dicen "Afecta a todo el texto".
+      Sin --verbose lleva error y warning. El hook decide con el JSON como antes y pasa al modelo la salida
+      de revision; con una CLI anterior cae a la lista de mensajes. /revisar y la skill usan --format revision.
+      JSON, Finding y SCHEMA_VERSION sin cambios. 83 tests y todos los gates en verde.
+      Cierre con la decisión de capa transversal (2026-09-18): rewrite_guidance sale como "Orientación" (también en
+      rules explain y docs/rules.md), la salida avisa de que cada hallazgo se acepta, ignora o reinterpreta según
+      contexto, y el hook pide a la IA que decida qué corregir en vez de ordenar que reescriba.
 
   - id: B11
-    title: Situaciones y exportación a otros asistentes
-    objective: Comprobar que guía y perfiles cuadran por situación y exportar la guía para el AGENTS.md de otros proyectos.
+    title: Humanización como capa transversal
+    objective: >-
+      Que la humanización funcione con cualquier skill funcional y cualquier estilo de salida: guía en SessionStart,
+      revisión de respuestas (Stop) y de archivos (PostToolUse en Write y Edit) con perfil por situación, y la misma IA
+      decidiendo qué corregir. Arquitectura en docs/decisions.md (2026-09-18).
     depends_on: [B10]
     deliverables:
-      - packages/linter/rules/situaciones.yml
-      - gates situaciones y agents-md en scripts/gates.mjs
-      - integrations/agents-md/{build.mjs,escribir-en-espanol.md,README.md}
+      - borrar integrations/claude-code/skills/escribir-en-espanol/
+      - integrations/claude-code/guia/humano.md (antes output-styles/humano.md) y hook SessionStart
+      - packages/linter/rules/situaciones.yml con perfil, sección de la guía y patrones de archivo
+      - --profile auto en la CLI
+      - hook PostToolUse para Write y Edit, apagado por defecto y con tope de intentos
+      - IA_LINTER_NIVEL con solo normal implementado
+      - integrations/agents-md/ con instrucción transversal para AGENTS.md
+      - gates situaciones y agents-md
     tests:
-      - los dos gates pasan, y fallan cuando se rompen a propósito
-    acceptance: humano.md sigue escrita a mano; ningún tercer sitio declara perfiles.
+      - --profile auto; hook de archivos y hook SessionStart E2E; gates que se ponen en rojo al romperlos a propósito
+    acceptance: >-
+      no hay skill de humanización ni estilo de salida obligatorio; una sola IA operativa; la guía sigue escrita a mano;
+      ningún tercer sitio declara perfiles; todos los gates en verde.
     status: pending
 
   - id: B12

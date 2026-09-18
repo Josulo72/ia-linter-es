@@ -33,7 +33,7 @@ Está apagado. Para encenderlo, en `.claude/settings.json` del proyecto o en `~/
 }
 ```
 
-Lo que hace: coge la última respuesta, la pasa por el linter con el perfil `chat` y, si encuentra algo de nivel warning o error, impide que el turno termine y le dice a Claude qué reescribir. El texto del linter es lo que Claude lee. Ojo, que esto no oculta nada: la respuesta original ya la has visto, y debajo aparece la corregida.
+Lo que hace: coge la última respuesta, la pasa por el linter con el perfil `chat` y, si encuentra algo de nivel warning o error, impide que el turno termine y le pasa a Claude la orientación del linter (`--format revision`): por cada regla, qué busca, una orientación para reescribir y dónde está cada caso. Claude decide qué corrige, qué mantiene y qué hallazgo no aplica. Si la CLI instalada es anterior y no conoce ese formato, le pasa solo la lista de mensajes. Ojo, que esto no oculta nada: la respuesta original ya la has visto, y debajo aparece la corregida.
 
 Se puede ajustar con más variables:
 

@@ -17,7 +17,7 @@ Lo que la guía no arregla es el ritmo, y está medido: las frases salen todas d
 ## Si vas a arreglar un texto
 
 ```
-ia-linter-es lint --stdin --profile chat --verbose
+ia-linter-es lint --stdin --stdin-filename texto.md --profile chat --format revision
 ```
 
 Si el proyecto no tiene el paquete instalado, el plugin trae su copia en `bundle/dist/cli.mjs`, dentro del directorio donde está esta skill. Llámala con `node` y la ruta completa de ese archivo, y el resto de opciones son las mismas.

@@ -117,7 +117,38 @@ describe("Hook de Claude Code", () => {
       const r = run(HOOK, [], { input: entrada(PLANO), env: { IA_LINTER_REVISAR: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
       expect(r.status).toBe(2);
       expect(r.stderr).toContain("estructura/ritmo-plano");
-      expect(r.stderr).toContain("Reescríbela");
+      // Llega la orientación de --format revision, no solo el mensaje del hallazgo, y como orientación: decide la IA.
+      expect(r.stderr).toContain("Orientación:");
+      expect(r.stderr).toContain("Afecta a todo el texto.");
+      expect(r.stderr).toContain("Decide tú qué corriges, qué mantienes");
+      expect(r.stderr).not.toContain("Reescríbela");
+    } finally {
+      fs.rmSync(estado, { recursive: true, force: true });
+    }
+  });
+
+  it("con una CLI anterior que no conoce --format revision, cae a la lista de mensajes", () => {
+    const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
+    try {
+      // Una CLI que analiza igual que la de verdad pero rechaza `revision` como error de uso, como hacía la 1.0.0.
+      const vieja = path.join(estado, "cli-vieja.mjs");
+      fs.writeFileSync(
+        vieja,
+        [
+          `import fs from "node:fs";`,
+          `import { spawnSync } from "node:child_process";`,
+          `const a = process.argv.slice(2);`,
+          `if (a.includes("revision")) { process.stderr.write("--format debe ser terminal, json o sarif\\n"); process.exit(2); }`,
+          `const r = spawnSync(process.execPath, [${JSON.stringify(CLI)}, ...a], { input: fs.readFileSync(0, "utf8"), encoding: "utf8" });`,
+          `process.stdout.write(r.stdout);`,
+          `process.exit(r.status ?? 0);`,
+        ].join("\n"),
+        "utf8",
+      );
+      const r = run(HOOK, [], { input: entrada(PLANO), env: { IA_LINTER_REVISAR: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: vieja } });
+      expect(r.status).toBe(2);
+      expect(r.stderr).toContain("(estructura/ritmo-plano)");
+      expect(r.stderr).not.toContain("Orientación:");
     } finally {
       fs.rmSync(estado, { recursive: true, force: true });
     }

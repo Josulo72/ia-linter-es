@@ -58,7 +58,7 @@ B7 cerrar lo pendiente
  └─ B8 ritmo por perfil (D1)
      └─ B9 adjudicación v1.2 (D2)
          ├─ B10 reporter de revisión y adaptadores
-         │   └─ B11 situaciones y exportación a otros asistentes
+         │   └─ B11 humanización como capa transversal
          │       └─ B13 cierre de la fase 2
          └─ B12 corpus v1.3 con IA externa (D3), en paralelo con B10 y B11
 ```
@@ -75,11 +75,11 @@ Dos bloques que tocan el mismo archivo van en serie, y así están ordenados.
 | B8 | `packages/linter/rules/definitions/estructura--ritmo-plano.yml`; `docs/decisions.md`; `docs/rules.md` (generado); `benchmark/reports/development-v1.2-correo.json`; anexo en `benchmark/reports/v1.2.md` |
 | B9 | `packages/linter/src/cli/benchmark.ts`; `packages/linter/src/cli/main.ts` (solo el subcomando `benchmark run`); `benchmark/annotations/v1.2/`; `benchmark/scripts/dump-findings.mjs`; `scripts/gates.mjs` (aviso de precisión); `docs/benchmark.md` |
 | B10 | `packages/linter/src/reporters/index.ts`; `packages/linter/src/cli/main.ts` (validación de `--format`); `packages/linter/src/config/index.ts` (validación de `reporter`); `integrations/claude-code/scripts/revisar-respuesta.mjs`; `integrations/claude-code/commands/revisar.md`; `integrations/claude-code/skills/escribir-en-espanol/SKILL.md`; `packages/linter/test/`; `docs/configuration.md` |
-| B11 | `packages/linter/rules/situaciones.yml` (nuevo); `scripts/gates.mjs` (dos gates nuevos); `integrations/agents-md/` (nuevo); `integrations/claude-code/skills/escribir-en-espanol/SKILL.md`; `README.md` |
+| B11 | `packages/linter/rules/situaciones.yml` (nuevo); `packages/linter/src/cli/main.ts` (`--profile auto`); `packages/linter/scripts/bundle.mjs`; `packages/linter/package.json` (`files`); `scripts/gates.mjs` (dos gates nuevos); `integrations/claude-code/` (borrar la skill, mover la guía, `hooks/hooks.json`, scripts nuevos, README); `integrations/agents-md/` (nuevo); `packages/linter/test/`; `README.md`, `CONTRIBUTING.md`, `docs/benchmark.md` |
 | B12 | `corpus-v1.3/`; `corpus/policy/prompts-v1.3.yml`; `benchmark/configs/holdout-v1.3.lock`; `scripts/corpus-check.mjs` |
 | B13 | `CHANGELOG.md`; los dos `package.json` (versión); bundles de `integrations/`; `project/EVIDENCE/B7-B13-fase2.md`; `project/STATE.md` |
 
-`main.ts` lo tocan B7, B9 y B10, y `gates.mjs` B7, B9 y B11. Ninguno de esos bloques empieza hasta que el anterior está commiteado. `scripts/corpus-check.mjs` solo lo toca B12.
+`main.ts` lo tocan B7, B9, B10 y B11, y `gates.mjs` B7, B9 y B11. Ninguno de esos bloques empieza hasta que el anterior está commiteado. `scripts/corpus-check.mjs` solo lo toca B12.
 
 ## B7. Cerrar el trabajo pendiente
 
@@ -150,27 +150,51 @@ Las reglas ya tienen `rewrite_guidance`, pero al modelo no le llega. El hook le 
 
 Hecho cuando el hook, `/revisar` y la skill dan al modelo el fragmento, la regla y la guía de reescritura, y todos los gates pasan.
 
-## B11. Situaciones y exportación a otros asistentes
+Cierre con el cambio de arquitectura del 2026-09-18 (ver `docs/decisions.md`): la salida `revision` presenta `rewrite_guidance` como «Orientación», no como «Cómo reescribir», y avisa al principio de que cada hallazgo se puede aceptar, ignorar o reinterpretar según el contexto. El hook deja de ordenar «reescríbela» y pide a la IA que decida qué corregir y qué mantener. El campo `rewrite_guidance` de las reglas no cambia.
 
-1. `packages/linter/rules/situaciones.yml`:
+## B11. Humanización como capa transversal
+
+Sustituye al B11 anterior («situaciones y exportación»), que daba por buena la skill. La arquitectura está en `docs/decisions.md` (2026-09-18, «La humanización es una capa transversal»):
+
+```text
+SessionStart: guía y contexto compartido
+  ↓
+tarea + la skill funcional que corresponda
+  ↓
+resultado (respuesta o archivo)
+  ↓
+linter determinista + perfil de contexto (situaciones.yml)
+  ↓
+hooks de revisión: Stop (respuesta) y PostToolUse (Write, Edit)
+  ↓
+la misma IA decide qué corregir, qué mantener y cómo adaptarlo
+  ↓
+salida final
+```
+
+1. **Quitar la skill.** Se borra `integrations/claude-code/skills/escribir-en-espanol/`. Lo que tenía de útil (cambiar la frase entera y no darle la vuelta a las palabras, no alternar largo y corto) pasa al mensaje de los hooks, que es donde se reescribe.
+2. **La guía, fuera del estilo de salida.** `integrations/claude-code/output-styles/humano.md` pasa a `integrations/claude-code/guia/humano.md`, sin la cabecera de estilo de salida. Es el mismo texto, escrito a mano, y no se genera. El plugin deja de declarar un estilo de salida.
+3. **Hook `SessionStart`.** `scripts/guia-sesion.mjs` entrega la guía como contexto adicional al empezar la sesión. Convive con cualquier estilo de salida y cualquier skill. Viene encendido cuando se carga el plugin, porque es la pieza principal, y se apaga con `IA_LINTER_GUIA=0`.
+4. **`packages/linter/rules/situaciones.yml`.** Es la capa de contexto:
    ```yaml
    schema_version: 1
    situaciones:
      - { id: chat, perfil: chat, guia: "Conversación" }
-     - { id: correo, perfil: correo, guia: "Correo" }
-     - { id: readme, perfil: readme, guia: "README y textos de un proyecto" }
-     - { id: redes, perfil: redes, guia: "Redes" }
+     - { id: correo, perfil: correo, guia: "Correo", archivos: ["**/*.eml", "**/correo*.md", "**/correos/**/*.md", "**/*.correo.md"] }
+     - { id: readme, perfil: readme, guia: "README y textos de un proyecto", archivos: ["**/README*.md", "**/CHANGELOG*.md", "**/CONTRIBUTING*.md", "**/docs/**/*.md"] }
+     - { id: redes, perfil: redes, guia: "Redes", archivos: ["**/*.post.md", "**/redes/**/*.md"] }
    ```
-   `guia` es el principio de la viñeta en la sección «Según la situación» de `humano.md`.
-2. Gate `situaciones` en `scripts/gates.mjs`. Falla si una situación apunta a un perfil que no está en `rules/profiles/`, si su viñeta no aparece en `humano.md`, o si en esa sección de `humano.md` hay una viñeta de situación sin entrada en el archivo (la del registro formal se declara como excepción). Va en `gates.mjs` y no en el compilador para que el paquete publicado no dependa de `integrations/`.
-3. `integrations/agents-md/`:
-   - `build.mjs` copia `humano.md` a `integrations/agents-md/escribir-en-espanol.md`, quita los comentarios `ia-linter-disable` y la cabecera del estilo de salida, y añade al final cómo llamar al linter con `--format revision`;
-   - `README.md` explica cómo pegarlo en el AGENTS.md de un proyecto para Codex o cualquier asistente que lo lea. Se escribe con la voz de la guía, porque `lint:self` pasa por `integrations/`.
-4. Gate `agents-md`: el `escribir-en-espanol.md` del repositorio tiene que ser igual a lo que genera `build.mjs`. Si alguien cambia `humano.md` y no regenera, falla.
-5. La tabla de perfiles de la skill de Claude Code se comprueba contra `situaciones.yml` en el mismo gate.
-6. Un párrafo en `README.md` sobre la exportación.
+   `guia` es el principio de la viñeta en la sección «Según la situación» de la guía. `archivos` son los tipos de archivo de texto que revisa el hook de archivos. El primero que coincide decide la situación. Un archivo que no coincide con ninguna no se revisa. Se publica en el paquete y el bundle lleva su copia.
+5. **`--profile auto` en la CLI.** Elige el perfil con `situaciones.yml` a partir de la ruta (`--stdin-filename` o el archivo). Si ninguna situación coincide, no analiza nada y lo dice. Los overrides de `ia-linter.yml` siguen teniendo prioridad, como con cualquier perfil. Esto va en el linter, que es determinista y está probado, y no en el hook.
+6. **Hook `PostToolUse` para `Write` y `Edit`.** `scripts/revisar-archivo.mjs`: coge la ruta del archivo escrito, llama a la CLI con `--profile auto --format revision` y, si hay error o warning, devuelve la orientación a la misma IA (exit 2). No reescribe nada. Tiene tope de intentos por archivo y turno, y viene apagado (`IA_LINTER_REVISAR_ARCHIVOS=1` lo enciende).
+7. **Mensaje común de los dos hooks.** «Orientación: decide tú qué corriges, qué mantienes y cómo lo adaptas al contexto; si un hallazgo no aplica, déjalo y sigue». Más lo que venía de la skill. El tope de intentos es el mismo mecanismo en los dos.
+8. **`IA_LINTER_NIVEL`.** Se lee en la capa común. Solo existe `normal`. Cualquier otro valor se trata como `normal` y lo dice el README. Queda el sitio para niveles futuros sin tocar nada más.
+9. **Otros asistentes.** `integrations/agents-md/`: `build.mjs` genera `escribir-en-espanol.md` a partir de la guía y añade la instrucción transversal («después de producir texto, pasa `ia-linter-es lint --profile auto --format revision` y decide tú qué corriges»). Es para pegarlo en el AGENTS.md de un proyecto. No lleva skill. El README se escribe con la voz de la guía.
+10. **Gates.** `situaciones`: los perfiles existen, cada situación tiene su viñeta en la guía y cada viñeta de situación de la guía tiene su entrada (la del registro formal está declarada como excepción). `agents-md`: el fragmento del repositorio es igual a lo que genera `build.mjs`. Los dos van en `scripts/gates.mjs`, no en el compilador, para que el paquete publicado no dependa de `integrations/`.
+11. **Tests.** `--profile auto` (coincide, no coincide y override con prioridad); hook de archivos E2E (apagado por defecto, README con perfil readme, archivo fuera de `situaciones.yml` ignorado, tope de intentos); hook `SessionStart` E2E (entrega la guía, sin la cabecera, y se apaga con la variable); gates rotos a propósito que se ponen en rojo.
+12. **Documentación.** README del plugin (tres piezas: guía en `SessionStart`, hooks de revisión y `/revisar`), README del repositorio (instalación sin estilo de salida), `CONTRIBUTING.md` y `docs/benchmark.md` con la ruta nueva de la guía.
 
-Hecho cuando los dos gates nuevos están en verde, y en rojo cuando se rompe a propósito una viñeta o un perfil (se prueba y se deshace).
+Hecho cuando la humanización funciona con cualquier skill y cualquier estilo de salida, sin que haya que elegir nada. Queda una sola IA operativa y todos los gates pasan.
 
 ## B12. Corpus v1.3 con clase IA externa
 
