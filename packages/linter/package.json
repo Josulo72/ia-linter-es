@@ -2,7 +2,7 @@
   "name": "ia-linter-es",
   "version": "1.0.0",
   "description": "Linter determinista de patrones de escritura de IA en español (texto y Markdown).",
-  "license": "MIT",
+  "license": "BUSL-1.1",
   "type": "module",
   "main": "./dist/api/index.js",
   "types": "./dist/api/index.d.ts",
@@ -11,7 +11,7 @@
     "./package.json": "./package.json"
   },
   "bin": { "ia-linter-es": "./dist/cli/main.js" },
-  "files": ["dist", "rulepack", "rules/profiles", "schemas", "README.md", "LICENSE"],
+  "files": ["dist", "rulepack", "rules/profiles", "schemas", "README.md", "LICENSE", "LICENSE-MIT"],
   "engines": { "node": ">=20" },
   "scripts": {
     "build": "pnpm run build:ts && pnpm run build:rules && pnpm run build:bundle",
