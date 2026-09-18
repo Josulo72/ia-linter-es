@@ -2,7 +2,32 @@
 
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y las versiones, [SemVer](https://semver.org/lang/es/).
 
-## [1.0.0] — 2026-09-17
+## [1.1.0] - 2026-09-19
+
+La humanización pasa a ser una capa común que funciona con cualquier skill y cualquier estilo de salida, y el linter devuelve orientación para reescribir en vez de solo avisos. El linter sigue sin llevar IA dentro: la única IA es el asistente que reescribe.
+
+### Añadido
+
+- `--format revision`: por cada regla, qué busca, una orientación para reescribir y dónde está cada caso. Cada hallazgo se puede aceptar, ignorar o reinterpretar según el contexto.
+- `--profile auto`: el perfil sale de la ruta según `rules/situaciones.yml` (un `README.md` va con `readme`, lo de `correos/` con `correo`). Lo que no encaja en ninguna situación no se analiza. Los overrides de `ia-linter.yml` siguen mandando.
+- Plugin de Claude Code: la guía se carga al empezar la sesión con un hook `SessionStart`, y hay un hook `PostToolUse` para los archivos de texto que se escriben con `Write` o `Edit`. Viene apagado, igual que el de respuestas.
+- `integrations/agents-md/`: la guía y la instrucción de revisar después de escribir, para pegarla en el `AGENTS.md` de Codex u otros asistentes.
+- `benchmark run --annotations` para adjudicar un corpus concreto, y los scripts para adjudicar a ciegas (`dump-findings.mjs --ciego` y `aplicar-adjudicacion.mjs`).
+- Corpus v1.3, con la clase IA generada por GPT-5.6 Sol y el holdout congelado sin ejecutar. Solo es para medir y no forma parte del producto.
+
+### Cambiado
+
+- La guía está ahora en `integrations/claude-code/guia/humano.md` y ya no es un estilo de salida.
+- `rules explain` y `docs/rules.md` llaman «Orientación» a la guía de reescritura de cada regla.
+- `estructura/ritmo-plano` y `formato/comillas-angulares` dejan de estar activas en el perfil `correo`, donde marcaban igual a humanos y a generados.
+- `retorica/pregunta-retorica-apertura` y `formato/encabezado-title-case` pasan a `candidate` después de adjudicar sus hallazgos: aciertan 4 de 12 y 2 de 7. Quedan 23 reglas estables y el mínimo de la política baja de 24 a 23.
+- La API rechaza las opciones que no conoce, las rutas de la línea de órdenes se toman desde el directorio de trabajo y los errores de uso salen con código 2.
+
+### Quitado
+
+- La skill `escribir-en-espanol`, que competía con las skills de cada tarea.
+
+## [1.0.0] - 2026-09-17
 
 Primera versión.
 

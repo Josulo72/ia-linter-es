@@ -9,7 +9,7 @@ En el `.pre-commit-config.yaml` del proyecto:
 ```yaml
 repos:
   - repo: https://github.com/jrollon/ia-linter-es
-    rev: v1.0.0
+    rev: v1.1.0
     hooks:
       - id: ia-linter-es
 ```

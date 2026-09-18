@@ -5,7 +5,7 @@ Dos cosas. Una guía de estilo para que la IA escriba en español como una perso
 Todo pasa en tu ordenador. No usa IA, no sale a la red y no manda nada a ninguna parte.
 
 ```
-npm i -D ia-linter-es-1.0.0.tgz
+npm i -D ia-linter-es-1.1.0.tgz
 npx ia-linter-es lint docs README.md
 ```
 
@@ -23,11 +23,11 @@ Todavía no está en npm, así que se instala desde el paquete de la última rel
 Con el paquete, que es un `.tgz` normal de npm. Lo bajas de la pestaña Releases del repositorio y lo instalas en tu proyecto:
 
 ```
-npm i -D ia-linter-es-1.0.0.tgz
+npm i -D ia-linter-es-1.1.0.tgz
 npx ia-linter-es lint README.md --profile readme
 ```
 
-Vale igual con `pnpm add -D ./ia-linter-es-1.0.0.tgz` o `yarn add -D ./ia-linter-es-1.0.0.tgz`. Hace falta Node 20 o más.
+Vale igual con `pnpm add -D ./ia-linter-es-1.1.0.tgz` o `yarn add -D ./ia-linter-es-1.1.0.tgz`. Hace falta Node 20 o más.
 
 Desde el código, si quieres tocarlo:
 
@@ -39,7 +39,7 @@ pnpm build
 node packages/linter/dist/cli/main.js lint README.md --profile readme
 ```
 
-El plugin de Claude Code, con la guía, va en otro paquete de la misma release, `ia-linter-es-claude-code-1.0.0.zip`. Lo descomprimes donde quieras y lo cargas así:
+El plugin de Claude Code, con la guía, va en otro paquete de la misma release, `ia-linter-es-claude-code-1.1.0.zip`. Lo descomprimes donde quieras y lo cargas así:
 
 ```
 claude --plugin-dir ./ia-linter-es-claude-code
@@ -58,7 +58,7 @@ Lo que consigue está medido: quita del todo las rayas de inciso, las comillas a
 
 ## El linter
 
-38 reglas, 28 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `ia-linter-es rules explain <id>` te lo cuenta.
+38 reglas, 23 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `ia-linter-es rules explain <id>` te lo cuenta.
 
 Hay ocho perfiles, porque no se escribe igual un mensaje que un contrato:
 
@@ -121,9 +121,9 @@ El informe entero, con lo que funciona y lo que no, está en `benchmark/reports/
 
 ## Límites
 
-- La clase IA la generó el mismo modelo que ayudó a escribir las reglas. Es circular y no lo escondo: no vale como evaluación independiente.
+- En los corpus v1.1 y v1.2 la clase IA la generó el mismo modelo que ayudó a escribir las reglas, y eso es circular. El v1.3 la tiene de otro proveedor (GPT-5.6 Sol) y da casi lo mismo, así que el problema está en las reglas y no en quién generó los textos.
 - Toda la separación viene de una sola regla, la del ritmo, y esa regla es `candidate`. Quitándola, la mediana de los textos generados baja a cero, igual que la de los humanos. Si un modelo aprende a variar la longitud de sus frases, el índice deja de separar.
-- El banco son 132 mensajes de foro y nada más. Los perfiles `correo`, `readme` y `redes` no tienen ni un caso medido, y 20 de las 28 reglas estables no disparan nunca ahí: seis no tienen evidencia de corpus en ninguna versión. Está todo en `benchmark/reports/auditoria-banco-v1.1.md`.
+- Por registro, el índice separa en mensajes de foro y en redes, no separa en correos y en README marca más a los humanos que a los generados. Está medido en `benchmark/reports/v1.2.md` y en development v1.3. La precisión por regla sale de adjudicar 50 hallazgos con un solo adjudicador, así que es orientativa.
 - Los mensajes de foro que forman la clase humana no se redistribuyen. En el repositorio está el manifiesto con la URL y el hash; los textos se bajan en local.
 - Es español de España. En otras variedades marcará cosas que allí son normales.
 

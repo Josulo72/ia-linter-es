@@ -233,4 +233,9 @@ blocks:
     tests:
       - todos los gates, lint:self y pack:check
     acceptance: solo quedan push, release y npm publish, que hace el propietario.
-    status: pending
+    status: done
+    notes: >-
+      Versión 1.1.0 en los package.json, plugin.json, .pre-commit-hooks.yaml y README. CHANGELOG 1.1.0. README al
+      día (23 estables y límites con v1.2 y v1.3), AGENTS.md con api entre los módulos con fs. Evidencia en
+      project/EVIDENCE/B7-B13-fase2.md. Todos los gates en verde. Pendiente del propietario: release, etiqueta
+      v1.1.0 y npm publish.
