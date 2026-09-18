@@ -116,16 +116,19 @@ blocks:
 
   - id: B8
     title: Ritmo solo donde separa
-    objective: estructura/ritmo-plano activa solo en chat y redes (decisión D1).
+    objective: estructura/ritmo-plano deja de estar activa en el perfil correo (decisión D1, tomada 2026-09-18); sigue en chat, readme y redes.
     depends_on: [B7]
     deliverables:
       - rules/definitions/estructura--ritmo-plano.yml (profiles)
       - docs/decisions.md y docs/rules.md regenerado
-      - benchmark/reports/development-v1.2-{correo,readme}.json y anexo en benchmark/reports/v1.2.md
+      - benchmark/reports/development-v1.2-correo.json y anexo en benchmark/reports/v1.2.md
     tests:
       - gates; el holdout v1.1, evaluado con perfil chat, no cambia
     acceptance: decisión registrada; los informes de holdout v1.2 no se regeneran.
-    status: pending
+    status: done
+    notes: >-
+      D1 tomada el 2026-09-18: fuera solo de correo. Readme se probó sin la regla y se descartó
+      (mismas falsas alarmas humanas, menos IA detectada). Cifras en docs/decisions.md y en el anexo de v1.2.md.
 
   - id: B9
     title: Adjudicación de development v1.2

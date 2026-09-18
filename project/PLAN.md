@@ -47,7 +47,7 @@ Cada una se toma antes de empezar el bloque que la necesita. Si no está tomada,
 
 | Id | Decisión | Recomendación | La necesita |
 |---|---|---|---|
-| D1 | Apagar `estructura/ritmo-plano` en los perfiles `correo` y `readme` | Sí. En holdout v1.2 la separación es −9 en correo y −2 en README, y en correo su FP/1000 es 2,107 | B8 |
+| D1 | Apagar `estructura/ritmo-plano` en los perfiles `correo` y `readme` | Tomada el 2026-09-18: solo en correo. En readme no quitaba falsas alarmas humanas (ver `docs/decisions.md`) | B8 |
 | D2 | Quién adjudica los hallazgos de development v1.2 | El propietario, o un modelo distinto del que escribe las reglas. Si lo hace solo la IA ejecutora se repite la circularidad de v1.0 | B9 |
 | D3 | Proveedor y modelo de la clase IA externa para el corpus v1.3 | Cualquiera que no sea Claude. Hace falta cuenta y clave, así que genera el propietario | B12 |
 
@@ -72,7 +72,7 @@ Dos bloques que tocan el mismo archivo van en serie, y así están ordenados.
 | Bloque | Archivos |
 |---|---|
 | B7 | los 15 archivos modificados ahora mismo en `packages/linter/src/` y `scripts/gates.mjs`; `docs/decisions.md` |
-| B8 | `packages/linter/rules/definitions/estructura--ritmo-plano.yml`; `docs/decisions.md`; `docs/rules.md` (generado); `benchmark/reports/development-v1.2-{correo,readme}.json`; anexo en `benchmark/reports/v1.2.md` |
+| B8 | `packages/linter/rules/definitions/estructura--ritmo-plano.yml`; `docs/decisions.md`; `docs/rules.md` (generado); `benchmark/reports/development-v1.2-correo.json`; anexo en `benchmark/reports/v1.2.md` |
 | B9 | `packages/linter/src/cli/benchmark.ts`; `packages/linter/src/cli/main.ts` (solo el subcomando `benchmark run`); `benchmark/annotations/v1.2/`; `benchmark/scripts/dump-findings.mjs`; `scripts/gates.mjs` (aviso de precisión); `docs/benchmark.md` |
 | B10 | `packages/linter/src/reporters/index.ts`; `packages/linter/src/cli/main.ts` (validación de `--format`); `packages/linter/src/config/index.ts` (validación de `reporter`); `integrations/claude-code/scripts/revisar-respuesta.mjs`; `integrations/claude-code/commands/revisar.md`; `integrations/claude-code/skills/escribir-en-espanol/SKILL.md`; `packages/linter/test/`; `docs/configuration.md` |
 | B11 | `packages/linter/rules/situaciones.yml` (nuevo); `scripts/gates.mjs` (dos gates nuevos); `integrations/agents-md/` (nuevo); `integrations/claude-code/skills/escribir-en-espanol/SKILL.md`; `README.md` |
@@ -97,15 +97,14 @@ Hecho cuando `git status` sale limpio y los gates están en verde.
 
 Depende de D1. Si D1 es no, el bloque se cierra sin cambios y con la decisión registrada.
 
-1. En `estructura--ritmo-plano.yml`, `profiles` pasa de `{ chat, correo, readme, redes }` a `{ chat: warning, redes: warning }`. `default_level` sigue en `off`. No se toca `rules/profiles/*.yml`: el nivel de esta regla por perfil vive en la propia regla, y ponerlo también en el perfil sería declararlo en dos sitios.
+1. En `estructura--ritmo-plano.yml`, `profiles` pasa de `{ chat, correo, readme, redes }` a `{ chat: warning, readme: warning, redes: warning }` (D1: solo sale correo). `default_level` sigue en `off`. No se toca `rules/profiles/*.yml`: el nivel de esta regla por perfil vive en la propia regla, y ponerlo también en el perfil sería declararlo en dos sitios.
 2. `estructura/ritmo-metronomo` no cambia. No hay medida que diga lo contrario.
 3. Entrada en `docs/decisions.md` con las cifras de `benchmark/reports/v1.2.md`.
 4. `pnpm build` regenera `docs/rules.md`.
-5. Volver a ejecutar development v1.2 de correo y de readme:
-   `node packages/linter/dist/cli/main.js benchmark run --corpus corpus-v1.2 --partition development --register correo --profile correo -o benchmark/reports/development-v1.2-correo.json`, y lo mismo con readme.
+5. Volver a ejecutar development v1.2 de correo:
+   `node packages/linter/dist/cli/main.js benchmark run --corpus corpus-v1.2 --partition development --register correo --profile correo -o benchmark/reports/development-v1.2-correo.json`. Se probó también readme sin la regla y se descartó.
 6. Los informes de holdout v1.2 no se regeneran. Ese holdout ya se usó con las reglas cerradas, y volver a pasarlo para enseñar la mejora sería presentarlo otra vez como independiente. Lo que cambia se cuenta en un anexo de `v1.2.md`, marcado como medida posterior sobre development.
 7. Comprobar que el gate del holdout v1.1 no se mueve. Ese informe se evaluó con el perfil `chat` (`config.profile` de `holdout-v1.1.json`), donde la regla sigue activa.
-8. El repositorio se analiza a sí mismo con el perfil `readme` (`ia-linter.yml`), así que `lint:self` puede dar menos hallazgos. Es lo esperado.
 
 Hecho cuando los gates están en verde, `docs/rules.md` refleja el cambio y la decisión está registrada.
 

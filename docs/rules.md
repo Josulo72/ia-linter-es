@@ -315,6 +315,7 @@ Es la diferencia más clara entre un mensaje escrito por una persona y uno gener
 **Falsos positivos conocidos:**
 - Mensajes que enumeran datos o pasos, donde la uniformidad es funcional.
 - Textos de menos de ocho frases: la regla no se aplica.
+- Correos de lista técnica: el género pide frases de longitud parecida. En corpus v1.2 marca 8 de 15 correos humanos (FP/1000 2,107), por eso no está activa en el perfil correo.
 
 **Ejemplo:**
 

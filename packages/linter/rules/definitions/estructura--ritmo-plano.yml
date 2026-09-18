@@ -12,7 +12,7 @@ conditions:
   min_sentences: 8
   max_cv: 0.5
 default_level: "off"
-profiles: { chat: warning, correo: warning, readme: warning, redes: warning }
+profiles: { chat: warning, readme: warning, redes: warning }
 score: { weight: 2, cap: 2 }
 message: "Ritmo plano: todas las frases miden casi lo mismo (CV {cv} en {count} frases)."
 explanation: >-
@@ -33,4 +33,5 @@ provenance:
   known_false_positives:
     - Mensajes que enumeran datos o pasos, donde la uniformidad es funcional.
     - "Textos de menos de ocho frases: la regla no se aplica."
+    - "Correos de lista técnica: el género pide frases de longitud parecida. En corpus v1.2 marca 8 de 15 correos humanos (FP/1000 2,107), por eso no está activa en el perfil correo."
   reviewed_by: [jrollon]

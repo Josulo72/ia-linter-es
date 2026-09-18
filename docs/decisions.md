@@ -53,3 +53,9 @@ Consecuencia: quedan 25 reglas `stable`, por encima del mínimo de 24 de `qualit
 Decisión: `src/api` puede importar `fs`. Lee el `package.json` para la versión, el Rule Pack compilado y, en `lintFile`, el archivo que se analiza. `paths.ts` sale de la lista de módulos con `fs` porque solo usa `path` y `url`.
 Motivo: la API de arquitectura §10.2 analiza archivos y proyectos, y sin disco no puede. El gate de imports ya lo permitía; faltaba registrarlo.
 Consecuencia: la lista de AGENTS.md §2 se queda corta y hay que añadirle `api`.
+
+## 2026-09-18 — D1: `estructura/ritmo-plano` se apaga en el perfil correo y sigue en readme
+Decisión: la regla queda activa en `chat`, `readme` y `redes`, y deja de estarlo en `correo`. No cambian su umbral, su nivel ni su estado (`candidate`).
+Motivo: en correo marca a los humanos igual que a la IA y supera el límite de falsos positivos de la política (FP/1000 = 2,107, máximo 1,5). Development v1.2 de correo, textos por encima del umbral del índice: antes 9 de 15 humanos y 9 de 15 IA (exactitud equilibrada 0,50); sin la regla, 4 de 15 humanos y 1 de 15 IA (0,40). Se van la mitad de las falsas alarmas sobre correos humanos. En correo el índice no separaba ni separa.
+Descartado: apagarla también en readme. Allí cumple la política (FP/1000 = 0,889) y quitarla no reduce ninguna falsa alarma humana: siguen marcados 5 de 14 README humanos y la IA marcada baja de 7 de 15 a 4 de 15 (exactitud equilibrada de 0,555 a 0,455). El −2 del holdout v1.2 en README es una diferencia pequeña con 15 textos por lado.
+Consecuencia: `benchmark/reports/development-v1.2-correo.json` se regenera con la regla apagada. Los informes de holdout v1.2 no se regeneran, porque ese holdout ya se usó con las reglas cerradas. El cambio se cuenta en el anexo de `benchmark/reports/v1.2.md`. El holdout v1.1 se evaluó con el perfil `chat` y no cambia.
