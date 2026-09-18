@@ -4,7 +4,7 @@ Fuente de verdad: `docs/architecture.md`. Este archivo resume lo operativo.
 
 ## Principios innegociables
 1. Un solo motor, una sola definición de reglas (YAML en `packages/linter/rules/definitions`), una sola fórmula de puntuación (`src/scoring`), una sola configuración (`src/config`).
-2. El análisis no usa red, LLM ni GPU. Ningún módulo de `src/` importa `http`, `https`, `net`, `dns`, `child_process` ni `worker_threads`. Solo `runner/`, `cli/`, `config/`, `baseline/` y `rules/compiler/` pueden importar `fs`.
+2. El análisis no usa red, LLM ni GPU. Ningún módulo de `src/` importa `http`, `https`, `net`, `dns`, `child_process` ni `worker_threads`. Solo `runner/`, `cli/`, `config/`, `baseline/`, `rules/compiler/` y `api/` pueden importar `fs` (ver `docs/decisions.md`, 2026-09-18).
 3. El runtime (`src/rules/runtime`) no lee archivos, no imprime y no conoce integraciones.
 4. Las integraciones (`integrations/`) son adaptadores finos sobre la CLI o la API. No contienen reglas ni umbrales.
 5. Determinismo: mismo texto + mismo Rule Pack + misma configuración = mismo resultado, byte a byte en JSON.
