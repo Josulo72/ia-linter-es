@@ -59,12 +59,12 @@ Supresiones en el propio texto:
 ```js
 import { lintText, lintFile, lintProject, loadConfig, loadRulePack } from "ia-linter-es";
 
-const r = lintText(texto, { profile: "chat", format: "text" });
+const r = lintText(texto, { config: { profile: "chat" }, format: "text" });
 console.log(r.score.index, r.findings.map((f) => f.rule));
 ```
 
 ## Lo demás
 
-El código, la guía de estilo para escribir en español que no suene a IA, el informe del benchmark y los adaptadores de pre-commit, GitHub Actions y Claude Code están en https://github.com/jrollon/ia-linter-es
+El código, la guía de estilo para escribir en español que no suene a IA, el informe del benchmark y los adaptadores de pre-commit, GitHub Actions y Claude Code están en https://github.com/Josulo72/ia-linter-es
 
-MIT.
+Business Source License 1.1: puedes usarlo, también en tu empresa y para tus clientes, pero no venderlo ni montar un servicio de pago con él. El 17 de septiembre de 2030 pasa a AGPL-3.0. Textos completos en `LICENSE` y `LICENSE-AGPL-3.0`.

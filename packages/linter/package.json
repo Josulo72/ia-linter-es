@@ -11,7 +11,7 @@
     "./package.json": "./package.json"
   },
   "bin": { "ia-linter-es": "./dist/cli/main.js" },
-  "files": ["dist", "rulepack", "rules/profiles", "rules/situaciones.yml", "schemas", "README.md", "LICENSE", "LICENSE-MIT"],
+  "files": ["dist", "rulepack", "rules/profiles", "rules/situaciones.yml", "schemas", "README.md", "LICENSE", "LICENSE-AGPL-3.0"],
   "engines": { "node": ">=20" },
   "scripts": {
     "build": "pnpm run build:ts && pnpm run build:rules && pnpm run build:bundle",

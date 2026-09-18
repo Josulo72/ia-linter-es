@@ -22,6 +22,7 @@ La humanización pasa a ser una capa común que funciona con cualquier skill y c
 - `estructura/ritmo-plano` y `formato/comillas-angulares` dejan de estar activas en el perfil `correo`, donde marcaban igual a humanos y a generados.
 - `retorica/pregunta-retorica-apertura` y `formato/encabezado-title-case` pasan a `candidate` después de adjudicar sus hallazgos: aciertan 4 de 12 y 2 de 7. Quedan 23 reglas estables y el mínimo de la política baja de 24 a 23.
 - La API rechaza las opciones que no conoce, las rutas de la línea de órdenes se toman desde el directorio de trabajo y los errores de uso salen con código 2.
+- La licencia de cambio de la Business Source License pasa de MIT a AGPL-3.0, con la misma fecha, el 17 de septiembre de 2030. La 1.0.0 conserva la vuelta a MIT con la que se publicó.
 
 ### Quitado
 

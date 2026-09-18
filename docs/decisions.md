@@ -122,3 +122,9 @@ Decisión: los 180 textos IA del corpus v1.3 los genera el propietario a mano en
 Motivo: quitar la circularidad de que la clase IA la genere la misma familia de modelos que escribe las reglas.
 Alcance: solo el corpus de evaluación. GPT-5.6 Sol no forma parte del producto ni es requisito para ejecutarlo.
 Consecuencia: el holdout v1.3 es independiente en la clase IA pero no en la humana, porque holdout v1.2 ya se ejecutó. Su composición se preregistra en `benchmark/configs/holdout-v1.3.lock` antes de generar y se congela al completarse. No se ejecuta hasta que haya una versión de reglas cerrada.
+
+## 2026-09-19 — La licencia de cambio pasa de MIT a AGPL-3.0
+Decisión: desde la versión 1.1.0, la licencia de cambio de la Business Source License es la GNU Affero General Public License v3.0 (AGPL-3.0), y no MIT. La fecha de cambio sigue siendo el 2030-09-17 y el resto de parámetros no cambia. El texto está en `LICENSE-AGPL-3.0`, que sustituye a `LICENSE-MIT`.
+Motivo: el propietario no quiere que el código pase a una licencia que permita cerrarlo y venderlo. La BUSL obliga a tener una licencia de cambio compatible con la GPL; con AGPL-3.0, después de 2030 sigue siendo libre, pero quien lo modifique o lo ofrezca como servicio tiene que publicar su código.
+Descartado: GPL-3.0, que no obliga a publicar el código a quien lo ofrece como servicio en la nube, y dejar la BUSL por una licencia que no se abre nunca, como PolyForm Shield.
+Consecuencia: la 1.0.0 ya se publicó con la vuelta a MIT y la conserva. De paso se corrigen dos sitios que decían MIT sin serlo: el `plugin.json` y el README del paquete de npm.
