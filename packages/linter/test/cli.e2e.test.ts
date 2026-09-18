@@ -90,6 +90,83 @@ describe("CLI E2E: lint", () => {
     }
   });
 
+  it("--format revision: orientación por regla, determinista y sin color", () => {
+    const args = ["lint", "--stdin", "--stdin-filename", "respuesta.md", "--profile", "chat", "--fail-on", "never"];
+    const a = cli([...args, "-f", "revision"], { input: AI_TEXT });
+    const b = cli([...args, "-f", "revision"], { input: AI_TEXT });
+    expect(a.status).toBe(0);
+    expect(a.stdout).toBe(b.stdout);
+    expect(a.stdout).not.toMatch(/\x1b\[/);
+    // Es orientación: lo dice al principio, y la guía de cada regla sale como «Orientación», no como una orden.
+    expect(a.stdout).toMatch(/^Orientación para revisar el texto\. Cada hallazgo es una señal, no una orden/);
+    expect(a.stdout).toMatch(/\nrespuesta\.md \(índice \d+\/100\)\n/);
+    expect(a.stdout).toContain("lexico/muletillas-ia: Muletilla de redacción generada");
+    expect(a.stdout).toContain("Orientación: Elimina la fórmula");
+    expect(a.stdout).not.toContain("Cómo reescribir");
+    expect(a.stdout).toContain('Fragmento: "En el vertiginoso mundo"');
+
+    // Cada regla sale una vez aunque tenga varios hallazgos, y solo las de nivel error o warning salvo con --verbose.
+    const json = JSON.parse(cli([...args, "-f", "json"], { input: AI_TEXT }).stdout);
+    const findings: { rule: string; level: string; suppressed?: unknown }[] = json.files[0].findings.filter((f: { suppressed?: unknown }) => !f.suppressed);
+    const aArreglar = new Set(findings.filter((f) => f.level !== "info").map((f) => f.rule));
+    const soloInfo = [...new Set(findings.map((f) => f.rule))].filter((r) => !aArreglar.has(r));
+    const cabeceras = (s: string) => s.split("\n").filter((l) => /^[a-z]+\/[a-z-]+:/.test(l)).map((l) => l.split(":")[0]);
+    expect(cabeceras(a.stdout).sort()).toEqual([...aArreglar].sort());
+    const v = cli([...args, "-f", "revision", "-v"], { input: AI_TEXT });
+    expect(cabeceras(v.stdout).sort()).toEqual([...aArreglar, ...soloInfo].sort());
+  });
+
+  it("--format revision sin nada que arreglar lo dice, y el reporter se puede fijar en ia-linter.yml", () => {
+    const vacio = cli(["lint", "--stdin", "-f", "revision"], { input: "Hola." });
+    expect(vacio.stdout).toBe("Nada que revisar.\n");
+    const dir = tmpProject({ "ia.md": AI_TEXT, "ia-linter.yml": "reporter: revision\nfail_on: never\n" });
+    const r = cli(["lint", "--no-cache"], { cwd: dir });
+    expect(r.status).toBe(0);
+    expect(r.stdout).toContain("Orientación:");
+    expect(cli(["lint", "-f", "otro"], { cwd: dir }).status).toBe(2);
+  });
+
+  it("--profile auto: la ruta decide el perfil según situaciones.yml, y sin situación no se analiza", () => {
+    const PLANO =
+      "Este es un texto de prueba con una frase normal. Esta es otra frase de longitud parecida aqui. Y otra mas con el mismo numero de palabras. Seguimos con otra frase de longitud similar. Cada frase se parece mucho a la anterior. Nada cambia el ritmo de este parrafo. Las frases siguen con la misma medida siempre. Ninguna es corta y ninguna es larga aqui. Esto ocupa mas de cuarenta palabras ya seguro.";
+    const reglas = (nombre: string, cwd?: string) => {
+      const r = cli(["lint", "--stdin", "--stdin-filename", nombre, "--profile", "auto", "-f", "json", "--fail-on", "never"], { input: PLANO, cwd });
+      return { status: r.status, stderr: r.stderr, files: JSON.parse(r.stdout).files as { findings: { rule: string }[] }[] };
+    };
+    // readme y redes tienen ritmo-plano activa; correo no (D1).
+    expect(reglas("README.md").files[0].findings.map((f) => f.rule)).toContain("estructura/ritmo-plano");
+    expect(reglas("docs/guia.md").files[0].findings.map((f) => f.rule)).toContain("estructura/ritmo-plano");
+    expect(reglas("correos/respuesta.md").files[0].findings.map((f) => f.rule)).not.toContain("estructura/ritmo-plano");
+    const nada = reglas("notas.md");
+    expect(nada.status).toBe(0);
+    expect(nada.files).toEqual([]);
+    expect(nada.stderr).toContain("no corresponde a ninguna situación");
+    // Los overrides del proyecto mandan sobre la situación.
+    const dir = tmpProject({ "ia-linter.yml": "overrides:\n  - files: ['README.md']\n    profile: correo\n" });
+    expect(reglas("README.md", dir).files[0].findings.map((f) => f.rule)).not.toContain("estructura/ritmo-plano");
+    // Con --stdin hace falta la ruta: es lo que decide.
+    expect(cli(["lint", "--stdin", "--profile", "auto"], { input: PLANO }).status).toBe(2);
+  });
+
+  it("--profile auto sobre un proyecto: cada archivo con el perfil de su situación", () => {
+    const PLANO =
+      "Este es un texto de prueba con una frase normal. Esta es otra frase de longitud parecida aqui. Y otra mas con el mismo numero de palabras. Seguimos con otra frase de longitud similar. Cada frase se parece mucho a la anterior. Nada cambia el ritmo de este parrafo. Las frases siguen con la misma medida siempre. Ninguna es corta y ninguna es larga aqui. Esto ocupa mas de cuarenta palabras ya seguro.";
+    const dir = tmpProject({ "README.md": PLANO, "correos/a.md": PLANO, "notas.md": PLANO });
+    const r = cli(["lint", "--profile", "auto", "-f", "json", "--no-cache", "--fail-on", "never"], { cwd: dir });
+    const json = JSON.parse(r.stdout);
+    const de = (p: string) => json.files.find((f: { path: string }) => f.path === p).findings.map((f: { rule: string }) => f.rule);
+    expect(de("README.md")).toContain("estructura/ritmo-plano");
+    expect(de("correos/a.md")).not.toContain("estructura/ritmo-plano");
+    // Igual que con --stdin: lo que no tiene situación no se analiza, y se dice.
+    expect(json.files.map((f: { path: string }) => f.path).sort()).toEqual(["README.md", "correos/a.md"]);
+    expect(r.stderr).toContain("1 archivo(s) sin situación");
+    expect(r.stderr).toContain("notas.md");
+    // Y con un archivo concreto, que es como lo pide la instrucción de AGENTS.md.
+    const solo = cli(["lint", "notas.md", "--profile", "auto", "-f", "json", "--no-cache"], { cwd: dir });
+    expect(solo.status).toBe(0);
+    expect(JSON.parse(solo.stdout).files).toEqual([]);
+  });
+
   it("privacidad: sin snippets no aparece texto del documento", () => {
     const dir = tmpProject({ "ia.md": AI_TEXT, "ia-linter.yml": "privacy:\n  snippets: false\nfail_on: never\n" });
     const r = cli(["lint", "-f", "json", "--no-cache"], { cwd: dir });
@@ -118,7 +195,7 @@ describe("CLI E2E: rules, config, baseline", () => {
     expect(stable).toBeLessThanOrEqual(policy.rules.stable_max);
     const e = cli(["rules", "explain", "lexico/muletillas-ia"]);
     expect(e.status).toBe(0);
-    expect(e.stdout).toContain("Cómo reescribir");
+    expect(e.stdout).toContain("Orientación:");
     expect(cli(["rules", "explain", "no/existe"]).status).toBe(2);
   });
 

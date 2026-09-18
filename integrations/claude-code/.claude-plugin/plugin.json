@@ -2,9 +2,16 @@
   "name": "ia-linter-es",
   "displayName": "ia-linter-es",
   "version": "1.0.0",
-  "description": "Escribe en español como una persona y revisa lo que ya está escrito. Estilo de salida, comando de revisión y un hook opcional que pasa el linter a cada respuesta al terminarla y hace que se reescriba si suena a IA.",
-  "author": { "name": "jrollon" },
+  "description": "Escribe en español como una persona y revisa lo que ya está escrito, con cualquier skill y cualquier estilo de salida. Carga la guía al empezar la sesión, trae el comando /revisar y dos hooks opcionales que pasan el linter a las respuestas y a los archivos de texto y le devuelven la orientación a Claude.",
+  "author": {
+    "name": "jrollon"
+  },
   "repository": "https://github.com/jrollon/ia-linter-es",
   "license": "MIT",
-  "keywords": ["español", "escritura", "linter", "estilo"]
+  "keywords": [
+    "español",
+    "escritura",
+    "linter",
+    "estilo"
+  ]
 }

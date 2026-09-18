@@ -17,9 +17,12 @@ await build({
   banner: { js: "import { createRequire as __cr } from 'node:module'; const require = __cr(import.meta.url);" },
   logLevel: "warning",
 });
-// El bundle resuelve packageRoot() como el directorio padre de dist/: copiamos ahí lo que necesita en ejecución.
+// El bundle resuelve packageRoot() como el directorio padre de dist/: copiamos ahí lo que necesita en ejecución
+// (el Rule Pack y situaciones.yml, que usa --profile auto).
 fs.mkdirSync(path.join(outdir, "rulepack"), { recursive: true });
 fs.copyFileSync(path.join(root, "rulepack", "rulepack.json"), path.join(outdir, "rulepack", "rulepack.json"));
+fs.mkdirSync(path.join(outdir, "rules"), { recursive: true });
+fs.copyFileSync(path.join(root, "rules", "situaciones.yml"), path.join(outdir, "rules", "situaciones.yml"));
 const pkg = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"));
 fs.writeFileSync(path.join(outdir, "package.json"), JSON.stringify({ name: pkg.name, version: pkg.version, type: "module", private: true }, null, 2) + "\n");
 console.log(`Bundle: ${path.relative(process.cwd(), path.join(outdir, "dist", "cli.mjs"))}`);

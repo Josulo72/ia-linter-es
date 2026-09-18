@@ -49,7 +49,7 @@ Rule Pack `ia-linter-es/oficial` v1.0.0. 38 reglas compiladas.
 
 Estos adjetivos califican sin describir. Un texto que llama «crucial», «fundamental» e «innovador» a todo no distingue nada; la redacción generada los usa como relleno de valoración.
 
-**Cómo reescribir:** Sustituye el adjetivo por el rasgo que lo justifica («innovador» → «el primero que usa X»).
+**Orientación:** Sustituye el adjetivo por el rasgo que lo justifica («innovador» → «el primero que usa X»).
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -66,7 +66,7 @@ Estos adjetivos califican sin describir. Un texto que llama «crucial», «funda
 
 Los adverbios en -mente alargan la frase y suelen sustituir a un verbo o a un dato. La prosa generada los encadena («realmente», «significativamente», «adecuadamente») con una densidad que la prosa editada evita.
 
-**Cómo reescribir:** Cambia el adverbio por un verbo más preciso o por la cantidad concreta. «Mejora significativamente» → «mejora un 12 %».
+**Orientación:** Cambia el adverbio por un verbo más preciso o por la cantidad concreta. «Mejora significativamente» → «mejora un 12 %».
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -83,7 +83,7 @@ Los adverbios en -mente alargan la frase y suelen sustituir a un verbo o a un da
 
 Los conectores explicitan una relación que la prosa bien construida deja ver por el orden de las ideas. La redacción generada los usa como andamio en casi todas las frases.
 
-**Cómo reescribir:** Elimina el conector y comprueba si la relación sigue clara. Si no, reordena las frases en lugar de añadir «además».
+**Orientación:** Elimina el conector y comprueba si la relación sigue clara. Si no, reordena las frases en lugar de añadir «además».
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -100,7 +100,7 @@ Los conectores explicitan una relación que la prosa bien construida deja ver po
 
 El contenido generado para redes y newsletters suele decorar cada punto con un emoji (🚀, ✅, 💡). Es un rasgo de formato, no de lengua, y por eso pesa poco; se notifica como información.
 
-**Cómo reescribir:** Sustituye los emojis por encabezados o viñetas normales, salvo que el canal lo pida.
+**Orientación:** Sustituye los emojis por encabezados o viñetas normales, salvo que el canal lo pida.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -117,7 +117,7 @@ El contenido generado para redes y newsletters suele decorar cada punto con un e
 
 El entusiasmo por exclamación es un rasgo del contenido generado para marketing y redes. En prosa expositiva editada la exclamación es excepcional.
 
-**Cómo reescribir:** Deja la exclamación solo donde haya una emoción real que transmitir; el resto, con punto.
+**Orientación:** Deja la exclamación solo donde haya una emoción real que transmitir; el resto, con punto.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -134,7 +134,7 @@ El entusiasmo por exclamación es un rasgo del contenido generado para marketing
 
 El intensificador afirma sin demostrar. La prosa generada los reparte por todo el texto para sonar convincente; la prosa editada los usa de forma aislada o los sustituye por datos.
 
-**Cómo reescribir:** Quita el intensificador o cámbialo por la medida que lo justifica.
+**Orientación:** Quita el intensificador o cámbialo por la medida que lo justifica.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -151,7 +151,7 @@ El intensificador afirma sin demostrar. La prosa generada los reparte por todo e
 
 Son verbos que prometen efectos («optimiza», «potencia», «garantiza») sin describir una acción concreta. Su densidad es uno de los rasgos léxicos más estables del texto generado en español.
 
-**Cómo reescribir:** Di qué hace exactamente el sujeto. «Optimiza el proceso» → «reduce el proceso de cinco pasos a dos».
+**Orientación:** Di qué hace exactamente el sujeto. «Optimiza el proceso» → «reduce el proceso de cinco pasos a dos».
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -168,7 +168,7 @@ Son verbos que prometen efectos («optimiza», «potencia», «garantiza») sin 
 
 El párrafo final que anuncia «en conclusión» y repite lo dicho es el cierre por defecto del texto generado. Un texto editado termina con la última idea, no con el resumen de las anteriores.
 
-**Cómo reescribir:** Borra el párrafo de resumen o conviértelo en la conclusión real (qué cambia, qué hay que hacer).
+**Orientación:** Borra el párrafo de resumen o conviértelo en la conclusión real (qué cambia, qué hay que hacer).
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -189,7 +189,7 @@ El párrafo final que anuncia «en conclusión» y repite lo dicho es el cierre 
 
 El texto generado encadena párrafos con un conector inicial que simula progresión («Además…», «Por otro lado…», «En definitiva…»). En prosa editada los párrafos empiezan por su sujeto o por la idea nueva.
 
-**Cómo reescribir:** Empieza el párrafo por la información nueva. El conector, si hace falta, va después.
+**Orientación:** Empieza el párrafo por la información nueva. El conector, si hace falta, va después.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -212,7 +212,7 @@ El texto generado encadena párrafos con un conector inicial que simula progresi
 
 El encabezado de dos partes separadas por dos puntos es el formato por defecto de los títulos generados. En documentación y prensa en español el encabezado suele ser una frase nominal sin subtítulo pegado.
 
-**Cómo reescribir:** Quédate con una de las dos partes o convierte la segunda en la primera frase del párrafo.
+**Orientación:** Quédate con una de las dos partes o convierte la segunda en la primera frase del párrafo.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -231,7 +231,7 @@ El encabezado de dos partes separadas por dos puntos es el formato por defecto d
 
 Los ordinales explícitos al inicio de párrafo son el esqueleto visible del texto generado. Un texto editado marca el orden con la propia información o con una lista.
 
-**Cómo reescribir:** Convierte los párrafos en una lista numerada o elimina los ordinales y deja que el orden hable.
+**Orientación:** Convierte los párrafos en una lista numerada o elimina los ordinales y deja que el orden hable.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -252,7 +252,7 @@ Los ordinales explícitos al inicio de párrafo son el esqueleto visible del tex
 
 Las listas generadas repiten el arranque de cada elemento («Permite…», «Permite…», «Permite…»). La evidencia es todavía débil frente a listas humanas homogéneas; la regla está en estado candidate.
 
-**Cómo reescribir:** Varía el arranque o convierte la lista en una frase con enumeración.
+**Orientación:** Varía el arranque o convierte la lista en una frase con enumeración.
 
 **Evidencia:** Pendiente de benchmark en holdout; ver benchmark/reports.
 
@@ -273,7 +273,7 @@ Las listas generadas repiten el arranque de cada elemento («Permite…», «Per
 
 La prosa humana alterna frases largas y cortas; la generada tiende a una longitud media estable. Se calcula el coeficiente de variación de palabras por frase, sin contar encabezados ni frases de menos de tres palabras.
 
-**Cómo reescribir:** Rompe alguna frase larga en dos y une dos cortas. Una frase de cuatro palabras después de una de treinta cambia el ritmo.
+**Orientación:** Rompe alguna frase larga en dos y une dos cortas. Una frase de cuatro palabras después de una de treinta cambia el ritmo.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -290,7 +290,7 @@ La prosa humana alterna frases largas y cortas; la generada tiende a una longitu
 
 Es el defecto contrario a `estructura/ritmo-plano` y aparece cuando se le pide al modelo que varíe el ritmo con una regla numérica. Sale una cadencia de larga-corta-larga-corta que no comete una persona. Se exigen las dos cosas a la vez, alternancia de 0,85 y variación de longitud de 0,50, porque un texto plano oscila una palabra arriba y abajo y alternaría al 100 % sin ser un metrónomo. En 36 mensajes de foro no marca ninguno; en los 96 textos de la clase IA sin esa instrucción, tampoco; en los 8 generados con ella, 6.
 
-**Cómo reescribir:** Pon dos frases seguidas de longitud parecida en algún punto. La irregularidad es lo natural, no el vaivén.
+**Orientación:** Pon dos frases seguidas de longitud parecida en algún punto. La irregularidad es lo natural, no el vaivén.
 
 **Evidencia:** 36 mensajes de foro, 96 textos de la clase IA y 8 generados con instrucción numérica de ritmo; ver benchmark/reports/v1.1.md.
 
@@ -308,7 +308,7 @@ Es el defecto contrario a `estructura/ritmo-plano` y aparece cuando se le pide a
 
 Es la diferencia más clara entre un mensaje escrito por una persona y uno generado. En 18 mensajes de foro el coeficiente de variación mediano es 0,61; en 24 textos generados con el mismo encargo, 0,48. Con el umbral en 0,50 se marcan 14 de 24 textos generados y 3 de 18 humanos. El límite de `estructura/longitud-uniforme` (0,32) sirve para prosa editada larga y casi nunca salta en un texto corto.
 
-**Cómo reescribir:** Deja alguna frase en tres o cuatro palabras y que otra siga hasta donde tenga que llegar. Sin alternar largo y corto, que eso cae en el defecto contrario.
+**Orientación:** Deja alguna frase en tres o cuatro palabras y que otra siga hasta donde tenga que llegar. Sin alternar largo y corto, que eso cae en el defecto contrario.
 
 **Evidencia:** 18 mensajes de foro y 24 textos generados del corpus v1.1 (development); ver benchmark/reports/v1.1.md.
 
@@ -327,7 +327,7 @@ Es la diferencia más clara entre un mensaje escrito por una persona y uno gener
 
 Son las correctas en prosa editada, pero no están en el teclado y casi nadie las escribe en un mensaje o en un README. Su presencia sistemática delata un texto pasado por un corrector o por una máquina.
 
-**Cómo reescribir:** Usa comillas normales.
+**Orientación:** Usa comillas normales.
 
 **Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
 
@@ -345,7 +345,7 @@ Son las correctas en prosa editada, pero no están en el teclado y casi nadie la
 
 En español solo la primera palabra del título y los nombres propios llevan mayúscula. El «Title Case» con cada palabra en mayúscula es un calco del inglés muy habitual en encabezados generados.
 
-**Cómo reescribir:** Deja en mayúscula solo la primera palabra y los nombres propios.
+**Orientación:** Deja en mayúscula solo la primera palabra y los nombres propios.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -364,7 +364,7 @@ En español solo la primera palabra del título y los nombres propios llevan may
 
 El patrón «- **Concepto:** explicación» repetido en cada viñeta es el formato por defecto de las listas generadas en Markdown. En documentación escrita a mano aparece de forma ocasional, no sistemática.
 
-**Cómo reescribir:** Usa una lista de definiciones, subencabezados o frases completas sin negrita de arranque.
+**Orientación:** Usa una lista de definiciones, subencabezados o frases completas sin negrita de arranque.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -384,7 +384,7 @@ El patrón «- **Concepto:** explicación» repetido en cada viñeta es el forma
 
 El titular en negrita al principio de cada párrafo es maquetación de texto generado. Quien escribe a mano pone un encabezado si hace falta, o nada.
 
-**Cómo reescribir:** Quita la negrita; si el párrafo necesita título, ponle un encabezado.
+**Orientación:** Quita la negrita; si el párrafo necesita título, ponle un encabezado.
 
 **Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
 
@@ -403,7 +403,7 @@ El titular en negrita al principio de cada párrafo es maquetación de texto gen
 
 En un correo, un mensaje o un README casi nadie escribe rayas, porque no están en el teclado. La gente usa comas, paréntesis o parte la frase. En prosa editada la raya pegada es correcta, por eso la regla solo se activa en los perfiles cotidianos.
 
-**Cómo reescribir:** Cambia el inciso por comas o paréntesis, o parte la frase en dos.
+**Orientación:** Cambia el inciso por comas o paréntesis, o parte la frase en dos.
 
 **Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
 
@@ -420,7 +420,7 @@ En un correo, un mensaje o un README casi nadie escribe rayas, porque no están 
 
 En español la raya de inciso va pegada al inciso («la casa —la de antes— era grande») y no se usa como separador de frase. El «palabra — palabra» con espacios es un calco del inglés muy característico del texto generado.
 
-**Cómo reescribir:** Sustituye por coma, dos puntos o punto y seguido; si es un inciso, usa rayas pegadas o paréntesis.
+**Orientación:** Sustituye por coma, dos puntos o punto y seguido; si es un inciso, usa rayas pegadas o paréntesis.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -437,7 +437,7 @@ En español la raya de inciso va pegada al inciso («la casa —la de antes— e
 
 Los dos puntos usados como redoble antes de un remate corto son un recurso de titular. Uno suelto no dice nada; repetido cada pocos párrafos es una firma del texto generado.
 
-**Cómo reescribir:** Une las dos mitades en una frase normal o quita el remate.
+**Orientación:** Une las dos mitades en una frase normal o quita el remate.
 
 **Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
 
@@ -454,7 +454,7 @@ Los dos puntos usados como redoble antes de un remate corto son un recurso de ti
 
 «Hoy en día» y sus variantes sirven para empezar a hablar de cualquier cosa sin decir cuándo ni dónde. La redacción generada abre con ellas de forma sistemática.
 
-**Cómo reescribir:** Sustituye por una fecha, un periodo o un hecho concreto, o empieza directamente por el sujeto.
+**Orientación:** Sustituye por una fecha, un periodo o un hecho concreto, o empieza directamente por el sujeto.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -471,7 +471,7 @@ Los dos puntos usados como redoble antes de un remate corto son un recurso de ti
 
 La fórmula finge exhaustividad enumerando extremos y un punto medio. En texto generado aparece con frecuencia muy superior a la de la prosa humana, donde se reserva para enumeraciones reales.
 
-**Cómo reescribir:** Enumera los elementos que importan o indica el criterio de inclusión.
+**Orientación:** Enumera los elementos que importan o indica el criterio de inclusión.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -488,7 +488,7 @@ La fórmula finge exhaustividad enumerando extremos y un punto medio. En texto g
 
 La fórmula presenta como importante lo que sigue sin justificar por qué. En prosa editada el énfasis se consigue con el orden de la información, no con un anuncio.
 
-**Cómo reescribir:** Borra la fórmula y deja la afirmación. Si hace falta subrayar, empieza el párrafo con ella.
+**Orientación:** Borra la fórmula y deja la afirmación. Si hace falta subrayar, empieza el párrafo con ella.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -505,7 +505,7 @@ La fórmula presenta como importante lo que sigue sin justificar por qué. En pr
 
 Avisar de que se va a ser sincero es un gesto de cara a la galería. El texto generado lo hace mucho cuando le piden sonar humano.
 
-**Cómo reescribir:** Borra el aviso y deja el dato.
+**Orientación:** Borra el aviso y deja el dato.
 
 **Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
 
@@ -522,7 +522,7 @@ Avisar de que se va a ser sincero es un gesto de cara a la galería. El texto ge
 
 La redacción generada recurre a un repertorio pequeño de imágenes (viaje, tapiz, faro, desbloquear, navegar) que en español editado resultan ajenas o publicitarias.
 
-**Cómo reescribir:** Di literalmente lo que ocurre. «Desbloquear el potencial de X» suele significar «usar X para Y»; escribe Y.
+**Orientación:** Di literalmente lo que ocurre. «Desbloquear el potencial de X» suele significar «usar X para Y»; escribe Y.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -540,7 +540,7 @@ La redacción generada recurre a un repertorio pequeño de imágenes (viaje, tap
 
 Estas expresiones aparecen como relleno de apertura o de transición y no aportan información al lector. Su acumulación es uno de los rasgos más reconocibles de la prosa generada en español.
 
-**Cómo reescribir:** Elimina la fórmula o sustitúyela por un dato concreto (quién, qué, cuándo). Si la frase sigue teniendo sentido sin ella, sobraba.
+**Orientación:** Elimina la fórmula o sustitúyela por un dato concreto (quién, qué, cuándo). Si la frase sigue teniendo sentido sin ella, sobraba.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json, fila de la regla.
 
@@ -558,7 +558,7 @@ Estas expresiones aparecen como relleno de apertura o de transición y no aporta
 
 Construcción legítima en español, pero la redacción generada la usa en casi cualquier enumeración para simular cobertura total. Se notifica como información y pesa poco en el índice.
 
-**Cómo reescribir:** Si la lista es cerrada, enuméralla sin «ya sea». Si es abierta, di «por ejemplo».
+**Orientación:** Si la lista es cerrada, enuméralla sin «ya sea». Si es abierta, di «por ejemplo».
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -575,7 +575,7 @@ Construcción legítima en español, pero la redacción generada la usa en casi 
 
 La anáfora es una figura retórica legítima, pero el texto generado la produce por inercia («Es hora de… Es hora de… Es hora de…») sin intención de énfasis, sobre todo en cierres y en contenido motivacional.
 
-**Cómo reescribir:** Deja una sola de las frases o funde las tres en una con enumeración.
+**Orientación:** Deja una sola de las frases o funde las tres en una con enumeración.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -593,7 +593,7 @@ La anáfora es una figura retórica legítima, pero el texto generado la produce
 
 El texto generado sobre un tema repite el sujeto al inicio de cada párrafo («La inteligencia artificial…» ×3). La prosa editada varía el arranque o usa pronombres y elipsis.
 
-**Cómo reescribir:** Empieza el párrafo por la información nueva o usa un pronombre.
+**Orientación:** Empieza el párrafo por la información nueva o usa un pronombre.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -616,7 +616,7 @@ El texto generado sobre un tema repite el sujeto al inicio de cada párrafo («L
 
 El texto generado reutiliza bloques de cuatro o más palabras («la calidad de vida de», «a la hora de tomar») con una frecuencia que un redactor evitaría por oído. Se excluyen secuencias que empiezan o terminan por palabra funcional.
 
-**Cómo reescribir:** Sustituye una de las repeticiones por un pronombre, un sinónimo o una elipsis.
+**Orientación:** Sustituye una de las repeticiones por un pronombre, un sinónimo o una elipsis.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -633,7 +633,7 @@ El texto generado reutiliza bloques de cuatro o más palabras («la calidad de v
 
 El texto generado para marketing y autoayuda termina casi siempre con una llamada a la acción formularia. En prosa editada la llamada a la acción es concreta (qué hacer, dónde, cuándo).
 
-**Cómo reescribir:** Sustituye la arenga por la acción concreta y el dato que la hace posible («Inscríbete antes del 30 en este enlace»).
+**Orientación:** Sustituye la arenga por la acción concreta y el dato que la hace posible («Inscríbete antes del 30 en este enlace»).
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -650,7 +650,7 @@ El texto generado para marketing y autoayuda termina casi siempre con una llamad
 
 Es la fórmula más repetida del texto generado actual. Una persona la usa para corregir un dato concreto («Endesa no es distribuidora, es comercializadora»); la máquina, para dar solemnidad a cualquier frase.
 
-**Cómo reescribir:** Di directamente la segunda parte. «No es un gasto, es una inversión» → «Se amortiza en dos años».
+**Orientación:** Di directamente la segunda parte. «No es un gasto, es una inversión» → «Se amortiza en dos años».
 
 **Evidencia:** Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
 
@@ -667,7 +667,7 @@ Es la fórmula más repetida del texto generado actual. Una persona la usa para 
 
 La fórmula niega una idea que nadie había planteado para presentar la propia como revelación. Es uno de los cierres más característicos del texto generado en español.
 
-**Cómo reescribir:** Afirma directamente la segunda parte. «No se trata de correr, sino de llegar» → «Lo importante es llegar».
+**Orientación:** Afirma directamente la segunda parte. «No se trata de correr, sino de llegar» → «Lo importante es llegar».
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -684,7 +684,7 @@ La fórmula niega una idea que nadie había planteado para presentar la propia c
 
 Es una construcción correcta que el texto generado usa con una frecuencia muy superior a la humana, a menudo para presentar como contraste dos ideas que no se oponen.
 
-**Cómo reescribir:** Si las dos partes no se contraponen, únelas con «y». «No solo es rápido, sino también barato» → «Es rápido y barato».
+**Orientación:** Si las dos partes no se contraponen, únelas con «y». «No solo es rápido, sino también barato» → «Es rápido y barato».
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -701,7 +701,7 @@ Es una construcción correcta que el texto generado usa con una frecuencia muy s
 
 La pregunta retórica seguida de su respuesta es el gancho estándar del contenido generado («¿Qué es X? X es…»). En prosa editada la pregunta abre un párrafo solo cuando hay intención de diálogo.
 
-**Cómo reescribir:** Empieza por la respuesta. «¿Qué es la inflación? La inflación es…» → «La inflación es…».
+**Orientación:** Empieza por la respuesta. «¿Qué es la inflación? La inflación es…» → «La inflación es…».
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 
@@ -718,7 +718,7 @@ La pregunta retórica seguida de su respuesta es el gancho estándar del conteni
 
 La regla de tres es un recurso clásico que el texto generado aplica de forma compulsiva: casi toda enumeración tiene exactamente tres miembros de la misma categoría gramatical.
 
-**Cómo reescribir:** Deja los dos adjetivos que aportan algo o sustituye la tríada por un dato.
+**Orientación:** Deja los dos adjetivos que aportan algo o sustituye la tríada por un dato.
 
 **Evidencia:** Frecuencia relativa en corpus propio (development); ver benchmark/reports/development-v1.0.json.
 

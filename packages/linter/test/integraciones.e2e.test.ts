@@ -6,6 +6,8 @@ import { AI_TEXT, BUNDLE, CLI, HUMAN_TEXT, REPO_ROOT, cli, run, tmpProject } fro
 
 const ACTION = path.join(REPO_ROOT, "integrations", "github-action", "main.mjs");
 const HOOK = path.join(REPO_ROOT, "integrations", "claude-code", "scripts", "revisar-respuesta.mjs");
+const HOOK_ARCHIVO = path.join(REPO_ROOT, "integrations", "claude-code", "scripts", "revisar-archivo.mjs");
+const HOOK_GUIA = path.join(REPO_ROOT, "integrations", "claude-code", "scripts", "guia-sesion.mjs");
 
 /** La Action lee sus entradas del entorno, igual que en GitHub. */
 function action(inputs: Record<string, string>, opts: { cwd: string; outputs?: string; summary?: string }) {
@@ -117,7 +119,38 @@ describe("Hook de Claude Code", () => {
       const r = run(HOOK, [], { input: entrada(PLANO), env: { IA_LINTER_REVISAR: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI } });
       expect(r.status).toBe(2);
       expect(r.stderr).toContain("estructura/ritmo-plano");
-      expect(r.stderr).toContain("Reescríbela");
+      // Llega la orientación de --format revision, no solo el mensaje del hallazgo, y como orientación: decide la IA.
+      expect(r.stderr).toContain("Orientación:");
+      expect(r.stderr).toContain("Afecta a todo el texto.");
+      expect(r.stderr).toContain("Decide tú qué corriges, qué mantienes");
+      expect(r.stderr).not.toContain("Reescríbela");
+    } finally {
+      fs.rmSync(estado, { recursive: true, force: true });
+    }
+  });
+
+  it("con una CLI anterior que no conoce --format revision, cae a la lista de mensajes", () => {
+    const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
+    try {
+      // Una CLI que analiza igual que la de verdad pero rechaza `revision` como error de uso, como hacía la 1.0.0.
+      const vieja = path.join(estado, "cli-vieja.mjs");
+      fs.writeFileSync(
+        vieja,
+        [
+          `import fs from "node:fs";`,
+          `import { spawnSync } from "node:child_process";`,
+          `const a = process.argv.slice(2);`,
+          `if (a.includes("revision")) { process.stderr.write("--format debe ser terminal, json o sarif\\n"); process.exit(2); }`,
+          `const r = spawnSync(process.execPath, [${JSON.stringify(CLI)}, ...a], { input: fs.readFileSync(0, "utf8"), encoding: "utf8" });`,
+          `process.stdout.write(r.stdout);`,
+          `process.exit(r.status ?? 0);`,
+        ].join("\n"),
+        "utf8",
+      );
+      const r = run(HOOK, [], { input: entrada(PLANO), env: { IA_LINTER_REVISAR: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: vieja } });
+      expect(r.status).toBe(2);
+      expect(r.stderr).toContain("(estructura/ritmo-plano)");
+      expect(r.stderr).not.toContain("Orientación:");
     } finally {
       fs.rmSync(estado, { recursive: true, force: true });
     }
@@ -186,6 +219,116 @@ describe("Hook de Claude Code", () => {
 
   it("entrada ilegible no bloquea nada", () => {
     expect(run(HOOK, [], { input: "esto no es json", env: { IA_LINTER_REVISAR: "1" } }).status).toBe(0);
+  });
+});
+
+describe("Hook de archivos (PostToolUse en Write y Edit)", () => {
+  const PLANO =
+    "Este es un texto de prueba con una frase normal. Esta es otra frase de longitud parecida aqui. Y otra mas con el mismo numero de palabras. Seguimos con otra frase de longitud similar. Cada frase se parece mucho a la anterior. Nada cambia el ritmo de este parrafo. Las frases siguen con la misma medida siempre. Ninguna es corta y ninguna es larga aqui. Esto ocupa mas de cuarenta palabras ya seguro.";
+  const escrito = (cwd: string, file: string, extra: Record<string, unknown> = {}) =>
+    JSON.stringify({ session_id: `s${Math.random()}`, cwd, hook_event_name: "PostToolUse", tool_name: "Write", tool_input: { file_path: file }, ...extra });
+
+  function proyecto(files: Record<string, string>) {
+    const dir = tmpProject(files);
+    const estado = fs.mkdtempSync(path.join(os.tmpdir(), "ial-hook-"));
+    const env = { IA_LINTER_REVISAR_ARCHIVOS: "1", TMPDIR: estado, TEMP: estado, TMP: estado, IA_LINTER_CLI: CLI };
+    return { dir, env, limpiar: () => [dir, estado].forEach((d) => fs.rmSync(d, { recursive: true, force: true })) };
+  }
+
+  it("apagado por defecto: no mira el archivo", () => {
+    const p = proyecto({ "README.md": PLANO });
+    try {
+      const r = run(HOOK_ARCHIVO, [], { input: escrito(p.dir, "README.md"), env: { ...p.env, IA_LINTER_REVISAR_ARCHIVOS: "" } });
+      expect(r.status).toBe(0);
+      expect(r.stderr).toBe("");
+    } finally {
+      p.limpiar();
+    }
+  });
+
+  it("un README escrito por cualquier skill se revisa con el perfil readme y vuelve orientación a la IA", () => {
+    const p = proyecto({ "README.md": PLANO });
+    try {
+      const r = run(HOOK_ARCHIVO, [], { input: escrito(p.dir, path.join(p.dir, "README.md")), env: p.env });
+      expect(r.status).toBe(2);
+      expect(r.stderr).toContain("en README.md, que acabas de escribir");
+      expect(r.stderr).toContain("estructura/ritmo-plano");
+      expect(r.stderr).toContain("Orientación:");
+      expect(r.stderr).toContain("Decide tú qué corriges, qué mantienes");
+      // No toca el archivo: solo devuelve orientación.
+      expect(fs.readFileSync(path.join(p.dir, "README.md"), "utf8")).toBe(PLANO);
+    } finally {
+      p.limpiar();
+    }
+  });
+
+  it("el perfil sale de la ruta: en un correo no salta ritmo-plano, que en correo está apagada", () => {
+    const p = proyecto({ "correos/respuesta.md": PLANO });
+    try {
+      const r = run(HOOK_ARCHIVO, [], { input: escrito(p.dir, "correos/respuesta.md"), env: p.env });
+      expect(r.stderr).not.toContain("estructura/ritmo-plano");
+    } finally {
+      p.limpiar();
+    }
+  });
+
+  it("solo los tipos de archivo de situaciones.yml: el resto, y lo que está fuera del proyecto, se deja", () => {
+    const p = proyecto({ "notas.md": PLANO, "src/x.ts": PLANO });
+    try {
+      for (const f of ["notas.md", "src/x.ts", path.join(os.tmpdir(), "fuera", "README.md")]) {
+        const r = run(HOOK_ARCHIVO, [], { input: escrito(p.dir, f), env: p.env });
+        expect(r.status).toBe(0);
+        expect(r.stderr).toBe("");
+      }
+    } finally {
+      p.limpiar();
+    }
+  });
+
+  it("no insiste más del tope con el mismo contenido, y vuelve a revisar si el archivo cambia", () => {
+    const p = proyecto({ "README.md": PLANO });
+    try {
+      const env = { ...p.env, IA_LINTER_REVISAR_INTENTOS: "2" };
+      // Sin prompt_id, como puede llegar el evento de PostToolUse: el tope va por archivo y contenido.
+      const misma = { session_id: "sesion-fija" };
+      expect(run(HOOK_ARCHIVO, [], { input: escrito(p.dir, "README.md", misma), env }).status).toBe(2);
+      expect(run(HOOK_ARCHIVO, [], { input: escrito(p.dir, "README.md", misma), env }).status).toBe(2);
+      expect(run(HOOK_ARCHIVO, [], { input: escrito(p.dir, "README.md", misma), env }).status).toBe(0);
+      fs.writeFileSync(path.join(p.dir, "README.md"), PLANO + " Y una frase mas de la misma medida que las otras.", "utf8");
+      expect(run(HOOK_ARCHIVO, [], { input: escrito(p.dir, "README.md", misma), env }).status).toBe(2);
+    } finally {
+      p.limpiar();
+    }
+  });
+});
+
+describe("Guía compartida (SessionStart)", () => {
+  it("entrega la guía como contexto adicional, sin cabecera de estilo de salida ni comentarios del linter", () => {
+    const r = run(HOOK_GUIA, [], { input: JSON.stringify({ session_id: "s", hook_event_name: "SessionStart" }) });
+    expect(r.status).toBe(0);
+    const out = JSON.parse(r.stdout);
+    expect(out.hookSpecificOutput.hookEventName).toBe("SessionStart");
+    const ctx: string = out.hookSpecificOutput.additionalContext;
+    expect(ctx).toContain("uses la skill que uses");
+    expect(ctx).toContain("Escribes en español de España como escribe una persona normal");
+    expect(ctx).toContain("## Según la situación");
+    expect(ctx).not.toMatch(/^---\nname:/m);
+    expect(ctx).not.toContain("ia-linter-disable");
+  });
+
+  it("IA_LINTER_GUIA=0 lo apaga", () => {
+    const r = run(HOOK_GUIA, [], { input: "{}", env: { IA_LINTER_GUIA: "0" } });
+    expect(r.status).toBe(0);
+    expect(r.stdout).toBe("");
+  });
+
+  it("el plugin ya no tiene skill de humanización ni estilo de salida", () => {
+    const plugin = path.join(REPO_ROOT, "integrations", "claude-code");
+    expect(fs.existsSync(path.join(plugin, "skills", "escribir-en-espanol"))).toBe(false);
+    expect(fs.existsSync(path.join(plugin, "output-styles"))).toBe(false);
+    const hooks = JSON.parse(fs.readFileSync(path.join(plugin, "hooks", "hooks.json"), "utf8")).hooks;
+    expect(Object.keys(hooks).sort()).toEqual(["PostToolUse", "SessionStart", "Stop"]);
+    expect(hooks.PostToolUse[0].matcher).toBe("Write|Edit");
   });
 });
 

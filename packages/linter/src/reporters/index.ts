@@ -1,6 +1,6 @@
 import type { CompiledRule, Finding, ScanResult } from "../contracts/index.js";
 
-export type ReporterName = "terminal" | "json" | "sarif";
+export type ReporterName = "terminal" | "json" | "sarif" | "revision";
 
 /* ---------------- JSON ---------------- */
 
@@ -130,12 +130,59 @@ function sarifLevel(l: string): "error" | "warning" | "note" | "none" {
   return l === "error" ? "error" : l === "warning" ? "warning" : l === "info" ? "note" : "none";
 }
 
+/* ---------------- Revisión ---------------- */
+
+/**
+ * Orientación para quien vaya a reescribir el texto (el asistente, desde los hooks o /revisar). Es orientación y no una
+ * lista de órdenes: quien reescribe decide qué hallazgos acepta, cuáles ignora y cómo los adapta al contexto.
+ * Agrupa por regla para no repetir la orientación en cada hallazgo: qué busca la regla, la orientación (`rewrite_guidance`)
+ * y dónde está cada caso. Texto plano, sin color y determinista. Sin --verbose lleva error y warning; con --verbose
+ * también los info. Los suprimidos no salen nunca.
+ */
+export function reportRevision(result: ScanResult, rules: CompiledRule[], opts: { verbose?: boolean } = {}): string {
+  const byId = new Map(rules.map((r) => [r.id, r]));
+  const out: string[] = [];
+  const cabecera = [
+    "Orientación para revisar el texto. Cada hallazgo es una señal, no una orden: acéptalo, ignóralo o reinterprétalo según el contexto.",
+    "",
+  ];
+  for (const file of result.files) {
+    const active = file.findings.filter((f) => !f.suppressed && (opts.verbose || f.level !== "info"));
+    if (!active.length) continue;
+    const idx = file.score.index === null ? "sin índice (texto corto)" : `índice ${file.score.index}/100`;
+    out.push(`${file.path} (${idx})`, "");
+    const groups = new Map<string, Finding[]>();
+    for (const f of active) {
+      const g = groups.get(f.rule);
+      if (g) g.push(f);
+      else groups.set(f.rule, [f]);
+    }
+    for (const [id, fs] of groups) {
+      const r = byId.get(id);
+      out.push(`${id}${r ? `: ${r.title}` : ""}`);
+      if (r) out.push(`  Qué busca: ${r.summary}`, `  Orientación: ${r.rewrite_guidance}`);
+      // Las reglas que miden la estructura del texto entero (longitud de frase) no señalan un sitio: su «fragmento» es solo el principio.
+      const wholeText = r?.scope === "document" && r.detector === "structure";
+      for (const f of fs) {
+        const pos = `${f.range.start.line}:${f.range.start.column}`;
+        const where = wholeText ? " Afecta a todo el texto." : f.snippet ? ` Fragmento: "${f.snippet.replace(/\s+/g, " ")}"` : "";
+        out.push(`  - ${wholeText ? "" : `${pos} `}${f.message}${where}`);
+      }
+      out.push("");
+    }
+  }
+  if (!out.length) return "Nada que revisar.\n";
+  return [...cabecera, ...out].join("\n");
+}
+
 export function render(name: ReporterName, result: ScanResult, rules: CompiledRule[], opts: { color?: boolean; verbose?: boolean; uriBase?: string } = {}): string {
   switch (name) {
     case "json":
       return reportJson(result);
     case "sarif":
       return reportSarif(result, rules, { uriBase: opts.uriBase });
+    case "revision":
+      return reportRevision(result, rules, { verbose: opts.verbose });
     default:
       return reportTerminal(result, { color: opts.color, verbose: opts.verbose });
   }

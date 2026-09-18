@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 /**
- * Gates de calidad (quality-policy.yml). Uso: node scripts/gates.mjs [--only=imports,perf,rules,index]
+ * Gates de calidad (quality-policy.yml). Uso: node scripts/gates.mjs [--only=imports,rules,perf,index,situaciones,agents-md]
  */
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse as parseYaml } from "yaml";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const policy = parseYaml(fs.readFileSync(path.join(root, "quality-policy.yml"), "utf8"));
-const only = (process.argv.find((a) => a.startsWith("--only=")) ?? "--only=imports,rules,perf,index").slice(7).split(",");
+const only = (process.argv.find((a) => a.startsWith("--only=")) ?? "--only=imports,rules,perf,index,situaciones,agents-md").slice(7).split(",");
 const failures = [];
 const ok = (msg) => console.log(`  ✔ ${msg}`);
 const fail = (msg) => {
@@ -155,6 +155,63 @@ if (only.includes("index")) {
       console.log(`  · precisión adjudicada: ${stables.length - conPrecision} de ${stables.length} reglas stable sin adjudicar; min_adjudicated_precision (${policy.rules.min_adjudicated_precision}) no se puede comprobar`);
     }
   }
+}
+
+/* ---------------- Gate: situaciones (guía y perfiles cuadran) ---------------- */
+if (only.includes("situaciones")) {
+  console.log("Gate situaciones");
+  const rulesDir = path.join(root, "packages", "linter", "rules");
+  const guiaPath = path.join(root, "integrations", "claude-code", "guia", "humano.md");
+  const sit = parseYaml(fs.readFileSync(path.join(rulesDir, "situaciones.yml"), "utf8"))?.situaciones ?? [];
+  const perfiles = new Set(fs.readdirSync(path.join(rulesDir, "profiles")).map((f) => f.replace(/\.yml$/, "")));
+  // Las viñetas de «## Según la situación». La del registro formal no es una situación: es la excepción que la guía declara.
+  const guia = fs.readFileSync(guiaPath, "utf8").replace(/\r\n/g, "\n");
+  const seccion = guia.split(/^## /m).find((s) => s.startsWith("Según la situación")) ?? "";
+  const vinetas = seccion.split("\n").filter((l) => l.startsWith("- ")).map((l) => l.slice(2));
+  const NO_SITUACION = ["Si el encargo pide"];
+  let bad = 0;
+  if (!seccion) {
+    fail("la guía no tiene la sección «## Según la situación»");
+    bad++;
+  }
+  for (const s of sit) {
+    if (!perfiles.has(s.perfil)) {
+      fail(`situación ${s.id}: el perfil ${s.perfil} no está en rules/profiles`);
+      bad++;
+    }
+    if (!vinetas.some((v) => v.startsWith(s.guia))) {
+      fail(`situación ${s.id}: la guía no tiene una viñeta que empiece por «${s.guia}»`);
+      bad++;
+    }
+  }
+  for (const v of vinetas) {
+    if (NO_SITUACION.some((x) => v.startsWith(x))) continue;
+    if (!sit.some((s) => v.startsWith(s.guia))) {
+      fail(`la guía describe una situación sin entrada en situaciones.yml: «${v.slice(0, 50)}…»`);
+      bad++;
+    }
+  }
+  // Y el archivo tiene que cargar igual que lo carga la CLI (ids, perfiles y globs válidos).
+  const dist = path.join(root, "packages", "linter", "dist", "config", "situaciones.js");
+  if (fs.existsSync(dist)) {
+    try {
+      const { loadSituaciones } = await import(pathToFileURL(dist).href);
+      loadSituaciones(path.join(rulesDir, "situaciones.yml"));
+    } catch (e) {
+      fail(`situaciones.yml no carga: ${e.message}`);
+      bad++;
+    }
+  }
+  if (!bad) ok(`${sit.length} situaciones con su perfil y su viñeta en la guía; ninguna viñeta sin situación`);
+}
+
+/* ---------------- Gate: agents-md (el fragmento está al día con la guía) ---------------- */
+if (only.includes("agents-md")) {
+  console.log("Gate agents-md");
+  const { generar, SALIDA } = await import(pathToFileURL(path.join(root, "integrations", "agents-md", "build.mjs")).href);
+  const actual = fs.existsSync(SALIDA) ? fs.readFileSync(SALIDA, "utf8").replace(/\r\n/g, "\n") : "";
+  if (actual !== generar()) fail("integrations/agents-md/escribir-en-espanol.md no está al día con la guía: node integrations/agents-md/build.mjs");
+  else ok("escribir-en-espanol.md coincide con lo que genera la guía");
 }
 
 console.log(failures.length ? `\n${failures.length} gate(s) fallido(s)` : "\nTodos los gates en verde");

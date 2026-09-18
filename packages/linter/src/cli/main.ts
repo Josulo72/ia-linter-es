@@ -5,6 +5,7 @@ import { Command, CommanderError } from "commander";
 import fg from "fast-glob";
 import type { Level, ScanResult } from "../contracts/index.js";
 import { explainConfig, loadConfig } from "../config/index.js";
+import { loadSituaciones, overridesDeSituaciones, situacionDe } from "../config/situaciones.js";
 import { createBaseline, readBaseline, updateBaseline, writeBaseline } from "../baseline/index.js";
 import { render, type ReporterName } from "../reporters/index.js";
 import { scanProject, lintDocumentText, evaluatePolicy, type RunnerContext } from "../runner/index.js";
@@ -79,13 +80,13 @@ program
   .command("lint")
   .description("analiza archivos, directorios o globs")
   .argument("[rutas...]", "archivos, directorios o globs (por defecto, el proyecto)")
-  .option("-f, --format <reporter>", "terminal | json | sarif")
+  .option("-f, --format <reporter>", "terminal | json | sarif | revision")
   .option("-o, --output <archivo>", "escribe el informe en un archivo")
   .option("--stdin", "lee el texto de la entrada estándar")
   .option("--stdin-filename <nombre>", "nombre lógico para --stdin (decide formato y overrides)")
   .option("--fail-on <nivel>", "never | info | warning | error")
   .option("--max-index <n>", "falla si el índice de algún archivo supera n")
-  .option("--profile <perfil>", "general | tecnico | academico | marketing | chat | correo | readme | redes")
+  .option("--profile <perfil>", "general | tecnico | academico | marketing | chat | correo | readme | redes | auto (por la ruta, según situaciones.yml)")
   .option("--baseline <archivo>", "baseline a aplicar")
   .option("--no-baseline", "ignora la baseline configurada")
   .option("--no-cache", "no usa la caché")
@@ -102,21 +103,36 @@ program
       if (!Number.isFinite(n) || n < 0 || n > 100) die("--max-index debe estar entre 0 y 100");
       ctx.config.max_index = n;
     }
-    if (o.profile) {
+    // `auto`: el perfil sale de la ruta según rules/situaciones.yml. Los overrides del proyecto siguen mandando.
+    let sinSituacion = false;
+    let situaciones: ReturnType<typeof loadSituaciones> | null = null;
+    if (o.profile === "auto") {
+      try {
+        situaciones = loadSituaciones();
+      } catch (e) {
+        die((e as Error).message);
+      }
+      ctx.config.overrides = [...overridesDeSituaciones(situaciones), ...ctx.config.overrides];
+      if (o.stdin) {
+        if (!o.stdinFilename) die("--profile auto con --stdin necesita --stdin-filename: la ruta decide la situación");
+        sinSituacion = situacionDe(o.stdinFilename, situaciones) === null;
+      }
+    } else if (o.profile) {
       if (!["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"].includes(o.profile)) die("--profile inválido");
       ctx.config.profile = o.profile;
     }
     const reporter = (o.format ?? ctx.config.reporter) as ReporterName;
-    if (!["terminal", "json", "sarif"].includes(reporter)) die("--format debe ser terminal, json o sarif");
+    if (!["terminal", "json", "sarif", "revision"].includes(reporter)) die("--format debe ser terminal, json, sarif o revision");
     let result: ScanResult;
     if (o.stdin) {
       if (rutas.length) process.stderr.write(`ia-linter-es: aviso: con --stdin se analiza la entrada estándar y se ignoran las rutas (${rutas.join(", ")})\n`);
-      const file = lintDocumentText(readStdin(), ctx, { relPath: o.stdinFilename, format: o.stdinFilename ? undefined : "text" });
+      if (sinSituacion) process.stderr.write(`ia-linter-es: ${o.stdinFilename} no corresponde a ninguna situación de situaciones.yml; con --profile auto no se analiza\n`);
+      const files = sinSituacion ? [] : [lintDocumentText(readStdin(), ctx, { relPath: o.stdinFilename, format: o.stdinFilename ? undefined : "text" })];
       result = {
         schema_version: SCHEMA_VERSION,
         tool: { name: "ia-linter-es", version: ctx.toolVersion, rulepack: ctx.pack.version },
-        files: [file],
-        policy: evaluatePolicy([file], ctx.config),
+        files,
+        policy: evaluatePolicy(files, ctx.config),
         durationMs: 0,
       };
     } else {
@@ -126,6 +142,16 @@ program
       // y no es un error. Solo es un error de uso que ninguna ruta exista ni coincida con nada.
       if (rutas.length && result.files.length === 0 && !rutas.some((r) => fs.existsSync(path.resolve(ctx.cwd, r)))) {
         die(`ninguna ruta coincide: ${rutas.join(", ")}`);
+      }
+      // Con `auto`, igual que con --stdin: lo que no corresponde a ninguna situación no se analiza.
+      if (situaciones) {
+        const sit = situaciones;
+        const fuera = result.files.filter((f) => situacionDe(f.path, sit) === null);
+        if (fuera.length) {
+          process.stderr.write(`ia-linter-es: ${fuera.length} archivo(s) sin situación en situaciones.yml; con --profile auto no se analizan (${fuera.slice(0, 5).map((f) => f.path).join(", ")}${fuera.length > 5 ? ", …" : ""})\n`);
+          const files = result.files.filter((f) => !fuera.includes(f));
+          result = { ...result, files, policy: evaluatePolicy(files, ctx.config) };
+        }
       }
     }
     const color = o.color !== false && reporter === "terminal" && !o.output && process.stdout.isTTY === true && !process.env.NO_COLOR;
@@ -172,7 +198,7 @@ rules
         "",
         r.explanation,
         "",
-        `Cómo reescribir: ${r.rewrite_guidance}`,
+        `Orientación: ${r.rewrite_guidance}`,
         "",
         `Categoría: ${r.category} · Detector: ${r.detector} · Nivel: ${r.default_level} · Peso: ${r.score.weight} (cap ${r.score.cap})`,
         Object.keys(r.profiles).length ? `Perfiles: ${Object.entries(r.profiles).map(([k, v]) => `${k}=${v}`).join(", ")}` : "",

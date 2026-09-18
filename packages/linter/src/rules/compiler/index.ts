@@ -327,7 +327,7 @@ export function renderRulesDoc(defs: RuleDefinition[], pack: RulePack): string {
   lines.push("");
   for (const r of pack.rules) {
     const d = byId.get(r.id);
-    lines.push(`## ${r.id}`, "", `**${r.title}** — ${r.summary}`, "", r.explanation, "", `**Cómo reescribir:** ${r.rewrite_guidance}`, "");
+    lines.push(`## ${r.id}`, "", `**${r.title}** — ${r.summary}`, "", r.explanation, "", `**Orientación:** ${r.rewrite_guidance}`, "");
     if (d) {
       lines.push(`**Evidencia:** ${d.provenance.evidence}`, "");
       if (d.provenance.known_false_positives.length) {

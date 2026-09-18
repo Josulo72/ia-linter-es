@@ -39,19 +39,19 @@ pnpm build
 node packages/linter/dist/cli/main.js lint README.md --profile readme
 ```
 
-La guía de estilo para Claude Code va en otro paquete de la misma release, `ia-linter-es-claude-code-1.0.0.zip`. Lo descomprimes donde quieras y lo cargas así:
+El plugin de Claude Code, con la guía, va en otro paquete de la misma release, `ia-linter-es-claude-code-1.0.0.zip`. Lo descomprimes donde quieras y lo cargas así:
 
 ```
 claude --plugin-dir ./ia-linter-es-claude-code
 ```
 
-Si solo quieres el estilo de escritura y no el resto del plugin, copia `output-styles/humano.md` a `~/.claude/output-styles/` y elígelo con `/output-style humano`.
+La guía se carga sola al empezar cada sesión, así que puedes seguir usando el estilo de salida y las skills que quieras. Para Codex u otro asistente que lea `AGENTS.md`, está `integrations/agents-md/escribir-en-espanol.md`, que se pega ahí.
 
 Las otras dos formas de engancharlo, pre-commit y GitHub Action, están explicadas en `integrations/pre-commit/README.md` y `integrations/github-action/README.md`. El hook de pre-commit pide la versión publicada en npm, así que hasta que se publique hay que apuntarlo al `.tgz`.
 
 ## La guía
 
-Está en `integrations/claude-code/output-styles/humano.md` y es un archivo de texto: se lo puedes pegar a cualquier modelo. Si usas Claude Code, se instala como estilo de salida y ya escribe así siempre.
+Está en `integrations/claude-code/guia/humano.md` y es un archivo de texto: se lo puedes pegar a cualquier modelo. Si usas Claude Code, el plugin la carga al empezar la sesión y ya escribe así siempre, uses la skill que uses.
 
 <!-- ia-linter-disable-next-line formato/comillas-angulares, lexico/honestidad-anunciada -->
 Lo que consigue está medido: quita del todo las rayas de inciso, las comillas angulares, las negritas de titular, los «no es X, es Y» y los «para ser honesto». Lo que no consigue es arreglar el ritmo de las frases, y lo probamos de nueve maneras distintas. Por eso hay linter.
@@ -68,7 +68,7 @@ ia-linter-es lint mensaje.md --profile correo
 ia-linter-es lint README.md --profile readme
 ```
 
-Los otros son `redes`, `general`, `tecnico`, `academico` y `marketing`.
+Los otros son `redes`, `general`, `tecnico`, `academico` y `marketing`. Con `--profile auto` lo elige la ruta: un `README.md` va con `readme`, lo que está en `correos/` con `correo`, y lo que no encaja en ninguna situación no se analiza.
 
 El índice va de 0 a 100 y mide patrones de escritura. **No dice quién ha escrito un texto.** Un texto humano descuidado puede sacar un índice alto y uno generado con cuidado puede sacar cero. Para acusar a nadie no sirve, y usarlo para eso está mal.
 
@@ -109,7 +109,7 @@ Rápido, sencillo y eficaz, que aquí es una cita literal.
 
 - Pre-commit, en `integrations/pre-commit/README.md`
 - GitHub Action, con anotaciones en el pull request y SARIF, en `integrations/github-action/README.md`
-- Claude Code, con el estilo de salida, el comando `/revisar` y un hook opcional que revisa cada respuesta al terminarla y hace que Claude la reescriba, en `integrations/claude-code/README.md`
+- Claude Code, con la guía cargada al empezar la sesión, el comando `/revisar` y dos hooks opcionales que revisan las respuestas y los archivos de texto y le devuelven la orientación a Claude, en `integrations/claude-code/README.md`
 
 Las tres llaman a la misma CLI y dan exactamente los mismos hallazgos.
 

@@ -7,7 +7,7 @@ Un único archivo YAML por proyecto: `ia-linter.yml` (también `ia-linter.yaml`,
 | Clave | Valor por defecto | Descripción |
 |---|---|---|
 | `schema_version` | `1` | Versión del formato. |
-| `profile` | `general` | `general`, `tecnico`, `academico`, `marketing` (prosa editada) y `chat`, `correo`, `readme`, `redes` (escritura cotidiana por situación). Ajusta niveles de reglas. |
+| `profile` | `general` | `general`, `tecnico`, `academico`, `marketing` (prosa editada) y `chat`, `correo`, `readme`, `redes` (escritura cotidiana por situación). Ajusta niveles de reglas. En la línea de órdenes también vale `--profile auto`, que elige el perfil por la ruta según `packages/linter/rules/situaciones.yml` (`README.md` → `readme`, `correos/…` → `correo`…); lo que no encaja en ninguna situación no se analiza, y los overrides de este archivo siguen mandando. |
 | `register` | `general` | `general`, `tecnico`, `academico`, `marketing`, `literario`, `periodistico`, `institucional`. Silencia reglas impropias del género. |
 | `include` | `**/*.md`, `**/*.markdown`, `**/*.txt` | Globs de archivos a analizar. |
 | `exclude` | `node_modules`, `.git`, `dist`, `CHANGELOG.md`, `LICENSE*` | Globs excluidos. |
@@ -19,7 +19,7 @@ Un único archivo YAML por proyecto: `ia-linter.yml` (también `ia-linter.yaml`,
 | `fail_on` | `warning` | Nivel mínimo que hace fallar: `never`, `info`, `warning`, `error`. |
 | `max_index` | `null` | Falla si el índice de un archivo lo supera (0–100). |
 | `privacy.snippets` | `true` | Si es `false`, los informes no contienen texto del documento. |
-| `reporter` | `terminal` | `terminal`, `json`, `sarif`. |
+| `reporter` | `terminal` | `terminal`, `json`, `sarif` o `revision`. `revision` es orientación para quien reescribe: por cada regla, qué busca, la orientación (`rewrite_guidance`) y dónde está cada caso. Cada hallazgo se puede aceptar, ignorar o reinterpretar según el contexto. Lleva los hallazgos error y warning, y con `--verbose` también los info. Es lo que usan el hook y `/revisar` de Claude Code. |
 | `cache.enabled` / `cache.dir` | `true` / `.ia-linter-cache` | Caché por contenido, configuración y Rule Pack. |
 | `min_words_for_index` | `150` | Por debajo se muestran hallazgos pero no índice. |
 

@@ -7,7 +7,7 @@ import { matchesAny } from "./glob.js";
 
 export const CONFIG_FILENAMES = ["ia-linter.yml", "ia-linter.yaml", ".ia-linter.yml", ".ia-linter.yaml"];
 const LEVELS: Level[] = ["off", "info", "warning", "error"];
-const PROFILES: ProfileName[] = ["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"];
+export const PROFILES: ProfileName[] = ["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"];
 const REGISTERS: Register[] = ["general", "tecnico", "academico", "marketing", "literario", "periodistico", "institucional"];
 
 /** Valores internos (nivel 1 de precedencia). */
@@ -116,8 +116,8 @@ export function validateConfigObject(raw: unknown): ConfigIssue[] {
     if (typeof p !== "object" || p === null || (p.snippets !== undefined && typeof p.snippets !== "boolean"))
       issues.push({ path: "privacy.snippets", message: "debe ser booleano" });
   }
-  if (o.reporter !== undefined && !["terminal", "json", "sarif"].includes(o.reporter as string))
-    issues.push({ path: "reporter", message: "debe ser terminal, json o sarif" });
+  if (o.reporter !== undefined && !["terminal", "json", "sarif", "revision"].includes(o.reporter as string))
+    issues.push({ path: "reporter", message: "debe ser terminal, json, sarif o revision" });
   if (o.cache !== undefined) {
     const c = o.cache as Record<string, unknown>;
     if (typeof c !== "object" || c === null) issues.push({ path: "cache", message: "debe ser un objeto" });
