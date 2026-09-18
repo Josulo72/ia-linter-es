@@ -1,0 +1,515 @@
+# Generado por benchmark/scripts/fetch-registros.mjs --source correo. Los textos están solo en local; aquí quedan URL, autor, fecha, licencia y hash.
+schema_version: 1
+register: correo
+cutoff_date: 2022-01-01
+samples:
+  - id: h-co01
+    class: human
+    file: development/h-co01.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/12/msg00007.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-12-14
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-12-14, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 157
+    sha256: 24c020ac504a24314bbd87103c09ca08b3f549c193445f1900ce6d130ab2030a
+    retrieved: 2026-09-18
+  - id: h-co02
+    class: human
+    file: holdout/h-co02.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/11/msg00012.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-11-11
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-11-11, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 173
+    sha256: 51eb26cac2daa94e665b5c83061f365d56c507d370c956089cc8312d0c4a0550
+    retrieved: 2026-09-18
+  - id: h-co03
+    class: human
+    file: development/h-co03.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/11/msg00026.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-11-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-11-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 302
+    sha256: 6c97a8fad1312091dbab8475a36860ec2b1ca6c6ffd5440022aeba4e9ba19afa
+    retrieved: 2026-09-18
+  - id: h-co04
+    class: human
+    file: holdout/h-co04.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/10/msg00001.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-10-06
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-10-06, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 249
+    sha256: f5067b2fb7a9d063cb339b41b71fc4adc775a9b6e14fd8d600a72de9da21beb8
+    retrieved: 2026-09-18
+  - id: h-co05
+    class: human
+    file: development/h-co05.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/09/msg00014.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-09-09
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-09-09, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 396
+    sha256: 56fdd7469036679657cdc3bc1180a2fcac01d911c37dba8391de3e45907a3f7f
+    retrieved: 2026-09-18
+  - id: h-co06
+    class: human
+    file: holdout/h-co06.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/08/msg00059.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-08-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-08-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 368
+    sha256: 10f192beff432d10ac33b841300751aca0881f1df1818b4fd5cc2d0d790e06a3
+    retrieved: 2026-09-18
+  - id: h-co07
+    class: human
+    file: development/h-co07.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00008.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-06
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-06, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 196
+    sha256: 7693dc6f435f26980c5313377bf6b2d16b22df798235b39f6f9f0fac859a5401
+    retrieved: 2026-09-18
+  - id: h-co08
+    class: human
+    file: holdout/h-co08.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00012.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-06
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-06, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 414
+    sha256: 618c789e794bb30aa1954250cbd515959294f635836faa5a823b8cd0619d6785
+    retrieved: 2026-09-18
+  - id: h-co09
+    class: human
+    file: development/h-co09.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00075.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-22
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-22, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 191
+    sha256: 616f36a42f2afec0db5a6be2ca03ce289224aae6710c13db0ac47e0ead56143f
+    retrieved: 2026-09-18
+  - id: h-co10
+    class: human
+    file: holdout/h-co10.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00092.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-29
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-29, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 371
+    sha256: 5a1e87df51cedfd73a7454b1b40c7dd44fb787d702b27732f503593c6f9c6337
+    retrieved: 2026-09-18
+  - id: h-co11
+    class: human
+    file: development/h-co11.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00002.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-09
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-09, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 413
+    sha256: d5eabf0c241f87c40093da689465cabe1e201a758c2e2698a3a79a6c457732e4
+    retrieved: 2026-09-18
+  - id: h-co12
+    class: human
+    file: holdout/h-co12.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00004.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-10
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-10, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 238
+    sha256: 2aa2ce983b692831bf9895357ae199c79dc8e075f9455325a19e08300081d401
+    retrieved: 2026-09-18
+  - id: h-co13
+    class: human
+    file: development/h-co13.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00033.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 242
+    sha256: a8c50a9e28978f2b06646943dcd497e9f99acab6da309dba6ca5b3072774b1d2
+    retrieved: 2026-09-18
+  - id: h-co14
+    class: human
+    file: holdout/h-co14.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/05/msg00083.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-05-24
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-05-24, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 152
+    sha256: 671c7b2395bcd05280e8d49266c6f9a8c219939986f07202550168c10d7e9f17
+    retrieved: 2026-09-18
+  - id: h-co15
+    class: human
+    file: development/h-co15.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/05/msg00090.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-05-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-05-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 158
+    sha256: 16dd5bd62e1db02d055fb8416c5db8d7c464d07a4fe0ae4cf4c9d4f6885afc0d
+    retrieved: 2026-09-18
+  - id: h-co16
+    class: human
+    file: holdout/h-co16.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00057.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-23
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-23, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 226
+    sha256: 97eeff926753d076db119d68b397d510f434bdc0c1f963fd378df1527e990038
+    retrieved: 2026-09-18
+  - id: h-co17
+    class: human
+    file: development/h-co17.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00096.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-28
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-28, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 162
+    sha256: ee4611ae5a311a53b64e3a44dc244462e5a2666dbed9731e2f30367461cee439
+    retrieved: 2026-09-18
+  - id: h-co18
+    class: human
+    file: holdout/h-co18.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00083.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-26
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-26, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 303
+    sha256: 9498338021eafb1edaeaf05428ad3335c7b26420cf339fda6d0891cc0ff91968
+    retrieved: 2026-09-18
+  - id: h-co19
+    class: human
+    file: development/h-co19.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00088.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 316
+    sha256: 5831a86454c8f76ed6a82fbcdcba02be8e8c75bf89a7bc2379006cf985713209
+    retrieved: 2026-09-18
+  - id: h-co20
+    class: human
+    file: holdout/h-co20.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00099.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-28
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-28, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 535
+    sha256: 905074a49fe6803df811a6cdfabe453eb2559fa8396692671cb431d254b8022e
+    retrieved: 2026-09-18
+  - id: h-co21
+    class: human
+    file: development/h-co21.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00019.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-08
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-08, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 264
+    sha256: dc0fa8190be5dc29b7cb3b01abbaaca2710307ace4d9d422bb308531bf45e692
+    retrieved: 2026-09-18
+  - id: h-co22
+    class: human
+    file: holdout/h-co22.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00024.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-08
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-08, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 406
+    sha256: 6d684f579e29872c2ac21fb1c1bf582f0f37ca7f71ad4fbff457b28a77235b9a
+    retrieved: 2026-09-18
+  - id: h-co23
+    class: human
+    file: development/h-co23.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00039.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-10
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-10, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 346
+    sha256: dec61dc3e784168ffc6ad96b73dd9063d100a9c92609646d7c57e61eb532bf28
+    retrieved: 2026-09-18
+  - id: h-co24
+    class: human
+    file: holdout/h-co24.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00046.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-11
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-11, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 255
+    sha256: 8db2c03b51d6cd1e04ee38aa692d186ff3d72bcfa578047b1a06ec706307a742
+    retrieved: 2026-09-18
+  - id: h-co25
+    class: human
+    file: development/h-co25.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00062.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-17
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-17, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 164
+    sha256: 2e77a1e16afb1f32367cdec0bbe58f28075f2e90c4a0d3be1d4217eaea02f998
+    retrieved: 2026-09-18
+  - id: h-co26
+    class: human
+    file: holdout/h-co26.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/12/msg00029.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-12-10
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-12-10, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 230
+    sha256: acdaed64966236fa8f00a88de642b7f963a1598a7bb3958cadd00c06358e4bfc
+    retrieved: 2026-09-18
+  - id: h-co27
+    class: human
+    file: development/h-co27.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/09/msg00046.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-09-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-09-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 204
+    sha256: 3acaf4bd89e3632a8bdfc690e4c28b27465730c9cf683a743dd3b35a3f10d697
+    retrieved: 2026-09-18
+  - id: h-co28
+    class: human
+    file: holdout/h-co28.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/07/msg00042.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-07-17
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-07-17, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 223
+    sha256: 9c9979584a7607f94e5e497fd5703e935d1d28d6a24ea53cfb2d698a029b347c
+    retrieved: 2026-09-18
+  - id: h-co29
+    class: human
+    file: development/h-co29.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/07/msg00072.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-07-24
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-07-24, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 240
+    sha256: 60b5cf439c8a5f6fc5083ffd97dd25f889be6a06775db0a923b8f057828d8894
+    retrieved: 2026-09-18
+  - id: h-co30
+    class: human
+    file: holdout/h-co30.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/07/msg00076.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-07-24
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-07-24, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 200
+    sha256: 373db49171a994a08cb251a33463e663162659974d38400f64acf9f69cceb6af
+    retrieved: 2026-09-18

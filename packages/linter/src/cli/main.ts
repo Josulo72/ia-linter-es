@@ -253,13 +253,14 @@ program
   .requiredOption("--corpus <dir>", "directorio raíz del corpus")
   .requiredOption("--partition <nombre>", "development | holdout | challenge")
   .option("--profile <perfil>", "perfil con el que evaluar el corpus (queda registrado en el informe)")
+  .option("--register <registro>", "evalúa solo las muestras de ese registro del manifiesto")
   .option("-o, --output <archivo>", "informe JSON")
   .action(async (o) => {
     if (o.profile && !["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"].includes(o.profile)) die("--profile inválido");
     const base = context(program.opts<GlobalOpts>());
     const ctx = o.profile ? { ...base, config: { ...base.config, profile: o.profile as typeof base.config.profile } } : base;
     const { runBenchmark } = await import("./benchmark.js");
-    const report = runBenchmark(ctx, path.resolve(o.corpus), o.partition);
+    const report = runBenchmark(ctx, path.resolve(o.corpus), o.partition, o.register ? { register: String(o.register) } : {});
     const json = JSON.stringify(report, null, 2) + "\n";
     if (o.output) {
       fs.mkdirSync(path.dirname(path.resolve(o.output)), { recursive: true });

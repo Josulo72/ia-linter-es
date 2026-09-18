@@ -1,0 +1,515 @@
+# Generado por benchmark/scripts/fetch-registros.mjs --source redes. Los textos están solo en local; aquí quedan URL, autor, fecha, licencia y hash.
+schema_version: 1
+register: redes
+cutoff_date: 2022-01-01
+samples:
+  - id: h-re01
+    class: human
+    file: development/h-re01.md
+    register: redes
+    level: H2
+    source: mastodon:quey.org
+    source_url: https://quey.org/@dsteve/104760713714016526
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@dsteve@quey.org (cuenta pública de Mastodon)"
+    date: 2020-08-27
+    human_evidence: Publicación pública de Mastodon del 2020-08-27, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 232
+    sha256: e0a5ad621d85358d7b4a5a05f5a84c74430857658a4293f3b4e68efa8470a24b
+    retrieved: 2026-09-18
+  - id: h-re02
+    class: human
+    file: holdout/h-re02.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@soloojos/106746344316944269
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@soloojos@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-08-13
+    human_evidence: Publicación pública de Mastodon del 2021-08-13, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 190
+    sha256: 56e647d01070e6bf94f5e26c012a10a019e4782edb512afc678972d0e03d3a00
+    retrieved: 2026-09-18
+  - id: h-re03
+    class: human
+    file: development/h-re03.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/335950596773384192
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-08-25
+    human_evidence: Publicación pública de Mastodon del 2021-08-25, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 190
+    sha256: dffe166513f2c883ab67e522a3900aa1f03442e7866db0d4788a8a3e72671329
+    retrieved: 2026-09-18
+  - id: h-re04
+    class: human
+    file: holdout/h-re04.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@soloojos/105482275726924533
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@soloojos@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-01-01
+    human_evidence: Publicación pública de Mastodon del 2021-01-01, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 186
+    sha256: 6c1804e4c8bf7a7e0025e21c7ee57d15f0fd750509b722d29b9bd3c9e30786c7
+    retrieved: 2026-09-18
+  - id: h-re05
+    class: human
+    file: development/h-re05.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/338734496012701696
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-09-01
+    human_evidence: Publicación pública de Mastodon del 2021-09-01, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 183
+    sha256: d69e5dcf5f733b19358929d6b8a6c6e255f8f83aca52e7a80be876549b2f2f7f
+    retrieved: 2026-09-18
+  - id: h-re06
+    class: human
+    file: holdout/h-re06.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@contraobediencia/106693654370447286
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@contraobediencia@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-08-03
+    human_evidence: Publicación pública de Mastodon del 2021-08-03, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 171
+    sha256: c67d71b1409bf2bd9ee6b65dd74d05ac4053dc487929b682cbe3468117b19461
+    retrieved: 2026-09-18
+  - id: h-re07
+    class: human
+    file: development/h-re07.md
+    register: redes
+    level: H2
+    source: mastodon:barcelona.social
+    source_url: https://barcelona.social/objects/1da69896-40ef-491c-8a77-2537a68eb314
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@rosadefoc@barcelona.social (cuenta pública de Mastodon)"
+    date: 2021-08-07
+    human_evidence: Publicación pública de Mastodon del 2021-08-07, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 171
+    sha256: 4c9cb5342b175c3361e5af0dfca0dac6aa76d6cd0dae22c3003e628f98cc87cd
+    retrieved: 2026-09-18
+  - id: h-re08
+    class: human
+    file: holdout/h-re08.md
+    register: redes
+    level: H2
+    source: mastodon:mastodon.la
+    source_url: https://mastodon.la/@NYYANKEES/107226106364435981
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@NYYANKEES@mastodon.la (cuenta pública de Mastodon)"
+    date: 2021-11-05
+    human_evidence: Publicación pública de Mastodon del 2021-11-05, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 169
+    sha256: c286c131007ab8d0ead8bfb2561d398bf2b6b965ea886094e6078b53a735351b
+    retrieved: 2026-09-18
+  - id: h-re09
+    class: human
+    file: development/h-re09.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/331792484608905216
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-08-13
+    human_evidence: Publicación pública de Mastodon del 2021-08-13, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 163
+    sha256: d34786496cc27afe22586e4edfad6e7e06b78aa2f421e94db45a18e4c29c2a3e
+    retrieved: 2026-09-18
+  - id: h-re10
+    class: human
+    file: holdout/h-re10.md
+    register: redes
+    level: H2
+    source: mastodon:todon.nl
+    source_url: https://todon.nl/@soloojos/106669917114821238
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@soloojos@todon.nl (cuenta pública de Mastodon)"
+    date: 2021-07-30
+    human_evidence: Publicación pública de Mastodon del 2021-07-30, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 155
+    sha256: cdad471debb2bea7240777d608ae6e13ca0ed22b4ddf0a681135cbb0c98f43a1
+    retrieved: 2026-09-18
+  - id: h-re11
+    class: human
+    file: development/h-re11.md
+    register: redes
+    level: H2
+    source: mastodon:hispagatos.space
+    source_url: https://hispagatos.space/@tax/107334476265193583
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@tax (cuenta pública de Mastodon)"
+    date: 2021-11-24
+    human_evidence: Publicación pública de Mastodon del 2021-11-24, anterior a 2022-01-01.
+    extraction: hilo de 3 publicaciones consecutivas del mismo autor, unidas por una línea en blanco
+    theme: general
+    words: 246
+    sha256: a00a263406af25d8a145019290226b1eb029cd503ec4b39b899009aee6cf3065
+    retrieved: 2026-09-18
+  - id: h-re12
+    class: human
+    file: holdout/h-re12.md
+    register: redes
+    level: H2
+    source: mastodon:hispagatos.space
+    source_url: https://hispagatos.space/@Amirov15_01/107177120426809726
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@Amirov15_01 (cuenta pública de Mastodon)"
+    date: 2021-10-28
+    human_evidence: Publicación pública de Mastodon del 2021-10-28, anterior a 2022-01-01.
+    extraction: hilo de 3 publicaciones consecutivas del mismo autor, unidas por una línea en blanco
+    theme: general
+    words: 194
+    sha256: 980761eea2bbababd654bd14b0ec2f1289570c56e5297473b3e5127feea3b52b
+    retrieved: 2026-09-18
+  - id: h-re13
+    class: human
+    file: development/h-re13.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/repasa/ayuda_ingeniería_informática_online_en_españa/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/petrolito (cuenta pública de Reddit)
+    date: 2021-12-12
+    human_evidence: Publicación pública de Reddit en r/es del 2021-12-12, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 417
+    sha256: 27a3f4e39dcafa938936a6ecd674c7787132a45f7d266275b732b9afadd7bdd3
+    retrieved: 2026-09-18
+  - id: h-re14
+    class: human
+    file: holdout/h-re14.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/rc52sr/hice_un_sistema_para_poder_tener_listados_de/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Nebulafactory (cuenta pública de Reddit)
+    date: 2021-12-09
+    human_evidence: Publicación pública de Reddit en r/es del 2021-12-09, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 200
+    sha256: 108519e244544d55363b5c7e030b0d765e0e2301ef6575ec0e8e516bc9d5b8f6
+    retrieved: 2026-09-18
+  - id: h-re15
+    class: human
+    file: development/h-re15.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/q6sxp7/pregunta_para_otros_españoles_habéis_celebrado_de/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Robot_4_jarvis (cuenta pública de Reddit)
+    date: 2021-10-12
+    human_evidence: Publicación pública de Reddit en r/es del 2021-10-12, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 154
+    sha256: c6bb355c920d0a56c6c4fd91c03cc090668fec43cdaadd6c62554423174bf65d
+    retrieved: 2026-09-18
+  - id: h-re16
+    class: human
+    file: holdout/h-re16.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/pttojq/saturado_de_tanta_publicidad/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Toba_JB (cuenta pública de Reddit)
+    date: 2021-09-23
+    human_evidence: Publicación pública de Reddit en r/es del 2021-09-23, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 353
+    sha256: 31d45a791787dcc02d38e0f1e8caf0159241dd547f4bc7d1d2159b82d7e5dd55
+    retrieved: 2026-09-18
+  - id: h-re17
+    class: human
+    file: development/h-re17.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/ph5fbc/alguien_ha_ido_alguna_vez_al_oculista_por_la/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Probablylikewaifu (cuenta pública de Reddit)
+    date: 2021-09-03
+    human_evidence: Publicación pública de Reddit en r/es del 2021-09-03, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 387
+    sha256: cfe6ab9ecb236d4c1d25d2b0114fbd3ecd16fd38f4515dc3c7ca233adaf4d678
+    retrieved: 2026-09-18
+  - id: h-re18
+    class: human
+    file: holdout/h-re18.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/pfpw28/cómo_puedo_denunciar_a_mi_empresa_anónimamente/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/mrs-latte (cuenta pública de Reddit)
+    date: 2021-09-01
+    human_evidence: Publicación pública de Reddit en r/es del 2021-09-01, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 198
+    sha256: dff00c8929199569dd6672c7e845ff4e22fcef1d537ace7234669115a85e3128
+    retrieved: 2026-09-18
+  - id: h-re19
+    class: human
+    file: development/h-re19.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/okojb2/examen_practico_coche_falta_deficiente_o_es_una/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/worldmusic123 (cuenta pública de Reddit)
+    date: 2021-07-15
+    human_evidence: Publicación pública de Reddit en r/es del 2021-07-15, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 186
+    sha256: 219574d7242697cfa332f2df72572f84fa2988de558300ce1263ab870552413f
+    retrieved: 2026-09-18
+  - id: h-re20
+    class: human
+    file: holdout/h-re20.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/o45t1z/duda_de_una_estudiante_que_no_sabe_que_escoger/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/East_Departure_3288 (cuenta pública de Reddit)
+    date: 2021-06-20
+    human_evidence: Publicación pública de Reddit en r/es del 2021-06-20, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 154
+    sha256: 6246fe60c0ad5ab320a3df7eb7b728939c8d5a211a08b41084ea6690194cfc3c
+    retrieved: 2026-09-18
+  - id: h-re21
+    class: human
+    file: development/h-re21.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/npifoa/he_hecho_el_exámen_de_la_asignatura_que_no_era/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Frucoarht (cuenta pública de Reddit)
+    date: 2021-06-01
+    human_evidence: Publicación pública de Reddit en r/es del 2021-06-01, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 184
+    sha256: bf9bc11e7cdf9ecb9c49e9e0fc554faeb6faaf1f2cd671e8ed9661a04ac7addf
+    retrieved: 2026-09-18
+  - id: h-re22
+    class: human
+    file: holdout/h-re22.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/nmbng3/los_bancos_cobran_a_las_cuentas_de_los/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Subidon20 (cuenta pública de Reddit)
+    date: 2021-05-27
+    human_evidence: Publicación pública de Reddit en r/es del 2021-05-27, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 254
+    sha256: 7e341944f94134c5f9c1ef01d96c64fc499e997663a462a4e84a0d7960822b21
+    retrieved: 2026-09-18
+  - id: h-re23
+    class: human
+    file: development/h-re23.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/nhqnl7/facturar_al_extranjero_hay_que_hacerse_autónomo/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Powerful-Employer-20 (cuenta pública de Reddit)
+    date: 2021-05-21
+    human_evidence: Publicación pública de Reddit en r/es del 2021-05-21, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 211
+    sha256: 17c8db4f14df5d7caf12add9f52d5cdf6bb31c3db97bd4b5d46263c2353eb952
+    retrieved: 2026-09-18
+  - id: h-re24
+    class: human
+    file: holdout/h-re24.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/ndmzwu/la_relacion_entre_lengua_materna_y_memoria/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/sahnti (cuenta pública de Reddit)
+    date: 2021-05-16
+    human_evidence: Publicación pública de Reddit en r/es del 2021-05-16, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 180
+    sha256: 970a342e17777b98e00a404fcbc86f738527f8020c67ef275994f3827ebb78e7
+    retrieved: 2026-09-18
+  - id: h-re25
+    class: human
+    file: development/h-re25.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n1ocvq/hay_alguna_marca_de_sillas_de_oficina_recomendable/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/OMG_Abaddon (cuenta pública de Reddit)
+    date: 2021-04-30
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-30, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 290
+    sha256: 5a6b4703e59d22468b6f73b2ed341be45d303fd55b49ab96db10b19e34fef2ed
+    retrieved: 2026-09-18
+  - id: h-re26
+    class: human
+    file: holdout/h-re26.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n0832j/impuestos_y_renta_de_una_segunda_propiedad_donde/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/kram08980 (cuenta pública de Reddit)
+    date: 2021-04-28
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-28, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 178
+    sha256: 962fe68da826e9ab343c4bbe3ec54fd03468eed88df99726e84a60f4b7df76ee
+    retrieved: 2026-09-18
+  - id: h-re27
+    class: human
+    file: development/h-re27.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n07kaf/subreddit_sobre_asesoria_legalimpuestosautónomos/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/kram08980 (cuenta pública de Reddit)
+    date: 2021-04-28
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-28, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 221
+    sha256: 8fcb0978226e6addd9ced6974000eeac3929c6f2d6b8600cd968ae4968230a3a
+    retrieved: 2026-09-18
+  - id: h-re28
+    class: human
+    file: holdout/h-re28.md
+    register: redes
+    level: H2
+    source: reddit:r/askspain
+    source_url: https://www.reddit.com/r/askspain/comments/rowawc/renfe_y_la_tarjeta_joven/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/isc30 (cuenta pública de Reddit)
+    date: 2021-12-26
+    human_evidence: Publicación pública de Reddit en r/askspain del 2021-12-26, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 168
+    sha256: 527a7d41d2e4a0f1d15bd9cab8306807ad5a0ac98a045ea8eadda67631c891a1
+    retrieved: 2026-09-18
+  - id: h-re29
+    class: human
+    file: development/h-re29.md
+    register: redes
+    level: H2
+    source: reddit:r/askspain
+    source_url: https://www.reddit.com/r/askspain/comments/rmrx7w/qué_entendéis_vosotros_por_faranduleo_o_artisteo/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/carlosmstraductor (cuenta pública de Reddit)
+    date: 2021-12-23
+    human_evidence: Publicación pública de Reddit en r/askspain del 2021-12-23, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 266
+    sha256: ca604c79c523c8486085944fca99b098d5b6353ffd9fbc4548ef7e5e94b888d3
+    retrieved: 2026-09-18
+  - id: h-re30
+    class: human
+    file: holdout/h-re30.md
+    register: redes
+    level: H2
+    source: reddit:r/askspain
+    source_url: https://www.reddit.com/r/askspain/comments/rmaz4f/no_sé_qué_hacer_con_mi_vida/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Takemakuka (cuenta pública de Reddit)
+    date: 2021-12-22
+    human_evidence: Publicación pública de Reddit en r/askspain del 2021-12-22, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 226
+    sha256: c0b79ed129b659c5c3dec4f2badf4894f888adcc818bc0d03f867dc23b6fc1e3
+    retrieved: 2026-09-18

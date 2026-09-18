@@ -1,0 +1,1535 @@
+# Generado por benchmark/scripts/build-manifests-v1.2.mjs. No editar a mano.
+schema_version: 1
+corpus_version: "1.2"
+partition: development
+samples:
+  - id: h-co01
+    class: human
+    file: development/h-co01.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/12/msg00007.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-12-14
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-12-14, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 157
+    sha256: 24c020ac504a24314bbd87103c09ca08b3f549c193445f1900ce6d130ab2030a
+    retrieved: 2026-09-18
+  - id: h-co03
+    class: human
+    file: development/h-co03.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/11/msg00026.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-11-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-11-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 302
+    sha256: 6c97a8fad1312091dbab8475a36860ec2b1ca6c6ffd5440022aeba4e9ba19afa
+    retrieved: 2026-09-18
+  - id: h-co05
+    class: human
+    file: development/h-co05.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/09/msg00014.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-09-09
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-09-09, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 396
+    sha256: 56fdd7469036679657cdc3bc1180a2fcac01d911c37dba8391de3e45907a3f7f
+    retrieved: 2026-09-18
+  - id: h-co07
+    class: human
+    file: development/h-co07.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00008.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-06
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-06, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 196
+    sha256: 7693dc6f435f26980c5313377bf6b2d16b22df798235b39f6f9f0fac859a5401
+    retrieved: 2026-09-18
+  - id: h-co09
+    class: human
+    file: development/h-co09.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/07/msg00075.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-07-22
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-07-22, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 191
+    sha256: 616f36a42f2afec0db5a6be2ca03ce289224aae6710c13db0ac47e0ead56143f
+    retrieved: 2026-09-18
+  - id: h-co11
+    class: human
+    file: development/h-co11.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00002.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-09
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-09, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 413
+    sha256: d5eabf0c241f87c40093da689465cabe1e201a758c2e2698a3a79a6c457732e4
+    retrieved: 2026-09-18
+  - id: h-co13
+    class: human
+    file: development/h-co13.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/06/msg00033.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-06-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-06-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 242
+    sha256: a8c50a9e28978f2b06646943dcd497e9f99acab6da309dba6ca5b3072774b1d2
+    retrieved: 2026-09-18
+  - id: h-co15
+    class: human
+    file: development/h-co15.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/05/msg00090.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-05-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-05-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 158
+    sha256: 16dd5bd62e1db02d055fb8416c5db8d7c464d07a4fe0ae4cf4c9d4f6885afc0d
+    retrieved: 2026-09-18
+  - id: h-co17
+    class: human
+    file: development/h-co17.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00096.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-28
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-28, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 162
+    sha256: ee4611ae5a311a53b64e3a44dc244462e5a2666dbed9731e2f30367461cee439
+    retrieved: 2026-09-18
+  - id: h-co19
+    class: human
+    file: development/h-co19.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/03/msg00088.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-03-27
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-03-27, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 316
+    sha256: 5831a86454c8f76ed6a82fbcdcba02be8e8c75bf89a7bc2379006cf985713209
+    retrieved: 2026-09-18
+  - id: h-co21
+    class: human
+    file: development/h-co21.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00019.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-08
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-08, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 264
+    sha256: dc0fa8190be5dc29b7cb3b01abbaaca2710307ace4d9d422bb308531bf45e692
+    retrieved: 2026-09-18
+  - id: h-co23
+    class: human
+    file: development/h-co23.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00039.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-10
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-10, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 346
+    sha256: dec61dc3e784168ffc6ad96b73dd9063d100a9c92609646d7c57e61eb532bf28
+    retrieved: 2026-09-18
+  - id: h-co25
+    class: human
+    file: development/h-co25.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2021/02/msg00062.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2021-02-17
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2021-02-17, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 164
+    sha256: 2e77a1e16afb1f32367cdec0bbe58f28075f2e90c4a0d3be1d4217eaea02f998
+    retrieved: 2026-09-18
+  - id: h-co27
+    class: human
+    file: development/h-co27.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/09/msg00046.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-09-21
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-09-21, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 204
+    sha256: 3acaf4bd89e3632a8bdfc690e4c28b27465730c9cf683a743dd3b35a3f10d697
+    retrieved: 2026-09-18
+  - id: h-co29
+    class: human
+    file: development/h-co29.md
+    register: correo
+    level: H2
+    source: lista:debian-user-spanish
+    source_url: https://lists.debian.org/debian-user-spanish/2020/07/msg00072.html
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: participante de la lista debian-user-spanish (nombre no registrado aquí)
+    date: 2020-07-24
+    human_evidence: Mensaje de la lista pública debian-user-spanish fechado el 2020-07-24, anterior a 2022-01-01.
+    extraction: cuerpo del mensaje, sin texto citado ni firma; ortografía original
+    theme: software
+    words: 240
+    sha256: 60b5cf439c8a5f6fc5083ffd97dd25f889be6a06775db0a923b8f057828d8894
+    retrieved: 2026-09-18
+  - id: h-rd01
+    class: human
+    file: development/h-rd01.md
+    register: readme
+    level: H2
+    source: github:Protoncoind/ProtonCoin
+    source_url: https://github.com/Protoncoind/ProtonCoin/blob/af27976c103edf80435b523a4d14901e6566d1a9/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: Protoncoind (repositorio Protoncoind/ProtonCoin)
+    date: 2021-01-22
+    human_evidence: Último commit del README el 2021-01-22, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-01-22.
+    extraction: README completo del commit af27976c103e; sin editar
+    theme: software
+    words: 311
+    sha256: 33522a9e8382952a4fca4850d2f9611914245cccce0c0f15ca165d1bcf0e667e
+    retrieved: 2026-09-17
+  - id: h-rd03
+    class: human
+    file: development/h-rd03.md
+    register: readme
+    level: H2
+    source: github:cristinafsanz/melies-origen
+    source_url: https://github.com/cristinafsanz/melies-origen/blob/17eda06ee19f61bb050af47df0d7c666a72655a6/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: cristinafsanz (repositorio cristinafsanz/melies-origen)
+    date: 2017-09-04
+    human_evidence: Último commit del README el 2017-09-04, anterior a 2022-01-01; el repositorio no recibe cambios desde 2017-09-04.
+    extraction: README completo del commit 17eda06ee19f; sin editar
+    theme: software
+    words: 530
+    sha256: 8146276159ba1015576c0ccce73b20a4cce076d9674ccabc7d4f8afa4f764f30
+    retrieved: 2026-09-17
+  - id: h-rd05
+    class: human
+    file: development/h-rd05.md
+    register: readme
+    level: H2
+    source: github:JhonMendoza26/Sistema-de-Ventas-Restaurante
+    source_url: https://github.com/JhonMendoza26/Sistema-de-Ventas-Restaurante/blob/4bf40b0104f26bc1daf3e83577c84c190dffe120/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: JhonMendoza26 (repositorio JhonMendoza26/Sistema-de-Ventas-Restaurante)
+    date: 2021-06-30
+    human_evidence: Último commit del README el 2021-06-30, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-06-30.
+    extraction: README completo del commit 4bf40b0104f2; sin editar
+    theme: software
+    words: 478
+    sha256: 25e94de7367f343e9bc720dcdd07cf371a40204297de50a3cbaded34bf4fe5b0
+    retrieved: 2026-09-17
+  - id: h-rd07
+    class: human
+    file: development/h-rd07.md
+    register: readme
+    level: H2
+    source: github:node-girls/express-workshop-spanish
+    source_url: https://github.com/node-girls/express-workshop-spanish/blob/0c45358ef256cf46d7add9236be203ccfd7e8e92/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: node-girls (repositorio node-girls/express-workshop-spanish)
+    date: 2019-02-16
+    human_evidence: Último commit del README el 2019-02-16, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-05-30.
+    extraction: README completo del commit 0c45358ef256; sin editar
+    theme: software
+    words: 250
+    sha256: 1b2420a6f629b3e400f9a6eec2c2620939716cddf0aab1d3eb76d81a9baa569f
+    retrieved: 2026-09-17
+  - id: h-rd09
+    class: human
+    file: development/h-rd09.md
+    register: readme
+    level: H2
+    source: github:sofiadparamo/Convolution
+    source_url: https://github.com/sofiadparamo/Convolution/blob/8f0f0b81bc410ee3d14f54d2fc771cac0d41c5b0/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: sofiadparamo (repositorio sofiadparamo/Convolution)
+    date: 2020-09-18
+    human_evidence: Último commit del README el 2020-09-18, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-09-18.
+    extraction: README completo del commit 8f0f0b81bc41; sin editar
+    theme: software
+    words: 320
+    sha256: 1571dc57ecbe0abd3a114723ff7015774040ad04e27440ce33926b3f3aa0aff0
+    retrieved: 2026-09-17
+  - id: h-rd11
+    class: human
+    file: development/h-rd11.md
+    register: readme
+    level: H2
+    source: github:ElenaMLopez/taller_git_online
+    source_url: https://github.com/ElenaMLopez/taller_git_online/blob/43eaaf0c8100ae7464c4480a35f11ea175883b16/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: ElenaMLopez (repositorio ElenaMLopez/taller_git_online)
+    date: 2020-07-12
+    human_evidence: Último commit del README el 2020-07-12, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-07-12.
+    extraction: README completo del commit 43eaaf0c8100; sin editar
+    theme: software
+    words: 382
+    sha256: a83374f9d256400e643aa9a95ee967fafc2e6301cfa6ab50e3e7560fe7757c90
+    retrieved: 2026-09-17
+  - id: h-rd13
+    class: human
+    file: development/h-rd13.md
+    register: readme
+    level: H2
+    source: github:SebSalazar/cansat-monitoring-app
+    source_url: https://github.com/SebSalazar/cansat-monitoring-app/blob/b1c0fc31daee44c271a0bad4db32f97f044292f1/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: SebSalazar (repositorio SebSalazar/cansat-monitoring-app)
+    date: 2021-06-20
+    human_evidence: Último commit del README el 2021-06-20, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-06-20.
+    extraction: README completo del commit b1c0fc31daee; sin editar
+    theme: software
+    words: 480
+    sha256: 99e37fac9780cbea52c0f7bdf89c941cfe5dbcbb258cc25ad07ba67fdc40ee74
+    retrieved: 2026-09-17
+  - id: h-rd15
+    class: human
+    file: development/h-rd15.md
+    register: readme
+    level: H2
+    source: github:vgaltes/TheServerlessCourseSourceCode
+    source_url: https://github.com/vgaltes/TheServerlessCourseSourceCode/blob/bcf29091d4502bbb4e2910d66b36913f08a32114/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: vgaltes (repositorio vgaltes/TheServerlessCourseSourceCode)
+    date: 2019-06-20
+    human_evidence: Último commit del README el 2019-06-20, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-10-25.
+    extraction: README completo del commit bcf29091d450; sin editar
+    theme: software
+    words: 675
+    sha256: 69755ac9562731295e7c154be000f64c132342ae21e7aa2a8fef550476bf242a
+    retrieved: 2026-09-17
+  - id: h-rd17
+    class: human
+    file: development/h-rd17.md
+    register: readme
+    level: H2
+    source: github:ganchito55/criptografia
+    source_url: https://github.com/ganchito55/criptografia/blob/9cb1d7564b3a0222d7f1275300bdaebe1863584d/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: ganchito55 (repositorio ganchito55/criptografia)
+    date: 2015-07-26
+    human_evidence: Último commit del README el 2015-07-26, anterior a 2022-01-01; el repositorio no recibe cambios desde 2015-07-26.
+    extraction: README completo del commit 9cb1d7564b3a; sin editar
+    theme: software
+    words: 164
+    sha256: 97a639d3a5cee6c3a8dc75b396ac86417aa06df7f2a9959073ed89560908ef7b
+    retrieved: 2026-09-17
+  - id: h-rd19
+    class: human
+    file: development/h-rd19.md
+    register: readme
+    level: H2
+    source: github:josegury/ESII_REDES2
+    source_url: https://github.com/josegury/ESII_REDES2/blob/a77c17e748303475c9922aeb648d9712203adb6d/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: josegury (repositorio josegury/ESII_REDES2)
+    date: 2015-01-27
+    human_evidence: Último commit del README el 2015-01-27, anterior a 2022-01-01; el repositorio no recibe cambios desde 2015-01-27.
+    extraction: README completo del commit a77c17e74830; sin editar
+    theme: software
+    words: 169
+    sha256: ba8c3cca968ed12c2a7c7673663bcae406d6464018d498732ae78eb3ce8db048
+    retrieved: 2026-09-17
+  - id: h-rd21
+    class: human
+    file: development/h-rd21.md
+    register: readme
+    level: H2
+    source: github:megabass00/react-users-crud
+    source_url: https://github.com/megabass00/react-users-crud/blob/b53eddcf61686ca0a25ae8d7500c7affb77abee8/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: megabass00 (repositorio megabass00/react-users-crud)
+    date: 2021-04-15
+    human_evidence: Último commit del README el 2021-04-15, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-04-15.
+    extraction: README completo del commit b53eddcf6168; sin editar
+    theme: software
+    words: 818
+    sha256: f154a2e4018844dc591ac6866335e9098b6f16817eb1a2bb75c08966483da19d
+    retrieved: 2026-09-17
+  - id: h-rd23
+    class: human
+    file: development/h-rd23.md
+    register: readme
+    level: H2
+    source: github:davidMarCal/Hotjar-IPO-Usal
+    source_url: https://github.com/davidMarCal/Hotjar-IPO-Usal/blob/57446b82b1e28ad7e67cc65bab168b99dd1feda3/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: davidMarCal (repositorio davidMarCal/Hotjar-IPO-Usal)
+    date: 2021-08-31
+    human_evidence: Último commit del README el 2021-08-31, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-08-31.
+    extraction: README completo del commit 57446b82b1e2; sin editar
+    theme: software
+    words: 223
+    sha256: 46007e2fe59e0cc168d5fb530c2a68c643932ceb3ac69e5e29af8b18b14d7f5d
+    retrieved: 2026-09-17
+  - id: h-rd25
+    class: human
+    file: development/h-rd25.md
+    register: readme
+    level: H2
+    source: github:perlamellao/PiBug
+    source_url: https://github.com/perlamellao/PiBug/blob/74c11551edf8369af6a01aa79496e32f8d1f37ec/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: perlamellao (repositorio perlamellao/PiBug)
+    date: 2021-10-19
+    human_evidence: Último commit del README el 2021-10-19, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-10-20.
+    extraction: README completo del commit 74c11551edf8; sin editar
+    theme: software
+    words: 371
+    sha256: d6f6510bbd6d3eba86c4e4001f70affd82ebcc147fc4f66b4e3722d91b0cdc61
+    retrieved: 2026-09-17
+  - id: h-rd27
+    class: human
+    file: development/h-rd27.md
+    register: readme
+    level: H2
+    source: github:alexbertis/QuijoteNet
+    source_url: https://github.com/alexbertis/QuijoteNet/blob/4d8f46aead05cf7e2aa36b6af8d9f30af6f41a95/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: alexbertis (repositorio alexbertis/QuijoteNet)
+    date: 2018-05-31
+    human_evidence: Último commit del README el 2018-05-31, anterior a 2022-01-01; el repositorio no recibe cambios desde 2018-05-31.
+    extraction: README completo del commit 4d8f46aead05; sin editar
+    theme: software
+    words: 468
+    sha256: cecbf27bcd1edcfae15ddca1581cd3f0b00b17df1beb4c43d9dc97b4de313223
+    retrieved: 2026-09-17
+  - id: h-rd29
+    class: human
+    file: development/h-rd29.md
+    register: readme
+    level: H2
+    source: github:ricardocancar/TFM
+    source_url: https://github.com/ricardocancar/TFM/blob/2845de3e5ea9eacf220a14094f403110a77ca78e/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: ricardocancar (repositorio ricardocancar/TFM)
+    date: 2018-12-24
+    human_evidence: Último commit del README el 2018-12-24, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-03-11.
+    extraction: README completo del commit 2845de3e5ea9; sin editar
+    theme: software
+    words: 582
+    sha256: 7bf9619649be395078db43a58ffb6be3c0862bbec1710140874f5245200b0933
+    retrieved: 2026-09-17
+  - id: h-re01
+    class: human
+    file: development/h-re01.md
+    register: redes
+    level: H2
+    source: mastodon:quey.org
+    source_url: https://quey.org/@dsteve/104760713714016526
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@dsteve@quey.org (cuenta pública de Mastodon)"
+    date: 2020-08-27
+    human_evidence: Publicación pública de Mastodon del 2020-08-27, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 232
+    sha256: e0a5ad621d85358d7b4a5a05f5a84c74430857658a4293f3b4e68efa8470a24b
+    retrieved: 2026-09-18
+  - id: h-re03
+    class: human
+    file: development/h-re03.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/335950596773384192
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-08-25
+    human_evidence: Publicación pública de Mastodon del 2021-08-25, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 190
+    sha256: dffe166513f2c883ab67e522a3900aa1f03442e7866db0d4788a8a3e72671329
+    retrieved: 2026-09-18
+  - id: h-re05
+    class: human
+    file: development/h-re05.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/338734496012701696
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-09-01
+    human_evidence: Publicación pública de Mastodon del 2021-09-01, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 183
+    sha256: d69e5dcf5f733b19358929d6b8a6c6e255f8f83aca52e7a80be876549b2f2f7f
+    retrieved: 2026-09-18
+  - id: h-re07
+    class: human
+    file: development/h-re07.md
+    register: redes
+    level: H2
+    source: mastodon:barcelona.social
+    source_url: https://barcelona.social/objects/1da69896-40ef-491c-8a77-2537a68eb314
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@rosadefoc@barcelona.social (cuenta pública de Mastodon)"
+    date: 2021-08-07
+    human_evidence: Publicación pública de Mastodon del 2021-08-07, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 171
+    sha256: 4c9cb5342b175c3361e5af0dfca0dac6aa76d6cd0dae22c3003e628f98cc87cd
+    retrieved: 2026-09-18
+  - id: h-re09
+    class: human
+    file: development/h-re09.md
+    register: redes
+    level: H2
+    source: mastodon:pixelfed.social
+    source_url: https://pixelfed.social/p/milos/331792484608905216
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@milos@pixelfed.social (cuenta pública de Mastodon)"
+    date: 2021-08-13
+    human_evidence: Publicación pública de Mastodon del 2021-08-13, anterior a 2022-01-01.
+    extraction: publicación completa
+    theme: general
+    words: 163
+    sha256: d34786496cc27afe22586e4edfad6e7e06b78aa2f421e94db45a18e4c29c2a3e
+    retrieved: 2026-09-18
+  - id: h-re11
+    class: human
+    file: development/h-re11.md
+    register: redes
+    level: H2
+    source: mastodon:hispagatos.space
+    source_url: https://hispagatos.space/@tax/107334476265193583
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: "@tax (cuenta pública de Mastodon)"
+    date: 2021-11-24
+    human_evidence: Publicación pública de Mastodon del 2021-11-24, anterior a 2022-01-01.
+    extraction: hilo de 3 publicaciones consecutivas del mismo autor, unidas por una línea en blanco
+    theme: general
+    words: 246
+    sha256: a00a263406af25d8a145019290226b1eb029cd503ec4b39b899009aee6cf3065
+    retrieved: 2026-09-18
+  - id: h-re13
+    class: human
+    file: development/h-re13.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/repasa/ayuda_ingeniería_informática_online_en_españa/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/petrolito (cuenta pública de Reddit)
+    date: 2021-12-12
+    human_evidence: Publicación pública de Reddit en r/es del 2021-12-12, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 417
+    sha256: 27a3f4e39dcafa938936a6ecd674c7787132a45f7d266275b732b9afadd7bdd3
+    retrieved: 2026-09-18
+  - id: h-re15
+    class: human
+    file: development/h-re15.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/q6sxp7/pregunta_para_otros_españoles_habéis_celebrado_de/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Robot_4_jarvis (cuenta pública de Reddit)
+    date: 2021-10-12
+    human_evidence: Publicación pública de Reddit en r/es del 2021-10-12, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 154
+    sha256: c6bb355c920d0a56c6c4fd91c03cc090668fec43cdaadd6c62554423174bf65d
+    retrieved: 2026-09-18
+  - id: h-re17
+    class: human
+    file: development/h-re17.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/ph5fbc/alguien_ha_ido_alguna_vez_al_oculista_por_la/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Probablylikewaifu (cuenta pública de Reddit)
+    date: 2021-09-03
+    human_evidence: Publicación pública de Reddit en r/es del 2021-09-03, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 387
+    sha256: cfe6ab9ecb236d4c1d25d2b0114fbd3ecd16fd38f4515dc3c7ca233adaf4d678
+    retrieved: 2026-09-18
+  - id: h-re19
+    class: human
+    file: development/h-re19.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/okojb2/examen_practico_coche_falta_deficiente_o_es_una/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/worldmusic123 (cuenta pública de Reddit)
+    date: 2021-07-15
+    human_evidence: Publicación pública de Reddit en r/es del 2021-07-15, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 186
+    sha256: 219574d7242697cfa332f2df72572f84fa2988de558300ce1263ab870552413f
+    retrieved: 2026-09-18
+  - id: h-re21
+    class: human
+    file: development/h-re21.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/npifoa/he_hecho_el_exámen_de_la_asignatura_que_no_era/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Frucoarht (cuenta pública de Reddit)
+    date: 2021-06-01
+    human_evidence: Publicación pública de Reddit en r/es del 2021-06-01, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 184
+    sha256: bf9bc11e7cdf9ecb9c49e9e0fc554faeb6faaf1f2cd671e8ed9661a04ac7addf
+    retrieved: 2026-09-18
+  - id: h-re23
+    class: human
+    file: development/h-re23.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/nhqnl7/facturar_al_extranjero_hay_que_hacerse_autónomo/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/Powerful-Employer-20 (cuenta pública de Reddit)
+    date: 2021-05-21
+    human_evidence: Publicación pública de Reddit en r/es del 2021-05-21, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 211
+    sha256: 17c8db4f14df5d7caf12add9f52d5cdf6bb31c3db97bd4b5d46263c2353eb952
+    retrieved: 2026-09-18
+  - id: h-re25
+    class: human
+    file: development/h-re25.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n1ocvq/hay_alguna_marca_de_sillas_de_oficina_recomendable/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/OMG_Abaddon (cuenta pública de Reddit)
+    date: 2021-04-30
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-30, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 290
+    sha256: 5a6b4703e59d22468b6f73b2ed341be45d303fd55b49ab96db10b19e34fef2ed
+    retrieved: 2026-09-18
+  - id: h-re27
+    class: human
+    file: development/h-re27.md
+    register: redes
+    level: H2
+    source: reddit:r/es
+    source_url: https://www.reddit.com/r/es/comments/n07kaf/subreddit_sobre_asesoria_legalimpuestosautónomos/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/kram08980 (cuenta pública de Reddit)
+    date: 2021-04-28
+    human_evidence: Publicación pública de Reddit en r/es del 2021-04-28, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 221
+    sha256: 8fcb0978226e6addd9ced6974000eeac3929c6f2d6b8600cd968ae4968230a3a
+    retrieved: 2026-09-18
+  - id: h-re29
+    class: human
+    file: development/h-re29.md
+    register: redes
+    level: H2
+    source: reddit:r/askspain
+    source_url: https://www.reddit.com/r/askspain/comments/rmrx7w/qué_entendéis_vosotros_por_faranduleo_o_artisteo/
+    storage: local
+    license: sin redistribución (solo análisis; RDL 24/2021, art. 67)
+    author: u/carlosmstraductor (cuenta pública de Reddit)
+    date: 2021-12-23
+    human_evidence: Publicación pública de Reddit en r/askspain del 2021-12-23, anterior a 2022-01-01.
+    extraction: "publicación completa: título y cuerpo, sin los comentarios"
+    theme: general
+    words: 266
+    sha256: ca604c79c523c8486085944fca99b098d5b6353ffd9fbc4548ef7e5e94b888d3
+    retrieved: 2026-09-18
+  - id: ai-c01
+    class: ai
+    file: development/ai-c01.md
+    register: correo
+    theme: trabajo
+    prompt_id: c01
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 211
+    sha256: f7eaa4d243b291f5abf10a20121ec4a4ae7ea554ab5df388f291d2febdb558ea
+  - id: ai-c02
+    class: ai
+    file: development/ai-c02.md
+    register: correo
+    theme: trabajo
+    prompt_id: c02
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 187
+    sha256: 31b53a414dd81fa52a19d54269338279c20ee5a5ede56ef90f00c2fde500a0d0
+  - id: ai-c03
+    class: ai
+    file: development/ai-c03.md
+    register: correo
+    theme: tramites
+    prompt_id: c03
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 199
+    sha256: 7574d799adaba29c4c5bd586231be7eb44d7fd33ced37ef4c6b2558215c471eb
+  - id: ai-c04
+    class: ai
+    file: development/ai-c04.md
+    register: correo
+    theme: tramites
+    prompt_id: c04
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 193
+    sha256: c50b070af7ca9799ce3dd2f67f1e69002e95ac6f5c05608c6d561f99244c687a
+  - id: ai-c05
+    class: ai
+    file: development/ai-c05.md
+    register: correo
+    theme: personal
+    prompt_id: c05
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 211
+    sha256: 321f3a4ef97e3ad07f7f657609e64c2e9fdf06942a8e14d062c34035b8fd1575
+  - id: ai-c06
+    class: ai
+    file: development/ai-c06.md
+    register: correo
+    theme: trabajo
+    prompt_id: c06
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 255
+    sha256: 6b462608e072b32598ca399626bb1a75122d9b88b0ca0a779567601538b8c0e9
+  - id: ai-c07
+    class: ai
+    file: development/ai-c07.md
+    register: correo
+    theme: trabajo
+    prompt_id: c07
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 237
+    sha256: 23374186eb65fac741fd4a83ded391c648bc207b441e65bb38f38f070201561b
+  - id: ai-c08
+    class: ai
+    file: development/ai-c08.md
+    register: correo
+    theme: tramites
+    prompt_id: c08
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 237
+    sha256: b9ad867ea5663aef9bb3975a6510a4dc9336e1e8a59f69ee290d6ebedb2228e7
+  - id: ai-c09
+    class: ai
+    file: development/ai-c09.md
+    register: correo
+    theme: tramites
+    prompt_id: c09
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 223
+    sha256: fddc4a58f1a672904ef101766fd740b50fa1c67e3813e902339891a507255421
+  - id: ai-c10
+    class: ai
+    file: development/ai-c10.md
+    register: correo
+    theme: personal
+    prompt_id: c10
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 242
+    sha256: 05d408e8b030db9b9e32289f81393facc648bab5948d9b86ec60d3c79fa33ffd
+  - id: ai-c11
+    class: ai
+    file: development/ai-c11.md
+    register: correo
+    theme: trabajo
+    prompt_id: c11
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 256
+    sha256: 48cf543630f88cd066a8267cbf40afe91acc0c59452cf09814060cf2371eea59
+  - id: ai-c12
+    class: ai
+    file: development/ai-c12.md
+    register: correo
+    theme: trabajo
+    prompt_id: c12
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 261
+    sha256: 84a8f9cc202d1e5b1131b1cf4e468768433028bb3198ba9c6b50a3d09ff186ba
+  - id: ai-c13
+    class: ai
+    file: development/ai-c13.md
+    register: correo
+    theme: tramites
+    prompt_id: c13
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 264
+    sha256: 7baefb6ad70cff378fa490932393e0747daa079b36adfef23ee5aa431b03d42b
+  - id: ai-c14
+    class: ai
+    file: development/ai-c14.md
+    register: correo
+    theme: tramites
+    prompt_id: c14
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 244
+    sha256: 98617d6fc7855e46d7d56711aa20fbd5edfc99c429e3b33ae76c535d56d240ee
+  - id: ai-c15
+    class: ai
+    file: development/ai-c15.md
+    register: correo
+    theme: personal
+    prompt_id: c15
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 245
+    sha256: 1fa71fbc865d531e6cb7ca988004537ed1e3e4dc92ad153d51b5fab899729795
+  - id: ai-r01
+    class: ai
+    file: development/ai-r01.md
+    register: readme
+    theme: herramienta
+    prompt_id: r01
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 332
+    sha256: edc46206809508de9d75b78759ecf4c6d6231d60d7a15de63f9c80f768fcf118
+  - id: ai-r02
+    class: ai
+    file: development/ai-r02.md
+    register: readme
+    theme: herramienta
+    prompt_id: r02
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 305
+    sha256: fe43659226c60062a0c26c460ff2241f7462bd82f258d8b77a40b91ca2d7efec
+  - id: ai-r03
+    class: ai
+    file: development/ai-r03.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r03
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 280
+    sha256: e8a3c6ae74f4ee2889ad099c527253eabe5c0de4fb4ebec1ac76735ab6ed8f89
+  - id: ai-r04
+    class: ai
+    file: development/ai-r04.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r04
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 266
+    sha256: 5ff0557d74bf1e342b72f07da67edceaf5e17aa2126fd34576b7572acb385762
+  - id: ai-r05
+    class: ai
+    file: development/ai-r05.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r05
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 334
+    sha256: 15a467fef091de29f3854e97ccec2691b8e5a80236d77553c5eaf9a7cb7d4009
+  - id: ai-r06
+    class: ai
+    file: development/ai-r06.md
+    register: readme
+    theme: herramienta
+    prompt_id: r06
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 305
+    sha256: 3869c0737904dfb359cc73c29373595da0f4d20f936b24d4b26a691c95226efe
+  - id: ai-r07
+    class: ai
+    file: development/ai-r07.md
+    register: readme
+    theme: herramienta
+    prompt_id: r07
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 305
+    sha256: 3f579ecce11c1d18d5d8ae96f56669f137fd8f98c1b6343267c69cae42230fc8
+  - id: ai-r08
+    class: ai
+    file: development/ai-r08.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r08
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 260
+    sha256: 917099f794fee0c11794de5ebf5261b864ec1fec0d44c10058a3825ec7694c59
+  - id: ai-r09
+    class: ai
+    file: development/ai-r09.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r09
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 302
+    sha256: 514eb38859ed09073396bc1af1e237e59798964d9280a388732372bff36a4e41
+  - id: ai-r10
+    class: ai
+    file: development/ai-r10.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r10
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 293
+    sha256: 7221a3aa075d5435af3054463ea9860fb29ef0b5585825e16f0ee77d33b3c5d2
+  - id: ai-r11
+    class: ai
+    file: development/ai-r11.md
+    register: readme
+    theme: herramienta
+    prompt_id: r11
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 310
+    sha256: 5771d382602bd03ca5f6606b714967cd1d0e0cb35385473fd3fda4db6ae79b9c
+  - id: ai-r12
+    class: ai
+    file: development/ai-r12.md
+    register: readme
+    theme: herramienta
+    prompt_id: r12
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 319
+    sha256: 1f0efb26307716adc45b1667ecb513ac4c146e5c4001dcdd6cbf3dc16647ab80
+  - id: ai-r13
+    class: ai
+    file: development/ai-r13.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r13
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 324
+    sha256: 4971cde457dcd440406dac43ab5b0648ad8d5bc364d850174d5751fe29bb476f
+  - id: ai-r14
+    class: ai
+    file: development/ai-r14.md
+    register: readme
+    theme: biblioteca
+    prompt_id: r14
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 331
+    sha256: 8d0c42a77a32a0b1e7219dd9eaf6d32bb5d418ddc7c2b3b9c992cfede4c680a0
+  - id: ai-r15
+    class: ai
+    file: development/ai-r15.md
+    register: readme
+    theme: aplicacion
+    prompt_id: r15
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 310
+    sha256: 3c50acde6d50d69b25169171f9c54027ac768f94fc489c00b004eeb665904924
+  - id: ai-s01
+    class: ai
+    file: development/ai-s01.md
+    register: redes
+    theme: general
+    prompt_id: s01
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 187
+    sha256: a2a5ffaa6c5e3d3be14dd2f954ac2a34650046740f6785e8a0bbf9867285f801
+  - id: ai-s02
+    class: ai
+    file: development/ai-s02.md
+    register: redes
+    theme: general
+    prompt_id: s02
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 182
+    sha256: 35df9a037e9207ba73085d7877b37004e820868321b108aca2703c5b6449c168
+  - id: ai-s03
+    class: ai
+    file: development/ai-s03.md
+    register: redes
+    theme: cultura
+    prompt_id: s03
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 220
+    sha256: 2d5e92697d34421a9b759117101277dd6777a306de65cebf74643ea80b7a109d
+  - id: ai-s04
+    class: ai
+    file: development/ai-s04.md
+    register: redes
+    theme: cultura
+    prompt_id: s04
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 217
+    sha256: ea8d5255f7ff0e0cfb9163ef6c53046e4c56095b5bea484b2b0f86e554e3172d
+  - id: ai-s05
+    class: ai
+    file: development/ai-s05.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s05
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-haiku-4-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 167
+    sha256: 4ff983f824021e38e067032d7d118c19e5e2678c48c8afaade00c5e37997b31b
+  - id: ai-s06
+    class: ai
+    file: development/ai-s06.md
+    register: redes
+    theme: general
+    prompt_id: s06
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 232
+    sha256: d5317306a25b9f3fc91e1fa57cf2e518e771194998730745e5b901e7bc467b7d
+  - id: ai-s07
+    class: ai
+    file: development/ai-s07.md
+    register: redes
+    theme: general
+    prompt_id: s07
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 251
+    sha256: ecd1ef548160b4bd4e5a6b22c80554b9b4215a31640111475ce731343c62a04d
+  - id: ai-s08
+    class: ai
+    file: development/ai-s08.md
+    register: redes
+    theme: cultura
+    prompt_id: s08
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 245
+    sha256: 7bc72b58291370d4ae9585cce06f2ea037164fd90fd47fd7441ff97c3fe2f336
+  - id: ai-s09
+    class: ai
+    file: development/ai-s09.md
+    register: redes
+    theme: cultura
+    prompt_id: s09
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 233
+    sha256: 16c2594c3b926e7af04349d4e1aa91f9048e106310f66b2a3780bf36da59d9d0
+  - id: ai-s10
+    class: ai
+    file: development/ai-s10.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s10
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-sonnet-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 229
+    sha256: d7c0eb1d04d2dcf93315a23b4b1b62a52c5b1df3a8896ae873aedbafaad393dc
+  - id: ai-s11
+    class: ai
+    file: development/ai-s11.md
+    register: redes
+    theme: general
+    prompt_id: s11
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 252
+    sha256: 09b82d679f8f26ea289282803c98ce30d689c889ae46bdc289f3f6839f4515eb
+  - id: ai-s12
+    class: ai
+    file: development/ai-s12.md
+    register: redes
+    theme: general
+    prompt_id: s12
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 244
+    sha256: b7715d0068c94caa1b1bccbd03331e5702d30e774a143ad99fb2d3f10d4c1724
+  - id: ai-s13
+    class: ai
+    file: development/ai-s13.md
+    register: redes
+    theme: cultura
+    prompt_id: s13
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 241
+    sha256: 1898360d3a175c8d08d6d2c830f88773535b860ce34f2db1eed5174e59cd6f74
+  - id: ai-s14
+    class: ai
+    file: development/ai-s14.md
+    register: redes
+    theme: cultura
+    prompt_id: s14
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 248
+    sha256: df256e005078fb1e3bb4f694b66d93bfc2a45612f9ad7a53cc51980c35a9ac34
+  - id: ai-s15
+    class: ai
+    file: development/ai-s15.md
+    register: redes
+    theme: tecnologia
+    prompt_id: s15
+    condition: base
+    origin_partition: development
+    provider: Anthropic
+    model: claude-opus-5
+    generated: 2026-09-18
+    harness: Claude Code subagent (Agent tool), lotes de 10
+    system_prompt: el del arnés; no visible
+    parameters: los del arnés; no controlables
+    edits: ninguna (solo finales de línea)
+    words: 246
+    sha256: 9676a03127101dbb25f0776f670425f10023a38115d1438d3d9144537f64a494

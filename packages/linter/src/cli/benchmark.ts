@@ -30,7 +30,7 @@ export interface BenchmarkReport {
   schema_version: 1;
   partition: string;
   tool: { version: string; rulepack: string };
-  config: { threshold: number; min_words_for_index: number; profile: string };
+  config: { threshold: number; min_words_for_index: number; profile: string; register?: string };
   corpus: { samples: number; human: number; ai: number; human_words: number; ai_words: number; manifest_sha256: string };
   per_rule: Record<
     string,
@@ -79,11 +79,14 @@ const median = (a: number[]) => {
   return s.length % 2 ? (s[m] as number) : ((s[m - 1] as number) + (s[m] as number)) / 2;
 };
 
-export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: string): BenchmarkReport {
+export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: string, opts: { register?: string } = {}): BenchmarkReport {
   const manifestPath = path.join(corpusDir, "manifests", `${partition}.yml`);
   if (!fs.existsSync(manifestPath)) throw new Error(`no existe el manifiesto ${manifestPath}`);
   const manifestRaw = fs.readFileSync(manifestPath, "utf8");
   const manifest = parseYaml(manifestRaw) as Manifest;
+  // Filtro por registro: un corpus con varios registros se evalúa con el perfil de cada uno por separado.
+  const selected = opts.register ? manifest.samples.filter((s) => s.register === opts.register) : manifest.samples;
+  if (opts.register && !selected.length) throw new Error(`el manifiesto ${partition} no tiene muestras del registro ${opts.register}`);
   const benchRoot = path.resolve(corpusDir, "..", "benchmark");
   const thrFile = path.join(benchRoot, "configs", "threshold.yml");
   const threshold = fs.existsSync(thrFile) ? Number((parseYaml(fs.readFileSync(thrFile, "utf8")) as { index_threshold: number }).index_threshold) : 20;
@@ -102,7 +105,7 @@ export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: s
   let aiWords = 0;
   const idx: { cls: "human" | "ai"; register: string; index: number | null }[] = [];
   const notes: string[] = [];
-  for (const s of manifest.samples) {
+  for (const s of selected) {
     const abs = path.join(corpusDir, s.file);
     const text = fs.readFileSync(abs, "utf8");
     const sha = createHash("sha256").update(text).digest("hex");
@@ -168,11 +171,11 @@ export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: s
     schema_version: 1,
     partition,
     tool: { version: ctx.toolVersion, rulepack: ctx.pack.version },
-    config: { threshold, min_words_for_index: bctx.config.min_words_for_index, profile: bctx.config.profile },
+    config: { threshold, min_words_for_index: bctx.config.min_words_for_index, profile: bctx.config.profile, ...(opts.register ? { register: opts.register } : {}) },
     corpus: {
-      samples: manifest.samples.length,
-      human: manifest.samples.filter((s) => s.class === "human").length,
-      ai: manifest.samples.filter((s) => s.class === "ai").length,
+      samples: selected.length,
+      human: selected.filter((s) => s.class === "human").length,
+      ai: selected.filter((s) => s.class === "ai").length,
       human_words: humanWords,
       ai_words: aiWords,
       manifest_sha256: createHash("sha256").update(manifestRaw).digest("hex"),

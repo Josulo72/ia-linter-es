@@ -1,0 +1,115 @@
+# Prompts de la clase IA v1.2 (registros correo, readme y redes). Cada tema se genera dos veces:
+#   - base:   solo el encargo, como lo pediría cualquiera. Clase IA de development y holdout.
+#   - guiada: el mismo encargo precedido de la guía integrations/claude-code/output-styles/humano.md. Va a challenge.
+# Generación: subagentes de Claude Code (Agent tool), un subagente por lote de 10 textos del mismo modelo, registro y condición;
+# el prompt de sistema y los parámetros son los del arnés y no son visibles. Límite: los textos de un lote comparten contexto.
+# Los temas se escribieron antes de mirar los textos humanos descargados y no salen de ellos.
+# Reintentos: 33 textos de la primera tanda salieron por debajo de las 150 palabras que pide la plantilla
+# (todo el lote correo/haiku en las dos condiciones, tres de correo/sonnet/guiada y diez de redes/haiku).
+# Se volvieron a generar con el mismo encargo y un recordatorio del mínimo de palabras, no por su estilo.
+schema_version: 1
+generated: "2026-09-18"
+provider: Anthropic
+harness: Claude Code subagent (Agent tool), lotes de 10
+templates:
+  correo: "Escribe un correo electrónico en español. {tema} Entre 150 y 400 palabras. Solo el texto del correo, con su saludo y su despedida."
+  readme: "Escribe en Markdown el README de un proyecto de software libre en español. {tema} Entre 200 y 500 palabras. Solo el texto del README."
+  redes: "Escribe un hilo para una red social en español: varias publicaciones cortas seguidas, separadas por una línea en blanco. {tema} Entre 150 y 350 palabras en total. Solo el texto del hilo."
+guide: integrations/claude-code/output-styles/humano.md
+prompts:
+  # ---------- correo: development (15) ----------
+  - { id: c01, register: correo, partition: development, theme: trabajo, model: claude-haiku-4-5, tema: "Escribes a tu jefa para pedir cambiar las vacaciones de agosto a septiembre." }
+  - { id: c02, register: correo, partition: development, theme: trabajo, model: claude-haiku-4-5, tema: "Avisas a un cliente de que el pedido llegará una semana tarde y explicas por qué." }
+  - { id: c03, register: correo, partition: development, theme: tramites, model: claude-haiku-4-5, tema: "Reclamas a una tienda en línea el importe de un pedido que devolviste hace un mes." }
+  - { id: c04, register: correo, partition: development, theme: tramites, model: claude-haiku-4-5, tema: "Escribes al administrador de la comunidad por una gotera en el garaje." }
+  - { id: c05, register: correo, partition: development, theme: personal, model: claude-haiku-4-5, tema: "Escribes a un amigo al que hace años que no ves para quedar cuando pases por su ciudad." }
+  - { id: c06, register: correo, partition: development, theme: trabajo, model: claude-sonnet-5, tema: "Pides presupuesto a una imprenta para 500 folletos y explicas lo que necesitas." }
+  - { id: c07, register: correo, partition: development, theme: trabajo, model: claude-sonnet-5, tema: "Respondes a una oferta de trabajo que has visto y cuentas por qué te interesa." }
+  - { id: c08, register: correo, partition: development, theme: tramites, model: claude-sonnet-5, tema: "Escribes al seguro para dar el parte de un golpe en el coche aparcado." }
+  - { id: c09, register: correo, partition: development, theme: tramites, model: claude-sonnet-5, tema: "Pides cita al centro de salud por correo y explicas el motivo." }
+  - { id: c10, register: correo, partition: development, theme: personal, model: claude-sonnet-5, tema: "Escribes al tutor de tu hijo para comentar que últimamente no quiere ir a clase." }
+  - { id: c11, register: correo, partition: development, theme: trabajo, model: claude-opus-5, tema: "Avisas a tu equipo de que dejas la empresa y te despides." }
+  - { id: c12, register: correo, partition: development, theme: trabajo, model: claude-opus-5, tema: "Escribes a un proveedor para renegociar el precio del mantenimiento anual." }
+  - { id: c13, register: correo, partition: development, theme: tramites, model: claude-opus-5, tema: "Reclamas a la compañía de la luz una factura que te parece desproporcionada." }
+  - { id: c14, register: correo, partition: development, theme: tramites, model: claude-opus-5, tema: "Escribes al casero para pedir que arregle la caldera antes del invierno." }
+  - { id: c15, register: correo, partition: development, theme: personal, model: claude-opus-5, tema: "Escribes a tu hermana para organizar la comida de Navidad en tu casa." }
+  # ---------- correo: holdout (15) ----------
+  - { id: c16, register: correo, partition: holdout, theme: trabajo, model: claude-haiku-4-5, tema: "Escribes a recursos humanos para preguntar por el pago de unas horas extra." }
+  - { id: c17, register: correo, partition: holdout, theme: trabajo, model: claude-haiku-4-5, tema: "Convocas a tu equipo a una reunión y explicas qué hay que llevar preparado." }
+  - { id: c18, register: correo, partition: holdout, theme: tramites, model: claude-haiku-4-5, tema: "Escribes al ayuntamiento para pedir que arreglen una farola que lleva meses fundida." }
+  - { id: c19, register: correo, partition: holdout, theme: tramites, model: claude-haiku-4-5, tema: "Cancelas por correo la suscripción de un gimnasio y pides que dejen de cobrarte." }
+  - { id: c20, register: correo, partition: holdout, theme: personal, model: claude-haiku-4-5, tema: "Escribes a unos amigos para organizar un fin de semana en la sierra." }
+  - { id: c21, register: correo, partition: holdout, theme: trabajo, model: claude-sonnet-5, tema: "Envías a un compañero el resumen de lo que quedó pendiente antes de tu baja." }
+  - { id: c22, register: correo, partition: holdout, theme: trabajo, model: claude-sonnet-5, tema: "Escribes a un antiguo compañero para pedirle que te recomiende para un puesto." }
+  - { id: c23, register: correo, partition: holdout, theme: tramites, model: claude-sonnet-5, tema: "Escribes al banco porque te han cobrado una comisión que no te habían avisado." }
+  - { id: c24, register: correo, partition: holdout, theme: tramites, model: claude-sonnet-5, tema: "Pides al colegio el certificado de notas de tu hija para una beca." }
+  - { id: c25, register: correo, partition: holdout, theme: personal, model: claude-sonnet-5, tema: "Escribes a un vecino para hablar del ruido de las obras de su piso." }
+  - { id: c26, register: correo, partition: holdout, theme: trabajo, model: claude-opus-5, tema: "Escribes a un cliente para explicarle por qué el presupuesto ha subido respecto al inicial." }
+  - { id: c27, register: correo, partition: holdout, theme: trabajo, model: claude-opus-5, tema: "Propones a tu jefe trabajar dos días a la semana desde casa y lo argumentas." }
+  - { id: c28, register: correo, partition: holdout, theme: tramites, model: claude-opus-5, tema: "Reclamas a una aerolínea la compensación por un vuelo cancelado." }
+  - { id: c29, register: correo, partition: holdout, theme: tramites, model: claude-opus-5, tema: "Escribes a una academia para preguntar por horarios y precios de un curso de inglés." }
+  - { id: c30, register: correo, partition: holdout, theme: personal, model: claude-opus-5, tema: "Escribes a un familiar para agradecerle la ayuda durante una mudanza." }
+  # ---------- readme: development (15) ----------
+  - { id: r01, register: readme, partition: development, theme: herramienta, model: claude-haiku-4-5, tema: "El proyecto convierte facturas en PDF a una hoja de cálculo." }
+  - { id: r02, register: readme, partition: development, theme: herramienta, model: claude-haiku-4-5, tema: "El proyecto renombra en bloque fotos usando la fecha de la cámara." }
+  - { id: r03, register: readme, partition: development, theme: biblioteca, model: claude-haiku-4-5, tema: "Una biblioteca de Python para validar documentos de identidad españoles." }
+  - { id: r04, register: readme, partition: development, theme: biblioteca, model: claude-haiku-4-5, tema: "Una biblioteca de JavaScript para formatear cantidades de dinero en euros." }
+  - { id: r05, register: readme, partition: development, theme: aplicacion, model: claude-haiku-4-5, tema: "Una aplicación de escritorio para llevar las cuentas de una comunidad de vecinos." }
+  - { id: r06, register: readme, partition: development, theme: herramienta, model: claude-sonnet-5, tema: "El proyecto hace copias de seguridad de una carpeta en un disco externo." }
+  - { id: r07, register: readme, partition: development, theme: herramienta, model: claude-sonnet-5, tema: "El proyecto descarga el consumo eléctrico de la distribuidora y dibuja una gráfica." }
+  - { id: r08, register: readme, partition: development, theme: biblioteca, model: claude-sonnet-5, tema: "Una biblioteca para leer ficheros de subtítulos y corregir los tiempos." }
+  - { id: r09, register: readme, partition: development, theme: biblioteca, model: claude-sonnet-5, tema: "Una biblioteca que calcula rutas de autobús a partir de datos abiertos." }
+  - { id: r10, register: readme, partition: development, theme: aplicacion, model: claude-sonnet-5, tema: "Una aplicación web para apuntar los gastos de una casa compartida." }
+  - { id: r11, register: readme, partition: development, theme: herramienta, model: claude-opus-5, tema: "El proyecto comprueba enlaces rotos en una web y avisa por correo." }
+  - { id: r12, register: readme, partition: development, theme: herramienta, model: claude-opus-5, tema: "El proyecto ordena la música de una carpeta por artista y disco." }
+  - { id: r13, register: readme, partition: development, theme: biblioteca, model: claude-opus-5, tema: "Una biblioteca para generar códigos de barras de productos." }
+  - { id: r14, register: readme, partition: development, theme: biblioteca, model: claude-opus-5, tema: "Una biblioteca para leer y escribir ficheros de configuración de un formato antiguo." }
+  - { id: r15, register: readme, partition: development, theme: aplicacion, model: claude-opus-5, tema: "Una aplicación de consola para llevar el inventario de una tienda pequeña." }
+  # ---------- readme: holdout (15) ----------
+  - { id: r16, register: readme, partition: holdout, theme: herramienta, model: claude-haiku-4-5, tema: "El proyecto convierte apuntes en Markdown a una web estática." }
+  - { id: r17, register: readme, partition: holdout, theme: herramienta, model: claude-haiku-4-5, tema: "El proyecto vigila una carpeta y avisa cuando aparece un fichero nuevo." }
+  - { id: r18, register: readme, partition: holdout, theme: biblioteca, model: claude-haiku-4-5, tema: "Una biblioteca para trabajar con fechas festivas de cada comunidad autónoma." }
+  - { id: r19, register: readme, partition: holdout, theme: biblioteca, model: claude-haiku-4-5, tema: "Una biblioteca para leer los datos de un contador de agua por el puerto serie." }
+  - { id: r20, register: readme, partition: holdout, theme: aplicacion, model: claude-haiku-4-5, tema: "Una aplicación móvil para apuntar las horas trabajadas cada día." }
+  - { id: r21, register: readme, partition: holdout, theme: herramienta, model: claude-sonnet-5, tema: "El proyecto limpia metadatos de fotos antes de publicarlas." }
+  - { id: r22, register: readme, partition: holdout, theme: herramienta, model: claude-sonnet-5, tema: "El proyecto compara dos listas de precios y señala las diferencias." }
+  - { id: r23, register: readme, partition: holdout, theme: biblioteca, model: claude-sonnet-5, tema: "Una biblioteca para partir ficheros grandes en trozos y volver a juntarlos." }
+  - { id: r24, register: readme, partition: holdout, theme: biblioteca, model: claude-sonnet-5, tema: "Una biblioteca para dibujar horarios de clase en una imagen." }
+  - { id: r25, register: readme, partition: holdout, theme: aplicacion, model: claude-sonnet-5, tema: "Una aplicación web para reservar las pistas de pádel de un club." }
+  - { id: r26, register: readme, partition: holdout, theme: herramienta, model: claude-opus-5, tema: "El proyecto busca duplicados en una carpeta de documentos." }
+  - { id: r27, register: readme, partition: holdout, theme: herramienta, model: claude-opus-5, tema: "El proyecto genera recibos en PDF a partir de una hoja de cálculo." }
+  - { id: r28, register: readme, partition: holdout, theme: biblioteca, model: claude-opus-5, tema: "Una biblioteca para consultar el tiempo desde una estación meteorológica casera." }
+  - { id: r29, register: readme, partition: holdout, theme: biblioteca, model: claude-opus-5, tema: "Una biblioteca para convertir coordenadas entre sistemas de referencia." }
+  - { id: r30, register: readme, partition: holdout, theme: aplicacion, model: claude-opus-5, tema: "Una aplicación de consola para preparar la lista de la compra de la semana." }
+  # ---------- redes: development (15) ----------
+  - { id: s01, register: redes, partition: development, theme: general, model: claude-haiku-4-5, tema: "Cuentas cómo te ha ido el primer mes sin coche en la ciudad." }
+  - { id: s02, register: redes, partition: development, theme: general, model: claude-haiku-4-5, tema: "Cuentas lo que aprendiste montando una estantería que venía sin instrucciones." }
+  - { id: s03, register: redes, partition: development, theme: cultura, model: claude-haiku-4-5, tema: "Hablas de un libro que acabas de terminar y de por qué te ha gustado." }
+  - { id: s04, register: redes, partition: development, theme: cultura, model: claude-haiku-4-5, tema: "Cuentas la última película que viste en el cine y qué te pareció." }
+  - { id: s05, register: redes, partition: development, theme: tecnologia, model: claude-haiku-4-5, tema: "Cuentas por qué has cambiado el móvil después de seis años." }
+  - { id: s06, register: redes, partition: development, theme: general, model: claude-sonnet-5, tema: "Cuentas cómo llevas el huerto del balcón este verano." }
+  - { id: s07, register: redes, partition: development, theme: general, model: claude-sonnet-5, tema: "Hablas de lo que cambia al mudarte a un pueblo pequeño." }
+  - { id: s08, register: redes, partition: development, theme: cultura, model: claude-sonnet-5, tema: "Recomiendas un disco que llevas semanas escuchando." }
+  - { id: s09, register: redes, partition: development, theme: cultura, model: claude-sonnet-5, tema: "Cuentas una visita a un museo pequeño que no esperabas que te gustara." }
+  - { id: s10, register: redes, partition: development, theme: tecnologia, model: claude-sonnet-5, tema: "Cuentas tu experiencia dejando de usar una red social grande." }
+  - { id: s11, register: redes, partition: development, theme: general, model: claude-opus-5, tema: "Cuentas cómo te organizas para cocinar toda la semana el domingo." }
+  - { id: s12, register: redes, partition: development, theme: general, model: claude-opus-5, tema: "Hablas de lo que te ha sorprendido al empezar a nadar por las mañanas." }
+  - { id: s13, register: redes, partition: development, theme: cultura, model: claude-opus-5, tema: "Cuentas por qué has vuelto a leer en papel después de años con el libro electrónico." }
+  - { id: s14, register: redes, partition: development, theme: cultura, model: claude-opus-5, tema: "Hablas de una obra de teatro que viste y que te dejó pensando." }
+  - { id: s15, register: redes, partition: development, theme: tecnologia, model: claude-opus-5, tema: "Cuentas cómo montaste un servidor pequeño en casa y para qué lo usas." }
+  # ---------- redes: holdout (15) ----------
+  - { id: s16, register: redes, partition: holdout, theme: general, model: claude-haiku-4-5, tema: "Cuentas qué tal la primera semana llevando a los niños al colegio andando." }
+  - { id: s17, register: redes, partition: holdout, theme: general, model: claude-haiku-4-5, tema: "Hablas de lo que cuesta arreglar un electrodoméstico en vez de comprarlo nuevo." }
+  - { id: s18, register: redes, partition: holdout, theme: cultura, model: claude-haiku-4-5, tema: "Cuentas una serie que has dejado a medias y por qué." }
+  - { id: s19, register: redes, partition: holdout, theme: cultura, model: claude-haiku-4-5, tema: "Hablas de un concierto pequeño al que fuiste sin saber quién tocaba." }
+  - { id: s20, register: redes, partition: holdout, theme: tecnologia, model: claude-haiku-4-5, tema: "Cuentas cómo recuperaste fotos de un disco duro que parecía muerto." }
+  - { id: s21, register: redes, partition: holdout, theme: general, model: claude-sonnet-5, tema: "Cuentas cómo te ha ido el primer invierno con calefacción de pellets." }
+  - { id: s22, register: redes, partition: holdout, theme: general, model: claude-sonnet-5, tema: "Hablas de lo que has aprendido yendo en bici al trabajo todo el año." }
+  - { id: s23, register: redes, partition: holdout, theme: cultura, model: claude-sonnet-5, tema: "Recomiendas un pódcast que escuchas mientras conduces." }
+  - { id: s24, register: redes, partition: holdout, theme: cultura, model: claude-sonnet-5, tema: "Cuentas una exposición de fotografía que viste el fin de semana." }
+  - { id: s25, register: redes, partition: holdout, theme: tecnologia, model: claude-sonnet-5, tema: "Cuentas por qué has vuelto a una agenda de papel." }
+  - { id: s26, register: redes, partition: holdout, theme: general, model: claude-opus-5, tema: "Cuentas cómo cambió tu rutina al empezar a trabajar de noche." }
+  - { id: s27, register: redes, partition: holdout, theme: general, model: claude-opus-5, tema: "Hablas de lo que aprendiste ayudando en la recogida de la aceituna." }
+  - { id: s28, register: redes, partition: holdout, theme: cultura, model: claude-opus-5, tema: "Cuentas un libro que te costó empezar y acabaste devorando." }
+  - { id: s29, register: redes, partition: holdout, theme: cultura, model: claude-opus-5, tema: "Hablas de una película antigua que has visto por primera vez." }
+  - { id: s30, register: redes, partition: holdout, theme: tecnologia, model: claude-opus-5, tema: "Cuentas cómo has organizado las contraseñas de casa sin volverte loco." }

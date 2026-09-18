@@ -1,0 +1,515 @@
+# Generado por benchmark/scripts/fetch-registros.mjs --source readme. Los textos están solo en local; aquí quedan URL, autor, fecha, licencia y hash.
+schema_version: 1
+register: readme
+cutoff_date: 2022-01-01
+samples:
+  - id: h-rd01
+    class: human
+    file: development/h-rd01.md
+    register: readme
+    level: H2
+    source: github:Protoncoind/ProtonCoin
+    source_url: https://github.com/Protoncoind/ProtonCoin/blob/af27976c103edf80435b523a4d14901e6566d1a9/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: Protoncoind (repositorio Protoncoind/ProtonCoin)
+    date: 2021-01-22
+    human_evidence: Último commit del README el 2021-01-22, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-01-22.
+    extraction: README completo del commit af27976c103e; sin editar
+    theme: software
+    words: 311
+    sha256: 33522a9e8382952a4fca4850d2f9611914245cccce0c0f15ca165d1bcf0e667e
+    retrieved: 2026-09-17
+  - id: h-rd02
+    class: human
+    file: holdout/h-rd02.md
+    register: readme
+    level: H2
+    source: github:LuchoBazz/AlgorithmNotebook
+    source_url: https://github.com/LuchoBazz/AlgorithmNotebook/blob/0d51af70d19db54b9511a833b36369a9824915b8/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: LuchoBazz (repositorio LuchoBazz/AlgorithmNotebook)
+    date: 2020-07-22
+    human_evidence: Último commit del README el 2020-07-22, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-11-25.
+    extraction: README completo del commit 0d51af70d19d; sin editar
+    theme: software
+    words: 913
+    sha256: 609bcd53ff96f4509de05cf7673589ce262724d16ad9bab6119f5d11fc09c7b6
+    retrieved: 2026-09-17
+  - id: h-rd03
+    class: human
+    file: development/h-rd03.md
+    register: readme
+    level: H2
+    source: github:cristinafsanz/melies-origen
+    source_url: https://github.com/cristinafsanz/melies-origen/blob/17eda06ee19f61bb050af47df0d7c666a72655a6/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: cristinafsanz (repositorio cristinafsanz/melies-origen)
+    date: 2017-09-04
+    human_evidence: Último commit del README el 2017-09-04, anterior a 2022-01-01; el repositorio no recibe cambios desde 2017-09-04.
+    extraction: README completo del commit 17eda06ee19f; sin editar
+    theme: software
+    words: 530
+    sha256: 8146276159ba1015576c0ccce73b20a4cce076d9674ccabc7d4f8afa4f764f30
+    retrieved: 2026-09-17
+  - id: h-rd04
+    class: human
+    file: holdout/h-rd04.md
+    register: readme
+    level: H2
+    source: github:Faiiya/Uned
+    source_url: https://github.com/Faiiya/Uned/blob/4a1068d5a5f8f7013ea82276b4916ce87e197622/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: Faiiya (repositorio Faiiya/Uned)
+    date: 2019-10-07
+    human_evidence: Último commit del README el 2019-10-07, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-11-22.
+    extraction: README completo del commit 4a1068d5a5f8; sin editar
+    theme: software
+    words: 514
+    sha256: 3cf2ba7581464e4653a57c9182037a1c467a00520455fd32334927f0c158a91f
+    retrieved: 2026-09-17
+  - id: h-rd05
+    class: human
+    file: development/h-rd05.md
+    register: readme
+    level: H2
+    source: github:JhonMendoza26/Sistema-de-Ventas-Restaurante
+    source_url: https://github.com/JhonMendoza26/Sistema-de-Ventas-Restaurante/blob/4bf40b0104f26bc1daf3e83577c84c190dffe120/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: JhonMendoza26 (repositorio JhonMendoza26/Sistema-de-Ventas-Restaurante)
+    date: 2021-06-30
+    human_evidence: Último commit del README el 2021-06-30, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-06-30.
+    extraction: README completo del commit 4bf40b0104f2; sin editar
+    theme: software
+    words: 478
+    sha256: 25e94de7367f343e9bc720dcdd07cf371a40204297de50a3cbaded34bf4fe5b0
+    retrieved: 2026-09-17
+  - id: h-rd06
+    class: human
+    file: holdout/h-rd06.md
+    register: readme
+    level: H2
+    source: github:juanalonso/processing-opencv
+    source_url: https://github.com/juanalonso/processing-opencv/blob/b66087ba10aa3d8be2cb0525857b2a85bfa09828/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: juanalonso (repositorio juanalonso/processing-opencv)
+    date: 2017-02-13
+    human_evidence: Último commit del README el 2017-02-13, anterior a 2022-01-01; el repositorio no recibe cambios desde 2017-11-26.
+    extraction: README completo del commit b66087ba10aa; sin editar
+    theme: software
+    words: 182
+    sha256: db045ee3b5963012164887577cc56ae54b63d69588223fcf49f35937dd61d0f6
+    retrieved: 2026-09-17
+  - id: h-rd07
+    class: human
+    file: development/h-rd07.md
+    register: readme
+    level: H2
+    source: github:node-girls/express-workshop-spanish
+    source_url: https://github.com/node-girls/express-workshop-spanish/blob/0c45358ef256cf46d7add9236be203ccfd7e8e92/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: node-girls (repositorio node-girls/express-workshop-spanish)
+    date: 2019-02-16
+    human_evidence: Último commit del README el 2019-02-16, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-05-30.
+    extraction: README completo del commit 0c45358ef256; sin editar
+    theme: software
+    words: 250
+    sha256: 1b2420a6f629b3e400f9a6eec2c2620939716cddf0aab1d3eb76d81a9baa569f
+    retrieved: 2026-09-17
+  - id: h-rd08
+    class: human
+    file: holdout/h-rd08.md
+    register: readme
+    level: H2
+    source: github:Prometheus-ETSIIT/locaviewer
+    source_url: https://github.com/Prometheus-ETSIIT/locaviewer/blob/251cf54ee786730bc00738e6343dbec376418933/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: Prometheus-ETSIIT (repositorio Prometheus-ETSIIT/locaviewer)
+    date: 2014-11-14
+    human_evidence: Último commit del README el 2014-11-14, anterior a 2022-01-01; el repositorio no recibe cambios desde 2014-12-16.
+    extraction: README completo del commit 251cf54ee786; sin editar
+    theme: software
+    words: 503
+    sha256: 5f7bc918a87de2439bd5c6fc829409054cfe48ad5099d241e9853c80bd3a2135
+    retrieved: 2026-09-17
+  - id: h-rd09
+    class: human
+    file: development/h-rd09.md
+    register: readme
+    level: H2
+    source: github:sofiadparamo/Convolution
+    source_url: https://github.com/sofiadparamo/Convolution/blob/8f0f0b81bc410ee3d14f54d2fc771cac0d41c5b0/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: sofiadparamo (repositorio sofiadparamo/Convolution)
+    date: 2020-09-18
+    human_evidence: Último commit del README el 2020-09-18, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-09-18.
+    extraction: README completo del commit 8f0f0b81bc41; sin editar
+    theme: software
+    words: 320
+    sha256: 1571dc57ecbe0abd3a114723ff7015774040ad04e27440ce33926b3f3aa0aff0
+    retrieved: 2026-09-17
+  - id: h-rd10
+    class: human
+    file: holdout/h-rd10.md
+    register: readme
+    level: H2
+    source: github:leireomadina/blackjack-game
+    source_url: https://github.com/leireomadina/blackjack-game/blob/a80b50bcd703a47a4d0a2f419928f786881d1e38/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: leireomadina (repositorio leireomadina/blackjack-game)
+    date: 2021-02-17
+    human_evidence: Último commit del README el 2021-02-17, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-02-17.
+    extraction: README completo del commit a80b50bcd703; sin editar
+    theme: software
+    words: 337
+    sha256: cd72f0ccddaaeb597d36eac4f0e5f049f3e940863f245692fa1fec49a49342dc
+    retrieved: 2026-09-17
+  - id: h-rd11
+    class: human
+    file: development/h-rd11.md
+    register: readme
+    level: H2
+    source: github:ElenaMLopez/taller_git_online
+    source_url: https://github.com/ElenaMLopez/taller_git_online/blob/43eaaf0c8100ae7464c4480a35f11ea175883b16/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: ElenaMLopez (repositorio ElenaMLopez/taller_git_online)
+    date: 2020-07-12
+    human_evidence: Último commit del README el 2020-07-12, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-07-12.
+    extraction: README completo del commit 43eaaf0c8100; sin editar
+    theme: software
+    words: 382
+    sha256: a83374f9d256400e643aa9a95ee967fafc2e6301cfa6ab50e3e7560fe7757c90
+    retrieved: 2026-09-17
+  - id: h-rd12
+    class: human
+    file: holdout/h-rd12.md
+    register: readme
+    level: H2
+    source: github:SantiMA10/CampusVirtualPlus
+    source_url: https://github.com/SantiMA10/CampusVirtualPlus/blob/606848ea76c657ce27eeb9d215944d68f5aa5a5a/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: SantiMA10 (repositorio SantiMA10/CampusVirtualPlus)
+    date: 2016-11-02
+    human_evidence: Último commit del README el 2016-11-02, anterior a 2022-01-01; el repositorio no recibe cambios desde 2016-11-09.
+    extraction: README completo del commit 606848ea76c6; sin editar
+    theme: software
+    words: 304
+    sha256: 784902892d9abda916595785b5be0f95ae9afbfa11097278921b9852a5ee338b
+    retrieved: 2026-09-17
+  - id: h-rd13
+    class: human
+    file: development/h-rd13.md
+    register: readme
+    level: H2
+    source: github:SebSalazar/cansat-monitoring-app
+    source_url: https://github.com/SebSalazar/cansat-monitoring-app/blob/b1c0fc31daee44c271a0bad4db32f97f044292f1/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: SebSalazar (repositorio SebSalazar/cansat-monitoring-app)
+    date: 2021-06-20
+    human_evidence: Último commit del README el 2021-06-20, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-06-20.
+    extraction: README completo del commit b1c0fc31daee; sin editar
+    theme: software
+    words: 480
+    sha256: 99e37fac9780cbea52c0f7bdf89c941cfe5dbcbb258cc25ad07ba67fdc40ee74
+    retrieved: 2026-09-17
+  - id: h-rd14
+    class: human
+    file: holdout/h-rd14.md
+    register: readme
+    level: H2
+    source: github:cebem2018/ejercicioScrum
+    source_url: https://github.com/cebem2018/ejercicioScrum/blob/4957c70140f5e6a428eea6bae51e31bce6e67005/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: cebem2018 (repositorio cebem2018/ejercicioScrum)
+    date: 2018-11-19
+    human_evidence: Último commit del README el 2018-11-19, anterior a 2022-01-01; el repositorio no recibe cambios desde 2018-11-21.
+    extraction: README completo del commit 4957c70140f5; sin editar
+    theme: software
+    words: 553
+    sha256: fc5eac75e18e1504cfea37a67761546b4e48969f14363929feed53166fe8c4ab
+    retrieved: 2026-09-17
+  - id: h-rd15
+    class: human
+    file: development/h-rd15.md
+    register: readme
+    level: H2
+    source: github:vgaltes/TheServerlessCourseSourceCode
+    source_url: https://github.com/vgaltes/TheServerlessCourseSourceCode/blob/bcf29091d4502bbb4e2910d66b36913f08a32114/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: vgaltes (repositorio vgaltes/TheServerlessCourseSourceCode)
+    date: 2019-06-20
+    human_evidence: Último commit del README el 2019-06-20, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-10-25.
+    extraction: README completo del commit bcf29091d450; sin editar
+    theme: software
+    words: 675
+    sha256: 69755ac9562731295e7c154be000f64c132342ae21e7aa2a8fef550476bf242a
+    retrieved: 2026-09-17
+  - id: h-rd16
+    class: human
+    file: holdout/h-rd16.md
+    register: readme
+    level: H2
+    source: github:burgos2021/programa
+    source_url: https://github.com/burgos2021/programa/blob/bcc391c133c2e6d3a59a63a75ee22ca31908a228/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: burgos2021 (repositorio burgos2021/programa)
+    date: 2021-09-07
+    human_evidence: Último commit del README el 2021-09-07, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-09-11.
+    extraction: README completo del commit bcc391c133c2; sin editar
+    theme: software
+    words: 406
+    sha256: b02f22988a76d5de439500de7251e53614c1c4363984f812a1de4a991c5148e7
+    retrieved: 2026-09-17
+  - id: h-rd17
+    class: human
+    file: development/h-rd17.md
+    register: readme
+    level: H2
+    source: github:ganchito55/criptografia
+    source_url: https://github.com/ganchito55/criptografia/blob/9cb1d7564b3a0222d7f1275300bdaebe1863584d/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: ganchito55 (repositorio ganchito55/criptografia)
+    date: 2015-07-26
+    human_evidence: Último commit del README el 2015-07-26, anterior a 2022-01-01; el repositorio no recibe cambios desde 2015-07-26.
+    extraction: README completo del commit 9cb1d7564b3a; sin editar
+    theme: software
+    words: 164
+    sha256: 97a639d3a5cee6c3a8dc75b396ac86417aa06df7f2a9959073ed89560908ef7b
+    retrieved: 2026-09-17
+  - id: h-rd18
+    class: human
+    file: holdout/h-rd18.md
+    register: readme
+    level: H2
+    source: github:jamydx/geant4-and-root
+    source_url: https://github.com/jamydx/geant4-and-root/blob/7103aeca7959d40f424a138471e046a71cb27cf5/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: jamydx (repositorio jamydx/geant4-and-root)
+    date: 2019-08-27
+    human_evidence: Último commit del README el 2019-08-27, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-08-27.
+    extraction: README completo del commit 7103aeca7959; sin editar
+    theme: software
+    words: 732
+    sha256: 3dca1ecc3b0e54be686e0c332f4a8eee57c6b75772ae33df8f94ffa45150012d
+    retrieved: 2026-09-17
+  - id: h-rd19
+    class: human
+    file: development/h-rd19.md
+    register: readme
+    level: H2
+    source: github:josegury/ESII_REDES2
+    source_url: https://github.com/josegury/ESII_REDES2/blob/a77c17e748303475c9922aeb648d9712203adb6d/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: josegury (repositorio josegury/ESII_REDES2)
+    date: 2015-01-27
+    human_evidence: Último commit del README el 2015-01-27, anterior a 2022-01-01; el repositorio no recibe cambios desde 2015-01-27.
+    extraction: README completo del commit a77c17e74830; sin editar
+    theme: software
+    words: 169
+    sha256: ba8c3cca968ed12c2a7c7673663bcae406d6464018d498732ae78eb3ce8db048
+    retrieved: 2026-09-17
+  - id: h-rd20
+    class: human
+    file: holdout/h-rd20.md
+    register: readme
+    level: H2
+    source: github:DanielRivera03/login-personalizado-cronometrado
+    source_url: https://github.com/DanielRivera03/login-personalizado-cronometrado/blob/7dc8b2a1d1b2f086d7c29f72bd5fa5c04fdbbe36/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: DanielRivera03 (repositorio DanielRivera03/login-personalizado-cronometrado)
+    date: 2020-05-29
+    human_evidence: Último commit del README el 2020-05-29, anterior a 2022-01-01; el repositorio no recibe cambios desde 2020-05-29.
+    extraction: README completo del commit 7dc8b2a1d1b2; sin editar
+    theme: software
+    words: 539
+    sha256: 751cf1fb18def0399ec7ece08d0e50439d170a23933cb8011682d8c31bcda6e5
+    retrieved: 2026-09-17
+  - id: h-rd21
+    class: human
+    file: development/h-rd21.md
+    register: readme
+    level: H2
+    source: github:megabass00/react-users-crud
+    source_url: https://github.com/megabass00/react-users-crud/blob/b53eddcf61686ca0a25ae8d7500c7affb77abee8/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: megabass00 (repositorio megabass00/react-users-crud)
+    date: 2021-04-15
+    human_evidence: Último commit del README el 2021-04-15, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-04-15.
+    extraction: README completo del commit b53eddcf6168; sin editar
+    theme: software
+    words: 818
+    sha256: f154a2e4018844dc591ac6866335e9098b6f16817eb1a2bb75c08966483da19d
+    retrieved: 2026-09-17
+  - id: h-rd22
+    class: human
+    file: holdout/h-rd22.md
+    register: readme
+    level: H2
+    source: github:aramirez-es/symfony-barcelona
+    source_url: https://github.com/aramirez-es/symfony-barcelona/blob/b6659141de7f035762af7aab6a209b08778248d6/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: aramirez-es (repositorio aramirez-es/symfony-barcelona)
+    date: 2011-12-26
+    human_evidence: Último commit del README el 2011-12-26, anterior a 2022-01-01; el repositorio no recibe cambios desde 2012-02-05.
+    extraction: README completo del commit b6659141de7f; sin editar
+    theme: software
+    words: 350
+    sha256: ac95aad4e18041c474c81f7d2155262d4b82ae92277914d26adde5a7fbcbfb03
+    retrieved: 2026-09-17
+  - id: h-rd23
+    class: human
+    file: development/h-rd23.md
+    register: readme
+    level: H2
+    source: github:davidMarCal/Hotjar-IPO-Usal
+    source_url: https://github.com/davidMarCal/Hotjar-IPO-Usal/blob/57446b82b1e28ad7e67cc65bab168b99dd1feda3/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: davidMarCal (repositorio davidMarCal/Hotjar-IPO-Usal)
+    date: 2021-08-31
+    human_evidence: Último commit del README el 2021-08-31, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-08-31.
+    extraction: README completo del commit 57446b82b1e2; sin editar
+    theme: software
+    words: 223
+    sha256: 46007e2fe59e0cc168d5fb530c2a68c643932ceb3ac69e5e29af8b18b14d7f5d
+    retrieved: 2026-09-17
+  - id: h-rd24
+    class: human
+    file: holdout/h-rd24.md
+    register: readme
+    level: H2
+    source: github:adrigrillo/cine
+    source_url: https://github.com/adrigrillo/cine/blob/5ebfa420ba3e0615b8c13890ed318b0f57080084/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: adrigrillo (repositorio adrigrillo/cine)
+    date: 2016-05-11
+    human_evidence: Último commit del README el 2016-05-11, anterior a 2022-01-01; el repositorio no recibe cambios desde 2016-05-12.
+    extraction: README completo del commit 5ebfa420ba3e; sin editar
+    theme: software
+    words: 272
+    sha256: 50f23d9cf5e7eb50ab5d6568590003ae1993e6527b0260adf7447743d88f187b
+    retrieved: 2026-09-17
+  - id: h-rd25
+    class: human
+    file: development/h-rd25.md
+    register: readme
+    level: H2
+    source: github:perlamellao/PiBug
+    source_url: https://github.com/perlamellao/PiBug/blob/74c11551edf8369af6a01aa79496e32f8d1f37ec/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: perlamellao (repositorio perlamellao/PiBug)
+    date: 2021-10-19
+    human_evidence: Último commit del README el 2021-10-19, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-10-20.
+    extraction: README completo del commit 74c11551edf8; sin editar
+    theme: software
+    words: 371
+    sha256: d6f6510bbd6d3eba86c4e4001f70affd82ebcc147fc4f66b4e3722d91b0cdc61
+    retrieved: 2026-09-17
+  - id: h-rd26
+    class: human
+    file: holdout/h-rd26.md
+    register: readme
+    level: H2
+    source: github:jsegu/greennessr
+    source_url: https://github.com/jsegu/greennessr/blob/cad5bb7cfa8f9bc1db0e4b98738fbd70568db3fb/README.md
+    storage: local
+    license: MIT en origen; aquí no se redistribuye, solo análisis local
+    author: jsegu (repositorio jsegu/greennessr)
+    date: 2021-03-04
+    human_evidence: Último commit del README el 2021-03-04, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-03-04.
+    extraction: README completo del commit cad5bb7cfa8f; sin editar
+    theme: software
+    words: 393
+    sha256: 537d959fae6ddf4d49ae815c83496fb1c40bae5ef6d92e839bf32b985e16fab2
+    retrieved: 2026-09-17
+  - id: h-rd27
+    class: human
+    file: development/h-rd27.md
+    register: readme
+    level: H2
+    source: github:alexbertis/QuijoteNet
+    source_url: https://github.com/alexbertis/QuijoteNet/blob/4d8f46aead05cf7e2aa36b6af8d9f30af6f41a95/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: alexbertis (repositorio alexbertis/QuijoteNet)
+    date: 2018-05-31
+    human_evidence: Último commit del README el 2018-05-31, anterior a 2022-01-01; el repositorio no recibe cambios desde 2018-05-31.
+    extraction: README completo del commit 4d8f46aead05; sin editar
+    theme: software
+    words: 468
+    sha256: cecbf27bcd1edcfae15ddca1581cd3f0b00b17df1beb4c43d9dc97b4de313223
+    retrieved: 2026-09-17
+  - id: h-rd28
+    class: human
+    file: holdout/h-rd28.md
+    register: readme
+    level: H2
+    source: github:jersonmartinez/Split-Files
+    source_url: https://github.com/jersonmartinez/Split-Files/blob/6d582bc49f1bcca2e4c92f929f282e24bc9d770e/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: jersonmartinez (repositorio jersonmartinez/Split-Files)
+    date: 2018-03-26
+    human_evidence: Último commit del README el 2018-03-26, anterior a 2022-01-01; el repositorio no recibe cambios desde 2018-03-26.
+    extraction: README completo del commit 6d582bc49f1b; sin editar
+    theme: software
+    words: 702
+    sha256: f5c841a79a12609dd773f55edc749a3c6f422332bd554e327a65e44d858740a1
+    retrieved: 2026-09-17
+  - id: h-rd29
+    class: human
+    file: development/h-rd29.md
+    register: readme
+    level: H2
+    source: github:ricardocancar/TFM
+    source_url: https://github.com/ricardocancar/TFM/blob/2845de3e5ea9eacf220a14094f403110a77ca78e/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: ricardocancar (repositorio ricardocancar/TFM)
+    date: 2018-12-24
+    human_evidence: Último commit del README el 2018-12-24, anterior a 2022-01-01; el repositorio no recibe cambios desde 2019-03-11.
+    extraction: README completo del commit 2845de3e5ea9; sin editar
+    theme: software
+    words: 582
+    sha256: 7bf9619649be395078db43a58ffb6be3c0862bbec1710140874f5245200b0933
+    retrieved: 2026-09-17
+  - id: h-rd30
+    class: human
+    file: holdout/h-rd30.md
+    register: readme
+    level: H2
+    source: github:AdriPalos/Hackathon
+    source_url: https://github.com/AdriPalos/Hackathon/blob/3b97e1c9afd5d965ca2055f1d7753ad96d324322/README.md
+    storage: local
+    license: Apache-2.0 en origen; aquí no se redistribuye, solo análisis local
+    author: AdriPalos (repositorio AdriPalos/Hackathon)
+    date: 2021-10-23
+    human_evidence: Último commit del README el 2021-10-23, anterior a 2022-01-01; el repositorio no recibe cambios desde 2021-10-23.
+    extraction: README completo del commit 3b97e1c9afd5; sin editar
+    theme: software
+    words: 385
+    sha256: 5fb42edb576a2bb13ec629868e271fb7123fd05eb8591e85885de25128376f20
+    retrieved: 2026-09-17

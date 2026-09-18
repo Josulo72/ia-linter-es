@@ -11,8 +11,9 @@ import { parse as parseYaml } from "yaml";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const CORPORA = [
-  { label: "v1.1", dir: path.join(root, "corpus"), lock: "holdout-v1.1.lock", prompts: "prompts-v1.1.yml" },
-  { label: "v1.0 (archivo)", dir: path.join(root, "corpus", "archive", "v1.0"), lock: "holdout-v1.0.lock", prompts: "prompts.yml" },
+  { label: "v1.2", dir: path.join(root, "corpus-v1.2"), lock: "holdout-v1.2.lock", prompts: "prompts-v1.2.yml", cutoff: "2022-01-01", fetcher: "benchmark/scripts/fetch-registros.mjs" },
+  { label: "v1.1", dir: path.join(root, "corpus"), lock: "holdout-v1.1.lock", prompts: "prompts-v1.1.yml", fetcher: "benchmark/scripts/fetch-foros.mjs" },
+  { label: "v1.0 (archivo)", dir: path.join(root, "corpus", "archive", "v1.0"), lock: "holdout-v1.0.lock", prompts: "prompts.yml", fetcher: "benchmark/scripts/fetch-human.mjs" },
 ];
 const yml = (...p) => parseYaml(fs.readFileSync(path.join(root, ...p), "utf8"));
 const policy = yml("quality-policy.yml");
@@ -57,7 +58,7 @@ for (const part of ["development", "holdout", "challenge"]) {
     if (s.class === "human") {
       if (s.storage === "local") {
         // Texto de foro: no se redistribuye, así que no hay allowlist ni licencia abierta; se exige origen y no publicación.
-        if (!/^foro:/.test(String(s.source))) fail(`${where}: storage local sin foro de origen`);
+        if (!/^(foro|lista|github|mastodon|reddit):/.test(String(s.source))) fail(`${where}: storage local con origen no admitido (${s.source})`);
         if (allowed.has(s.license)) fail(`${where}: un texto no redistribuible no puede declarar licencia abierta`);
       } else {
         const rec = allowIds.get(s.id);
@@ -67,7 +68,8 @@ for (const part of ["development", "holdout", "challenge"]) {
         if (licenses.sources[s.source]?.license !== s.license) fail(`${where}: licencia distinta de la documentada para ${s.source}`);
       }
       for (const k of ["source_url", "author", "date", "human_evidence", "register"]) if (!s[k]) fail(`${where}: falta ${k}`);
-      if (!(String(s.date) < sources.cutoff_date)) fail(`${where}: fecha ${s.date} no anterior a ${sources.cutoff_date}`);
+      const corte = C.cutoff ?? sources.cutoff_date;
+      if (!(String(s.date) < corte)) fail(`${where}: fecha ${s.date} no anterior a ${corte}`);
       if (!["H1", "H2", "H3"].includes(s.level)) fail(`${where}: nivel ${s.level}`);
       if (s.level === "H3" && part !== "challenge") fail(`${where}: H3 solo se admite en challenge`);
     } else if (s.class === "ai") {
@@ -96,7 +98,7 @@ else {
   else ok(`holdout congelado el ${lock.frozen}`);
 }
 }
-if (missingLocal) console.log(`  · ${missingLocal} textos de foro no descargados en este equipo (no se redistribuyen): ejecuta benchmark/scripts/fetch-foros.mjs`);
+if (missingLocal) console.log(`  · ${missingLocal} textos no redistribuibles sin descargar en este equipo: ejecuta el fetcher del corpus correspondiente (${CORPORA.map((c) => c.fetcher).join(", ")})`);
 
 // Tandas de experimento (v1.1): fuera del benchmark, pero registradas igual que la clase IA.
 console.log("Corpus v1.1: experimentos");

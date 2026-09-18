@@ -13,3 +13,10 @@ corpus/*/h-foro-*.md
 
 # Temporales de los tests del hook, por si alguno queda en Windows
 .hook-tmp-*/
+
+# Clase humana del corpus v1.2: textos solo en local, no se redistribuyen.
+corpus-v1.2/*/h-*.md
+
+
+# Paquetes de release generados con npm pack y Compress-Archive
+dist-release/
