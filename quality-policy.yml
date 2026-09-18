@@ -3,7 +3,8 @@
 schema_version: 1
 
 rules:
-  stable_min: 24
+  # Era 24. Bajó a 23 el 2026-09-18 al pasar dos reglas a candidate por precisión adjudicada (ver docs/decisions.md).
+  stable_min: 23
   stable_max: 30
   # Una regla stable necesita ejemplos positivos y negativos, evidencia, falsos positivos conocidos y revisión.
   min_positive_examples: 2

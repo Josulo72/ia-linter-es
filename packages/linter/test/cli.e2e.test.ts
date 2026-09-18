@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
-import { AI_TEXT, HUMAN_TEXT, cli, tmpProject } from "./helpers.js";
+import { createHash } from "node:crypto";
+import { parse as parseYaml } from "yaml";
+import { AI_TEXT, HUMAN_TEXT, REPO_ROOT, cli, tmpProject } from "./helpers.js";
 
 describe("CLI E2E: lint", () => {
   it("falla con texto de patrones densos y pasa con texto editado", () => {
@@ -110,8 +112,10 @@ describe("CLI E2E: rules, config, baseline", () => {
     const l = cli(["rules", "list", "--json"]);
     const rules = JSON.parse(l.stdout);
     const stable = rules.filter((r: { status: string }) => r.status === "stable").length;
-    expect(stable).toBeGreaterThanOrEqual(24);
-    expect(stable).toBeLessThanOrEqual(30);
+    // Los límites salen de la política, no se copian aquí: cambiarlos exige una entrada en docs/decisions.md.
+    const policy = parseYaml(fs.readFileSync(path.join(REPO_ROOT, "quality-policy.yml"), "utf8"));
+    expect(stable).toBeGreaterThanOrEqual(policy.rules.stable_min);
+    expect(stable).toBeLessThanOrEqual(policy.rules.stable_max);
     const e = cli(["rules", "explain", "lexico/muletillas-ia"]);
     expect(e.status).toBe(0);
     expect(e.stdout).toContain("Cómo reescribir");
@@ -152,5 +156,54 @@ describe("CLI E2E: rules, config, baseline", () => {
     expect(r2.baseline.stale).toBeGreaterThan(10);
     expect(cli(["baseline", "update"], { cwd: dir }).status).toBe(0);
     expect(JSON.parse(fs.readFileSync(path.join(dir, "bl.json"), "utf8")).entries).toHaveLength(0);
+  });
+});
+
+describe("CLI E2E: benchmark run --annotations", () => {
+  const RULE = "lexico/muletillas-ia";
+
+  /** Un corpus de una muestra, con la adjudicación por defecto marcando `correct` el primer hallazgo de RULE. */
+  function corpusConAdjudicacion(): { dir: string; key: string } {
+    const sha = createHash("sha256").update(AI_TEXT).digest("hex");
+    const dir = tmpProject({
+      "corpus/ia.md": AI_TEXT,
+      "corpus/manifests/development.yml": `schema_version: 1\npartition: development\nsamples:\n  - { id: s1, class: ai, file: ia.md, register: x, sha256: ${sha} }\n`,
+    });
+    const lint = JSON.parse(cli(["lint", "--stdin", "--stdin-filename", "ia.md", "-f", "json", "--fail-on", "never"], { cwd: path.join(dir, "corpus"), input: AI_TEXT }).stdout);
+    const f = lint.files[0].findings.find((x: { rule: string }) => x.rule === RULE);
+    const key = `s1|${RULE}|${f.fingerprint}`;
+    fs.mkdirSync(path.join(dir, "benchmark", "annotations"), { recursive: true });
+    fs.writeFileSync(path.join(dir, "benchmark", "annotations", "development.yml"), `schema_version: 1\nadjudications:\n  "${key}": correct\n`, "utf8");
+    return { dir, key };
+  }
+  const bench = (dir: string, extra: string[] = []) =>
+    cli(["benchmark", "run", "--corpus", "corpus", "--partition", "development", ...extra], { cwd: dir });
+
+  it("sin la opción lee benchmark/annotations/<partición>.yml, como hasta ahora", () => {
+    const { dir } = corpusConAdjudicacion();
+    const r = bench(dir);
+    expect(r.status).toBe(0);
+    const rep = JSON.parse(r.stdout);
+    expect(rep.per_rule[RULE].adjudicated).toEqual({ correct: 1, incorrect: 0, precision: 1 });
+    expect(rep.config).not.toHaveProperty("annotations");
+  });
+
+  it("con la opción lee solo ese archivo, lo registra en el informe y cuenta las adjudicaciones huérfanas", () => {
+    const { dir, key } = corpusConAdjudicacion();
+    fs.mkdirSync(path.join(dir, "adj"), { recursive: true });
+    fs.writeFileSync(path.join(dir, "adj", "v2.yml"), `schema_version: 1\nadjudications:\n  "${key}": incorrect\n  "s1|${RULE}|000000000000000000000000": correct\n`, "utf8");
+    const r = bench(dir, ["--annotations", "adj/v2.yml"]);
+    expect(r.status).toBe(0);
+    const rep = JSON.parse(r.stdout);
+    expect(rep.per_rule[RULE].adjudicated).toEqual({ correct: 0, incorrect: 1, precision: 0 });
+    expect(rep.config.annotations).toBe("adj/v2.yml");
+    expect(rep.notes).toContain("1 adjudicaciones no corresponden a ningún hallazgo de esta ejecución.");
+  });
+
+  it("un archivo de adjudicaciones que no existe es un error, no un informe sin precisión", () => {
+    const { dir } = corpusConAdjudicacion();
+    const r = bench(dir, ["--annotations", "adj/no-existe.yml"]);
+    expect(r.status).toBe(2);
+    expect(r.stderr).toContain("no existe el archivo de adjudicaciones");
   });
 });

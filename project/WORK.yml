@@ -99,3 +99,105 @@ blocks:
       Todos los gates en verde en Windows. macOS y Linux quedan cubiertos por el workflow de CI,
       cuya evidencia depende del primer push. Pendientes del propietario: push, npm publish e
       instalación del plugin en ~/.claude.
+
+  # Fase 2: el circuito de reescritura. Detalle, decisiones D1 a D3 y tabla de archivos en project/PLAN.md.
+  - id: B7
+    title: Cerrar el trabajo pendiente
+    objective: Revisar, probar y commitear los 15 archivos modificados antes de abrir nada nuevo.
+    depends_on: [B6]
+    deliverables:
+      - diff actual de packages/linter/src y scripts/gates.mjs, con un test para cada cambio
+      - entrada en docs/decisions.md sobre fs en la API, o comentario corregido en gates.mjs
+    tests:
+      - pnpm typecheck, build, test, gates, lint:self y pack:check
+    acceptance: git status limpio tras el commit del propietario; gates en verde.
+    status: done
+    notes: Commit 5daad1c. typecheck, build, 77 tests, gates, lint:self y pack:check en verde.
+
+  - id: B8
+    title: Ritmo solo donde separa
+    objective: estructura/ritmo-plano deja de estar activa en el perfil correo (decisión D1, tomada 2026-09-18); sigue en chat, readme y redes.
+    depends_on: [B7]
+    deliverables:
+      - rules/definitions/estructura--ritmo-plano.yml (profiles)
+      - docs/decisions.md y docs/rules.md regenerado
+      - benchmark/reports/development-v1.2-correo.json y anexo en benchmark/reports/v1.2.md
+    tests:
+      - gates; el holdout v1.1, evaluado con perfil chat, no cambia
+    acceptance: decisión registrada; los informes de holdout v1.2 no se regeneran.
+    status: done
+    notes: >-
+      D1 tomada el 2026-09-18: fuera solo de correo. Readme se probó sin la regla y se descartó
+      (mismas falsas alarmas humanas, menos IA detectada). Cifras en docs/decisions.md y en el anexo de v1.2.md.
+
+  - id: B9
+    title: Adjudicación de development v1.2
+    objective: Precisión adjudicada por regla en correo, readme y redes para poder promover o retirar reglas (decisión D2).
+    depends_on: [B8]
+    deliverables:
+      - opción --annotations en benchmark run
+      - benchmark/annotations/v1.2/{correo,readme,redes}.yml
+      - informes de development v1.2 con precisión y propuestas de promoción decididas
+      - docs/benchmark.md
+    tests:
+      - benchmark run sin --annotations da la salida de antes; con --annotations lee solo ese archivo
+    acceptance: stable dentro de los límites de quality-policy.yml (23 a 30 desde el cierre de B9); cada cambio de estado con su entrada en docs/decisions.md.
+    status: done
+    notes: >-
+      D2: adjudicó GPT-5.6 Sol en ChatGPT a ciegas (declarado por el propietario); 13 correct y 37 incorrect,
+      con el único dudoso (s-010) resuelto por el propietario como incorrect. Estado: pregunta-retorica-apertura
+      y encabezado-title-case bajan a candidate, stable_min pasa de 24 a 23 (quedan 23 stable) y
+      comillas-angulares se apaga en correo. Ninguna candidate promovida. Las tres reglas de longitud de frase
+      no se adjudican. Todos los gates en verde.
+
+  - id: B10
+    title: Reporter de revisión y adaptadores
+    objective: Que el hook, /revisar y la skill den al modelo fragmento, regla y rewrite_guidance.
+    depends_on: [B9]
+    deliverables:
+      - reporter revision (reporters, cli y config)
+      - integrations/claude-code/scripts/revisar-respuesta.mjs, commands/revisar.md y skills/escribir-en-espanol/SKILL.md
+      - docs/configuration.md
+    tests:
+      - unitario del reporter; E2E de la CLI con --format revision; E2E del hook revisados a mano; paridad JSON sin cambios
+    acceptance: el JSON de lint sale igual byte a byte; SCHEMA_VERSION sigue en 1.
+    status: pending
+
+  - id: B11
+    title: Situaciones y exportación a otros asistentes
+    objective: Comprobar que guía y perfiles cuadran por situación y exportar la guía para el AGENTS.md de otros proyectos.
+    depends_on: [B10]
+    deliverables:
+      - packages/linter/rules/situaciones.yml
+      - gates situaciones y agents-md en scripts/gates.mjs
+      - integrations/agents-md/{build.mjs,escribir-en-espanol.md,README.md}
+    tests:
+      - los dos gates pasan, y fallan cuando se rompen a propósito
+    acceptance: humano.md sigue escrita a mano; ningún tercer sitio declara perfiles.
+    status: pending
+
+  - id: B12
+    title: Corpus v1.3 con clase IA externa
+    objective: Clase IA de un proveedor distinto de Claude y un holdout nuevo sin usar (decisión D3).
+    depends_on: [B9]
+    deliverables:
+      - corpus/policy/prompts-v1.3.yml y corpus-v1.3/ con manifiestos
+      - benchmark/configs/holdout-v1.3.lock
+      - scripts/corpus-check.mjs con v1.3
+    tests:
+      - corpus-check con v1.3; solo se ejecuta development
+    acceptance: la generación la hace el propietario; ninguna clave en el repositorio.
+    status: pending
+
+  - id: B13
+    title: Cierre de la fase 2
+    objective: Bundles, versión 1.1.0, evidencia y estado.
+    depends_on: [B11]
+    deliverables:
+      - bundles de integrations regenerados
+      - CHANGELOG.md y versión 1.1.0
+      - project/EVIDENCE/B7-B13-fase2.md y project/STATE.md
+    tests:
+      - todos los gates, lint:self y pack:check
+    acceptance: solo quedan push, release y npm publish, que hace el propietario.
+    status: pending

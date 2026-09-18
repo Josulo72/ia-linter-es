@@ -58,7 +58,7 @@ Lo que consigue está medido: quita del todo las rayas de inciso, las comillas a
 
 ## El linter
 
-38 reglas, 25 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `ia-linter-es rules explain <id>` te lo cuenta.
+38 reglas, 23 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `ia-linter-es rules explain <id>` te lo cuenta.
 
 Hay ocho perfiles, porque no se escribe igual un mensaje que un contrato:
 
@@ -127,8 +127,8 @@ Los informes enteros están en `benchmark/reports/v1.1.md` y `v1.2.md`, cada uno
 - Toda la separación viene de una sola regla, la del ritmo, y esa regla es `candidate`. Quitándola, la mediana de los textos generados baja a cero, igual que la de los humanos. Si un modelo aprende a variar la longitud de sus frases, el índice deja de separar.
 - La clase humana del banco v1.2 está contaminada y sus cifras no valen. El filtro que debía dejar solo español de España aceptaba un texto con una sola marca peninsular, y en el registro `readme` esa marca era justo la palabra que la consulta de GitHub ya garantizaba, así que aprobaba por construcción todo lo que encontraba. El filtro estricto que aplica el proyecto a Reddit no se aplicaba ni a README, ni a correo, ni a los textos del fediverso. Tampoco había nada que descartara texto que no es prosa. Resultado: hay textos no peninsulares y textos que no son prosa dentro de la clase humana. El filtro está corregido y hay un script que dice cuáles se caen (`benchmark/scripts/auditar-corpus-humano.mjs`), pero hasta que el corpus se rehaga y se vuelva a medir, todo lo que dice el punto siguiente está en el aire.
 - En correo y en README el índice puntúa más alto a los textos humanos que a los generados. Medido en el banco v1.2: la separación es de −9 en correo y −2 en README, con exactitud equilibrada de 0,367 y 0,412, o sea peor que tirar una moneda. Solo en redes sale bien, +18. La causa está localizada: los correos de una lista técnica y los README escriben frases de longitud parecida porque el género lo pide, y la regla del ritmo los marca por eso. Con esos dos perfiles, hoy, el índice no te sirve para separar nada. Las cifras y el porqué, en `benchmark/reports/v1.2.md`.
-- Nueve de las 25 reglas estables no disparan en el corpus v1.2 y el gate de falsos positivos las aprueba por vacío. Otras tres bajaron a `candidate` por no disparar nunca en ninguna versión. Y `repeticion/inicio-parrafo`, que sigue estable, marca 4 README humanos y ningún generado: su tasa de falsos positivos ahí es de 2,019 por mil palabras, por encima del máximo de 1,5 que pide `quality-policy.yml`. Está sin resolver.
-- Ninguna regla tiene adjudicación de hallazgos en ninguna partición. Está medido cuántas veces salta cada regla, no cuántas acierta, así que la precisión por regla es `null` en las 38.
+- Nueve de las 23 reglas estables no disparan en el corpus v1.2 y el gate de falsos positivos las aprueba por vacío. Y `repeticion/inicio-parrafo`, que sigue estable, marca 4 README humanos y ningún generado: su tasa de falsos positivos ahí es de 2,019 por mil palabras, por encima del máximo de 1,5 que pide `quality-policy.yml`. Está sin resolver.
+- Solo está adjudicado development de v1.2, con un adjudicador y sobre el corpus contaminado del punto anterior. En el conjunto congelado sigue sin adjudicar: ahí está medido cuántas veces salta cada regla, no cuántas acierta.
 - Los textos humanos no se redistribuyen. En el repositorio está el manifiesto con la URL, la fecha y el hash; los textos se bajan en local con el script de descarga.
 - Es español de España. En otras variedades marcará cosas que allí son normales.
 

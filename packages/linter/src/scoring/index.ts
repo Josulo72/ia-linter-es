@@ -34,7 +34,7 @@ export function computeScore(
       const contribution = weight * Math.min(cap, 1 + Math.log(n));
       return { rule, findings: n, contribution: round2(contribution) };
     })
-    .sort((a, b) => b.contribution - a.contribution || a.rule.localeCompare(b.rule));
+    .sort((a, b) => b.contribution - a.contribution || a.rule.localeCompare(b.rule, "en"));
   if (eligibleWords < minWords) {
     return { index: null, eligibleWords, minWords, contributors };
   }

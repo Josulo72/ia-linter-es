@@ -20,7 +20,7 @@ Rule Pack `ia-linter-es/oficial` v1.0.0. 38 reglas compiladas.
 | `estructura/ritmo-metronomo` | candidate | estructura | structure | off | 2 (cap 2) |
 | `estructura/ritmo-plano` | candidate | estructura | structure | off | 2 (cap 2) |
 | `formato/comillas-angulares` | candidate | formato | regex | off | 1 (cap 2) |
-| `formato/encabezado-title-case` | stable | formato | structure | info | 1.5 (cap 3) |
+| `formato/encabezado-title-case` | candidate | formato | structure | info | 1.5 (cap 3) |
 | `formato/lista-negrita-inicial` | stable | formato | structure | info | 1.5 (cap 2) |
 | `formato/negrita-abre-parrafo` | candidate | formato | structure | info | 1.5 (cap 2) |
 | `formato/raya` | candidate | formato | regex | off | 1.5 (cap 3) |
@@ -40,7 +40,7 @@ Rule Pack `ia-linter-es/oficial` v1.0.0. 38 reglas compiladas.
 | `retorica/no-es-x-es-y` | candidate | retorica | regex | warning | 2 (cap 3) |
 | `retorica/no-se-trata-de` | stable | retorica | sequence | warning | 2 (cap 3) |
 | `retorica/no-solo-sino` | stable | retorica | sequence | warning | 1.5 (cap 3) |
-| `retorica/pregunta-retorica-apertura` | stable | retorica | regex | info | 1 (cap 3) |
+| `retorica/pregunta-retorica-apertura` | candidate | retorica | regex | info | 1 (cap 3) |
 | `retorica/triada` | stable | retorica | structure | info | 1 (cap 3) |
 
 ## densidad/adjetivos-grandilocuentes
@@ -315,6 +315,7 @@ Es la diferencia más clara entre un mensaje escrito por una persona y uno gener
 **Falsos positivos conocidos:**
 - Mensajes que enumeran datos o pasos, donde la uniformidad es funcional.
 - Textos de menos de ocho frases: la regla no se aplica.
+- Correos de lista técnica: el género pide frases de longitud parecida. En corpus v1.2 marca 8 de 15 correos humanos (FP/1000 2,107), por eso no está activa en el perfil correo.
 
 **Ejemplo:**
 
@@ -332,6 +333,7 @@ Son las correctas en prosa editada, pero no están en el teclado y casi nadie la
 
 **Falsos positivos conocidos:**
 - Quien escribe con un teclado o un editor que las inserta solo.
+- Correos de lista técnica, que citan valores y nombres entre « »: en development v1.2 de correo, 0 aciertos en 7 hallazgos adjudicados y FP/1000 de 1,844. Por eso no está activa en el perfil correo.
 
 **Ejemplo:**
 

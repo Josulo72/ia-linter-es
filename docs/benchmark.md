@@ -70,7 +70,8 @@ En `corpus/archive/v1.0`, con sus manifiestos y su lock. 45 textos humanos de BO
 | `benchmark/scripts/fetch-foros.mjs` | Descarga la clase humana cotidiana (solo local). Con `--from-manifest` rehace exactamente los textos del manifiesto y comprueba su hash | sí |
 | `benchmark/scripts/fetch-human.mjs` | Descarga la clase humana formal de v1.0 | sí |
 | `benchmark/scripts/build-manifests.mjs` | Genera manifiestos, deduplica y congela el holdout | no |
-| `benchmark/scripts/dump-findings.mjs` | Lista hallazgos con la clave de adjudicación | no |
+| `benchmark/scripts/dump-findings.mjs` | Lista hallazgos con la clave de adjudicación, con el mismo contexto que `benchmark run`. Con `--ciego` escribe el paquete para adjudicar | no |
+| `benchmark/scripts/aplicar-adjudicacion.mjs` | Traduce las respuestas de un adjudicador ciego con el mapa y escribe el archivo de adjudicación | no |
 | `scripts/corpus-check.mjs` | Licencias, trazabilidad, hashes, congelación y veto de ambos corpus; forma parte de `pnpm gates` | no |
 | `ia-linter-es benchmark run --profile <perfil>` | Métricas por regla y agregadas (§12) | no |
 
@@ -87,15 +88,43 @@ Auditoría del propio banco: `benchmark/reports/auditoria-banco-v1.1.md` y `audi
 
 Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil palabras humanas, precisión adjudicada, desglose por registro y tiempo; agregadas, matriz de confusión, TPR, FPR, precisión, exactitud equilibrada, medianas e intervalos de Wilson al 95 %. No se publica recall por regla.
 
+## Adjudicación
+
+La precisión de una regla sale de revisar sus hallazgos uno a uno y marcar cada uno como `correct` (el patrón está y es el caso que la regla quiere señalar, lo haya escrito quien lo haya escrito) o `incorrect` (coincide en la forma pero no es ese caso).
+
+En v1.2 se adjudica development por registro, y a ciegas. La adjudicación de v1.2 la hizo GPT-5.6 Sol, una vez, como validación externa del benchmark (ver D2 en `docs/decisions.md`). Es trabajo de medición y no del producto: el linter no usa ningún modelo para analizar ni lo necesita para funcionar. Se hace así:
+
+```
+node benchmark/scripts/dump-findings.mjs development --corpus corpus-v1.2 --register correo --profile correo --ciego benchmark/annotations/v1.2/paquetes
+```
+
+Eso escribe dos archivos. `paquete-correo.md` es lo que se le da a quien adjudica: el criterio, y por cada hallazgo la regla, qué busca, el fragmento y el párrafo donde está. No lleva el id de la muestra, ni si el texto es humano o generado, ni el estado de la regla, y los hallazgos van mezclados con ids opacos (`c-001`…). `mapa-correo.json` traduce cada id opaco a la clave del benchmark y no se le da a quien adjudica. La carpeta `paquetes/` no se sube al repositorio porque lleva párrafos de la clase humana.
+
+Las respuestas se guardan tal como llegan en `benchmark/annotations/v1.2/respuestas/<registro>.yml` (solo ids opacos y valores) y se traducen con el mapa:
+
+```
+node benchmark/scripts/aplicar-adjudicacion.mjs --register correo --respuestas benchmark/annotations/v1.2/respuestas/correo.yml --mapa benchmark/annotations/v1.2/paquetes/mapa-correo.json --adjudicador "<proveedor y modelo>" --salida benchmark/annotations/v1.2/correo.yml
+```
+
+El script falla sin escribir nada si falta una respuesta, si sobra, si un id está repetido o si un valor no es `correct`, `incorrect` o `dudoso`. Los `dudoso` no se adjudican: quedan en la lista `dudosos` del archivo hasta que alguien los revise. Lo que decida esa persona va en un archivo aparte que se pasa con `--revision`; solo puede resolver ids que el adjudicador dejó en `dudoso`. El archivo lleva claves y no fragmentos, porque la clase humana no se redistribuye. Se evalúan con:
+
+```
+node packages/linter/dist/cli/main.js benchmark run --corpus corpus-v1.2 --partition development --register correo --profile correo --annotations benchmark/annotations/v1.2/correo.yml
+```
+
+Hay que pasar `--annotations`. Sin la opción, el benchmark lee `benchmark/annotations/<partición>.yml`, un nombre sin versión que comparten todos los corpus con partición `development`.
+
+Las tres reglas de longitud de frase (`estructura/longitud-uniforme`, `estructura/ritmo-plano` y `estructura/ritmo-metronomo`) no entran en el paquete y su precisión adjudicada es `null`. Miden la variación de longitud de las frases del texto entero, así que en un fragmento no hay nada que leer para decir si aciertan, y darlas por correctas porque el número cumple el umbral sería inflar la cifra. Se evalúan por FP/1000 en la clase humana y por su efecto en las pruebas globales: separación de medianas y exactitud equilibrada por registro. `longitud-uniforme` es `stable` y por eso no puede cumplir `min_adjudicated_precision`. Está registrado en `docs/decisions.md`.
+
 ## Límites
 
 - **La clase humana de v1.2 está contaminada.** El filtro de español de España aceptaba con una sola marca peninsular; en `readme` esa marca coincidía con la palabra buscada por la consulta de GitHub (`ordenador`, `fichero`, `instalación`), así que no descartaba nada. El filtro estricto solo se aplicaba a Reddit, no a README, correo ni fediverso, y no había ningún filtro de prosa, así que podía entrar letra de canción o verso. Corregido en `registros-comun.mjs` y `fetch-registros.mjs`; `benchmark/scripts/auditar-corpus-humano.mjs` lista los textos que ya no pasan. Mientras el corpus no se rehaga con `--append` y no se vuelva a medir, las cifras de v1.2 no son utilizables.
 - 84 textos en v1.1 y 270 en v1.2. Los intervalos siguen siendo anchos y se solapan entre particiones.
 - Toda la separación depende de una regla, y es `candidate`. Sin las dos reglas de ritmo, o contando solo las `stable`, la separación en holdout es 0 en v1.1, y en v1.2 es 0 en correo, 0 en redes y −6 en README.
 - En correo y en README el índice puntúa más alto a los humanos que a los generados. La exactitud equilibrada ahí es 0,367 y 0,412, por debajo del azar. Con esos dos perfiles el índice no discrimina.
-- Nueve de las 25 reglas `stable` no disparan en el corpus v1.2. El gate de falsos positivos las aprueba por vacío.
+- Nueve de las 23 reglas `stable` no disparan en el corpus v1.2. El gate de falsos positivos las aprueba por vacío.
 - `repeticion/inicio-parrafo` es `stable` y en el holdout de README marca 4 textos humanos y ninguno generado: 2,019 falsos positivos por mil palabras, por encima del máximo de 1,5 de `quality-policy.yml`. El gate no lo ve porque mide sobre el holdout v1.1, donde esa regla no dispara. Sin decidir.
-- No hay adjudicaciones en ninguna versión: la precisión por regla es `null` en las 38. Está medido cuántas veces salta cada regla, no cuántas acierta. Sin eso ninguna regla puede promoverse ni retirarse con la política en la mano.
+- v1.0 y v1.1 no tienen adjudicaciones, y en v1.2 solo está adjudicado development, con un adjudicador y sobre el corpus contaminado del primer punto. En holdout la precisión por regla sigue siendo `null` en las 38.
 - La clase humana de redes mezcla 12 publicaciones del fediverso con 18 de Reddit, más largas, mientras que la clase IA son 30 hilos cortos. Parte de la separación de redes puede venir del formato y no de la voz.
 - Un solo revisor, que además escribió las reglas.
 - La clase IA es de un solo proveedor y de la misma familia de modelos que diseñó las reglas.

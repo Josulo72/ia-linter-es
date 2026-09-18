@@ -20,11 +20,14 @@ export interface SuppressionDirective {
 
 const DIRECTIVE_RE = /<!--\s*ia-linter-(disable-next-line|disable-line|disable-file|disable|enable)\b([^>]*?)-->/g;
 
-export function parseSuppressions(text: string, lineStarts: number[]): SuppressionDirective[] {
+export function parseSuppressions(text: string, lineStarts: number[], ignore: [number, number][] = []): SuppressionDirective[] {
   const out: SuppressionDirective[] = [];
   const re = new RegExp(DIRECTIVE_RE.source, "g");
   let m: RegExpExecArray | null;
   while ((m = re.exec(text)) !== null) {
+    // Una directiva dentro de código (un ejemplo en la documentación) no es una directiva.
+    const at = m.index;
+    if (ignore.some(([s, e]) => at >= s && at < e)) continue;
     const kindRaw = m[1] as string;
     let body = (m[2] ?? "").trim();
     let reason: string | undefined;

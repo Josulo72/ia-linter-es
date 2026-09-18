@@ -1,0 +1,26 @@
+schema_version: 1
+corpus: corpus-v1.2
+partition: development
+register: redes
+profile: redes
+reviewers: 1
+adjudicador: GPT-5.6 Sol en ChatGPT (declarado por el propietario; sin sesión registrada)
+metodo: "ciego: sin id de muestra, sin clase humano/IA y sin estado de la regla; ver docs/benchmark.md"
+no_adjudicadas:
+  - estructura/longitud-uniforme
+  - estructura/ritmo-plano
+  - estructura/ritmo-metronomo
+dudosos: []
+revisados_por_el_propietario:
+  - ai-s09|densidad/intensificadores|a5aaa97ab35b1d985cb5f82c
+adjudications:
+  ai-s01|retorica/pregunta-retorica-apertura|c68f0a38e8f113ad95c1dcb3: correct
+  ai-s03|retorica/pregunta-retorica-apertura|b5b578b560e19638c18885c9: correct
+  ai-s04|lexico/honestidad-anunciada|467e3844b8b3a185801c200a: correct
+  ai-s07|formato/sentencia-dos-puntos|3aa49f84718ae696634c4eba: correct
+  ai-s09|densidad/intensificadores|a5aaa97ab35b1d985cb5f82c: incorrect
+  ai-s14|retorica/no-es-x-es-y|b53bc7c041972292c2f79d38: incorrect
+  h-re05|retorica/no-es-x-es-y|894e27f6c0775a808e4b1dea: incorrect
+  h-re09|retorica/pregunta-retorica-apertura|7ca027674e4ea0a85b50b837: correct
+  h-re21|retorica/pregunta-retorica-apertura|1641c542bbbe434329c30d25: incorrect
+  h-re29|retorica/triada|6fdf98c06c4f49e055d2ff0e: correct

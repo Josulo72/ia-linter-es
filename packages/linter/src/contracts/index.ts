@@ -132,6 +132,8 @@ export interface Document {
   tokens: Token[];
   /** Palabras elegibles (tokens alfabéticos de bloques analizados). */
   eligibleWords: number;
+  /** Rangos [inicio, fin) del original ocupados por código en Markdown (bloques e inline). Las directivas de supresión escritas ahí son ejemplos, no directivas. */
+  codeRanges?: [number, number][];
 }
 
 export interface Finding {

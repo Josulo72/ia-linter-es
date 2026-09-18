@@ -1,0 +1,27 @@
+schema_version: 1
+corpus: corpus-v1.2
+partition: development
+register: correo
+profile: correo
+reviewers: 1
+adjudicador: GPT-5.6 Sol en ChatGPT (declarado por el propietario; sin sesión registrada)
+metodo: "ciego: sin id de muestra, sin clase humano/IA y sin estado de la regla; ver docs/benchmark.md"
+no_adjudicadas:
+  - estructura/longitud-uniforme
+  - estructura/ritmo-plano
+  - estructura/ritmo-metronomo
+dudosos: []
+adjudications:
+  ai-c01|retorica/pregunta-retorica-apertura|18755377f53a10309c9d7b7c: incorrect
+  ai-c02|densidad/adverbios-mente|adda9715b038447a6e4a91d2: correct
+  ai-c05|retorica/pregunta-retorica-apertura|26da998bf188d0dab8a9fe2e: incorrect
+  ai-c12|retorica/pregunta-retorica-apertura|7f098959c6ef8fd48559a767: incorrect
+  h-co03|formato/comillas-angulares|b8354621a2a294a859a0439c: incorrect
+  h-co03|formato/comillas-angulares|c028909fe1cd081086f07b74: incorrect
+  h-co09|repeticion/ngramas|92e1c285ac615fef1ce3c561: incorrect
+  h-co15|retorica/pregunta-retorica-apertura|eb6b35a7009e09d19281015d: incorrect
+  h-co17|formato/comillas-angulares|5d02ab0e294662bb55b287b7: incorrect
+  h-co17|formato/comillas-angulares|c6d9177b8cff9a52e0c8d1f2: incorrect
+  h-co19|formato/comillas-angulares|7a554bf45968b9daa868d529: incorrect
+  h-co19|formato/comillas-angulares|842701c4d38830cec2da1b6a: incorrect
+  h-co19|formato/comillas-angulares|8a5b652dbf5c87485cb9c52f: incorrect

@@ -28,7 +28,11 @@ export function splitSentences(block: TextBlock, blockIndex: number): Sentence[]
   let m: RegExpExecArray | null;
   while ((m = re.exec(text)) !== null) {
     const end = m.index + m[0].length;
-    if (m[0] !== "\n") {
+    if (m[0] === "\n") {
+      // Un salto de línea dentro de un párrafo envuelto a mano (correo, README a 72-80 columnas) no cierra la frase:
+      // si la línea siguiente sigue en minúscula, es la misma frase. Sin esto el ritmo mide líneas y no frases.
+      if (/^[ \t]*\p{Ll}/u.test(text.slice(end, end + 8))) continue;
+    } else {
       const before = text.slice(Math.max(start, m.index - 8), m.index);
       const wordBefore = /(\p{L}+)$/u.exec(before)?.[1]?.toLowerCase();
       const next = text.charAt(end);

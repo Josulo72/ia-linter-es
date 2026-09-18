@@ -26,7 +26,7 @@ export function entriesFromResults(files: FileResult[], reason?: string): Baseli
       entries.push(e);
     }
   }
-  entries.sort((a, b) => a.path.localeCompare(b.path) || a.rule.localeCompare(b.rule) || a.fingerprint.localeCompare(b.fingerprint));
+  entries.sort((a, b) => a.path.localeCompare(b.path, "en") || a.rule.localeCompare(b.rule, "en") || a.fingerprint.localeCompare(b.fingerprint, "en"));
   return entries;
 }
 
@@ -81,6 +81,6 @@ export function updateBaseline(
       }
     }
   }
-  entries.sort((a, b) => a.path.localeCompare(b.path) || a.rule.localeCompare(b.rule) || a.fingerprint.localeCompare(b.fingerprint));
+  entries.sort((a, b) => a.path.localeCompare(b.path, "en") || a.rule.localeCompare(b.rule, "en") || a.fingerprint.localeCompare(b.fingerprint, "en"));
   return { schema_version: SCHEMA_VERSION, created: (opts.now ?? new Date()).toISOString(), entries };
 }

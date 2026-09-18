@@ -67,7 +67,7 @@ export function reportTerminal(result: ScanResult, opts: { color?: boolean; verb
 
 export function reportSarif(result: ScanResult, rules: CompiledRule[], opts: { uriBase?: string } = {}): string {
   const used = new Set(result.files.flatMap((f) => f.findings.map((x) => x.rule)));
-  const ruleList = rules.filter((r) => used.has(r.id)).sort((a, b) => a.id.localeCompare(b.id));
+  const ruleList = rules.filter((r) => used.has(r.id)).sort((a, b) => a.id.localeCompare(b.id, "en"));
   const ruleIndex = new Map(ruleList.map((r, i) => [r.id, i]));
   const sarif = {
     $schema: "https://json.schemastore.org/sarif-2.1.0.json",
@@ -78,7 +78,7 @@ export function reportSarif(result: ScanResult, rules: CompiledRule[], opts: { u
           driver: {
             name: result.tool.name,
             version: result.tool.version,
-            informationUri: "https://github.com/jrollon/ia-linter-es",
+            informationUri: "https://github.com/Josulo72/ia-linter-es",
             rules: ruleList.map((r) => ({
               id: r.id,
               name: r.title,
@@ -100,7 +100,8 @@ export function reportSarif(result: ScanResult, rules: CompiledRule[], opts: { u
             locations: [
               {
                 physicalLocation: {
-                  artifactLocation: { uri: f.path.replace(/\\/g, "/"), uriBaseId: "PROJECTROOT" },
+                  // SARIF pide una referencia URI válida: espacios, «ñ» o «<texto>» van codificados por segmento.
+                  artifactLocation: { uri: f.path.replace(/\\/g, "/").split("/").map(encodeURIComponent).join("/"), uriBaseId: "PROJECTROOT" },
                   region: {
                     startLine: x.range.start.line,
                     startColumn: x.range.start.column,

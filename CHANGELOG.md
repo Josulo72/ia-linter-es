@@ -10,8 +10,9 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y l
   automática. El texto de la MIT se conserva en `LICENSE-MIT`. Afecta a quien integrara el proyecto
   bajo la licencia anterior.
 - Tres reglas bajan de `stable` a `candidate` por no disparar en ninguna versión del corpus:
-  `densidad/conectores`, `lexico/desde-hasta-pasando` y `lexico/metaforas-comodin`. Quedan 25 reglas
-  estables. No cambia su nivel por defecto ni su perfil, así que el linter marca lo mismo que antes.
+  `densidad/conectores`, `lexico/desde-hasta-pasando` y `lexico/metaforas-comodin`. Dejaron 25 reglas
+  estables, que el cierre de B9 bajó después a 23. No cambia su nivel por defecto ni su perfil, así que
+  el linter marca lo mismo que antes.
 - El gate del índice lee el estado de cada regla del rulepack compilado y no de la foto que guardó el
   informe congelado. Las métricas del informe se siguen leyendo del informe, que para eso está congelado.
 

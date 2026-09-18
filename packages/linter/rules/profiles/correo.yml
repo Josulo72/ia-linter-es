@@ -1,4 +1,3 @@
 # Perfil correo: natural y educado, sin jerga.
 rules:
-  formato/comillas-angulares: warning
   densidad/emojis: warning

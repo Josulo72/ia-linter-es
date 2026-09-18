@@ -9,7 +9,8 @@
     "threshold": 12,
     "min_words_for_index": 150,
     "profile": "correo",
-    "register": "correo"
+    "register": "correo",
+    "annotations": "benchmark/annotations/v1.2/correo.yml"
   },
   "corpus": {
     "samples": 30,
@@ -34,7 +35,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 4.1
+      "ms": 4.6
     },
     "densidad/adverbios-mente": {
       "status": "stable",
@@ -45,9 +46,9 @@
       "fp_per_1000_human_words": 0,
       "per_1000_ai_words": 0.29,
       "adjudicated": {
-        "correct": 0,
+        "correct": 1,
         "incorrect": 0,
-        "precision": null
+        "precision": 1
       },
       "by_register": {
         "correo": {
@@ -55,7 +56,7 @@
           "ai": 1
         }
       },
-      "ms": 3.8
+      "ms": 3.2
     },
     "densidad/conectores": {
       "status": "candidate",
@@ -71,7 +72,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 5.5
+      "ms": 7.9
     },
     "densidad/emojis": {
       "status": "stable",
@@ -87,7 +88,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.7
+      "ms": 1.6
     },
     "densidad/exclamaciones": {
       "status": "stable",
@@ -103,7 +104,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.3
+      "ms": 1.5
     },
     "densidad/intensificadores": {
       "status": "stable",
@@ -119,7 +120,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.9
+      "ms": 3.3
     },
     "densidad/verbos-comodin": {
       "status": "stable",
@@ -135,7 +136,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.9
+      "ms": 3.9
     },
     "estructura/cierre-formulario": {
       "status": "stable",
@@ -167,7 +168,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 4.3
+      "ms": 4.6
     },
     "estructura/encabezado-dos-puntos": {
       "status": "stable",
@@ -199,7 +200,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.9
+      "ms": 2.5
     },
     "estructura/lista-inicio-uniforme": {
       "status": "candidate",
@@ -215,7 +216,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 0.4
+      "ms": 0.5
     },
     "estructura/longitud-uniforme": {
       "status": "stable",
@@ -231,7 +232,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.6
+      "ms": 2.3
     },
     "estructura/ritmo-metronomo": {
       "status": "candidate",
@@ -247,52 +248,42 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 0.1
+      "ms": 0.3
     },
     "estructura/ritmo-plano": {
       "status": "candidate",
-      "findings_human": 8,
-      "findings_ai": 9,
-      "docs_human": 8,
-      "docs_ai": 9,
-      "fp_per_1000_human_words": 2.107,
-      "per_1000_ai_words": 2.614,
-      "adjudicated": {
-        "correct": 0,
-        "incorrect": 0,
-        "precision": null
-      },
-      "by_register": {
-        "correo": {
-          "human": 8,
-          "ai": 9
-        }
-      },
-      "ms": 0.1
-    },
-    "formato/comillas-angulares": {
-      "status": "candidate",
-      "findings_human": 7,
+      "findings_human": 0,
       "findings_ai": 0,
-      "docs_human": 3,
+      "docs_human": 0,
       "docs_ai": 0,
-      "fp_per_1000_human_words": 1.844,
+      "fp_per_1000_human_words": 0,
       "per_1000_ai_words": 0,
       "adjudicated": {
         "correct": 0,
         "incorrect": 0,
         "precision": null
       },
-      "by_register": {
-        "correo": {
-          "human": 7,
-          "ai": 0
-        }
+      "by_register": {},
+      "ms": 0.1
+    },
+    "formato/comillas-angulares": {
+      "status": "candidate",
+      "findings_human": 0,
+      "findings_ai": 0,
+      "docs_human": 0,
+      "docs_ai": 0,
+      "fp_per_1000_human_words": 0,
+      "per_1000_ai_words": 0,
+      "adjudicated": {
+        "correct": 0,
+        "incorrect": 0,
+        "precision": null
       },
+      "by_register": {},
       "ms": 0.1
     },
     "formato/encabezado-title-case": {
-      "status": "stable",
+      "status": "candidate",
       "findings_human": 0,
       "findings_ai": 0,
       "docs_human": 0,
@@ -321,7 +312,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 0.3
+      "ms": 0.4
     },
     "formato/negrita-abre-parrafo": {
       "status": "candidate",
@@ -369,7 +360,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.6
+      "ms": 2.5
     },
     "formato/sentencia-dos-puntos": {
       "status": "candidate",
@@ -385,7 +376,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 0.9
+      "ms": 1
     },
     "lexico/actualidad-generica": {
       "status": "stable",
@@ -401,7 +392,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.9
+      "ms": 3.5
     },
     "lexico/desde-hasta-pasando": {
       "status": "candidate",
@@ -433,7 +424,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.2
+      "ms": 2.5
     },
     "lexico/honestidad-anunciada": {
       "status": "candidate",
@@ -449,7 +440,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.4
+      "ms": 4
     },
     "lexico/metaforas-comodin": {
       "status": "candidate",
@@ -465,7 +456,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 4.9
+      "ms": 6.2
     },
     "lexico/muletillas-ia": {
       "status": "stable",
@@ -481,7 +472,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 6.8
+      "ms": 7
     },
     "lexico/ya-sea-enumeracion": {
       "status": "stable",
@@ -497,7 +488,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.4
+      "ms": 1.3
     },
     "repeticion/anafora": {
       "status": "stable",
@@ -513,7 +504,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.6
+      "ms": 2.8
     },
     "repeticion/inicio-parrafo": {
       "status": "stable",
@@ -529,7 +520,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 3
+      "ms": 2.5
     },
     "repeticion/ngramas": {
       "status": "candidate",
@@ -541,8 +532,8 @@
       "per_1000_ai_words": 0,
       "adjudicated": {
         "correct": 0,
-        "incorrect": 0,
-        "precision": null
+        "incorrect": 1,
+        "precision": 0
       },
       "by_register": {
         "correo": {
@@ -550,7 +541,7 @@
           "ai": 0
         }
       },
-      "ms": 10.1
+      "ms": 10.7
     },
     "retorica/arenga-final": {
       "status": "stable",
@@ -598,7 +589,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.4
+      "ms": 2.7
     },
     "retorica/no-solo-sino": {
       "status": "stable",
@@ -614,10 +605,10 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.4
+      "ms": 1.7
     },
     "retorica/pregunta-retorica-apertura": {
-      "status": "stable",
+      "status": "candidate",
       "findings_human": 1,
       "findings_ai": 3,
       "docs_human": 1,
@@ -626,8 +617,8 @@
       "per_1000_ai_words": 0.871,
       "adjudicated": {
         "correct": 0,
-        "incorrect": 0,
-        "precision": null
+        "incorrect": 4,
+        "precision": 0
       },
       "by_register": {
         "correo": {
@@ -651,45 +642,45 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.2
+      "ms": 2.5
     }
   },
   "aggregate": {
     "threshold": 12,
     "confusion": {
-      "tp": 9,
-      "fp": 9,
-      "tn": 6,
-      "fn": 6,
+      "tp": 1,
+      "fp": 1,
+      "tn": 14,
+      "fn": 14,
       "skipped_short": 0
     },
-    "tpr": 0.6,
-    "fpr": 0.6,
+    "tpr": 0.067,
+    "fpr": 0.067,
     "precision": 0.5,
     "balanced_accuracy": 0.5,
     "ci95": {
       "tpr": [
-        0.357,
-        0.802
+        0.012,
+        0.298
       ],
       "fpr": [
-        0.357,
-        0.802
+        0.012,
+        0.298
       ]
     },
-    "index_median_human": 12,
-    "index_median_ai": 17,
+    "index_median_human": 0,
+    "index_median_ai": 0,
     "by_register": {
       "correo": {
         "n_human": 15,
         "n_ai": 15,
-        "median_human": 12,
-        "median_ai": 17
+        "median_human": 0,
+        "median_ai": 0
       }
     }
   },
   "notes": [
-    "Sin adjudicaciones para esta partición: la precisión adjudicada por regla es null.",
+    "7 adjudicaciones no corresponden a ningún hallazgo de esta ejecución.",
     "No se publica recall por regla: el corpus no está anotado exhaustivamente.",
     "El índice mide densidad de patrones editoriales; el umbral solo se usa para evaluar separación, no como veredicto de autoría."
   ]

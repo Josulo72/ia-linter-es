@@ -1,7 +1,7 @@
 schema_version: 1
 id: formato/encabezado-title-case
 revision: 1
-status: stable
+status: candidate
 title: Encabezado con mayúsculas al estilo inglés
 summary: Encabezado con todas las palabras plenas en mayúscula inicial («Cómo Elegir Tu Mejor Estrategia»).
 category: formato

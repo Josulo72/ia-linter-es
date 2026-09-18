@@ -30,7 +30,7 @@ export interface BenchmarkReport {
   schema_version: 1;
   partition: string;
   tool: { version: string; rulepack: string };
-  config: { threshold: number; min_words_for_index: number; profile: string; register?: string };
+  config: { threshold: number; min_words_for_index: number; profile: string; register?: string; annotations?: string };
   corpus: { samples: number; human: number; ai: number; human_words: number; ai_words: number; manifest_sha256: string };
   per_rule: Record<
     string,
@@ -79,7 +79,17 @@ const median = (a: number[]) => {
   return s.length % 2 ? (s[m] as number) : ((s[m - 1] as number) + (s[m] as number)) / 2;
 };
 
-export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: string, opts: { register?: string } = {}): BenchmarkReport {
+/** Contexto con el que se evalúa un corpus: reglas a su nivel por defecto en el perfil pedido, sin overrides ni caché. Lo usa también dump-findings. */
+export function benchmarkContext(ctx: RunnerContext): RunnerContext {
+  return { ...ctx, config: { ...ctx.config, rules: {}, overrides: [], cache: { ...ctx.config.cache, enabled: false } } };
+}
+
+/**
+ * `annotations`: archivo de adjudicaciones. Sin él se busca `benchmark/annotations/<partición>.yml` junto al corpus, que es lo que
+ * reproducen los informes publicados. Ese nombre no lleva versión y lo comparten corpus distintos con la misma partición, así que
+ * para adjudicar un corpus concreto hay que pasar el archivo.
+ */
+export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: string, opts: { register?: string; annotations?: string } = {}): BenchmarkReport {
   const manifestPath = path.join(corpusDir, "manifests", `${partition}.yml`);
   if (!fs.existsSync(manifestPath)) throw new Error(`no existe el manifiesto ${manifestPath}`);
   const manifestRaw = fs.readFileSync(manifestPath, "utf8");
@@ -90,10 +100,12 @@ export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: s
   const benchRoot = path.resolve(corpusDir, "..", "benchmark");
   const thrFile = path.join(benchRoot, "configs", "threshold.yml");
   const threshold = fs.existsSync(thrFile) ? Number((parseYaml(fs.readFileSync(thrFile, "utf8")) as { index_threshold: number }).index_threshold) : 20;
-  const annFile = path.join(benchRoot, "annotations", `${partition}.yml`);
+  if (opts.annotations && !fs.existsSync(opts.annotations)) throw new Error(`no existe el archivo de adjudicaciones ${opts.annotations}`);
+  const annFile = opts.annotations ?? path.join(benchRoot, "annotations", `${partition}.yml`);
   const ann: Annotations = fs.existsSync(annFile) ? (parseYaml(fs.readFileSync(annFile, "utf8")) as Annotations) ?? {} : {};
+  const usedKeys = new Set<string>();
   // El benchmark siempre se ejecuta con todas las reglas activas a su nivel por defecto y sin caché.
-  const bctx: RunnerContext = { ...ctx, config: { ...ctx.config, rules: {}, overrides: [], cache: { ...ctx.config.cache, enabled: false } } };
+  const bctx = benchmarkContext(ctx);
   const perRule: BenchmarkReport["per_rule"] = {};
   for (const r of ctx.pack.rules) {
     perRule[r.id] = {
@@ -133,7 +145,9 @@ export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: s
         if (s.class === "human") pr.docs_human++;
         else pr.docs_ai++;
       }
-      const a = ann.adjudications?.[`${s.id}|${f.rule}|${f.fingerprint}`];
+      const key = `${s.id}|${f.rule}|${f.fingerprint}`;
+      const a = ann.adjudications?.[key];
+      if (a) usedKeys.add(key);
       if (a === "correct") pr.adjudicated.correct++;
       else if (a === "incorrect") pr.adjudicated.incorrect++;
     }
@@ -165,13 +179,25 @@ export function runBenchmark(ctx: RunnerContext, corpusDir: string, partition: s
     byReg[r] = { n_human: h.length, n_ai: a.length, median_human: h.length ? median(h) : null, median_ai: a.length ? median(a) : null };
   }
   if (!ann.adjudications) notes.push("Sin adjudicaciones para esta partición: la precisión adjudicada por regla es null.");
+  else if (opts.annotations) {
+    // Una adjudicación que no casa con ningún hallazgo suele ser una huella vieja: el texto o la regla cambiaron después de adjudicar.
+    const huerfanas = Object.keys(ann.adjudications).filter((k) => !usedKeys.has(k)).length;
+    if (huerfanas) notes.push(`${huerfanas} adjudicaciones no corresponden a ningún hallazgo de esta ejecución.`);
+  }
   notes.push("No se publica recall por regla: el corpus no está anotado exhaustivamente.");
   notes.push("El índice mide densidad de patrones editoriales; el umbral solo se usa para evaluar separación, no como veredicto de autoría.");
   return {
     schema_version: 1,
     partition,
     tool: { version: ctx.toolVersion, rulepack: ctx.pack.version },
-    config: { threshold, min_words_for_index: bctx.config.min_words_for_index, profile: bctx.config.profile, ...(opts.register ? { register: opts.register } : {}) },
+    config: {
+      threshold,
+      min_words_for_index: bctx.config.min_words_for_index,
+      profile: bctx.config.profile,
+      ...(opts.register ? { register: opts.register } : {}),
+      // Relativa a la carpeta que contiene el corpus, para que el informe no lleve rutas del equipo.
+      ...(opts.annotations ? { annotations: path.relative(path.resolve(corpusDir, ".."), path.resolve(opts.annotations)).replace(/\\/g, "/") } : {}),
+    },
     corpus: {
       samples: selected.length,
       human: selected.filter((s) => s.class === "human").length,
