@@ -141,12 +141,14 @@ blocks:
       - docs/benchmark.md
     tests:
       - benchmark run sin --annotations da la salida de antes; con --annotations lee solo ese archivo
-    acceptance: stable entre 24 y 30; cada cambio de estado con su entrada en docs/decisions.md.
-    status: in_progress
+    acceptance: stable dentro de los límites de quality-policy.yml (23 a 30 desde el cierre de B9); cada cambio de estado con su entrada en docs/decisions.md.
+    status: done
     notes: >-
-      D2 tomada el 2026-09-18: adjudica GPT-5.6 Sol a ciegas. Hecho: --annotations con tests y paquetes
-      ciegos (13 correo, 27 readme, 10 redes). Las tres reglas de longitud de frase no se adjudican.
-      Falta: respuestas, archivos de adjudicación, informes con precisión y propuestas de estado.
+      D2: adjudicó GPT-5.6 Sol en ChatGPT a ciegas (declarado por el propietario); 13 correct y 37 incorrect,
+      con el único dudoso (s-010) resuelto por el propietario como incorrect. Estado: pregunta-retorica-apertura
+      y encabezado-title-case bajan a candidate, stable_min pasa de 24 a 23 (quedan 23 stable) y
+      comillas-angulares se apaga en correo. Ninguna candidate promovida. Las tres reglas de longitud de frase
+      no se adjudican. Todos los gates en verde.
 
   - id: B10
     title: Reporter de revisión y adaptadores

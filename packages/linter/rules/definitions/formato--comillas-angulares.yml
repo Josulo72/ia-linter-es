@@ -12,7 +12,7 @@ conditions:
     - "«"
   kinds: [paragraph, plain, list_item]
 default_level: "off"
-profiles: { chat: info, correo: info, readme: info, redes: info }
+profiles: { chat: info, readme: info, redes: info }
 score: { weight: 1, cap: 2 }
 message: "Comillas angulares."
 explanation: >-
@@ -30,4 +30,5 @@ provenance:
   evidence: Exploración sobre development y sobre el README de un proyecto real (2026-09-17); ver benchmark/reports/v1.1.md.
   known_false_positives:
     - Quien escribe con un teclado o un editor que las inserta solo.
+    - "Correos de lista técnica, que citan valores y nombres entre « »: en development v1.2 de correo, 0 aciertos en 7 hallazgos adjudicados y FP/1000 de 1,844. Por eso no está activa en el perfil correo."
   reviewed_by: [jrollon]

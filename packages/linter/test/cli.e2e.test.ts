@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { AI_TEXT, HUMAN_TEXT, cli, tmpProject } from "./helpers.js";
+import { parse as parseYaml } from "yaml";
+import { AI_TEXT, HUMAN_TEXT, REPO_ROOT, cli, tmpProject } from "./helpers.js";
 
 describe("CLI E2E: lint", () => {
   it("falla con texto de patrones densos y pasa con texto editado", () => {
@@ -111,8 +112,10 @@ describe("CLI E2E: rules, config, baseline", () => {
     const l = cli(["rules", "list", "--json"]);
     const rules = JSON.parse(l.stdout);
     const stable = rules.filter((r: { status: string }) => r.status === "stable").length;
-    expect(stable).toBeGreaterThanOrEqual(24);
-    expect(stable).toBeLessThanOrEqual(30);
+    // Los límites salen de la política, no se copian aquí: cambiarlos exige una entrada en docs/decisions.md.
+    const policy = parseYaml(fs.readFileSync(path.join(REPO_ROOT, "quality-policy.yml"), "utf8"));
+    expect(stable).toBeGreaterThanOrEqual(policy.rules.stable_min);
+    expect(stable).toBeLessThanOrEqual(policy.rules.stable_max);
     const e = cli(["rules", "explain", "lexico/muletillas-ia"]);
     expect(e.status).toBe(0);
     expect(e.stdout).toContain("Cómo reescribir");

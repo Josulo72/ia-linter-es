@@ -87,7 +87,8 @@ function escribirPaqueteCiego() {
   const items = out
     .flatMap((d) => d.findings.filter((f) => !NO_ADJUDICABLES.has(f.rule)).map((f) => ({ ...f, text: d.text })))
     .sort((a, b) => sha(a.key).localeCompare(sha(b.key)));
-  const pref = register.slice(0, 1);
+  // Prefijo propio por registro: con la inicial, readme y redes compartían `r-` y sus respuestas se podían mezclar.
+  const pref = { correo: "c", readme: "m", redes: "s" }[register] ?? register;
   const mapa = {};
   const bloques = items.map((it, i) => {
     const id = `${pref}-${String(i + 1).padStart(3, "0")}`;

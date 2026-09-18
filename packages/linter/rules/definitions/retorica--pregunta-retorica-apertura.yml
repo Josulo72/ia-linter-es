@@ -1,7 +1,7 @@
 schema_version: 1
 id: retorica/pregunta-retorica-apertura
 revision: 1
-status: stable
+status: candidate
 title: Pregunta retórica de apertura
 summary: Un párrafo empieza con una pregunta y la responde a continuación («¿Te has preguntado…? La respuesta es…»).
 category: retorica

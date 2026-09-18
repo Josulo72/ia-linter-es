@@ -1,0 +1,41 @@
+schema_version: 1
+corpus: corpus-v1.2
+partition: development
+register: readme
+profile: readme
+reviewers: 1
+adjudicador: GPT-5.6 Sol en ChatGPT (declarado por el propietario; sin sesión registrada)
+metodo: "ciego: sin id de muestra, sin clase humano/IA y sin estado de la regla; ver docs/benchmark.md"
+no_adjudicadas:
+  - estructura/longitud-uniforme
+  - estructura/ritmo-plano
+  - estructura/ritmo-metronomo
+dudosos: []
+adjudications:
+  ai-r01|retorica/pregunta-retorica-apertura|ebe576efd83ce47b7d31be0a: correct
+  ai-r05|formato/sentencia-dos-puntos|3bfc1d38b68adfbb208699fb: incorrect
+  ai-r06|formato/encabezado-title-case|042e0f7f6c7bd21d78d2f0c8: correct
+  ai-r06|retorica/triada|e08f0e472971616aa2f1ebe9: incorrect
+  ai-r07|formato/encabezado-title-case|bd6fe97830ab2a3770fa2503: correct
+  ai-r08|lexico/ya-sea-enumeracion|b3859a26e01fd132310ddbd0: incorrect
+  ai-r08|retorica/triada|03cd9a66c9e0529a6bb90def: incorrect
+  ai-r12|formato/negrita-abre-parrafo|4cc7d545a430aeb5f1ed88dd: incorrect
+  ai-r12|retorica/pregunta-retorica-apertura|45ddf1c2280b4d63d87217f5: incorrect
+  ai-r12|retorica/pregunta-retorica-apertura|a1dd8fa7f4e5ff6964919f40: incorrect
+  ai-r12|retorica/pregunta-retorica-apertura|a54ced92dbce771c4cea7c0e: incorrect
+  h-rd05|formato/encabezado-title-case|c5d09722da790047f0c2c3e7: incorrect
+  h-rd05|repeticion/ngramas|1ff35e390bc36b229e395e79: correct
+  h-rd05|repeticion/ngramas|5c89bd1f70e44c388599fdbd: incorrect
+  h-rd05|repeticion/ngramas|7e3df9b8536b123d16e55df3: incorrect
+  h-rd07|lexico/actualidad-generica|d61d8b8f6f1479685250c7a6: correct
+  h-rd11|estructura/encabezado-dos-puntos|7296bbddf2bbce3276071363: incorrect
+  h-rd11|formato/negrita-abre-parrafo|23445d29b7f01ec06e07b266: incorrect
+  h-rd13|densidad/emojis|fe6e4b47d5e1815701f7d7df: correct
+  h-rd13|formato/encabezado-title-case|1d1a5a8efa28a2f9eb16186a: incorrect
+  h-rd15|formato/encabezado-title-case|096cf8301b41a36e6db8b382: incorrect
+  h-rd17|formato/encabezado-title-case|a93f7d6082b5943a3084fe98: incorrect
+  h-rd17|formato/negrita-abre-parrafo|89a1edbca730107009c70a8b: incorrect
+  h-rd21|densidad/verbos-comodin|8d568775543c74b7226b02ff: incorrect
+  h-rd23|formato/encabezado-title-case|f8bb4d14e1f5b0f3e1b07aca: incorrect
+  h-rd25|estructura/lista-inicio-uniforme|40e0d81888c7693102e12761: incorrect
+  h-rd25|estructura/lista-inicio-uniforme|94a48c464d412257d8f3f3e6: incorrect

@@ -44,6 +44,7 @@ En `corpus/archive/v1.0`, con sus manifiestos y su lock. 45 textos humanos de BO
 | `benchmark/scripts/fetch-human.mjs` | Descarga la clase humana formal de v1.0 | sí |
 | `benchmark/scripts/build-manifests.mjs` | Genera manifiestos, deduplica y congela el holdout | no |
 | `benchmark/scripts/dump-findings.mjs` | Lista hallazgos con la clave de adjudicación, con el mismo contexto que `benchmark run`. Con `--ciego` escribe el paquete para adjudicar | no |
+| `benchmark/scripts/aplicar-adjudicacion.mjs` | Traduce las respuestas de un adjudicador ciego con el mapa y escribe el archivo de adjudicación | no |
 | `scripts/corpus-check.mjs` | Licencias, trazabilidad, hashes, congelación y veto de ambos corpus; forma parte de `pnpm gates` | no |
 | `ia-linter-es benchmark run --profile <perfil>` | Métricas por regla y agregadas (§12) | no |
 
@@ -64,7 +65,7 @@ Métricas: por regla, hallazgos por clase, documentos afectados, FP por mil pala
 
 La precisión de una regla sale de revisar sus hallazgos uno a uno y marcar cada uno como `correct` (el patrón está y es el caso que la regla quiere señalar, lo haya escrito quien lo haya escrito) o `incorrect` (coincide en la forma pero no es ese caso).
 
-En v1.2 se adjudica development por registro, y a ciegas. Se hace así:
+En v1.2 se adjudica development por registro, y a ciegas. La adjudicación de v1.2 la hizo GPT-5.6 Sol, una vez, como validación externa del benchmark (ver D2 en `docs/decisions.md`). Es trabajo de medición y no del producto: el linter no usa ningún modelo para analizar ni lo necesita para funcionar. Se hace así:
 
 ```
 node benchmark/scripts/dump-findings.mjs development --corpus corpus-v1.2 --register correo --profile correo --ciego benchmark/annotations/v1.2/paquetes
@@ -72,7 +73,13 @@ node benchmark/scripts/dump-findings.mjs development --corpus corpus-v1.2 --regi
 
 Eso escribe dos archivos. `paquete-correo.md` es lo que se le da a quien adjudica: el criterio, y por cada hallazgo la regla, qué busca, el fragmento y el párrafo donde está. No lleva el id de la muestra, ni si el texto es humano o generado, ni el estado de la regla, y los hallazgos van mezclados con ids opacos (`c-001`…). `mapa-correo.json` traduce cada id opaco a la clave del benchmark y no se le da a quien adjudica. La carpeta `paquetes/` no se sube al repositorio porque lleva párrafos de la clase humana.
 
-Las respuestas, una vez traducidas con el mapa, van a `benchmark/annotations/v1.2/<registro>.yml`, y se evalúan con:
+Las respuestas se guardan tal como llegan en `benchmark/annotations/v1.2/respuestas/<registro>.yml` (solo ids opacos y valores) y se traducen con el mapa:
+
+```
+node benchmark/scripts/aplicar-adjudicacion.mjs --register correo --respuestas benchmark/annotations/v1.2/respuestas/correo.yml --mapa benchmark/annotations/v1.2/paquetes/mapa-correo.json --adjudicador "<proveedor y modelo>" --salida benchmark/annotations/v1.2/correo.yml
+```
+
+El script falla sin escribir nada si falta una respuesta, si sobra, si un id está repetido o si un valor no es `correct`, `incorrect` o `dudoso`. Los `dudoso` no se adjudican: quedan en la lista `dudosos` del archivo hasta que alguien los revise. Lo que decida esa persona va en un archivo aparte que se pasa con `--revision`; solo puede resolver ids que el adjudicador dejó en `dudoso`. El archivo lleva claves y no fragmentos, porque la clase humana no se redistribuye. Se evalúan con:
 
 ```
 node packages/linter/dist/cli/main.js benchmark run --corpus corpus-v1.2 --partition development --register correo --profile correo --annotations benchmark/annotations/v1.2/correo.yml
