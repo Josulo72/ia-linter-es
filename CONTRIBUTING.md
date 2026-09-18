@@ -40,7 +40,7 @@ No se aceptan datasets de la lista de veto (`quality-policy.yml`).
 
 ## Estilo
 
-El español del proyecto es el de `integrations/claude-code/output-styles/humano.md`, y el README pasa su propio linter. Si escribes documentación, pásasela:
+El español del proyecto es el de `integrations/claude-code/guia/humano.md`, y el README pasa su propio linter. Si escribes documentación, pásasela:
 
 ```
 node packages/linter/dist/cli/main.js lint docs README.md --profile readme

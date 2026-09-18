@@ -7,7 +7,7 @@ Un único archivo YAML por proyecto: `ia-linter.yml` (también `ia-linter.yaml`,
 | Clave | Valor por defecto | Descripción |
 |---|---|---|
 | `schema_version` | `1` | Versión del formato. |
-| `profile` | `general` | `general`, `tecnico`, `academico`, `marketing` (prosa editada) y `chat`, `correo`, `readme`, `redes` (escritura cotidiana por situación). Ajusta niveles de reglas. |
+| `profile` | `general` | `general`, `tecnico`, `academico`, `marketing` (prosa editada) y `chat`, `correo`, `readme`, `redes` (escritura cotidiana por situación). Ajusta niveles de reglas. En la línea de órdenes también vale `--profile auto`, que elige el perfil por la ruta según `packages/linter/rules/situaciones.yml` (`README.md` → `readme`, `correos/…` → `correo`…); lo que no encaja en ninguna situación no se analiza, y los overrides de este archivo siguen mandando. |
 | `register` | `general` | `general`, `tecnico`, `academico`, `marketing`, `literario`, `periodistico`, `institucional`. Silencia reglas impropias del género. |
 | `include` | `**/*.md`, `**/*.markdown`, `**/*.txt` | Globs de archivos a analizar. |
 | `exclude` | `node_modules`, `.git`, `dist`, `CHANGELOG.md`, `LICENSE*` | Globs excluidos. |

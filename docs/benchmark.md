@@ -15,7 +15,7 @@ Las reglas de v1.0 buscaban los tics de 2023: «es importante destacar», metáf
 
 Lo que sí distingue en registro cotidiano es el ritmo. Una persona alterna una frase de treinta palabras con otra de cuatro; la máquina las escribe todas parecidas. Eso lo mide `estructura/ritmo-plano`, y de ahí sale toda la separación de v1.1: quitando esa regla y su contraria, la mediana de la clase IA baja a cero.
 
-La pieza principal del producto no es el linter sino la guía de estilo (`integrations/claude-code/output-styles/humano.md`), que se le da al modelo antes de escribir. El linter es el revisor que comprueba el resultado.
+La pieza principal del producto no es el linter sino la guía de estilo (`integrations/claude-code/guia/humano.md`), que se le da al modelo antes de escribir. El linter es el revisor que comprueba el resultado.
 
 ## Corpus v1.1
 

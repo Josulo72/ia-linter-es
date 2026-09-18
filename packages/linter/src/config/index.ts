@@ -7,7 +7,7 @@ import { matchesAny } from "./glob.js";
 
 export const CONFIG_FILENAMES = ["ia-linter.yml", "ia-linter.yaml", ".ia-linter.yml", ".ia-linter.yaml"];
 const LEVELS: Level[] = ["off", "info", "warning", "error"];
-const PROFILES: ProfileName[] = ["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"];
+export const PROFILES: ProfileName[] = ["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"];
 const REGISTERS: Register[] = ["general", "tecnico", "academico", "marketing", "literario", "periodistico", "institucional"];
 
 /** Valores internos (nivel 1 de precedencia). */

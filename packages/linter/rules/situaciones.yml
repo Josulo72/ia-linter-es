@@ -1,0 +1,27 @@
+# Situaciones: la capa de contexto de la humanización (docs/decisions.md, 2026-09-18).
+#
+# Cada situación junta tres cosas:
+#   perfil   el perfil de reglas con el que se revisa (rules/profiles/<perfil>.yml)
+#   guia     el principio de su viñeta en la sección «Según la situación» de la guía
+#            (integrations/claude-code/guia/humano.md); el gate `situaciones` comprueba que existe
+#   archivos los tipos de archivo de texto que le corresponden. Con `--profile auto`, la ruta decide la situación:
+#            gana la primera que coincide. Un archivo que no coincide con ninguna no se revisa con `auto`.
+#
+# Los overrides de ia-linter.yml siguen mandando sobre esto.
+schema_version: 1
+situaciones:
+  - id: chat
+    perfil: chat
+    guia: "Conversación"
+  - id: correo
+    perfil: correo
+    guia: "Correo"
+    archivos: ["**/correo*.{md,txt}", "**/*.correo.md", "**/correos/**/*.{md,txt}"]
+  - id: readme
+    perfil: readme
+    guia: "README y textos de un proyecto"
+    archivos: ["**/README*.md", "**/CHANGELOG*.md", "**/CONTRIBUTING*.md", "**/docs/**/*.md"]
+  - id: redes
+    perfil: redes
+    guia: "Redes"
+    archivos: ["**/*.post.md", "**/redes/**/*.{md,txt}"]

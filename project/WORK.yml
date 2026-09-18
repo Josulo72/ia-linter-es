@@ -193,7 +193,16 @@ blocks:
     acceptance: >-
       no hay skill de humanización ni estilo de salida obligatorio; una sola IA operativa; la guía sigue escrita a mano;
       ningún tercer sitio declara perfiles; todos los gates en verde.
-    status: pending
+    status: done
+    notes: >-
+      Skill borrada; guía en integrations/claude-code/guia/humano.md cargada por SessionStart (IA_LINTER_GUIA=0
+      la apaga); situaciones.yml con perfil, viñeta de la guía y patrones de archivo; --profile auto en la CLI
+      (overrides de situación delante de los del proyecto, que mandan; lo que no tiene situación no se analiza,
+      ni por --stdin ni sobre archivos); hook PostToolUse Write|Edit apagado por
+      defecto, con tope por archivo y contenido; mensaje y tope comunes a los dos hooks en scripts/comun.mjs;
+      IA_LINTER_NIVEL con solo normal; integrations/agents-md con instrucción transversal; gates situaciones y
+      agents-md, comprobados rompiéndolos a propósito. 93 tests y todos los gates en verde; el paquete instalado
+      lleva situaciones.yml y --profile auto funciona.
 
   - id: B12
     title: Corpus v1.3 con clase IA externa
