@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        node: [20, 22]
+        node: [20, 22, 24]
     steps:
       - uses: actions/checkout@v4
       # Sin `version`: la toma de `packageManager` del package.json. Decirla en los dos sitios da ERR_PNPM_BAD_PM_VERSION.

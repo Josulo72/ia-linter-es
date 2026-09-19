@@ -6,6 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse as parseYaml } from "yaml";
+import { evaluateAdjudicatedPrecision } from "./gate-adjudication.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const policy = parseYaml(fs.readFileSync(path.join(root, "quality-policy.yml"), "utf8"));
@@ -149,10 +150,31 @@ if (only.includes("index")) {
         console.log(`  · ${stables.length - conEvidencia} reglas stable no marcan nada aquí: su FP es 0 por vacío (ver benchmark/reports/auditoria-banco-v1.1.md)`);
       }
     }
-    // quality-policy.yml pide precisión adjudicada mínima para las stable. Sin adjudicaciones no se puede comprobar: se dice.
-    const conPrecision = stables.filter(([, v]) => v.adjudicated?.precision !== null && v.adjudicated?.precision !== undefined).length;
-    if (conPrecision < stables.length) {
-      console.log(`  · precisión adjudicada: ${stables.length - conPrecision} de ${stables.length} reglas stable sin adjudicar; min_adjudicated_precision (${policy.rules.min_adjudicated_precision}) no se puede comprobar`);
+    // La precision se decide con development v1.2, cuya adjudicacion fue ciega.
+    // Holdout v1.1 se conserva para separacion y falsos positivos.
+    const developmentPaths = ["correo", "readme", "redes"].map((register) =>
+      path.join(root, "benchmark", "reports", `development-v1.2-${register}.json`),
+    );
+    const missingDevelopment = developmentPaths.filter((file) => !fs.existsSync(file));
+    if (missingDevelopment.length) {
+      fail(`faltan informes de adjudicacion: ${missingDevelopment.map((file) => path.relative(root, file)).join(", ")}`);
+    } else {
+      const adjudication = evaluateAdjudicatedPrecision({
+        stableRuleIds: [...estado].filter(([, status]) => status === "stable").map(([id]) => id),
+        reports: developmentPaths.map((file) => JSON.parse(fs.readFileSync(file, "utf8"))),
+        minPrecision: policy.rules.min_adjudicated_precision,
+        minFindings: policy.rules.min_adjudicated_findings,
+        exemptRuleIds: policy.rules.adjudication_exempt_rules,
+      });
+      if (adjudication.below.length) {
+        fail(`reglas stable con precision adjudicada < ${policy.rules.min_adjudicated_precision}: ${adjudication.below.map((x) => `${x.id} (${x.precision.toFixed(2)}, n=${x.findings})`).join(", ")}`);
+      } else if (adjudication.measured.length) {
+        ok(`${adjudication.measured.length} reglas stable con muestra suficiente cumplen precision >= ${policy.rules.min_adjudicated_precision}`);
+      } else {
+        console.log(`  - ninguna regla stable ha alcanzado aun la muestra minima de ${policy.rules.min_adjudicated_findings}`);
+      }
+      if (adjudication.insufficient.length) console.log(`  - ${adjudication.insufficient.length} reglas stable pendientes de muestra minima`);
+      if (adjudication.exempt.length) console.log(`  - ${adjudication.exempt.length} regla(s) stable no adjudicable(s) por fragmento: ${adjudication.exempt.join(", ")}`);
     }
   }
 }

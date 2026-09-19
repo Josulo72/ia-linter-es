@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "pnpm -r build",
-    "test": "pnpm -r test",
+    "test": "node --test scripts/gate-adjudication.test.mjs && pnpm -r test",
     "typecheck": "pnpm -r typecheck",
     "gates": "node scripts/corpus-check.mjs && node scripts/gates.mjs",
     "corpus:check": "node scripts/corpus-check.mjs",
