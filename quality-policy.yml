@@ -14,6 +14,13 @@ rules:
   max_fp_per_1000_human_words: 1.5
   # Precisión adjudicada mínima (hallazgos correctos / hallazgos totales) en development.
   min_adjudicated_precision: 0.70
+  # Con menos casos la muestra solo informa: no decide promociones ni degradaciones.
+  min_adjudicated_findings: 5
+  # Estas reglas miden el documento entero y no admiten adjudicacion por fragmento.
+  adjudication_exempt_rules:
+    - estructura/longitud-uniforme
+    - estructura/ritmo-plano
+    - estructura/ritmo-metronomo
 
 regex_safety:
   # Tiempo máximo (ms) de una regla sobre el texto adversarial de 1 MB.
