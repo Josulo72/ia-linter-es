@@ -2,14 +2,15 @@
   "schema_version": 1,
   "partition": "development",
   "tool": {
-    "version": "1.0.0",
-    "rulepack": "1.0.0"
+    "version": "1.1.0",
+    "rulepack": "1.1.0"
   },
   "config": {
     "threshold": 12,
     "min_words_for_index": 150,
     "profile": "readme",
-    "register": "readme"
+    "register": "readme",
+    "annotations": "benchmark/annotations/v1.3/readme.yml"
   },
   "corpus": {
     "samples": 30,
@@ -34,7 +35,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 8.7
+      "ms": 8.3
     },
     "densidad/adverbios-mente": {
       "status": "stable",
@@ -50,7 +51,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 7.2
+      "ms": 7
     },
     "densidad/conectores": {
       "status": "candidate",
@@ -66,7 +67,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 9.8
+      "ms": 12.1
     },
     "densidad/emojis": {
       "status": "stable",
@@ -87,7 +88,7 @@
           "ai": 0
         }
       },
-      "ms": 2.9
+      "ms": 3.1
     },
     "densidad/exclamaciones": {
       "status": "stable",
@@ -103,7 +104,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.5
+      "ms": 2.8
     },
     "densidad/intensificadores": {
       "status": "stable",
@@ -119,7 +120,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 5.9
+      "ms": 4.9
     },
     "densidad/verbos-comodin": {
       "status": "stable",
@@ -140,7 +141,7 @@
           "ai": 0
         }
       },
-      "ms": 7.2
+      "ms": 6
     },
     "estructura/cierre-formulario": {
       "status": "stable",
@@ -156,7 +157,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1
+      "ms": 1.9
     },
     "estructura/conector-inicio-parrafo": {
       "status": "stable",
@@ -172,7 +173,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 5.6
+      "ms": 5.7
     },
     "estructura/encabezado-dos-puntos": {
       "status": "stable",
@@ -193,7 +194,7 @@
           "ai": 0
         }
       },
-      "ms": 1
+      "ms": 0.9
     },
     "estructura/enumeracion-ordinal": {
       "status": "stable",
@@ -209,7 +210,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 3
+      "ms": 4.1
     },
     "estructura/lista-inicio-uniforme": {
       "status": "candidate",
@@ -230,7 +231,7 @@
           "ai": 0
         }
       },
-      "ms": 1.1
+      "ms": 0.9
     },
     "estructura/longitud-uniforme": {
       "status": "stable",
@@ -251,7 +252,7 @@
           "ai": 0
         }
       },
-      "ms": 3.4
+      "ms": 3.1
     },
     "estructura/ritmo-metronomo": {
       "status": "candidate",
@@ -309,7 +310,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 0.1
+      "ms": 0.2
     },
     "formato/encabezado-title-case": {
       "status": "candidate",
@@ -330,7 +331,7 @@
           "ai": 0
         }
       },
-      "ms": 1.7
+      "ms": 1.5
     },
     "formato/lista-negrita-inicial": {
       "status": "stable",
@@ -367,7 +368,7 @@
           "ai": 0
         }
       },
-      "ms": 0.5
+      "ms": 0.9
     },
     "formato/raya": {
       "status": "candidate",
@@ -383,7 +384,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 0.1
+      "ms": 0.2
     },
     "formato/raya-espaciada": {
       "status": "stable",
@@ -399,7 +400,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 2.9
+      "ms": 2.4
     },
     "formato/sentencia-dos-puntos": {
       "status": "candidate",
@@ -415,7 +416,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.2
+      "ms": 1.1
     },
     "lexico/actualidad-generica": {
       "status": "stable",
@@ -436,7 +437,7 @@
           "ai": 0
         }
       },
-      "ms": 7.8
+      "ms": 4.8
     },
     "lexico/desde-hasta-pasando": {
       "status": "candidate",
@@ -452,7 +453,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.1
+      "ms": 0.9
     },
     "lexico/es-importante-destacar": {
       "status": "stable",
@@ -468,7 +469,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 4.7
+      "ms": 5.2
     },
     "lexico/honestidad-anunciada": {
       "status": "candidate",
@@ -484,7 +485,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 4.3
+      "ms": 4.5
     },
     "lexico/metaforas-comodin": {
       "status": "candidate",
@@ -500,7 +501,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 9.2
+      "ms": 10.7
     },
     "lexico/muletillas-ia": {
       "status": "stable",
@@ -516,7 +517,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 12.4
+      "ms": 13.6
     },
     "lexico/ya-sea-enumeracion": {
       "status": "stable",
@@ -532,7 +533,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.9
+      "ms": 2.7
     },
     "repeticion/anafora": {
       "status": "stable",
@@ -548,7 +549,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 5.3
+      "ms": 5.1
     },
     "repeticion/inicio-parrafo": {
       "status": "stable",
@@ -569,7 +570,7 @@
           "ai": 1
         }
       },
-      "ms": 5.1
+      "ms": 6.3
     },
     "repeticion/ngramas": {
       "status": "candidate",
@@ -590,7 +591,7 @@
           "ai": 0
         }
       },
-      "ms": 15.5
+      "ms": 15.6
     },
     "retorica/arenga-final": {
       "status": "stable",
@@ -606,7 +607,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 9.3
+      "ms": 6.8
     },
     "retorica/no-es-x-es-y": {
       "status": "candidate",
@@ -622,7 +623,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 5.9
+      "ms": 2.7
     },
     "retorica/no-se-trata-de": {
       "status": "stable",
@@ -638,7 +639,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 3.2
+      "ms": 2.7
     },
     "retorica/no-solo-sino": {
       "status": "stable",
@@ -654,7 +655,7 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 1.7
+      "ms": 1.9
     },
     "retorica/pregunta-retorica-apertura": {
       "status": "candidate",
@@ -670,28 +671,28 @@
         "precision": null
       },
       "by_register": {},
-      "ms": 0.6
+      "ms": 0.5
     },
     "retorica/triada": {
       "status": "stable",
       "findings_human": 0,
-      "findings_ai": 4,
+      "findings_ai": 1,
       "docs_human": 0,
-      "docs_ai": 4,
+      "docs_ai": 1,
       "fp_per_1000_human_words": 0,
-      "per_1000_ai_words": 1.18,
+      "per_1000_ai_words": 0.295,
       "adjudicated": {
-        "correct": 0,
+        "correct": 1,
         "incorrect": 0,
-        "precision": null
+        "precision": 1
       },
       "by_register": {
         "readme": {
           "human": 0,
-          "ai": 4
+          "ai": 1
         }
       },
-      "ms": 6.8
+      "ms": 6
     }
   },
   "aggregate": {
@@ -729,7 +730,7 @@
     }
   },
   "notes": [
-    "Sin adjudicaciones para esta partición: la precisión adjudicada por regla es null.",
+    "3 adjudicaciones no corresponden a ningún hallazgo de esta ejecución.",
     "No se publica recall por regla: el corpus no está anotado exhaustivamente.",
     "El índice mide densidad de patrones editoriales; el umbral solo se usa para evaluar separación, no como veredicto de autoría."
   ]

@@ -1,0 +1,13 @@
+schema_version: 1
+corpus: corpus-v1.3
+partition: development
+register: redes
+profile: redes
+reviewers: 1
+adjudicador: Codex GPT-6 (sesión local, 2026-09-19)
+metodo: "ciego: sin id de muestra, sin clase humano/IA y sin estado de la regla; adjudicación suplementaria de retorica/triada"
+no_adjudicadas: []
+dudosos: []
+adjudications:
+  ai-s03|retorica/triada|b8c842865abad74242a18c68: incorrect
+  h-re29|retorica/triada|6fdf98c06c4f49e055d2ff0e: correct

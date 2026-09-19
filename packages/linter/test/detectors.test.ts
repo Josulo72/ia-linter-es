@@ -83,6 +83,9 @@ describe("structure", () => {
     const r = rule("structure", { kind: "triad" });
     expect(run("Un enfoque claro, conciso y directo.", r)).toHaveLength(1);
     expect(run("Compramos pan, queso y vino.", r)).toHaveLength(0);
+    expect(run("Una hoja lista para revisar, ordenar y analizar.", r)).toHaveLength(0);
+    expect(run("Puedes usarlo, modificarlo y distribuirlo.", r)).toHaveLength(0);
+    expect(run("Etiquetas como artista, disco, título y número de pista.", r)).toHaveLength(0);
     expect(run("Una solución innovadora, escalable y sostenible.", r)).toHaveLength(1);
     expect(run("Vinieron Juan, Pedro y María.", r)).toHaveLength(0);
   });

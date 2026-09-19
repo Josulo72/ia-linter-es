@@ -150,11 +150,13 @@ if (only.includes("index")) {
         console.log(`  · ${stables.length - conEvidencia} reglas stable no marcan nada aquí: su FP es 0 por vacío (ver benchmark/reports/auditoria-banco-v1.1.md)`);
       }
     }
-    // La precision se decide con development v1.2, cuya adjudicacion fue ciega.
+    // La precision se decide con las rondas development adjudicadas a ciegas.
     // Holdout v1.1 se conserva para separacion y falsos positivos.
-    const developmentPaths = ["correo", "readme", "redes"].map((register) =>
-      path.join(root, "benchmark", "reports", `development-v1.2-${register}.json`),
-    );
+    const registers = ["correo", "readme", "redes"];
+    const adjudicatedVersions = ["v1.2", "v1.3"];
+    const developmentPaths = adjudicatedVersions.flatMap((version) => registers.map((register) =>
+      path.join(root, "benchmark", "reports", `development-${version}-${register}.json`),
+    ));
     const missingDevelopment = developmentPaths.filter((file) => !fs.existsSync(file));
     if (missingDevelopment.length) {
       fail(`faltan informes de adjudicacion: ${missingDevelopment.map((file) => path.relative(root, file)).join(", ")}`);
