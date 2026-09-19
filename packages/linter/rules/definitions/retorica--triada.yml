@@ -1,6 +1,6 @@
 schema_version: 1
 id: retorica/triada
-revision: 1
+revision: 2
 status: stable
 title: Tríada de adjetivos o nombres
 summary: Enumeración de tres palabras de la misma clase («claro, conciso y directo»; «innovadora, escalable y sostenible»).

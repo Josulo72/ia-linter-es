@@ -131,6 +131,7 @@ node packages/linter/dist/cli/main.js benchmark run --corpus corpus-v1.2 --parti
 
 Hay que pasar `--annotations`. Sin la opción, el benchmark lee `benchmark/annotations/<partición>.yml`, un nombre sin versión que comparten todos los corpus con partición `development`.
 
+En v1.3 se hizo una ronda suplementaria, también ciega, sobre los seis hallazgos de `retorica/triada`. Las respuestas originales están en `benchmark/annotations/v1.3/respuestas/` y su traducción en `benchmark/annotations/v1.3/{readme,redes}.yml`. La ronda produjo dos `correct` y cuatro `incorrect`; los cuatro falsos positivos guiaron la revisión 2 del detector. Al recalcular, solo sobreviven los dos casos correctos. Uno ya existía en v1.2, por lo que la revisión nueva tiene dos casos únicos vigentes y continúa por debajo de la muestra mínima de cinco. No se ejecutó el holdout v1.3.
 Las tres reglas de longitud de frase (`estructura/longitud-uniforme`, `estructura/ritmo-plano` y `estructura/ritmo-metronomo`) no entran en el paquete y su precisión adjudicada es `null`. Miden la variación de longitud de las frases del texto entero, así que en un fragmento no hay nada que leer para decir si aciertan, y darlas por correctas porque el número cumple el umbral sería inflar la cifra. Se evalúan por FP/1000 en la clase humana y por su efecto en las pruebas globales: separación de medianas y exactitud equilibrada por registro. `longitud-uniforme` es `stable` y por eso no puede cumplir `min_adjudicated_precision`. Está registrado en `docs/decisions.md`.
 
 ## Límites

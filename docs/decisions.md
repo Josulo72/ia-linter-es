@@ -131,7 +131,7 @@ Consecuencia: la 1.0.0 ya se publicó con la vuelta a MIT y la conserva. De paso
 
 
 ## 2026-09-19 — La precisión adjudicada se aplica con una muestra mínima explícita
-Decisión: `pnpm gates` agrega las adjudicaciones de development v1.2 para correo, README y redes. Una regla `stable` con cinco hallazgos adjudicados o más falla si su precisión es menor que `min_adjudicated_precision`. Con menos de cinco casos queda pendiente y no se interpreta como precisión cero. Las reglas que miden el documento entero se declaran como no adjudicables por fragmento en `quality-policy.yml`.
+Decisión: `pnpm gates` agrega las adjudicaciones ciegas de development v1.2 y v1.3 para correo, README y redes. Una regla `stable` con cinco hallazgos adjudicados o más falla si su precisión es menor que `min_adjudicated_precision`. Con menos de cinco casos queda pendiente y no se interpreta como precisión cero. Las reglas que miden el documento entero se declaran como no adjudicables por fragmento en `quality-policy.yml`.
 Motivo: el gate anterior leía el holdout v1.1, que no contiene adjudicaciones, y se limitaba a informar que el umbral no podía comprobarse. La regla de cinco casos ya se usó para cerrar B9, pero no estaba codificada.
 Consecuencia: el umbral 0,70 se aplica de verdad cuando existe muestra suficiente. En el estado actual ninguna regla `stable` llega todavía a cinco casos; 22 quedan pendientes y `estructura/longitud-uniforme` está exenta. Cuatro tests unitarios cubren agregación, fallo, muestra insuficiente, excepción y datos corruptos.
 
@@ -139,3 +139,7 @@ Consecuencia: el umbral 0,70 se aplica de verdad cuando existe muestra suficient
 Decisión: los tests de Vitest se ejecutan con `pool: "threads"`, un worker y sin paralelismo entre archivos.
 Motivo: en Node 24.12.0 los 93 tests terminaban sus aserciones correctamente, pero el pool de procesos de Vitest 3.2.7 agotaba su RPC `onTaskUpdate` y devolvía código 1. La configuración nueva ejecuta la suite completa sin ese error; Node 20 y 22 siguen cubiertos por CI.
 Consecuencia: se mantiene `engines.node >=20` y la suite queda reproducible también en Node 24, con un coste pequeño de tiempo y sin cambiar el comportamiento del producto. La matriz de CI añade Node 24; su primera ejecución remota queda pendiente del siguiente push.
+## 2026-09-19 — La segunda ronda ciega corrige `retorica/triada` sin usar el holdout
+Decisión: se adjudican a ciegas los seis hallazgos de `retorica/triada` en development v1.3. Dos son correctos y cuatro incorrectos. La regla sube a revisión 2: deja de señalar enumeraciones de infinitivos y deja de extraer una falsa tríada de los tres últimos miembros de una lista más larga.
+Motivo: junto con v1.2 hay ocho hallazgos únicos revisados, suficientes para descubrir el fallo, pero no para afirmar precisión de la revisión nueva. Tras corregirla solo permanecen dos hallazgos únicos correctos (tres observaciones al contar la muestra repetida entre v1.2 y v1.3), por debajo del mínimo de cinco de la política.
+Consecuencia: la regla se mantiene `stable` por su evidencia histórica de development v1.0 (12/13), pero el gate actual la deja pendiente de nueva muestra en development. El holdout v1.3 sigue congelado y sin ejecutar. Las respuestas opacas y las anotaciones traducidas quedan en `benchmark/annotations/v1.3/`.

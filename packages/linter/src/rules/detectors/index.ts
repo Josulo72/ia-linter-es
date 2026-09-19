@@ -306,6 +306,11 @@ const structure: Detector = (rule, doc) => {
           if (ws.some((w) => STOPWORDS.has(w.toLowerCase()))) continue;
           if (ws.some((w) => /^\p{Lu}/u.test(w))) continue; // nombres propios
           if (!sameClass(ws)) continue;
+          // La regla describe nombres o adjetivos: los infinitivos forman enumeraciones funcionales legítimas.
+          if (ws.every((w) => /(?:ar|er|ir)(?:lo|la|los|las|le|les|se|me|te|nos|os)?$/i.test(w))) continue;
+          // No extraer una falsa tríada de los tres últimos miembros de una enumeración más larga.
+          const before = b.text.slice(0, m.index);
+          if (/\p{L}{3,},\s*$/u.test(before)) continue;
           if (isExcepted(rule, b.text, m.index, m.index + m.length)) continue;
           found.push({ blockIndex: bi, start: m.index, end: m.index + m.length, data: { term: m.match[0] } });
         }
