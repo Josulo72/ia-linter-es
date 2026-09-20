@@ -54,10 +54,10 @@ export const PKG = {
  * Derivarlos del nombre del paquete manda a la gente a descargar algo que no existe.
  */
 export const RELEASE = {
-  tgz: "ia-linter-es-1.1.0.tgz",
-  pluginDir: "./ia-linter-es-claude-code",
+  tgz: "textoneitor-1.2.0.tgz",
+  pluginDir: "./textoneitor-claude-code",
   /** La orden que deja instalada ese .tgz. La release nueva traerá `textoneitor`. */
-  orden: "ia-linter-es",
+  orden: "textoneitor",
 };
 
 /** La carpeta que crea `git clone`, que es el nombre del repositorio. */
