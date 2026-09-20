@@ -4,9 +4,12 @@ import type { CSSProperties } from "react";
 // Las cifras salen del repositorio: rulepack/rulepack.json y benchmark/reports/.
 // Todo local: imágenes, fuentes y el vídeo. La web no pide nada a la red.
 
-const LOCAL_BASE = "/sites/abrany-brain-trainer-jrollon72-chatgpt-site-1c6eada6/root-8a5edab2";
-
 const clean = (base: string) => base.trim().replace(/\/$/, "");
+
+// En GitHub Pages la web cuelga de /<repo>, y las rutas de public llevan ese prefijo delante.
+const BASE_PATH = clean(process.env.NEXT_PUBLIC_BASE_PATH ?? "");
+const LOCAL_BASE = `${BASE_PATH}/sites/abrany-brain-trainer-jrollon72-chatgpt-site-1c6eada6/root-8a5edab2`;
+
 const ASSET_BASE = clean(process.env.NEXT_PUBLIC_ASSET_BASE ?? LOCAL_BASE);
 const VIDEO_BASE = clean(process.env.NEXT_PUBLIC_VIDEO_BASE ?? LOCAL_BASE);
 
@@ -40,7 +43,7 @@ export const PKG = {
   name: "TEXTOneitor",
   npm: "ia-linter-es",
   version: "1.1.0",
-  repo: "https://github.com/Josulo72/ia-linter-es",
+  repo: "https://github.com/Josulo72/textoneitor",
   email: "jrollon@gmail.com",
 };
 
