@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring, type Variants } from "motion/react";
 import { EASE, useMenu } from "../shared/motion-kit";
-import { CHROME, NAV } from "./content";
+import { CHROME, MENU, NAV } from "./content";
 import { Logo, MenuButton } from "./primitives";
 
 export function ScrollProgress() {
@@ -84,7 +84,11 @@ export function MenuOverlay() {
   const { open, close } = useMenu();
   const firstLink = useRef<HTMLAnchorElement>(null);
   useEffect(() => {
-    if (open) firstLink.current?.focus();
+    if (!open) return;
+    // Al cerrar, el foco vuelve al botón que abrió el menú.
+    const previo = document.activeElement as HTMLElement | null;
+    firstLink.current?.focus();
+    return () => previo?.focus?.();
   }, [open]);
 
   return (
@@ -125,15 +129,13 @@ export function MenuOverlay() {
             ))}
           </motion.nav>
           <motion.div variants={item} className="flex items-end justify-between gap-8 pb-9">
-            <p className="max-w-[34ch] font-sans text-sm leading-relaxed text-ink/70">
-              Cuatro dominios cognitivos, un plan adaptativo. Medido en cada sesión y reevaluado cada mes.
-            </p>
+            <p className="max-w-[34ch] font-sans text-sm leading-relaxed text-ink/70">{MENU.pie}</p>
             <a
-              href="#contact"
+              href={MENU.enlaceHref}
               onClick={close}
-              className="font-display text-xs uppercase tracking-[0.16em] text-ink underline-offset-4 hover:underline"
+              className="whitespace-nowrap font-display text-xs uppercase tracking-[0.16em] text-ink underline-offset-4 hover:underline"
             >
-              Contacto
+              {MENU.enlace}
             </a>
           </motion.div>
         </motion.div>
