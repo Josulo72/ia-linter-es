@@ -7,20 +7,42 @@
   "main": "./dist/api/index.js",
   "types": "./dist/api/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/api/index.d.ts", "import": "./dist/api/index.js" },
-    "./package.json": "./package.json"
+    ".": {
+      "types": "./dist/api/index.d.ts",
+      "import": "./dist/api/index.js"
+    },
+    "./package.json": "./package.json",
+    "./web": {
+      "types": "./dist/web/index.d.ts",
+      "import": "./dist/web/engine.mjs"
+    },
+    "./rulepack.json": "./rulepack/rulepack.json"
   },
-  "bin": { "ia-linter-es": "./dist/cli/main.js" },
-  "files": ["dist", "rulepack", "rules/profiles", "rules/situaciones.yml", "schemas", "README.md", "LICENSE", "LICENSE-AGPL-3.0"],
-  "engines": { "node": ">=20" },
+  "bin": {
+    "ia-linter-es": "./dist/cli/main.js"
+  },
+  "files": [
+    "dist",
+    "rulepack",
+    "rules/profiles",
+    "rules/situaciones.yml",
+    "schemas",
+    "README.md",
+    "LICENSE",
+    "LICENSE-AGPL-3.0"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
-    "build": "pnpm run build:ts && pnpm run build:rules && pnpm run build:bundle",
+    "build": "pnpm run build:ts && pnpm run build:rules && pnpm run build:bundle && pnpm run build:web",
     "build:ts": "tsc -p tsconfig.build.json",
     "build:rules": "node dist/rules/compiler/build.js",
     "build:bundle": "node scripts/bundle.mjs",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "build:web": "node scripts/bundle-web.mjs"
   },
   "dependencies": {
     "ajv": "^8.17.0",

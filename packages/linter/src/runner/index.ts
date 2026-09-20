@@ -20,36 +20,13 @@ import { computeScore } from "../scoring/index.js";
 import { applySuppressions, parseSuppressions } from "../suppressions/index.js";
 import { applyBaseline, readBaseline } from "../baseline/index.js";
 import { resolveEffectiveRules } from "../config/index.js";
+import { lintDocumentText, type RunnerContext } from "./lint-text.js";
 import { matchesAny } from "../config/glob.js";
 
-export interface RunnerContext {
-  config: Config;
-  root: string;
-  pack: RulePack;
-  toolVersion: string;
-}
+export type { RunnerContext } from "./lint-text.js";
+export { lintDocumentText } from "./lint-text.js";
 
 const LEVEL_ORDER: Record<Level, number> = { off: 0, info: 1, warning: 2, error: 3 };
-
-/** Analiza un texto en memoria. No usa disco salvo que se pida caché (no aplica aquí). */
-export function lintDocumentText(
-  text: string,
-  ctx: RunnerContext,
-  opts: { relPath?: string; format?: "text" | "markdown" } = {},
-): FileResult {
-  const t0 = performance.now();
-  const relPath = (opts.relPath ?? "<texto>").replace(/\\/g, "/");
-  const format = opts.format ?? detectFormat(relPath === "<texto>" ? null : relPath);
-  const doc = buildDocument(text, { path: relPath, format });
-  const effective = resolveEffectiveRules(ctx.config, ctx.pack.rules, relPath === "<texto>" ? null : relPath);
-  const levels: Record<string, Level> = {};
-  for (const e of effective) levels[e.rule] = e.level;
-  const findings = runRules(doc, ctx.pack.rules, { levels, relPath, snippets: ctx.config.privacy.snippets });
-  applySuppressions(findings, parseSuppressions(doc.original, doc.lineStarts, doc.codeRanges));
-  const ruleMap = new Map(ctx.pack.rules.map((r) => [r.id, r] as [string, CompiledRule]));
-  const score = computeScore(findings, ruleMap, doc.eligibleWords, ctx.config.min_words_for_index);
-  return { path: relPath, format, findings, score, durationMs: Math.round((performance.now() - t0) * 100) / 100 };
-}
 
 /* ---------------- Descubrimiento de archivos ---------------- */
 
