@@ -47,7 +47,21 @@ export const PKG = {
   email: "jrollon@gmail.com",
 };
 
-export const INSTALL_COMMAND = `npm i -D ${PKG.npm}-${PKG.version}.tgz`;
+/**
+ * Lo que hay colgado hoy en la última release, con el nombre literal del archivo.
+ * No se construye con PKG.npm a propósito: el paquete se renombra a textoneitor y
+ * estos archivos seguirán llamándose como se llaman hasta que haya una release nueva.
+ * Derivarlos del nombre del paquete manda a la gente a descargar algo que no existe.
+ */
+export const RELEASE = {
+  tgz: "ia-linter-es-1.1.0.tgz",
+  pluginDir: "./ia-linter-es-claude-code",
+};
+
+/** La carpeta que crea `git clone`, que es el nombre del repositorio. */
+const REPO_DIR = PKG.repo.slice(PKG.repo.lastIndexOf("/") + 1);
+
+export const INSTALL_COMMAND = `npm i -D ${RELEASE.tgz}`;
 
 export const NAV = [
   { id: "home", label: "Inicio" },
@@ -370,7 +384,7 @@ export const PLANS: Plan[] = [
   {
     id: "plugin",
     name: "Plugin de Claude Code",
-    how: `claude --plugin-dir ./${PKG.npm}-claude-code`,
+    how: `claude --plugin-dir ${RELEASE.pluginDir}`,
     tagline: "Carga la guía al empezar cada sesión.",
     features: [
       "Un zip en la misma release",
@@ -385,7 +399,7 @@ export const PLANS: Plan[] = [
   {
     id: "codigo",
     name: "El código",
-    how: `git clone ${PKG.repo} && cd ${PKG.npm} && pnpm install && pnpm build`,
+    how: `git clone ${PKG.repo} && cd ${REPO_DIR} && pnpm install && pnpm build`,
     tagline: "Si quieres tocarlo o escribir tus propias reglas.",
     features: [
       "Las 38 reglas en un solo JSON",
