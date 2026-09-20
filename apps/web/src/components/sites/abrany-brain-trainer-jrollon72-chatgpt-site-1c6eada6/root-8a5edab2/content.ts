@@ -74,6 +74,13 @@ export const HERO = {
 /** La barra fija de arriba. */
 export const CHROME = { cta: "Instalar" };
 
+/** El menú que se abre a pantalla completa. */
+export const MENU = {
+  pie: "Treinta y ocho reglas para textos en español. Corre en tu ordenador, sin IA por dentro y sin salir a la red.",
+  enlace: "Contacto",
+  enlaceHref: "#contact",
+};
+
 export const SECTIONS = {
   courses: {
     index: "01",
@@ -99,14 +106,20 @@ export const SECTIONS = {
     title: "De dónde salen las reglas",
     lede: "No de una lista de manías. De comparar textos de personas con textos generados sobre los mismos temas, y de publicar también lo que no funcionó.",
   },
-  pricing: {
+  limites: {
     index: "05",
+    label: "Límites",
+    title: "Lo que no funciona",
+    lede: "Las cifras de arriba tienen letra pequeña y está aquí, no escondida en un anexo. Esto es lo que el revisor todavía hace mal y lo que no sabe hacer.",
+  },
+  pricing: {
+    index: "06",
     label: "Instalar",
     title: "Tres formas de tenerlo",
     lede: "Todavía no está en npm. Se instala desde el paquete de la última release, como plugin de Claude Code o desde el código.",
   },
   faq: {
-    index: "06",
+    index: "07",
     label: "Preguntas",
     title: "Respuestas cortas",
   },
@@ -284,6 +297,46 @@ export const TRAINERS = [
   },
 ];
 
+export const LIMITES = [
+  {
+    title: "Casi todo depende de una regla",
+    body: "La separación entre lo generado y lo escrito a mano la sostiene estructura/ritmo-plano, que mira si todas las frases miden lo mismo. Sigue marcada como candidata. Contando solo las 23 reglas estables, el índice no separa en ningún registro.",
+  },
+  {
+    title: "En correo y en README marca más a las personas",
+    body: "Un correo de lista técnica y un README llevan frases de largo parecido porque el género lo pide, y ahí la regla del ritmo salta sobre gente que escribe normal. En el perfil correo viene apagada por eso. En README sigue puesta, porque quitarla no evitaba ninguna falsa alarma y sí perdía detecciones.",
+  },
+  {
+    title: "Las pruebas no son independientes",
+    body: "Los textos generados del banco los escribió el mismo modelo que escribió las reglas mirando esos textos. Las cifras dicen lo bien que un modelo reconoce su propia manera de escribir. Un banco hecho por otra gente daría otro número, y no sé cuál.",
+  },
+  {
+    title: "Es español de España",
+    body: "Los textos humanos del banco son foros, listas de correo y publicaciones de aquí. En el español de México o de Argentina marcará giros que allí son lo normal, y eso no está medido.",
+  },
+  {
+    title: "Por debajo de 150 palabras no hay índice",
+    body: "Los hallazgos salen igual, con su línea y su columna. El índice se queda en blanco, porque con menos texto el número no sería de fiar. Se puede bajar en la configuración, y entonces el número es tuyo y sabrás lo que vale.",
+  },
+  {
+    title: "No dice quién ha escrito un texto",
+    body: "Mide patrones de escritura. Una persona con prisa puede sacar índice alto y un texto generado con cuidado puede sacar cero. Para señalar a un alumno o a un empleado no vale, y usarlo para eso está mal.",
+  },
+];
+
+/** Separación del índice por registro. Mediana IA menos mediana humana, en holdout. */
+export const REGISTROS = {
+  title: "Dónde separa y dónde no",
+  nota: "Mediana de los textos generados menos la de los escritos por personas, en la partición que no se tocó al ajustar las reglas. La política pide 10 para dar un registro por bueno. El 75 % y el 14,5 que salen más arriba son del foro, banco v1.1; los otros tres registros son del v1.2.",
+  max: 18,
+  filas: [
+    { id: "redes", name: "Redes", valor: 18, texto: "+18", detalle: "0 frente a 18" },
+    { id: "foro", name: "Foro", valor: 14.5, texto: "+14,5", detalle: "0 frente a 14,5" },
+    { id: "readme", name: "README", valor: -2, texto: "−2", detalle: "13 frente a 11" },
+    { id: "correo", name: "Correo", valor: -9, texto: "−9", detalle: "18 frente a 9" },
+  ],
+};
+
 export type Plan = {
   id: string;
   name: string;
@@ -357,8 +410,8 @@ export const FAQ = [
     a: "Pasa, y por eso cada regla trae escritos sus falsos positivos conocidos. La puedes callar en esa línea con un comentario, bajarla de nivel para unas rutas concretas o apagarla del todo. Con una baseline, además, solo te avisa de lo que escribas a partir de ahora.",
   },
   {
-    q: "¿Qué es lo que no funciona?",
-    a: "Casi toda la separación viene de una sola regla, la del ritmo, y esa regla todavía es candidata. Por registro, separa bien en mensajes de foro y en redes, en correos no separa y en README marca más a las personas que a las máquinas. Es español de España: en otras variedades marcará cosas que allí son normales.",
+    q: "¿Puedo pararlo en el pre-commit o en la CI?",
+    a: "Sí. Con --fail-on eliges desde qué nivel corta, o never para que solo avise, y con --max-index cortas por índice. Saca JSON y SARIF, así que los hallazgos salen en la pestaña de seguridad de GitHub como los de cualquier otro análisis del código.",
   },
 ];
 

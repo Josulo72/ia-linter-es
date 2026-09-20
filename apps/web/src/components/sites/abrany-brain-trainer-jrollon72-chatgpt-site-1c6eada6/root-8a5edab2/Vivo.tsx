@@ -154,7 +154,7 @@ export function Vivo() {
                 spellCheck={false}
                 aria-label={VIVO.editorLabel}
                 placeholder={VIVO.placeholder}
-                className="min-h-[19rem] w-full flex-1 resize-y rounded-2xl bg-white/45 p-5 font-sans text-[.95rem] leading-[1.65] text-ink outline-none placeholder:text-ink/35 focus:bg-white/60"
+                className="min-h-[19rem] w-full flex-1 resize-y rounded-2xl bg-white/45 p-5 font-sans text-[.95rem] leading-[1.65] text-ink placeholder:text-ink/35 focus:bg-white/60"
               />
               <p className="font-sans text-xs leading-relaxed text-ink/50">{VIVO.nota}</p>
             </motion.div>

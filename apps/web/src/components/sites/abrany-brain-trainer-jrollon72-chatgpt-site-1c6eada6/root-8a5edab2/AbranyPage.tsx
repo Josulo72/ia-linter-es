@@ -4,7 +4,7 @@ import { Marquee, MenuProvider, MotionProvider, SmoothScroll, useActiveSection }
 import { MARQUEE_DOMAINS, MARQUEE_VALUES, SECTION_IDS } from "./content";
 import { Footer } from "./Footer";
 import { Hero } from "./Hero";
-import { Courses, Faq, Method, Pricing, Trainers } from "./Sections";
+import { Courses, Faq, Limites, Method, Pricing, Trainers } from "./Sections";
 import { Vivo } from "./Vivo";
 import { MenuOverlay, ScrollProgress, StickyHeader } from "./SiteChrome";
 
@@ -23,6 +23,7 @@ function Page() {
         <Vivo />
         <Method />
         <Trainers />
+        <Limites />
         <Marquee words={MARQUEE_VALUES} baseVelocity={1.8} />
         <Pricing />
         <Faq />

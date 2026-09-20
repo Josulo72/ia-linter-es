@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Counter, Drift, EASE, Magnetic, Reveal, RevealGroup, Spotlight, wipe } from "../shared/motion-kit";
-import { COURSES, FAQ, PLANS, SECTIONS, STATS, STEPS, TRAINERS } from "./content";
+import { COURSES, FAQ, LIMITES, PLANS, REGISTROS, SECTIONS, STATS, STEPS, TRAINERS } from "./content";
 import { ArrowRightIcon, BrainIcon } from "./icons";
 import { Eyebrow, Lede, Section, SectionTitle } from "./primitives";
 
@@ -173,6 +173,77 @@ export function Trainers() {
             </motion.li>
           ))}
         </ul>
+      </RevealGroup>
+    </Section>
+  );
+}
+
+/** Una barra a izquierda o derecha de un cero central, según el signo de la separación. */
+function Barra({ valor }: { valor: number }) {
+  const reduced = useReducedMotion();
+  const ancho = `${(Math.abs(valor) / REGISTROS.max) * 50}%`;
+  const positivo = valor > 0;
+  return (
+    <span aria-hidden className="relative block h-6">
+      <i className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-ink/20" />
+      <motion.i
+        className={`absolute top-1/2 block h-2.5 -translate-y-1/2 rounded-full ${positivo ? "left-1/2 bg-ink" : "right-1/2 bg-ink/25"}`}
+        initial={{ width: 0 }}
+        whileInView={{ width: ancho }}
+        viewport={{ once: true, margin: "-15% 0px" }}
+        transition={{ duration: reduced ? 0 : 0.9, ease: EASE }}
+      />
+    </span>
+  );
+}
+
+export function Limites() {
+  return (
+    <Section id="limites">
+      <Drift className="left-[4%] top-[22%] h-[26rem] w-[26rem]" distance={90} />
+      <RevealGroup>
+        <Eyebrow index={SECTIONS.limites.index} label={SECTIONS.limites.label} />
+        <SectionTitle>{SECTIONS.limites.title}</SectionTitle>
+        <Lede>{SECTIONS.limites.lede}</Lede>
+        <div className="mt-14 grid gap-8 lg:grid-cols-[minmax(0,.95fr)_minmax(0,1.05fr)] lg:gap-16">
+          <motion.div variants={wipe(40)} className="lg:sticky lg:top-28 lg:self-start">
+            <Spotlight className="glass flex flex-col gap-8 overflow-hidden rounded-[40px] p-8 sm:p-10">
+              <h3 className="font-display text-2xl font-semibold uppercase leading-none tracking-[-.03em] text-ink">
+                {REGISTROS.title}
+              </h3>
+              <ul className="flex flex-col gap-5">
+                {REGISTROS.filas.map((f) => (
+                  <li key={f.id} className="grid grid-cols-[4.5rem_minmax(0,1fr)_5.5rem] items-center gap-3 sm:gap-4">
+                    <span className="font-sans text-xs uppercase tracking-[.14em] text-ink/60">{f.name}</span>
+                    <Barra valor={f.valor} />
+                    <span className="text-right">
+                      <span className="block font-sans text-sm font-semibold tabular-nums text-ink">{f.texto}</span>
+                      <span className="block whitespace-nowrap font-sans text-[.6rem] leading-tight text-ink/45">
+                        {f.detalle}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="font-sans text-xs leading-[1.7] text-ink/55">{REGISTROS.nota}</p>
+            </Spotlight>
+          </motion.div>
+          <ul className="flex flex-col">
+            {LIMITES.map((l, i) => (
+              <motion.li key={l.title} variants={wipe(28)} className="border-b border-ink/12 py-6 first:border-t first:pt-0 lg:first:pt-6">
+                <div className="flex items-start gap-5">
+                  <span className="mt-1 font-sans text-xs tabular-nums text-ink/35">{String(i + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold uppercase leading-tight tracking-[-.02em] text-ink">
+                      {l.title}
+                    </h3>
+                    <p className="mt-2 max-w-[52ch] font-sans text-sm leading-[1.6] text-ink/70">{l.body}</p>
+                  </div>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
       </RevealGroup>
     </Section>
   );
