@@ -23,8 +23,9 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm typecheck
+      # Construye antes el revisor: la web carga su motor y su rulepack.json.
       - run: pnpm build
+      - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm gates
       - run: node scripts/corpus-check.mjs

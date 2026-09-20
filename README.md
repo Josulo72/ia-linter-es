@@ -115,16 +115,20 @@ Las tres llaman a la misma CLI y dan exactamente los mismos hallazgos.
 
 ## De dónde sale esto
 
-De un README que escribí con IA y que olía a IA aunque estuviera bien escrito. Las reglas no salen de una lista de manías: salen de comparar 36 mensajes de foros españoles reales con 96 textos generados sobre los mismos temas. La separación de medianas en el conjunto congelado es de 14,5 puntos.
+De un README que escribí con IA y que olía a IA aunque estuviera bien escrito. Las reglas no salen de una lista de manías: salen de comparar textos humanos reales con textos generados sobre los mismos temas.
 
-El informe entero, con lo que funciona y lo que no, está en `benchmark/reports/v1.1.md`. El primer intento salió mal y también está publicado, en `v1.0.md`.
+Hay dos bancos de pruebas. El primero, v1.1, son 36 mensajes de foros españoles contra 96 textos generados, y ahí la separación de medianas en el conjunto congelado es de 14,5 puntos. El segundo, v1.2, mide los otros tres registros que tiene la guía con 90 textos humanos y 180 generados, y el resultado es mucho peor: bien en redes, y al revés de lo esperado en correo y en README. Tienes las cifras justo debajo.
+
+Los informes enteros están en `benchmark/reports/v1.1.md` y `v1.2.md`, cada uno con su auditoría al lado. El primer intento de todos salió mal y también está publicado, en `v1.0.md`.
 
 ## Límites
 
 - En los corpus v1.1 y v1.2 la clase IA la generó el mismo modelo que ayudó a escribir las reglas, y eso es circular. El v1.3 la tiene de otro proveedor (GPT-5.6 Sol) y da casi lo mismo, así que el problema está en las reglas y no en quién generó los textos.
 - Toda la separación viene de una sola regla, la del ritmo, y esa regla es `candidate`. Quitándola, la mediana de los textos generados baja a cero, igual que la de los humanos. Si un modelo aprende a variar la longitud de sus frases, el índice deja de separar.
+- La clase humana del banco v1.2 está contaminada y sus cifras no valen. El filtro que debía dejar solo español de España aceptaba un texto con una sola marca peninsular, y en el registro `readme` esa marca era justo la palabra que la consulta de GitHub ya garantizaba, así que aprobaba por construcción todo lo que encontraba. El filtro estricto que el proyecto aplica a Reddit no se aplicaba ni a README, ni a correo, ni a los textos del fediverso, y no había nada que descartara texto que no fuera prosa. Está corregido, y `benchmark/scripts/auditar-corpus-humano.mjs` dice qué textos se caen, pero hasta rehacer el corpus y volver a medir, lo que dice el punto siguiente está en el aire. El corpus v1.3 reutiliza esa misma clase humana, así que hereda el problema.
 - Por registro, el índice separa en mensajes de foro y en redes, no separa en correos y en README marca más a los humanos que a los generados. Está medido en `benchmark/reports/v1.2.md` y en development v1.3. La precisión por regla sale de adjudicar 50 hallazgos con un solo adjudicador, así que es orientativa.
 - Los mensajes de foro que forman la clase humana no se redistribuyen. En el repositorio está el manifiesto con la URL y el hash; los textos se bajan en local.
+- Nueve de las 23 reglas estables no disparan en el corpus v1.2 y el gate de falsos positivos las aprueba por vacío. Y `repeticion/inicio-parrafo`, que sigue estable, marca 4 README humanos y ningún generado: su tasa de falsos positivos ahí es de 2,019 por mil palabras, por encima del máximo de 1,5 que pide `quality-policy.yml`. Está sin resolver.
 - Es español de España. En otras variedades marcará cosas que allí son normales.
 
 ## Documentación

@@ -6,6 +6,18 @@ Esta auditoría contesta en los tres registros nuevos las mismas preguntas que l
 qué reglas disparan, qué queda de la separación sin las reglas de ritmo y qué queda contando
 solo las `stable`. Cada texto se analiza con el perfil de su registro.
 
+## Un segundo fallo, este en el corpus (2026-09-18)
+
+Lo de abajo era un fallo en el instrumento de medida. Este es peor, porque está en lo que se mide: el
+filtro que seleccionó la clase humana aceptaba con una sola marca peninsular, y en `readme` esa marca
+era la palabra que la consulta de GitHub ya garantizaba, así que aprobaba por construcción. El filtro
+estricto solo corría sobre Reddit. No había filtro de prosa. Hay textos no peninsulares y textos que
+no son prosa dentro de la clase humana, y todas las cifras de esta auditoría salen de ahí.
+
+Está contado entero en `benchmark/reports/v1.2.md`. Los filtros están corregidos y
+`benchmark/scripts/auditar-corpus-humano.mjs` lista lo que se cae. Hasta rehacer el corpus y medir de
+nuevo, lo que sigue describe un banco que no es el que se quería montar.
+
 ## Un fallo en el instrumento, antes de las cifras
 
 La primera versión de este script llamaba a `api.lintText(texto, { profile, format })`. `lintText`
@@ -66,6 +78,17 @@ Nueve, frente a las veinte que señalaba la auditoría de v1.1:
 - `retorica/no-se-trata-de`
 
 Para estas, el gate de falsos positivos sigue aprobando por vacío.
+
+## Reglas `stable` que incumplen el umbral de falsos positivos
+
+Una: `repeticion/inicio-parrafo`, en el holdout de README, con 2,019 por mil palabras humanas frente
+al máximo de 1,5. Marca 4 textos humanos y ninguno generado, así que ahí no discrimina en absoluto.
+Ninguna otra `stable` supera el umbral en los seis informes.
+
+Esta pregunta no estaba en la lista heredada de la auditoría de v1.1, que era qué dispara, qué queda
+sin las reglas de ritmo y qué queda solo con las `stable`. El dato estaba calculado y publicado en el
+JSON desde la primera lectura; la consulta se añade aquí el 2026-09-18 y conviene repetirla en cada
+cierre de banco aunque la respuesta sea que ninguna.
 
 ## Lo que sigue sin resolverse
 

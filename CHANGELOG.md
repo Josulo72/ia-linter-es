@@ -2,6 +2,33 @@
 
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y las versiones, [SemVer](https://semver.org/lang/es/).
 
+## No publicado
+
+### Arreglado (corpus)
+
+- El filtro de español de España del corpus v1.2 no filtraba. Aceptaba un texto con una sola marca
+  peninsular; en el registro `readme` esa marca coincidía con la palabra que la consulta de GitHub ya
+  garantizaba (`ordenador`, `fichero`, `instalación`), así que aprobaba por construcción todo lo que
+  encontraba. El filtro estricto de habla peninsular solo se aplicaba a Reddit, no a README, correo ni
+  fediverso. No había ningún filtro de prosa, así que podía entrar letra de canción o verso. Y `vale`
+  contaba como marca peninsular, siendo el verbo valer.
+- Corregido: filtro estricto en los tres registros, lista de americanismos ampliada con mexicanismos y
+  depurada de términos que en España significan otra cosa, detección de texto que no es prosa, veto de
+  instancias no peninsulares y de Pixelfed, y revalidación de lo ya registrado en cada `--append`.
+- Nuevo `benchmark/scripts/auditar-corpus-humano.mjs`, que revisa la clase humana descargada con los
+  filtros vigentes y dice qué textos no deberían estar. Solo lee.
+
+### Sin resolver
+
+- Las cifras del banco v1.2 se midieron sobre ese corpus y no valen mientras no se rehaga y se vuelva a
+  medir. Afecta también al anexo D1 y a la adjudicación de B9.
+- El corpus v1.3 reutiliza la clase humana de v1.2 tal cual (`reused_from` en sus manifiestos), así que
+  hereda el mismo problema. Su holdout está congelado y todavía sin ejecutar, así que se puede limpiar
+  antes de gastarlo.
+- `repeticion/inicio-parrafo` es `stable` y supera el máximo de falsos positivos de la política en el
+  holdout de README (2,019 por mil palabras frente a 1,5). Con `stable_min` en 23 y 23 reglas estables,
+  degradarla deja el pack por debajo del mínimo; apagarla en el perfil `readme` es la salida razonable.
+
 ## [1.2.0] - 2026-09-20
 
 ### Cambiado
@@ -25,12 +52,16 @@ La humanización pasa a ser una capa común que funciona con cualquier skill y c
 
 ### Cambiado
 
+- La licencia del proyecto pasa de MIT a Business Source License 1.1. Afecta a quien lo integrara bajo la
+  licencia anterior, y no constaba en ninguna versión de este archivo hasta ahora.
+- La licencia de cambio de esa Business Source License pasa de MIT a AGPL-3.0, con la misma fecha, el 17 de
+  septiembre de 2030. El texto está en `LICENSE-AGPL-3.0` y sustituye al de `LICENSE-MIT`, que se retira. La
+  1.0.0 conserva la vuelta a MIT con la que se publicó.
 - La guía está ahora en `integrations/claude-code/guia/humano.md` y ya no es un estilo de salida.
 - `rules explain` y `docs/rules.md` llaman «Orientación» a la guía de reescritura de cada regla.
 - `estructura/ritmo-plano` y `formato/comillas-angulares` dejan de estar activas en el perfil `correo`, donde marcaban igual a humanos y a generados.
 - `retorica/pregunta-retorica-apertura` y `formato/encabezado-title-case` pasan a `candidate` después de adjudicar sus hallazgos: aciertan 4 de 12 y 2 de 7. Quedan 23 reglas estables y el mínimo de la política baja de 24 a 23.
 - La API rechaza las opciones que no conoce, las rutas de la línea de órdenes se toman desde el directorio de trabajo y los errores de uso salen con código 2.
-- La licencia de cambio de la Business Source License pasa de MIT a AGPL-3.0, con la misma fecha, el 17 de septiembre de 2030. La 1.0.0 conserva la vuelta a MIT con la que se publicó.
 
 ### Quitado
 
@@ -51,7 +82,7 @@ Primera versión.
 
 ### Reglas
 
-- 38 reglas, 28 estables, en seis categorías. Cada una con explicación, ejemplo, guía de reescritura, falsos positivos conocidos y evidencia.
+- 38 reglas, 28 estables en el momento de la publicación, en seis categorías. Cada una con explicación, ejemplo, guía de reescritura, falsos positivos conocidos y evidencia.
 - Ocho perfiles: `general`, `tecnico`, `academico`, `marketing`, `chat`, `correo`, `readme` y `redes`.
 
 ### Producto
