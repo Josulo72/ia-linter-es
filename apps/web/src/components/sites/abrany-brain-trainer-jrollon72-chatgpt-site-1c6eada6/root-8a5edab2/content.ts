@@ -43,7 +43,7 @@ export const PKG = {
   name: "TEXTOneitor",
   npm: "ia-linter-es",
   version: "1.1.0",
-  repo: "https://github.com/Josulo72/ia-linter-es",
+  repo: "https://github.com/Josulo72/textoneitor",
   email: "jrollon@gmail.com",
 };
 
