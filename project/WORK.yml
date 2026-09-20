@@ -41,7 +41,7 @@ blocks:
       - docs/configuration.md, docs/rule-authoring.md
     tests:
       - integración runner (gitignore, caché, overrides); E2E CLI por comando; reporters JSON/SARIF estructurales
-    acceptance: "`ia-linter-es lint` sobre examples/ produce salida determinista; rulepack compilado en build."
+    acceptance: "`textoneitor lint` sobre examples/ produce salida determinista; rulepack compilado en build."
     status: done
 
   - id: B4
@@ -88,7 +88,7 @@ blocks:
     objective: Seguridad, rendimiento, multiplataforma, empaquetado, release reproducible.
     depends_on: [B4, B5]
     deliverables:
-      - CHANGELOG.md, SECURITY.md, CONTRIBUTING.md, LICENSE, README.md, ia-linter.yml
+      - CHANGELOG.md, SECURITY.md, CONTRIBUTING.md, LICENSE, README.md, textoneitor.yml
       - scripts/pack-check.mjs y el paso correspondiente en CI
       - project/EVIDENCE/B5-B6-cierre.md
     tests:

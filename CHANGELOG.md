@@ -2,6 +2,14 @@
 
 El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y las versiones, [SemVer](https://semver.org/lang/es/).
 
+## [1.2.0] - 2026-09-20
+
+### Cambiado
+
+- El paquete se llama `textoneitor`. Con él cambian la orden del terminal, el archivo de configuración (`textoneitor.yml`), los comentarios para callar una regla (`<!-- textoneitor-disable -->`), la carpeta de caché y el nombre por defecto de la baseline.
+- Sigue valiendo lo anterior: se leen igual `ia-linter.yml` y los comentarios `<!-- ia-linter-disable -->`, y `baseline update` usa `ia-linter-baseline.json` si es el archivo que hay. Un proyecto que ya lo use no tiene que tocar nada.
+- El repositorio pasa a ser `github.com/Josulo72/textoneitor` y la web se publica en https://josulo72.github.io/textoneitor/
+
 ## [1.1.0] - 2026-09-19
 
 La humanización pasa a ser una capa común que funciona con cualquier skill y cualquier estilo de salida, y el linter devuelve orientación para reescribir en vez de solo avisos. El linter sigue sin llevar IA dentro: la única IA es el asistente que reescribe.

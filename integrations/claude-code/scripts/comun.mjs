@@ -1,6 +1,6 @@
 // Capa común de humanización para los hooks del plugin (docs/decisions.md, 2026-09-18).
 // Los hooks no reescriben nada: pasan el resultado por la misma CLI y, si hay algo, le devuelven orientación a la misma IA.
-// No hay motor aquí ni reglas: todo sale de `ia-linter-es lint`.
+// No hay motor aquí ni reglas: todo sale de `textoneitor lint`.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -87,7 +87,7 @@ export function mensaje(cabecera, cuerpo) {
 
 /** Un fichero por sesión, con el id que viene en el propio evento: dos sesiones a la vez no se pisan. */
 function ficheroEstado(payload) {
-  const dir = path.join(os.tmpdir(), "ia-linter-es");
+  const dir = path.join(os.tmpdir(), "textoneitor");
   fs.mkdirSync(dir, { recursive: true });
   const clave = createHash("sha256").update(String(payload.session_id ?? "")).digest("hex").slice(0, 16);
   return path.join(dir, `revisar-${clave}.json`);
@@ -128,7 +128,7 @@ export function resolverCli(cwd) {
   if (env && fs.existsSync(env)) return env;
   let dir = cwd && fs.existsSync(cwd) ? path.resolve(cwd) : process.cwd();
   for (;;) {
-    const p = path.join(dir, "node_modules", "ia-linter-es", "dist", "cli", "main.js");
+    const p = path.join(dir, "node_modules", "textoneitor", "dist", "cli", "main.js");
     if (fs.existsSync(p)) return p;
     const padre = path.dirname(dir);
     if (padre === dir) break;

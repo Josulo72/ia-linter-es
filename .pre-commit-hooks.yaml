@@ -1,19 +1,19 @@
 # El hook no tiene lógica: instala el paquete publicado y llama a su CLI.
 # La raíz de este repositorio es un workspace privado sin `bin`, así que el binario
 # tiene que venir de npm: por eso `additional_dependencies`.
-- id: ia-linter-es
-  name: ia-linter-es
+- id: textoneitor
+  name: textoneitor
   description: Analiza el español de los archivos que se van a commitear. Mide patrones editoriales, no autoría.
-  entry: ia-linter-es lint
+  entry: textoneitor lint
   language: node
-  additional_dependencies: ["ia-linter-es@1.1.0"]
+  additional_dependencies: ["textoneitor@1.2.0"]
   types_or: [markdown, plain-text]
   pass_filenames: true
 
-- id: ia-linter-es-local
-  name: ia-linter-es (instalado en el proyecto)
+- id: textoneitor-local
+  name: textoneitor (instalado en el proyecto)
   description: Lo mismo, pero con la copia que ya tiene el proyecto en node_modules. No instala nada.
-  entry: node_modules/.bin/ia-linter-es lint
+  entry: node_modules/.bin/textoneitor lint
   language: system
   types_or: [markdown, plain-text]
   pass_filenames: true

@@ -1,12 +1,12 @@
-# ia-linter-es
+# TEXTOneitor
 
-Dos cosas. Una guía de estilo para que la IA escriba en español como una persona normal, y un linter que revisa los textos que ya están escritos y te dice qué suena a máquina y por qué.
+Dos cosas. Una guía de estilo para que la IA escriba en español como una persona normal, y un revisor que mira los textos que ya están escritos y te dice qué suena a máquina y por qué.
 
 Todo pasa en tu ordenador. No usa IA, no sale a la red y no manda nada a ninguna parte.
 
 ```
-npm i -D ia-linter-es-1.1.0.tgz
-npx ia-linter-es lint docs README.md
+npm i -D textoneitor-1.2.0.tgz
+npx textoneitor lint docs README.md
 ```
 
 ```
@@ -23,26 +23,26 @@ Todavía no está en npm, así que se instala desde el paquete de la última rel
 Con el paquete, que es un `.tgz` normal de npm. Lo bajas de la pestaña Releases del repositorio y lo instalas en tu proyecto:
 
 ```
-npm i -D ia-linter-es-1.1.0.tgz
-npx ia-linter-es lint README.md --profile readme
+npm i -D textoneitor-1.2.0.tgz
+npx textoneitor lint README.md --profile readme
 ```
 
-Vale igual con `pnpm add -D ./ia-linter-es-1.1.0.tgz` o `yarn add -D ./ia-linter-es-1.1.0.tgz`. Hace falta Node 20 o más.
+Vale igual con `pnpm add -D ./textoneitor-1.2.0.tgz` o `yarn add -D ./textoneitor-1.2.0.tgz`. Hace falta Node 20 o más.
 
 Desde el código, si quieres tocarlo:
 
 ```
-git clone https://github.com/Josulo72/ia-linter-es.git
-cd ia-linter-es
+git clone https://github.com/Josulo72/textoneitor.git
+cd textoneitor
 pnpm install
 pnpm build
 node packages/linter/dist/cli/main.js lint README.md --profile readme
 ```
 
-El plugin de Claude Code, con la guía, va en otro paquete de la misma release, `ia-linter-es-claude-code-1.1.0.zip`. Lo descomprimes donde quieras y lo cargas así:
+El plugin de Claude Code, con la guía, va en otro paquete de la misma release, `textoneitor-claude-code-1.2.0.zip`. Lo descomprimes donde quieras y lo cargas así:
 
 ```
-claude --plugin-dir ./ia-linter-es-claude-code
+claude --plugin-dir ./textoneitor-claude-code
 ```
 
 La guía se carga sola al empezar cada sesión, así que puedes seguir usando el estilo de salida y las skills que quieras. Para Codex u otro asistente que lea `AGENTS.md`, está `integrations/agents-md/escribir-en-espanol.md`, que se pega ahí.
@@ -53,19 +53,19 @@ Las otras dos formas de engancharlo, pre-commit y GitHub Action, están explicad
 
 Está en `integrations/claude-code/guia/humano.md` y es un archivo de texto: se lo puedes pegar a cualquier modelo. Si usas Claude Code, el plugin la carga al empezar la sesión y ya escribe así siempre, uses la skill que uses.
 
-<!-- ia-linter-disable-next-line formato/comillas-angulares, lexico/honestidad-anunciada -->
-Lo que consigue está medido: quita del todo las rayas de inciso, las comillas angulares, las negritas de titular, los «no es X, es Y» y los «para ser honesto». Lo que no consigue es arreglar el ritmo de las frases, y lo probamos de nueve maneras distintas. Por eso hay linter.
+<!-- textoneitor-disable-next-line formato/comillas-angulares, lexico/honestidad-anunciada -->
+Lo que consigue está medido: quita del todo las rayas de inciso, las comillas angulares, las negritas de titular, los «no es X, es Y» y los «para ser honesto». Lo que no consigue es arreglar el ritmo de las frases, y lo probamos de nueve maneras distintas. Por eso hay revisor.
 
-## El linter
+## El revisor
 
-38 reglas, 23 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `ia-linter-es rules explain <id>` te lo cuenta.
+38 reglas, 23 estables. Cada una con su explicación, su ejemplo, sus falsos positivos conocidos y de dónde sale la evidencia. `textoneitor rules explain <id>` te lo cuenta.
 
 Hay ocho perfiles, porque no se escribe igual un mensaje que un contrato:
 
 ```
-ia-linter-es lint --stdin --profile chat      # conversación
-ia-linter-es lint mensaje.md --profile correo
-ia-linter-es lint README.md --profile readme
+textoneitor lint --stdin --profile chat      # conversación
+textoneitor lint mensaje.md --profile correo
+textoneitor lint README.md --profile readme
 ```
 
 Los otros son `redes`, `general`, `tecnico`, `academico` y `marketing`. Con `--profile auto` lo elige la ruta: un `README.md` va con `readme`, lo que está en `correos/` con `correo`, y lo que no encaja en ninguna situación no se analiza.
@@ -74,7 +74,7 @@ El índice va de 0 a 100 y mide patrones de escritura. **No dice quién ha escri
 
 ## Configuración
 
-`ia-linter.yml` en la raíz del proyecto:
+`textoneitor.yml` en la raíz del proyecto:
 
 ```yaml
 profile: readme
@@ -90,18 +90,18 @@ overrides:
       "lexico/*": info
 ```
 
-Con `ia-linter-es config explain <archivo>` ves qué nivel acaba teniendo cada regla y de dónde sale.
+Con `textoneitor config explain <archivo>` ves qué nivel acaba teniendo cada regla y de dónde sale.
 
-Si empiezas en un proyecto con mucho texto escrito, crea una baseline y el linter solo te avisa de lo nuevo:
+Si empiezas en un proyecto con mucho texto escrito, crea una baseline y el revisor solo te avisa de lo nuevo:
 
 ```
-ia-linter-es baseline create --reason "texto anterior a la revisión"
+textoneitor baseline create --reason "texto anterior a la revisión"
 ```
 
 Y para callar un caso concreto, en el propio archivo:
 
 ```markdown
-<!-- ia-linter-disable-next-line retorica/triada -->
+<!-- textoneitor-disable-next-line retorica/triada -->
 Rápido, sencillo y eficaz, que aquí es una cita literal.
 ```
 

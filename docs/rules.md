@@ -1,6 +1,6 @@
 # Reglas oficiales
 
-Rule Pack `ia-linter-es/oficial` v1.1.0. 38 reglas compiladas.
+Rule Pack `textoneitor/oficial` v1.2.0. 38 reglas compiladas.
 
 | Regla | Estado | Categoría | Detector | Nivel | Peso |
 |---|---|---|---|---|---|

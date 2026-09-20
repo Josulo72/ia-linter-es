@@ -55,14 +55,14 @@ try {
   ok("instalado con npm install desde el tarball");
 
   console.log("Ejecución desde la instalación");
-  const bin = path.join(proyecto, "node_modules", "ia-linter-es", "dist", "cli", "main.js");
+  const bin = path.join(proyecto, "node_modules", "textoneitor", "dist", "cli", "main.js");
   if (!fs.existsSync(bin)) { fail(`no existe ${path.relative(proyecto, bin)}`); salir(); }
   const muestra = path.join(proyecto, "muestra.md");
   fs.copyFileSync(path.join(root, "examples", "muestra-ia.md"), muestra);
 
   const version = sh(process.execPath, [bin, "--version"], { cwd: proyecto, shell: false });
   if (version.status !== 0 || !/^\d+\.\d+\.\d+/.test(version.stdout.trim())) fail("la CLI instalada no responde a --version");
-  else ok(`ia-linter-es ${version.stdout.trim()}`);
+  else ok(`textoneitor ${version.stdout.trim()}`);
 
   const reglas = sh(process.execPath, [bin, "rules", "list", "--json"], { cwd: proyecto, shell: false });
   if (reglas.status !== 0) fail("rules list falla en la instalación");

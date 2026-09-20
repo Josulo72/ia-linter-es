@@ -1,6 +1,6 @@
 # Configuración
 
-Un único archivo YAML por proyecto: `ia-linter.yml` (también `ia-linter.yaml`, `.ia-linter.yml`, `.ia-linter.yaml`). Se busca desde el directorio de trabajo hacia arriba. El directorio que lo contiene es la raíz del proyecto. Ejemplo completo en `examples/ia-linter.yml`.
+Un único archivo YAML por proyecto: `textoneitor.yml` (también `textoneitor.yaml`, `.textoneitor.yml`, `.textoneitor.yaml`). Se busca desde el directorio de trabajo hacia arriba. El directorio que lo contiene es la raíz del proyecto. Ejemplo completo en `examples/textoneitor.yml`.
 
 ## Claves
 
@@ -20,7 +20,7 @@ Un único archivo YAML por proyecto: `ia-linter.yml` (también `ia-linter.yaml`,
 | `max_index` | `null` | Falla si el índice de un archivo lo supera (0–100). |
 | `privacy.snippets` | `true` | Si es `false`, los informes no contienen texto del documento. |
 | `reporter` | `terminal` | `terminal`, `json`, `sarif` o `revision`. `revision` es orientación para quien reescribe: por cada regla, qué busca, la orientación (`rewrite_guidance`) y dónde está cada caso. Cada hallazgo se puede aceptar, ignorar o reinterpretar según el contexto. Lleva los hallazgos error y warning, y con `--verbose` también los info. Es lo que usan el hook y `/revisar` de Claude Code. |
-| `cache.enabled` / `cache.dir` | `true` / `.ia-linter-cache` | Caché por contenido, configuración y Rule Pack. |
+| `cache.enabled` / `cache.dir` | `true` / `.textoneitor-cache` | Caché por contenido, configuración y Rule Pack. |
 | `min_words_for_index` | `150` | Por debajo se muestran hallazgos pero no índice. |
 
 ## Precedencia
@@ -35,19 +35,19 @@ De menor a mayor:
 6. Regla concreta dentro del override (`overrides[].rules["id"]`).
 7. Supresión inline en el documento.
 
-`ia-linter-es config explain <archivo>` muestra la configuración efectiva y el origen de cada nivel. `config validate` comprueba el archivo y que las reglas nombradas existan.
+`textoneitor config explain <archivo>` muestra la configuración efectiva y el origen de cada nivel. `config validate` comprueba el archivo y que las reglas nombradas existan.
 
 ## Supresiones inline
 
 Comentarios HTML, válidos en Markdown y en texto plano:
 
 ```markdown
-<!-- ia-linter-disable-file lexico/muletillas-ia -->
-<!-- ia-linter-disable-next-line retorica/triada -- motivo: cita literal -->
-Texto. <!-- ia-linter-disable-line -->
-<!-- ia-linter-disable lexico/* -->
+<!-- textoneitor-disable-file lexico/muletillas-ia -->
+<!-- textoneitor-disable-next-line retorica/triada -- motivo: cita literal -->
+Texto. <!-- textoneitor-disable-line -->
+<!-- textoneitor-disable lexico/* -->
 …
-<!-- ia-linter-enable -->
+<!-- textoneitor-enable -->
 ```
 
 Sin lista de reglas se aplican a todas. Los hallazgos suprimidos aparecen en JSON y SARIF marcados como tales y no cuentan para el índice ni para la política.
@@ -55,9 +55,9 @@ Sin lista de reglas se aplican a todas. Los hallazgos suprimidos aparecen en JSO
 ## Baseline
 
 ```bash
-ia-linter-es baseline create --reason "texto heredado"
-ia-linter-es baseline update            # elimina entradas obsoletas
-ia-linter-es baseline update --add-new  # además acepta los hallazgos actuales
+textoneitor baseline create --reason "texto heredado"
+textoneitor baseline update            # elimina entradas obsoletas
+textoneitor baseline update --add-new  # además acepta los hallazgos actuales
 ```
 
 La baseline guarda huellas (`sha256` de regla, ruta, fragmento normalizado y ordinal), nunca texto. Los hallazgos presentes en ella no fallan; los nuevos sí. `lint` informa de cuántas entradas han quedado obsoletas.

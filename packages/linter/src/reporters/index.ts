@@ -78,7 +78,7 @@ export function reportSarif(result: ScanResult, rules: CompiledRule[], opts: { u
           driver: {
             name: result.tool.name,
             version: result.tool.version,
-            informationUri: "https://github.com/Josulo72/ia-linter-es",
+            informationUri: "https://github.com/Josulo72/textoneitor",
             rules: ruleList.map((r) => ({
               id: r.id,
               name: r.title,
@@ -112,7 +112,7 @@ export function reportSarif(result: ScanResult, rules: CompiledRule[], opts: { u
                 },
               },
             ],
-            partialFingerprints: { "ia-linter-es/v1": x.fingerprint },
+            partialFingerprints: { "textoneitor/v1": x.fingerprint },
             ...(x.suppressed ? { suppressions: [{ kind: x.suppressed.by === "inline" ? "inSource" : "external", ...(x.suppressed.reason ? { justification: x.suppressed.reason } : {}) }] } : {}),
           })),
         ),

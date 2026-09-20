@@ -19,7 +19,7 @@ pnpm build
 claude --plugin-dir ./integrations/claude-code
 ```
 
-El `pnpm build` importa: genera `bundle/`, que es la copia de la CLI que usa el plugin cuando el proyecto donde trabajas no tiene `ia-linter-es` en su `node_modules`. Si lo tiene, se usa esa y el bundle no hace falta.
+El `pnpm build` importa: genera `bundle/`, que es la copia de la CLI que usa el plugin cuando el proyecto donde trabajas no tiene `textoneitor` en su `node_modules`. Si lo tiene, se usa esa y el bundle no hace falta.
 
 ## La guía
 
@@ -40,7 +40,7 @@ Están apagados. Para encenderlos, en `.claude/settings.json` del proyecto o en 
 
 El de respuestas coge la última respuesta, la pasa por el linter con el perfil `chat` y, si hay algo de nivel warning o error, no deja terminar el turno y le pasa a Claude la orientación (`--format revision`): por cada regla, qué busca, una orientación para reescribir y dónde está cada caso. La respuesta original ya la has visto, y debajo sale la revisada si Claude decide cambiar algo.
 
-El de archivos hace lo mismo con cada archivo que se escribe, pero solo con los tipos de archivo de texto que están en `situaciones.yml` del linter: README, documentación, correos, publicaciones. El perfil sale de la ruta (`--profile auto`): un `README.md` se revisa como README y un `correos/respuesta.md` como correo. Un archivo de código o que no encaja en ninguna situación no se toca. Si tu `ia-linter.yml` tiene overrides por ruta, mandan ellos.
+El de archivos hace lo mismo con cada archivo que se escribe, pero solo con los tipos de archivo de texto que están en `situaciones.yml` del linter: README, documentación, correos, publicaciones. El perfil sale de la ruta (`--profile auto`): un `README.md` se revisa como README y un `correos/respuesta.md` como correo. Un archivo de código o que no encaja en ninguna situación no se toca. Si tu `textoneitor.yml` tiene overrides por ruta, mandan ellos.
 
 En los dos casos lo que llega es orientación, no órdenes. Un hallazgo se puede aceptar, ignorar o reinterpretar según el contexto, y Claude lo decide.
 
@@ -64,4 +64,4 @@ Cuesta unos 200 ms por revisión y no sale a la red.
 
 ## Qué no hace
 
-No hay un segundo motor ni una segunda IA. El comando y los hooks llaman a la misma CLI, con la misma configuración y las mismas reglas del proyecto, y quien reescribe es el propio Claude. Si `ia-linter.yml` desactiva una regla, aquí también está desactivada.
+No hay un segundo motor ni una segunda IA. El comando y los hooks llaman a la misma CLI, con la misma configuración y las mismas reglas del proyecto, y quien reescribe es el propio Claude. Si `textoneitor.yml` desactiva una regla, aquí también está desactivada.

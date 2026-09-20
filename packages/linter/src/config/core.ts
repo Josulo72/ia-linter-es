@@ -1,14 +1,27 @@
 /**
  * Configuración sin disco: valores por defecto, validación, mezcla y resolución de niveles.
  *
- * Separado de `index.ts` porque leer `ia-linter.yml` necesita `node:fs`, y esta parte tiene
+ * Separado de `index.ts` porque leer `textoneitor.yml` necesita `node:fs`, y esta parte tiene
  * que poder ejecutarse también en el navegador (`src/web/index.ts`).
  */
 import type { Config, Level, PathOverride, ProfileName, Register, CompiledRule } from "../contracts/index.js";
 import { SCHEMA_VERSION } from "../contracts/index.js";
 import { matchesAny } from "./glob.js";
 
-export const CONFIG_FILENAMES = ["ia-linter.yml", "ia-linter.yaml", ".ia-linter.yml", ".ia-linter.yaml"];
+/**
+ * Se busca en este orden. Los cuatro últimos son el nombre viejo del paquete y se
+ * mantienen para que un proyecto que ya tenga su ia-linter.yml siga funcionando.
+ */
+export const CONFIG_FILENAMES = [
+  "textoneitor.yml",
+  "textoneitor.yaml",
+  ".textoneitor.yml",
+  ".textoneitor.yaml",
+  "ia-linter.yml",
+  "ia-linter.yaml",
+  ".ia-linter.yml",
+  ".ia-linter.yaml",
+];
 const LEVELS: Level[] = ["off", "info", "warning", "error"];
 export const PROFILES: ProfileName[] = ["general", "tecnico", "academico", "marketing", "chat", "correo", "readme", "redes"];
 const REGISTERS: Register[] = ["general", "tecnico", "academico", "marketing", "literario", "periodistico", "institucional"];
@@ -29,7 +42,7 @@ export function defaultConfig(): Config {
     max_index: null,
     privacy: { snippets: true },
     reporter: "terminal",
-    cache: { enabled: true, dir: ".ia-linter-cache" },
+    cache: { enabled: true, dir: ".textoneitor-cache" },
     min_words_for_index: 150,
   };
 }

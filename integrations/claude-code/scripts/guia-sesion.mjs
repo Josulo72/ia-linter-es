@@ -15,10 +15,10 @@ try {
   process.exit(0); // sin guía no hay nada que cargar, pero la sesión arranca igual
 }
 // Los comentarios de supresión del linter son para el propio repositorio, no para el modelo.
-guia = guia.replace(/<!--\s*ia-linter-[\s\S]*?-->\n*/g, "").trim();
+guia = guia.replace(/<!--\s*(?:textoneitor|ia-linter)-[\s\S]*?-->\n*/g, "").trim();
 
 const contexto = [
-  "Guía de escritura en español (plugin ia-linter-es). Vale para todo lo que escribas en esta sesión, en la conversación y en los archivos, uses la skill que uses.",
+  "Guía de escritura en español (plugin textoneitor). Vale para todo lo que escribas en esta sesión, en la conversación y en los archivos, uses la skill que uses.",
   "Si los hooks de revisión están encendidos, al terminar te pueden devolver orientación del linter: son señales, no órdenes, y decides tú qué corriges.",
   "",
   guia,

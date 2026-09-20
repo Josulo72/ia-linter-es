@@ -2,13 +2,15 @@ import type { Finding } from "../contracts/index.js";
 
 /**
  * Supresiones inline en Markdown mediante comentarios HTML (también válidas en texto plano):
- *   <!-- ia-linter-disable -->                  desactiva todo hasta el enable
- *   <!-- ia-linter-enable -->
- *   <!-- ia-linter-disable regla1, regla2 -->   desactiva reglas concretas
- *   <!-- ia-linter-disable-next-line [reglas] --> siguiente línea
- *   <!-- ia-linter-disable-line [reglas] -->    misma línea
- *   <!-- ia-linter-disable-file [reglas] -->    todo el archivo
- * Se admite `motivo: ...` tras `--` en el mismo comentario: <!-- ia-linter-disable regla -- motivo: cita literal -->
+ *   <!-- textoneitor-disable -->                  desactiva todo hasta el enable
+ *   <!-- textoneitor-enable -->
+ *   <!-- textoneitor-disable regla1, regla2 -->   desactiva reglas concretas
+ *   <!-- textoneitor-disable-next-line [reglas] --> siguiente línea
+ *   <!-- textoneitor-disable-line [reglas] -->    misma línea
+ *   <!-- textoneitor-disable-file [reglas] -->    todo el archivo
+ * Se admite `motivo: ...` tras `--` en el mismo comentario: <!-- textoneitor-disable regla -- motivo: cita literal -->
+ *
+ * `ia-linter-` sigue valiendo, que es como se llamaba antes y hay textos escritos con él.
  */
 export interface SuppressionDirective {
   kind: "disable" | "enable" | "next-line" | "line" | "file";
@@ -18,7 +20,8 @@ export interface SuppressionDirective {
   reason?: string;
 }
 
-const DIRECTIVE_RE = /<!--\s*ia-linter-(disable-next-line|disable-line|disable-file|disable|enable)\b([^>]*?)-->/g;
+const DIRECTIVE_RE =
+  /<!--\s*(?:textoneitor|ia-linter)-(disable-next-line|disable-line|disable-file|disable|enable)\b([^>]*?)-->/g;
 
 export function parseSuppressions(text: string, lineStarts: number[], ignore: [number, number][] = []): SuppressionDirective[] {
   const out: SuppressionDirective[] = [];

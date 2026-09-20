@@ -56,7 +56,7 @@ const [modo, arg] = process.argv.slice(2);
 
 if (modo === "prepara") {
   if (!arg) throw new Error("falta el directorio de lotes");
-  const guiaBase = fs.readFileSync(path.join(root, prompts.guide), "utf8").replace(/^---[\s\S]*?---\s*/, "").replace(/<!-- ia-linter-[^>]*-->\n?/g, "");
+  const guiaBase = fs.readFileSync(path.join(root, prompts.guide), "utf8").replace(/^---[\s\S]*?---\s*/, "").replace(/<!-- (?:textoneitor|ia-linter)-[^>]*-->\n?/g, "");
   const actual = CANDIDATAS.objetivo;
   if (!guiaBase.includes(actual)) throw new Error("la guía ya no contiene la instrucción de ritmo actual: revisa CANDIDATAS.objetivo");
   fs.mkdirSync(arg, { recursive: true });

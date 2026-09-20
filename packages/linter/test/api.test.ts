@@ -20,7 +20,7 @@ describe("API programática", () => {
   });
 
   it("lintFile y lintProject coinciden con la CLI (paridad)", () => {
-    const dir = tmpProject({ "a.md": AI_TEXT, "b.txt": HUMAN_TEXT, "ia-linter.yml": "fail_on: never\n" });
+    const dir = tmpProject({ "a.md": AI_TEXT, "b.txt": HUMAN_TEXT, "textoneitor.yml": "fail_on: never\n" });
     const project = api.lintProject({ cwd: dir, noCache: true });
     const viaCli = JSON.parse(cli(["lint", "-f", "json", "--no-cache"], { cwd: dir }).stdout);
     expect(JSON.parse(api.reportJson(project))).toEqual(viaCli);
@@ -32,13 +32,13 @@ describe("API programática", () => {
     expect(api.explainRule("retorica/triada")?.detector).toBe("structure");
     expect(api.explainRule("x/y")).toBeNull();
     expect(api.listRules().length).toBeGreaterThanOrEqual(24);
-    const dir = tmpProject({ "ia-linter.yml": "profile: marketing\n" });
+    const dir = tmpProject({ "textoneitor.yml": "profile: marketing\n" });
     expect(api.loadConfig({ cwd: dir }).config.profile).toBe("marketing");
   });
 
   it("perfiles por situación: se aceptan y cambian los niveles", () => {
     for (const p of ["chat", "correo", "readme", "redes"]) {
-      const dir = tmpProject({ "ia-linter.yml": `profile: ${p}\n` });
+      const dir = tmpProject({ "textoneitor.yml": `profile: ${p}\n` });
       expect(api.loadConfig({ cwd: dir }).config.profile).toBe(p);
     }
     expect(api.validateConfigObject({ profile: "coloquial" }).length).toBe(1);

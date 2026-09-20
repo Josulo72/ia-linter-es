@@ -164,7 +164,7 @@ export function scanProject(ctx: RunnerContext, opts: ScanOptions = {}): ScanRes
   const policy = evaluatePolicy(results, ctx.config);
   return {
     schema_version: SCHEMA_VERSION,
-    tool: { name: "ia-linter-es", version: ctx.toolVersion, rulepack: ctx.pack.version },
+    tool: { name: "textoneitor", version: ctx.toolVersion, rulepack: ctx.pack.version },
     files: results,
     policy,
     baseline: baselineInfo,

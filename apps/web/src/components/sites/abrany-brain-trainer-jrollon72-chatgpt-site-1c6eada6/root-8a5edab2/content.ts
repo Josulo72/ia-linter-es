@@ -41,8 +41,8 @@ export const AVATARS = [1, 2, 3, 4, 5].map((n) => asset(`/img/avatar-${n}.png`))
 /** El nombre del paquete todavía no está renombrado. Los comandos se construyen desde aquí. */
 export const PKG = {
   name: "TEXTOneitor",
-  npm: "ia-linter-es",
-  version: "1.1.0",
+  npm: "textoneitor",
+  version: "1.2.0",
   repo: "https://github.com/Josulo72/textoneitor",
   email: "jrollon@gmail.com",
 };
@@ -56,6 +56,8 @@ export const PKG = {
 export const RELEASE = {
   tgz: "ia-linter-es-1.1.0.tgz",
   pluginDir: "./ia-linter-es-claude-code",
+  /** La orden que deja instalada ese .tgz. La release nueva traerá `textoneitor`. */
+  orden: "ia-linter-es",
 };
 
 /** La carpeta que crea `git clone`, que es el nombre del repositorio. */
@@ -372,7 +374,7 @@ export const PLANS: Plan[] = [
     how: INSTALL_COMMAND,
     tagline: "Un .tgz normal de npm, de la pestaña Releases.",
     features: [
-      `La orden ${PKG.npm} en tu proyecto`,
+      `La orden ${RELEASE.orden} en tu proyecto`,
       "Los ocho perfiles y la configuración",
       "Node 20 o más",
       "Vale igual con pnpm y con yarn",

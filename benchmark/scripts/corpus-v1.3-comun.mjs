@@ -27,7 +27,7 @@ export const encargo = (prompts, p) => prompts.templates[p.register].replace("{t
 /** La guía tal como se le pasa al modelo: sin los comentarios de supresión del linter, que son del repositorio. */
 export function guiaParaModelo(prompts) {
   const g = fs.readFileSync(path.join(root, prompts.guide), "utf8").replace(/\r\n/g, "\n");
-  return g.replace(/<!--\s*ia-linter-[\s\S]*?-->\n*/g, "").trim();
+  return g.replace(/<!--\s*(?:textoneitor|ia-linter)-[\s\S]*?-->\n*/g, "").trim();
 }
 
 /**

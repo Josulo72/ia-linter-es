@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://ia-linter-es/schemas/rule.schema.json",
+  "$id": "https://textoneitor/schemas/rule.schema.json",
   "title": "Definición de regla del linter",
   "type": "object",
   "additionalProperties": false,

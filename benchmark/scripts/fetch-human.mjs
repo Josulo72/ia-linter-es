@@ -17,7 +17,7 @@ const licenses = parse(fs.readFileSync(path.join(corpus, "policy", "licenses.yml
 const args = process.argv.slice(2);
 const only = args.includes("--only") ? args[args.indexOf("--only") + 1].split(",") : null;
 const refresh = args.includes("--refresh");
-const UA = { "User-Agent": "Mozilla/5.0 (compatible; ia-linter-es-corpus/1.0; research corpus)" };
+const UA = { "User-Agent": "Mozilla/5.0 (compatible; textoneitor-corpus/1.0; research corpus)" };
 const { min: MIN, max: MAX } = policy.words;
 const CUTOFF = policy.cutoff_date;
 

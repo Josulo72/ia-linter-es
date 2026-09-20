@@ -46,7 +46,7 @@ En `corpus/archive/v1.0`, con sus manifiestos y su lock. 45 textos humanos de BO
 | `benchmark/scripts/dump-findings.mjs` | Lista hallazgos con la clave de adjudicación, con el mismo contexto que `benchmark run`. Con `--ciego` escribe el paquete para adjudicar | no |
 | `benchmark/scripts/aplicar-adjudicacion.mjs` | Traduce las respuestas de un adjudicador ciego con el mapa y escribe el archivo de adjudicación | no |
 | `scripts/corpus-check.mjs` | Licencias, trazabilidad, hashes, congelación y veto de ambos corpus; forma parte de `pnpm gates` | no |
-| `ia-linter-es benchmark run --profile <perfil>` | Métricas por regla y agregadas (§12) | no |
+| `textoneitor benchmark run --profile <perfil>` | Métricas por regla y agregadas (§12) | no |
 
 En equipos donde Node no confía en la cadena de certificados de `revistas.csic.es`, los scripts de descarga se ejecutan con `node --use-system-ca`.
 
