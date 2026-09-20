@@ -1,7 +1,7 @@
 // Piezas comunes del descargador de la clase humana v1.2 (perfiles correo, readme y redes).
 // Sin dependencias fuera del espacio de trabajo. Pausa entre peticiones y user-agent identificable.
 export const UA = {
-  "User-Agent": "ia-linter-es-corpus/1.2 (banco de pruebas del linter; contacto: jrollon@gmail.com)",
+  "User-Agent": "textoneitor-corpus/1.2 (banco de pruebas del linter; contacto: jrollon@gmail.com)",
   "Accept-Language": "es-ES,es;q=0.9",
 };
 export const CUTOFF = "2022-01-01"; // nada publicado el 31/12/2021 o después queda fuera

@@ -27,7 +27,7 @@ describe("CLI E2E: lint", () => {
     const json = JSON.parse(a.stdout);
     expect(json.schema_version).toBe(1);
     expect(json.files.map((f: { path: string }) => f.path)).toEqual(["ia.md", "sub/ok.txt"]);
-    expect(fs.existsSync(path.join(dir, ".ia-linter-cache"))).toBe(true);
+    expect(fs.existsSync(path.join(dir, ".textoneitor-cache"))).toBe(true);
     expect(json.files[0].score.index).toBeGreaterThan(30);
     expect(a.stdout).not.toMatch(/probabilidad/i);
   });
@@ -38,7 +38,7 @@ describe("CLI E2E: lint", () => {
       "ignorado/x.md": AI_TEXT,
       "docs/x.md": AI_TEXT,
       "blog/x.md": AI_TEXT,
-      "ia-linter.yml": "fail_on: never\nexclude: ['blog/**']\noverrides:\n  - files: ['docs/**']\n    rules:\n      'lexico/*': off\n",
+      "textoneitor.yml": "fail_on: never\nexclude: ['blog/**']\noverrides:\n  - files: ['docs/**']\n    rules:\n      'lexico/*': off\n",
     });
     const r = cli(["lint", "-f", "json", "--no-cache"], { cwd: dir });
     expect(r.status).toBe(0);
@@ -60,7 +60,7 @@ describe("CLI E2E: lint", () => {
   });
 
   it("supresiones inline en Markdown", () => {
-    const dir = tmpProject({ "a.md": "<!-- ia-linter-disable-file -->\n" + AI_TEXT });
+    const dir = tmpProject({ "a.md": "<!-- textoneitor-disable-file -->\n" + AI_TEXT });
     const r = cli(["lint", "a.md", "-f", "json", "--no-cache"], { cwd: dir });
     expect(r.status).toBe(0);
     const json = JSON.parse(r.stdout);
@@ -75,7 +75,7 @@ describe("CLI E2E: lint", () => {
     const s = JSON.parse(fs.readFileSync(path.join(dir, "out.sarif"), "utf8"));
     expect(s.version).toBe("2.1.0");
     const runObj = s.runs[0];
-    expect(runObj.tool.driver.name).toBe("ia-linter-es");
+    expect(runObj.tool.driver.name).toBe("textoneitor");
     expect(runObj.originalUriBaseIds.PROJECTROOT.uri).toMatch(/^file:\/\/\/.*\/$/);
     expect(runObj.results.length).toBeGreaterThan(10);
     for (const res of runObj.results) {
@@ -86,7 +86,7 @@ describe("CLI E2E: lint", () => {
       expect(loc.region.startLine).toBeGreaterThanOrEqual(1);
       expect(loc.region.startColumn).toBeGreaterThanOrEqual(1);
       expect(runObj.tool.driver.rules[res.ruleIndex].id).toBe(res.ruleId);
-      expect(res.partialFingerprints["ia-linter-es/v1"]).toMatch(/^[0-9a-f]{24}$/);
+      expect(res.partialFingerprints["textoneitor/v1"]).toMatch(/^[0-9a-f]{24}$/);
     }
   });
 
@@ -116,10 +116,10 @@ describe("CLI E2E: lint", () => {
     expect(cabeceras(v.stdout).sort()).toEqual([...aArreglar, ...soloInfo].sort());
   });
 
-  it("--format revision sin nada que arreglar lo dice, y el reporter se puede fijar en ia-linter.yml", () => {
+  it("--format revision sin nada que arreglar lo dice, y el reporter se puede fijar en textoneitor.yml", () => {
     const vacio = cli(["lint", "--stdin", "-f", "revision"], { input: "Hola." });
     expect(vacio.stdout).toBe("Nada que revisar.\n");
-    const dir = tmpProject({ "ia.md": AI_TEXT, "ia-linter.yml": "reporter: revision\nfail_on: never\n" });
+    const dir = tmpProject({ "ia.md": AI_TEXT, "textoneitor.yml": "reporter: revision\nfail_on: never\n" });
     const r = cli(["lint", "--no-cache"], { cwd: dir });
     expect(r.status).toBe(0);
     expect(r.stdout).toContain("Orientación:");
@@ -142,7 +142,7 @@ describe("CLI E2E: lint", () => {
     expect(nada.files).toEqual([]);
     expect(nada.stderr).toContain("no corresponde a ninguna situación");
     // Los overrides del proyecto mandan sobre la situación.
-    const dir = tmpProject({ "ia-linter.yml": "overrides:\n  - files: ['README.md']\n    profile: correo\n" });
+    const dir = tmpProject({ "textoneitor.yml": "overrides:\n  - files: ['README.md']\n    profile: correo\n" });
     expect(reglas("README.md", dir).files[0].findings.map((f) => f.rule)).not.toContain("estructura/ritmo-plano");
     // Con --stdin hace falta la ruta: es lo que decide.
     expect(cli(["lint", "--stdin", "--profile", "auto"], { input: PLANO }).status).toBe(2);
@@ -168,14 +168,14 @@ describe("CLI E2E: lint", () => {
   });
 
   it("privacidad: sin snippets no aparece texto del documento", () => {
-    const dir = tmpProject({ "ia.md": AI_TEXT, "ia-linter.yml": "privacy:\n  snippets: false\nfail_on: never\n" });
+    const dir = tmpProject({ "ia.md": AI_TEXT, "textoneitor.yml": "privacy:\n  snippets: false\nfail_on: never\n" });
     const r = cli(["lint", "-f", "json", "--no-cache"], { cwd: dir });
     const json = JSON.parse(r.stdout);
     expect(json.files[0].findings.every((f: { snippet: string }) => f.snippet === "")).toBe(true);
   });
 
   it("errores de uso devuelven 2", () => {
-    const dir = tmpProject({ "ia-linter.yml": "profile: inventado\n", "a.md": "hola" });
+    const dir = tmpProject({ "textoneitor.yml": "profile: inventado\n", "a.md": "hola" });
     expect(cli(["lint"], { cwd: dir }).status).toBe(2);
     const dir2 = tmpProject({ "a.md": "hola" });
     expect(cli(["lint", "--fail-on", "x"], { cwd: dir2 }).status).toBe(2);
@@ -201,7 +201,7 @@ describe("CLI E2E: rules, config, baseline", () => {
 
   it("config validate y config explain muestran origen", () => {
     const dir = tmpProject({
-      "ia-linter.yml": "profile: academico\nrules:\n  retorica/triada: off\noverrides:\n  - files: ['docs/**']\n    rules:\n      retorica/triada: error\n",
+      "textoneitor.yml": "profile: academico\nrules:\n  retorica/triada: off\noverrides:\n  - files: ['docs/**']\n    rules:\n      retorica/triada: error\n",
       "docs/a.md": "hola",
     });
     expect(cli(["config", "validate"], { cwd: dir }).status).toBe(0);
@@ -210,12 +210,12 @@ describe("CLI E2E: rules, config, baseline", () => {
     expect(ex.stdout).toMatch(/densidad\/conectores\s+info\s+← profile/);
     const ex2 = cli(["config", "explain", "otro.md"], { cwd: dir });
     expect(ex2.stdout).toMatch(/retorica\/triada\s+off\s+← project/);
-    const bad = tmpProject({ "ia-linter.yml": "rules:\n  no/existe: off\n" });
+    const bad = tmpProject({ "textoneitor.yml": "rules:\n  no/existe: off\n" });
     expect(cli(["config", "validate"], { cwd: bad }).status).toBe(2);
   });
 
   it("baseline create impide solo hallazgos nuevos; update elimina obsoletas", () => {
-    const dir = tmpProject({ "a.md": AI_TEXT, "ia-linter.yml": "baseline:\n  path: bl.json\n" });
+    const dir = tmpProject({ "a.md": AI_TEXT, "textoneitor.yml": "baseline:\n  path: bl.json\n" });
     expect(cli(["lint", "--no-cache"], { cwd: dir }).status).toBe(1);
     expect(cli(["baseline", "create", "--reason", "legado"], { cwd: dir }).status).toBe(0);
     const bl = fs.readFileSync(path.join(dir, "bl.json"), "utf8");

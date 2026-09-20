@@ -29,6 +29,14 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y l
   holdout de README (2,019 por mil palabras frente a 1,5). Con `stable_min` en 23 y 23 reglas estables,
   degradarla deja el pack por debajo del mínimo; apagarla en el perfil `readme` es la salida razonable.
 
+## [1.2.0] - 2026-09-20
+
+### Cambiado
+
+- El paquete se llama `textoneitor`. Con él cambian la orden del terminal, el archivo de configuración (`textoneitor.yml`), los comentarios para callar una regla (`<!-- textoneitor-disable -->`), la carpeta de caché y el nombre por defecto de la baseline.
+- Sigue valiendo lo anterior: se leen igual `ia-linter.yml` y los comentarios `<!-- ia-linter-disable -->`, y `baseline update` usa `ia-linter-baseline.json` si es el archivo que hay. Un proyecto que ya lo use no tiene que tocar nada.
+- El repositorio pasa a ser `github.com/Josulo72/textoneitor` y la web se publica en https://josulo72.github.io/textoneitor/
+
 ## [1.1.0] - 2026-09-19
 
 La humanización pasa a ser una capa común que funciona con cualquier skill y cualquier estilo de salida, y el linter devuelve orientación para reescribir en vez de solo avisos. El linter sigue sin llevar IA dentro: la única IA es el asistente que reescribe.

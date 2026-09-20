@@ -28,7 +28,7 @@ Fíjate en lo que hace. Usa las palabras de siempre ("le echas", "están mal", "
 
 ## Lo que no se hace nunca
 
-<!-- ia-linter-disable retorica/no-es-x-es-y, retorica/no-se-trata-de, lexico/honestidad-anunciada -->
+<!-- textoneitor-disable retorica/no-es-x-es-y, retorica/no-se-trata-de, lexico/honestidad-anunciada -->
 
 
 - Negar algo que nadie ha dicho para quedar bien: "no es un gasto, es una inversión", "no se trata de correr, sino de llegar". Di la segunda parte y punto.
@@ -42,7 +42,7 @@ Fíjate en lo que hace. Usa las palabras de siempre ("le echas", "están mal", "
 - Empezar halagando la pregunta o terminar ofreciendo más ayuda por sistema.
 - Atribuirle a la persona errores, opiniones o culpas que no ha expresado.
 
-<!-- ia-linter-enable -->
+<!-- textoneitor-enable -->
 
 ## Coloquial no es descuidado
 
@@ -68,13 +68,13 @@ Lo técnico sigue siendo exacto: comandos, rutas, cifras y errores van tal cual.
 Cuando escribas un archivo de texto para que lo lea una persona (un README, un correo, una publicación), pásale el linter:
 
 ```
-npx ia-linter-es lint <archivo> --profile auto --format revision
+npx textoneitor lint <archivo> --profile auto --format revision
 ```
 
 `--profile auto` elige el perfil por la ruta. Para un texto sin archivo, como una respuesta, pásalo por la entrada estándar con el perfil de la situación:
 
 ```
-npx ia-linter-es lint --stdin --stdin-filename respuesta.md --profile chat --format revision
+npx textoneitor lint --stdin --stdin-filename respuesta.md --profile chat --format revision
 ```
 
 Lo que devuelve es orientación, no órdenes. Decide tú qué corriges, qué mantienes y cómo lo adaptas al contexto, y si un hallazgo no aplica, déjalo. Si reescribes, cambia la frase entera en vez de darle la vuelta a las palabras, y no alternes frases largas y cortas por sistema, que es el defecto contrario.

@@ -20,7 +20,7 @@ const archivo = payload.tool_input?.file_path ?? payload.tool_input?.path;
 if (typeof archivo !== "string" || !archivo) process.exit(0);
 const cwd = payload.cwd && fs.existsSync(payload.cwd) ? payload.cwd : process.cwd();
 const abs = path.resolve(cwd, archivo);
-// Solo archivos del proyecto: la ruta relativa es la que decide la situación y la que ven los overrides de ia-linter.yml.
+// Solo archivos del proyecto: la ruta relativa es la que decide la situación y la que ven los overrides de textoneitor.yml.
 const rel = path.relative(cwd, abs).replace(/\\/g, "/");
 if (!rel || rel.startsWith("../") || path.isAbsolute(rel)) process.exit(0);
 

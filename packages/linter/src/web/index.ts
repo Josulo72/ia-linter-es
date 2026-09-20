@@ -1,7 +1,7 @@
 /**
  * Motor para el navegador. Mismo análisis que la CLI, sin disco y sin red.
  *
- * La CLI descubre archivos, lee `ia-linter.yml` y escribe informes; nada de eso existe
+ * La CLI descubre archivos, lee `textoneitor.yml` y escribe informes; nada de eso existe
  * aquí. Lo que queda es el análisis de un texto, que es el mismo código
  * (`runner/lint-text.ts`) y el mismo Rule Pack. `test/web-parity.test.ts` comprueba que
  * los dos caminos devuelven exactamente los mismos hallazgos y el mismo índice.
@@ -27,7 +27,7 @@ export interface WebContextOptions {
   profile?: ProfileName;
   /** Registro. Por defecto el que traiga la configuración base. */
   register?: Register;
-  /** Ajustes sueltos, con las mismas claves que `ia-linter.yml`. */
+  /** Ajustes sueltos, con las mismas claves que `textoneitor.yml`. */
   config?: Partial<Config>;
 }
 
@@ -57,7 +57,7 @@ export interface LintTextOptions {
   format?: "text" | "markdown";
 }
 
-/** Analiza un texto. Devuelve los mismos hallazgos y el mismo índice que `ia-linter-es lint`. */
+/** Analiza un texto. Devuelve los mismos hallazgos y el mismo índice que `textoneitor lint`. */
 export function lintText(text: string, ctx: RunnerContext, opts: LintTextOptions = {}): FileResult {
   return lintDocumentText(text, ctx, opts);
 }

@@ -3,18 +3,18 @@
 /**
  * El revisor de verdad, corriendo en el navegador.
  *
- * El motor es el mismo código que la CLI (`ia-linter-es/web`) y el Rule Pack es el mismo
+ * El motor es el mismo código que la CLI (`textoneitor/web`) y el Rule Pack es el mismo
  * archivo. El texto no sale de aquí: se analiza en tu máquina y no hay ninguna petición.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import type { FileResult, ProfileName, RulePack, RunnerContext } from "ia-linter-es/web";
+import type { FileResult, ProfileName, RulePack, RunnerContext } from "textoneitor/web";
 import { EASE, Reveal, RevealGroup } from "../shared/motion-kit";
 import { EJEMPLOS, PERFILES, SECTIONS, VIVO } from "./content";
 import { Eyebrow, Lede, Section, SectionTitle } from "./primitives";
 
-type Motor = typeof import("ia-linter-es/web");
+type Motor = typeof import("textoneitor/web");
 type Estado = "inicial" | "cargando" | "listo" | "error";
 
 const NIVEL: Record<string, { label: string; punto: string; texto: string }> = {
@@ -37,7 +37,7 @@ export function Vivo() {
     if (motorRef.current || estado === "cargando") return;
     setEstado("cargando");
     try {
-      const [web, packMod] = await Promise.all([import("ia-linter-es/web"), import("ia-linter-es/rulepack.json")]);
+      const [web, packMod] = await Promise.all([import("textoneitor/web"), import("textoneitor/rulepack.json")]);
       const pack = ((packMod as { default?: RulePack }).default ?? packMod) as RulePack;
       motorRef.current = { web, pack };
       setEstado("listo");

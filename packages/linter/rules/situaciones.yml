@@ -7,7 +7,7 @@
 #   archivos los tipos de archivo de texto que le corresponden. Con `--profile auto`, la ruta decide la situación:
 #            gana la primera que coincide. Un archivo que no coincide con ninguna no se revisa con `auto`.
 #
-# Los overrides de ia-linter.yml siguen mandando sobre esto.
+# Los overrides de textoneitor.yml siguen mandando sobre esto.
 schema_version: 1
 situaciones:
   - id: chat

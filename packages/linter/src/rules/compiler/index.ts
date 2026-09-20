@@ -290,7 +290,7 @@ export function compileRules(opts: CompileOptions): CompileResult {
   compiled.sort((a, b) => a.id.localeCompare(b.id, "en"));
   const pack: RulePack = {
     schema_version: SCHEMA_VERSION,
-    name: "ia-linter-es/oficial",
+    name: "textoneitor/oficial",
     version: opts.version,
     generated_at: "build",
     rules: compiled,

@@ -44,14 +44,14 @@ describe("scoring", () => {
 
 describe("supresiones", () => {
   const text = [
-    "<!-- ia-linter-disable-file lexico/z -->",
+    "<!-- textoneitor-disable-file lexico/z -->",
     "Uno hoy en día.",
-    "<!-- ia-linter-disable-next-line lexico/a -- motivo: cita literal -->",
+    "<!-- textoneitor-disable-next-line lexico/a -- motivo: cita literal -->",
     "Dos hoy en día.",
-    "Tres hoy en día. <!-- ia-linter-disable-line -->",
-    "<!-- ia-linter-disable lexico/* -->",
+    "Tres hoy en día. <!-- textoneitor-disable-line -->",
+    "<!-- textoneitor-disable lexico/* -->",
     "Cuatro hoy en día.",
-    "<!-- ia-linter-enable -->",
+    "<!-- textoneitor-enable -->",
     "Cinco hoy en día.",
   ].join("\n");
   const ls = computeLineStarts(text);

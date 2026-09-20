@@ -1,4 +1,4 @@
-# Ejemplo de configuración. Copia este archivo a la raíz de tu proyecto como ia-linter.yml.
+# Ejemplo de configuración. Copia este archivo a la raíz de tu proyecto como textoneitor.yml.
 schema_version: 1
 profile: general
 register: general
@@ -17,12 +17,12 @@ overrides:
     rules:
       densidad/emojis: off
 baseline:
-  path: ia-linter-baseline.json
+  path: textoneitor-baseline.json
   require_reason: false
 privacy:
   snippets: true
 reporter: terminal
 cache:
   enabled: true
-  dir: .ia-linter-cache
+  dir: .textoneitor-cache
 min_words_for_index: 150

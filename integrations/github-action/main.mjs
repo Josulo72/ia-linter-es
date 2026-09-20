@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// GitHub Action de ia-linter-es. No contiene lógica de análisis: llama a la misma CLI
+// GitHub Action de textoneitor. No contiene lógica de análisis: llama a la misma CLI
 // y traduce su JSON a anotaciones, salidas y código de salida. No redefine reglas ni umbrales.
 // Sin dependencias: las anotaciones son comandos de workflow por stdout y las salidas van a $GITHUB_OUTPUT.
 import fs from "node:fs";
@@ -20,7 +20,7 @@ const cwd = path.resolve(input("working-directory") || ".");
 if (!fs.existsSync(cwd)) fail(`working-directory no existe: ${cwd}`);
 
 function fail(msg) {
-  process.stdout.write(`::error::ia-linter-es: ${msg}\n`);
+  process.stdout.write(`::error::textoneitor: ${msg}\n`);
   process.exit(1);
 }
 
@@ -30,7 +30,7 @@ function resolveCli() {
   if (fromEnv && fs.existsSync(fromEnv)) return fromEnv;
   let dir = cwd;
   for (;;) {
-    const p = path.join(dir, "node_modules", "ia-linter-es", "dist", "cli", "main.js");
+    const p = path.join(dir, "node_modules", "textoneitor", "dist", "cli", "main.js");
     if (fs.existsSync(p)) return p;
     const parent = path.dirname(dir);
     if (parent === dir) break;
@@ -38,7 +38,7 @@ function resolveCli() {
   }
   const bundled = path.join(here, "bundle", "dist", "cli.mjs");
   if (fs.existsSync(bundled)) return bundled;
-  fail("no encuentro la CLI. Instala ia-linter-es en el proyecto (npm i -D ia-linter-es) antes de este paso.");
+  fail("no encuentro la CLI. Instala textoneitor en el proyecto (npm i -D textoneitor) antes de este paso.");
 }
 
 const args = ["lint", "--format", "json", "--no-color"];
@@ -133,7 +133,7 @@ function summary(result, findings, counts, maxIndex, passed) {
   for (const f of result.files) for (const x of f.findings) if (!x.suppressed) porRegla.set(x.rule, (porRegla.get(x.rule) ?? 0) + 1);
   const top = [...porRegla.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 10);
   const lines = [
-    `## ia-linter-es`,
+    `## textoneitor`,
     "",
     `${result.files.length} archivo(s), ${findings} hallazgo(s): ${counts.error ?? 0} error, ${counts.warning ?? 0} warning, ${counts.info ?? 0} info. Índice más alto: ${maxIndex}.`,
     "",

@@ -1,7 +1,8 @@
 node_modules/
 dist/
 *.tgz
-.ia-linter-cache/
+.textoneitor-cache/
+.textoneitor-cache/
 coverage/
 packages/linter/rulepack/
 project/EVIDENCE/tmp/

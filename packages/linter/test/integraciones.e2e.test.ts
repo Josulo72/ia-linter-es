@@ -32,7 +32,7 @@ function leerOutputs(file: string): Record<string, string> {
 
 describe("Paridad entre superficies", () => {
   it("CLI, bundle y Action ven exactamente los mismos hallazgos", () => {
-    const dir = tmpProject({ "ia.md": AI_TEXT, "sub/ok.txt": HUMAN_TEXT, "ia-linter.yml": "profile: general\n" });
+    const dir = tmpProject({ "ia.md": AI_TEXT, "sub/ok.txt": HUMAN_TEXT, "textoneitor.yml": "profile: general\n" });
     const desdeCli = cli(["lint", "-f", "json", "--no-cache"], { cwd: dir });
     const desdeBundle = run(BUNDLE, ["lint", "-f", "json", "--no-cache"], { cwd: dir });
     expect(desdeBundle.stdout).toBe(desdeCli.stdout);
@@ -44,7 +44,7 @@ describe("Paridad entre superficies", () => {
   });
 
   it("la Action no redefine la configuración del repositorio", () => {
-    const dir = tmpProject({ "ia.md": AI_TEXT, "ia-linter.yml": "fail_on: never\nrules:\n  'lexico/*': off\n" });
+    const dir = tmpProject({ "ia.md": AI_TEXT, "textoneitor.yml": "fail_on: never\nrules:\n  'lexico/*': off\n" });
     const outputs = path.join(dir, "outputs.txt");
     const r = action({}, { cwd: dir, outputs });
     expect(r.status).toBe(0);
@@ -69,7 +69,7 @@ describe("GitHub Action", () => {
     const out = leerOutputs(outputs);
     expect(Number(out.findings)).toBe(anotaciones.length);
     expect(Number(out["max-index"])).toBeGreaterThan(0);
-    expect(fs.readFileSync(summary, "utf8")).toContain("## ia-linter-es");
+    expect(fs.readFileSync(summary, "utf8")).toContain("## textoneitor");
   });
 
   it("annotations=false calla las anotaciones pero cuenta igual", () => {
@@ -86,7 +86,7 @@ describe("GitHub Action", () => {
     expect(r.status).toBe(0);
     const sarif = JSON.parse(fs.readFileSync(path.join(dir, "informe.sarif"), "utf8"));
     expect(sarif.version).toBe("2.1.0");
-    expect(sarif.runs[0].tool.driver.name).toBe("ia-linter-es");
+    expect(sarif.runs[0].tool.driver.name).toBe("textoneitor");
     expect(sarif.runs[0].results.length).toBeGreaterThan(0);
   });
 
@@ -96,7 +96,7 @@ describe("GitHub Action", () => {
     const r = run(path.join(dir, "action", "main.mjs"), [], { cwd: dir, env: { IA_LINTER_CLI: path.join(dir, "no-existe.js") } });
     expect(r.status).toBe(1);
     expect(r.stdout).toMatch(/no encuentro la CLI/i);
-    expect(r.stdout).toContain("npm i -D ia-linter-es");
+    expect(r.stdout).toContain("npm i -D textoneitor");
   });
 });
 
@@ -193,10 +193,10 @@ describe("Hook de Claude Code", () => {
         "Lo he cambiado en el runner y ahora la caché se invalida sola cuando cambia el Rule Pack, que era justo lo que fallaba el otro día.",
         "",
         "```bash",
-        "ia-linter-es lint docs --profile readme --fail-on warning --no-cache",
-        "ia-linter-es lint docs --profile readme --fail-on error --no-cache",
-        "ia-linter-es lint docs --profile chat --fail-on warning --no-cache",
-        "ia-linter-es lint docs --profile chat --fail-on error --no-cache",
+        "textoneitor lint docs --profile readme --fail-on warning --no-cache",
+        "textoneitor lint docs --profile readme --fail-on error --no-cache",
+        "textoneitor lint docs --profile chat --fail-on warning --no-cache",
+        "textoneitor lint docs --profile chat --fail-on error --no-cache",
         "```",
         "",
         "Lo he probado con los dos perfiles y va. Queda pendiente mirar qué pasa cuando el baseline es de otra versión, que ahí no me fío nada y no lo he tocado.",
@@ -313,7 +313,7 @@ describe("Guía compartida (SessionStart)", () => {
     expect(ctx).toContain("Escribes en español de España como escribe una persona normal");
     expect(ctx).toContain("## Según la situación");
     expect(ctx).not.toMatch(/^---\nname:/m);
-    expect(ctx).not.toContain("ia-linter-disable");
+    expect(ctx).not.toContain("textoneitor-disable");
   });
 
   it("IA_LINTER_GUIA=0 lo apaga", () => {
@@ -335,8 +335,8 @@ describe("Guía compartida (SessionStart)", () => {
 describe("Pre-commit", () => {
   it("la definición está en la raíz y llama a la CLI sin lógica propia", () => {
     const hooks = fs.readFileSync(path.join(REPO_ROOT, ".pre-commit-hooks.yaml"), "utf8");
-    expect(hooks).toContain("id: ia-linter-es");
-    expect(hooks).toContain("entry: ia-linter-es lint");
+    expect(hooks).toContain("id: textoneitor");
+    expect(hooks).toContain("entry: textoneitor lint");
     expect(hooks).toContain("pass_filenames: true");
   });
 
@@ -344,7 +344,7 @@ describe("Pre-commit", () => {
     const hooks = fs.readFileSync(path.join(REPO_ROOT, ".pre-commit-hooks.yaml"), "utf8");
     const pkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "packages", "linter", "package.json"), "utf8"));
     // La raíz del repositorio es un workspace privado sin `bin`: el binario sale de npm.
-    expect(hooks).toContain(`additional_dependencies: ["ia-linter-es@${pkg.version}"]`);
+    expect(hooks).toContain(`additional_dependencies: ["textoneitor@${pkg.version}"]`);
     expect(JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "package.json"), "utf8")).private).toBe(true);
   });
 

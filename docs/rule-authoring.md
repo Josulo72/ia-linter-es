@@ -39,9 +39,9 @@ El compilador rechaza: patrón vacío o que coincide con la cadena vacía, retro
 ## Flujo
 
 1. Escribe la regla como `candidate` con sus ejemplos.
-2. `pnpm --filter ia-linter-es exec tsx scripts/compile-check.ts` para iterar rápido.
+2. `pnpm --filter textoneitor exec tsx scripts/compile-check.ts` para iterar rápido.
 3. `pnpm build && pnpm test`.
-4. `ia-linter-es benchmark run --corpus corpus --partition development` y revisa la fila de la regla.
+4. `textoneitor benchmark run --corpus corpus --partition development` y revisa la fila de la regla.
 5. Si cumple la política, pásala a `stable` y documenta los falsos positivos observados. No ajustes reglas mirando `holdout`.
 
 Las fixtures largas opcionales van en `rules/fixtures/<categoria>--<nombre>.yml` con el mismo formato que `examples`.

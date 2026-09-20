@@ -1,10 +1,10 @@
-# ia-linter-es
+# TEXTOneitor
 
-Linter de textos en español que marca lo que suena a IA: muletillas de redacción, rayas de inciso a la inglesa, tríadas por costumbre, cierres de arenga, frases todas del mismo largo. Se ejecuta en tu ordenador, no usa IA y no sale a la red.
+Revisor de textos en español que marca lo que suena a IA: muletillas de redacción, rayas de inciso a la inglesa, tríadas por costumbre, cierres de arenga, frases todas del mismo largo. Se ejecuta en tu ordenador, no usa IA y no sale a la red.
 
 ```
-npm i -D ia-linter-es
-npx ia-linter-es lint docs README.md
+npm i -D textoneitor
+npx textoneitor lint docs README.md
 ```
 
 ```
@@ -19,13 +19,13 @@ El índice va de 0 a 100 y mide patrones de escritura. No dice quién ha escrito
 ## Comandos
 
 ```
-ia-linter-es lint [rutas...]        # --format terminal|json|sarif, --profile, --fail-on, --max-index, --stdin
-ia-linter-es rules list             # --json, --status stable|candidate
-ia-linter-es rules explain <id>     # qué mide, ejemplo, falsos positivos conocidos
-ia-linter-es config validate        # comprueba ia-linter.yml
-ia-linter-es config explain <archivo>
-ia-linter-es baseline create        # congela lo que ya está escrito
-ia-linter-es baseline update
+textoneitor lint [rutas...]        # --format terminal|json|sarif, --profile, --fail-on, --max-index, --stdin
+textoneitor rules list             # --json, --status stable|candidate
+textoneitor rules explain <id>     # qué mide, ejemplo, falsos positivos conocidos
+textoneitor config validate        # comprueba textoneitor.yml
+textoneitor config explain <archivo>
+textoneitor baseline create        # congela lo que ya está escrito
+textoneitor baseline update
 ```
 
 ## Perfiles
@@ -34,7 +34,7 @@ ia-linter-es baseline update
 
 ## Configuración
 
-`ia-linter.yml` en la raíz:
+`textoneitor.yml` en la raíz:
 
 ```yaml
 profile: readme
@@ -51,13 +51,13 @@ overrides:
 Supresiones en el propio texto:
 
 ```markdown
-<!-- ia-linter-disable-next-line retorica/triada -->
+<!-- textoneitor-disable-next-line retorica/triada -->
 ```
 
 ## API
 
 ```js
-import { lintText, lintFile, lintProject, loadConfig, loadRulePack } from "ia-linter-es";
+import { lintText, lintFile, lintProject, loadConfig, loadRulePack } from "textoneitor";
 
 const r = lintText(texto, { config: { profile: "chat" }, format: "text" });
 console.log(r.score.index, r.findings.map((f) => f.rule));
@@ -65,6 +65,6 @@ console.log(r.score.index, r.findings.map((f) => f.rule));
 
 ## Lo demás
 
-El código, la guía de estilo para escribir en español que no suene a IA, el informe del benchmark y los adaptadores de pre-commit, GitHub Actions y Claude Code están en https://github.com/Josulo72/ia-linter-es
+El código, la guía de estilo para escribir en español que no suene a IA, el informe del benchmark y los adaptadores de pre-commit, GitHub Actions y Claude Code están en https://github.com/Josulo72/textoneitor
 
 Business Source License 1.1: puedes usarlo, también en tu empresa y para tus clientes, pero no venderlo ni montar un servicio de pago con él. El 17 de septiembre de 2030 pasa a AGPL-3.0. Textos completos en `LICENSE` y `LICENSE-AGPL-3.0`.

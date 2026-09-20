@@ -38,10 +38,10 @@ describe("validateConfigObject", () => {
 describe("loadConfig", () => {
   it("busca el archivo hacia arriba y fusiona sobre los internos", () => {
     const dir = fs.mkdtempSync(path.join(os.tmpdir(), "ial-cfg-"));
-    fs.writeFileSync(path.join(dir, "ia-linter.yml"), "profile: academico\nfail_on: warning\nrules:\n  lexico/a: off\n");
+    fs.writeFileSync(path.join(dir, "textoneitor.yml"), "profile: academico\nfail_on: warning\nrules:\n  lexico/a: off\n");
     fs.mkdirSync(path.join(dir, "sub"));
     const loaded = loadConfig({ cwd: path.join(dir, "sub") });
-    expect(loaded.file).toBe(path.join(dir, "ia-linter.yml"));
+    expect(loaded.file).toBe(path.join(dir, "textoneitor.yml"));
     expect(loaded.root).toBe(dir);
     expect(loaded.config.profile).toBe("academico");
     expect(loaded.config.fail_on).toBe("warning");

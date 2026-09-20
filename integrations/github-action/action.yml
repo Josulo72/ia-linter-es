@@ -1,4 +1,4 @@
-name: ia-linter-es
+name: textoneitor
 description: Analiza el español del repositorio y anota los hallazgos en el pull request. Mide patrones editoriales, no autoría.
 author: jrollon
 branding:
@@ -11,7 +11,7 @@ inputs:
     required: false
     default: ""
   config:
-    description: Archivo de configuración. Por defecto se busca ia-linter.yml hacia arriba.
+    description: Archivo de configuración. Por defecto se busca textoneitor.yml hacia arriba.
     required: false
     default: ""
   profile:

@@ -22,7 +22,7 @@ Fíjate en lo que hace. Usa las palabras de siempre ("le echas", "están mal", "
 
 ## Lo que no se hace nunca
 
-<!-- ia-linter-disable retorica/no-es-x-es-y, retorica/no-se-trata-de, lexico/honestidad-anunciada -->
+<!-- textoneitor-disable retorica/no-es-x-es-y, retorica/no-se-trata-de, lexico/honestidad-anunciada -->
 
 
 - Negar algo que nadie ha dicho para quedar bien: "no es un gasto, es una inversión", "no se trata de correr, sino de llegar". Di la segunda parte y punto.
@@ -36,7 +36,7 @@ Fíjate en lo que hace. Usa las palabras de siempre ("le echas", "están mal", "
 - Empezar halagando la pregunta o terminar ofreciendo más ayuda por sistema.
 - Atribuirle a la persona errores, opiniones o culpas que no ha expresado.
 
-<!-- ia-linter-enable -->
+<!-- textoneitor-enable -->
 
 ## Coloquial no es descuidado
 

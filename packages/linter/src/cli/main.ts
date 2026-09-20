@@ -13,11 +13,15 @@ import { loadRulePack, toolVersion } from "../api/index.js";
 import { SCHEMA_VERSION } from "../contracts/index.js";
 
 /** Códigos de salida: 0 OK, 1 la política falla, 2 error de uso o configuración. */
+/** Nombre por defecto de la baseline. El viejo se sigue leyendo si es el que hay en el proyecto. */
+const BASELINE_DEFECTO = "textoneitor-baseline.json";
+const BASELINE_ANTERIOR = "ia-linter-baseline.json";
+
 const EXIT_FAIL = 1;
 const EXIT_USAGE = 2;
 
 function die(msg: string): never {
-  process.stderr.write(`ia-linter-es: ${msg}\n`);
+  process.stderr.write(`textoneitor: ${msg}\n`);
   process.exit(EXIT_USAGE);
 }
 
@@ -46,13 +50,13 @@ function context(g: GlobalOpts): RunnerContext & { configFile: string | null; cw
     ...Object.keys(loaded.config.rules).filter((k) => !known.has(k)).map((k) => `rules.${k}`),
     ...loaded.config.overrides.flatMap((o, i) => Object.keys(o.rules ?? {}).filter((k) => !known.has(k)).map((k) => `overrides[${i}].rules.${k}`)),
   ];
-  for (const u of unknown) process.stderr.write(`ia-linter-es: aviso: ${u} no es ninguna regla ni categoría; se ignora\n`);
+  for (const u of unknown) process.stderr.write(`textoneitor: aviso: ${u} no es ninguna regla ni categoría; se ignora\n`);
   return { config: loaded.config, root: loaded.root, pack, toolVersion: toolVersion(), configFile: loaded.file, cwd };
 }
 
 /**
  * Las rutas de la línea de órdenes son relativas al directorio de trabajo, no a la raíz del proyecto
- * (la carpeta del ia-linter.yml). Las que existen se pasan absolutas; los globs se anclan al directorio de trabajo.
+ * (la carpeta del textoneitor.yml). Las que existen se pasan absolutas; los globs se anclan al directorio de trabajo.
  */
 function rutasDesde(cwd: string, root: string, rutas: string[]): string[] {
   if (path.resolve(cwd) === path.resolve(root)) return rutas;
@@ -69,10 +73,10 @@ const program = new Command();
 // por defecto, que se confundiría con «la política falla». Va antes de declarar subcomandos para que lo hereden.
 program.exitOverride();
 program
-  .name("ia-linter-es")
+  .name("textoneitor")
   .description("Linter determinista de patrones de escritura de IA en español. Mide patrones editoriales, no autoría.")
   .version(toolVersion())
-  .option("-c, --config <archivo>", "archivo de configuración (por defecto se busca ia-linter.yml hacia arriba)")
+  .option("-c, --config <archivo>", "archivo de configuración (por defecto se busca textoneitor.yml hacia arriba)")
   .option("--cwd <dir>", "directorio de trabajo")
   .option("--rulepack <archivo>", "Rule Pack alternativo (JSON compilado)");
 
@@ -125,12 +129,12 @@ program
     if (!["terminal", "json", "sarif", "revision"].includes(reporter)) die("--format debe ser terminal, json, sarif o revision");
     let result: ScanResult;
     if (o.stdin) {
-      if (rutas.length) process.stderr.write(`ia-linter-es: aviso: con --stdin se analiza la entrada estándar y se ignoran las rutas (${rutas.join(", ")})\n`);
-      if (sinSituacion) process.stderr.write(`ia-linter-es: ${o.stdinFilename} no corresponde a ninguna situación de situaciones.yml; con --profile auto no se analiza\n`);
+      if (rutas.length) process.stderr.write(`textoneitor: aviso: con --stdin se analiza la entrada estándar y se ignoran las rutas (${rutas.join(", ")})\n`);
+      if (sinSituacion) process.stderr.write(`textoneitor: ${o.stdinFilename} no corresponde a ninguna situación de situaciones.yml; con --profile auto no se analiza\n`);
       const files = sinSituacion ? [] : [lintDocumentText(readStdin(), ctx, { relPath: o.stdinFilename, format: o.stdinFilename ? undefined : "text" })];
       result = {
         schema_version: SCHEMA_VERSION,
-        tool: { name: "ia-linter-es", version: ctx.toolVersion, rulepack: ctx.pack.version },
+        tool: { name: "textoneitor", version: ctx.toolVersion, rulepack: ctx.pack.version },
         files,
         policy: evaluatePolicy(files, ctx.config),
         durationMs: 0,
@@ -148,7 +152,7 @@ program
         const sit = situaciones;
         const fuera = result.files.filter((f) => situacionDe(f.path, sit) === null);
         if (fuera.length) {
-          process.stderr.write(`ia-linter-es: ${fuera.length} archivo(s) sin situación en situaciones.yml; con --profile auto no se analizan (${fuera.slice(0, 5).map((f) => f.path).join(", ")}${fuera.length > 5 ? ", …" : ""})\n`);
+          process.stderr.write(`textoneitor: ${fuera.length} archivo(s) sin situación en situaciones.yml; con --profile auto no se analizan (${fuera.slice(0, 5).map((f) => f.path).join(", ")}${fuera.length > 5 ? ", …" : ""})\n`);
           const files = result.files.filter((f) => !fuera.includes(f));
           result = { ...result, files, policy: evaluatePolicy(files, ctx.config) };
         }
@@ -279,7 +283,7 @@ baseline
   .option("--reason <texto>", "motivo que se guarda en cada entrada")
   .action((rutas: string[], o) => {
     const ctx = context(program.opts<GlobalOpts>());
-    const out = o.output ?? ctx.config.baseline.path ?? "ia-linter-baseline.json";
+    const out = o.output ?? ctx.config.baseline.path ?? BASELINE_DEFECTO;
     if (ctx.config.baseline.require_reason && !o.reason) die("la configuración exige --reason para crear la baseline");
     const result = scanProject(ctx, { targets: rutasDesde(ctx.cwd, ctx.root, rutas), baseline: null, noCache: true });
     const b = createBaseline(result.files, o.reason);
@@ -294,7 +298,12 @@ baseline
   .option("--reason <texto>", "motivo para las entradas nuevas")
   .action((rutas: string[], o) => {
     const ctx = context(program.opts<GlobalOpts>());
-    const out = o.output ?? ctx.config.baseline.path ?? "ia-linter-baseline.json";
+    // Si no se dice cuál y la del nombre nuevo no está, se usa la del nombre viejo.
+    const porDefecto =
+      !fs.existsSync(path.resolve(ctx.root, BASELINE_DEFECTO)) && fs.existsSync(path.resolve(ctx.root, BASELINE_ANTERIOR))
+        ? BASELINE_ANTERIOR
+        : BASELINE_DEFECTO;
+    const out = o.output ?? ctx.config.baseline.path ?? porDefecto;
     const abs = path.resolve(ctx.root, out);
     if (!fs.existsSync(abs)) die(`no existe la baseline ${out}; usa \`baseline create\``);
     if (o.addNew && ctx.config.baseline.require_reason && !o.reason) die("la configuración exige --reason para añadir entradas");
